@@ -1,0 +1,371 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+using _Chi.Scripts.Mono.Entities;
+using _Chi.Scripts.Utilities;
+using Pathfinding.Jobs;
+using Pathfinding.RVO;
+using Unity.Burst;
+using Unity.Collections;
+using Unity.Jobs;
+using Unity.Mathematics;
+using Unity.Profiling;
+using UnityEngine;
+using UnityEngine.Networking;
+
+namespace _Chi.Scripts.Movement
+{
+    public class PathJob
+    {
+        private readonly GameobjectHolder holder;
+        
+        private readonly ISimulator simulator;
+
+        public PathJob(GameobjectHolder holder, RVOSimulator rvoSimulator)
+        {
+            this.holder = holder;
+            simulator = rvoSimulator.GetSimulator();
+        }
+        
+        private NativeArray<float3> dummyArray = new NativeArray<float3>(1, Allocator.Persistent);
+        
+        /*static readonly ProfilerMarker createJob1 = new ProfilerMarker(ProfilerCategory.Ai, "VanDinci.CreateJob.1");
+        static readonly ProfilerMarker createJob2 = new ProfilerMarker(ProfilerCategory.Ai, "VanDinci.CreateJob.2");
+        static readonly ProfilerMarker createJob3 = new ProfilerMarker(ProfilerCategory.Ai, "VanDinci.CreateJob.3");*/
+
+        private (NativeArray<JobHandle> jobHandles,  MoveToTargetJob[] movementJobs) CreateJobs(List<Npc> toMove, int movablesCount)
+        {
+            MoveToTargetJob[] movementJobs = new MoveToTargetJob[movablesCount];
+            NativeArray<JobHandle> jobHandles = new NativeArray<JobHandle>(movablesCount, Allocator.TempJob);
+            
+            for (var index = 0; index < movablesCount; index++)
+            {
+                var npc = toMove[index];
+                if (npc.pathData.IsPathReady() && npc.CanMove())
+                {
+                    float3 rotateTarget = float3.zero;
+
+                    var doPath = true; // TODO can root but keep rotation here
+
+                    var rotateTargetVector = npc.GetRotationTarget();
+
+                    bool doRotate = false;
+                    if (rotateTargetVector.HasValue)
+                    {
+                        doRotate = true;
+                        rotateTarget = rotateTargetVector.Value;
+                    }
+
+                    npc.pathData.job.deltaTime = Time.fixedDeltaTime;
+
+                    npc.pathData.job.currentWaypoint = doPath ? npc.pathData.currentWaypoint : 0;
+
+                    npc.pathData.job.rotate = doRotate;
+                    npc.pathData.job.rotateTarget = rotateTarget;
+                    npc.pathData.job.rotateSpeed = npc.stats.rotationSpeed;
+                    npc.pathData.job.position = npc.GetPosition();
+                    npc.pathData.job.currentRotation = npc.transform.rotation;
+
+                    npc.pathData.job.movePath = doPath;
+                    npc.pathData.job.maxSpeed = doPath ? npc.stats.speed : 0;
+                    npc.pathData.job.reachedEndOfPath = doPath ? npc.pathData.reachedEndOfPath : false;
+
+                    npc.pathData.job.rvoCalculatedSpeed = npc.pathData.job.hasRvo ? npc.rvoController.rvoAgent.CalculatedSpeed : 0;
+                    npc.pathData.job.rvoCalculatedTargetPoint = npc.pathData.job.hasRvo
+                        ? (float3) npc.rvoController.rvoAgent.CalculatedTargetPoint
+                        : float3.zero;
+                    
+                    movementJobs[index] = npc.pathData.job;
+                    jobHandles[index] = npc.pathData.job.Schedule();
+                }
+            }
+
+            return (jobHandles, movementJobs);
+        }
+
+        private void ProcessJobs(List<Npc> toMove, int movablesCount, NativeArray<JobHandle> jobHandles, MoveToTargetJob[] movementJobs)
+        {
+            for (var index = 0; index < movablesCount; index++)
+            {
+                var npc = toMove[index];
+                if (!npc.pathData.jobDisposed && npc.pathData.IsPathReady() && npc.CanMove())
+                {
+                    var data = movementJobs[index];
+
+                    if (data.movePath)
+                    {
+                        npc.pathData.reachedEndOfPath = data.reachedEndOfPath;
+                        npc.pathData.currentWaypoint = data.outputWaypoints[0];
+    
+                        //bool stop = false;
+                        
+                        //character.pathData.rvoDensityBehavior.Update(character.rvoController.enabled, character.pathData.ReachedDestination(), ref stop, ref character.rvoController.priorityMultiplier, ref character.rvoController.flowFollowingStrength, character.GetPosition());
+                        //if (!stop) // TODO solve better, propably
+                        {
+                            npc.MoveTo((Vector3)data.outputPositions[0]);
+                        }
+                        
+                        if (data.outputs[0])
+                        {
+                            npc.pathData.Path.Release(npc.pathData);
+                            npc.pathData.Path = null;
+                            npc.pathData.pathWaypoints.Dispose();
+                            //character.pathData.OnPathSetToNull();
+                        }
+    
+                        /*if (data.outputs[3] && character.CanRotate())
+                        {
+                            character.SetRotationTarget(data.outputPositions[1]);
+                        }*/
+                        
+                        if (data.outputs[1])
+                        {
+                            //character.OnTargetReached();
+                        }
+    
+                        if (data.outputs[2])
+                        {
+                            npc.pathData.reachedEndOfPath = true;
+                            npc.pathData.SetPathReady(false);
+                        }
+    
+                        if (data.outputs[4])
+                        {
+                            if (npc.hasRvoController)
+                            {
+                                npc.rvoController.SetTarget(data.outputPositions[2], npc.stats.speed, npc.stats.speed * 1.2f, npc.pathData.endOfPath);
+                            }
+                        }
+                        
+                        //character.SetBlockedInCrowd(data.outputs[5]);
+                    }
+                    else
+                    {
+                        
+                    }
+    
+                    if (data.rotate)
+                    {
+                        //character.rb.MoveRotation(data.outputRotation[0]);
+                        //character.rb.transform.rotation = data.outputRotation[0];
+                        
+                        npc.SetRotation(data.outputRotation[0]);
+                    }
+                }
+            }
+        }
+
+        public void OnFixedUpdate()
+        {
+            List<Npc> toMove = holder.npcEntitiesList;
+            int movablesCount = toMove.Count;
+            
+            (NativeArray<JobHandle> jobHandles, MoveToTargetJob[] movementJobs) result = CreateJobs(toMove, movablesCount);
+            
+            JobHandle.CompleteAll(result.jobHandles);
+
+            ProcessJobs(toMove, movablesCount, result.jobHandles, result.movementJobs);
+            
+            result.jobHandles.Dispose();
+        }
+    }
+    
+    [BurstCompile]
+    public struct MoveToTargetJob : IJob
+    {
+        [ReadOnly] public float deltaTime;
+        
+        [ReadOnly] public bool movePath;
+        
+        [ReadOnly] public float3 position;
+        [ReadOnly] public float maxSpeed;
+        
+        [ReadOnly] public NativeArray<float3> waypoints;
+        [ReadOnly] public int currentWaypoint;
+
+        [ReadOnly] public bool rotate;
+        [ReadOnly] public quaternion currentRotation;
+        [ReadOnly] public float3 rotateTarget;
+        [ReadOnly] public int rotateSpeed;
+        
+        [ReadOnly] public bool reachedEndOfPath;
+        
+        [ReadOnly] public bool hasRvo;
+        [ReadOnly] public float3 rvoCalculatedTargetPoint;
+        [ReadOnly] public float rvoCalculatedSpeed;
+
+        [WriteOnly] public NativeArray<float3> outputPositions;
+        [WriteOnly] public NativeArray<bool> outputs;
+        [WriteOnly] public NativeArray<int> outputWaypoints;
+        [WriteOnly] public NativeArray<quaternion> outputRotation;
+
+        public void Execute()
+        {
+            float distanceToWaypoint;
+            var prevTargetReached = reachedEndOfPath;
+
+            if (rotate && !movePath)
+            {
+                var targetRotation = quaternion.LookRotationSafe(position - rotateTarget, new float3(0, 0, 1));
+                targetRotation.value.x = 0;
+                targetRotation.value.y = 0;
+                outputRotation[0] = MMExtensions.RotateTowards(currentRotation, targetRotation, rotateSpeed * deltaTime);
+            }
+
+            if (movePath)
+            {
+                float3 nextWaypoint;
+                while (true)
+                {
+                    nextWaypoint = waypoints[currentWaypoint];
+                    distanceToWaypoint = math.distancesq(position, nextWaypoint);
+                    
+                    if (distanceToWaypoint < 0.04f)
+                    {
+                        // Check if there is another waypoint or if we have reached the end of the path
+                        if (currentWaypoint + 1 < waypoints.Length) 
+                        {
+                            currentWaypoint++;
+                        } 
+                        else 
+                        {
+                            if (distanceToWaypoint < 0.04f)
+                            {
+                                // Set a status variable to indicate that the agent has reached the end of the path.
+                                // You can use this to trigger some special code if your game requires that.
+                                outputs[2] = true;
+                                reachedEndOfPath = true;
+                            }
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                outputWaypoints[0] = currentWaypoint;
+
+                if (!reachedEndOfPath)
+                {
+                    float3 desiredVelocity = math.normalize(nextWaypoint - position) * maxSpeed;
+                    float3 desiredPosition = position + desiredVelocity;
+                    
+                    float3 moveDelta;
+
+                    if (hasRvo)
+                    {
+                        var delta = (rvoCalculatedTargetPoint - position);
+
+                        moveDelta = ClampMagnitude(delta, rvoCalculatedSpeed * deltaTime);
+
+                        var difference = math.abs(desiredPosition - rvoCalculatedTargetPoint);
+                        
+                        // the difference between character target and the target chosen by RVO controller is more than 0.6 * 0.6
+                        // -> mark him as stuck in crowd (crowd is affecting where he moves)
+                        outputs[5] = math.lengthsq(difference) > 0.36f;
+                    }
+                    else
+                    {
+                        moveDelta = desiredVelocity * deltaTime;
+                    }
+                    
+                    if (rotate)
+                    {
+                        var targetRotation = quaternion.LookRotationSafe(desiredVelocity * -1, new float3(0, 0, 1));
+                        targetRotation.value.x = 0;
+                        targetRotation.value.y = 0;
+                        outputRotation[0] = MMExtensions.RotateTowards(currentRotation, targetRotation, rotateSpeed * deltaTime);
+                    }
+                    
+                    outputPositions[0] = position + moveDelta;
+                    outputPositions[1] = desiredPosition;
+                    outputPositions[2] = desiredPosition;
+                    outputs[3] = true;
+                    outputs[4] = true; // set use rvo
+                }
+                else
+                {
+                    if (distanceToWaypoint > 2f)
+                    {
+                        outputs[0] = true;
+                        outputPositions[0] = position;
+                        return;
+                    }
+                    
+                    var diff = distanceToWaypoint / 0.04f;
+                    var slowdown = CalculateSlowdown(diff);
+                    
+                    if (!prevTargetReached)
+                    {
+                        outputs[1] = true;
+                    }
+
+                    if (slowdown > 0.01f)
+                    {
+                        float desiredSpeed = maxSpeed * slowdown;
+                        float3 desiredVelocity = math.normalize(nextWaypoint - position) * desiredSpeed;
+                        float3 desiredPosition = position + desiredVelocity;
+
+                        float3 moveDelta;
+                        if (hasRvo)
+                        {
+                            var delta = (rvoCalculatedTargetPoint - position);
+
+                            moveDelta = ClampMagnitude(delta, rvoCalculatedSpeed * deltaTime);
+                        }
+                        else
+                        {
+                            moveDelta = desiredVelocity * deltaTime;
+                        }
+                        
+                        /*var remainingDistance = math.length((waypoint - translation.Value)) + math.length((waypoint - p2));
+                        for (int i = pathfinder.wp; i < vectorPath.Length - 1; i++) pathfinder.remainingDistance +=
+                            math.length(To2DIn3D(vectorPath[i + 1].Value - vectorPath[i].Value));*/
+
+                        var rvoTarget = position + ClampMagnitude(desiredVelocity, math.sqrt(distanceToWaypoint));
+                        
+                        outputPositions[0] = position + moveDelta;
+                        outputPositions[1] = desiredPosition;
+                        outputPositions[2] = rvoTarget;
+                        outputs[3] = true;
+                        outputs[4] = true; // set use rvo
+                    }
+                    else
+                    {
+                        outputs[0] = true;
+                        outputPositions[0] = position;
+                    }
+                }
+            }
+        }
+
+        private float CalculateSlowdown(float diff)
+        {
+            var x = Clamp01(diff);
+
+            return (float) (math.abs(x - 1) < 0.0001f ? 1 : 1 - math.pow(2, -10 * x));
+        }
+
+        private float Clamp01(float value)
+        {
+            if ((float) value < 0.0)
+                return 0.0f;
+            return (float) value > 1.0 ? 1f : value;
+        }
+        
+        private float3 ClampMagnitude(float3 vector, float maxLength)
+        {
+            float sqrMagnitude = SqrMagnitude(vector);
+            if ((double) sqrMagnitude <= (double) maxLength * (double) maxLength)
+                return vector;
+            float num1 = (float) math.sqrt((double) sqrMagnitude);
+            float num2 = vector.x / num1;
+            float num3 = vector.y / num1;
+            return new float3(num2 * maxLength, num3 * maxLength, 0);
+        }
+        
+        private float SqrMagnitude(float3 a) => (float) ((double) a.x * (double) a.x + (double) a.y * (double) a.y);
+
+    }
+}
