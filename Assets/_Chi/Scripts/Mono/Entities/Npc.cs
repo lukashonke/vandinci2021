@@ -115,6 +115,8 @@ namespace _Chi.Scripts.Mono.Entities
 
         public override void OnDie()
         {
+            Gamesystem.instance.OnKilled(this);
+            
             if (!this.DeletePooledNpc())
             {
                 base.OnDie();

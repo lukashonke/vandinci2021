@@ -6,8 +6,8 @@ namespace _Chi.Scripts.Statistics
     [Serializable]
     public class PlayerStats
     {
-        public Stat speed = new Stat(1);
+        public Stat speed = new Stat();
         
-        public Stat rotationSpeed = new Stat(500);
+        public Stat rotationSpeed = new Stat();
     }
 }

@@ -37,7 +37,7 @@ public class Tests : MonoBehaviour
                 {
                     if (entitiesValue is Npc m)
                     {
-                        m.SetMoveTarget(() => Gamesystem.instance.objects.mainPlayer.GetPosition());
+                        m.SetMoveTarget(() => Gamesystem.instance.objects.currentPlayer.GetPosition());
                     }
                 }
             }

@@ -67,6 +67,8 @@ namespace _Chi.Scripts.Mono.System
 
         public void Despawn(Projectile projectileInstance)
         {
+            var hash = projectileInstance.GetHashCode();
+            
             if (projectilePools.TryGetValue(projectileInstance.poolId, out var pool))
             {
                 pool.Release(projectileInstance);
@@ -77,9 +79,13 @@ namespace _Chi.Scripts.Mono.System
         {
             var go = Instantiate(projectile.gameObject);
 
+            var hash = go.GetHashCode();
+
             var newProjectile = go.GetComponent<Projectile>();
 
             newProjectile.poolId = projectile.poolId;
+
+            var hash2 = newProjectile.GetHashCode();
 
             return newProjectile;
         }

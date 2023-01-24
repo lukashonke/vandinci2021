@@ -81,5 +81,13 @@ namespace _Chi.Scripts.Utilities
             float angleB = b.eulerAngles.z;
             return Mathf.DeltaAngle(angleA, angleB);
         }
+
+        public static void RemoveAllChildren(this Transform transform)
+        {
+            foreach (Transform c in transform) 
+            {
+                Object.Destroy(c.gameObject);
+            }
+        }
     }
 }

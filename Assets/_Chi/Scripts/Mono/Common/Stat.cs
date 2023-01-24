@@ -11,9 +11,13 @@ namespace _Chi.Scripts.Mono.Common
         [NonSerialized] public bool isDirty;
 
         private float baseValue;
-        [ShowInInspector] private float value;
+        [ShowInInspector] public float value;
 
         private List<StatModifier> modifiers;
+
+        public Stat()
+        {
+        }
 
         public Stat(float baseValue)
         {

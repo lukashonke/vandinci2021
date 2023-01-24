@@ -57,11 +57,14 @@ MonoBehaviour:
   parent: {fileID: 0}
   slot: {fileID: 0}
   targetUpdateInterval: 0.2
-  rotationSpeed: 500
+  rotationSpeed: 1500
+  level: 1
   stats:
-    projectileSpeed: 4
+    projectileCount:
+      value: 1
+    projectileSpeed: 6
     detectRange: 5
-    projectileLifetime: 1
+    projectileLifetime: 1.5
     canProjectilePierce: 0
     projectilePierceCount: 0
     projectilePierceChance: 0

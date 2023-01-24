@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Extensions;
+using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Statistics;
 using UnityEngine;
 
@@ -11,6 +13,9 @@ namespace _Chi.Scripts.Mono.Entities
     public class Player : Entity
     {
         public PlayerStats stats;
+
+        [NonSerialized] public PlayerBody body;
+        [NonSerialized] public List<ModuleSlot> slots;
 
         public float nearestEnemiesDetectorRange = 15f;
         
@@ -22,6 +27,11 @@ namespace _Chi.Scripts.Mono.Entities
         {
             base.Awake();
 
+            body = GetComponentInChildren<PlayerBody>();
+            slots = new List<ModuleSlot>();
+            
+            InitializeBody();
+            
             nearestEnemies = new List<Entity>();
             buffer = new Collider2D[4096];
         }
@@ -91,6 +101,43 @@ namespace _Chi.Scripts.Mono.Entities
         public override void OnDestroy()
         {
             base.OnDestroy();
+        }
+
+        public void SetBody(GameObject bodyPrefab)
+        {
+            if (body != null)
+            {
+                Destroy(body.gameObject);
+            }
+            var newBody = Instantiate(bodyPrefab, GetPosition(), Quaternion.identity, this.transform);
+            body = newBody.GetComponent<PlayerBody>();
+            
+            InitializeBody();
+        }
+
+        public void InitializeBody()
+        {
+            slots = body.GetComponentsInChildren<ModuleSlot>().ToList();
+        }
+
+        public ModuleSlot GetSlotById(int slotId)
+        {
+            return slots.FirstOrDefault(s => s.slotId == slotId);
+        }
+
+        public void SetModuleInSlot(ModuleSlot slot, GameObject modulePrefab, int level)
+        {
+            if (slot.currentModule != null)
+            {
+                slot.SetModuleInSlot(null, destroyCurrent: true);
+            }
+
+            var moduleGo = Instantiate(modulePrefab, slot.GetModulePosition(), Quaternion.identity, slot.transform);
+            var module = moduleGo.GetComponent<Module>();
+
+            module.level = level;
+            
+            slot.SetModuleInSlot(module);
         }
     }
 }

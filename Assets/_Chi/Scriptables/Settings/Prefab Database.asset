@@ -23,5 +23,22 @@ MonoBehaviour:
     SerializationNodes: []
   prefabs:
   - id: 100
+    type: 0
     predefinedId: 1
     prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+    prefabUi: {fileID: 0}
+  - id: 1000
+    type: 2
+    predefinedId: 0
+    prefab: {fileID: 5863446121643124079, guid: 17100200d27d78347bf006864161e432, type: 3}
+    prefabUi: {fileID: 1669959372494101077, guid: 0ca96be5bd0b8be478a294c2e8be1148, type: 3}
+  - id: 2000
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: 91a363bd1f1eb294daab200b77bba099, type: 3}
+    prefabUi: {fileID: 3314847274656908133, guid: 1a44fcc45acc5c1438750ee0dba35732, type: 3}
+  - id: 2500
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: 583f45b9fcab5ce4a904a3843655576b, type: 3}
+    prefabUi: {fileID: 8309321105186295158, guid: 4f7c9cf6fe61edd47a81937e10ffbef4, type: 3}

@@ -9,6 +9,8 @@ using UnityEngine;
 
 public class ModuleSlot : MonoBehaviour
 {
+    [NonSerialized] public int slotId;
+    
     [NonSerialized] public Entity parent;
     [NonSerialized] public Module currentModule;
     
@@ -20,6 +22,8 @@ public class ModuleSlot : MonoBehaviour
     public void Awake()
     {
         parent = GetComponentInParent<Entity>();
+
+        slotId = this.transform.GetSiblingIndex();
 
         if (connectedTo != null)
         {
@@ -45,7 +49,7 @@ public class ModuleSlot : MonoBehaviour
         }
     }
 
-    public void SetModuleInSlot(Module module, bool activate = true)
+    public void SetModuleInSlot(Module module, bool activate = true, bool destroyCurrent = false)
     {
         if (currentModule != module)
         {
@@ -58,6 +62,11 @@ public class ModuleSlot : MonoBehaviour
             {
                 DeactivateModuleInSlot();
                 currentModule.slot = null;
+
+                if (destroyCurrent)
+                {
+                    Destroy(currentModule);
+                }
             }
 
             currentModule = module;
@@ -108,5 +117,10 @@ public class ModuleSlot : MonoBehaviour
         }
                 
         currentModule.OnRemovedFromSlot();
+    }
+
+    public Vector3 GetModulePosition()
+    {
+        return transform.position;
     }
 }

@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using _Chi.Scripts.Mono.Common;
+using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.System;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Scriptables.Dtos;
+using _Chi.Scripts.Utilities;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -16,6 +18,7 @@ public class Gamesystem : MonoBehaviour
     [HideInInspector] public GameobjectHolder objects;
     [HideInInspector] public Tests tests;
     [HideInInspector] public PoolSystem poolSystem;
+    [HideInInspector] public PlayerProgressManager progress;
 
     [Required] public UiManager uiManager;
     [Required] public GameObject world;
@@ -25,19 +28,22 @@ public class Gamesystem : MonoBehaviour
     [NonSerialized] public Dictionary<int, PrefabItem> prefabs;
     [NonSerialized] public Dictionary<PredefinedPrefabIds, PrefabItem> predefinedPrefabs;
 
-    private SortedList<float, Action> schedules;
+    private List<FloatWithAction> schedules;
     private List<int> toRemoveSchedules;
+
+    [NonSerialized] public float levelStartedTime;
 
     private void Awake()
     {
         instance = this;
         
-        schedules = new SortedList<float, Action>();
+        schedules = new List<FloatWithAction>();
         toRemoveSchedules = new List<int>();
         
         this.objects = GetComponent<GameobjectHolder>();
         this.tests = GetComponent<Tests>();
         this.poolSystem = GetComponent<PoolSystem>();
+        this.progress = GetComponent<PlayerProgressManager>();
 
         prefabs = prefabDatabase.prefabs.ToDictionary(t => t.id, t => t);
         predefinedPrefabs = prefabDatabase.prefabs.Where(t => t.predefinedId != PredefinedPrefabIds.Custom)
@@ -47,39 +53,81 @@ public class Gamesystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        RestartLevelClock();
     }
 
     public void Update()
     {
         var time = Time.time;
         int index = 0;
+        /*for (int i = 0; i < schedules.Count; i++)
+        {
+            var schedule = schedules[i];
+            
+            
+        }*/
+
+        bool anyRun = false;
+        
         foreach (var schedule in schedules)
         {
-            if (time < schedule.Key)
+            if (time > schedule.time)
             {
-                return;
+                schedule.action();
+                anyRun = true;
             }
-
-            schedule.Value();
-            toRemoveSchedules.Add(index);
+            
             index++;
         }
 
-        if (toRemoveSchedules.Any())
+        if (anyRun)
         {
-            for (var i = toRemoveSchedules.Count - 1; i >= 0; i--)
-            {
-                var removeSchedule = toRemoveSchedules[i];
-                schedules.RemoveAt(removeSchedule);
-            }
-
-            toRemoveSchedules.Clear();
+            schedules.RemoveAll(t => time > t.time);
         }
     }
     
     public void Schedule(float time, Action action)
     {
-        schedules.Add(time, action);
+        //TODO same time = error
+        schedules.Add(new FloatWithAction()
+        {
+            action = action,
+            time = time
+        });
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void Unpause()
+    {
+        Time.timeScale = 1;
+    }
+
+    public void TogglePause()
+    {
+        if (Time.timeScale > 0)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
+
+    public void RestartLevelClock()
+    {
+        levelStartedTime = Time.time;
+    }
+
+    public void OnKilled(Entity e)
+    {
+        if (e is Npc npc)
+        {
+            progress.progressData.run.killed++;
+        }
     }
 }

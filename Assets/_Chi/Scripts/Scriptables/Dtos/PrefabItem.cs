@@ -9,8 +9,21 @@ namespace _Chi.Scripts.Scriptables.Dtos
     {
         public int id;
 
+        public PrefabItemType type;
+
         public PredefinedPrefabIds predefinedId;
 
         public GameObject prefab;
+
+        //TODO show if type == body
+        public GameObject prefabUi;
+    }
+
+    public enum PrefabItemType
+    {
+        Unknown,
+        Entity,
+        Body,
+        Module
     }
 }

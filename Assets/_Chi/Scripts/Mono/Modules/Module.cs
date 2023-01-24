@@ -20,6 +20,8 @@ namespace _Chi.Scripts.Mono.Modules
 
         [NonSerialized] public Transform currentTarget;
 
+        public int level = 1;
+
         public virtual void Awake()
         {
             parent = GetComponentInParent<Entity>();

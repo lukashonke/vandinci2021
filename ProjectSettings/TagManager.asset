@@ -50,3 +50,12 @@ TagManager:
   - name: Module
     uniqueID: 1100204741
     locked: 0
+  - name: Enemies
+    uniqueID: 2841397855
+    locked: 0
+  - name: ProjectileEffects
+    uniqueID: 2108392041
+    locked: 0
+  - name: Projectiles
+    uniqueID: 1740865219
+    locked: 0

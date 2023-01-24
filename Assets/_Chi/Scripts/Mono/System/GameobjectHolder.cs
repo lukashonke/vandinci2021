@@ -10,7 +10,7 @@ using UnityEngine.Serialization;
 public class GameobjectHolder : MonoBehaviour
 {
     public Dictionary<long, Entity> entities;
-    public Player mainPlayer;
+    public Player currentPlayer;
     public List<Npc> npcEntitiesList;
 
     private PathJob pathJob;
@@ -61,7 +61,7 @@ public class GameobjectHolder : MonoBehaviour
         }
         else
         {
-            mainPlayer = (Player) e;
+            currentPlayer = (Player) e;
         }
     }
 
@@ -72,9 +72,9 @@ public class GameobjectHolder : MonoBehaviour
         {
             npcEntitiesList.Remove(npc);
         }
-        else if(mainPlayer == e)
+        else if(currentPlayer == e)
         {
-            mainPlayer = null;
+            currentPlayer = null;
         }
     }
 }

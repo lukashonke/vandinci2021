@@ -12,6 +12,8 @@ namespace _Chi.Scripts.Mono.Extensions
         {
             var projectile = Gamesystem.instance.poolSystem.Spawn(prefab);
 
+            var hash = projectile.GetHashCode();
+
             projectile.Setup(module);
 
             return projectile;
@@ -19,6 +21,8 @@ namespace _Chi.Scripts.Mono.Extensions
         
         public static void ScheduleUnspawn(this Projectile projectile, float duration)
         {
+            var hash = projectile.GetHashCode();
+            
             Gamesystem.instance.Schedule(Time.time + duration, () => Gamesystem.instance.poolSystem.Despawn(projectile));
         }
 

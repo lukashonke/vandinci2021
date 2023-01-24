@@ -50,6 +50,8 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                         nextFireRate = Time.time + stats.fireRate;
                     
                         var projectile = prefabProjectile.SpawnProjectile(this);
+
+                        var hash = projectile.GetHashCode();
                         
                         //TODO zakomponovat pocet projektilů
                     
