@@ -9,5 +9,7 @@ namespace _Chi.Scripts.Statistics
         public Stat speed = new Stat();
         
         public Stat rotationSpeed = new Stat();
+
+        public Stat nearbyEnemyRangeSqrt = new Stat();
     }
 }

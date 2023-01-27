@@ -51,7 +51,7 @@ namespace _Chi.Scripts.Mono.Ui
 
         private bool TryAddCurrentlyAddingModule()
         {
-            var addingModule = Gamesystem.instance.uiManager.addingModule;
+            var addingModule = Gamesystem.instance.uiManager.addingUiItem;
             
             if (addingModule == null)
             {
@@ -84,11 +84,11 @@ namespace _Chi.Scripts.Mono.Ui
             
             Gamesystem.instance.uiManager.ShowConfirmDialog(title, text, () => AddModuleToSlot(addingModule), () =>
             {
-                Gamesystem.instance.uiManager.SetAddingModule(null);
+                Gamesystem.instance.uiManager.SetAddingUiItem(null);
 
             }, () =>
             {
-                Gamesystem.instance.uiManager.SetAddingModule(null);
+                Gamesystem.instance.uiManager.SetAddingUiItem(null);
             });
 
             return true;
@@ -150,7 +150,7 @@ namespace _Chi.Scripts.Mono.Ui
 
         public void MoveModuleToAnotherSlot()
         {
-            var info = new AddingModuleInfo()
+            var info = new AddingUiItem()
             {
                 prefab = modulePrefabItem,
                 prefabModule = modulePrefabItem.prefab.GetComponent<Module>(),
@@ -160,12 +160,12 @@ namespace _Chi.Scripts.Mono.Ui
 
             info.finishCallback = () => OnModuleMoved(info);
             
-            Gamesystem.instance.uiManager.SetAddingModule(info);
+            Gamesystem.instance.uiManager.SetAddingUiItem(info);
             
             Gamesystem.instance.uiManager.RemoveActionsPanel();
         }
 
-        public void OnModuleMoved(AddingModuleInfo info)
+        public void OnModuleMoved(AddingUiItem info)
         {
             if (info != null)
             {
@@ -174,7 +174,7 @@ namespace _Chi.Scripts.Mono.Ui
             }
         }
 
-        public bool AddModuleToSlot(AddingModuleInfo module)
+        public bool AddModuleToSlot(AddingUiItem module)
         {
             if (CanMergeModule(module))
             {
@@ -186,7 +186,7 @@ namespace _Chi.Scripts.Mono.Ui
             }
         }
 
-        public void NotifyAddingModule(AddingModuleInfo moduleCandidate)
+        public void NotifyAddingModule(AddingUiItem moduleCandidate)
         {
             bool highlight = moduleCandidate != null && CanAcceptModule(moduleCandidate.prefabModule);
             
@@ -203,7 +203,7 @@ namespace _Chi.Scripts.Mono.Ui
             highlightGo.SetActive(b);
         }
 
-        public bool CanMergeModule(AddingModuleInfo info)
+        public bool CanMergeModule(AddingUiItem info)
         {
             if (moduleGo != null && modulePrefabItem != null && info != null)
             {

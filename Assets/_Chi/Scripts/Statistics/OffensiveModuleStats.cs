@@ -6,7 +6,7 @@ namespace _Chi.Scripts.Statistics
     [Serializable]
     public class OffensiveModuleStats
     {
-        public Stat projectileCount = new Stat(1);
+        public Stat projectileCount = new Stat();
         
         public float projectileSpeed = 4f;
 

@@ -16,6 +16,7 @@ namespace _Chi.Scripts.Mono.Entities
 
         [HideInInspector] public Rigidbody2D rb;
         [NonSerialized] public bool hasRb;
+        [NonSerialized] public Collider2D triggerCollider; 
 
         #endregion
 
@@ -50,6 +51,8 @@ namespace _Chi.Scripts.Mono.Entities
         {
             rb = GetComponent<Rigidbody2D>();
             hasRb = rb != null;
+
+            triggerCollider = GetComponent<Collider2D>();
 
             Register();
 
@@ -145,13 +148,19 @@ namespace _Chi.Scripts.Mono.Entities
 
         public void ReceiveDamage(float damage, Entity damager)
         {
+            if (damage <= 0) return;
+            
             entityStats.hp -= damage;
             
             if (entityStats.hp <= 0)
             {
                 entityStats.hp = 0;
-                isAlive = false;
-                OnDie();
+
+                if (isAlive)
+                {
+                    isAlive = false;
+                    OnDie();
+                }
             }
             else if (entityStats.hp > GetMaxHp())
             {
@@ -161,6 +170,11 @@ namespace _Chi.Scripts.Mono.Entities
             if (entityStats.hp > 0 && !isAlive)
             {
                 isAlive = true;
+            }
+
+            if (damager is Player)
+            {
+                Gamesystem.instance.prefabDatabase.playerDealtDamage.Spawn(transform.position, damage);
             }
         }
 
@@ -179,6 +193,11 @@ namespace _Chi.Scripts.Mono.Entities
             {
                 return transform.position;
             }
+        }
+
+        public void SetCanMove(bool b)
+        {
+            canMove = b;
         }
         
         public bool CanMove()

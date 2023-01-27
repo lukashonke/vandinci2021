@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using _Chi.Scripts.Persistence;
+using _Chi.Scripts.Scriptables.Dtos;
 using _Chi.Scripts.Utilities;
 using Pathfinding.Ionic.Zip;
 using Sirenix.OdinInspector;
@@ -11,6 +14,10 @@ namespace _Chi.Scripts.Mono.Ui
         [Required] public GameObject container;
 
         [NonSerialized] public PlayerBodyUi ui;
+
+        [NonSerialized] public SkillSlotUi[] skillSlots;
+        
+        [NonSerialized] public MutatorSlotUi[] mutatorSlots;
 
         public void Awake()
         {
@@ -66,6 +73,61 @@ namespace _Chi.Scripts.Mono.Ui
             ui = newBodyUi.GetComponent<PlayerBodyUi>();
             
             ui.Initialise();
+
+            skillSlots = GetComponentsInChildren<SkillSlotUi>();
+
+            foreach (var slot in skillSlots)
+            {
+                slot.Initialise();
+            }
+            
+            mutatorSlots = GetComponentsInChildren<MutatorSlotUi>();
+
+            foreach (var slot in mutatorSlots)
+            {
+                slot.Initialise();
+            }
+        }
+
+        public bool SetSkill(SkillSlotUi slot, PrefabItem skillItem)
+        {
+            var run = Gamesystem.instance.progress.progressData.run;
+
+            if (run.skillPrefabIds == null) run.skillPrefabIds = new List<SlotItem>();
+            
+            run.skillPrefabIds.Add(new SlotItem()
+            {
+                prefabId = skillItem.id,
+                slot = slot.index
+            });
+
+            slot.SetPrefab(skillItem);
+
+            return true;
+        }
+        
+        public bool SetMutator(MutatorSlotUi slot, PrefabItem skillItem)
+        {
+            var run = Gamesystem.instance.progress.progressData.run;
+
+            if (run.mutatorPrefabIds == null) run.mutatorPrefabIds = new List<SlotItem>();
+
+            if (skillItem != null)
+            {
+                run.mutatorPrefabIds.Add(new SlotItem()
+                {
+                    slot = slot.index,
+                    prefabId = skillItem.id
+                });    
+            }
+            else
+            {
+                run.mutatorPrefabIds.RemoveAll(s => s.slot == slot.index);    
+            }
+
+            slot.SetPrefab(skillItem);
+
+            return true;
         }
     }
 }

@@ -58,6 +58,11 @@ namespace _Chi.Scripts.Mono.Entities
             {
                 return;
             }
+
+            if (!entity.isAlive)
+            {
+                return;
+            }
             
             for (var index = 0; index < effects.Count; index++)
             {

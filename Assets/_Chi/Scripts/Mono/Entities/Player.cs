@@ -5,6 +5,8 @@ using System.Linq;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Modules;
+using _Chi.Scripts.Mono.Ui;
+using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
 using UnityEngine;
 
@@ -14,14 +16,22 @@ namespace _Chi.Scripts.Mono.Entities
     {
         public PlayerStats stats;
 
+        public List<Skill> skills;
+        
+        public List<Mutator> mutators;
+
         [NonSerialized] public PlayerBody body;
         [NonSerialized] public List<ModuleSlot> slots;
-
+        
         public float nearestEnemiesDetectorRange = 15f;
         
         private Collider2D[] buffer = new Collider2D[4096];
 
-        [NonSerialized] public List<Entity> nearestEnemies;
+        [NonSerialized] public List<Entity> targetableEnemies;
+        [NonSerialized] public HashSet<Entity> damagingEnemies;
+        private List<Entity> damagingEnemiesToRemove;
+        
+        private Dictionary<Skill, SkillData> skillDatas;
 
         public override void Awake()
         {
@@ -32,8 +42,21 @@ namespace _Chi.Scripts.Mono.Entities
             
             InitializeBody();
             
-            nearestEnemies = new List<Entity>();
+            targetableEnemies = new List<Entity>();
+            damagingEnemies = new();
+            damagingEnemiesToRemove = new ();
             buffer = new Collider2D[4096];
+            skillDatas = new Dictionary<Skill, SkillData>();
+
+            foreach (var skill in skills)
+            {
+                AddSkill(skill);
+            }
+            
+            foreach (var mutator in mutators)
+            {
+                AddMutator(mutator);
+            }
         }
 
         // Start is called before the first frame update
@@ -41,7 +64,57 @@ namespace _Chi.Scripts.Mono.Entities
         {
             base.Start();
 
-            StartCoroutine(UpdateNearbyEnemies());
+            //StartCoroutine(UpdateNearbyEnemies());
+            StartCoroutine(DamageByNearbyCoroutine());
+            StartCoroutine(CleanupJob());
+        }
+
+        private IEnumerator CleanupJob()
+        {
+            var waiter = new WaitForSeconds(0.1f);
+            while (isAlive)
+            {
+                targetableEnemies.RemoveAll(e => e == null || !e.isAlive);
+
+                yield return waiter;
+            }   
+        }
+
+        private IEnumerator DamageByNearbyCoroutine()
+        {
+            var waiter = new WaitForSeconds(.5f);
+            while (isAlive)
+            {
+                if (damagingEnemies.Any())
+                {
+                    foreach (Entity entity in damagingEnemies)
+                    {
+                        if (entity != null && entity is Npc monster && monster.nextDamageTime < Time.time)
+                        {
+                            var stillColliding = triggerCollider.OverlapPoint(entity.GetPosition()) || triggerCollider.IsTouching(entity.triggerCollider);
+
+                            if (stillColliding)
+                            {
+                                ReceiveDamageByContact(monster, false);
+                            }
+                            else
+                            {
+                                damagingEnemiesToRemove.Add(monster);
+                            }
+                        }
+                    }
+
+                    damagingEnemies.RemoveWhere(d => d == null);
+
+                    if (damagingEnemiesToRemove.Any())
+                    {
+                        foreach (var entity in damagingEnemiesToRemove) damagingEnemies.Remove(entity);
+                        damagingEnemiesToRemove.Clear();
+                    }
+                }
+                
+                yield return waiter;
+            }
         }
 
         // Update is called once per frame
@@ -54,7 +127,7 @@ namespace _Chi.Scripts.Mono.Entities
         {
             base.FixedUpdate();
         
-            if (CanMove())
+            if (CanMove() && rotationTarget.HasValue)
             {
                 SetRotation(EntityExtensions.RotateTowards(GetPosition(), rotationTarget.Value, rb.transform.rotation, stats.rotationSpeed.GetValue()));
             }
@@ -64,17 +137,44 @@ namespace _Chi.Scripts.Mono.Entities
         {
             base.OnTriggerEnter2D(other);
 
-            Debug.Log("trigger");
-
             var entity = other.gameObject.GetEntity();
 
             if (entity is Npc monster && this.AreEnemies(monster))
             {
-                ReceiveDamage(monster.CalculateMonsterContactDamage(this), monster);
+                ReceiveDamageByContact(monster, true);
             }
         }
 
-        private IEnumerator UpdateNearbyEnemies()
+        private void ReceiveDamageByContact(Npc monster, bool addToDamagingEnemiesList)
+        {
+            if (Time.time > monster.nextDamageTime)
+            {
+                ReceiveDamage(monster.CalculateMonsterContactDamage(this), monster);
+                monster.nextDamageTime = Time.time + monster.stats.contactDamageInterval;
+
+                if (addToDamagingEnemiesList)
+                {
+                    damagingEnemies.Add(monster);
+                }
+            }
+        }
+
+        public void AddNearbyEnemy(Npc npc)
+        {
+            targetableEnemies.Add(npc);
+        }
+
+        public void RemoveNearbyEnemy(Npc npc)
+        {
+            targetableEnemies.Remove(npc);
+        }
+
+        public bool IsInNearbyDistance(float dist)
+        {
+            return dist < stats.nearbyEnemyRangeSqrt.GetValue();
+        }
+
+        /*private IEnumerator UpdateNearbyEnemies()
         {
             var waiter = new WaitForSeconds(0.2f);
             while (isAlive)
@@ -96,7 +196,7 @@ namespace _Chi.Scripts.Mono.Entities
 
                 yield return waiter;
             }
-        }
+        }*/
 
         public override void OnDestroy()
         {
@@ -138,6 +238,79 @@ namespace _Chi.Scripts.Mono.Entities
             module.level = level;
             
             slot.SetModuleInSlot(module);
+        }
+
+        public bool TryActivateSkill(int slot)
+        {
+            var skill = GetSkill(slot);
+
+            return skill.Trigger(this);
+        }
+
+        public Skill GetSkill(int slot)
+        {
+            if (skills.Count - 1 >= slot)
+            {
+                return skills[slot];
+            }
+
+            return null;
+        }
+
+        public SkillData GetSkillData(Skill skill)
+        {
+            return skillDatas[skill];
+        }
+
+        public void AddMutator(Mutator mutator)
+        {
+            if (mutators.Contains(mutator)) return;
+            
+            mutators.Add(mutator);
+            mutator.ApplyToPlayer(this);
+        }
+
+        public void RemoveMutator(Mutator mutator)
+        {
+            if (mutators.Remove(mutator))
+            {
+                mutator.RemoveFromPlayer(this);
+            }
+        }
+
+        public void RemoveMutators()
+        {
+            foreach (var mutator in mutators.ToArray())
+            {
+                RemoveMutator(mutator);
+            }
+        } 
+
+        public void AddSkill(Skill skill)
+        {
+            if (!skills.Contains(skill))
+            {
+                skills.Add(skill);
+            }
+
+            if (!skillDatas.ContainsKey(skill))
+            {
+                skillDatas[skill] = skill.CreateDefaultSkillData();
+            }
+        }
+
+        public void RemoveSkills()
+        {
+            foreach (var skill in skills.ToArray())
+            {
+                RemoveSkill(skill);
+            }
+        }
+
+        public void RemoveSkill(Skill skill)
+        {
+            skills.Remove(skill);
+            skillDatas.Remove(skill);
         }
     }
 }

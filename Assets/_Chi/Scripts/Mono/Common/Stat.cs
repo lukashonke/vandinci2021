@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using Sirenix.OdinInspector;
 
@@ -9,20 +10,15 @@ namespace _Chi.Scripts.Mono.Common
     public class Stat
     {
         [NonSerialized] public bool isDirty;
-
-        private float baseValue;
-        [ShowInInspector] public float value;
+        
+        public float baseValue;
+        [Sirenix.OdinInspector.ReadOnly] public float value;
 
         private List<StatModifier> modifiers;
 
         public Stat()
         {
-        }
-
-        public Stat(float baseValue)
-        {
-            this.baseValue = baseValue;
-            this.value = baseValue;
+            isDirty = true;
         }
 
         public IReadOnlyList<StatModifier> Modifiers => modifiers;

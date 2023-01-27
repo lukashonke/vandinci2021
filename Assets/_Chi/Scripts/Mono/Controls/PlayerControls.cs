@@ -29,24 +29,28 @@ public class PlayerControls : MonoBehaviour
         _actionses = new MainPlayerActions();
         
         _actionses.Left.AddDefaultBinding( Key.LeftArrow );
+        _actionses.Left.AddDefaultBinding( Key.A );
         _actionses.Left.AddDefaultBinding( InputControlType.DPadLeft );
         
         _actionses.Up.AddDefaultBinding( Key.UpArrow );
+        _actionses.Up.AddDefaultBinding( Key.W );
         _actionses.Up.AddDefaultBinding( InputControlType.DPadUp );
         
         _actionses.Down.AddDefaultBinding( Key.DownArrow );
+        _actionses.Down.AddDefaultBinding( Key.S );
         _actionses.Down.AddDefaultBinding( InputControlType.DPadDown );
 
         _actionses.Right.AddDefaultBinding( Key.RightArrow );
+        _actionses.Right.AddDefaultBinding( Key.D );
         _actionses.Right.AddDefaultBinding( InputControlType.DPadRight );
         
         _actionses.Skill1.AddDefaultBinding(Key.Q);
         _actionses.Skill1.AddDefaultBinding(InputControlType.Action1);
-        _actionses.Skill2.AddDefaultBinding(Key.W);
+        _actionses.Skill2.AddDefaultBinding(Key.E);
         _actionses.Skill2.AddDefaultBinding(InputControlType.Action2);
-        _actionses.Skill3.AddDefaultBinding(Key.E);
+        _actionses.Skill3.AddDefaultBinding(Key.R);
         _actionses.Skill3.AddDefaultBinding(InputControlType.Action3);
-        _actionses.Skill4.AddDefaultBinding(Key.R);
+        _actionses.Skill4.AddDefaultBinding(Key.T);
         _actionses.Skill4.AddDefaultBinding(InputControlType.Action4);
     }
     
@@ -54,9 +58,20 @@ public class PlayerControls : MonoBehaviour
     void FixedUpdate()
     {
         PerformMovement();
+
+        PerformSkills();
+
+        //UpdateCamera();
     }
 
     void Update()
+    {
+        //UpdateCamera();
+        
+        player.SetRotationTarget(Utils.GetMousePosition());
+    }
+
+    private void UpdateCamera()
     {
         Vector3 pos = gameObject.transform.position;
         pos.z = camera.transform.position.z;
@@ -79,12 +94,20 @@ public class PlayerControls : MonoBehaviour
                 camera.gameObject.transform.position = new Vector3(camera.gameObject.transform.position.x, camera.gameObject.transform.position.y, camera.gameObject.transform.position.z - cameraZPerZoomUnit);
             }
         }
-        
-        player.SetRotationTarget(Utils.GetMousePosition());
+    }
+
+    private void PerformSkills()
+    {
+        if (_actionses.Skill1.IsPressed)
+        {
+            player.TryActivateSkill(0);
+        }
     }
 
     private void PerformMovement()
     {
+        if (!player.CanMove()) return;
+        
         var moveDirection = _actionses.Move.LastValue;
 
         if (moveDirection.x > 0 || moveDirection.x < 0 || moveDirection.y > 0 || moveDirection.y < 0)

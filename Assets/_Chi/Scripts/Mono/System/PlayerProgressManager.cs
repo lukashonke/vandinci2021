@@ -72,6 +72,40 @@ namespace _Chi.Scripts.Mono.System
                     player.SetModuleInSlot(slot, modulePrefab.prefab, moduleInSlot.level);
                 }
             }
+            
+            player.RemoveSkills();
+
+            if (run.skillPrefabIds != null)
+            {
+                foreach (var skill in run.skillPrefabIds)
+                {
+                    var skillPrefab = db.GetById(skill.prefabId);
+                    if (skillPrefab == null)
+                    {
+                        Debug.LogError($"Prefab {skill} does not exist.");
+                        continue;
+                    }
+                    
+                    player.AddSkill(skillPrefab.skill);
+                }
+            }
+            
+            player.RemoveMutators();
+            
+            if (run.mutatorPrefabIds != null)
+            {
+                foreach (var skill in run.mutatorPrefabIds)
+                {
+                    var mutatorPrefab = db.GetById(skill.prefabId);
+                    if (mutatorPrefab == null)
+                    {
+                        Debug.LogError($"Prefab {skill} does not exist.");
+                        continue;
+                    }
+                    
+                    player.AddMutator(mutatorPrefab.mutator);
+                }
+            }
         }
         
         [Button]

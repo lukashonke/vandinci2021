@@ -19,6 +19,7 @@ public class Gamesystem : MonoBehaviour
     [HideInInspector] public Tests tests;
     [HideInInspector] public PoolSystem poolSystem;
     [HideInInspector] public PlayerProgressManager progress;
+    [HideInInspector] public KillEffectManager killEffectManager;
 
     [Required] public UiManager uiManager;
     [Required] public GameObject world;
@@ -44,6 +45,7 @@ public class Gamesystem : MonoBehaviour
         this.tests = GetComponent<Tests>();
         this.poolSystem = GetComponent<PoolSystem>();
         this.progress = GetComponent<PlayerProgressManager>();
+        this.killEffectManager = GetComponent<KillEffectManager>();
 
         prefabs = prefabDatabase.prefabs.ToDictionary(t => t.id, t => t);
         predefinedPrefabs = prefabDatabase.prefabs.Where(t => t.predefinedId != PredefinedPrefabIds.Custom)

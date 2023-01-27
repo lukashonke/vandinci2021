@@ -16,7 +16,7 @@ namespace _Chi.Scripts.Mono.Ui
         
         public void Start()
         {
-            Initialise(ModuleSelectorMode.ShowAllModules);
+            Initialise(ModuleSelectorMode.ShowAllItems);
         }
 
         public void Initialise(ModuleSelectorMode mode)
@@ -25,50 +25,54 @@ namespace _Chi.Scripts.Mono.Ui
 
             transform.RemoveAllChildren();
 
-            if (mode == ModuleSelectorMode.ShowAllModules)
+            if (mode == ModuleSelectorMode.ShowAllItems)
             {
-                foreach (var item in db.prefabs.Where(t => t.type == PrefabItemType.Module))
+                foreach (var item in db.prefabs.Where(t => 
+                             t.type == PrefabItemType.Module
+                             || t.type == PrefabItemType.Skill
+                             || t.type == PrefabItemType.Mutator
+                         ))
                 {
                     var newItem = Instantiate(itemInfoPrefab, transform.position, Quaternion.identity, transform);
                     var newItemItem = newItem.GetComponent<ModuleSelectorItem>();
                     
-                    newItemItem.Initialise(item.prefab.name, item.prefabUi.GetComponent<Image>(), "test", new List<ActionsPanelButton>()
+                    newItemItem.Initialise(item.label, item.prefabUi.GetComponent<Image>(), "test", new List<ActionsPanelButton>()
                     {
-                        new ActionsPanelButton("Add", () => StartAddingModule(item))
-                    }, AbortAddingModule);
+                        new ActionsPanelButton("Add", () => StartAddingItem(item))
+                    }, AbortAddingItem);
                 }
             }
         }
 
-        public void StartAddingModule(PrefabItem item)
+        public void StartAddingItem(PrefabItem item)
         {
-            var info = new AddingModuleInfo()
+            var info = new AddingUiItem()
             {
                 prefab = item,
-                prefabModule = item.prefab.GetComponent<Module>(),
+                prefabModule = item.prefab != null ? item.prefab.GetComponent<Module>() : null,
                 type = AddingModuleInfoType.Add,
                 level = 1
             };
 
             info.finishCallback = () => ModuleAdded(info);
             
-            Gamesystem.instance.uiManager.SetAddingModule(info);
+            Gamesystem.instance.uiManager.SetAddingUiItem(info);
         }
 
-        public void ModuleAdded(AddingModuleInfo addingModuleInfo)
+        public void ModuleAdded(AddingUiItem addingUiItem)
         {
             
         }
 
-        public void AbortAddingModule()
+        public void AbortAddingItem()
         {
-            Gamesystem.instance.uiManager.SetAddingModule(null);
+            Gamesystem.instance.uiManager.SetAddingUiItem(null);
         }
     }
 
     public enum ModuleSelectorMode
     {
-        ShowAllModules,
+        ShowAllItems,
         
     }
 }

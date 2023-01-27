@@ -25,7 +25,7 @@ public class Tests : MonoBehaviour
             {
                 foreach (var entitiesValue in Gamesystem.instance.objects.npcEntitiesList)
                 {
-                    if (entitiesValue is Npc m)
+                    if (entitiesValue is Npc m && !m.goDirectlyToPlayer)
                     {
                         m.SetMoveTarget(() => testMoveTarget.transform.position);
                     }
@@ -35,7 +35,7 @@ public class Tests : MonoBehaviour
             {
                 foreach (var entitiesValue in Gamesystem.instance.objects.npcEntitiesList)
                 {
-                    if (entitiesValue is Npc m)
+                    if (entitiesValue is Npc m && !m.goDirectlyToPlayer)
                     {
                         m.SetMoveTarget(() => Gamesystem.instance.objects.currentPlayer.GetPosition());
                     }

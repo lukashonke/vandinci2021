@@ -1,4 +1,5 @@
-﻿using _Chi.Scripts.Mono.Modules;
+﻿using System;
+using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Scriptables.Dtos;
 using Sirenix.OdinInspector;
 using TMPro;
@@ -16,10 +17,15 @@ namespace _Chi.Scripts.Mono.Ui.Tooltips
         
         public void Initialise(PrefabItem modulePrefabItem, int level)
         {
-            var module = modulePrefabItem.prefab.GetComponent<Module>();
-                
-            this.title.text = module.name;
-            this.level.text = $"Lv {level}";
+            this.title.text = modulePrefabItem.label;
+            if (level > 0)
+            {
+                this.level.text = $"Lv {level}";
+            }
+            else
+            {
+                this.level.text = string.Empty;
+            }
         }
     }
 }

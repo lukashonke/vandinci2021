@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using _Chi.Scripts.Scriptables.Dtos;
+using DamageNumbersPro;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ namespace _Chi.Scripts.Scriptables
     {
         [AssetsOnly]
         public List<PrefabItem> prefabs;
+
+        [Required] public DamageNumber playerDealtDamage;
 
         public PrefabItem GetById(int id)
         {

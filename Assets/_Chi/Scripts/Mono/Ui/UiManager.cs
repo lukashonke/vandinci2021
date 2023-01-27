@@ -38,7 +38,7 @@ public class UiManager : MonoBehaviour
 
     [Required] public VehicleSettingsWindow vehicleSettingsWindow;
 
-    [NonSerialized] public AddingModuleInfo addingModule;
+    [NonSerialized] public AddingUiItem addingUiItem;
     
     // Start is called before the first frame update
     void Start()
@@ -136,26 +136,50 @@ public class UiManager : MonoBehaviour
         currentActionsPanel.transform.parent = this.transform;
     }
 
-    public void SetAddingModule(AddingModuleInfo module)
+    public void SetAddingUiItem(AddingUiItem module)
     {
-        if (this.addingModule != null)
+        if (this.addingUiItem != null)
         {
-            this.addingModule.abortCallback?.Invoke();
+            this.addingUiItem.abortCallback?.Invoke();
         }
         
-        this.addingModule = module;
+        this.addingUiItem = module;
 
         if (vehicleSettingsWindow.gameObject.activeSelf && vehicleSettingsWindow.ui != null)
         {
             foreach (var uiSlot in vehicleSettingsWindow.ui.slots)
             {
-                if (addingModule != null)
+                if (addingUiItem != null)
                 {
                     uiSlot.NotifyAddingModule(module);
                 }
                 else
                 {
                     uiSlot.NotifyAddingModule(null);
+                }
+            }
+            
+            foreach (var uiSlot in vehicleSettingsWindow.skillSlots)
+            {
+                if (addingUiItem != null)
+                {
+                    uiSlot.NotifyAddingItem(module);
+                }
+                else
+                {
+                    uiSlot.NotifyAddingItem(null);
+                }
+            }
+            
+            foreach (var uiSlot in vehicleSettingsWindow.mutatorSlots)
+            {
+                if (addingUiItem != null)
+                {
+                    uiSlot.NotifyAddingItem(module);
+                }
+                else
+                {
+                    uiSlot.NotifyAddingItem(null);
                 }
             }
         }
@@ -167,9 +191,9 @@ public class UiManager : MonoBehaviour
 
         RemoveActionsPanel();
 
-        if (addingModule != null)
+        if (addingUiItem != null)
         {
-            SetAddingModule(null);
+            SetAddingUiItem(null);
         }
     }
 

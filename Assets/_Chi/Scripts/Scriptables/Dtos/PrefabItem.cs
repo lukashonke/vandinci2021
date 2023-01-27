@@ -1,5 +1,6 @@
 ﻿using System;
 using _Chi.Scripts.Mono.Common;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace _Chi.Scripts.Scriptables.Dtos
@@ -9,6 +10,8 @@ namespace _Chi.Scripts.Scriptables.Dtos
     {
         public int id;
 
+        public string label;
+
         public PrefabItemType type;
 
         public PredefinedPrefabIds predefinedId;
@@ -17,6 +20,12 @@ namespace _Chi.Scripts.Scriptables.Dtos
 
         //TODO show if type == body
         public GameObject prefabUi;
+
+        [ShowIf("type", PrefabItemType.Skill)]
+        public Skill skill;
+
+        [ShowIf("type", PrefabItemType.Mutator)]
+        public Mutator mutator;
     }
 
     public enum PrefabItemType
@@ -24,6 +33,8 @@ namespace _Chi.Scripts.Scriptables.Dtos
         Unknown,
         Entity,
         Body,
-        Module
+        Module,
+        Skill,
+        Mutator
     }
 }

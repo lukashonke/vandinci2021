@@ -3,17 +3,15 @@ using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Utilities;
-using UnityEditor.SceneManagement;
 using UnityEngine;
-using NotImplementedException = System.NotImplementedException;
 
-namespace _Chi.Scripts.Mono.Modules.Offensive
+namespace _Chi.Scripts.Mono.Modules.Offensive  
 {
     public class CrossbowModule : OffensiveModule
     {
         public GameObject prefab;
 
-        public override IEnumerator UpdateLoop()
+        public override IEnumerator UpdateLoop()  
         {
             var waiter = new WaitForFixedUpdate();
 
@@ -36,16 +34,18 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                     if (nearest != null)
                     {
                         currentTarget = nearest.transform;
+                        emitter.Play();
                     }
                     else
                     {
                         currentTarget = null;
+                        emitter.Stop();
                     }
                 }
 
                 if (currentTarget != null)
                 {
-                    if (nextFireRate < Time.time && ProjectileExtensions.CanFire(currentTarget.position, transform.rotation, transform.position, 5f))
+                    /*if (nextFireRate < Time.time && ProjectileExtensions.CanFire(currentTarget.position, transform.rotation, transform.position, 5f))
                     {
                         nextFireRate = Time.time + stats.fireRate;
                     
@@ -63,7 +63,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                         projectile.transform.rotation = tuple.rotation;
                     
                         projectile.ScheduleUnspawn(DamageExtensions.CalculateProjectileLifetime(stats.projectileLifetime, this));
-                    }
+                    }*/
                     
                     RotateTowards(currentTarget.position);
                 }

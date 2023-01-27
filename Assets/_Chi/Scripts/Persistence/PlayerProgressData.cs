@@ -22,6 +22,10 @@ namespace _Chi.Scripts.Persistence
         public int killed;
         
         public List<ModuleInSlot> modulesInSlots;
+
+        public List<SlotItem> skillPrefabIds;
+
+        public List<SlotItem> mutatorPrefabIds;
     }
 
     [Serializable]
@@ -30,5 +34,12 @@ namespace _Chi.Scripts.Persistence
         public int slotId;
         public int moduleId;
         public int level = 1;
+    }
+
+    [Serializable]
+    public class SlotItem
+    {
+        public int slot;
+        public int prefabId;
     }
 }

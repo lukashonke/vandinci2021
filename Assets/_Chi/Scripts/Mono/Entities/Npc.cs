@@ -2,8 +2,10 @@ using System;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Movement;
 using _Chi.Scripts.Statistics;
+using BulletPro;
 using Pathfinding;
 using Pathfinding.RVO;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -17,14 +19,22 @@ namespace _Chi.Scripts.Mono.Entities
         [NonSerialized] public bool hasSeeker;
         [HideInInspector] public RVOController rvoController;
         [NonSerialized] public bool hasRvoController;
+        [NonSerialized] public SpriteRenderer renderer;
         
         public PathData pathData;
-        
+
         public NpcStats stats;
         
         #endregion
         #region publics
+        
+        public bool goDirectlyToPlayer;
+        [NonSerialized] public float distanceToPlayer;
+        [NonSerialized] public float nextDamageTime;
+        [NonSerialized] public Vector3 deathDirection;
 
+        public float dissolveSpeed = 2f;
+        [NonSerialized] public float currentDissolveProcess;
         [NonSerialized] public int poolId;
 
         #endregion
@@ -34,6 +44,12 @@ namespace _Chi.Scripts.Mono.Entities
         
         private Func<Path> pathToFind = null;
         private bool resetPath;
+
+        private bool isDissolving = false;
+
+        private Material originalMaterial;
+
+        private bool physicsActivated;
 
         #endregion
         
@@ -47,6 +63,11 @@ namespace _Chi.Scripts.Mono.Entities
             hasSeeker = seeker != null;
             rvoController = GetComponent<RVOController>();
             hasRvoController = rvoController != null;
+            renderer = GetComponent<SpriteRenderer>();
+            originalMaterial = renderer.material;
+            currentDissolveProcess = 1f;
+            
+            SetPhysicsActivated(false);
 
             pathData = new PathData(this);
         }
@@ -84,11 +105,6 @@ namespace _Chi.Scripts.Mono.Entities
             }
         }
         
-        public bool HasMoveTarget()
-        {
-            return pathToFind != null || pathData.IsPathReady();
-        }
-
         public void Setup(Vector3 position, Quaternion rotation)
         {
             Register();
@@ -96,6 +112,16 @@ namespace _Chi.Scripts.Mono.Entities
             var transform1 = transform;
             transform1.position = position;
             transform1.rotation = rotation;
+            canMove = true;
+            
+            if (hasRvoController)
+            {
+                rvoController.enabled = true;
+            }
+            
+            SetPhysicsActivated(false);
+            
+            currentDissolveProcess = 1f;
             
             gameObject.SetActive(true);
         }
@@ -109,18 +135,56 @@ namespace _Chi.Scripts.Mono.Entities
             this.Heal();
             pathData.SetPath(null);
             pathData.SetDestination(null);
+            renderer.material = originalMaterial;
+            isDissolving = false;
+            canMove = false;
             
             gameObject.SetActive(false);
+        }
+        
+        public void OnHitByBullet(Bullet bullet, Vector3 pos)
+        {
+            var p = bullet.moduleParameters.parameters[0].intValue;
+            
+            //var val = bullet.dynamicSolver.SolveDynamicInt(p, 15198, ParameterOwner.Bullet);
+            ReceiveDamage(10, null);
         }
 
         public override void OnDie()
         {
-            Gamesystem.instance.OnKilled(this);
+            if (!isDissolving)
+            {
+                Gamesystem.instance.OnKilled(this);
+
+                Gamesystem.instance.killEffectManager.StartDissolve(this);
             
+                isDissolving = true;
+                canMove = false;
+                if (hasRvoController)
+                {
+                    rvoController.enabled = false;
+                }
+            }
+        }
+        
+        public void OnFinishedDissolve()
+        {
             if (!this.DeletePooledNpc())
             {
-                base.OnDie();
+                Destroy(this.gameObject);
             }
+        }
+
+        public override void OnDestroy()
+        {
+            base.OnDestroy();
+            
+            pathData.OnDestroy();
+        }
+        
+        public bool HasMoveTarget()
+        {
+            return pathToFind != null || pathData.IsPathReady();
         }
 
         public void SetMoveTarget(Func<Vector3> target)
@@ -152,9 +216,33 @@ namespace _Chi.Scripts.Mono.Entities
             //currentPath = null;
         }
 
-        public void Deactivate()
+        public void SetDistanceToPlayer(float dist, Player player)
         {
-            
+            distanceToPlayer = dist;
+
+            if (!physicsActivated && player.IsInNearbyDistance(dist))
+            {
+                player.AddNearbyEnemy(this);
+                SetPhysicsActivated(true);
+            }
+            else if(physicsActivated && !player.IsInNearbyDistance(dist))
+            {
+                player.RemoveNearbyEnemy(this);
+                SetPhysicsActivated(false);
+            }
+        }
+
+        public void SetPhysicsActivated(bool b)
+        {
+            if (b == physicsActivated) return;
+
+            physicsActivated = b;
+
+            if (rb != null)
+            {
+                hasRb = physicsActivated;
+                rb.simulated = physicsActivated;
+            }
         }
     }
 }

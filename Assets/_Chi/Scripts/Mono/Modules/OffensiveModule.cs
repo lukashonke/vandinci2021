@@ -1,23 +1,31 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using _Chi.Scripts.Statistics;
-using UnityEngine;
+using BulletPro;
 
 namespace _Chi.Scripts.Mono.Modules
 {
     public abstract class OffensiveModule : Module
     {
-        protected Collider2D[] buffer = new Collider2D[2048];
-
+        [NonSerialized] public BulletEmitter emitter;
+        
         public OffensiveModuleStats stats;
 
         protected bool activated;
-        
+
+        public override void Awake()
+        {
+            base.Awake();
+
+            emitter = GetComponent<BulletEmitter>();
+        }
+
         public override bool ActivateEffects()
         {
             if (!base.ActivateEffects() || activated) return false;
             activated = true;
             StartCoroutine(UpdateLoop());
-
+            
             return true;
         }
 
@@ -25,7 +33,7 @@ namespace _Chi.Scripts.Mono.Modules
         {
             if (!base.DeactivateEffects() || !activated) return false;
             activated = false;
-
+            
             return true;
         }
 

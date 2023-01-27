@@ -14,5 +14,6 @@ namespace _Chi.Scripts.Statistics
         public int rotationSpeed = 500;
     
         public float contactDamage;
+        public float contactDamageInterval = 1f;
     }
 }

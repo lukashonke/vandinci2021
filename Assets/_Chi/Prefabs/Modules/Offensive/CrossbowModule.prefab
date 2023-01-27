@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1232174764404154628}
   - component: {fileID: 2526313433823586861}
   - component: {fileID: 6177911479989981830}
+  - component: {fileID: -1977820923903768266}
   m_Layer: 0
   m_Name: CrossbowModule
   m_TagString: Untagged
@@ -61,6 +62,7 @@ MonoBehaviour:
   level: 1
   stats:
     projectileCount:
+      baseValue: 0
       value: 1
     projectileSpeed: 6
     detectRange: 5
@@ -128,3 +130,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-1977820923903768266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232174764404154631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a676b285f069c3c4884c27e78d0fc696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emitterProfile: {fileID: 11400000, guid: ff8579840aca8b448a03457f76b420a6, type: 2}
+  patternOrigin: {fileID: 1232174764404154628}
+  playAtStart: 0
+  useDefaultGizmoColor: 1
+  gizmoColor: {r: 0, g: 1, b: 0, a: 1}
+  gizmoSize: 0.5

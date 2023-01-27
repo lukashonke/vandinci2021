@@ -96,7 +96,7 @@ namespace _Chi.Scripts.Mono.Extensions
             Entity nearest = null;
             float nearestDistance = float.MaxValue;
 
-            foreach (var entity in player.nearestEnemies)
+            foreach (var entity in player.targetableEnemies)
             {
                 if (entity is Npc npc && npc.activated && npc.AreEnemies(player) && npc != null)
                 {

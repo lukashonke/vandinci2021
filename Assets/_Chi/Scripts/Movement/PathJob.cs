@@ -9,6 +9,7 @@ using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
 using Unity.Profiling;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -26,8 +27,6 @@ namespace _Chi.Scripts.Movement
             simulator = rvoSimulator.GetSimulator();
         }
         
-        private NativeArray<float3> dummyArray = new NativeArray<float3>(1, Allocator.Persistent);
-        
         /*static readonly ProfilerMarker createJob1 = new ProfilerMarker(ProfilerCategory.Ai, "VanDinci.CreateJob.1");
         static readonly ProfilerMarker createJob2 = new ProfilerMarker(ProfilerCategory.Ai, "VanDinci.CreateJob.2");
         static readonly ProfilerMarker createJob3 = new ProfilerMarker(ProfilerCategory.Ai, "VanDinci.CreateJob.3");*/
@@ -37,10 +36,13 @@ namespace _Chi.Scripts.Movement
             MoveToTargetJob[] movementJobs = new MoveToTargetJob[movablesCount];
             NativeArray<JobHandle> jobHandles = new NativeArray<JobHandle>(movablesCount, Allocator.TempJob);
             
+            bool playerExists = Gamesystem.instance.objects.currentPlayer != null;
+            Vector3 playerPosition = playerExists ? Gamesystem.instance.objects.currentPlayer.GetPosition() : Vector3.zero;
+            
             for (var index = 0; index < movablesCount; index++)
             {
                 var npc = toMove[index];
-                if (npc.pathData.IsPathReady() && npc.CanMove())
+                if ((npc.pathData.IsPathReady() || npc.goDirectlyToPlayer) && npc.CanMove())
                 {
                     float3 rotateTarget = float3.zero;
 
@@ -65,6 +67,9 @@ namespace _Chi.Scripts.Movement
                     npc.pathData.job.position = npc.GetPosition();
                     npc.pathData.job.currentRotation = npc.transform.rotation;
 
+                    npc.pathData.job.computePlayerPosition = playerExists;
+                    npc.pathData.job.playerPosition = playerPosition;
+
                     npc.pathData.job.movePath = doPath;
                     npc.pathData.job.maxSpeed = doPath ? npc.stats.speed : 0;
                     npc.pathData.job.reachedEndOfPath = doPath ? npc.pathData.reachedEndOfPath : false;
@@ -84,10 +89,13 @@ namespace _Chi.Scripts.Movement
 
         private void ProcessJobs(List<Npc> toMove, int movablesCount, NativeArray<JobHandle> jobHandles, MoveToTargetJob[] movementJobs)
         {
+            var player = Gamesystem.instance.objects.currentPlayer;
+            var playerPosition = player.GetPosition();
+            
             for (var index = 0; index < movablesCount; index++)
             {
                 var npc = toMove[index];
-                if (!npc.pathData.jobDisposed && npc.pathData.IsPathReady() && npc.CanMove())
+                if (!npc.pathData.jobDisposed && (npc.pathData.IsPathReady() || npc.goDirectlyToPlayer) && npc.CanMove())
                 {
                     var data = movementJobs[index];
 
@@ -102,6 +110,11 @@ namespace _Chi.Scripts.Movement
                         //if (!stop) // TODO solve better, propably
                         {
                             npc.MoveTo((Vector3)data.outputPositions[0]);
+                        }
+
+                        if (data.computePlayerPosition)
+                        {
+                            npc.SetDistanceToPlayer(data.outputPositions[3].x, player);
                         }
                         
                         if (data.outputs[0])
@@ -132,7 +145,14 @@ namespace _Chi.Scripts.Movement
                         {
                             if (npc.hasRvoController)
                             {
-                                npc.rvoController.SetTarget(data.outputPositions[2], npc.stats.speed, npc.stats.speed * 1.2f, npc.pathData.endOfPath);
+                                if (npc.goDirectlyToPlayer)
+                                {
+                                    npc.rvoController.SetTarget(data.outputPositions[2], npc.stats.speed, npc.stats.speed * 1.2f, npc.pathData.endOfPath);
+                                }
+                                else
+                                {
+                                    npc.rvoController.SetTarget(data.outputPositions[2], npc.stats.speed, npc.stats.speed * 1.2f, playerPosition);
+                                }
                             }
                         }
                         
@@ -158,6 +178,19 @@ namespace _Chi.Scripts.Movement
         {
             List<Npc> toMove = holder.npcEntitiesList;
             int movablesCount = toMove.Count;
+
+            var playerPosition = Gamesystem.instance.objects.currentPlayer.GetPosition();
+
+            foreach (var npc in toMove)
+            {
+                if (npc.goDirectlyToPlayer)
+                {
+                    npc.pathData.currentWaypoint = 0;
+                    npc.pathData.pathWaypoints[0] = npc.GetPosition();
+                    npc.pathData.pathWaypoints[1] = playerPosition;
+                    npc.SetRotationTarget(playerPosition);
+                }
+            }
             
             (NativeArray<JobHandle> jobHandles, MoveToTargetJob[] movementJobs) result = CreateJobs(toMove, movablesCount);
             
@@ -193,6 +226,9 @@ namespace _Chi.Scripts.Movement
         [ReadOnly] public float3 rvoCalculatedTargetPoint;
         [ReadOnly] public float rvoCalculatedSpeed;
 
+        [ReadOnly] public bool computePlayerPosition;
+        [ReadOnly] public float3 playerPosition;
+
         [WriteOnly] public NativeArray<float3> outputPositions;
         [WriteOnly] public NativeArray<bool> outputs;
         [WriteOnly] public NativeArray<int> outputWaypoints;
@@ -200,8 +236,26 @@ namespace _Chi.Scripts.Movement
 
         public void Execute()
         {
+            outputPositions[0] = 0;
+            outputPositions[1] = 0;
+            outputPositions[2] = 0;
+            outputPositions[3] = 0;
+            outputs[0] = false;
+            outputs[1] = false;
+            outputs[2] = false;
+            outputs[3] = false;
+            outputs[4] = false;
+            outputs[5] = false;
+            outputWaypoints[0] = 0;
+            outputRotation[0] = quaternion.identity;
+            
             float distanceToWaypoint;
             var prevTargetReached = reachedEndOfPath;
+
+            if (computePlayerPosition)
+            {
+                outputPositions[3] = new float3(math.distancesq(position, playerPosition), 0, 0);
+            }
 
             if (rotate && !movePath)
             {

@@ -41,10 +41,15 @@ namespace _Chi.Scripts.Movement
             this.npc = npc;
             this.seeker = npc.seeker;
             //rvoDensityBehavior = new RVODestinationCrowdedBehavior(true, 0.5f, false);
-
-            jobDisposed = true;
-
+            
             Initialise();
+            InitialisePathJobData(true);
+
+            if (npc.goDirectlyToPlayer)
+            {
+	            pathWaypoints = new NativeArray<float3>(2, Allocator.Persistent);
+	            job.waypoints = pathWaypoints;
+            }
         }
 
         private void Initialise()
@@ -52,6 +57,47 @@ namespace _Chi.Scripts.Movement
 	        if (seeker != null)
 	        {
 				seeker.pathCallback += OnPathComplete;
+	        }
+        }
+        
+        public void InitialisePathJobData(bool force = false)
+        {
+	        if (jobDisposed || force)
+	        {
+		        var hasRvo = npc.hasRvoController && npc.rvoController.enabled;
+            
+		        var data = new MoveToTargetJob()
+		        {
+			        hasRvo = hasRvo,
+        
+			        outputPositions = new NativeArray<float3>(4, Allocator.Persistent),
+			        outputs = new NativeArray<bool>(6, Allocator.Persistent),
+			        outputWaypoints = new NativeArray<int>(1, Allocator.Persistent),
+			        outputRotation = new NativeArray<quaternion>(1, Allocator.Persistent),
+		        };
+
+		        job = data;
+		        jobDisposed = false;
+	        }
+        }
+
+        public void DisposePathJob()
+        {
+	        if (!jobDisposed)
+	        {
+		        this.job.outputPositions.Dispose();
+		        this.job.outputs.Dispose();
+		        this.job.outputWaypoints.Dispose();
+		        this.job.outputRotation.Dispose();
+		        jobDisposed = true;
+
+		        try
+		        {
+					pathWaypoints.Dispose();
+		        }
+		        catch (Exception e)
+		        {
+		        }
 	        }
         }
 
@@ -116,41 +162,6 @@ namespace _Chi.Scripts.Movement
 	        }
         }
         
-        private NativeArray<float3> dummyArray = new NativeArray<float3>(1, Allocator.Persistent);
-
-        public void InitialisePathJob()
-        {
-	        var hasRvo = npc.hasRvoController && npc.rvoController.enabled;
-            var doPath = true; // TODO can root but keep rotation here
-            
-            var data = new MoveToTargetJob()
-            {
-                waypoints = doPath ? npc.pathData.pathWaypoints : dummyArray,
-        
-                hasRvo = hasRvo,
-        
-                outputPositions = new NativeArray<float3>(3, Allocator.Persistent),
-                outputs = new NativeArray<bool>(6, Allocator.Persistent),
-                outputWaypoints = new NativeArray<int>(1, Allocator.Persistent),
-                outputRotation = new NativeArray<quaternion>(1, Allocator.Persistent),
-            };
-
-            job = data;
-            jobDisposed = false;
-        }
-
-        public void DisposePathJob()
-        {
-	        if (!jobDisposed)
-	        {
-		        this.job.outputPositions.Dispose();
-		        this.job.outputs.Dispose();
-		        this.job.outputWaypoints.Dispose();
-		        this.job.outputRotation.Dispose();
-		        jobDisposed = true;
-	        }
-        }
-        
         protected void OnPathComplete (Path newPath) 
         {
 			ABPath p = newPath as ABPath;
@@ -169,6 +180,7 @@ namespace _Chi.Scripts.Movement
 			// More info in p.errorLog (debug string)
 			if (p.error) {
 				p.Release(this);
+				pathWaypoints.Dispose();
 				SetPath(null);
 				return;
 			}
@@ -186,6 +198,8 @@ namespace _Chi.Scripts.Movement
 			pathWaypoints = new NativeArray<float3>(path.vectorPath.Count, Allocator.Persistent);
 			for (int i = 0; i < path.vectorPath.Count; i++)
 				pathWaypoints[i] = path.vectorPath[i];
+
+			job.waypoints = pathWaypoints;
 			
 			// The RandomPath and MultiTargetPath do not have a well defined destination that could have been
 			// set before the paths were calculated. So we instead set the destination here so that some properties
@@ -235,14 +249,11 @@ namespace _Chi.Scripts.Movement
         public void SetPathReady(bool b)
         {
 	        isPathReady = b;
-	        if (isPathReady)
-	        {
-		        InitialisePathJob();
-	        }
-	        else
-	        {
-		        DisposePathJob();
-	        }
+        }
+
+        public void OnDestroy()
+        {
+	        DisposePathJob();
         }
 
 		public void ClearPath () 

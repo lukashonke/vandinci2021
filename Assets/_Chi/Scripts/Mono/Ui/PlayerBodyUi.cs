@@ -64,12 +64,12 @@ namespace _Chi.Scripts.Mono.Ui
             }
         }
 
-        public bool MergeModuleInSlot(ModuleSlotUi slot, AddingModuleInfo module)
+        public bool MergeModuleInSlot(ModuleSlotUi slot, AddingUiItem module)
         {
             return AddModuleToSlot(slot, module, slot.moduleLevel + module.level);
         }
 
-        public bool AddModuleToSlot(ModuleSlotUi uiSlot, AddingModuleInfo module, int level)
+        public bool AddModuleToSlot(ModuleSlotUi uiSlot, AddingUiItem module, int level)
         {
             RemoveModuleFromSlot(uiSlot);
             
@@ -92,7 +92,7 @@ namespace _Chi.Scripts.Mono.Ui
                 
                 module.finishCallback?.Invoke();
                 
-                Gamesystem.instance.uiManager.SetAddingModule(null);
+                Gamesystem.instance.uiManager.SetAddingUiItem(null);
 
                 return true;
             }
