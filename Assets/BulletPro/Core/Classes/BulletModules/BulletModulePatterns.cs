@@ -153,7 +153,17 @@ namespace BulletPro
 
 			BulletParams bpToUse = null;
 
-			int bulletsAtOnce = solver.SolveDynamicInt(sp.simultaneousBulletsPerFrame, 488895, ParameterOwner.Shot);
+			var count = this.bullet.emitter.entityParameters.GetProjectileCount();
+
+			int bulletsAtOnce;
+			if (count.HasValue)
+			{
+				bulletsAtOnce = count.Value;
+			}
+			else
+			{
+				bulletsAtOnce = solver.SolveDynamicInt(sp.simultaneousBulletsPerFrame, 488895, ParameterOwner.Shot);
+			}
 
 			// If there are modifiers, use their BulletSpawn locations instead of the raw one stored in ShotParams
 			bool useMod = true;

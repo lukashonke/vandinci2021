@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
+using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Mono.System;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Scriptables.Dtos;
@@ -25,6 +26,7 @@ public class Gamesystem : MonoBehaviour
     [Required] public GameObject world;
     [Required] public MiscSettings miscSettings;
     [Required] public PrefabDatabase prefabDatabase;
+    [Required] public MissionManager missionManager;
 
     [NonSerialized] public Dictionary<int, PrefabItem> prefabs;
     [NonSerialized] public Dictionary<PredefinedPrefabIds, PrefabItem> predefinedPrefabs;

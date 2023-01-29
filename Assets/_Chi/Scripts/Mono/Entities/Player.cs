@@ -244,6 +244,8 @@ namespace _Chi.Scripts.Mono.Entities
         {
             var skill = GetSkill(slot);
 
+            if (skill == null) return false;
+
             return skill.Trigger(this);
         }
 

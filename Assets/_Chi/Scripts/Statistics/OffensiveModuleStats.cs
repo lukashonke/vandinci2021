@@ -8,8 +8,10 @@ namespace _Chi.Scripts.Statistics
     {
         public Stat projectileCount = new Stat();
         
-        public float projectileSpeed = 4f;
+        public Stat projectileSpeed = new Stat();
 
+        public Stat fireRate = new Stat();
+        
         public float detectRange = 5f;
 
         public float projectileLifetime = 1f;
@@ -26,8 +28,6 @@ namespace _Chi.Scripts.Statistics
         public float accuracy = 1f;
 
         public float pushForce = 0;
-
-        public float fireRate = 1f;
 
         public float effectDuration = 1f;
     }

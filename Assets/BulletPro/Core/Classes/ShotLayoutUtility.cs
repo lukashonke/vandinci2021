@@ -18,7 +18,7 @@ namespace BulletPro
 		public static BulletSpawn[] RecalculateBulletLayout(ShotParams sp, int wantedNumberOfBullets, Bullet emitterBullet)
 		{
 			if (sp.bulletSpawns == null) return null;
-			if (sp.bulletSpawns.Length == 0) return null;
+			//if (sp.bulletSpawns.Length == 0) return null;
 			if (wantedNumberOfBullets == 0) return null;
 
 			BulletSpawn[] result = new BulletSpawn[wantedNumberOfBullets];

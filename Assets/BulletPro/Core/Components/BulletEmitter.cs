@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using _Chi.Scripts.Mono.Common;
 using UnityEngine;
 
 // This script is part of the BulletPro package for Unity.
@@ -18,6 +19,8 @@ namespace BulletPro
 		private BulletParams firstBulletParams;
 		public Transform patternOrigin;
 		public bool playAtStart;
+
+		public IBulletEmitterEntityParameters entityParameters;
 
 		// Bullet Emitter is considered "playing" if at least one sub-emitter is still playing.
 		public bool isPlaying
@@ -314,7 +317,7 @@ namespace BulletPro
 			if (emitterProfile != null)
 				Play(playNextEmission);
 		}
-
+		
 		#region Global controls on whole danmaku tree
 
 		#region public tag-based functions

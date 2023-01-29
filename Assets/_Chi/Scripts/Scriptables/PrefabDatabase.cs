@@ -11,6 +11,7 @@ namespace _Chi.Scripts.Scriptables
     public class PrefabDatabase : SerializedScriptableObject
     {
         [AssetsOnly]
+        [TableList]
         public List<PrefabItem> prefabs;
 
         [Required] public DamageNumber playerDealtDamage;
@@ -18,6 +19,12 @@ namespace _Chi.Scripts.Scriptables
         public PrefabItem GetById(int id)
         {
             return prefabs.FirstOrDefault(p => p.id == id);
+        }
+
+        [Button]
+        public void Reorder()
+        {
+            prefabs = prefabs.OrderBy(p => p.id).ToList();
         }
     }
 }

@@ -159,7 +159,7 @@ namespace _Chi.Scripts.Mono.Entities
                 if (isAlive)
                 {
                     isAlive = false;
-                    OnDie();
+                    OnDie(DieCause.Killed);
                 }
             }
             else if (entityStats.hp > GetMaxHp())
@@ -172,13 +172,13 @@ namespace _Chi.Scripts.Mono.Entities
                 isAlive = true;
             }
 
-            if (damager is Player)
+            //if (damager is Player)
             {
                 Gamesystem.instance.prefabDatabase.playerDealtDamage.Spawn(transform.position, damage);
             }
         }
 
-        public virtual void OnDie()
+        public virtual void OnDie(DieCause cause)
         {
             Destroy(this.gameObject);
         }

@@ -339,6 +339,7 @@ namespace BulletPro.EditorScripts
             optionsList.Add(new GUIContent("List of possible values"));
             if (vType.Contains("Color")) optionsList.Add(new GUIContent("From Gradient"));
             if (!isEditingBulletHierarchy) optionsList.Add(new GUIContent("Equal to another parameter"));
+            
             // cancels skipping one value for incompatible types
             if (!admitsFromTo)
             {

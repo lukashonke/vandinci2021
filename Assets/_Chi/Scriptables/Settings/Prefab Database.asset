@@ -46,6 +46,14 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 1a44fcc45acc5c1438750ee0dba35732, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+  - id: 2001
+    label: Gun Module
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: 90060e3a449a7e04bbc0cf7080ff75cd, type: 3}
+    prefabUi: {fileID: 3314847274656908133, guid: e3ea5d3bb551aa34c8f61fe3e92fd823, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
   - id: 2500
     label: Add 1 Projectile
     type: 3

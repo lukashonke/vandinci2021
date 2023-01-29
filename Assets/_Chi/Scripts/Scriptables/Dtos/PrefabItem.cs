@@ -8,6 +8,7 @@ namespace _Chi.Scripts.Scriptables.Dtos
     [Serializable]
     public class PrefabItem
     {
+        [TableColumnWidth(57, Resizable = false)]
         public int id;
 
         public string label;
@@ -16,14 +17,17 @@ namespace _Chi.Scripts.Scriptables.Dtos
 
         public PredefinedPrefabIds predefinedId;
 
+        [VerticalGroup("Prefab")]
         public GameObject prefab;
 
         //TODO show if type == body
         public GameObject prefabUi;
 
+        [VerticalGroup("Prefab")]
         [ShowIf("type", PrefabItemType.Skill)]
         public Skill skill;
 
+        [VerticalGroup("Prefab")]
         [ShowIf("type", PrefabItemType.Mutator)]
         public Mutator mutator;
     }

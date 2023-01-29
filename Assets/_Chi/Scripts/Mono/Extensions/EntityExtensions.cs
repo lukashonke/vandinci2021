@@ -50,7 +50,12 @@ namespace _Chi.Scripts.Mono.Extensions
         {
             return obj.GetComponent<Entity>();
         }
-
+        
+        public static Module GetModule(this GameObject obj)
+        {
+            return obj.GetComponent<Module>();
+        }
+        
         public static bool AreEnemies(this Entity e, Entity other)
         {
             return e.team != other.team;

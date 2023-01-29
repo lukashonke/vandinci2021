@@ -1,4 +1,5 @@
 using System;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Movement;
 using _Chi.Scripts.Statistics;
@@ -36,6 +37,7 @@ namespace _Chi.Scripts.Mono.Entities
         public float dissolveSpeed = 2f;
         [NonSerialized] public float currentDissolveProcess;
         [NonSerialized] public int poolId;
+        [NonSerialized] public float? maxDistanceFromPlayerBeforeDespawn = null;
 
         #endregion
         #region privates
@@ -138,31 +140,42 @@ namespace _Chi.Scripts.Mono.Entities
             renderer.material = originalMaterial;
             isDissolving = false;
             canMove = false;
+            maxDistanceFromPlayerBeforeDespawn = null;
             
             gameObject.SetActive(false);
         }
         
         public void OnHitByBullet(Bullet bullet, Vector3 pos)
         {
-            var p = bullet.moduleParameters.parameters[0].intValue;
+            /*var damage = bullet.moduleParameters.GetFloat("_PowerLevel");
             
             //var val = bullet.dynamicSolver.SolveDynamicInt(p, 15198, ParameterOwner.Bullet);
-            ReceiveDamage(10, null);
+            ReceiveDamage(damage, null);*/
         }
 
-        public override void OnDie()
+        public override void OnDie(DieCause cause)
         {
-            if (!isDissolving)
+            if (cause == DieCause.Killed)
             {
-                Gamesystem.instance.OnKilled(this);
-
-                Gamesystem.instance.killEffectManager.StartDissolve(this);
-            
-                isDissolving = true;
-                canMove = false;
-                if (hasRvoController)
+                if (!isDissolving)
                 {
-                    rvoController.enabled = false;
+                    Gamesystem.instance.OnKilled(this);
+
+                    Gamesystem.instance.killEffectManager.StartDissolve(this);
+            
+                    isDissolving = true;
+                    canMove = false;
+                    if (hasRvoController)
+                    {
+                        rvoController.enabled = false;
+                    }
+                }
+            }
+            else if(cause == DieCause.Despawned)
+            {
+                if (!this.DeletePooledNpc())
+                {
+                    Destroy(this.gameObject);
                 }
             }
         }
@@ -216,16 +229,31 @@ namespace _Chi.Scripts.Mono.Entities
             //currentPath = null;
         }
 
-        public void SetDistanceToPlayer(float dist, Player player)
+        public void SetDistanceToPlayer(float dist2, Player player)
         {
-            distanceToPlayer = dist;
+            distanceToPlayer = dist2;
 
-            if (!physicsActivated && player.IsInNearbyDistance(dist))
+            if (maxDistanceFromPlayerBeforeDespawn.HasValue)
+            {
+                if (distanceToPlayer > maxDistanceFromPlayerBeforeDespawn.Value)
+                {
+                    if(physicsActivated)
+                    {
+                        player.RemoveNearbyEnemy(this);
+                        SetPhysicsActivated(false);
+                    }
+                    
+                    OnDie(DieCause.Despawned);
+                    return;
+                }
+            }
+
+            if (!physicsActivated && player.IsInNearbyDistance(dist2))
             {
                 player.AddNearbyEnemy(this);
                 SetPhysicsActivated(true);
             }
-            else if(physicsActivated && !player.IsInNearbyDistance(dist))
+            else if(physicsActivated && !player.IsInNearbyDistance(dist2))
             {
                 player.RemoveNearbyEnemy(this);
                 SetPhysicsActivated(false);

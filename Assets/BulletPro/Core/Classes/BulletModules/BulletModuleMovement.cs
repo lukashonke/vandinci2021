@@ -163,8 +163,8 @@ namespace BulletPro
 
 			prevAnimValues = Vector4.zero;
 			animationMovementSpace = bp.animationMovementSpace;
-
-			baseSpeed = solver.SolveDynamicFloat(bp.forwardSpeed, 5414344, ParameterOwner.Bullet);
+			
+			baseSpeed = bullet.emitter.entityParameters?.GetProjectileForwardSpeed() ?? solver.SolveDynamicFloat(bp.forwardSpeed, 5414344, ParameterOwner.Bullet);
 			baseAngularSpeed = solver.SolveDynamicFloat(bp.angularSpeed, 14855506, ParameterOwner.Bullet);
 			baseScale = solver.SolveDynamicFloat(bp.startScale, 20654741, ParameterOwner.Bullet);
 

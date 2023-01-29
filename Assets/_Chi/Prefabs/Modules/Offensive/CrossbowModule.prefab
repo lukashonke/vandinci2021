@@ -62,9 +62,14 @@ MonoBehaviour:
   level: 1
   stats:
     projectileCount:
-      baseValue: 0
+      baseValue: 1
       value: 1
-    projectileSpeed: 6
+    projectileSpeed:
+      baseValue: 4
+      value: 0
+    fireRate:
+      baseValue: 1
+      value: 0
     detectRange: 5
     projectileLifetime: 1.5
     canProjectilePierce: 0
@@ -75,9 +80,10 @@ MonoBehaviour:
     areaEffectDamage: 0
     accuracy: 1
     pushForce: 0
-    fireRate: 1
     effectDuration: 1
-  prefab: {fileID: 8362112251188988854, guid: b44f237bd8d30f948b7806cce6c4fdb8, type: 3}
+  effects:
+  - {fileID: 11400000, guid: e9ee23c6ec6fda646a0ca63e5b6a0d15, type: 2}
+  affectType: 0
 --- !u!212 &6177911479989981830
 SpriteRenderer:
   m_ObjectHideFlags: 0
