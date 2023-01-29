@@ -30,6 +30,14 @@ MonoBehaviour:
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+  - id: 101
+    label: Shooting Target
+    type: 1
+    predefinedId: 0
+    prefab: {fileID: 5954188515519120314, guid: fc2659e7534bf4828a7c867aa17bf6b2, type: 3}
+    prefabUi: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
   - id: 1000
     label: First Body
     type: 2

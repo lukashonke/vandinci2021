@@ -318,7 +318,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   spamGroup: Default
-  enableCombination: 1
+  enableCombination: 0
   combinationSettings:
     method: 0
     maxDistance: 3
@@ -440,7 +440,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  enableCollision: 1
+  enableCollision: 0
   collisionSettings:
     radius: 1
     pushFactor: 0.6

@@ -28,7 +28,8 @@ namespace _Chi.Scripts.Mono.Entities
         
         #endregion
         #region publics
-        
+
+        public float size = 1f;
         public bool goDirectlyToPlayer;
         [NonSerialized] public float distanceToPlayer;
         [NonSerialized] public float nextDamageTime;
@@ -148,7 +149,7 @@ namespace _Chi.Scripts.Mono.Entities
         public void OnHitByBullet(Bullet bullet, Vector3 pos)
         {
             /*var damage = bullet.moduleParameters.GetFloat("_PowerLevel");
-            
+             
             //var val = bullet.dynamicSolver.SolveDynamicInt(p, 15198, ParameterOwner.Bullet);
             ReceiveDamage(damage, null);*/
         }

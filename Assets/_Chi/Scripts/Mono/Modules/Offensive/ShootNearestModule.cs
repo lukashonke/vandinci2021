@@ -63,7 +63,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                         projectile.ScheduleUnspawn(DamageExtensions.CalculateProjectileLifetime(stats.projectileLifetime, this));
                     }*/
                     
-                    RotateTowards(currentTarget.position);
+                    RotateTowards(currentTarget.position, true);
                 }
             }
         }

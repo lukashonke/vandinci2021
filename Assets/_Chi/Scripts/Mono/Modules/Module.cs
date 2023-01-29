@@ -2,6 +2,7 @@
 using System.Linq;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
+using _Chi.Scripts.Utilities;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -94,9 +95,16 @@ namespace _Chi.Scripts.Mono.Modules
             this.transform.rotation = q;
         }
 
-        public void RotateTowards(Vector3 rotationTarget)
+        public void RotateTowards(Vector3 rotationTarget, bool instantly = false)
         {
-            SetRotation(EntityExtensions.RotateTowards(GetPosition(), rotationTarget, transform.rotation, rotationSpeed));
+            if (instantly)
+            {
+                SetRotation(EntityExtensions.GetRotationTo(GetPosition(), rotationTarget));
+            }
+            else
+            {
+                SetRotation(EntityExtensions.RotateTowards(GetPosition(), rotationTarget, transform.rotation, rotationSpeed));
+            }
         }
     }
 }

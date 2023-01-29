@@ -74,44 +74,41 @@ namespace _Chi.Scripts.Mono.Mission
                     var dir = (Vector3) Random.insideUnitCircle.normalized * distance;
                     var spawnPosition = playerPosition + dir;
                     
-                    settings.SpawnOnPosition(spawnPosition, prefab, playerPosition);
+                    var spawnCount = settings.GetCountToSpawn(time);
 
-                    //TODO spawn
-
-                    /*List<Transform> spawnPositions;
-                    bool doSpawnOnAllSpawns = false;
-
-                    if (kp.SpawnsInScene != null && kp.SpawnsInScene.Any())
+                    if (spawnCount <= 2)
                     {
-                        spawnPositions = kp.SpawnsInScene;
-                        doSpawnOnAllSpawns = kp.spawnOnAllSpawns;
+                        for (int i = 0; i < spawnCount; i++)
+                        {
+                            var spread = Random.Range(settings.spawnGroupSpreadMin, settings.spawnGroupSpreadMax);
+                        
+                            var targetPosition = spawnPosition + (new Vector3(i*spread, 0, 0));
+                        
+                            settings.SpawnOnPosition(targetPosition, prefab, playerPosition);
+                        }
                     }
                     else
                     {
-                        spawnPositions = DefaultSpawnsInScene;
-                        doSpawnOnAllSpawns = spawnOnAllSpawns;
-                    }
+                        int squareSize = (int)Math.Ceiling(Math.Sqrt(spawnCount));
 
-                    if (Gamesystem.Instance.Status.CanSpawnNewMonsters() && !isPaused)
-                    {
-                        if (doSpawnOnAllSpawns)
+                        for (int row = 0; row < squareSize; row++)
                         {
-                            foreach (var spawn in spawnPositions)
+                            for (int column = 0; column < squareSize; column++)
                             {
-                                if (spawn.gameObject.GetEntity() is ZombieHole hole)
-                                {
-                                    if (hole.enabled)
-                                    {
-                                        SpawnSingle(spawn, kp, 1);
-                                    }
-                                }
+                                if (spawnCount == 0) break;
+                                
+                                var spread = Random.Range(settings.spawnGroupSpreadMin, settings.spawnGroupSpreadMax);
+                                    
+                                var targetPosition = spawnPosition + (new Vector3(column*spread, row*spread, 0));
+                                
+                                settings.SpawnOnPosition(targetPosition, prefab, playerPosition);
+                                
+                                spawnCount--;
                             }
+                            
+                            if (spawnCount == 0) break;
                         }
-                        else
-                        {
-                            SpawnSingle(spawnPositions[Random.Range(0, spawnPositions.Count)], kp, 1);
-                        }
-                    }*/
+                    }
                 }
             }
         }
@@ -192,6 +189,11 @@ namespace _Chi.Scripts.Mono.Mission
         public float GetDistanceFromPlayer(float time)
         {
             return distanceFromPlayerCurve.Evaluate(time);
+        }
+
+        public int GetCountToSpawn(float time)
+        {
+            return (int)Math.Round(Random.Range(minSpawnCount.Evaluate(time), maxSpawnCount.Evaluate(time)));
         }
 
         public void SpawnOnPosition(Vector3 position, SpawnPrefab prefab, Vector3 attackTarget)

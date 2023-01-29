@@ -16,6 +16,7 @@ public class BulletBehavior : BaseBulletBehaviour
 	private Module ownerModule;
 
 	private int piercedEnemies = 0;
+	private BulletReceiver[] collidedWith = new BulletReceiver[8];
 	
 	// You can access this.bullet to get the parent bullet script.
 	// After bullet's death, you can delay this script's death : use this.lifetimeAfterBulletDeath.
@@ -24,14 +25,31 @@ public class BulletBehavior : BaseBulletBehaviour
 	public override void OnBulletBirth ()
 	{
 		base.OnBulletBirth();
-
+		
 		ownerModule = bullet.emitter.gameObject.GetModule();
 
 		piercedEnemies = 0;
 
-		//TODO initialise
+		if (CanPierce())
+		{
+			for (var index = 0; index < collidedWith.Length; index++)
+			{
+				collidedWith[index] = null;
+			}
+		}
+	}
 
-		// Your code here
+	private bool CanPierce()
+	{
+		if (ownerModule is OffensiveModule offensiveModule)
+		{
+			if (offensiveModule.stats.canProjectilePierce)
+			{
+				return true;
+			}
+		}
+
+		return false;
 	}
 	
 	// Update is (still) called once per frame
@@ -58,19 +76,30 @@ public class BulletBehavior : BaseBulletBehaviour
 		// Your code here
 	}
 
+	private bool CanCollide(BulletReceiver br)
+	{
+		for (int i = 0; i < collidedWith.Length; i++)
+		{
+			if (collidedWith[i] == br)
+			{
+				return false;
+			}
+		}
+
+		return true;
+	}
+
 	// This gets called whenever the bullet collides with a BulletReceiver. The most common callback.
 	public override void OnBulletCollision(BulletReceiver br, Vector3 collisionPoint)
 	{
 		base.OnBulletCollision(br, collisionPoint);
 
-		// Your code here
-	}
-
-	// This gets called whenever the bullet collides with a BulletReceiver AND was not colliding during the previous frame.
-	public override void OnBulletCollisionEnter(BulletReceiver br, Vector3 collisionPoint)
-	{
-		base.OnBulletCollisionEnter(br, collisionPoint);
-
+		bool canPierce = CanPierce();
+		if (canPierce && !CanCollide(br))
+		{
+			return;
+		}
+		
 		var entity = br.gameObject.GetEntity();
 		if (entity != null && entity.isAlive)
 		{
@@ -95,9 +124,10 @@ public class BulletBehavior : BaseBulletBehaviour
 
 					bool deactivate = false;
 
-					if (offensiveModule.stats.canProjectilePierce)
+					if (canPierce)
 					{
 						piercedEnemies++;
+						collidedWith[piercedEnemies] = br;
 						if (piercedEnemies >= offensiveModule.stats.projectilePierceCount)
 						{
 							deactivate = true;
@@ -115,7 +145,12 @@ public class BulletBehavior : BaseBulletBehaviour
 				}
 			}
 		}
+	}
 
+	// This gets called whenever the bullet collides with a BulletReceiver AND was not colliding during the previous frame.
+	public override void OnBulletCollisionEnter(BulletReceiver br, Vector3 collisionPoint)
+	{
+		base.OnBulletCollisionEnter(br, collisionPoint);
 		// Your code here
 	}
 
@@ -131,7 +166,7 @@ public class BulletBehavior : BaseBulletBehaviour
 	public override void OnBulletShotAnotherBullet(int patternIndex)
 	{
 		base.OnBulletShotAnotherBullet(patternIndex);
-
+		
 		// Your code here
 	}
 }

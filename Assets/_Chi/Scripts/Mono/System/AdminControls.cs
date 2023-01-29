@@ -14,22 +14,22 @@ public class AdminControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad0))
+        if (Input.GetKeyDown(KeyCode.Keypad0) || Input.GetKeyDown(KeyCode.U))
         {
-            Spawn(0);
+            Spawn(0, false);
         }
         
-        if (Input.GetKeyDown(KeyCode.Keypad1))
+        if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.I))
         {
             Spawn(1);
         }
         
-        if (Input.GetKeyDown(KeyCode.Keypad2))
+        if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.O))
         {
             Spawn(2);        
         }
         
-        if (Input.GetKeyDown(KeyCode.Keypad3))
+        if (Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.P))
         {
             Spawn(3);
         }
@@ -65,12 +65,12 @@ public class AdminControls : MonoBehaviour
         }
     }
 
-    private void Spawn(int index)
+    private void Spawn(int index, bool random = true)
     {
         for (int i = 0; i < prefabsToSpawnCounts[index]; i++)
         {
             var mousePos = Utils.GetMousePosition();
-            var pos = Utils.GenerateRandomPositionAround(mousePos, 1f, 0.1f);
+            var pos = Utils.GenerateRandomPositionAround(mousePos, random ? 1f : 0f, random ? 0.1f : 0f);
             
             var prefab = prefabsToSpawn[index].GetComponent<Npc>();
             var instance = prefab.SpawnPooledNpc(pos, Quaternion.Euler(0, 0, Random.Range(0, 360)));

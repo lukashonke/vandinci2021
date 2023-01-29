@@ -149,6 +149,15 @@ namespace _Chi.Scripts.Mono.Extensions
 
             return layerMask;
         }
+
+        public static Quaternion GetRotationTo(Vector3 from, Vector3 rotationTarget)
+        {
+            Quaternion newRotation = Quaternion.LookRotation(from - rotationTarget, Vector3.forward);
+            newRotation.x = 0;
+            newRotation.y = 0;
+
+            return newRotation;
+        }
         
         public static Quaternion RotateTowards(Vector3 from, Vector3 rotationTarget, Quaternion rotation, float rotationSpeed)
         {
