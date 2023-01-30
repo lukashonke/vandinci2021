@@ -9,11 +9,11 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
     {
         public float value;
 
-        public override bool Apply(Module target, object source)
+        public override bool Apply(Module target, object source, int level)
         {
             if (target is OffensiveModule offensiveModule)
             {
-                offensiveModule.stats.projectileCount.AddModifier(new StatModifier(source, value, modifier, (short) order));
+                offensiveModule.stats.projectileCount.AddModifier(new StatModifier(source, value * level, modifier, (short) order));
                 return true;
             }
             

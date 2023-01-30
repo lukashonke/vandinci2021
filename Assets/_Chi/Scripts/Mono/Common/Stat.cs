@@ -10,6 +10,13 @@ namespace _Chi.Scripts.Mono.Common
     public class Stat
     {
         [NonSerialized] public bool isDirty;
+
+        [Button]
+        public void ForceValue(float val)
+        {
+            this.baseValue = val;
+            isDirty = true;
+        }
         
         public float baseValue;
         [Sirenix.OdinInspector.ReadOnly] public float value;

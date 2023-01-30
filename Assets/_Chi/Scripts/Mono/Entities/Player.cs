@@ -203,6 +203,13 @@ namespace _Chi.Scripts.Mono.Entities
             base.OnDestroy();
         }
 
+        public override void OnDie(DieCause cause)
+        {
+            base.OnDie(cause);
+            
+            Gamesystem.instance.missionManager.OnPlayerDie();
+        }
+
         public void SetBody(GameObject bodyPrefab)
         {
             if (body != null)

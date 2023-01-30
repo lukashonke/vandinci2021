@@ -20,6 +20,8 @@ namespace _Chi.Scripts.Persistence
         public int gold;
 
         public int killed;
+
+        public int missionIndex;
         
         public List<ModuleInSlot> modulesInSlots;
 

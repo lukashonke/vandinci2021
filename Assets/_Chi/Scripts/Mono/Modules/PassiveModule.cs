@@ -20,7 +20,7 @@ namespace _Chi.Scripts.Mono.Modules
                     {
                         foreach (var effect in effects)
                         {
-                            effect.Apply(moduleSlot.currentModule, this);
+                            effect.Apply(moduleSlot.currentModule, this, level);
                         }
                     }
                 }

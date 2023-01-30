@@ -11,7 +11,7 @@ namespace _Chi.Scripts.Scriptables
 
         public StatOrders order = StatOrders.PassiveModule;
         
-        public abstract bool Apply(Module target, object source);
+        public abstract bool Apply(Module target, object source, int level);
         
         public abstract bool Remove(Module target, object source);
     }

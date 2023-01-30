@@ -25,7 +25,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
 
                 if (nextTargetUpdate > Time.time)
                 {
-                    nextTargetUpdate = Time.time + targetUpdateInterval;
+                    nextTargetUpdate = Time.time + targetUpdateInterval + Random.Range(0.1f, 0.2f);
                     
                     var nearest = ((Player) parent).GetNearestEnemy(GetPosition());
 
@@ -38,6 +38,13 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                     {
                         currentTarget = null;
                         emitter.Stop();
+                    }
+
+                    if (emitter.rootBullet != null)
+                    {
+                        emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileCount, stats.projectileCount.GetValueInt());
+                        emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpeed, stats.projectileSpeed.GetValue());
+                        emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.WaitDuration, stats.fireRate.GetValue());
                     }
                 }
 
@@ -68,8 +75,8 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
             }
         }
 
-        public override int? GetProjectileCount() => stats.projectileCount.GetValueInt();
+        //public override int? GetProjectileCount() => stats.projectileCount.GetValueInt();
 
-        public override float? GetProjectileForwardSpeed() => stats.projectileSpeed.GetValue();
+        //public override float? GetProjectileForwardSpeed() => stats.projectileSpeed.GetValue();
     }
 }

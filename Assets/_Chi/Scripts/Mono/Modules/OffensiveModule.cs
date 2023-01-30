@@ -5,6 +5,7 @@ using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
 using BulletPro;
+using UnityEngine;
 
 namespace _Chi.Scripts.Mono.Modules
 {
@@ -26,6 +27,11 @@ namespace _Chi.Scripts.Mono.Modules
 
             emitter = GetComponent<BulletEmitter>();
             emitter.entityParameters = this;
+        }
+
+        public override void Start()
+        {
+            base.Start();
         }
 
         public override bool ActivateEffects()

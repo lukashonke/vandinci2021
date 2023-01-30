@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28cdb85a20df4a028678dea9bf3b3f07, type: 3}
+  m_Name: Mission Database
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  missions:
+  - index: 0
+    name: Idle Mission
+    description: 
+    missionScenarios:
+    - {fileID: 2091413172466918211, guid: e724ba2924e374d49a900dbd47436ceb, type: 3}
+  - index: 1
+    name: Mission 1
+    description: 
+    missionScenarios:
+    - {fileID: 2091413172466918211, guid: 62c0f3a42e78397498ffab3704166e51, type: 3}
+  - index: 2
+    name: Mission 2
+    description: 
+    missionScenarios:
+    - {fileID: 2091413172466918211, guid: 4677b3f3fa9851743b7f1cbc2e624338, type: 3}

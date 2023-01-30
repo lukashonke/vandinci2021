@@ -35,14 +35,35 @@ public class UiManager : MonoBehaviour
     [Required] public TextMeshProUGUI gold;
     [Required] public TextMeshProUGUI time;
     [Required] public TextMeshProUGUI killed;
+    [Required] public TMPro.TMP_Dropdown dropdown;
 
     [Required] public VehicleSettingsWindow vehicleSettingsWindow;
 
     [NonSerialized] public AddingUiItem addingUiItem;
-    
+
+    void Awake()
+    {
+        Gamesystem.instance.uiManager = this;
+        
+        dropdown.onValueChanged.AddListener(OnMissionSelectorChange);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        dropdown.options.Add(new TMP_Dropdown.OptionData()
+        {
+            text = "Change mission"
+        });  
+        
+        foreach (var mission in Gamesystem.instance.missionDatabase.missions)
+        {
+            dropdown.options.Add(new TMP_Dropdown.OptionData()
+            {
+                text = mission.name
+            });    
+        }
+        
         StartCoroutine(UpdateCoroutine());
     }
 
@@ -224,9 +245,17 @@ public class UiManager : MonoBehaviour
 
     public void ShowModuleTooltip(RectTransform targetTransform, PrefabItem prefab, int level)
     {
-        currentTooltip = Instantiate(moduleTooltipPrefab, targetTransform.position, Quaternion.identity, targetTransform);
+        var pos = targetTransform.position;
+        pos += new Vector3(targetTransform.sizeDelta.x/2f, targetTransform.sizeDelta.y/2f, 0);
+        
+        currentTooltip = Instantiate(moduleTooltipPrefab, pos, Quaternion.identity, targetTransform);
         currentTooltip.transform.parent = this.transform;
         var dialog = currentTooltip.GetComponent<ModuleTooltip>();
         dialog.Initialise(prefab, level);
+    }
+
+    public void OnMissionSelectorChange(int index)
+    {
+        Gamesystem.instance.missionManager.ChangeMission(index - 1);
     }
 }

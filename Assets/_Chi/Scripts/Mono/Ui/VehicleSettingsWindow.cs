@@ -55,6 +55,7 @@ namespace _Chi.Scripts.Mono.Ui
 
         public void ApplyOnClose()
         {
+            Gamesystem.instance.progress.Save();
             Gamesystem.instance.progress.ApplyRunToPlayer(Gamesystem.instance.objects.currentPlayer, Gamesystem.instance.progress.progressData.run);
         }
 

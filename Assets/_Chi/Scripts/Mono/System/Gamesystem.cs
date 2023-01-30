@@ -11,22 +11,24 @@ using _Chi.Scripts.Scriptables.Dtos;
 using _Chi.Scripts.Utilities;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class Gamesystem : MonoBehaviour
 {
     public static Gamesystem instance;
     
+    [NonSerialized] public MissionManager missionManager;
+    
     [HideInInspector] public GameobjectHolder objects;
     [HideInInspector] public Tests tests;
-    [HideInInspector] public PoolSystem poolSystem;
     [HideInInspector] public PlayerProgressManager progress;
     [HideInInspector] public KillEffectManager killEffectManager;
 
+    [Required] public PoolSystem poolSystem;
     [Required] public UiManager uiManager;
-    [Required] public GameObject world;
     [Required] public MiscSettings miscSettings;
     [Required] public PrefabDatabase prefabDatabase;
-    [Required] public MissionManager missionManager;
+    [Required] public MissionDatabase missionDatabase;
 
     [NonSerialized] public Dictionary<int, PrefabItem> prefabs;
     [NonSerialized] public Dictionary<PredefinedPrefabIds, PrefabItem> predefinedPrefabs;
