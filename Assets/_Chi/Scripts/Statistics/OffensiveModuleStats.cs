@@ -11,13 +11,19 @@ namespace _Chi.Scripts.Statistics
         public Stat projectileSpeed = new Stat();
 
         public Stat fireRate = new Stat();
+
+        public Stat projectileDamage = new Stat();
         
-        public float detectRange = 5f;
+        public Stat targetRange = new Stat();
+        
+        public Stat projectileRange = new Stat();
+        
+        public Stat projectileLifetime = new Stat();
 
-        public float projectileLifetime = 1f;
-
-        public bool canProjectilePierce = false;
-        public int projectilePierceCount;
+        public int canProjectilePierce = 0;
+        
+        public Stat projectilePierceCount = new Stat();
+        
         public float projectilePierceChance;
 
         public bool hasAreaEffect = false;

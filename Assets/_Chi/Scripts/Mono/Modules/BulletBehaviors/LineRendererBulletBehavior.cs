@@ -7,7 +7,19 @@ using BulletPro;
 // Template author : Simon Albou <albou.simon@gmail.com>
 
 // This script is actually a MonoBehaviour for coding advanced things with Bullets.
-public class LineRendererBulletBehavior : BaseBulletBehaviour 
+public class LineRendererBulletBehavior : BaseBulletBehaviour
 {
+    public TrailRenderer trail;
+    
+    public override void Awake()
+    {
+        base.Awake();
+    }
 
+    public override void OnBulletBirth()
+    {
+        base.OnBulletBirth();
+        
+        trail.Clear();
+    }
 }

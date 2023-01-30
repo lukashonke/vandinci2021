@@ -29,7 +29,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                     
                     var nearest = ((Player) parent).GetNearestEnemy(GetPosition());
 
-                    if (nearest != null)
+                    if (nearest != null && Utils.Dist2(nearest.GetPosition(), GetPosition()) < Mathf.Pow(stats.targetRange.GetValue(), 2))
                     {
                         currentTarget = nearest.transform;
                         emitter.Play();
@@ -45,6 +45,16 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                         emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileCount, stats.projectileCount.GetValueInt());
                         emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpeed, stats.projectileSpeed.GetValue());
                         emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.WaitDuration, stats.fireRate.GetValue());
+
+                        if (stats.projectileLifetime.GetValue() > 0)
+                        {
+                            emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileLifetime, stats.projectileLifetime.GetValue());
+                        }
+
+                        if (stats.projectileRange.GetValue() > 0)
+                        {
+                            emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileRange, stats.projectileRange.GetValue());
+                        }
                     }
                 }
 

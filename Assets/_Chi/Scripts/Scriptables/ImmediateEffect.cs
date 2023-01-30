@@ -1,5 +1,6 @@
 ﻿using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
+using _Chi.Scripts.Mono.Modules;
 using Sirenix.OdinInspector;
 
 namespace _Chi.Scripts.Scriptables
@@ -8,6 +9,6 @@ namespace _Chi.Scripts.Scriptables
     {
         public StatOrders order = StatOrders.ImmediateEffect;
         
-        public abstract bool Apply(Entity target, Entity sourceEntity, Item sourceItem);
+        public abstract bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule);
     }
 }

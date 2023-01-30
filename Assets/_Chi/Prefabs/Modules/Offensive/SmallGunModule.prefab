@@ -68,12 +68,24 @@ MonoBehaviour:
       baseValue: 8
       value: 0
     fireRate:
-      baseValue: 1
+      baseValue: 1.5
       value: 0
-    detectRange: 5
-    projectileLifetime: 1.5
+    projectileDamage:
+      baseValue: 10
+      value: 0
+    targetRange:
+      baseValue: 8
+      value: 0
+    projectileRange:
+      baseValue: 10
+      value: 0
+    projectileLifetime:
+      baseValue: 10
+      value: 0
     canProjectilePierce: 1
-    projectilePierceCount: 2
+    projectilePierceCount:
+      baseValue: 2
+      value: 0
     projectilePierceChance: 100
     hasAreaEffect: 0
     hasProjectile: 1

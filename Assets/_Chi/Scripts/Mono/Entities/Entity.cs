@@ -28,6 +28,7 @@ namespace _Chi.Scripts.Mono.Entities
         
         [NonSerialized] public bool canMove;
         [NonSerialized] public bool isAlive = true;
+        [NonSerialized] public float immobilizedUntil = 0;
 
         public EntityStats entityStats;
     
@@ -61,6 +62,7 @@ namespace _Chi.Scripts.Mono.Entities
         
         public virtual void Start()
         {
+            entityStats.hp = entityStats.maxHp;
             isAlive = entityStats.hp > 0;
             canMove = true;
         }
@@ -178,6 +180,15 @@ namespace _Chi.Scripts.Mono.Entities
             }
         }
 
+        public void ReceivePush(Vector3 force, float pushDuration)
+        {
+            if (hasRb)
+            {
+                rb.AddForce(force);
+                immobilizedUntil = Time.time + pushDuration;
+            }
+        }
+
         public virtual void OnDie(DieCause cause)
         {
             Destroy(this.gameObject);
@@ -202,7 +213,7 @@ namespace _Chi.Scripts.Mono.Entities
         
         public bool CanMove()
         {
-            return canMove;
+            return canMove && immobilizedUntil < Time.time;
         }
 
         public bool CanShoot()

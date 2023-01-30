@@ -1,5 +1,6 @@
 ﻿using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
+using _Chi.Scripts.Mono.Modules;
 using UnityEngine;
 
 namespace _Chi.Scripts.Scriptables.ImmediateEffects
@@ -11,7 +12,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
         public float value;
         public StatModifierType modifier;
         
-        public override bool ApplyEffect(Entity target, Entity source, Item sourceItem)
+        public override bool ApplyEffect(Entity target, Entity source, Item sourceItem, Module sourceModule)
         {
             if (target is Player player)
             {
@@ -22,7 +23,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
             return false;
         }
 
-        public override void RemoveEffect(Entity target, Entity source, Item sourceItem)
+        public override void RemoveEffect(Entity target, Entity source, Item sourceItem, Module sourceModule)
         {
             if (target is Player player)
             {

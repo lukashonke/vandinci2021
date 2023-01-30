@@ -24,7 +24,7 @@ MonoBehaviour:
   prefabs:
   - id: 100
     label: Zombie
-    type: 0
+    type: 1
     predefinedId: 1
     prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
     prefabUi: {fileID: 0}
@@ -35,6 +35,30 @@ MonoBehaviour:
     type: 1
     predefinedId: 0
     prefab: {fileID: 5954188515519120314, guid: fc2659e7534bf4828a7c867aa17bf6b2, type: 3}
+    prefabUi: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 102
+    label: Zombie Fast
+    type: 1
+    predefinedId: 0
+    prefab: {fileID: 5954188515519120314, guid: 6865f2ce12f622849b1c682ef902fe54, type: 3}
+    prefabUi: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 103
+    label: Zombie Fat
+    type: 1
+    predefinedId: 0
+    prefab: {fileID: 5954188515519120314, guid: e9797147ab774344b8a2be82b128eaca, type: 3}
+    prefabUi: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 104
+    label: Zombie Bloater
+    type: 1
+    predefinedId: 0
+    prefab: {fileID: 5954188515519120314, guid: 4e58ba0edb87fe441b493c86ddb4e59e, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}

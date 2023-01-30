@@ -105,7 +105,7 @@ MonoBehaviour:
   entityStats:
     maxHp: 1000000
     maxHpAdd: 0
-    maxHpMul: 0
+    maxHpMul: 1
     hp: 1000000
   team: 2
   healthbarOffset: 1

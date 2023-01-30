@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using _Chi.Scripts.Scriptables;
 using NotImplementedException = System.NotImplementedException;
 
@@ -8,23 +10,33 @@ namespace _Chi.Scripts.Mono.Modules
     {
         public List<ModuleStatsEffect> effects;
 
+        private IEnumerator NextFrame(Action action)
+        {
+            yield return null;
+
+            action();
+        }
+
         public override bool ActivateEffects()
         {
             if (!base.ActivateEffects()) return false;
-            
-            if (slot != null)
+
+            StartCoroutine(NextFrame(() =>
             {
-                foreach (var moduleSlot in slot.connectedTo)
+                if (slot != null)
                 {
-                    if (moduleSlot.currentModule != null)
+                    foreach (var moduleSlot in slot.connectedTo)
                     {
-                        foreach (var effect in effects)
+                        if (moduleSlot.currentModule != null)
                         {
-                            effect.Apply(moduleSlot.currentModule, this, level);
+                            foreach (var effect in effects)
+                            {
+                                effect.Apply(moduleSlot.currentModule, this, level);
+                            }
                         }
                     }
                 }
-            }
+            }));
 
             return true;
         }

@@ -45,7 +45,7 @@ namespace _Chi.Scripts.Mono.Entities
             for (var index = 0; index < effects.Count; index++)
             {
                 var effect = effects[index];
-                effect.Apply(entity, null, this);
+                effect.Apply(entity, null, this, null);
             }
 
             return true;

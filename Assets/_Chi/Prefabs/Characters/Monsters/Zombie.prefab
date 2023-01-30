@@ -103,10 +103,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   entityStats:
-    maxHp: 10
+    maxHp: 20
     maxHpAdd: 0
-    maxHpMul: 0
-    hp: 10
+    maxHpMul: 1
+    hp: 20
   team: 2
   healthbarOffset: 1
   seeker: {fileID: 0}
@@ -116,6 +116,7 @@ MonoBehaviour:
     rotationSpeed: 10
     contactDamage: 10
     contactDamageInterval: 1
+  size: 1
   goDirectlyToPlayer: 1
   dissolveSpeed: 2
 --- !u!114 &5954188515519120313

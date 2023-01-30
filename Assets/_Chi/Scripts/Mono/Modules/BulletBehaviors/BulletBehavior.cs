@@ -43,7 +43,7 @@ public class BulletBehavior : BaseBulletBehaviour
 	{
 		if (ownerModule is OffensiveModule offensiveModule)
 		{
-			if (offensiveModule.stats.canProjectilePierce)
+			if (offensiveModule.stats.canProjectilePierce > 0)
 			{
 				return true;
 			}
@@ -120,7 +120,7 @@ public class BulletBehavior : BaseBulletBehaviour
 				for (var index = 0; index < effects.Count; index++)
 				{
 					var effect = effects[index];
-					effect.Apply(entity, ownerModule.parent, null);
+					effect.Apply(entity, ownerModule.parent, null, ownerModule);
 
 					bool deactivate = false;
 
@@ -128,7 +128,7 @@ public class BulletBehavior : BaseBulletBehaviour
 					{
 						piercedEnemies++;
 						collidedWith[piercedEnemies] = br;
-						if (piercedEnemies >= offensiveModule.stats.projectilePierceCount)
+						if (piercedEnemies >= offensiveModule.stats.projectilePierceCount.GetValueInt())
 						{
 							deactivate = true;
 						}

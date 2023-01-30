@@ -67,16 +67,16 @@ namespace _Chi.Scripts.Mono.Entities
             for (var index = 0; index < effects.Count; index++)
             {
                 var effect = effects[index];
-                effect.Apply(entity, owner, null);
+                effect.Apply(entity, owner, null, null);
 
                 bool deactivate = false;
 
                 if (hasOwnerModule && ownerModule is OffensiveModule offensiveModule)
                 {
-                    if (offensiveModule.stats.canProjectilePierce)
+                    if (offensiveModule.stats.canProjectilePierce > 0)
                     {
                         stats.piercedEnemies++;
-                        if (stats.piercedEnemies >= offensiveModule.stats.projectilePierceCount)
+                        if (stats.piercedEnemies >= offensiveModule.stats.projectilePierceCount.GetValueInt())
                         {
                             deactivate = true;
                         }

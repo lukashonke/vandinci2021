@@ -141,7 +141,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 5
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
         outWeight: 0
       - serializedVersion: 3
         time: 1
-        value: 5
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -165,7 +165,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 5
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
         outWeight: 0
       - serializedVersion: 3
         time: 1
-        value: 5
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 7
+        value: 10
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -198,7 +198,7 @@ MonoBehaviour:
         outWeight: 0
       - serializedVersion: 3
         time: 1
-        value: 7
+        value: 10
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     spawnGroupSpreadMin: 0.5
     spawnGroupSpreadMax: 0.5
-    distanceFromPlayerToDespawn: 9
+    distanceFromPlayerToDespawn: 20
     nextSpawnTime: 0
     startAtTime: 0
     lastSpawnTime: 0
