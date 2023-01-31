@@ -8,7 +8,7 @@ namespace _Chi.Scripts.Scriptables
     {
         public float duration;
         
-        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule)
+        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength)
         {
             if (!ApplyEffect(target, sourceEntity, sourceItem, sourceModule))
             {

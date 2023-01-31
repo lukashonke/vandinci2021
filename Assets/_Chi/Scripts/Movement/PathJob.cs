@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Utilities;
@@ -117,11 +118,12 @@ namespace _Chi.Scripts.Movement
                             npc.SetDistanceToPlayer(data.outputPositions[3].x, player);
                         }
                         
-                        if (data.outputs[0])
+                        if (data.outputs[0] && npc.pathData.Path != null)
                         {
                             npc.pathData.Path.Release(npc.pathData);
                             npc.pathData.Path = null;
                             npc.pathData.pathWaypoints.Dispose();
+                            
                             //character.pathData.OnPathSetToNull();
                         }
     

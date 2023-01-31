@@ -171,6 +171,8 @@ namespace BulletPro
 				if (bullet.modulePatterns.patternRuntimeInfo[patternIndex].deltaTimeDisplacement)
 					timeOffset = waitTimeLeft;
 				bullet.modulePatterns.patternRuntimeInfo[patternIndex].Shoot(ip.shot, timeOffset);
+				
+				bullet.emitter.shootInstruction.Invoke();
 			}
 
 			// Begin Loop

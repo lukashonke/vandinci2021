@@ -39,7 +39,9 @@ namespace _Chi.Scripts.Scriptables.Skills
 
             while (jumpUntil >= Time.time)
             {
-                player.rb.MovePosition((Vector3) player.rb.position + (direction * jumpForce * Time.fixedDeltaTime));
+                player.rb.velocity = direction * jumpForce;
+                
+                //player.rb.MovePosition((Vector3) player.rb.position + (direction * jumpForce * Time.fixedDeltaTime));
                 
                 yield return waiter;
             }

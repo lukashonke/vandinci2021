@@ -67,7 +67,7 @@ namespace _Chi.Scripts.Mono.Entities
             for (var index = 0; index < effects.Count; index++)
             {
                 var effect = effects[index];
-                effect.Apply(entity, owner, null, null);
+                effect.Apply(entity, owner, null, null, 1);
 
                 bool deactivate = false;
 

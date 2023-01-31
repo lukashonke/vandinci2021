@@ -9,6 +9,6 @@ namespace _Chi.Scripts.Scriptables
     {
         public StatOrders order = StatOrders.ImmediateEffect;
         
-        public abstract bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule);
+        public abstract bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength);
     }
 }

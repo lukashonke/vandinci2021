@@ -20,4 +20,10 @@ namespace _Chi.Scripts.Mono.Extensions
             return baseLifetime;
         }
     }
+
+    //TODO use
+    public enum DamageType
+    {
+        Unknown
+    }
 }

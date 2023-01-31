@@ -10,7 +10,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
     {
         public float baseDamage;
 
-        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule)
+        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength)
         {
             var sourceDamage = baseDamage;
             if (sourceModule is OffensiveModule offensiveModule)

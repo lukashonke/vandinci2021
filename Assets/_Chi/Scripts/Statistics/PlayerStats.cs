@@ -11,5 +11,9 @@ namespace _Chi.Scripts.Statistics
         public Stat rotationSpeed = new Stat();
 
         public Stat nearbyEnemyRangeSqrt = new Stat();
+
+        public Stat velocityToDamageMul = new Stat();
+        
+        public Stat minVelocityToDamage = new Stat();
     }
 }

@@ -12,9 +12,10 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
         public float pushDuration = 0.5f;
 
-        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule)
+        public float setCannotBePushedFor = 0.5f;
+
+        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength)
         {
-            var sourcePush = basePush;
             Vector3 source = target.GetPosition();
             if (sourceModule is OffensiveModule offensiveModule)
             {
@@ -27,7 +28,13 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
                 source = sourceEntity.GetPosition();
             }
             
+            var sourcePush = basePush * strength;
             target.ReceivePush((target.GetPosition() - source).normalized * sourcePush, pushDuration);
+            if (setCannotBePushedFor > 0)
+            {
+                target.SetCannotBePushed(pushDuration);
+            }
+            
             return true;
         }    
     }

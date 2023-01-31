@@ -85,8 +85,11 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
             }
         }
 
-        //public override int? GetProjectileCount() => stats.projectileCount.GetValueInt();
-
-        //public override float? GetProjectileForwardSpeed() => stats.projectileSpeed.GetValue();
+        public override void OnShootInstruction()
+        {
+            base.OnShootInstruction();
+            
+            ShootEffect();
+        }
     }
 }

@@ -25,7 +25,7 @@ public class BulletBehavior : BaseBulletBehaviour
 	public override void OnBulletBirth ()
 	{
 		base.OnBulletBirth();
-		
+
 		ownerModule = bullet.emitter.gameObject.GetModule();
 
 		piercedEnemies = 0;
@@ -120,7 +120,7 @@ public class BulletBehavior : BaseBulletBehaviour
 				for (var index = 0; index < effects.Count; index++)
 				{
 					var effect = effects[index];
-					effect.Apply(entity, ownerModule.parent, null, ownerModule);
+					effect.Apply(entity, ownerModule.parent, null, ownerModule, 1);
 
 					bool deactivate = false;
 
@@ -166,6 +166,8 @@ public class BulletBehavior : BaseBulletBehaviour
 	public override void OnBulletShotAnotherBullet(int patternIndex)
 	{
 		base.OnBulletShotAnotherBullet(patternIndex);
+		
+		
 		
 		// Your code here
 	}

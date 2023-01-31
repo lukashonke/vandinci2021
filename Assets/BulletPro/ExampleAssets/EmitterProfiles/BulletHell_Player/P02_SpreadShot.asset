@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 6792786
+  uniqueIndex: 14340163
   profile: {fileID: 11400000}
   parent: {fileID: 114746627269426962}
   children:
@@ -6113,8 +6113,7 @@ MonoBehaviour:
             parameterType: 0
             relativeTo: 0
             parameterName: 
-          defaultValue: {fileID: 8300000, guid: ab92f870f144e51409aba3ae42f8267c,
-            type: 3}
+          defaultValue: {fileID: 8300000, guid: ab92f870f144e51409aba3ae42f8267c, type: 3}
         narrowType: 1
         requireComponent: 0
         typeName: UnityEngine.AudioClip, UnityEngine.AudioModule, Version=0.0.0.0,
@@ -24514,7 +24513,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 12648194
+  uniqueIndex: 9826418
   profile: {fileID: 11400000}
   parent: {fileID: 114235044058580522}
   children:
@@ -24799,6 +24798,7 @@ MonoBehaviour:
     bulletOrigin: {x: 0, y: 0, z: 0}
     useDifferentBullet: 0
     bulletParams: {fileID: 0}
+  hasUnknownBulletAmount: 0
   modifiers:
   - modifierType: 1
     globalMovement:
@@ -26984,6 +26984,7 @@ MonoBehaviour:
   highestValues: {x: 0, y: 0, z: 55.384613}
   lowestValues: {x: 0, y: 0, z: -55.384613}
   hasBeenSerializedOnce: 1
+  fakeBulletAmount: 0
   foldout0: 0
   foldout1: 0
   foldout2: 0
@@ -27026,7 +27027,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 1170730
+  uniqueIndex: 376344
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -27720,6 +27721,7 @@ MonoBehaviour:
     typeName: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     requiredComponentName: 
+  layer: 0
   sortingOrder:
     valueTree:
     - settings:
@@ -34137,7 +34139,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 14078991
+  uniqueIndex: 7295464
   profile: {fileID: 11400000}
   parent: {fileID: 114527426404384722}
   children: []
@@ -34830,6 +34832,7 @@ MonoBehaviour:
     typeName: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     requiredComponentName: 
+  layer: 0
   sortingOrder:
     valueTree:
     - settings:

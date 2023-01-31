@@ -180,9 +180,9 @@ namespace _Chi.Scripts.Mono.Entities
             }
         }
 
-        public void ReceivePush(Vector3 force, float pushDuration)
+        public virtual void ReceivePush(Vector3 force, float pushDuration)
         {
-            if (hasRb)
+            if (hasRb && CanBePushed())
             {
                 rb.AddForce(force);
                 immobilizedUntil = Time.time + pushDuration;
@@ -224,6 +224,15 @@ namespace _Chi.Scripts.Mono.Entities
         public float GetMaxHp()
         {
             return (entityStats.maxHp + entityStats.maxHpAdd) * entityStats.maxHpMul;
+        }
+        
+        public virtual bool CanBePushed()
+        {
+            return true;
+        }
+        
+        public virtual void SetCannotBePushed(float duration)
+        {
         }
 
         public float GetHp() => entityStats.hp;

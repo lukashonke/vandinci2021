@@ -10,7 +10,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
     {
         public float baseHeal;
 
-        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule)
+        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength)
         {
             target.Heal(baseHeal);
             return true;

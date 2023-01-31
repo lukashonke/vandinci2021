@@ -5,9 +5,12 @@ using System.Linq;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Modules;
+using _Chi.Scripts.Mono.System;
 using _Chi.Scripts.Mono.Ui;
+using _Chi.Scripts.Persistence;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
+using DamageNumbersPro;
 using UnityEngine;
 
 namespace _Chi.Scripts.Mono.Entities
@@ -32,6 +35,9 @@ namespace _Chi.Scripts.Mono.Entities
         private List<Entity> damagingEnemiesToRemove;
         
         private Dictionary<Skill, SkillData> skillDatas;
+
+        public ImmediateEffect pushEffect;
+        public GameObject damageEffect;
 
         public override void Awake()
         {
@@ -116,7 +122,7 @@ namespace _Chi.Scripts.Mono.Entities
                 yield return waiter;
             }
         }
-
+    
         // Update is called once per frame
         public override void DoUpdate()
         {
@@ -136,12 +142,33 @@ namespace _Chi.Scripts.Mono.Entities
         public override void OnTriggerEnter2D(Collider2D other)
         {
             base.OnTriggerEnter2D(other);
-
+            
             var entity = other.gameObject.GetEntity();
 
             if (entity is Npc monster && this.AreEnemies(monster))
             {
-                ReceiveDamageByContact(monster, true);
+                var velocity = rb.velocity.magnitude;
+
+                if (velocity >= stats.minVelocityToDamage.GetValue())
+                {
+                    var damage = stats.velocityToDamageMul.GetValue() * velocity;
+
+                    if (damage > 0 && monster.CanBePushed())
+                    {
+                        var dmg = DamageExtensions.CalculateEffectDamage(damage, monster, this);
+                        monster.ReceiveDamage(dmg, this);
+
+                        if (pushEffect != null)
+                        {
+                            pushEffect.Apply(monster, this, null, null, velocity);
+                        }
+                    }
+                }
+
+                if (monster.isAlive)
+                {
+                    ReceiveDamageByContact(monster, true);
+                }
             }
         }
 
@@ -149,7 +176,16 @@ namespace _Chi.Scripts.Mono.Entities
         {
             if (Time.time > monster.nextDamageTime)
             {
-                ReceiveDamage(monster.CalculateMonsterContactDamage(this), monster);
+                var damage = monster.CalculateMonsterContactDamage(this);
+                if (damage > 0)
+                {
+                    ReceiveDamage(damage, monster);
+                    var effect = Gamesystem.instance.poolSystem.SpawnVfx(damageEffect);
+                    effect.transform.position = triggerCollider.bounds.ClosestPoint(monster.GetPosition());
+                    effect.transform.parent = transform;
+                    
+                    Gamesystem.instance.Schedule(Time.time + 1f, () => Gamesystem.instance.poolSystem.DespawnVfx(effect));
+                }
                 monster.nextDamageTime = Time.time + monster.stats.contactDamageInterval;
 
                 if (addToDamagingEnemiesList)

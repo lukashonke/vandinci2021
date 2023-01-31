@@ -13,6 +13,8 @@ namespace _Chi.Scripts.Mono.System
         [NonSerialized] public Dictionary<int, ObjectPool<Projectile>> projectilePools;
         
         [NonSerialized] public Dictionary<int, ObjectPool<Npc>> npcPools;
+        
+        [NonSerialized] public Dictionary<GameObject, ObjectPool<GameObject>> vfxPool;
 
         public bool collectionChecks = true;
 
@@ -20,6 +22,23 @@ namespace _Chi.Scripts.Mono.System
         {
             projectilePools = new Dictionary<int, ObjectPool<Projectile>>();
             npcPools = new Dictionary<int, ObjectPool<Npc>>();
+            vfxPool = new();
+        }
+
+        public GameObject SpawnVfx(GameObject prefab, int maxPoolSize = 100)
+        {
+            if (vfxPool.TryGetValue(prefab, out var pool))
+            {
+                return pool.Get();
+            }
+            else
+            {
+                var newPool = new ObjectPool<GameObject>(() => CreatePooledItem(prefab), OnTakeFromPool,
+                    OnReturnedToPool, OnDestroyPoolObject, collectionChecks, maxPoolSize);
+                vfxPool.Add(prefab, newPool);
+
+                return newPool.Get();
+            }
         }
 
         public Npc Spawn(Npc prefabNpc, int maxPoolSize = 10000)
@@ -52,6 +71,17 @@ namespace _Chi.Scripts.Mono.System
 
                 return newPool.Get();
             }
+        }
+        
+        public bool DespawnVfx(GameObject instance)
+        {
+            if (vfxPool.TryGetValue(instance, out var pool))
+            {
+                pool.Release(instance);
+                return true;
+            }
+
+            return false;
         }
         
         public bool Despawn(Npc npcInstance)
@@ -129,6 +159,28 @@ namespace _Chi.Scripts.Mono.System
         void OnDestroyPoolObject(Npc npc)
         {
             Destroy(npc.gameObject);
+        }
+        
+        GameObject CreatePooledItem(GameObject prefab)
+        {
+            var go = Instantiate(prefab.gameObject);
+
+            return go;
+        }
+
+        void OnReturnedToPool(GameObject go)
+        {
+            go.SetActive(false);
+        }
+
+        void OnTakeFromPool(GameObject go)
+        {
+            
+        }
+
+        void OnDestroyPoolObject(GameObject go)
+        {
+            Destroy(go);
         }
     }
 }

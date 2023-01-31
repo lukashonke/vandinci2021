@@ -14,6 +14,8 @@ namespace _Chi.Scripts.Mono.Entities
     {
         public List<ImmediateEffect> effects;
 
+        public float strength = 1;
+
         private void Awake()
         {
         }
@@ -45,7 +47,7 @@ namespace _Chi.Scripts.Mono.Entities
             for (var index = 0; index < effects.Count; index++)
             {
                 var effect = effects[index];
-                effect.Apply(entity, null, this, null);
+                effect.Apply(entity, null, this, null, strength);
             }
 
             return true;

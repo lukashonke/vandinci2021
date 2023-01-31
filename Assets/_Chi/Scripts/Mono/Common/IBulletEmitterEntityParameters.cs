@@ -2,10 +2,5 @@
 {
     public interface IBulletEmitterEntityParameters
     {
-        int? GetProjectileCount();
-
-        float? GetProjectileForwardSpeed();
-
-        float? GetProjectileFireInterval();
     }
 }

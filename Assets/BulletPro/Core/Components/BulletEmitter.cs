@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
 using UnityEngine;
+using UnityEngine.Events;
 
 // This script is part of the BulletPro package for Unity.
 // Author : Simon Albou <albou.simon@gmail.com>
@@ -20,7 +21,7 @@ namespace BulletPro
 		public Transform patternOrigin;
 		public bool playAtStart;
 
-		public IBulletEmitterEntityParameters entityParameters;
+		public UnityEvent shootInstruction;
 
 		// Bullet Emitter is considered "playing" if at least one sub-emitter is still playing.
 		public bool isPlaying

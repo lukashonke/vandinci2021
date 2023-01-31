@@ -54,6 +54,8 @@ namespace _Chi.Scripts.Mono.Entities
 
         private bool physicsActivated;
 
+        private float nextPushTime;
+
         #endregion
         
         public override void Awake()
@@ -272,6 +274,16 @@ namespace _Chi.Scripts.Mono.Entities
                 hasRb = physicsActivated;
                 rb.simulated = physicsActivated;
             }
+        }
+
+        public override bool CanBePushed()
+        {
+            return nextPushTime < Time.time;
+        }
+
+        public override void SetCannotBePushed(float duration)
+        {
+            nextPushTime = Time.time + duration;
         }
     }
 }

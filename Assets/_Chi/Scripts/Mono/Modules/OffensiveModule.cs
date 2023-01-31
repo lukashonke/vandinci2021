@@ -17,6 +17,8 @@ namespace _Chi.Scripts.Mono.Modules
         
         public List<ImmediateEffect> effects;
 
+        public ParticleSystem shootVfx;
+
         public TargetType affectType;
 
         protected bool activated;
@@ -26,7 +28,6 @@ namespace _Chi.Scripts.Mono.Modules
             base.Awake();
 
             emitter = GetComponent<BulletEmitter>();
-            emitter.entityParameters = this;
         }
 
         public override void Start()
@@ -37,6 +38,9 @@ namespace _Chi.Scripts.Mono.Modules
         public override bool ActivateEffects()
         {
             if (!base.ActivateEffects() || activated) return false;
+            
+            emitter.shootInstruction.AddListener(OnShootInstruction);
+            
             activated = true;
             StartCoroutine(UpdateLoop());
             
@@ -46,26 +50,24 @@ namespace _Chi.Scripts.Mono.Modules
         public override bool DeactivateEffects()
         {
             if (!base.DeactivateEffects() || !activated) return false;
+            emitter.shootInstruction.RemoveListener(OnShootInstruction);
             activated = false;
-            
             return true;
         }
 
         public abstract IEnumerator UpdateLoop();
-        public virtual int? GetProjectileCount()
+        
+        public void ShootEffect()
         {
-            return null;
+            if (shootVfx != null && !shootVfx.isPlaying)
+            {
+                shootVfx.Play();
+            }
         }
 
-        public virtual float? GetProjectileForwardSpeed()
+        public virtual void OnShootInstruction()
         {
-            //TODO derive in Crossbow and use it in the emitter 
-            return null;
-        }
-
-        public float? GetProjectileFireInterval()
-        {
-            return null;
+            
         }
     }
 }
