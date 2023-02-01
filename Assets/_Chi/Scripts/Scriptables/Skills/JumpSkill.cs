@@ -8,8 +8,6 @@ namespace _Chi.Scripts.Scriptables.Skills
     [CreateAssetMenu(fileName = "Jump", menuName = "Gama/Skills/Jump")]
     public class JumpSkill : Skill
     {
-        public float reuseDelay = 1f;
-
         public float jumpForce = 10;
 
         public float jumpLength;

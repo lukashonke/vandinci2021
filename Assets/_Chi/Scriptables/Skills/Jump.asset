@@ -21,6 +21,6 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  reuseDelay: 1
-  jumpForce: 10
+  reuseDelay: 10
+  jumpForce: 15
   jumpLength: 0.3

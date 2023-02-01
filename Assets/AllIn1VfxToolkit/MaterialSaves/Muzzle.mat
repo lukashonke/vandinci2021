@@ -15,6 +15,7 @@ Material:
   - ALPHAFADETRANSPARENCYTOO_ON
   - ALPHAFADE_ON
   - COLORRAMP_ON
+  - DOODLE_ON
   - SHAPE2_ON
   - SHAPE3_ON
   m_InvalidKeywords: []
@@ -136,7 +137,7 @@ Material:
     - _Glow: -7.78
     - _GlowGlobal: 5.03
     - _HandDrawnAmount: 10
-    - _HandDrawnSpeed: 5
+    - _HandDrawnSpeed: 3.4
     - _HsvBright: 1
     - _HsvSaturation: 1
     - _HsvShift: 180

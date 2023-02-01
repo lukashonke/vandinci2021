@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2091413172466918208}
   - component: {fileID: 2091413172466918209}
+  - component: {fileID: -2384126427454716758}
   m_Layer: 0
   m_Name: Mission1
   m_TagString: Untagged
@@ -214,3 +215,25 @@ MonoBehaviour:
     nextSpawnTime: 0
     startAtTime: 0
     lastSpawnTime: 0
+--- !u!114 &-2384126427454716758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091413172466918211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58189f94f9049b0b9daf118ed7d4978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  secondsToSurvive: 120

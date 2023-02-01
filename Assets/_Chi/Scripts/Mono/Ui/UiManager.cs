@@ -36,7 +36,10 @@ public class UiManager : MonoBehaviour
     [Required] public TextMeshProUGUI time;
     [Required] public TextMeshProUGUI killed;
     [Required] public TMPro.TMP_Dropdown dropdown;
+    [Required] public TextMeshProUGUI missionText;
 
+    public SkillIndicatorUi[] skillIndicators;
+    
     [Required] public VehicleSettingsWindow vehicleSettingsWindow;
 
     [NonSerialized] public AddingUiItem addingUiItem;
@@ -44,6 +47,8 @@ public class UiManager : MonoBehaviour
     void Awake()
     {
         Gamesystem.instance.uiManager = this;
+
+        skillIndicators = GetComponentsInChildren<SkillIndicatorUi>();
         
         dropdown.onValueChanged.AddListener(OnMissionSelectorChange);
     }
@@ -72,14 +77,14 @@ public class UiManager : MonoBehaviour
         var waiter = new WaitForSecondsRealtime(.5f);
         while (true)
         {
-            DoUpdate();
+            DoStatsUpdate();
             
             yield return waiter;
         }
     }
 
     // Update is called once per frame
-    private void DoUpdate()
+    private void DoStatsUpdate()
     {
         var progressData = Gamesystem.instance.progress.progressData;
         
@@ -89,6 +94,28 @@ public class UiManager : MonoBehaviour
         gold.text = $"{progressData.run.gold}";
         time.text = $"{TimeSpan.FromSeconds(Time.time - Gamesystem.instance.levelStartedTime).ToString(@"mm\:ss")}";
         killed.text = $"{progressData.run.killed}";
+    }
+
+    private void Update()
+    {
+        var player = Gamesystem.instance.objects.currentPlayer;
+
+        for (var index = 0; index < player.skills.Count; index++)
+        {
+            var skill = player.skills[index];
+            var data = player.GetSkillData(skill);
+            float reloadPercentage;
+            reloadPercentage = (Time.time - data.lastUse) / skill.reuseDelay;
+            if (reloadPercentage > 1) reloadPercentage = 1;
+
+            skillIndicators[index].SetSkill(skill);
+            skillIndicators[index].SetReloadPercentage(reloadPercentage);
+        }
+    }
+
+    public void SetMissionText(string text)
+    {
+        missionText.text = text;
     }
 
     public void OpenVehicleSettings()

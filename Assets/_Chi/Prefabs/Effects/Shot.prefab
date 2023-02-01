@@ -286,7 +286,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.02
+      scalar: 0.01
       minScalar: 0.005
       maxCurve:
         serializedVersion: 2
@@ -392,7 +392,7 @@ ParticleSystem:
     startSizeZ:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.02
+      scalar: 0.01
       minScalar: 0.015
       maxCurve:
         serializedVersion: 2
@@ -4973,7 +4973,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    m_ColorMin: {r: -4.9092986e+12, g: 9.4e-44, b: -4.9091854e+12, a: 9.4e-44}
+    m_ColorMin: {r: 1.434075e-37, g: 1e-45, b: 0.03498465, a: 1e-45}
     m_ColorMax: {r: 1, g: 1, b: 1, a: 1}
   isBurst: 1
   minNumberOfParticles: 1
@@ -5190,7 +5190,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    m_ColorMin: {r: -4.9092986e+12, g: 9.4e-44, b: -4.9091854e+12, a: 9.4e-44}
+    m_ColorMin: {r: 1.434075e-37, g: 1e-45, b: 0.03498465, a: 1e-45}
     m_ColorMax: {r: 1, g: 1, b: 1, a: 1}
   isBurst: 1
   minNumberOfParticles: 1
