@@ -1,14 +1,33 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
+using _Chi.Scripts.Mono.Ui;
 using _Chi.Scripts.Utilities;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace _Chi.Scripts.Mono.Modules.Offensive  
 {
     public class ShootNearestModule : OffensiveModule
     {
+        public ShootNearestTargetType targetType;
+        
+        private Func<Entity, bool> nearestTargetFilterFunc;
+
+        public override void Awake()
+        {
+            base.Awake();
+
+            switch (targetType)
+            {
+                case ShootNearestTargetType.InFront:
+                    nearestTargetFilterFunc = entity => ProjectileExtensions.CanFire(entity.GetPosition(), slot.transform.rotation * originalRotation, transform.position, 90);
+                    break;
+            }
+        }
+
         public override IEnumerator UpdateLoop()  
         {
             var waiter = new WaitForFixedUpdate();
@@ -26,8 +45,8 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                 if (nextTargetUpdate > Time.time)
                 {
                     nextTargetUpdate = Time.time + targetUpdateInterval + Random.Range(0.1f, 0.2f);
-                    
-                    var nearest = ((Player) parent).GetNearestEnemy(GetPosition());
+
+                    var nearest = ((Player) parent).GetNearestEnemy(GetPosition(), nearestTargetFilterFunc);
 
                     if (nearest != null && Utils.Dist2(nearest.GetPosition(), GetPosition()) < Mathf.Pow(stats.targetRange.GetValue(), 2))
                     {
@@ -82,6 +101,10 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                     
                     RotateTowards(currentTarget.position, true);
                 }
+                else
+                {
+                    this.transform.localRotation = originalRotation;
+                }
             }
         }
 
@@ -91,5 +114,11 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
             
             ShootEffect();
         }
+    }
+
+    public enum ShootNearestTargetType
+    {
+        Any,
+        InFront
     }
 }

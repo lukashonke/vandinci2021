@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1957617029
-  m_SortingLayer: 1
+  m_SortingLayer: -1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f6fcb2c622eeda0489126fdb219a017e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.4117647}
@@ -95,7 +95,9 @@ GameObject:
   - component: {fileID: 5120171129198102155}
   - component: {fileID: 6490214600334239175}
   - component: {fileID: 7728296546554829630}
-  m_Layer: 0
+  - component: {fileID: 2452866123513335333}
+  - component: {fileID: 3210415781398762802}
+  m_Layer: 7
   m_Name: CorpseStorageBoxSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +159,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1351680081
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5424ce9219cb2c541b6be48e73440bc9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -180,7 +182,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -194,5 +196,77 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.004016, y: 2.008032}
+  m_Size: {x: 1.004016, y: 1.004016}
   m_EdgeRadius: 0
+--- !u!114 &2452866123513335333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873091579860417300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a50e756f139e8884f93ef2eca2eef78d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 5120171129198102155}
+  colliderType: 0
+  startingChildren: []
+  syncEnable: 1
+  syncDisable: 1
+  syncCollisionTags: 1
+  hitboxSize: 0.4
+  hitboxOffset: {x: 0, y: 0}
+  killBulletOnCollision: 1
+  maxSimultaneousCollisionsPerFrame: 1
+  collisionTags:
+    tagList: 2
+  OnHitByBullet:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitByBulletEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitByBulletStay:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitByBulletExit:
+    m_PersistentCalls:
+      m_Calls: []
+  parentSyncFoldout: 0
+  collisionTagsFoldout: 1
+  advancedEventsFoldout: 0
+  useDefaultGizmoColor: 1
+  gizmoColor: {r: 0, g: 0, b: 0, a: 1}
+  gizmoZOffset: 0
+--- !u!114 &3210415781398762802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873091579860417300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22c5c6db557f476780c1782e3fb2d5a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  entityStats:
+    maxHp: 100
+    maxHpAdd: 0
+    maxHpMul: 1
+    hp: 100
+  team: 2
+  healthbarOffset: {x: 0, y: 0, z: 0}
+  seeker: {fileID: 0}
+  rvoController: {fileID: 0}
+  stats:
+    speed: 1
+    rotationSpeed: 500
+    contactDamage: 0
+    contactDamageInterval: 1
+  size: 1
+  goDirectlyToPlayer: 0
+  dissolveSpeed: 2

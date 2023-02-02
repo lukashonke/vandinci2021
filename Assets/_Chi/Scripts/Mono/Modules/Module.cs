@@ -21,11 +21,15 @@ namespace _Chi.Scripts.Mono.Modules
 
         [NonSerialized] public Transform currentTarget;
 
-        public int level = 1;
+        [NonSerialized] public int level = 1;
+        
+        [NonSerialized] public Quaternion originalRotation;
 
         public virtual void Awake()
         {
             parent = GetComponentInParent<Entity>();
+
+            originalRotation = transform.rotation;
         }
 
         public virtual void Start()
@@ -93,6 +97,12 @@ namespace _Chi.Scripts.Mono.Modules
         public void SetRotation(Quaternion q)
         {
             this.transform.rotation = q;
+        }
+
+        public void SetOriginalRotation(int angle)
+        {
+            originalRotation = Quaternion.Euler(0, 0, angle);
+            this.transform.rotation = originalRotation;
         }
 
         public void RotateTowards(Vector3 rotationTarget, bool instantly = false)

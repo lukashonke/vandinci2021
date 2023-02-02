@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4377579281959204655}
   - component: {fileID: 9178099114132390322}
   - component: {fileID: 9009382869489410492}
+  - component: {fileID: 7767941275579858264}
+  - component: {fileID: -4412113973077490860}
   m_Layer: 0
   m_Name: Building2
   m_TagString: Untagged
@@ -72,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 399735035
-  m_SortingLayer: 9
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6818ca84f5c8ca743bca4f0ab9f64070, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -111,3 +113,100 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2690763, y: 2.2128515}
   m_EdgeRadius: 0
+--- !u!114 &7767941275579858264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131987021720221160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a50e756f139e8884f93ef2eca2eef78d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 4377579281959204655}
+  colliderType: 0
+  startingChildren: []
+  syncEnable: 1
+  syncDisable: 1
+  syncCollisionTags: 1
+  hitboxSize: 1
+  hitboxOffset: {x: 0, y: 0}
+  killBulletOnCollision: 1
+  maxSimultaneousCollisionsPerFrame: 1
+  collisionTags:
+    tagList: 2
+  OnHitByBullet:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitByBulletEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitByBulletStay:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitByBulletExit:
+    m_PersistentCalls:
+      m_Calls: []
+  parentSyncFoldout: 0
+  collisionTagsFoldout: 1
+  advancedEventsFoldout: 0
+  useDefaultGizmoColor: 1
+  gizmoColor: {r: 0, g: 0, b: 0, a: 1}
+  gizmoZOffset: 0
+--- !u!114 &-4412113973077490860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131987021720221160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa771a7d9cdd4710a8e5248407b9f58c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  entityStats:
+    maxHp: 500
+    maxHpAdd: 0
+    maxHpMul: 1
+    hp: 500
+  team: 2
+  healthbarOffset: {x: 0, y: 0, z: 0}
+  seeker: {fileID: 0}
+  rvoController: {fileID: 0}
+  stats:
+    speed: 1
+    rotationSpeed: 500
+    contactDamage: 0
+    contactDamageInterval: 1
+  size: 1
+  goDirectlyToPlayer: 0
+  dissolveSpeed: 2
+  activateWhenCloseToPlayerDist2: 0
+  continuousPrefabsToSpawn: []
+  continuousSpawnIntervalMin: 0.25
+  continuousSpawnIntervalMax: 0.75
+  continuousSpawnWhenPlayerNearbyDist2: 81
+  continuousSpawnAtOnceCount: 1
+  continuousSpawnSpread: 1.5
+  distanceBeforeDespawn: 100
+  damageBasedSpawns:
+  - spawnAtHpPercentIsRepeated: 0
+    spawnAtHpPercent: 0.6
+    prefabsToSpawn:
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: e097b4067895d0b49be865b2e7b210ee, type: 3}
+      weight: 2
+      rotateTowardsPlayer: 1
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: ad25603bcdba71446ae63386ae8aaae1, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+    spawnCountMin: 90
+    spawnCountMax: 120
+    spawnSpread: 1.5

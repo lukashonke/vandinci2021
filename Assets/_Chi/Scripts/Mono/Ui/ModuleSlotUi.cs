@@ -13,12 +13,15 @@ namespace _Chi.Scripts.Mono.Ui
         [NonSerialized] public int slotId;
         
         public GameObject highlightGo;
+
+        public int rotation = 0;
         
         public ModuleSlotType slotType;
         
         public List<ModuleSlotUi> connectedTo;
 
         public GameObject moduleGo;
+        public GameObject onHoverGo;
         public PrefabItem modulePrefabItem;
         public int moduleLevel;
 
@@ -32,7 +35,7 @@ namespace _Chi.Scripts.Mono.Ui
             SetHighlighted(false);
         }
 
-        public void SetModulePrefab(PrefabItem item, int level = 1)
+        public void SetModulePrefab(PrefabItem item, int level = 1, int rotation = 0)
         {
             if (moduleGo != null)
             {
@@ -44,8 +47,15 @@ namespace _Chi.Scripts.Mono.Ui
                 var newModule = Instantiate(item.prefabUi, this.transform.position, Quaternion.identity, this.transform);
                 
                 moduleGo = newModule;
+                onHoverGo = moduleGo.transform.Find("OnHover")?.gameObject;
                 modulePrefabItem = item;
                 moduleLevel = level;
+                SetRotation(rotation);
+
+                if (onHoverGo != null)
+                {
+                    onHoverGo.SetActive(false);
+                }
             }
         }
 
@@ -108,6 +118,8 @@ namespace _Chi.Scripts.Mono.Ui
             {
                 buttons.Add(new ActionsPanelButton("Remove", RemoveModuleFromSlot, ActionsPanelButtonType.Default));
                 buttons.Add(new ActionsPanelButton("Move", MoveModuleToAnotherSlot, ActionsPanelButtonType.Default));
+                buttons.Add(new ActionsPanelButton("Rotate Left", RotateLeft, ActionsPanelButtonType.Default));
+                buttons.Add(new ActionsPanelButton("Rotate Right", RotateRight, ActionsPanelButtonType.Default));
             }
 
             if (buttons.Any())
@@ -131,6 +143,11 @@ namespace _Chi.Scripts.Mono.Ui
                 //TODO use actual module instance if available to show level
                 Gamesystem.instance.uiManager.ShowModuleTooltip((RectTransform) this.transform, modulePrefabItem, moduleLevel);
             }
+            
+            if (onHoverGo != null)
+            {
+                onHoverGo.SetActive(true);
+            }
         }
 
         public void OnHoverExit()
@@ -139,6 +156,33 @@ namespace _Chi.Scripts.Mono.Ui
             {
                 Gamesystem.instance.uiManager.HideTooltip();
             }
+            
+            if (onHoverGo != null)
+            {
+                onHoverGo.SetActive(false);
+            }
+        }
+
+        public void RotateLeft()
+        {
+            rotation += 90;
+            rotation %= 360;
+            moduleGo.transform.rotation = Quaternion.Euler(0, 0, rotation);
+            parentBody.SetModuleInSlotRotation(this);
+        }
+
+        public void RotateRight()
+        {
+            rotation -= 90;
+            rotation %= 360;
+            moduleGo.transform.rotation = Quaternion.Euler(0, 0, rotation);
+            parentBody.SetModuleInSlotRotation(this);
+        }
+
+        public void SetRotation(int angle)
+        {
+            rotation = angle;
+            moduleGo.transform.rotation = Quaternion.Euler(0, 0, rotation);
         }
 
         public void RemoveModuleFromSlot()

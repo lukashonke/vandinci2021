@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 7234856
+  uniqueIndex: 7970152
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children: []
@@ -847,7 +847,7 @@ MonoBehaviour:
         parameterType: 0
         relativeTo: 0
         parameterName: 
-      defaultValue: 8
+      defaultValue: 0
     useSlider: 0
     sliderMin: 0
     sliderMax: 0
@@ -961,7 +961,7 @@ MonoBehaviour:
         parameterType: 0
         relativeTo: 0
         parameterName: 
-      defaultValue: 8
+      defaultValue: Projectiles
   color:
     valueTree:
     - settings:
@@ -1559,12 +1559,12 @@ MonoBehaviour:
       unless: 0
       canceller: 0
     onBulletDeath:
-      enabled: 1
+      enabled: 0
       behaviour: 0
       unless: 0
       canceller: 0
-    replaceColorWithBulletColor: 1
-    replaceSizeWithNumber: 1
+    replaceColorWithBulletColor: 0
+    replaceSizeWithNumber: 0
     sizeNewValue:
       valueTree:
       - settings:
@@ -1792,7 +1792,7 @@ MonoBehaviour:
       useSlider: 0
       sliderMin: 0
       sliderMax: 0
-    multiplySizeWithBulletScale: 1
+    multiplySizeWithBulletScale: 0
     multiplySpeedWithBulletScale: 0
     vfxOverrides: []
   vfxParticleSize:
@@ -2363,7 +2363,7 @@ MonoBehaviour:
   foldoutVFX: 1
   hideSpriteList: 0
   vfxOpened: 0
-  currentlyDisplayedModule: 0
+  currentlyDisplayedModule: 1
   canMove: 1
   canCollide: 1
   isVisible: 1
@@ -7645,7 +7645,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 707343
+  uniqueIndex: 8465187
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -10063,7 +10063,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 8719291
+  uniqueIndex: 3362262
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -20027,7 +20027,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 9058475
+  uniqueIndex: 3428405
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:

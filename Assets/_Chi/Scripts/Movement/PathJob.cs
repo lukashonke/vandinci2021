@@ -102,13 +102,17 @@ namespace _Chi.Scripts.Movement
 
                     if (data.movePath)
                     {
+                        bool doMove = npc.CanGoDirectlyToPlayer();
+                        
                         npc.pathData.reachedEndOfPath = data.reachedEndOfPath;
                         npc.pathData.currentWaypoint = data.outputWaypoints[0];
     
                         //bool stop = false;
                         
                         //character.pathData.rvoDensityBehavior.Update(character.rvoController.enabled, character.pathData.ReachedDestination(), ref stop, ref character.rvoController.priorityMultiplier, ref character.rvoController.flowFollowingStrength, character.GetPosition());
+                        
                         //if (!stop) // TODO solve better, propably
+                        if(doMove)
                         {
                             npc.MoveTo((Vector3)data.outputPositions[0]);
                         }
@@ -147,7 +151,7 @@ namespace _Chi.Scripts.Movement
                         {
                             if (npc.hasRvoController)
                             {
-                                if (npc.goDirectlyToPlayer)
+                                if (doMove)
                                 {
                                     npc.rvoController.SetTarget(data.outputPositions[2], npc.stats.speed, npc.stats.speed * 1.2f, npc.pathData.endOfPath);
                                 }

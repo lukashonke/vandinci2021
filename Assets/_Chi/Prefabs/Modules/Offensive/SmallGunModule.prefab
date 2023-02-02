@@ -60,7 +60,6 @@ MonoBehaviour:
   slot: {fileID: 0}
   targetUpdateInterval: 0.2
   rotationSpeed: 1500
-  level: 1
   stats:
     projectileCount:
       baseValue: 1
@@ -96,8 +95,10 @@ MonoBehaviour:
     effectDuration: 1
   effects:
   - {fileID: 11400000, guid: e9ee23c6ec6fda646a0ca63e5b6a0d15, type: 2}
+  - {fileID: 11400000, guid: 55fb060b0aa775a4eb384d6f7a55d715, type: 2}
   shootVfx: {fileID: 5898446814790275595}
   affectType: 0
+  targetType: 1
 --- !u!212 &6177911479989981830
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -137,7 +138,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1100204741
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f0e4bd070d0ba594c9b8c34344712b05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

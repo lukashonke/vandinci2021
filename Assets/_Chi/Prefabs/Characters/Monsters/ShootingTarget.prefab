@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1453569441
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b2d676c7bb55561468c8d8a336439404, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -108,7 +108,7 @@ MonoBehaviour:
     maxHpMul: 1
     hp: 1000000
   team: 2
-  healthbarOffset: 1
+  healthbarOffset: {x: 0, y: 0, z: 0}
   seeker: {fileID: 0}
   rvoController: {fileID: 0}
   stats:
@@ -119,6 +119,8 @@ MonoBehaviour:
   size: 1
   goDirectlyToPlayer: 1
   dissolveSpeed: 2
+  poolId: 1
+  activateWhenCloseToPlayerDist2: 0
 --- !u!114 &5954188515519120313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +203,7 @@ MonoBehaviour:
   syncEnable: 1
   syncDisable: 1
   syncCollisionTags: 1
-  hitboxSize: 0.1
+  hitboxSize: 0.2
   hitboxOffset: {x: 0, y: 0}
   killBulletOnCollision: 1
   maxSimultaneousCollisionsPerFrame: 1

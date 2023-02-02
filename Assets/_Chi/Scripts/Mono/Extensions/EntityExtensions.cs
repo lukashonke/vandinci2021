@@ -1,8 +1,11 @@
-﻿using _Chi.Scripts.Mono.Common;
+﻿using System;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
+using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Utilities;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace _Chi.Scripts.Mono.Extensions
 {
@@ -96,7 +99,7 @@ namespace _Chi.Scripts.Mono.Extensions
             return nearest;
         }
 
-        public static Entity GetNearestEnemy(this Player player, Vector3 from)
+        public static Entity GetNearestEnemy(this Player player, Vector3 from, Func<Entity, bool> condition)
         {
             Entity nearest = null;
             float nearestDistance = float.MaxValue;
@@ -106,7 +109,7 @@ namespace _Chi.Scripts.Mono.Extensions
                 if (entity is Npc npc && npc.activated && npc.AreEnemies(player) && npc != null)
                 {
                     var dist = Utils.Dist2(npc.GetPosition(), from);
-                    if (dist < nearestDistance)
+                    if (dist < nearestDistance && (condition == null || condition(npc)))
                     {
                         nearest = entity;
                         nearestDistance = dist;
@@ -167,6 +170,34 @@ namespace _Chi.Scripts.Mono.Extensions
 
             var nextRotation = Quaternion.RotateTowards(rotation, newRotation, rotationSpeed * Time.fixedDeltaTime);
             return nextRotation;
+        }
+        
+        public static void SpawnOnPosition(this SpawnPrefab prefab, Vector3 position, Vector3 attackTarget, float distanceBeforeDespawn)
+        {
+            Quaternion rotation;
+
+            if (prefab.rotateTowardsPlayer)
+            {
+                rotation = Quaternion.LookRotation(position - attackTarget, Vector3.forward);
+                rotation.x = 0;
+                rotation.y = 0;
+            }
+            else
+            {
+                rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
+            }
+            
+            switch (prefab.type)
+            {
+                case SpawnPrefabType.Npc:
+                    var npc = prefab.prefabNpc.SpawnPooledNpc(position, rotation);
+                    npc.maxDistanceFromPlayerBeforeDespawn = distanceBeforeDespawn;
+                    break;
+                case SpawnPrefabType.Gameobject:
+                    throw new NotImplementedException();
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
     }
 }

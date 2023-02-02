@@ -69,7 +69,7 @@ namespace _Chi.Scripts.Mono.System
                         continue;
                     }
                 
-                    player.SetModuleInSlot(slot, modulePrefab.prefab, moduleInSlot.level);
+                    player.SetModuleInSlot(slot, modulePrefab.prefab, moduleInSlot.level, moduleInSlot.rotation);
                 }
             }
             

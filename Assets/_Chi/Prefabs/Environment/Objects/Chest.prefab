@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5260250657119607594}
   - component: {fileID: 1544515934555485189}
   - component: {fileID: 7315142422562026647}
+  - component: {fileID: 6549855113248904363}
+  - component: {fileID: 5570863261562565206}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -72,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1351680081
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5043a681e42e8d4438d161f29b39054c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -102,7 +104,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0722891, y: 0.712067}
+    oldSize: {x: 1.0722891, y: 0.7108434}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -111,3 +113,75 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0722891, y: 0.712067}
   m_EdgeRadius: 0
+--- !u!114 &6549855113248904363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3093707377496050803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22c5c6db557f476780c1782e3fb2d5a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  entityStats:
+    maxHp: 100
+    maxHpAdd: 0
+    maxHpMul: 1
+    hp: 100
+  team: 2
+  healthbarOffset: {x: 0, y: 0, z: 0}
+  seeker: {fileID: 0}
+  rvoController: {fileID: 0}
+  stats:
+    speed: 1
+    rotationSpeed: 500
+    contactDamage: 0
+    contactDamageInterval: 1
+  size: 1
+  goDirectlyToPlayer: 0
+  dissolveSpeed: 2
+--- !u!114 &5570863261562565206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3093707377496050803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a50e756f139e8884f93ef2eca2eef78d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 5260250657119607594}
+  colliderType: 0
+  startingChildren: []
+  syncEnable: 1
+  syncDisable: 1
+  syncCollisionTags: 1
+  hitboxSize: 0.3
+  hitboxOffset: {x: 0, y: 0}
+  killBulletOnCollision: 1
+  maxSimultaneousCollisionsPerFrame: 1
+  collisionTags:
+    tagList: 2
+  OnHitByBullet:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitByBulletEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitByBulletStay:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitByBulletExit:
+    m_PersistentCalls:
+      m_Calls: []
+  parentSyncFoldout: 0
+  collisionTagsFoldout: 1
+  advancedEventsFoldout: 0
+  useDefaultGizmoColor: 1
+  gizmoColor: {r: 0, g: 0, b: 0, a: 1}
+  gizmoZOffset: 0

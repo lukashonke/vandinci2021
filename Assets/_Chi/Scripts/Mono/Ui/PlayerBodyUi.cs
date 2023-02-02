@@ -40,7 +40,7 @@ namespace _Chi.Scripts.Mono.Ui
                         continue;
                     }
                 
-                    uiSlot.SetModulePrefab(modulePrefab, moduleInSlot.level);
+                    uiSlot.SetModulePrefab(modulePrefab, moduleInSlot.level, moduleInSlot.rotation);
                 }
             }
         }
@@ -48,6 +48,17 @@ namespace _Chi.Scripts.Mono.Ui
         public ModuleSlotUi GetSlotById(int id)
         {
             return slots.FirstOrDefault(s => s.slotId == id);
+        }
+        
+        public void SetModuleInSlotRotation(ModuleSlotUi slot)
+        {
+            var run = Gamesystem.instance.progress.progressData.run;
+
+            var persistedSlot = run.modulesInSlots.FirstOrDefault(s => s.slotId == slot.slotId);
+            if (persistedSlot != null)
+            {
+                persistedSlot.rotation = slot.rotation;
+            }
         }
 
         public void RemoveModuleFromSlot(ModuleSlotUi slot)
@@ -88,7 +99,7 @@ namespace _Chi.Scripts.Mono.Ui
                     level = level
                 });
                 
-                uiSlot.SetModulePrefab(prefab, level);
+                uiSlot.SetModulePrefab(prefab, level, 0);
                 
                 module.finishCallback?.Invoke();
                 

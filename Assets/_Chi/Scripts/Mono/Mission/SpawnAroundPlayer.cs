@@ -143,13 +143,10 @@ namespace _Chi.Scripts.Mono.Mission
         [ReadOnly] public float nextSpawnTime;
         [ReadOnly] public float startAtTime = 0;
         [ReadOnly] public float lastSpawnTime = 0;
-        [NonSerialized] private float sumPossiblePrefabsWeights;
         [NonSerialized] private Dictionary<int, SpawnPrefab> prefabsByWeightValues;
 
         public void Initialise()
         {
-            sumPossiblePrefabsWeights = possiblePrefabs.Sum(p => p.weight);
-
             prefabsByWeightValues = new Dictionary<int, SpawnPrefab>();
 
             int index = 0;

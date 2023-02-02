@@ -121,27 +121,27 @@ public class BulletBehavior : BaseBulletBehaviour
 				{
 					var effect = effects[index];
 					effect.Apply(entity, ownerModule.parent, null, ownerModule, 1);
+				}
+				
+				bool deactivate = false;
 
-					bool deactivate = false;
-
-					if (canPierce)
-					{
-						piercedEnemies++;
-						collidedWith[piercedEnemies] = br;
-						if (piercedEnemies >= offensiveModule.stats.projectilePierceCount.GetValueInt())
-						{
-							deactivate = true;
-						}
-					}
-					else
+				if (canPierce)
+				{
+					piercedEnemies++;
+					collidedWith[piercedEnemies] = br;
+					if (piercedEnemies >= offensiveModule.stats.projectilePierceCount.GetValueInt())
 					{
 						deactivate = true;
 					}
+				}
+				else
+				{
+					deactivate = true;
+				}
 
-					if (deactivate)
-					{
-						bullet.Die();
-					}
+				if (deactivate)
+				{
+					bullet.Die();
 				}
 			}
 		}

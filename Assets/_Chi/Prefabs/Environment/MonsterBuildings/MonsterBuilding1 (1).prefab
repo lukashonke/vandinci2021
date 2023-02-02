@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6774502595031631422}
   - component: {fileID: 4612056282716084965}
   - component: {fileID: 2293481580775183338}
+  - component: {fileID: 8880028571468777291}
+  - component: {fileID: 6711422001240846970}
   m_Layer: 0
   m_Name: MonsterBuilding1 (1)
   m_TagString: Untagged
@@ -72,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 399735035
-  m_SortingLayer: 9
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e38259388df912c42927c2f1996b6081, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -109,5 +111,128 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9598393, y: 3.2891567}
+  m_Size: {x: 2.9598393, y: 3.52}
   m_EdgeRadius: 0
+--- !u!114 &8880028571468777291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4065425929322152479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a50e756f139e8884f93ef2eca2eef78d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 6774502595031631422}
+  colliderType: 0
+  startingChildren: []
+  syncEnable: 1
+  syncDisable: 1
+  syncCollisionTags: 1
+  hitboxSize: 1.7
+  hitboxOffset: {x: 0, y: 0}
+  killBulletOnCollision: 1
+  maxSimultaneousCollisionsPerFrame: 1
+  collisionTags:
+    tagList: 2
+  OnHitByBullet:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitByBulletEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitByBulletStay:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitByBulletExit:
+    m_PersistentCalls:
+      m_Calls: []
+  parentSyncFoldout: 0
+  collisionTagsFoldout: 1
+  advancedEventsFoldout: 0
+  useDefaultGizmoColor: 1
+  gizmoColor: {r: 0, g: 0, b: 0, a: 1}
+  gizmoZOffset: 0
+--- !u!114 &6711422001240846970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4065425929322152479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa771a7d9cdd4710a8e5248407b9f58c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  entityStats:
+    maxHp: 2000
+    maxHpAdd: 0
+    maxHpMul: 1
+    hp: 2000
+  team: 2
+  healthbarOffset: {x: 0, y: 0, z: 0}
+  seeker: {fileID: 0}
+  rvoController: {fileID: 0}
+  stats:
+    speed: 1
+    rotationSpeed: 500
+    contactDamage: 0
+    contactDamageInterval: 1
+  size: 1
+  goDirectlyToPlayer: 0
+  dissolveSpeed: 2
+  poolId: 0
+  activateWhenCloseToPlayerDist2: 0
+  continuousPrefabsToSpawn:
+  - type: 0
+    prefab: {fileID: 0}
+    prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+    weight: 1
+    rotateTowardsPlayer: 1
+  - type: 0
+    prefab: {fileID: 0}
+    prefabNpc: {fileID: 5954188515519120312, guid: e9797147ab774344b8a2be82b128eaca, type: 3}
+    weight: 1
+    rotateTowardsPlayer: 1
+  - type: 0
+    prefab: {fileID: 0}
+    prefabNpc: {fileID: 5954188515519120312, guid: 6865f2ce12f622849b1c682ef902fe54, type: 3}
+    weight: 1
+    rotateTowardsPlayer: 1
+  continuousSpawnIntervalMin: 1
+  continuousSpawnIntervalMax: 5
+  continuousSpawnWhenPlayerNearbyDist2: 81
+  continuousSpawnAtOnceCount: 1
+  continuousSpawnSpread: 1.5
+  distanceBeforeDespawn: 100
+  damageBasedSpawns:
+  - spawnAtHpPercentIsRepeated: 1
+    spawnAtHpPercent: 0.2
+    prefabsToSpawn:
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 5
+      rotateTowardsPlayer: 1
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: e9797147ab774344b8a2be82b128eaca, type: 3}
+      weight: 3
+      rotateTowardsPlayer: 1
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 6865f2ce12f622849b1c682ef902fe54, type: 3}
+      weight: 3
+      rotateTowardsPlayer: 1
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4e58ba0edb87fe441b493c86ddb4e59e, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+    spawnCountMin: 20
+    spawnCountMax: 30
+    spawnSpread: 1.5

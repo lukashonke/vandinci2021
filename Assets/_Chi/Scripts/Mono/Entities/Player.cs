@@ -255,6 +255,8 @@ namespace _Chi.Scripts.Mono.Entities
             var newBody = Instantiate(bodyPrefab, GetPosition(), Quaternion.identity, this.transform);
             body = newBody.GetComponent<PlayerBody>();
             
+            body.transform.localRotation = Quaternion.identity;
+            
             InitializeBody();
         }
 
@@ -268,7 +270,7 @@ namespace _Chi.Scripts.Mono.Entities
             return slots.FirstOrDefault(s => s.slotId == slotId);
         }
 
-        public void SetModuleInSlot(ModuleSlot slot, GameObject modulePrefab, int level)
+        public void SetModuleInSlot(ModuleSlot slot, GameObject modulePrefab, int level, int rotation)
         {
             if (slot.currentModule != null)
             {
@@ -279,10 +281,11 @@ namespace _Chi.Scripts.Mono.Entities
             var module = moduleGo.GetComponent<Module>();
 
             module.level = level;
+            module.SetOriginalRotation(rotation);
             
             slot.SetModuleInSlot(module);
         }
-
+        
         public bool TryActivateSkill(int slot)
         {
             var skill = GetSkill(slot);

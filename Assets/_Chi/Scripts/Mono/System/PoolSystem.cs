@@ -43,6 +43,11 @@ namespace _Chi.Scripts.Mono.System
 
         public Npc Spawn(Npc prefabNpc, int maxPoolSize = 10000)
         {
+            if (prefabNpc.poolId == 0)
+            {
+                Debug.LogError("Cannot spawn NPC with no pool id! Set Pool id on the prefab.");
+            }
+            
             if (npcPools.TryGetValue(prefabNpc.poolId, out var pool))
             {
                 return pool.Get();
@@ -139,11 +144,11 @@ namespace _Chi.Scripts.Mono.System
         {
             var go = Instantiate(prefab.gameObject);
 
-            var newProjectile = go.GetComponent<Npc>();
+            var newNpc = go.GetComponent<Npc>();
 
-            newProjectile.poolId = prefab.poolId;
+            //newProjectile.poolId = prefab.poolId;
 
-            return newProjectile;
+            return newNpc;
         }
 
         void OnReturnedToPool(Npc npc)

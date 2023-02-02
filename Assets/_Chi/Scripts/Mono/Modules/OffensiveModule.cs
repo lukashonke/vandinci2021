@@ -59,7 +59,7 @@ namespace _Chi.Scripts.Mono.Modules
         
         public void ShootEffect()
         {
-            if (shootVfx != null && !shootVfx.isPlaying)
+            if (shootVfx != null)
             {
                 shootVfx.Play();
             }

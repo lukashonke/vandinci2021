@@ -86,6 +86,22 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: e3ea5d3bb551aa34c8f61fe3e92fd823, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+  - id: 2002
+    label: Large Gun Module
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: cdc938b384d12174ea3ca334b8fde5f1, type: 3}
+    prefabUi: {fileID: 3314847274656908133, guid: 62b510b84d407454092694e465192d93, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 2003
+    label: Large Crossbow Module
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: e2af129d57276dd4088a2d824a14837a, type: 3}
+    prefabUi: {fileID: 3314847274656908133, guid: 23afcf472f42ce244b6cfb6276ee13b6, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
   - id: 2500
     label: Add 1 Projectile
     type: 3
@@ -166,30 +182,6 @@ MonoBehaviour:
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
-  - id: 10000
-    label: 'Skill: Jump'
-    type: 4
-    predefinedId: 0
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 3314847274656908133, guid: a233808f68c59d541b62cf99caa36b75, type: 3}
-    skill: {fileID: 11400000, guid: cc69fe99998b25a4d8a301159bd9f639, type: 2}
-    mutator: {fileID: 0}
-  - id: 11000
-    label: 'Mutator: Test A'
-    type: 5
-    predefinedId: 0
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 3314847274656908133, guid: 8e6bdfcbcea623040bc4a645e3fe7187, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 11400000, guid: c6eb30975893dbd439b3464e75c496f0, type: 2}
-  - id: 11001
-    label: 'Mutator: Test B'
-    type: 5
-    predefinedId: 0
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 3314847274656908133, guid: ac0052fb6806b3b4babc28e21b84380a, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 11400000, guid: cf0ad41522139b045b19a3819acff8cb, type: 2}
   - id: 3030
     label: Barricade
     type: 0
@@ -214,4 +206,28 @@ MonoBehaviour:
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+  - id: 10000
+    label: 'Skill: Jump'
+    type: 4
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 3314847274656908133, guid: a233808f68c59d541b62cf99caa36b75, type: 3}
+    skill: {fileID: 11400000, guid: cc69fe99998b25a4d8a301159bd9f639, type: 2}
+    mutator: {fileID: 0}
+  - id: 11000
+    label: 'Mutator: Test A'
+    type: 5
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 3314847274656908133, guid: 8e6bdfcbcea623040bc4a645e3fe7187, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 11400000, guid: c6eb30975893dbd439b3464e75c496f0, type: 2}
+  - id: 11001
+    label: 'Mutator: Test B'
+    type: 5
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 3314847274656908133, guid: ac0052fb6806b3b4babc28e21b84380a, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 11400000, guid: cf0ad41522139b045b19a3819acff8cb, type: 2}
   playerDealtDamage: {fileID: 184639617188728617, guid: 314716765f8ab6548bd010be7ce6a255, type: 3}

@@ -36,6 +36,7 @@ namespace _Chi.Scripts.Persistence
         public int slotId;
         public int moduleId;
         public int level = 1;
+        public int rotation;
     }
 
     [Serializable]

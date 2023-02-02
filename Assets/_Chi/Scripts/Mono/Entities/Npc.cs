@@ -31,14 +31,16 @@ namespace _Chi.Scripts.Mono.Entities
 
         public float size = 1f;
         public bool goDirectlyToPlayer;
-        [NonSerialized] public float distanceToPlayer;
+        [NonSerialized] public float dist2ToPlayer;
         [NonSerialized] public float nextDamageTime;
         [NonSerialized] public Vector3 deathDirection;
 
         public float dissolveSpeed = 2f;
         [NonSerialized] public float currentDissolveProcess;
-        [NonSerialized] public int poolId;
+        public int poolId;
         [NonSerialized] public float? maxDistanceFromPlayerBeforeDespawn = null;
+
+        public float activateWhenCloseToPlayerDist2 = 0;
 
         #endregion
         #region privates
@@ -61,8 +63,6 @@ namespace _Chi.Scripts.Mono.Entities
         public override void Awake()
         {
             base.Awake();
-            
-            poolId = this.gameObject.GetInstanceID();
             
             seeker = GetComponent<Seeker>();
             hasSeeker = seeker != null;
@@ -232,13 +232,28 @@ namespace _Chi.Scripts.Mono.Entities
             //currentPath = null;
         }
 
+        public bool CanGoDirectlyToPlayer()
+        {
+            if (activateWhenCloseToPlayerDist2 > 0)
+            {
+                if (dist2ToPlayer < activateWhenCloseToPlayerDist2)
+                {
+                    return goDirectlyToPlayer;
+                }
+
+                return false;
+            }
+
+            return goDirectlyToPlayer;
+        }
+
         public void SetDistanceToPlayer(float dist2, Player player)
         {
-            distanceToPlayer = dist2;
+            dist2ToPlayer = dist2;
 
             if (maxDistanceFromPlayerBeforeDespawn.HasValue)
             {
-                if (distanceToPlayer > Math.Pow(maxDistanceFromPlayerBeforeDespawn.Value, 2))
+                if (dist2ToPlayer > Math.Pow(maxDistanceFromPlayerBeforeDespawn.Value, 2))
                 {
                     if(physicsActivated)
                     {
@@ -263,7 +278,7 @@ namespace _Chi.Scripts.Mono.Entities
             }
 
             var distToDamage = player.stats.maxDistanceToReceiveContactDamage.GetValue();
-            if (distanceToPlayer < distToDamage && nextDamageTime < Time.time && isAlive)
+            if (dist2ToPlayer < distToDamage && nextDamageTime < Time.time && isAlive)
             {
                 player.ReceiveDamageByContact(this, false);
             }
