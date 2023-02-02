@@ -261,6 +261,12 @@ namespace _Chi.Scripts.Mono.Entities
                 player.RemoveNearbyEnemy(this);
                 SetPhysicsActivated(false);
             }
+
+            var distToDamage = player.stats.maxDistanceToReceiveContactDamage.GetValue();
+            if (distanceToPlayer < distToDamage && nextDamageTime < Time.time && isAlive)
+            {
+                player.ReceiveDamageByContact(this, false);
+            }
         }
 
         public void SetPhysicsActivated(bool b)

@@ -71,7 +71,7 @@ namespace _Chi.Scripts.Mono.Entities
             base.Start();
 
             //StartCoroutine(UpdateNearbyEnemies());
-            StartCoroutine(DamageByNearbyCoroutine());
+            //StartCoroutine(DamageByNearbyCoroutine());
             StartCoroutine(CleanupJob());
         }
 
@@ -88,7 +88,7 @@ namespace _Chi.Scripts.Mono.Entities
 
         private IEnumerator DamageByNearbyCoroutine()
         {
-            var waiter = new WaitForSeconds(.5f);
+            var waiter = new WaitForSeconds(.1f);
             while (isAlive)
             {
                 if (damagingEnemies.Any())
@@ -98,7 +98,7 @@ namespace _Chi.Scripts.Mono.Entities
                         if (entity != null && entity is Npc monster && monster.nextDamageTime < Time.time)
                         {
                             var stillColliding = triggerCollider.OverlapPoint(entity.GetPosition()) || triggerCollider.IsTouching(entity.triggerCollider);
-
+                            Debug.Log(stillColliding);
                             if (stillColliding)
                             {
                                 ReceiveDamageByContact(monster, false);
@@ -167,14 +167,14 @@ namespace _Chi.Scripts.Mono.Entities
 
                 if (monster.isAlive)
                 {
-                    ReceiveDamageByContact(monster, true);
+                    //ReceiveDamageByContact(monster, true);
                 }
             }
         }
 
-        private void ReceiveDamageByContact(Npc monster, bool addToDamagingEnemiesList)
+        public void ReceiveDamageByContact(Npc monster, bool addToDamagingEnemiesList)
         {
-            if (Time.time > monster.nextDamageTime)
+            //if (Time.time > monster.nextDamageTime && monster.distanceToPlayer < Math.Pow(stats.maxDistanceToReceiveContactDamage.GetValue(), 2))
             {
                 var damage = monster.CalculateMonsterContactDamage(this);
                 if (damage > 0)

@@ -7,6 +7,8 @@ namespace _Chi.Scripts.Scriptables
 {
     public abstract class Skill : SerializedScriptableObject
     {
+        public float reuseDelay = 1f;
+        
         public abstract bool Trigger(Entity entity);
         
         public T GetSkillData<T>(Entity entity) where T : SkillData
@@ -35,6 +37,7 @@ namespace _Chi.Scripts.Scriptables
             if (skillData == null) return;
 
             skillData.nextPossibleUse = Time.time + delay;
+            skillData.lastUse = Time.time;
         }
 
         public abstract SkillData CreateDefaultSkillData();
@@ -43,5 +46,7 @@ namespace _Chi.Scripts.Scriptables
     public abstract class SkillData
     {
         public float nextPossibleUse;
+
+        public float lastUse;
     }
 }

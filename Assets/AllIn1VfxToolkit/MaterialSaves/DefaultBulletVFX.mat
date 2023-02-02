@@ -7,14 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GunMuzzleCone
+  m_Name: DefaultBulletVFX
   m_Shader: {fileID: 4800000, guid: 6eb86e4931b506a408fd1477edec61ea, type: 3}
   m_ValidKeywords:
-  - ADDITIVECONFIG_ON
-  - ALPHAFADEINPUTSTREAM_ON
-  - ALPHAFADE_ON
-  - PREMULTIPLYCOLOR_ON
-  - SHAPE1DISTORT_ON
+  - COLORRAMP_ON
   - SHAPE2_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -27,7 +23,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _ColorRampTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: -6196184613464321539, guid: bd8922736cfe57241be8b5ee80e31cad, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ColorRampTexGradient:
@@ -55,11 +51,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 561c85c11d8cf214a80ad29a037697fb, type: 3}
-        m_Scale: {x: 1.76, y: 1}
+        m_Texture: {fileID: 2800000, guid: 54eb44b7cd5482442908c04235ee8d2b, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
-        m_Texture: {fileID: 2800000, guid: 1776ebf4a660f87449b7ca4aedc66d49, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2f6642b43dc405d498acba7e288c068c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Shape1MaskTex:
@@ -71,20 +67,20 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Shape2Tex:
-        m_Texture: {fileID: 2800000, guid: 61ccf4997a0b4844e9083094a1bde55d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 44d6929cbb0088644b37db1154395662, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0.44, y: 0.01}
+        m_Offset: {x: 0, y: 0}
     - _Shape3DistortTex:
         m_Texture: {fileID: 2800000, guid: fcb027caad6963b4a80539bbce0d10e9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Shape3Tex:
-        m_Texture: {fileID: 2800000, guid: f7f1df61b90615744860aaf37c83fb9c, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShapeDistortTex:
-        m_Texture: {fileID: 2800000, guid: f42d6e9d0e9241543a6e0fe665ef757d, type: 3}
-        m_Scale: {x: 1, y: 0.5}
+        m_Texture: {fileID: 2800000, guid: 1fb236b5c107734489881f64fff0454b, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TrailWidthGradient:
         m_Texture: {fileID: 0}
@@ -96,11 +92,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.459
+    - _Alpha: 0.765
     - _AlphaCutoffValue: 0.25
     - _AlphaFadeAmount: -0.1
     - _AlphaFadePow: 1
-    - _AlphaFadeSmooth: 1.5
+    - _AlphaFadeSmooth: 0.075
     - _AlphaStepMax: 0.075
     - _AlphaStepMin: 0
     - _CamDistFadeStepMax: 100
@@ -108,10 +104,10 @@ Material:
     - _CamDistProximityFade: 0
     - _ColorGradingMidPoint: 0.5
     - _ColorMask: 15
-    - _ColorRampBlend: 1
+    - _ColorRampBlend: 0.668
     - _ColorRampLuminosity: 0
     - _CullingOption: 0
-    - _DebugShape: 3
+    - _DebugShape: 1
     - _DepthGlow: 1
     - _DepthGlowDist: 0.5
     - _DepthGlowGlobal: 1
@@ -124,7 +120,7 @@ Material:
     - _DistortionScrollXSpeed: 0
     - _DistortionScrollYSpeed: 0
     - _DstMode: 10
-    - _EditorDrawers: 63
+    - _EditorDrawers: 60
     - _FadeAmount: -0.1
     - _FadeBurnGlow: 5
     - _FadeBurnWidth: 0.01
@@ -133,7 +129,7 @@ Material:
     - _FadeScrollYSpeed: 0
     - _FadeTransition: 0.075
     - _Glow: 0
-    - _GlowGlobal: 1
+    - _GlowGlobal: 1.12
     - _HandDrawnAmount: 10
     - _HandDrawnSpeed: 5
     - _HsvBright: 1
@@ -149,7 +145,7 @@ Material:
     - _RandomSh1Mult: 1
     - _RandomSh2Mult: 1
     - _RandomSh3Mult: 1
-    - _RenderingMode: 1
+    - _RenderingMode: 0
     - _RimAddAmount: 1
     - _RimBias: 0
     - _RimErodesAlpha: 0
@@ -180,7 +176,7 @@ Material:
     - _Shape2DistortYSpeed: 0.1
     - _Shape2RotationOffset: 0
     - _Shape2RotationSpeed: 0
-    - _Shape2XSpeed: -0.3
+    - _Shape2XSpeed: 0
     - _Shape2YSpeed: 0
     - _Shape3AlphaWeight: 2
     - _Shape3Brightness: 0
@@ -192,20 +188,20 @@ Material:
     - _Shape3RotationOffset: 0
     - _Shape3RotationSpeed: 0
     - _Shape3XSpeed: 0
-    - _Shape3YSpeed: 0.9
+    - _Shape3YSpeed: 0
     - _ShapeAlphaWeight: 1
     - _ShapeBrightness: 0
     - _ShapeColorWeight: 1
     - _ShapeContrast: 1
-    - _ShapeDistortAmount: 0.19
+    - _ShapeDistortAmount: 0.5
     - _ShapeDistortXSpeed: 0.1
     - _ShapeDistortYSpeed: 0.1
     - _ShapeRotationOffset: 0
     - _ShapeRotationSpeed: 0
-    - _ShapeXSpeed: 0.3
+    - _ShapeXSpeed: 0
     - _ShapeYSpeed: 0
     - _SoftFactor: 0.5
-    - _SrcMode: 1
+    - _SrcMode: 5
     - _TextureScrollXSpeed: 1
     - _TextureScrollYSpeed: 0
     - _TimingSeed: 0
@@ -234,10 +230,10 @@ Material:
     - _DepthGlowColor: {r: 1, g: 1, b: 1, a: 1}
     - _FadeBurnColor: {r: 1, g: 1, b: 0, a: 1}
     - _FrontFaceTint: {r: 1, g: 1, b: 1, a: 1}
-    - _GlowColor: {r: 1, g: 0.36335683, b: 0, a: 1}
+    - _GlowColor: {r: 1, g: 1, b: 1, a: 1}
     - _LightColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Shape2Color: {r: 2.0236006, g: 1.6038013, b: 0, a: 1}
+    - _Shape2Color: {r: 1, g: 1, b: 1, a: 1}
     - _Shape3Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ShapeColor: {r: 0.8867924, g: 0.3204564, b: 0.037646834, a: 1}
+    - _ShapeColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

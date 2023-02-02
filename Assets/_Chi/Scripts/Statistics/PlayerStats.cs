@@ -15,5 +15,7 @@ namespace _Chi.Scripts.Statistics
         public Stat velocityToDamageMul = new Stat();
         
         public Stat minVelocityToDamage = new Stat();
+
+        public Stat maxDistanceToReceiveContactDamage = new Stat();
     }
 }
