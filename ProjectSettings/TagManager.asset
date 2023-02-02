@@ -16,8 +16,8 @@ TagManager:
   - PlayerProjectiles
   - EnemyProjectiles
   - Items
-  - 
-  - 
+  - Tree
+  - Resources
   - 
   - 
   - 
@@ -41,6 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 1957617029
+    locked: 0
+  - name: WorldBelowEntities
+    uniqueID: 2943287215
+    locked: 0
   - name: Vehicle
     uniqueID: 2420049253
     locked: 0
@@ -58,6 +64,9 @@ TagManager:
     locked: 0
   - name: Projectiles
     uniqueID: 1740865219
+    locked: 0
+  - name: WorldAboveEntities
+    uniqueID: 399735035
     locked: 0
   - name: Status
     uniqueID: 700887041

@@ -31,7 +31,7 @@ public class Healthbar : MonoBehaviour
     {
         try
         {
-            transform.position = parent.GetPosition() + new Vector3(0, parent.healthbarOffset, 0);
+            transform.position = parent.GetPosition() + parent.healthbarOffset;
         }
         catch (Exception e)
         {

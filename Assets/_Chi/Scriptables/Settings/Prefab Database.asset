@@ -94,6 +94,78 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: 4f7c9cf6fe61edd47a81937e10ffbef4, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+  - id: 3000
+    label: Tree 1
+    type: 6
+    predefinedId: 0
+    prefab: {fileID: 888702218433590844, guid: e2cab7bf9867aeb4d90808cd6df0bee7, type: 3}
+    prefabUi: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 3001
+    label: Tree 2
+    type: 6
+    predefinedId: 0
+    prefab: {fileID: 888702218433590844, guid: 1c2f06e4437162c4d8beaa950bdaa649, type: 3}
+    prefabUi: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 3002
+    label: Tree 3
+    type: 6
+    predefinedId: 0
+    prefab: {fileID: 888702218433590844, guid: 3a64e6681888e934f8d2bbf8a42d7af6, type: 3}
+    prefabUi: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 3003
+    label: Bush 1
+    type: 0
+    predefinedId: 0
+    prefab: {fileID: 888702218433590844, guid: a4bf972126b426241a9baf6066e7b086, type: 3}
+    prefabUi: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 3004
+    label: Bush 2
+    type: 0
+    predefinedId: 0
+    prefab: {fileID: 888702218433590844, guid: 67fa6a350eb211943a0948ee1d4c15a8, type: 3}
+    prefabUi: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 3005
+    label: Dead Tree
+    type: 0
+    predefinedId: 0
+    prefab: {fileID: 888702218433590844, guid: f3e4ccd5eacb1ab42b352e557c931594, type: 3}
+    prefabUi: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 3020
+    label: Resource Stone
+    type: 7
+    predefinedId: 0
+    prefab: {fileID: 3668401319161006958, guid: f00a5983cf859534787a124135e4f08b, type: 3}
+    prefabUi: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 3021
+    label: Resource Iron
+    type: 7
+    predefinedId: 0
+    prefab: {fileID: 3668401319161006958, guid: 61ec5d2b2f1b4ef4da70fe75aed31fa3, type: 3}
+    prefabUi: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 3022
+    label: Resource Explosium
+    type: 7
+    predefinedId: 0
+    prefab: {fileID: 3668401319161006958, guid: aca31db6dd86940498b8cbb456cc08ad, type: 3}
+    prefabUi: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
   - id: 10000
     label: 'Skill: Jump'
     type: 4
@@ -118,4 +190,28 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: ac0052fb6806b3b4babc28e21b84380a, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: cf0ad41522139b045b19a3819acff8cb, type: 2}
+  - id: 3030
+    label: Barricade
+    type: 0
+    predefinedId: 0
+    prefab: {fileID: 3020955417211395267, guid: 64723082099b5494c9573f968c41ec65, type: 3}
+    prefabUi: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 3031
+    label: Wooden Wall
+    type: 0
+    predefinedId: 0
+    prefab: {fileID: 6463370211903710501, guid: 5c73a5a502acb0b48a6f0b8ee04d09c5, type: 3}
+    prefabUi: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 3032
+    label: Stone Wall
+    type: 0
+    predefinedId: 0
+    prefab: {fileID: 7564076516500285006, guid: af613e0bde311224ba9fd97c8838f95d, type: 3}
+    prefabUi: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
   playerDealtDamage: {fileID: 184639617188728617, guid: 314716765f8ab6548bd010be7ce6a255, type: 3}

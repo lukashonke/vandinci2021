@@ -11,6 +11,7 @@ using _Chi.Scripts.Scriptables.Dtos;
 using _Chi.Scripts.Utilities;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using Object = UnityEngine.Object;
 
 public class Gamesystem : MonoBehaviour
@@ -29,6 +30,11 @@ public class Gamesystem : MonoBehaviour
     [Required] public MiscSettings miscSettings;
     [Required] public PrefabDatabase prefabDatabase;
     [Required] public MissionDatabase missionDatabase;
+    [Required] public MapGenSettings mapGenSettings;
+    [Required] public Tilemap mapGenTilemap;
+
+    [Required] public GameObject world;
+    [Required] public GameObject worldGenerated;
 
     [NonSerialized] public Dictionary<int, PrefabItem> prefabs;
     [NonSerialized] public Dictionary<PredefinedPrefabIds, PrefabItem> predefinedPrefabs;
