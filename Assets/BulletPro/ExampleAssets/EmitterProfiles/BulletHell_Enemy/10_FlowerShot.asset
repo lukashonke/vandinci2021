@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 9992330
+  uniqueIndex: 15816107
   profile: {fileID: 11400000}
   parent: {fileID: 114973981610224202}
   children:
@@ -81189,7 +81189,7 @@ MonoBehaviour:
   m_Name: Main Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 8629024
+  uniqueIndex: 3678657
   profile: {fileID: 11400000}
   parent: {fileID: 114084119151855526}
   children:
@@ -91251,7 +91251,7 @@ MonoBehaviour:
   m_Name: Green Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 9300975
+  uniqueIndex: 330597
   profile: {fileID: 11400000}
   parent: {fileID: 114636591556706544}
   children:

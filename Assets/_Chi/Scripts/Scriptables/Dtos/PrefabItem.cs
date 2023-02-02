@@ -39,6 +39,8 @@ namespace _Chi.Scripts.Scriptables.Dtos
         Body,
         Module,
         Skill,
-        Mutator
+        Mutator,
+        Tree,
+        Resource
     }
 }

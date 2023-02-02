@@ -1,0 +1,2029 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231ff82a704e4994aab6d1d175a510fc, type: 3}
+  m_Name: MapGen Settings
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 259cfc444950b8d43be60f4e1f8aa88b, type: 2}
+    - {fileID: 888702218433590844, guid: e2cab7bf9867aeb4d90808cd6df0bee7, type: 3}
+    - {fileID: 888702218433590844, guid: 1c2f06e4437162c4d8beaa950bdaa649, type: 3}
+    - {fileID: 888702218433590844, guid: 3a64e6681888e934f8d2bbf8a42d7af6, type: 3}
+    - {fileID: 11400000, guid: 151c853fb06bfcf4abc5bea1167e893b, type: 2}
+    - {fileID: 3668401319161006958, guid: f00a5983cf859534787a124135e4f08b, type: 3}
+    - {fileID: 11400000, guid: bc1ba006b5a63ee44a1d198135b62b5a, type: 2}
+    - {fileID: 3668401319161006958, guid: 61ec5d2b2f1b4ef4da70fe75aed31fa3, type: 3}
+    - {fileID: 11400000, guid: 753fc22588ec8974a9a3af7151490126, type: 2}
+    - {fileID: 3668401319161006958, guid: aca31db6dd86940498b8cbb456cc08ad, type: 3}
+    - {fileID: 11400000, guid: 36f8d5c22b0ca224c91b549a67a0e526, type: 2}
+    - {fileID: 1182004999883027893, guid: f0cb8b7e910dcf9468d924fa60b88ba6, type: 3}
+    - {fileID: 732099757446493458, guid: 41fce23c7dbfffb45a9fd506a1acaf78, type: 3}
+    - {fileID: 7009694955172517950, guid: 9c645c4f68bbc2b42a59e0fe05e00242, type: 3}
+    - {fileID: 8524102611933506367, guid: 1907b906f53fb5c4b96d23bf4c01235b, type: 3}
+    - {fileID: 7208345250874143519, guid: 5aa8118a1a0ce334bbc8b6621c51e6a9, type: 3}
+    - {fileID: 872708613045203873, guid: 278df33c033cbeb44951f3dede1917cc, type: 3}
+    - {fileID: 1790266360640819521, guid: d06d4581b95b23847a3b48b1d5774e83, type: 3}
+    - {fileID: 2469479717379950716, guid: 23ac294edd485424c8e3a0b9f98ff5be, type: 3}
+    - {fileID: 1862346799143333090, guid: 11c3aa88bb017494f9080b51f8011604, type: 3}
+    - {fileID: 2401316579176342145, guid: 2f9fe77c29d83ed42b5cafbd0670d203, type: 3}
+    - {fileID: 7436785031932587932, guid: 068120fd365e7a342b8cc8ae4c7a7b25, type: 3}
+    - {fileID: 1890034855804090478, guid: 92240a6e29797564c842c8d0db172c30, type: 3}
+    - {fileID: 694857879721090814, guid: 18cd66a45866cea4fa1523bb9007a6de, type: 3}
+    - {fileID: 3033167253919154660, guid: 78cdd8e28561bd34f91d976c6190a065, type: 3}
+    - {fileID: 2827834886786193094, guid: d40dee402e5d14a4b9b6fb21d1bd5fe3, type: 3}
+    - {fileID: 11400000, guid: 36923c85fb872074895c137a1772a0d8, type: 2}
+    - {fileID: 1182004999883027893, guid: c443de31748a910489722853db1f93c2, type: 3}
+    - {fileID: 732099757446493458, guid: fb17b93399be26b47b83edb44e35898b, type: 3}
+    - {fileID: 7009694955172517950, guid: 7aed1e08f054fab42a7ac8881d4a7e07, type: 3}
+    - {fileID: 8524102611933506367, guid: ec274c463cc387e4e9752bb4858a4925, type: 3}
+    - {fileID: 7208345250874143519, guid: aa95bbf47c17bda499d3cd3200cfd17d, type: 3}
+    - {fileID: 872708613045203873, guid: b461efe41e36df14096a315a593ad0d7, type: 3}
+    - {fileID: 1790266360640819521, guid: a33f5e95194df894ea171e261856c31e, type: 3}
+    - {fileID: 2469479717379950716, guid: 03c594f7cc8f9214faa6a9e2e52b8d1b, type: 3}
+    - {fileID: 1862346799143333090, guid: 4f33970b45a8a8d478c260df2b73cc66, type: 3}
+    - {fileID: 2401316579176342145, guid: 872e2e9952dfe954db23b94dc0518e9e, type: 3}
+    - {fileID: 7436785031932587932, guid: 478c0bf7a2ecd4047a690a2270534738, type: 3}
+    - {fileID: 1890034855804090478, guid: 346ea2dbf8329504da2c90dcd1c3f87c, type: 3}
+    - {fileID: 694857879721090814, guid: b2eaebd69b9286f42806b4c176a62cf9, type: 3}
+    - {fileID: 3033167253919154660, guid: be925922bb373d7459c9f6b16d98015b, type: 3}
+    - {fileID: 2827834886786193094, guid: 4f8dd95f3b5ba0846896e985c00c25fd, type: 3}
+    - {fileID: 11400000, guid: 1415d624a13989840ba658456e05435f, type: 2}
+    - {fileID: 888702218433590844, guid: 67fa6a350eb211943a0948ee1d4c15a8, type: 3}
+    - {fileID: 888702218433590844, guid: a4bf972126b426241a9baf6066e7b086, type: 3}
+    - {fileID: 11400000, guid: 9433b43bda1b61c468eb39e4cc318590, type: 2}
+    - {fileID: 3020955417211395267, guid: 64723082099b5494c9573f968c41ec65, type: 3}
+    - {fileID: 11400000, guid: 748824626a695bf44ac84d388f78bac7, type: 2}
+    - {fileID: 6463370211903710501, guid: 5c73a5a502acb0b48a6f0b8ee04d09c5, type: 3}
+    - {fileID: 11400000, guid: fe124caf7a46d11459b544b9061c7474, type: 2}
+    - {fileID: 7564076516500285006, guid: af613e0bde311224ba9fd97c8838f95d, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: settings
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[_Chi.Scripts.Scriptables.MapGenReplaceSettings,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 10
+    - Name: 
+      Entry: 7
+      Data: 1|_Chi.Scripts.Scriptables.MapGenReplaceSettings, Assembly-CSharp
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: items
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 3|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 1
+    - Name: chance
+      Entry: 3
+      Data: 33
+    - Name: priority
+      Entry: 3
+      Data: 0
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.25
+    - Name: 
+      Entry: 4
+      Data: 0.25
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 2
+    - Name: chance
+      Entry: 3
+      Data: 33
+    - Name: priority
+      Entry: 3
+      Data: 0
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.25
+    - Name: 
+      Entry: 4
+      Data: 0.25
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 3
+    - Name: chance
+      Entry: 3
+      Data: 33
+    - Name: priority
+      Entry: 3
+      Data: 0
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.25
+    - Name: 
+      Entry: 4
+      Data: 0.25
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|_Chi.Scripts.Scriptables.MapGenReplaceSettings, Assembly-CSharp
+    - Name: tile
+      Entry: 10
+      Data: 4
+    - Name: items
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 8|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 5
+    - Name: chance
+      Entry: 3
+      Data: 100
+    - Name: priority
+      Entry: 3
+      Data: 0
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|_Chi.Scripts.Scriptables.MapGenReplaceSettings, Assembly-CSharp
+    - Name: tile
+      Entry: 10
+      Data: 6
+    - Name: items
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 11|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 7
+    - Name: chance
+      Entry: 3
+      Data: 100
+    - Name: priority
+      Entry: 3
+      Data: 0
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|_Chi.Scripts.Scriptables.MapGenReplaceSettings, Assembly-CSharp
+    - Name: tile
+      Entry: 10
+      Data: 8
+    - Name: items
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 14|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 9
+    - Name: chance
+      Entry: 3
+      Data: 100
+    - Name: priority
+      Entry: 3
+      Data: 0
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|_Chi.Scripts.Scriptables.MapGenReplaceSettings, Assembly-CSharp
+    - Name: tile
+      Entry: 10
+      Data: 10
+    - Name: items
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 15
+    - Name: 
+      Entry: 7
+      Data: 17|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 11
+    - Name: chance
+      Entry: 3
+      Data: 10
+    - Name: priority
+      Entry: 3
+      Data: 2
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 18|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 12
+    - Name: chance
+      Entry: 3
+      Data: 0
+    - Name: priority
+      Entry: 3
+      Data: 3
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 19|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 13
+    - Name: chance
+      Entry: 3
+      Data: 0
+    - Name: priority
+      Entry: 3
+      Data: 3
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 14
+    - Name: chance
+      Entry: 3
+      Data: 10
+    - Name: priority
+      Entry: 3
+      Data: 5
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 21|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 15
+    - Name: chance
+      Entry: 3
+      Data: 500
+    - Name: priority
+      Entry: 3
+      Data: 6
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 22|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 16
+    - Name: chance
+      Entry: 3
+      Data: 500
+    - Name: priority
+      Entry: 3
+      Data: 6
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 23|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 17
+    - Name: chance
+      Entry: 3
+      Data: 500
+    - Name: priority
+      Entry: 3
+      Data: 7
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 18
+    - Name: chance
+      Entry: 3
+      Data: 500
+    - Name: priority
+      Entry: 3
+      Data: 8
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 25|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 19
+    - Name: chance
+      Entry: 3
+      Data: 500
+    - Name: priority
+      Entry: 3
+      Data: 8
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 26|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 20
+    - Name: chance
+      Entry: 3
+      Data: 1000
+    - Name: priority
+      Entry: 3
+      Data: 9
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 27|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 21
+    - Name: chance
+      Entry: 3
+      Data: 1000
+    - Name: priority
+      Entry: 3
+      Data: 9
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 28|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 22
+    - Name: chance
+      Entry: 3
+      Data: 2000
+    - Name: priority
+      Entry: 3
+      Data: 10
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 29|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 23
+    - Name: chance
+      Entry: 3
+      Data: 1
+    - Name: priority
+      Entry: 3
+      Data: 4
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 30|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 24
+    - Name: chance
+      Entry: 3
+      Data: 1
+    - Name: priority
+      Entry: 3
+      Data: 4
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 31|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 25
+    - Name: chance
+      Entry: 3
+      Data: 1000
+    - Name: priority
+      Entry: 3
+      Data: 9
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 32|_Chi.Scripts.Scriptables.MapGenReplaceSettings, Assembly-CSharp
+    - Name: tile
+      Entry: 10
+      Data: 26
+    - Name: items
+      Entry: 7
+      Data: 33|System.Collections.Generic.List`1[[_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 15
+    - Name: 
+      Entry: 7
+      Data: 34|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 27
+    - Name: chance
+      Entry: 3
+      Data: 10
+    - Name: priority
+      Entry: 3
+      Data: 2
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 35|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 28
+    - Name: chance
+      Entry: 3
+      Data: 0
+    - Name: priority
+      Entry: 3
+      Data: 3
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 36|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 29
+    - Name: chance
+      Entry: 3
+      Data: 0
+    - Name: priority
+      Entry: 3
+      Data: 3
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 37|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 30
+    - Name: chance
+      Entry: 3
+      Data: 10
+    - Name: priority
+      Entry: 3
+      Data: 5
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 38|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 31
+    - Name: chance
+      Entry: 3
+      Data: 500
+    - Name: priority
+      Entry: 3
+      Data: 6
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 39|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 32
+    - Name: chance
+      Entry: 3
+      Data: 500
+    - Name: priority
+      Entry: 3
+      Data: 6
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 40|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 33
+    - Name: chance
+      Entry: 3
+      Data: 500
+    - Name: priority
+      Entry: 3
+      Data: 7
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 41|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 34
+    - Name: chance
+      Entry: 3
+      Data: 500
+    - Name: priority
+      Entry: 3
+      Data: 8
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 42|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 35
+    - Name: chance
+      Entry: 3
+      Data: 500
+    - Name: priority
+      Entry: 3
+      Data: 8
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 43|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 36
+    - Name: chance
+      Entry: 3
+      Data: 1000
+    - Name: priority
+      Entry: 3
+      Data: 9
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 44|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 37
+    - Name: chance
+      Entry: 3
+      Data: 1000
+    - Name: priority
+      Entry: 3
+      Data: 9
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 45|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 38
+    - Name: chance
+      Entry: 3
+      Data: 2000
+    - Name: priority
+      Entry: 3
+      Data: 10
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 46|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 39
+    - Name: chance
+      Entry: 3
+      Data: 1
+    - Name: priority
+      Entry: 3
+      Data: 4
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 47|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 40
+    - Name: chance
+      Entry: 3
+      Data: 1
+    - Name: priority
+      Entry: 3
+      Data: 4
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 48|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 41
+    - Name: chance
+      Entry: 3
+      Data: 1000
+    - Name: priority
+      Entry: 3
+      Data: 9
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 49|_Chi.Scripts.Scriptables.MapGenReplaceSettings, Assembly-CSharp
+    - Name: tile
+      Entry: 10
+      Data: 42
+    - Name: items
+      Entry: 7
+      Data: 50|System.Collections.Generic.List`1[[_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 51|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 43
+    - Name: chance
+      Entry: 3
+      Data: 20
+    - Name: priority
+      Entry: 3
+      Data: 0
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 52|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 44
+    - Name: chance
+      Entry: 3
+      Data: 100
+    - Name: priority
+      Entry: 3
+      Data: 0
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 53|_Chi.Scripts.Scriptables.MapGenReplaceSettings, Assembly-CSharp
+    - Name: tile
+      Entry: 10
+      Data: 45
+    - Name: items
+      Entry: 7
+      Data: 54|System.Collections.Generic.List`1[[_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 55|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 46
+    - Name: chance
+      Entry: 3
+      Data: 100
+    - Name: priority
+      Entry: 3
+      Data: 0
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 56|_Chi.Scripts.Scriptables.MapGenReplaceSettings, Assembly-CSharp
+    - Name: tile
+      Entry: 10
+      Data: 47
+    - Name: items
+      Entry: 7
+      Data: 57|System.Collections.Generic.List`1[[_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 58|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 48
+    - Name: chance
+      Entry: 3
+      Data: 100
+    - Name: priority
+      Entry: 3
+      Data: 0
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 59|_Chi.Scripts.Scriptables.MapGenReplaceSettings, Assembly-CSharp
+    - Name: tile
+      Entry: 10
+      Data: 49
+    - Name: items
+      Entry: 7
+      Data: 60|System.Collections.Generic.List`1[[_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 61|_Chi.Scripts.Scriptables.MapGenReplaceSettingsItem, Assembly-CSharp
+    - Name: rectSize
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prefab
+      Entry: 10
+      Data: 50
+    - Name: chance
+      Entry: 3
+      Data: 100
+    - Name: priority
+      Entry: 3
+      Data: 0
+    - Name: randomPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeVariation
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

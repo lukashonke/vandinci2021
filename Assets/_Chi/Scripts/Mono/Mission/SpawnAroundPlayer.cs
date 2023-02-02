@@ -137,7 +137,7 @@ namespace _Chi.Scripts.Mono.Mission
         public float spawnGroupSpreadMin = 1;
         public float spawnGroupSpreadMax = 1;
         
-        public float distanceFromPlayerToDespawn = 100; // TODO
+        public float distanceFromPlayerToDespawn = 100;
         
         // runtime
         [ReadOnly] public float nextSpawnTime;

@@ -38,7 +38,7 @@ namespace _Chi.Scripts.Mono.Entities
 
         #region configuration
 
-        public float healthbarOffset = 1;
+        public Vector3 healthbarOffset = Vector3.zero;
 
         #endregion
 

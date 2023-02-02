@@ -210,7 +210,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     spawnGroupSpreadMin: 0.5
     spawnGroupSpreadMax: 0.5
-    distanceFromPlayerToDespawn: 9
+    distanceFromPlayerToDespawn: 20
     nextSpawnTime: 0
     startAtTime: 0
     lastSpawnTime: 0

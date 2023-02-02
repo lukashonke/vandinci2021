@@ -238,7 +238,7 @@ namespace _Chi.Scripts.Mono.Entities
 
             if (maxDistanceFromPlayerBeforeDespawn.HasValue)
             {
-                if (distanceToPlayer > maxDistanceFromPlayerBeforeDespawn.Value)
+                if (distanceToPlayer > Math.Pow(maxDistanceFromPlayerBeforeDespawn.Value, 2))
                 {
                     if(physicsActivated)
                     {
