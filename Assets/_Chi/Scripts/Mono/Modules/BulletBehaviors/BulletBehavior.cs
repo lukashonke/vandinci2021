@@ -4,8 +4,10 @@ using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Modules;
+using _Chi.Scripts.Scriptables;
 using UnityEngine;
 using BulletPro;
+using UnityEngine.Pool;
 
 // This script is supported by the BulletPro package for Unity.
 // Template author : Simon Albou <albou.simon@gmail.com>
@@ -121,6 +123,27 @@ public class BulletBehavior : BaseBulletBehaviour
 				{
 					var effect = effects[index];
 					effect.Apply(entity, ownerModule.parent, null, ownerModule, 1);
+				}
+				
+				var additionalEffects = offensiveModule.additionalEffects;
+
+				if (additionalEffects.Count > 0)
+				{
+					ListPool<ImmediateEffect>.Get(out var list);
+
+					for (var index = 0; index < additionalEffects.Count; index++)
+					{
+						var effect = additionalEffects[index].Item2;
+
+						if (!list.Contains(effect))
+						{
+							effect.Apply(entity, ownerModule.parent, null, ownerModule, 1);
+							list.Add(effect);
+						} 
+					}
+					
+					list.Clear();
+					ListPool<ImmediateEffect>.Release(list);
 				}
 				
 				bool deactivate = false;

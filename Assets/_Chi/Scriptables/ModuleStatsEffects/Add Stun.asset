@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49febd88ace44659ab6f2c135ea24803, type: 3}
-  m_Name: Add 1 Projectile
+  m_Script: {fileID: 11500000, guid: c5f7953ec74a40a4b9869a3341f102cb, type: 3}
+  m_Name: Add Stun
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,6 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  value: 1
-  modifier: 1
+  modifier: 0
   order: 10
+  effectsToAdd:
+  - {fileID: 11400000, guid: aa91c0a5a34586440af0c1b3738a5f82, type: 2}

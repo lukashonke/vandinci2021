@@ -55,11 +55,15 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: additionalEffects
+      Entry: 6
+      Data: 
   parent: {fileID: 0}
   slot: {fileID: 0}
   targetUpdateInterval: 0.2
   rotationSpeed: 500
+  instantRotation: 1
   stats:
     projectileCount:
       baseValue: 1
@@ -72,10 +76,10 @@ MonoBehaviour:
       value: 0
     fireRate:
       baseValue: 0.75
-      value: 0
+      value: 0.75
     projectileDamage:
       baseValue: 10
-      value: 0
+      value: 10
     targetRange:
       baseValue: 8
       value: 0
@@ -88,6 +92,9 @@ MonoBehaviour:
     canProjectilePierce: 1
     projectilePierceCount:
       baseValue: 2
+      value: 0
+    projectilePushForce:
+      baseValue: 60
       value: 0
     projectilePierceChance: 100
     hasAreaEffect: 0

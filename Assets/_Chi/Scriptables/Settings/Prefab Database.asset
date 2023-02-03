@@ -121,8 +121,17 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 71486843aebbd8346a9701479eb3e484, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+  - id: 2005
+    label: Ballista Module
+    description: 
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: 00d24dfa39d483648a081dd6a914af83, type: 3}
+    prefabUi: {fileID: 3314847274656908133, guid: 81fe0c54ccbfba34794ab41cabdfd085, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
   - id: 2500
-    label: Add 1 Projectile
+    label: Add Projectile
     description: 
     type: 3
     predefinedId: 0
@@ -265,13 +274,58 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: ac0052fb6806b3b4babc28e21b84380a, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: cf0ad41522139b045b19a3819acff8cb, type: 2}
-  - id: 2005
-    label: Ballista Module
+  - id: 2501
+    label: Add Stun Effect
     description: 
     type: 3
     predefinedId: 0
-    prefab: {fileID: 1232174764404154631, guid: 00d24dfa39d483648a081dd6a914af83, type: 3}
-    prefabUi: {fileID: 3314847274656908133, guid: 81fe0c54ccbfba34794ab41cabdfd085, type: 3}
+    prefab: {fileID: 1232174764404154631, guid: b10d1850c23e344c98a3612afb16da0e, type: 3}
+    prefabUi: {fileID: 8309321105186295158, guid: 85287e5b2153c4a3b92497f24e09e0a6, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 2502
+    label: Add Pierced Enemy
+    description: Has effect only if the weapon has piercing effect.
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: 6a4aed355462d4bac9c88ce9beeadd41, type: 3}
+    prefabUi: {fileID: 8309321105186295158, guid: dfe0bb5f4a5dc446a8c7dd1d1bc7fa3f, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 2503
+    label: Enable Piercing
+    description: Enables the piercing effect on the weapon.
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: e675e1f328f1b4ea19b695d20e49a22f, type: 3}
+    prefabUi: {fileID: 8309321105186295158, guid: 578a3df20d3be40368ffbebbaa39ba5b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 2504
+    label: Increase Damage
+    description: 
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: 8ed30a3973a3248428d31f25f4e9673a, type: 3}
+    prefabUi: {fileID: 8309321105186295158, guid: aa1d2220c65d144a9a5e686510f53193, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 2505
+    label: Increase Fire Rate
+    description: 
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: 5b88700f3dcfb4622b5a4cb64a7e16a9, type: 3}
+    prefabUi: {fileID: 8309321105186295158, guid: 846012403b0174a9f94a34a5c6a80847, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 2506
+    label: Increase Projectile Push Force
+    description: 
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: d8ee08b861083488dbb0f4bb9f894186, type: 3}
+    prefabUi: {fileID: 8309321105186295158, guid: 87ba2637bd53e4165a8fb327efa7a4e6, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
   playerDealtDamage: {fileID: 184639617188728617, guid: 314716765f8ab6548bd010be7ce6a255, type: 3}

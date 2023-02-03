@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 1928429
+  uniqueIndex: 10271059
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children: []
@@ -6912,7 +6912,7 @@ MonoBehaviour:
         parameterType: 0
         relativeTo: 0
         parameterName: 
-      defaultValue: {fileID: 5922202418574724663, guid: 80ee17db3a1de44c783a08b5807484f4, type: 3}
+      defaultValue: {fileID: 5922202418574724663, guid: ac75a2aeb5b854ac9a937b83466d5e2a, type: 3}
     narrowType: 1
     requireComponent: 1
     typeName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -7760,7 +7760,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 9582386
+  uniqueIndex: 9751607
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -10178,7 +10178,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 1125622
+  uniqueIndex: 14795748
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -20734,7 +20734,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 13495441
+  uniqueIndex: 6020464
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:

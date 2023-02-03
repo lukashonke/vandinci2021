@@ -5,6 +5,7 @@ using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
 using BulletPro;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace _Chi.Scripts.Mono.Modules
@@ -17,6 +18,8 @@ namespace _Chi.Scripts.Mono.Modules
         
         public List<ImmediateEffect> effects;
 
+        [ReadOnly] public List<(object, ImmediateEffect)> additionalEffects;
+
         public ParticleSystem shootVfx;
 
         public TargetType affectType;
@@ -27,6 +30,7 @@ namespace _Chi.Scripts.Mono.Modules
         {
             base.Awake();
 
+            additionalEffects = new();
             emitter = GetComponent<BulletEmitter>();
         }
 

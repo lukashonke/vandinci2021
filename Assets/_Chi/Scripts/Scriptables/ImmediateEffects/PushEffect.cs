@@ -16,19 +16,20 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
         public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength)
         {
+            var pushStrength = basePush;
+            
             Vector3 source = target.GetPosition();
             if (sourceModule is OffensiveModule offensiveModule)
             {
+                pushStrength = offensiveModule.stats.projectilePushForce.GetValue();
                 source = offensiveModule.GetPosition();
-                //TODO take from stats
-                //sourceDamage = offensiveModule.stats.projectileDamage.GetValue();
             }
             else if (sourceEntity != null)
             {
                 source = sourceEntity.GetPosition();
             }
             
-            var sourcePush = basePush * strength;
+            var sourcePush = pushStrength * strength;
             target.ReceivePush((target.GetPosition() - source).normalized * sourcePush, pushDuration);
             if (setCannotBePushedFor > 0)
             {

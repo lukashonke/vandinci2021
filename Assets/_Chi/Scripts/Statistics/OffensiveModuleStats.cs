@@ -25,6 +25,8 @@ namespace _Chi.Scripts.Statistics
         public int canProjectilePierce = 0;
         
         public Stat projectilePierceCount = new Stat();
+
+        public Stat projectilePushForce = new Stat();
         
         public float projectilePierceChance;
 

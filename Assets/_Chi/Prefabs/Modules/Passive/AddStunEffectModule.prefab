@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1181392755677311271}
   - component: {fileID: 6177911479989981830}
   m_Layer: 0
-  m_Name: Add1ProjectileModule
+  m_Name: AddStunEffectModule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,8 +56,11 @@ MonoBehaviour:
     SerializationNodes: []
   parent: {fileID: 0}
   slot: {fileID: 0}
+  targetUpdateInterval: 0.2
+  rotationSpeed: 500
+  instantRotation: 1
   effects:
-  - {fileID: 11400000, guid: 8fc449f57d7739f458b4ff4a4fac52c3, type: 2}
+  - {fileID: 11400000, guid: 9d20f661552744fbbb4f41f3089ebb13, type: 2}
 --- !u!212 &6177911479989981830
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -97,9 +100,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1100204741
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3950e7b475f2b3e41bb80620513469fc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ca297685211f0f64cbf495fd642167f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

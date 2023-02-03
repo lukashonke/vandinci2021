@@ -130,7 +130,7 @@ Material:
     - _FadeScrollYSpeed: 0
     - _FadeTransition: 0.075
     - _Glow: 0
-    - _GlowGlobal: 1
+    - _GlowGlobal: 3.28
     - _HandDrawnAmount: 10
     - _HandDrawnSpeed: 5
     - _HsvBright: 1
@@ -236,7 +236,7 @@ Material:
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _Shape2Color: {r: 1, g: 1, b: 1, a: 1}
     - _Shape3Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ShapeColor: {r: 1, g: 0.69792444, b: 0.4009434, a: 1}
+    - _ShapeColor: {r: 1.4142137, g: 0.9921709, b: 0.570128, a: 1}
   m_BuildTextureStacks: []
 --- !u!28 &28761834029838142
 Texture2D:
@@ -244,7 +244,7 @@ Texture2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: _TrailWidthGradientTex{"mode":0,"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":0.2641509175300598,"g":0.2641509175300598,"b":0.2641509175300598,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
+  m_Name: _TrailWidthGradientTex{"mode":0,"colorKeys":[{"color":{"r":0.9891787171363831,"g":0.9891787171363831,"b":0.9891787171363831,"a":1.0},"time":0.0},{"color":{"r":0.2641509175300598,"g":0.2641509175300598,"b":0.2641509175300598,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -279,7 +279,7 @@ Texture2D:
   m_ColorSpace: 1
   m_PlatformBlob: 
   image data: 256
-  _typelessdata: fffffffffcfcfcfff9f9f9fff6f6f6fff3f3f3fff0f0f0ffedededffeaeaeaffe7e7e7ffe4e4e4ffe1e1e1ffdededeffdbdbdbffd8d8d8ffd5d5d5ffd2d2d2ffcfcfcfffccccccffc9c9c9ffc6c6c6ffc3c3c3ffc0c0c0ffbdbdbdffbababaffb8b8b8ffb5b5b5ffb2b2b2ffafafafffacacacffa9a9a9ffa6a6a6ffa3a3a3ffa0a0a0ff9d9d9dff9a9a9aff979797ff949494ff919191ff8e8e8eff8b8b8bff888888ff858585ff828282ff7f7f7fff7c7c7cff797979ff767676ff737373ff707070ff6d6d6dff6a6a6aff676767ff646464ff616161ff5e5e5eff5b5b5bff585858ff555555ff525252ff4f4f4fff4c4c4cff494949ff464646ff434343ff
+  _typelessdata: fcfcfcfff9f9f9fff6f6f6fff3f3f3fff1f1f1ffeeeeeeffebebebffe8e8e8ffe5e5e5ffe2e2e2ffdfdfdfffdcdcdcffd9d9d9ffd6d6d6ffd3d3d3ffd0d0d0ffcdcdcdffcacacaffc7c7c7ffc4c4c4ffc2c2c2ffbfbfbfffbcbcbcffb9b9b9ffb6b6b6ffb3b3b3ffb0b0b0ffadadadffaaaaaaffa7a7a7ffa4a4a4ffa1a1a1ff9e9e9eff9b9b9bff989898ff969696ff939393ff909090ff8d8d8dff8a8a8aff878787ff848484ff818181ff7e7e7eff7b7b7bff787878ff757575ff727272ff6f6f6fff6c6c6cff6a6a6aff676767ff646464ff616161ff5e5e5eff5b5b5bff585858ff555555ff525252ff4f4f4fff4c4c4cff494949ff464646ff434343ff
   m_StreamData:
     serializedVersion: 2
     offset: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 792701770648625316}
   - component: {fileID: 7749576118678143610}
   m_Layer: 5
-  m_Name: Add1ProjectileModule_UI
+  m_Name: EnableProjectilePiercingModule_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ca297685211f0f64cbf495fd642167f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b93d066597aff5a489b5eb22d7af19c8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -72,10 +72,10 @@ MonoBehaviour:
       value: 0
     fireRate:
       baseValue: 3
-      value: 0
+      value: 3
     projectileDamage:
       baseValue: 30
-      value: 0
+      value: 30
     targetRange:
       baseValue: 8
       value: 0
@@ -88,6 +88,9 @@ MonoBehaviour:
     canProjectilePierce: 0
     projectilePierceCount:
       baseValue: 0
+      value: 0
+    projectilePushForce:
+      baseValue: 120
       value: 0
     projectilePierceChance: 0
     hasAreaEffect: 0

@@ -19,7 +19,15 @@ public class LineRendererBulletBehavior : BaseBulletBehaviour
     public override void OnBulletBirth()
     {
         base.OnBulletBirth();
-        
+
+        trail.enabled = true;
         trail.Clear();
+    }
+
+    public override void OnBulletDeath()
+    {
+        base.OnBulletDeath();
+
+        trail.enabled = false;
     }
 }
