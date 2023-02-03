@@ -8,5 +8,7 @@
         
         public const string ProjectileRange = "_ProjectileRange";
         public const string ProjectileLifetime = "_ProjectileLifetime";
+        
+        public const string ProjectileSpread = "_ProjectileSpread";
     }
 }

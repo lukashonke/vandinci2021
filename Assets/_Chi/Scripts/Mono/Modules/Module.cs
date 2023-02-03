@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
@@ -16,6 +17,8 @@ namespace _Chi.Scripts.Mono.Modules
         public float targetUpdateInterval = 0.2f;
 
         public float rotationSpeed = 500;
+
+        public bool instantRotation = true;
 
         [NonSerialized] public bool effectsActivated;
 
@@ -116,5 +119,7 @@ namespace _Chi.Scripts.Mono.Modules
                 SetRotation(EntityExtensions.RotateTowards(GetPosition(), rotationTarget, transform.rotation, rotationSpeed));
             }
         }
+
+        public virtual List<(string title, string value)> GetUiStats() => null;
     }
 }

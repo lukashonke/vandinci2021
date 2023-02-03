@@ -64,6 +64,9 @@ MonoBehaviour:
     projectileCount:
       baseValue: 1
       value: 1
+    projectileSpreadAngle:
+      baseValue: 5
+      value: 0
     projectileSpeed:
       baseValue: 8
       value: 0

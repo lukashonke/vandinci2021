@@ -270,19 +270,39 @@ public class UiManager : MonoBehaviour
         }
     }
 
-    public void ShowModuleTooltip(RectTransform targetTransform, PrefabItem prefab, int level)
+    public void ShowModuleTooltip(RectTransform targetTransform, PrefabItem prefab, int level, TooltipAlign align = TooltipAlign.TopRight, TooltipType type = TooltipType.Default)
     {
         var pos = targetTransform.position;
-        pos += new Vector3(targetTransform.sizeDelta.x/2f, targetTransform.sizeDelta.y/2f, 0);
+
+        if (align == TooltipAlign.TopRight)
+        {
+            pos += new Vector3(targetTransform.sizeDelta.x/2f, targetTransform.sizeDelta.y/2f, 0);
+        }
+        else if (align == TooltipAlign.BottomLeft)
+        {
+            pos += new Vector3(-targetTransform.sizeDelta.x/2f, -targetTransform.sizeDelta.y/2f, 0);
+        }
         
         currentTooltip = Instantiate(moduleTooltipPrefab, pos, Quaternion.identity, targetTransform);
         currentTooltip.transform.parent = this.transform;
         var dialog = currentTooltip.GetComponent<ModuleTooltip>();
-        dialog.Initialise(prefab, level);
+        dialog.Initialise(prefab, level, type);
     }
 
     public void OnMissionSelectorChange(int index)
     {
         Gamesystem.instance.missionManager.ChangeMission(index - 1);
+    }
+
+    public enum TooltipAlign
+    {
+        TopRight,
+        BottomLeft
+    }
+
+    public enum TooltipType
+    {
+        Default,
+        ExcludeTitleLogoDescription
     }
 }

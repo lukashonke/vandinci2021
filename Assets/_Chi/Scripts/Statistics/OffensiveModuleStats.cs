@@ -8,6 +8,8 @@ namespace _Chi.Scripts.Statistics
     {
         public Stat projectileCount = new Stat();
         
+        public Stat projectileSpreadAngle = new Stat();
+        
         public Stat projectileSpeed = new Stat();
 
         public Stat fireRate = new Stat();

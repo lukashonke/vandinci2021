@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Movement;
 using _Chi.Scripts.Scriptables;
@@ -14,9 +15,10 @@ namespace _Chi.Scripts.Mono.Entities
     {
         #region references
 
-        [HideInInspector] public Rigidbody2D rb;
+        [NonSerialized] public Rigidbody2D rb;
         [NonSerialized] public bool hasRb;
         [NonSerialized] public Collider2D triggerCollider; 
+        [NonSerialized] public SpriteRenderer renderer;
 
         #endregion
 
@@ -29,10 +31,14 @@ namespace _Chi.Scripts.Mono.Entities
         [NonSerialized] public bool canMove;
         [NonSerialized] public bool isAlive = true;
         [NonSerialized] public float immobilizedUntil = 0;
+        [NonSerialized] public int immobilizedCounter = 0;
 
         public EntityStats entityStats;
     
         public Teams team = Teams.Neutral;
+        
+        [NonSerialized] public Dictionary<ImmediateEffect, float> currentEffects;
+        [NonSerialized] public Dictionary<GameObject, GameObject> vfx;
 
         #endregion
 
@@ -45,6 +51,8 @@ namespace _Chi.Scripts.Mono.Entities
         #region privates
 
         protected MiscSettings miscSettingsReference;
+        
+        protected Material originalMaterial;
 
         #endregion
     
@@ -58,6 +66,15 @@ namespace _Chi.Scripts.Mono.Entities
             Register();
 
             miscSettingsReference = Gamesystem.instance.miscSettings;
+            
+            renderer = GetComponent<SpriteRenderer>();
+            if (renderer != null)
+            {
+                originalMaterial = renderer.material;
+            }
+            
+            currentEffects = new Dictionary<ImmediateEffect, float>(32);
+            vfx = new Dictionary<GameObject, GameObject>(16);
         }
         
         public virtual void Start()
@@ -213,7 +230,7 @@ namespace _Chi.Scripts.Mono.Entities
         
         public bool CanMove()
         {
-            return canMove && immobilizedUntil < Time.time;
+            return canMove && immobilizedUntil < Time.time && immobilizedCounter == 0;
         }
 
         public bool CanShoot()
@@ -236,5 +253,105 @@ namespace _Chi.Scripts.Mono.Entities
         }
 
         public float GetHp() => entityStats.hp;
+
+        /// <summary>
+        ///  returns false if the effect already existed and its duration should be extended
+        /// </summary>
+        public bool AddImmediateEffect(ImmediateEffect effect, float addDuration, bool stackDuration)
+        {
+            if (currentEffects.ContainsKey(effect))
+            {
+                if (stackDuration)
+                {
+                    currentEffects[effect] += addDuration;
+                }
+                else
+                {
+                    currentEffects[effect] = Time.time + addDuration;
+                }
+                return false;
+            }
+            else
+            {
+                currentEffects.Add(effect, Time.time + addDuration);
+                return true;
+            }
+        }
+
+        public float TryRemoveImmediateEffect(ImmediateEffect effect)
+        {
+            if (currentEffects.TryGetValue(effect, out var until))
+            {
+                if (until - 0.1f < Time.time)
+                {
+                    currentEffects.Remove(effect);
+                    return 0;
+                }
+                
+                // not yet, duration was propably extended
+                return until;
+            }
+
+            // effect no longer exists
+            return -1;
+        }
+
+        public void AddVfx(GameObject prefab, float duration = 0)
+        {
+            if (vfx.ContainsKey(prefab)) return;
+            
+            var instance = Gamesystem.instance.poolSystem.SpawnVfx(prefab);
+            vfx.Add(prefab, instance);
+
+            instance.transform.position = this.transform.position;
+            instance.transform.parent = this.transform;
+
+            if (duration > 0)
+            {
+                Gamesystem.instance.Schedule(Time.time + duration, () => Gamesystem.instance.poolSystem.DespawnVfx(prefab, instance));
+            }
+        }
+
+        public void RemoveVfx(GameObject prefab)
+        {
+            if (vfx.TryGetValue(prefab, out var instance))
+            {
+                vfx.Remove(prefab);
+                Gamesystem.instance.poolSystem.DespawnVfx(prefab, instance);
+            }
+        }
+        
+        public void SetTemporaryMaterial(Material material, float duration = 0)
+        {
+            if (renderer.material == originalMaterial)
+            {
+                renderer.material = material;
+
+                if (duration > 0)
+                {
+                    Gamesystem.instance.Schedule(Time.time + duration, () => ResetTemporaryMaterial(material));
+                }
+            } 
+        }
+
+        public void ResetTemporaryMaterial(Material material)
+        {
+            if (renderer.sharedMaterial == material)
+            {
+                renderer.material = originalMaterial;
+            }
+        }
+
+        public void SetImmobilized(bool b)
+        {
+            if (b) immobilizedCounter++;
+            else immobilizedCounter--;
+            UpdateImmobilized();
+        }
+
+        public virtual void UpdateImmobilized()
+        {
+            
+        }
     }
 }

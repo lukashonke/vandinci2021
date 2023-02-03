@@ -20,7 +20,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
             obj.transform.position = target.GetPosition();
             
-            Gamesystem.instance.Schedule(Time.time + vfxDespawn, () => Gamesystem.instance.poolSystem.DespawnVfx(obj));
+            Gamesystem.instance.Schedule(Time.time + vfxDespawn, () => Gamesystem.instance.poolSystem.DespawnVfx(vfxPrefab, obj));
             return true;
         }    
     }

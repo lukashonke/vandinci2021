@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Movement;
@@ -20,7 +22,6 @@ namespace _Chi.Scripts.Mono.Entities
         [NonSerialized] public bool hasSeeker;
         [HideInInspector] public RVOController rvoController;
         [NonSerialized] public bool hasRvoController;
-        [NonSerialized] public SpriteRenderer renderer;
         
         public PathData pathData;
 
@@ -46,17 +47,14 @@ namespace _Chi.Scripts.Mono.Entities
         #region privates
 
         private float nextPathSeekTime = 0f;
-        
         private Func<Path> pathToFind = null;
         private bool resetPath;
-
         private bool isDissolving = false;
-
-        private Material originalMaterial;
-
+        
         private bool physicsActivated;
-
         private float nextPushTime;
+
+        private float originalSpeed;
 
         #endregion
         
@@ -68,10 +66,11 @@ namespace _Chi.Scripts.Mono.Entities
             hasSeeker = seeker != null;
             rvoController = GetComponent<RVOController>();
             hasRvoController = rvoController != null;
-            renderer = GetComponent<SpriteRenderer>();
-            originalMaterial = renderer.material;
-            currentDissolveProcess = 1f;
             
+            currentDissolveProcess = 1f;
+
+            originalSpeed = stats.speed;
+
             SetPhysicsActivated(false);
 
             pathData = new PathData(this);
@@ -144,6 +143,23 @@ namespace _Chi.Scripts.Mono.Entities
             isDissolving = false;
             canMove = false;
             maxDistanceFromPlayerBeforeDespawn = null;
+            
+            immobilizedUntil = 0;
+            
+            currentEffects.Clear();
+
+            if (vfx.Any())
+            {
+                foreach (var vfx in vfx)
+                {
+                    Gamesystem.instance.poolSystem.DespawnVfx(vfx.Key, vfx.Value);
+                }
+                
+                vfx.Clear();
+            }
+
+            immobilizedCounter = 0;
+            stats.speed = originalSpeed;
             
             gameObject.SetActive(false);
         }
@@ -305,6 +321,25 @@ namespace _Chi.Scripts.Mono.Entities
         public override void SetCannotBePushed(float duration)
         {
             nextPushTime = Time.time + duration;
+        }
+
+        public void AddToSpeed(float val)
+        {
+            stats.speed += val;
+        }
+
+        public override void UpdateImmobilized()
+        {
+            if (!hasRvoController) return;
+            
+            if (immobilizedCounter > 0)
+            {
+                rvoController.enabled = false;
+            }
+            else
+            {
+                rvoController.enabled = true;
+            }
         }
     }
 }

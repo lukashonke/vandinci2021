@@ -36,7 +36,7 @@ namespace _Chi.Scripts.Mono.Ui
                     var newItem = Instantiate(itemInfoPrefab, transform.position, Quaternion.identity, transform);
                     var newItemItem = newItem.GetComponent<ModuleSelectorItem>();
                     
-                    newItemItem.Initialise(item.label, item.prefabUi.GetComponent<Image>(), "test", new List<ActionsPanelButton>()
+                    newItemItem.Initialise(item, new List<ActionsPanelButton>()
                     {
                         new ActionsPanelButton("Add", () => StartAddingItem(item))
                     }, AbortAddingItem);

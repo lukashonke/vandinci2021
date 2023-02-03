@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
@@ -13,7 +14,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
     public class ShootNearestModule : OffensiveModule
     {
         public ShootNearestTargetType targetType;
-        
+
         private Func<Entity, bool> nearestTargetFilterFunc;
 
         public override void Awake()
@@ -64,6 +65,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                         emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileCount, stats.projectileCount.GetValueInt());
                         emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpeed, stats.projectileSpeed.GetValue());
                         emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.WaitDuration, stats.fireRate.GetValue());
+                        emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpread, stats.projectileSpreadAngle.GetValue());
 
                         if (stats.projectileLifetime.GetValue() > 0)
                         {
@@ -99,7 +101,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                         projectile.ScheduleUnspawn(DamageExtensions.CalculateProjectileLifetime(stats.projectileLifetime, this));
                     }*/
                     
-                    RotateTowards(currentTarget.position, true);
+                    RotateTowards(currentTarget.position, instantRotation);
                 }
                 else
                 {
@@ -113,6 +115,16 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
             base.OnShootInstruction();
             
             ShootEffect();
+        }
+        
+        public override List<(string title, string value)> GetUiStats()
+        {
+            return new List<(string title, string value)>()
+            {
+                ("Damage", $"{stats.projectileDamage.GetValue()}"),
+                ("Shoot Interval", $"{stats.fireRate.GetValue()}"),
+                ("Projectiles", $"{stats.projectileCount.GetValue()}"),
+            };
         }
     }
 

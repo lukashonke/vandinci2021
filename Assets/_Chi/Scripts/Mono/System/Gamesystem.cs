@@ -68,6 +68,8 @@ public class Gamesystem : MonoBehaviour
         RestartLevelClock();
     }
 
+    private List<FloatWithAction> schedulesCopy = new();
+
     public void Update()
     {
         var time = Time.time;
@@ -81,7 +83,9 @@ public class Gamesystem : MonoBehaviour
 
         bool anyRun = false;
         
-        foreach (var schedule in schedules)
+        schedulesCopy.AddRange(schedules);
+        
+        foreach (var schedule in schedulesCopy)
         {
             if (time > schedule.time)
             {
@@ -91,6 +95,8 @@ public class Gamesystem : MonoBehaviour
             
             index++;
         }
+        
+        schedulesCopy.Clear();
 
         if (anyRun)
         {

@@ -78,9 +78,9 @@ namespace _Chi.Scripts.Mono.System
             }
         }
         
-        public bool DespawnVfx(GameObject instance)
+        public bool DespawnVfx(GameObject prefab, GameObject instance)
         {
-            if (vfxPool.TryGetValue(instance, out var pool))
+            if (vfxPool.TryGetValue(prefab, out var pool))
             {
                 pool.Release(instance);
                 return true;
@@ -180,7 +180,7 @@ namespace _Chi.Scripts.Mono.System
 
         void OnTakeFromPool(GameObject go)
         {
-            
+            go.SetActive(true);
         }
 
         void OnDestroyPoolObject(GameObject go)

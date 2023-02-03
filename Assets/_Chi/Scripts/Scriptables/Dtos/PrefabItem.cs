@@ -11,16 +11,24 @@ namespace _Chi.Scripts.Scriptables.Dtos
         [TableColumnWidth(57, Resizable = false)]
         public int id;
 
+        [VerticalGroup("Text")]
         public string label;
+        
+        [VerticalGroup("Text")]
+        [Multiline(2)]
+        public string description;
 
+        [VerticalGroup("Type")]
         public PrefabItemType type;
 
+        [VerticalGroup("Type")]
         public PredefinedPrefabIds predefinedId;
 
         [VerticalGroup("Prefab")]
         public GameObject prefab;
 
         //TODO show if type == body
+        [VerticalGroup("Prefab")]
         public GameObject prefabUi;
 
         [VerticalGroup("Prefab")]

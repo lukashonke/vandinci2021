@@ -14,10 +14,15 @@ namespace _Chi.Scripts.Scriptables
             {
                 return false;
             }
-            
-            Gamesystem.instance.Schedule(Time.time + duration, () => RemoveEffect(target, sourceEntity, sourceItem, sourceModule));
+
+            ScheduleRemove(Time.time + duration, target, sourceEntity, sourceItem, sourceModule);
 
             return true;
+        }
+
+        protected void ScheduleRemove(float time, Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule)
+        {
+            Gamesystem.instance.Schedule(time, () => RemoveEffect(target, sourceEntity, sourceItem, sourceModule));
         }
 
         public abstract bool ApplyEffect(Entity target, Entity source, Item sourceItem, Module sourceModule);

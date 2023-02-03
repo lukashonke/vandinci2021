@@ -184,7 +184,7 @@ namespace _Chi.Scripts.Mono.Entities
                     effect.transform.position = triggerCollider.bounds.ClosestPoint(monster.GetPosition());
                     effect.transform.parent = transform;
                     
-                    Gamesystem.instance.Schedule(Time.time + 1f, () => Gamesystem.instance.poolSystem.DespawnVfx(effect));
+                    Gamesystem.instance.Schedule(Time.time + 1f, () => Gamesystem.instance.poolSystem.DespawnVfx(damageEffect, effect));
                 }
                 monster.nextDamageTime = Time.time + monster.stats.contactDamageInterval;
 
