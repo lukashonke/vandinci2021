@@ -75,9 +75,9 @@ namespace _Chi.Scripts.Mono.Ui
         {
             if (item != null)
             {
-                if (item.prefab != null && item.prefab.GetComponent<Module>() != null)
+                if ((item.prefab != null && item.prefab.GetComponent<Module>() != null) || item.mutator != null)
                 {
-                    Gamesystem.instance.uiManager.ShowModuleTooltip((RectTransform) this.transform, item, 1, UiManager.TooltipAlign.BottomLeft, UiManager.TooltipType.ExcludeTitleLogoDescription);
+                    Gamesystem.instance.uiManager.ShowItemTooltip((RectTransform) this.transform, item, 1, UiManager.TooltipAlign.BottomLeft, UiManager.TooltipType.ExcludeTitleLogoDescription);
                 }
             }
             
@@ -97,7 +97,7 @@ namespace _Chi.Scripts.Mono.Ui
         {
             if (item != null)
             {
-                if (item.prefab != null && item.prefab.GetComponent<Module>() != null)
+                if ((item.prefab != null && item.prefab.GetComponent<Module>() != null) || item.mutator != null)
                 {
                     Gamesystem.instance.uiManager.HideTooltip();
                 }

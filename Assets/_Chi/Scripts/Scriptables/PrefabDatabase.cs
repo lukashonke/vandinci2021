@@ -14,6 +14,8 @@ namespace _Chi.Scripts.Scriptables
         [TableList]
         public List<PrefabItem> prefabs;
 
+        [Required] public DamageNumber playerCriticalDealtDamage;
+
         [Required] public DamageNumber playerDealtDamage;
 
         public PrefabItem GetById(int id)

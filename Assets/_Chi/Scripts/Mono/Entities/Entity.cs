@@ -170,7 +170,7 @@ namespace _Chi.Scripts.Mono.Entities
             return true;
         }
 
-        public void ReceiveDamage(float damage, Entity damager)
+        public void ReceiveDamage(float damage, Entity damager, DamageFlags damageFlags = DamageFlags.None)
         {
             if (damage <= 0) return;
 
@@ -198,9 +198,17 @@ namespace _Chi.Scripts.Mono.Entities
                 isAlive = true;
             }
 
-            //if (damager is Player)
+            if (damageFlags.HasFlag(DamageFlags.Critical))
+            {
+                Gamesystem.instance.prefabDatabase.playerCriticalDealtDamage.Spawn(transform.position, damage);
+            }
+            else
             {
                 Gamesystem.instance.prefabDatabase.playerDealtDamage.Spawn(transform.position, damage);
+            }
+
+            //if (damager is Player)
+            {
             }
         }
 

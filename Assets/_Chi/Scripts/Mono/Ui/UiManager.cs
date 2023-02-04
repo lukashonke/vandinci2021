@@ -105,7 +105,7 @@ public class UiManager : MonoBehaviour
             var skill = player.skills[index];
             var data = player.GetSkillData(skill);
             float reloadPercentage;
-            reloadPercentage = (Time.time - data.lastUse) / skill.reuseDelay;
+            reloadPercentage = (Time.time - data.lastUse) / skill.GetReuseDelay(player);
             if (reloadPercentage > 1) reloadPercentage = 1;
 
             skillIndicators[index].SetSkill(skill);
@@ -270,7 +270,7 @@ public class UiManager : MonoBehaviour
         }
     }
 
-    public void ShowModuleTooltip(RectTransform targetTransform, PrefabItem prefab, int level, TooltipAlign align = TooltipAlign.TopRight, TooltipType type = TooltipType.Default)
+    public void ShowItemTooltip(RectTransform targetTransform, PrefabItem prefab, int level, TooltipAlign align = TooltipAlign.TopRight, TooltipType type = TooltipType.Default)
     {
         var pos = targetTransform.position;
 

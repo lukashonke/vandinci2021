@@ -122,7 +122,7 @@ namespace _Chi.Scripts.Mono.Ui
             if (moduleGo != null && currentMutator != null)
             {
                 //TODO use actual module instance if available to show level
-                Gamesystem.instance.uiManager.ShowModuleTooltip((RectTransform) this.transform, currentMutator, 0);
+                Gamesystem.instance.uiManager.ShowItemTooltip((RectTransform) this.transform, currentMutator, 0);
             }
         }
         

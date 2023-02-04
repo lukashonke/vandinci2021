@@ -18,7 +18,6 @@ namespace _Chi.Scripts.Mono.Entities
 {
     public class Player : Entity
     {
-        public GameObject shieldEffectVfx;
         
         public PlayerStats stats;
 
@@ -43,8 +42,12 @@ namespace _Chi.Scripts.Mono.Entities
         
         private float nextRestoreShield = -1;
 
+        [NonSerialized] public float lastSkillUseTime;
+
         public ImmediateEffect pushEffect;
         public GameObject damageEffect;
+        public GameObject shieldEffectVfx;
+        public GameObject shieldAfterSkillUseVfx;
 
         public override void Awake()
         {
@@ -127,6 +130,22 @@ namespace _Chi.Scripts.Mono.Entities
                     shieldEffectVfx.SetActive(false);
                 }
 
+                if (shieldAfterSkillUseVfx != null)
+                {
+                    var skillUseReduceDamageDuration = stats.takeDamageFaterSkillUseDuration.GetValue();
+
+                    if (lastSkillUseTime > 0 && skillUseReduceDamageDuration > 0 &&
+                        (Time.time - lastSkillUseTime) < skillUseReduceDamageDuration)
+                    {
+                        shieldAfterSkillUseVfx.SetActive(true);
+                    }
+                    else
+                    {
+                        shieldAfterSkillUseVfx.SetActive(false);
+                    }
+                }
+                
+
                 yield return waiter;
             }   
         }
@@ -200,8 +219,8 @@ namespace _Chi.Scripts.Mono.Entities
 
                     if (damage > 0 && monster.CanBePushed())
                     {
-                        var dmg = DamageExtensions.CalculateEffectDamage(damage, monster, this);
-                        monster.ReceiveDamage(dmg, this);
+                        var dmgWithFlags = DamageExtensions.CalculateEffectDamage(damage, monster, this);
+                        monster.ReceiveDamage(dmgWithFlags.damage, this, dmgWithFlags.flags);
 
                         if (pushEffect != null)
                         {
@@ -418,6 +437,19 @@ namespace _Chi.Scripts.Mono.Entities
         {
             skills.Remove(skill);
             skillDatas.Remove(skill);
+        }
+
+        public void OnSkillUse()
+        {
+            var restoreHealth = stats.skillUseHealthPercent.GetValue();
+
+            if (restoreHealth > 0)
+            {
+                var toRestore = entityStats.maxHp * restoreHealth;
+                this.Heal(toRestore);
+            }
+
+            lastSkillUseTime = Time.time;
         }
     }
 }

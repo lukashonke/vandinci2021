@@ -141,7 +141,7 @@ namespace _Chi.Scripts.Mono.Ui
             if (moduleGo != null && modulePrefabItem != null)
             {
                 //TODO use actual module instance if available to show level
-                Gamesystem.instance.uiManager.ShowModuleTooltip((RectTransform) this.transform, modulePrefabItem, moduleLevel);
+                Gamesystem.instance.uiManager.ShowItemTooltip((RectTransform) this.transform, modulePrefabItem, moduleLevel);
             }
             
             if (onHoverGo != null)

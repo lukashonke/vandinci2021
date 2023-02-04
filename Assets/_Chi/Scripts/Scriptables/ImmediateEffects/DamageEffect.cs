@@ -18,8 +18,8 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
                 sourceDamage = offensiveModule.stats.projectileDamage.GetValue();
             }
             
-            var dmg = DamageExtensions.CalculateEffectDamage(sourceDamage, target, sourceEntity);
-            target.ReceiveDamage(dmg, sourceEntity);
+            var dmgWithFlags = DamageExtensions.CalculateEffectDamage(sourceDamage, target, sourceEntity);
+            target.ReceiveDamage(dmgWithFlags.damage, sourceEntity, dmgWithFlags.flags);
             return true;
         }    
     }

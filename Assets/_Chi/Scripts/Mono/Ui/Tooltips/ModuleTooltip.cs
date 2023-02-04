@@ -75,6 +75,22 @@ namespace _Chi.Scripts.Mono.Ui.Tooltips
                     }
                 }
             }
+            else if (modulePrefabItem.mutator != null)
+            {
+                var stats = modulePrefabItem.mutator.GetUiStats(1);
+                if (stats != null)
+                {
+                    foreach (var stat in stats)
+                    {
+                        var go = Instantiate(statsItem, statsContainer.transform);
+                        go.transform.Find("Title").GetComponent<TextMeshProUGUI>().text = stat.title;
+                        go.transform.Find("Value").GetComponent<TextMeshProUGUI>().text = stat.value;
+                        go.SetActive(true);
+                    }
+
+                    return true;
+                }
+            }
 
             return false;
         }

@@ -1,4 +1,5 @@
-﻿using _Chi.Scripts.Mono.Entities;
+﻿using System.Collections.Generic;
+using _Chi.Scripts.Mono.Entities;
 using Sirenix.OdinInspector;
 
 namespace _Chi.Scripts.Scriptables
@@ -10,6 +11,8 @@ namespace _Chi.Scripts.Scriptables
         public abstract void ApplyToPlayer(Player player);
         
         public abstract void RemoveFromPlayer(Player player);
+        
+        public virtual List<(string title, string value)> GetUiStats(int level) => null;
     }
 
     public enum MutatorCategory

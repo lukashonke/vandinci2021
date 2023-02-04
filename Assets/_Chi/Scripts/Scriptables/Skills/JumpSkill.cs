@@ -20,7 +20,7 @@ namespace _Chi.Scripts.Scriptables.Skills
             {
                 player.StartCoroutine(Jump(player));
                 
-                SetNextSkillUse(entity, reuseDelay);
+                SetNextSkillUse(entity, GetReuseDelay(player));
                 return true;
             }
 
@@ -29,6 +29,10 @@ namespace _Chi.Scripts.Scriptables.Skills
 
         private IEnumerator Jump(Player player)
         {
+            player.OnSkillUse();
+            
+            var force = jumpForce * player.stats.skillPowerMul.GetValue();
+            
             var direction = (Utils.GetMousePosition() - player.GetPosition()).normalized;
             var jumpUntil = Time.time + jumpLength;
             
@@ -37,7 +41,7 @@ namespace _Chi.Scripts.Scriptables.Skills
 
             while (jumpUntil >= Time.time)
             {
-                player.rb.velocity = direction * jumpForce;
+                player.rb.velocity = direction * force;
                 
                 //player.rb.MovePosition((Vector3) player.rb.position + (direction * jumpForce * Time.fixedDeltaTime));
                 

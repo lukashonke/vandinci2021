@@ -40,6 +40,11 @@ namespace _Chi.Scripts.Scriptables
             skillData.lastUse = Time.time;
         }
 
+        public float GetReuseDelay(Player player)
+        {
+            return reuseDelay * player.stats.skillReuseMul.GetValue();
+        }
+
         public abstract SkillData CreateDefaultSkillData();
     }
 

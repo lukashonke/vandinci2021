@@ -1,5 +1,6 @@
 ﻿using System;
 using _Chi.Scripts.Mono.Common;
+using UnityEngine.Serialization;
 
 namespace _Chi.Scripts.Statistics
 {
@@ -23,5 +24,22 @@ namespace _Chi.Scripts.Statistics
         public Stat shieldChargesCount = new Stat();
 
         public Stat singleShieldRechargeDelay = new Stat();
+
+        public Stat skillReuseMul = new Stat();
+
+        public Stat skillPowerMul = new Stat();
+
+        public Stat skillUseHealthPercent = new Stat();
+
+        //TODO impl crit
+        public Stat baseCriticalRate = new Stat();
+
+        public Stat criticalDamageMul = new Stat();
+
+        public Stat nonCriticalDamageMul = new Stat();
+
+        public Stat takeDamageAfterSkillUseMul = new Stat();
+
+        public Stat takeDamageFaterSkillUseDuration = new Stat();
     }
 }

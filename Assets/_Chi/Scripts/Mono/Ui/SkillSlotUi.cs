@@ -113,7 +113,7 @@ namespace _Chi.Scripts.Mono.Ui
         {
             if (moduleGo != null && currentSkill != null)
             {
-                Gamesystem.instance.uiManager.ShowModuleTooltip((RectTransform) this.transform, currentSkill, 0);
+                Gamesystem.instance.uiManager.ShowItemTooltip((RectTransform) this.transform, currentSkill, 0);
             }
         }
 
