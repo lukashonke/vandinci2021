@@ -117,7 +117,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
             ShootEffect();
         }
         
-        public override List<(string title, string value)> GetUiStats()
+        public override List<(string title, string value)> GetUiStats(int level)
         {
             return new List<(string title, string value)>()
             {

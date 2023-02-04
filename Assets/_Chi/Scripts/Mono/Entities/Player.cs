@@ -11,12 +11,15 @@ using _Chi.Scripts.Persistence;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
 using DamageNumbersPro;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace _Chi.Scripts.Mono.Entities
 {
     public class Player : Entity
     {
+        public GameObject shieldEffectVfx;
+        
         public PlayerStats stats;
 
         public List<Skill> skills;
@@ -33,8 +36,12 @@ namespace _Chi.Scripts.Mono.Entities
         [NonSerialized] public List<Entity> targetableEnemies;
         [NonSerialized] public HashSet<Entity> damagingEnemies;
         private List<Entity> damagingEnemiesToRemove;
+
+        [ReadOnly] public int shieldCharges;
         
         private Dictionary<Skill, SkillData> skillDatas;
+        
+        private float nextRestoreShield = -1;
 
         public ImmediateEffect pushEffect;
         public GameObject damageEffect;
@@ -73,6 +80,7 @@ namespace _Chi.Scripts.Mono.Entities
             //StartCoroutine(UpdateNearbyEnemies());
             //StartCoroutine(DamageByNearbyCoroutine());
             StartCoroutine(CleanupJob());
+            StartCoroutine(StatsJob());
         }
 
         private IEnumerator CleanupJob()
@@ -81,6 +89,43 @@ namespace _Chi.Scripts.Mono.Entities
             while (isAlive)
             {
                 targetableEnemies.RemoveAll(e => e == null || !e.isAlive);
+
+                yield return waiter;
+            }   
+        }
+        
+        private IEnumerator StatsJob()
+        {
+            var waiter = new WaitForSeconds(0.05f);
+
+            float nextHeal = Time.time + 1f;
+            
+            while (isAlive)
+            {
+                if (nextHeal <= Time.time)
+                {
+                    nextHeal = Time.time + 1f;
+                    this.Heal(stats.hpRegenPerSecond.GetValue());
+                }
+
+                if (nextRestoreShield < 0 && shieldCharges < stats.shieldChargesCount.GetValue())
+                {
+                    nextRestoreShield = Time.time + stats.singleShieldRechargeDelay.GetValue();
+                }
+                else if (nextRestoreShield > 0 && nextRestoreShield <= Time.time)
+                {
+                    shieldCharges++;
+                    nextRestoreShield = -1;
+                }
+
+                if (shieldCharges > 0)
+                {
+                    shieldEffectVfx.SetActive(true);
+                }
+                else
+                {
+                    shieldEffectVfx.SetActive(false);
+                }
 
                 yield return waiter;
             }   
@@ -193,6 +238,20 @@ namespace _Chi.Scripts.Mono.Entities
                     damagingEnemies.Add(monster);
                 }
             }
+        }
+
+        public override bool CanReceiveDamage(float damage, Entity damager)
+        {
+            nextRestoreShield = Time.time + stats.singleShieldRechargeDelay.GetValue();
+            
+            if (shieldCharges > 0)
+            {
+                shieldCharges--;
+                //TODO add vfx
+                return false;
+            }
+
+            return true;
         }
 
         public void AddNearbyEnemy(Npc npc)

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Scriptables.ImmediateEffects;
@@ -49,6 +50,12 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
             return false;
         }
         
-        
+        public override List<(string title, string value)> GetUiStats(int level)
+        {
+            return new List<(string title, string value)>()
+            {
+                ("Weapon Push Force", $"{AddLevelValueUI(value, level)}"),
+            };
+        }
     }
 }

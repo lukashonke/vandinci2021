@@ -165,9 +165,16 @@ namespace _Chi.Scripts.Mono.Entities
         
         }
 
+        public virtual bool CanReceiveDamage(float damage, Entity damager)
+        {
+            return true;
+        }
+
         public void ReceiveDamage(float damage, Entity damager)
         {
             if (damage <= 0) return;
+
+            if (!CanReceiveDamage(damage, damager)) return;
             
             entityStats.hp -= damage;
             

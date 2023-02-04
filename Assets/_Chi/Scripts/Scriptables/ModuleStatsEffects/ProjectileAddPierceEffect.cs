@@ -1,4 +1,5 @@
-﻿using _Chi.Scripts.Mono.Common;
+﻿using System.Collections.Generic;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Modules;
 using UnityEngine;
 
@@ -27,6 +28,14 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
             }
 
             return false;
+        }
+        
+        public override List<(string title, string value)> GetUiStats(int level)
+        {
+            return new List<(string title, string value)>()
+            {
+                ("Projectile Pierced Enemies", $"{AddLevelValueUI(value, level)}"),
+            };
         }
     }
 }

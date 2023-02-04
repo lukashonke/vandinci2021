@@ -328,4 +328,31 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: 87ba2637bd53e4165a8fb327efa7a4e6, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+  - id: 2600
+    label: Shield Module
+    description: 
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: d705c7605dc9bb841a8b7ba32c05d922, type: 3}
+    prefabUi: {fileID: 8309321105186295158, guid: 5d082eacc5d146f46ae9abb61fb7b4c9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 2601
+    label: Repairing Module
+    description: 
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: c501ca09a721c9c4a9fde387dacda408, type: 3}
+    prefabUi: {fileID: 8309321105186295158, guid: 0e5be0f3c47fe704cbf39de32cc8b6be, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 2602
+    label: Speed Module
+    description: 
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: a5a08309ec1ef8f4880982838a622fb3, type: 3}
+    prefabUi: {fileID: 8309321105186295158, guid: 21189be4bde0a3849998b1f24149801f, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
   playerDealtDamage: {fileID: 184639617188728617, guid: 314716765f8ab6548bd010be7ce6a255, type: 3}

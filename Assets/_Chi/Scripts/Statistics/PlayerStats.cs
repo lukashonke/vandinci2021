@@ -17,5 +17,11 @@ namespace _Chi.Scripts.Statistics
         public Stat minVelocityToDamage = new Stat();
 
         public Stat maxDistanceToReceiveContactDamage = new Stat();
+
+        public Stat hpRegenPerSecond = new Stat();
+
+        public Stat shieldChargesCount = new Stat();
+
+        public Stat singleShieldRechargeDelay = new Stat();
     }
 }

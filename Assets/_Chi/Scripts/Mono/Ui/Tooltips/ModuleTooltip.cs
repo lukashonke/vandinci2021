@@ -44,13 +44,13 @@ namespace _Chi.Scripts.Mono.Ui.Tooltips
             }
             
 
-            if (!InitialiseStats(modulePrefabItem))
+            if (!InitialiseStats(modulePrefabItem, level))
             {
                 statsContainer.SetActive(false);
             }
         }
 
-        private bool InitialiseStats(PrefabItem modulePrefabItem)
+        private bool InitialiseStats(PrefabItem modulePrefabItem, int level)
         {
             statsItem.SetActive(false);
             
@@ -59,7 +59,7 @@ namespace _Chi.Scripts.Mono.Ui.Tooltips
                 var module = modulePrefabItem.prefab.GetComponent<Module>();
                 if (module != null)
                 {
-                    var stats = module.GetUiStats();
+                    var stats = module.GetUiStats(level);
 
                     if (stats != null)
                     {

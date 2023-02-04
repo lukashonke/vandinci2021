@@ -120,6 +120,6 @@ namespace _Chi.Scripts.Mono.Modules
             }
         }
 
-        public virtual List<(string title, string value)> GetUiStats() => null;
+        public virtual List<(string title, string value)> GetUiStats(int level) => null;
     }
 }

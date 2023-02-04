@@ -44,5 +44,17 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
 
             return false;
         }
+        
+        public override List<(string title, string value)> GetUiStats(int level)
+        {
+            var ret = new List<(string title, string value)>();
+
+            foreach (var effect in effectsToAdd)
+            {
+                ret.Add(("Add Effect", effect.name));
+            }
+
+            return ret;
+        }
     }
 }
