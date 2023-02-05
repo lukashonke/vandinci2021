@@ -79,7 +79,7 @@ namespace _Chi.Scripts.Mono.Entities
         
         public virtual void Start()
         {
-            entityStats.hp = entityStats.maxHp;
+            entityStats.hp = GetMaxHp();
             isAlive = entityStats.hp > 0;
             canMove = true;
         }

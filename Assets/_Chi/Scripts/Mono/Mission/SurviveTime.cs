@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using _Chi.Scripts.Mono.Mission.Events;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using NotImplementedException = System.NotImplementedException;
@@ -14,7 +15,7 @@ namespace _Chi.Scripts.Mono.Mission
         
         private bool stopped;
         
-        public void OnStart()
+        public void OnStart(MissionEvent ev)
         {
             remainingTime = secondsToSurvive;
             StartCoroutine(UpdateLoop());

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
+using _Chi.Scripts.Mono.Mission.Events;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -15,9 +16,11 @@ namespace _Chi.Scripts.Mono.Mission
         public List<Spawn> spawns;
         
         [NonSerialized] private float nextCurvesUpdate = 0;
-        
-        public void OnStart()
+        [NonSerialized] public MissionEvent ev;
+
+        public void OnStart(MissionEvent ev)
         {
+            this.ev = ev;
             Debug.Log("start");
             
             foreach (var settings in spawns)
@@ -84,7 +87,9 @@ namespace _Chi.Scripts.Mono.Mission
                         
                             var targetPosition = spawnPosition + (new Vector3(i*spread, 0, 0));
                         
-                            settings.SpawnOnPosition(targetPosition, prefab, playerPosition);
+                            var spawned = settings.SpawnOnPosition(targetPosition, prefab, playerPosition);
+                            ev.TrackAliveEntity(spawned);
+                            Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
                         }
                     }
                     else
@@ -101,7 +106,9 @@ namespace _Chi.Scripts.Mono.Mission
                                     
                                 var targetPosition = spawnPosition + (new Vector3(column*spread, row*spread, 0));
                                 
-                                settings.SpawnOnPosition(targetPosition, prefab, playerPosition);
+                                var spawned = settings.SpawnOnPosition(targetPosition, prefab, playerPosition);
+                                ev.TrackAliveEntity(spawned);
+                                Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
                                 
                                 spawnCount--;
                             }
@@ -193,7 +200,7 @@ namespace _Chi.Scripts.Mono.Mission
             return (int)Math.Round(Random.Range(minSpawnCount.Evaluate(time), maxSpawnCount.Evaluate(time)));
         }
 
-        public void SpawnOnPosition(Vector3 position, SpawnPrefab prefab, Vector3 attackTarget)
+        public Entity SpawnOnPosition(Vector3 position, SpawnPrefab prefab, Vector3 attackTarget)
         {
             Quaternion rotation;
 
@@ -213,12 +220,15 @@ namespace _Chi.Scripts.Mono.Mission
                 case SpawnPrefabType.Npc:
                     var npc = prefab.prefabNpc.SpawnPooledNpc(position, rotation);
                     npc.maxDistanceFromPlayerBeforeDespawn = distanceFromPlayerToDespawn * distanceFromPlayerToDespawn;
+                    return npc;
                     break;
                 case SpawnPrefabType.Gameobject:
                     throw new NotImplementedException();
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            return null;
         }
     }
 

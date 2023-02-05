@@ -341,7 +341,8 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 11000
     label: Critical Damage
-    description: 
+    description: Increases Critical damage but decreases regular damage. Useful if
+      you are able to create a build focused on Critical rate.
     type: 5
     predefinedId: 0
     prefab: {fileID: 0}
@@ -350,7 +351,7 @@ MonoBehaviour:
     mutator: {fileID: 11400000, guid: 2aa1b31b8ba3742f4857873588186ba4, type: 2}
   - id: 11001
     label: Healing Skills
-    description: 
+    description: You will be healed when you cast a skill.
     type: 5
     predefinedId: 0
     prefab: {fileID: 0}

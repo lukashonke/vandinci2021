@@ -31,7 +31,6 @@ namespace _Chi.Scripts.Statistics
 
         public Stat skillUseHealthPercent = new Stat();
 
-        //TODO impl crit
         public Stat baseCriticalRate = new Stat();
 
         public Stat criticalDamageMul = new Stat();

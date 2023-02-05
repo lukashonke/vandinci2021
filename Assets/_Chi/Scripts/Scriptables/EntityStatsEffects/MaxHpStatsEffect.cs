@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
+using _Chi.Scripts.Mono.Extensions;
 using UnityEngine;
 
 namespace _Chi.Scripts.Scriptables.EntityStatsEffects
@@ -16,13 +17,15 @@ namespace _Chi.Scripts.Scriptables.EntityStatsEffects
             }
             else if (modifier == StatModifierType.Mul)
             {
-                target.entityStats.maxHpMul += AddLevelValue(value, level);
+                target.entityStats.maxHpMul += value;
             }
             else
             {
                 Debug.LogError("No support for setting max HP directly.");
                 return false;
             }
+            
+            target.Heal();
 
             return true;
         }
@@ -42,6 +45,8 @@ namespace _Chi.Scripts.Scriptables.EntityStatsEffects
                 Debug.LogError("No support for setting max HP directly.");
                 return false;
             }
+            
+            target.Heal();
 
             return true;
         }

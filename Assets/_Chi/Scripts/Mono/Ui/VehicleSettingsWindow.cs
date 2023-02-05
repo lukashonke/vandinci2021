@@ -115,6 +115,8 @@ namespace _Chi.Scripts.Mono.Ui
 
             if (skillItem != null)
             {
+                run.mutatorPrefabIds.RemoveAll(s => s.slot == slot.index);
+                
                 run.mutatorPrefabIds.Add(new SlotItem()
                 {
                     slot = slot.index,

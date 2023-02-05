@@ -56,7 +56,7 @@ namespace _Chi.Scripts.Mono.Extensions
 
             if (chance > 0)
             {
-                return Random.Range(0, 1) < chance;
+                return Random.Range(0, 1f) < chance;
             }
 
             return false;

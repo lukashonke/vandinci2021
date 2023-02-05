@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Utilities;
 using Sirenix.OdinInspector;
@@ -13,13 +15,14 @@ namespace _Chi.Scripts.Mono.Mission
     {
         [ReadOnly] public MissionDatabaseItem mission;
         
-        [NonSerialized] public IMissionHandler[] handlers;
-        
         public bool processOnStart = true;
 
         public bool hideTilemapOnStart = true;
 
         private List<GameObject> spawnedObjects = new List<GameObject>();
+        
+        [NonSerialized] private List<Entity> trackAliveEntities;
+        [NonSerialized] private bool allTrackedEntitiesDead = false;
         
         public void Awake()
         {
@@ -35,6 +38,8 @@ namespace _Chi.Scripts.Mono.Mission
             {
                 Gamesystem.instance.mapGenTilemap.gameObject.GetComponent<TilemapRenderer>().enabled = false;
             }
+
+            trackAliveEntities = new();
         }
 
         public void Start()
@@ -49,21 +54,23 @@ namespace _Chi.Scripts.Mono.Mission
             {
                 Instantiate(prefab, this.gameObject.transform);
             }
-            
-            handlers = GetComponentsInChildren<IMissionHandler>();
-            
-            foreach (var handler in handlers)
+
+            StartCoroutine(Updater());
+        }
+
+        private IEnumerator Updater()
+        {
+            var waiter = new WaitForSeconds(0.5f);
+            while (this != null)
             {
-                handler.OnStart();
+                yield return waiter;
+                
+                UpdateAllDead();
             }
         }
 
         public void OnDestroy()
         {
-            foreach (var handler in handlers)
-            {
-                handler.OnStop();
-            }
         }
 
         [Button]
@@ -142,5 +149,30 @@ namespace _Chi.Scripts.Mono.Mission
                 GameObject.DestroyImmediate(child.gameObject);
             }
         }
+
+        public void TrackAliveEntity(Entity e)
+        {
+            trackAliveEntities.Add(e);
+            allTrackedEntitiesDead = false;
+        }
+
+        public void UpdateAllDead()
+        {
+            bool anyAlive = false;
+            foreach (var entity in trackAliveEntities)
+            {
+                if (entity != null && entity.isAlive && entity.gameObject.activeSelf)
+                {
+                    anyAlive = true;
+                    break;
+                }
+            }
+
+            allTrackedEntitiesDead = !anyAlive;
+            
+            trackAliveEntities.RemoveAll(e => !e.isAlive);
+        }
+
+        public bool AreTrackedEntitiesDead() => allTrackedEntitiesDead;
     }
 }
