@@ -40,33 +40,6 @@ MonoBehaviour:
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
-  - id: 102
-    label: Zombie Fast
-    description: 
-    type: 1
-    predefinedId: 0
-    prefab: {fileID: 5954188515519120314, guid: 6865f2ce12f622849b1c682ef902fe54, type: 3}
-    prefabUi: {fileID: 0}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-  - id: 103
-    label: Zombie Fat
-    description: 
-    type: 1
-    predefinedId: 0
-    prefab: {fileID: 5954188515519120314, guid: e9797147ab774344b8a2be82b128eaca, type: 3}
-    prefabUi: {fileID: 0}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-  - id: 104
-    label: Zombie Bloater
-    description: 
-    type: 1
-    predefinedId: 0
-    prefab: {fileID: 5954188515519120314, guid: 4e58ba0edb87fe441b493c86ddb4e59e, type: 3}
-    prefabUi: {fileID: 0}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
   - id: 1000
     label: First Body
     description: 
@@ -412,5 +385,160 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 1bb3c56d297ae4a8ab7fc79aabae25b9, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: 58d69053369904376be7a9adeaa41350, type: 2}
+  variants:
+  - variant: Zombie
+    sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 9100000, guid: f54b0e0d088b20346a942a6b13ad2b87, type: 2}
+    entityStats:
+      maxHp: 20
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 20
+    npcStats:
+      speed: 1
+      rotationSpeed: 10
+      contactDamage: 10
+      contactDamageInterval: 1
+  - variant: ZombieFast
+    sprite: {fileID: 21300000, guid: ada51a819fa2e4745b6756e5c835e252, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 20
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 20
+    npcStats:
+      speed: 1.4
+      rotationSpeed: 10
+      contactDamage: 10
+      contactDamageInterval: 1
+  - variant: ZombieFat
+    sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 30
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 30
+    npcStats:
+      speed: 1
+      rotationSpeed: 10
+      contactDamage: 10
+      contactDamageInterval: 1
+  - variant: ZombieElite
+    sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
+    animatorController: {fileID: 9100000, guid: f54b0e0d088b20346a942a6b13ad2b87, type: 2}
+    entityStats:
+      maxHp: 20
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 20
+    npcStats:
+      speed: 1
+      rotationSpeed: 10
+      contactDamage: 10
+      contactDamageInterval: 1
+  - variant: ZombieBloody
+    sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 4461f9e1a8c439b40bd7fafb428820cf, type: 2}
+    animatorController: {fileID: 9100000, guid: f54b0e0d088b20346a942a6b13ad2b87, type: 2}
+    entityStats:
+      maxHp: 20
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 20
+    npcStats:
+      speed: 1
+      rotationSpeed: 10
+      contactDamage: 10
+      contactDamageInterval: 1
+  - variant: ZombieDemonic
+    sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 803fe10b4c4635a4c92bb2f6ad6629a8, type: 2}
+    animatorController: {fileID: 9100000, guid: f54b0e0d088b20346a942a6b13ad2b87, type: 2}
+    entityStats:
+      maxHp: 20
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 20
+    npcStats:
+      speed: 1
+      rotationSpeed: 10
+      contactDamage: 10
+      contactDamageInterval: 1
+  - variant: ZombieBloater
+    sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 100
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 100
+    npcStats:
+      speed: 1
+      rotationSpeed: 10
+      contactDamage: 10
+      contactDamageInterval: 1
+  - variant: ShootingTarget
+    sprite: {fileID: 21300000, guid: b2d676c7bb55561468c8d8a336439404, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 1000000
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 1000000
+    npcStats:
+      speed: 0
+      rotationSpeed: 10
+      contactDamage: 10
+      contactDamageInterval: 1
+  - variant: Knight
+    sprite: {fileID: 21300000, guid: 3269b21d08792aa43931fee87716aa98, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 200
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 200
+    npcStats:
+      speed: 0.7
+      rotationSpeed: 10
+      contactDamage: 10
+      contactDamageInterval: 1
+  - variant: Soldier
+    sprite: {fileID: 21300000, guid: 1cf393b0ae37b0448b9742e8b04b0048, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 50
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 50
+    npcStats:
+      speed: 1
+      rotationSpeed: 10
+      contactDamage: 10
+      contactDamageInterval: 1
+  - variant: Worker
+    sprite: {fileID: 21300000, guid: 13bd5d3e30908ab499d449233123097d, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 5
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 5
+    npcStats:
+      speed: 1.1
+      rotationSpeed: 10
+      contactDamage: 3
+      contactDamageInterval: 1
   playerCriticalDealtDamage: {fileID: 4974115115264481549, guid: 0beaac1fcb69845319cc168500b1bc84, type: 3}
   playerDealtDamage: {fileID: 184639617188728617, guid: 314716765f8ab6548bd010be7ce6a255, type: 3}

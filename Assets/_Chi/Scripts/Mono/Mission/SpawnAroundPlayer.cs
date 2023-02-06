@@ -4,6 +4,7 @@ using System.Linq;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Mission.Events;
+using _Chi.Scripts.Scriptables;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -45,6 +46,11 @@ namespace _Chi.Scripts.Mono.Mission
             
         }
 
+        public bool IsFinished()
+        {
+            return true;
+        }
+
         public void Update()
         {
             var player = Gamesystem.instance.objects.currentPlayer;
@@ -71,8 +77,6 @@ namespace _Chi.Scripts.Mono.Mission
                     settings.lastSpawnTime = Time.time;
                     settings.nextSpawnTime = settings.lastSpawnTime + (60 / settings.GetCountPerMinute(time-settings.startAtTime));
 
-                    var prefab = settings.GetRandomPrefab();
-
                     var distance = settings.GetDistanceFromPlayer(time);
                     var dir = (Vector3) Random.insideUnitCircle.normalized * distance;
                     var spawnPosition = playerPosition + dir;
@@ -87,7 +91,7 @@ namespace _Chi.Scripts.Mono.Mission
                         
                             var targetPosition = spawnPosition + (new Vector3(i*spread, 0, 0));
                         
-                            var spawned = settings.SpawnOnPosition(targetPosition, prefab, playerPosition);
+                            var spawned = settings.SpawnOnPosition(targetPosition, settings.GetRandomPrefab(), playerPosition);
                             ev.TrackAliveEntity(spawned);
                             Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
                         }
@@ -106,7 +110,7 @@ namespace _Chi.Scripts.Mono.Mission
                                     
                                 var targetPosition = spawnPosition + (new Vector3(column*spread, row*spread, 0));
                                 
-                                var spawned = settings.SpawnOnPosition(targetPosition, prefab, playerPosition);
+                                var spawned = settings.SpawnOnPosition(targetPosition, settings.GetRandomPrefab(), playerPosition);
                                 ev.TrackAliveEntity(spawned);
                                 Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
                                 
@@ -210,6 +214,10 @@ namespace _Chi.Scripts.Mono.Mission
                 rotation.x = 0;
                 rotation.y = 0;
             }
+            else if (prefab.noRotation)
+            {
+                rotation = Quaternion.identity;
+            }
             else
             {
                 rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
@@ -217,11 +225,11 @@ namespace _Chi.Scripts.Mono.Mission
             
             switch (prefab.type)
             {
-                case SpawnPrefabType.Npc:
+                case SpawnPrefabType.PooledNpc:
                     var npc = prefab.prefabNpc.SpawnPooledNpc(position, rotation);
+                    Gamesystem.instance.prefabDatabase.ApplyPrefabVariant(npc, prefab.prefabVariant);
                     npc.maxDistanceFromPlayerBeforeDespawn = distanceFromPlayerToDespawn * distanceFromPlayerToDespawn;
                     return npc;
-                    break;
                 case SpawnPrefabType.Gameobject:
                     throw new NotImplementedException();
                 default:
@@ -240,17 +248,28 @@ namespace _Chi.Scripts.Mono.Mission
         [ShowIf("type", SpawnPrefabType.Gameobject)]
         public GameObject prefab;
         
-        [ShowIf("type", SpawnPrefabType.Npc)]
+        [HideIf("type", SpawnPrefabType.Gameobject)]
         public Npc prefabNpc;
         
+        [Min(1)]
         public int weight;
 
         public bool rotateTowardsPlayer = true;
+        public bool noRotation = false;
+
+        [Required]
+        public string prefabVariant;
+
+        private static string[] variants()
+        {
+            return Gamesystem.instance.prefabDatabase.variants.Select(v => v.variant).ToArray();
+        }
     }
 
     public enum SpawnPrefabType
     {
-        Npc,
+        PooledNpc,
+        NonPooledNpc,
         Gameobject
     }
 }

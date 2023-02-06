@@ -74,13 +74,13 @@ MonoBehaviour:
       baseValue: 6
       value: 0
     fireRate:
-      baseValue: 1
-      value: 1
+      baseValue: 0.9
+      value: 0.9
     projectileDamage:
-      baseValue: 10
-      value: 10
+      baseValue: 7.5
+      value: 7
     targetRange:
-      baseValue: 8
+      baseValue: 6
       value: 0
     projectileRange:
       baseValue: 10

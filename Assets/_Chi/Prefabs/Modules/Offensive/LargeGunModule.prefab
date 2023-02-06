@@ -32,6 +32,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2454567826526104123}
+  - {fileID: 2159031452631065957}
+  - {fileID: 1780069285429707366}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -64,6 +66,9 @@ MonoBehaviour:
   targetUpdateInterval: 0.2
   rotationSpeed: 500
   instantRotation: 1
+  muzzles:
+  - {fileID: 1780069285429707366}
+  - {fileID: 2159031452631065957}
   stats:
     projectileCount:
       baseValue: 1
@@ -75,13 +80,13 @@ MonoBehaviour:
       baseValue: 8
       value: 0
     fireRate:
-      baseValue: 0.75
-      value: 0.75
+      baseValue: 1.65
+      value: 1.8
     projectileDamage:
-      baseValue: 10
-      value: 10
+      baseValue: 20
+      value: 15
     targetRange:
-      baseValue: 8
+      baseValue: 6
       value: 0
     projectileRange:
       baseValue: 10
@@ -89,9 +94,9 @@ MonoBehaviour:
     projectileLifetime:
       baseValue: 10
       value: 0
-    canProjectilePierce: 1
+    canProjectilePierce: 0
     projectilePierceCount:
-      baseValue: 2
+      baseValue: 1
       value: 0
     projectilePushForce:
       baseValue: 60
@@ -181,6 +186,68 @@ MonoBehaviour:
   useDefaultGizmoColor: 1
   gizmoColor: {r: 0, g: 1, b: 0, a: 1}
   gizmoSize: 0.5
+--- !u!1 &5867154590440419112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2159031452631065957}
+  m_Layer: 0
+  m_Name: Muzzle1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2159031452631065957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5867154590440419112}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.139, y: 0.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1232174764404154628}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8105375603555116891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1780069285429707366}
+  m_Layer: 0
+  m_Name: Muzzle2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1780069285429707366
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8105375603555116891}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.111, y: 0.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1232174764404154628}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8323528132064683676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -198,35 +265,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1353106325593054959, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.a
-      value: 1.88e-43
+      value: 1.7e-43
       objectReference: {fileID: 0}
     - target: {fileID: 1353106325593054959, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.b
-      value: -1.2451226e-33
+      value: 599174660
       objectReference: {fileID: 0}
     - target: {fileID: 1353106325593054959, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.g
-      value: 1.88e-43
+      value: 1.7e-43
       objectReference: {fileID: 0}
     - target: {fileID: 1353106325593054959, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.r
-      value: -1.2451424e-33
+      value: 599188500
       objectReference: {fileID: 0}
     - target: {fileID: 2096954885035021029, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.a
-      value: 1.88e-43
+      value: 1.7e-43
       objectReference: {fileID: 0}
     - target: {fileID: 2096954885035021029, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.b
-      value: -1.2451226e-33
+      value: 599174660
       objectReference: {fileID: 0}
     - target: {fileID: 2096954885035021029, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.g
-      value: 1.88e-43
+      value: 1.7e-43
       objectReference: {fileID: 0}
     - target: {fileID: 2096954885035021029, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.r
-      value: -1.2451424e-33
+      value: 599188500
       objectReference: {fileID: 0}
     - target: {fileID: 5878179182258637991, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: m_RootOrder

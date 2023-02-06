@@ -10,6 +10,8 @@ public class Healthbar : MonoBehaviour
 
     public GameObject healthGo;
 
+    public float scalePer1Hp = 0.01f;
+
     public void Awake()
     {
         parent = GetComponentInParent<Entity>();
@@ -50,6 +52,10 @@ public class Healthbar : MonoBehaviour
         
         var scale = (value / (float)maxValue) * 1f;
 
+        var transform1 = this.transform;
+        var localScale = transform1.localScale;
+        localScale = new Vector3(maxValue * scalePer1Hp, localScale.y, localScale.z);
+        transform1.localScale = localScale;
         healthGo.transform.localScale = new Vector3(scale, 1, 1);
     }
 }

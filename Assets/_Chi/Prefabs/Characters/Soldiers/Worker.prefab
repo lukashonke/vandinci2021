@@ -101,7 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8d5cddb15e5174eaec5211ab7bfb72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   entityStats:
     maxHp: 5
     maxHpAdd: 0
@@ -116,6 +115,7 @@ MonoBehaviour:
     rotationSpeed: 10
     contactDamage: 3
     contactDamageInterval: 1
+  currentVariant: Worker
   size: 1
   goDirectlyToPlayer: 1
   dissolveSpeed: 2

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2938247666068505969}
   - component: {fileID: 2800125656475470265}
   - component: {fileID: 1854340854698290890}
+  - component: {fileID: -452846794222111810}
   m_Layer: 7
   m_Name: Zombie
   m_TagString: Untagged
@@ -115,6 +116,7 @@ MonoBehaviour:
     rotationSpeed: 10
     contactDamage: 10
     contactDamageInterval: 1
+  currentVariant: Zombie
   size: 1
   goDirectlyToPlayer: 1
   dissolveSpeed: 2
@@ -238,3 +240,23 @@ MonoBehaviour:
   useDefaultGizmoColor: 1
   gizmoColor: {r: 0, g: 0, b: 0, a: 1}
   gizmoZOffset: 0
+--- !u!95 &-452846794222111810
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5954188515519120314}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

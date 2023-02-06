@@ -7,5 +7,7 @@ namespace _Chi.Scripts.Mono.Mission
         void OnStart(MissionEvent ev);
 
         void OnStop();
+
+        bool IsFinished();
     }
 }

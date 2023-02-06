@@ -15,5 +15,13 @@ namespace _Chi.Scripts.Statistics
     
         public float contactDamage;
         public float contactDamageInterval = 1f;
+        
+        public void CopyFrom(NpcStats prefab)
+        {
+            this.speed = prefab.speed;
+            this.rotationSpeed = prefab.rotationSpeed;
+            this.contactDamage = prefab.contactDamage;
+            this.contactDamageInterval = prefab.contactDamageInterval;
+        }
     }
 }

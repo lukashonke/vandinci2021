@@ -13,6 +13,8 @@ namespace _Chi.Scripts.Mono.Mission
     {
         public List<MissionEvent> events;
 
+        public int startIndex = 0;
+
         public bool loopEvents;
 
         [ReadOnly] public MissionEvent currentEvent;
@@ -32,7 +34,7 @@ namespace _Chi.Scripts.Mono.Mission
             const float loopInterval = 0.5f;
             var waiter = new WaitForSeconds(loopInterval);
 
-            int currentEventIndex = 0;
+            int currentEventIndex = startIndex;
             
             while (alive)
             {
@@ -48,7 +50,7 @@ namespace _Chi.Scripts.Mono.Mission
 
                 if (currentEvent == null)
                 {
-                    if (currentEventIndex + 1 >= events.Count)
+                    if (currentEventIndex >= events.Count)
                     {
                         if (loopEvents)
                         {

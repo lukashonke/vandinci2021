@@ -13,7 +13,10 @@ namespace _Chi.Scripts.Mono.Modules
     public abstract class OffensiveModule : Module, IBulletEmitterEntityParameters
     {
         [NonSerialized] public BulletEmitter emitter;
-        
+
+        public List<Transform> muzzles;
+        private int lastMuzzle;
+
         public OffensiveModuleStats stats;
         
         public List<ImmediateEffect> effects;
@@ -65,6 +68,13 @@ namespace _Chi.Scripts.Mono.Modules
         {
             if (shootVfx != null)
             {
+                if (muzzles != null)
+                {
+                    lastMuzzle++;
+                    if (lastMuzzle >= muzzles.Count) lastMuzzle = 0;
+                    shootVfx.transform.position = muzzles[lastMuzzle].position;
+                }
+                
                 shootVfx.Play();
             }
         }

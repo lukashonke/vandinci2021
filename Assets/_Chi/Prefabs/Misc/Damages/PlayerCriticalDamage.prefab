@@ -466,10 +466,10 @@ MonoBehaviour:
   shakeFrequencyFadeOut: 4
   enableLerp: 1
   lerpSettings:
-    speed: 5
-    minX: -0.3
-    maxX: 0.3
-    minY: 0.5
+    speed: 2
+    minX: 0
+    maxX: 0
+    minY: 1
     maxY: 1
     randomFlip: 0
   enableVelocity: 0
@@ -573,10 +573,10 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   spamGroup: Default
-  enableCombination: 0
+  enableCombination: 1
   combinationSettings:
     method: 0
-    maxDistance: 5
+    maxDistance: 0.2
     spawnDelay: 0.3
     absorbDuration: 0.3
     scaleCurve:
@@ -705,7 +705,7 @@ MonoBehaviour:
     radius: 3
     pushOffset: 1
   updateDelay: 0.03333
-  enablePooling: 0
+  enablePooling: 1
   poolSize: 50
   position: {x: 0, y: 0, z: 0}
 --- !u!210 &7323016947097016931

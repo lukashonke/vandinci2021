@@ -117,7 +117,10 @@ namespace _Chi.Scripts.Mono.Entities
                 }
                 else if (nextRestoreShield > 0 && nextRestoreShield <= Time.time)
                 {
-                    shieldCharges++;
+                    if (shieldCharges < stats.shieldChargesCount.GetValue())
+                    {
+                        shieldCharges++;
+                    }
                     nextRestoreShield = -1;
                 }
 
@@ -193,10 +196,15 @@ namespace _Chi.Scripts.Mono.Entities
             base.DoUpdate();
         }
 
+        public void Update()
+        {
+            Debug.DrawLine(GetPosition(), GetPosition() + Vector3.down, Color.cyan);
+        }
+
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-        
+            
             if (CanMove() && rotationTarget.HasValue)
             {
                 SetRotation(EntityExtensions.RotateTowards(GetPosition(), rotationTarget.Value, rb.transform.rotation, stats.rotationSpeed.GetValue()));
@@ -238,7 +246,7 @@ namespace _Chi.Scripts.Mono.Entities
 
         public void ReceiveDamageByContact(Npc monster, bool addToDamagingEnemiesList)
         {
-            //if (Time.time > monster.nextDamageTime && monster.distanceToPlayer < Math.Pow(stats.maxDistanceToReceiveContactDamage.GetValue(), 2))
+            if (Time.time > monster.nextDamageTime/* && monster.distanceToPlayer < Math.Pow(stats.maxDistanceToReceiveContactDamage.GetValue(), 2)*/)
             {
                 var damage = monster.CalculateMonsterContactDamage(this);
                 if (damage > 0)

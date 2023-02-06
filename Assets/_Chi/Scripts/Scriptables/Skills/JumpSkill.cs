@@ -37,6 +37,7 @@ namespace _Chi.Scripts.Scriptables.Skills
             var jumpUntil = Time.time + jumpLength;
             
             player.SetCanMove(false);
+            player.SetCanReceiveDamage(false);
             var waiter = new WaitForFixedUpdate();
 
             while (jumpUntil >= Time.time)
@@ -49,6 +50,7 @@ namespace _Chi.Scripts.Scriptables.Skills
             }
             
             player.SetCanMove(true);
+            player.SetCanReceiveDamage(true);
             
             player.rb.velocity = Vector2.zero;
         }

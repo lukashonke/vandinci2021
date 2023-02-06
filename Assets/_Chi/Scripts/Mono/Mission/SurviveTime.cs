@@ -40,5 +40,10 @@ namespace _Chi.Scripts.Mono.Mission
         {
             stopped = true;
         }
+
+        public bool IsFinished()
+        {
+            return true;
+        }
     }
 }

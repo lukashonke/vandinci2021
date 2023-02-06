@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1232174764404154628}
+  - component: {fileID: 6115072542935622935}
   - component: {fileID: 2526313433823586861}
   - component: {fileID: 6177911479989981830}
   - component: {fileID: -1977820923903768266}
@@ -34,7 +35,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2526313433823586861
+--- !u!114 &6115072542935622935
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,6 +43,80 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232174764404154631}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0021365890684c96811d5270826f1e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: additionalEffects
+      Entry: 6
+      Data: 
+  parent: {fileID: 0}
+  slot: {fileID: 0}
+  targetUpdateInterval: 0.2
+  rotationSpeed: 500
+  instantRotation: 1
+  stats:
+    projectileCount:
+      baseValue: 1
+      value: 1
+    projectileSpreadAngle:
+      baseValue: 5
+      value: 0
+    projectileSpeed:
+      baseValue: 12
+      value: 0
+    fireRate:
+      baseValue: 4
+      value: 3
+    projectileDamage:
+      baseValue: 20
+      value: 30
+    targetRange:
+      baseValue: 6
+      value: 0
+    projectileRange:
+      baseValue: 10
+      value: 0
+    projectileLifetime:
+      baseValue: 10
+      value: 0
+    canProjectilePierce: 1
+    projectilePierceCount:
+      baseValue: 2
+      value: 0
+    projectilePushForce:
+      baseValue: 120
+      value: 0
+    projectilePierceChance: 0
+    hasAreaEffect: 0
+    hasProjectile: 1
+    areaEffectDamage: 0
+    accuracy: 1
+    pushForce: 0
+    effectDuration: 1
+  effects:
+  - {fileID: 11400000, guid: e9ee23c6ec6fda646a0ca63e5b6a0d15, type: 2}
+  - {fileID: 11400000, guid: 55fb060b0aa775a4eb384d6f7a55d715, type: 2}
+  - {fileID: 11400000, guid: 2888de4cdfdab9d49a4833d8ea420960, type: 2}
+  shootVfx: {fileID: 0}
+  affectType: 0
+--- !u!114 &2526313433823586861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232174764404154631}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c62ae5e45ff4022893f2a2f1bff2fad, type: 3}
   m_Name: 
@@ -54,7 +129,10 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: additionalEffects
+      Entry: 6
+      Data: 
   parent: {fileID: 0}
   slot: {fileID: 0}
   targetUpdateInterval: 0.2
@@ -71,13 +149,13 @@ MonoBehaviour:
       baseValue: 12
       value: 0
     fireRate:
-      baseValue: 3
+      baseValue: 4
       value: 3
     projectileDamage:
-      baseValue: 30
+      baseValue: 20
       value: 30
     targetRange:
-      baseValue: 8
+      baseValue: 6
       value: 0
     projectileRange:
       baseValue: 10
@@ -85,9 +163,9 @@ MonoBehaviour:
     projectileLifetime:
       baseValue: 10
       value: 0
-    canProjectilePierce: 0
+    canProjectilePierce: 1
     projectilePierceCount:
-      baseValue: 0
+      baseValue: 2
       value: 0
     projectilePushForce:
       baseValue: 120

@@ -48,6 +48,8 @@ public class Gamesystem : MonoBehaviour
     {
         instance = this;
         
+        prefabDatabase.Initialise();
+        
         schedules = new List<FloatWithAction>();
         toRemoveSchedules = new List<int>();
         

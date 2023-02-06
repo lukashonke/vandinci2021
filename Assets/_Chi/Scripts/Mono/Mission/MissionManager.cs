@@ -47,6 +47,12 @@ namespace _Chi.Scripts.Mono.Mission
             var run = Gamesystem.instance.progress.progressData.run;
             
             mission = Gamesystem.instance.missionDatabase.GetMission(run.missionIndex);
+
+            if (mission == null)
+            {
+                Debug.LogError($"Mission with index {run.missionIndex} is not implemented.");
+                return;
+            }
             
             this.transform.RemoveAllChildren();
 

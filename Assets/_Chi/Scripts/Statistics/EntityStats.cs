@@ -16,5 +16,13 @@ namespace _Chi.Scripts.Statistics
         public float maxHpMul = 1;
         
         public float hp = 10;
+
+        public void CopyFrom(EntityStats prefab)
+        {
+            this.maxHp = prefab.maxHp;
+            this.maxHpAdd = prefab.maxHpAdd;
+            this.maxHpMul = prefab.maxHpMul;
+            this.hp = prefab.hp;
+        }
     }
 }

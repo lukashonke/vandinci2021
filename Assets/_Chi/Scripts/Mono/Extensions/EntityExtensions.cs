@@ -189,8 +189,9 @@ namespace _Chi.Scripts.Mono.Extensions
             
             switch (prefab.type)
             {
-                case SpawnPrefabType.Npc:
+                case SpawnPrefabType.PooledNpc:
                     var npc = prefab.prefabNpc.SpawnPooledNpc(position, rotation);
+                    Gamesystem.instance.prefabDatabase.ApplyPrefabVariant(npc, prefab.prefabVariant);
                     npc.maxDistanceFromPlayerBeforeDespawn = distanceBeforeDespawn;
                     break;
                 case SpawnPrefabType.Gameobject:

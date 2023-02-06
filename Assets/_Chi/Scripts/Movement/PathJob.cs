@@ -115,6 +115,11 @@ namespace _Chi.Scripts.Movement
                         if(doMove)
                         {
                             npc.MoveTo((Vector3)data.outputPositions[0]);
+                            npc.SetMoving(npc.stats.speed);
+                        }
+                        else
+                        {
+                            npc.SetMoving(0);
                         }
 
                         if (data.computePlayerPosition)

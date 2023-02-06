@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Utilities;
 using Sirenix.OdinInspector;
@@ -35,6 +36,8 @@ namespace _Chi.Scripts.Mono.Mission.Events
 
     public class EndAllMissionHandlersEvent : MissionEvent
     {
+        public bool waitUntilAllEnemiesDead;
+        
         public override void Start(float currentTime)
         {
             var toDelete = new List<Transform>();
@@ -58,6 +61,10 @@ namespace _Chi.Scripts.Mono.Mission.Events
 
         public override bool CanEnd(float currentTime)
         {
+            if (waitUntilAllEnemiesDead)
+            {
+                return Gamesystem.instance.missionManager.AreTrackedEntitiesDead();
+            }
             return true;
         }
     }
@@ -73,14 +80,20 @@ namespace _Chi.Scripts.Mono.Mission.Events
 
         public bool waitTillAllSpawnedAreDead;
 
+        public bool waitTillAllWawesSpawn = true;
+
         private bool allDead;
 
         [NonSerialized] private float startedAt;
         [NonSerialized] private List<Entity> trackAliveEntities;
 
+        [NonSerialized] private List<IMissionHandler> handlerInstances;
+
         public override void Start(float currentTime)
         {
             var parent = Gamesystem.instance.missionManager.transform;
+
+            handlerInstances = new();
 
             trackAliveEntities = new();
             allDead = false;
@@ -88,8 +101,13 @@ namespace _Chi.Scripts.Mono.Mission.Events
             foreach (var prefab in handlers)
             {
                 var go = GameObject.Instantiate(prefab, parent);
-                var handler = go.GetComponent<IMissionHandler>();
-                handler.OnStart(this);
+
+                foreach (var handler in go.GetComponents<IMissionHandler>())
+                {
+                    handler.OnStart(this);
+                    handlerInstances.Add(handler);
+                }
+                
             }
             
             startedAt = currentTime;
@@ -102,6 +120,11 @@ namespace _Chi.Scripts.Mono.Mission.Events
 
         public override bool CanEnd(float currentTime)
         {
+            if (waitTillAllWawesSpawn && handlerInstances.Any(h => !h.IsFinished()))
+            {
+                return false;
+            }
+            
             if ((currentTime-startedAt) > fixedDuration)
             {
                 if (waitTillAllSpawnedAreDead)
@@ -193,12 +216,44 @@ namespace _Chi.Scripts.Mono.Mission.Events
         }
     }
 
-    /*public class ReceiveRewardHandler : MissionEvent
+    public class NextMission : MissionEvent
     {
-        public override void Start()
+        public override void Start(float currentTime)
         {
-            //TODO
+            var run = Gamesystem.instance.progress.progressData.run;
+            Gamesystem.instance.missionManager.ChangeMission(run.missionIndex + 1);
         }
-    }*/
+
+        public override bool CanStart(float currentTime)
+        {
+            return true;
+        }
+
+        public override bool CanEnd(float currentTime)
+        {
+            return true;
+        }
+    }
+
+    public class ReceiveRewardHandler : MissionEvent
+    {
+        public override void Start(float currentTime)
+        {
+            Time.timeScale = 0f;
+            
+            Gamesystem.instance.uiManager.ShowConfirmDialog("Reward Time!", "Here is when you pick a new reward.", 
+                () => Time.timeScale = 1f, () => Time.timeScale = 1f, () => Time.timeScale = 1f);
+        }
+
+        public override bool CanStart(float currentTime)
+        {
+            return true;
+        }
+
+        public override bool CanEnd(float currentTime)
+        {
+            return true;
+        }
+    }
     
 }

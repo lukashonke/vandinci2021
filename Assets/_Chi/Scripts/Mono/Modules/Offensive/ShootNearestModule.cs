@@ -57,7 +57,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                     else
                     {
                         currentTarget = null;
-                        emitter.Stop();
+                        emitter.Pause();
                     }
 
                     if (emitter.rootBullet != null)

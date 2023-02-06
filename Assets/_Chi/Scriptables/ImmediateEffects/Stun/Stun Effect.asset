@@ -22,9 +22,9 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   order: 20
-  duration: 2
+  duration: 5
   setStunned: 1
   slowDownBy: 0
   stackDuration: 0
-  stunMaterial: {fileID: 2100000, guid: 2d2a607b23ac57241bc6260d56680dd1, type: 2}
-  vfxPrefab: {fileID: 0}
+  stunMaterial: {fileID: 0}
+  vfxPrefab: {fileID: 7938201365818296753, guid: da5f2d49a4f111d4997787e85f13df1e, type: 3}

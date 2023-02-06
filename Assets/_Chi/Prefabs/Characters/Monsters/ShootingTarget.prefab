@@ -115,6 +115,7 @@ MonoBehaviour:
     rotationSpeed: 10
     contactDamage: 10
     contactDamageInterval: 1
+  currentVariant: ShootingTarget
   size: 1
   goDirectlyToPlayer: 1
   dissolveSpeed: 2

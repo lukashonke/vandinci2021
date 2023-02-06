@@ -19,6 +19,8 @@ namespace _Chi.Scripts.Mono.Entities
         [NonSerialized] public bool hasRb;
         [NonSerialized] public Collider2D triggerCollider; 
         [NonSerialized] public SpriteRenderer renderer;
+        [NonSerialized] public bool hasAnimator;
+        [NonSerialized] public Animator animator;
 
         #endregion
 
@@ -32,6 +34,7 @@ namespace _Chi.Scripts.Mono.Entities
         [NonSerialized] public bool isAlive = true;
         [NonSerialized] public float immobilizedUntil = 0;
         [NonSerialized] public int immobilizedCounter = 0;
+        [NonSerialized] public bool canReceiveDamage = true;
 
         public EntityStats entityStats;
     
@@ -62,6 +65,9 @@ namespace _Chi.Scripts.Mono.Entities
             hasRb = rb != null;
 
             triggerCollider = GetComponent<Collider2D>();
+
+            animator = GetComponent<Animator>();
+            hasAnimator = animator != null;
 
             Register();
 
@@ -170,11 +176,11 @@ namespace _Chi.Scripts.Mono.Entities
             return true;
         }
 
-        public void ReceiveDamage(float damage, Entity damager, DamageFlags damageFlags = DamageFlags.None)
+        public bool ReceiveDamage(float damage, Entity damager, DamageFlags damageFlags = DamageFlags.None)
         {
-            if (damage <= 0) return;
+            if (damage <= 0 || !canReceiveDamage) return false;
 
-            if (!CanReceiveDamage(damage, damager)) return;
+            if (!CanReceiveDamage(damage, damager)) return false;
             
             entityStats.hp -= damage;
             
@@ -207,9 +213,7 @@ namespace _Chi.Scripts.Mono.Entities
                 Gamesystem.instance.prefabDatabase.playerDealtDamage.Spawn(transform.position, damage);
             }
 
-            //if (damager is Player)
-            {
-            }
+            return true;
         }
 
         public virtual void ReceivePush(Vector3 force, float pushDuration)
@@ -241,6 +245,11 @@ namespace _Chi.Scripts.Mono.Entities
         public void SetCanMove(bool b)
         {
             canMove = b;
+        }
+
+        public void SetCanReceiveDamage(bool b)
+        {
+            canReceiveDamage = b;
         }
         
         public bool CanMove()
@@ -367,6 +376,14 @@ namespace _Chi.Scripts.Mono.Entities
         public virtual void UpdateImmobilized()
         {
             
+        }
+
+        public void SetMoving(float speed)
+        {
+            if (hasAnimator)
+            {
+                animator.SetFloat("MovementSpeed", speed);
+            }
         }
     }
 }

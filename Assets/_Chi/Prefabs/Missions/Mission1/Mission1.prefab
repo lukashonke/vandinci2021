@@ -49,7 +49,11 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 2091413172466918211, guid: b089a080f13ed6d48a2594ab28cee8dd, type: 3}
-    - {fileID: 2091413172466918211, guid: 33a90962a236c504e80e9c713a9de5fb, type: 3}
+    - {fileID: 2091413172466918211, guid: d0ae6a246a94ad449893298f7e888b8d, type: 3}
+    - {fileID: 2091413172466918211, guid: 8013aa71981e9174d95050888df3f3e7, type: 3}
+    - {fileID: 2091413172466918211, guid: 84bec239ca9197c499c623ed75eed898, type: 3}
+    - {fileID: 2091413172466918211, guid: 5f903fb19362d124784fa2578e3e047e, type: 3}
+    - {fileID: 2091413172466918211, guid: 564171d711610774a9ef71193c3aab2c, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -61,13 +65,13 @@ MonoBehaviour:
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 10
+      Data: 19
     - Name: 
       Entry: 7
       Data: 1|_Chi.Scripts.Mono.Mission.Events.ShowMessage, Assembly-CSharp
     - Name: text
       Entry: 1
-      Data: Just Survive
+      Data: 'Objective: Survive for as long as possible'
     - Name: 
       Entry: 8
       Data: 
@@ -96,45 +100,33 @@ MonoBehaviour:
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: false
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
       Data: 4|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+    - Name: waitUntilAllEnemiesDead
+      Entry: 5
+      Data: true
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 5|_Chi.Scripts.Mono.Mission.Events.WaitIfAllSpawnedAreDead, Assembly-CSharp
+      Data: 5|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|_Chi.Scripts.Mono.Mission.Events.Delay, Assembly-CSharp
-    - Name: delay
-      Entry: 4
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 7|_Chi.Scripts.Mono.Mission.Events.ShowMessage, Assembly-CSharp
-    - Name: text
-      Entry: 1
-      Data: You have been awarded.
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 8|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 6|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: handlers
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 7|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -150,34 +142,212 @@ MonoBehaviour:
       Data: 
     - Name: fixedDuration
       Entry: 4
-      Data: 20
+      Data: 30
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: true
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 10|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+      Data: 8|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+    - Name: waitUntilAllEnemiesDead
+      Entry: 5
+      Data: true
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 11|_Chi.Scripts.Mono.Mission.Events.ShowMessage, Assembly-CSharp
-    - Name: text
-      Entry: 1
-      Data: Award, again!
+      Data: 9|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|_Chi.Scripts.Mono.Mission.Events.ShowMessage, Assembly-CSharp
-    - Name: text
-      Entry: 1
-      Data: Mission Complete
+      Data: 10|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: handlers
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fixedDuration
+      Entry: 4
+      Data: 40
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+    - Name: waitUntilAllEnemiesDead
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 14|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: handlers
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fixedDuration
+      Entry: 4
+      Data: 0
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+    - Name: waitUntilAllEnemiesDead
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 17|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 18|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: handlers
+      Entry: 7
+      Data: 19|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fixedDuration
+      Entry: 4
+      Data: 50
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+    - Name: waitUntilAllEnemiesDead
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 21|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 22|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: handlers
+      Entry: 7
+      Data: 23|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fixedDuration
+      Entry: 4
+      Data: 50
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+    - Name: waitUntilAllEnemiesDead
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 25|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -190,4 +360,5 @@ MonoBehaviour:
     - Name: currentEvent
       Entry: 6
       Data: 
+  startIndex: 13
   loopEvents: 0

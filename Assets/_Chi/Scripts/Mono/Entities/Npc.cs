@@ -4,6 +4,7 @@ using System.Linq;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Movement;
+using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
 using BulletPro;
 using Pathfinding;
@@ -30,6 +31,8 @@ namespace _Chi.Scripts.Mono.Entities
         #endregion
         #region publics
 
+        public string currentVariant;
+        
         public float size = 1f;
         public bool goDirectlyToPlayer;
         [NonSerialized] public float dist2ToPlayer;
@@ -74,6 +77,16 @@ namespace _Chi.Scripts.Mono.Entities
             SetPhysicsActivated(false);
 
             pathData = new PathData(this);
+        }
+
+        public override void Start()
+        {
+            base.Start();
+
+            if (currentVariant != null && currentVariant.Length > 0)
+            {
+                ApplyVariant(currentVariant);
+            }
         }
 
         public override void DoUpdate()
@@ -162,6 +175,42 @@ namespace _Chi.Scripts.Mono.Entities
             stats.speed = originalSpeed;
             
             gameObject.SetActive(false);
+        }
+
+        public void ApplyVariant(string variant)
+        {
+            if (variant == null)
+            {
+                Debug.LogError("Cannot set null variant.");
+                return;
+            }
+
+            var variantInstance = Gamesystem.instance.prefabDatabase.GetVariant(variant);
+            if (variantInstance == null)
+            {
+                Debug.LogError($"Variant {variant} is not defined.");
+                return;
+            }
+
+            currentVariant = variant;
+            entityStats.CopyFrom(variantInstance.entityStats);
+            stats.CopyFrom(variantInstance.npcStats);
+
+            renderer.sprite = variantInstance.sprite;
+            renderer.material = variantInstance.spriteMaterial;
+
+            if (hasAnimator)
+            {
+                if (variantInstance.animatorController != null)
+                {
+                    animator.enabled = true;
+                    animator.runtimeAnimatorController = variantInstance.animatorController;
+                }
+                else
+                {
+                    animator.enabled = false;
+                }
+            }
         }
         
         public void OnHitByBullet(Bullet bullet, Vector3 pos)
@@ -292,7 +341,7 @@ namespace _Chi.Scripts.Mono.Entities
                 player.RemoveNearbyEnemy(this);
                 SetPhysicsActivated(false);
             }
-
+            
             var distToDamage = player.stats.maxDistanceToReceiveContactDamage.GetValue();
             if (dist2ToPlayer < distToDamage && nextDamageTime < Time.time && isAlive)
             {

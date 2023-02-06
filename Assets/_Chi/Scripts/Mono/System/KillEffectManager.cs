@@ -47,7 +47,7 @@ namespace _Chi.Scripts.Mono.System
                     continue;
                 }
                 
-                npc.Move(npc.deathDirection * (Time.deltaTime * 50));
+                npc.Move(npc.deathDirection * (Time.deltaTime * 500));
                 npc.renderer.material.SetFloat(fadePropertyId, npc.currentDissolveProcess);
                 npc.renderer.material.SetColor(colorPropertyId, Color.Lerp(Color.black, Color.white, npc.currentDissolveProcess));
                 //npc.renderer.material.SetVector(colorPropertyId, npc.rotationTarget ?? Vector3.zero);
