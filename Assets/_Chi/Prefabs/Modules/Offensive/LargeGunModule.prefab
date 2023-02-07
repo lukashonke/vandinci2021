@@ -80,11 +80,11 @@ MonoBehaviour:
       baseValue: 8
       value: 0
     fireRate:
-      baseValue: 1.65
-      value: 1.8
+      baseValue: 1.7
+      value: 1.6
     projectileDamage:
       baseValue: 20
-      value: 15
+      value: 20
     targetRange:
       baseValue: 6
       value: 0
@@ -113,6 +113,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 55fb060b0aa775a4eb384d6f7a55d715, type: 2}
   shootVfx: {fileID: 5898446814790275595}
   affectType: 0
+  trailParameters:
+    useTrail: 1
+    material: {fileID: 2100000, guid: 512009d3278ba8446919ba0d6cf3370f, type: 2}
+    trailLengthTime: 0.1
 --- !u!212 &6177911479989981830
 SpriteRenderer:
   m_ObjectHideFlags: 0

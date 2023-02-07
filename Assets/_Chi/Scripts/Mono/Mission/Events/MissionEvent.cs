@@ -237,12 +237,20 @@ namespace _Chi.Scripts.Mono.Mission.Events
 
     public class ReceiveRewardHandler : MissionEvent
     {
+        [Required]
+        public string rewardSet;
+
+        [Required]
+        public string title;
+        
         public override void Start(float currentTime)
         {
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
+
+            Gamesystem.instance.uiManager.OpenRewardSetWindow(rewardSet, title);
             
-            Gamesystem.instance.uiManager.ShowConfirmDialog("Reward Time!", "Here is when you pick a new reward.", 
-                () => Time.timeScale = 1f, () => Time.timeScale = 1f, () => Time.timeScale = 1f);
+            /*Gamesystem.instance.uiManager.ShowConfirmDialog("Reward Time!", "Here is when you pick a new reward.", 
+                () => Time.timeScale = 1f, () => Time.timeScale = 1f, () => Time.timeScale = 1f);*/
         }
 
         public override bool CanStart(float currentTime)

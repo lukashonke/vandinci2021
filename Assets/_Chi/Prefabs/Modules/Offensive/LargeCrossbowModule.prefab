@@ -64,24 +64,25 @@ MonoBehaviour:
   targetUpdateInterval: 0.2
   rotationSpeed: 500
   instantRotation: 1
+  muzzles: []
   stats:
     projectileCount:
-      baseValue: 3
-      value: 3
+      baseValue: 2
+      value: 2
     projectileSpreadAngle:
       baseValue: 5
       value: 0
     projectileSpeed:
-      baseValue: 6
+      baseValue: 7
       value: 0
     fireRate:
-      baseValue: 1
-      value: 1
+      baseValue: 1.3
+      value: 1.2
     projectileDamage:
-      baseValue: 10
-      value: 10
+      baseValue: 7.5
+      value: 7.5
     targetRange:
-      baseValue: 8
+      baseValue: 6
       value: 0
     projectileRange:
       baseValue: 10
@@ -108,6 +109,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 55fb060b0aa775a4eb384d6f7a55d715, type: 2}
   shootVfx: {fileID: 0}
   affectType: 0
+  trailParameters:
+    useTrail: 1
+    material: {fileID: 2100000, guid: e88813b48891c204abd79c284e160462, type: 2}
+    trailLengthTime: 0.1
 --- !u!212 &6177911479989981830
 SpriteRenderer:
   m_ObjectHideFlags: 0

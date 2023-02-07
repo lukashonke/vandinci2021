@@ -120,7 +120,12 @@ public class UiManager : MonoBehaviour
 
     public void OpenVehicleSettings()
     {
-        vehicleSettingsWindow.Toggle();
+        vehicleSettingsWindow.Toggle(true);
+    }
+
+    public void OpenRewardSetWindow(string rewardSet, string title)
+    {
+        vehicleSettingsWindow.OpenWindow(rewardSet, title);
     }
 
     public void UpdateFullscreenOverlay()
@@ -159,7 +164,8 @@ public class UiManager : MonoBehaviour
 
         currentActionsPanel = Instantiate(actionsPanelPrefab, panel.position, Quaternion.identity, panel);
         currentActionsPanelData = buttons;
-
+        currentActionsPanel.transform.position = Input.mousePosition;
+        
         currentActionsPanel.transform.RemoveAllChildren();
         
         foreach (ActionsPanelButton button in buttons.buttons)

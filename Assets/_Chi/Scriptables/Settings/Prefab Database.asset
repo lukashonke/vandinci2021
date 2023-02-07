@@ -86,7 +86,7 @@ MonoBehaviour:
     skill: {fileID: 0}
     mutator: {fileID: 0}
   - id: 2004
-    label: Stun Module
+    label: Catapult Module
     description: 
     type: 3
     predefinedId: 0
@@ -130,15 +130,6 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: dfe0bb5f4a5dc446a8c7dd1d1bc7fa3f, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
-  - id: 2503
-    label: Enable Piercing
-    description: Enables the piercing effect on the weapon.
-    type: 3
-    predefinedId: 0
-    prefab: {fileID: 1232174764404154631, guid: e675e1f328f1b4ea19b695d20e49a22f, type: 3}
-    prefabUi: {fileID: 8309321105186295158, guid: 578a3df20d3be40368ffbebbaa39ba5b, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
   - id: 2504
     label: Increase Damage
     description: Increases damage output of the weapon.
@@ -146,15 +137,6 @@ MonoBehaviour:
     predefinedId: 0
     prefab: {fileID: 1232174764404154631, guid: 8ed30a3973a3248428d31f25f4e9673a, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: aa1d2220c65d144a9a5e686510f53193, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-  - id: 2505
-    label: Increase Fire Rate
-    description: Reduces the interval duration between shots.
-    type: 3
-    predefinedId: 0
-    prefab: {fileID: 1232174764404154631, guid: 5b88700f3dcfb4622b5a4cb64a7e16a9, type: 3}
-    prefabUi: {fileID: 8309321105186295158, guid: 846012403b0174a9f94a34a5c6a80847, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
   - id: 2506
@@ -385,6 +367,10 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 1bb3c56d297ae4a8ab7fc79aabae25b9, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: 58d69053369904376be7a9adeaa41350, type: 2}
+  rewardSets:
+  - name: offensive_basic
+    note: 
+    prefabIds: d0070000d1070000d2070000d3070000d4070000d5070000
   variants:
   - variant: Zombie
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}

@@ -27,6 +27,8 @@ namespace _Chi.Scripts.Mono.Modules
 
         public TargetType affectType;
 
+        public TrailParameters trailParameters;
+
         protected bool activated;
 
         public override void Awake()
@@ -68,7 +70,7 @@ namespace _Chi.Scripts.Mono.Modules
         {
             if (shootVfx != null)
             {
-                if (muzzles != null)
+                if (muzzles != null && muzzles.Count > 0)
                 {
                     lastMuzzle++;
                     if (lastMuzzle >= muzzles.Count) lastMuzzle = 0;
@@ -83,5 +85,15 @@ namespace _Chi.Scripts.Mono.Modules
         {
             
         }
+    }
+
+    [Serializable]
+    public class TrailParameters
+    {
+        public bool useTrail;
+
+        public Material material;
+
+        public float trailLengthTime;
     }
 }

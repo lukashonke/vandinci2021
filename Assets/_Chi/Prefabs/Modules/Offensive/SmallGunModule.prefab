@@ -64,6 +64,7 @@ MonoBehaviour:
   targetUpdateInterval: 0.2
   rotationSpeed: 1500
   instantRotation: 1
+  muzzles: []
   stats:
     projectileCount:
       baseValue: 1
@@ -108,6 +109,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 55fb060b0aa775a4eb384d6f7a55d715, type: 2}
   shootVfx: {fileID: 5898446814790275595}
   affectType: 0
+  trailParameters:
+    useTrail: 1
+    material: {fileID: 2100000, guid: 512009d3278ba8446919ba0d6cf3370f, type: 2}
+    trailLengthTime: 0.1
   targetType: 1
 --- !u!212 &6177911479989981830
 SpriteRenderer:

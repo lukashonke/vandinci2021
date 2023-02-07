@@ -654,6 +654,11 @@ MonoBehaviour:
   subTitle: {fileID: 8885293449487574385}
   description: {fileID: 2337989783913982141}
   icon: {fileID: 7983957950154319422}
+  weaponSubtitleColor: {r: 1, g: 0.6500267, b: 0.63529414, a: 0.6}
+  defensiveModuleSubtitleColor: {r: 0.63529414, g: 0.6754993, b: 1, a: 0.6}
+  passiveModuleSubtitleColor: {r: 1, g: 0.819054, b: 0.6367924, a: 0.6}
+  mutatorSubtitleColor: {r: 0.7286962, g: 1, b: 0.63529414, a: 0.6}
+  skillSubtitleColor: {r: 1, g: 0.819054, b: 0.6367924, a: 0.6}
 --- !u!114 &2036112198305890941
 MonoBehaviour:
   m_ObjectHideFlags: 0

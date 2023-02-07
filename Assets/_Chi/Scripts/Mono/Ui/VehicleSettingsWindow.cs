@@ -13,6 +13,8 @@ namespace _Chi.Scripts.Mono.Ui
     {
         [Required] public GameObject container;
 
+        [Required] public ModuleSelector moduleSelector;
+
         [NonSerialized] public PlayerBodyUi ui;
 
         [NonSerialized] public SkillSlotUi[] skillSlots;
@@ -24,26 +26,60 @@ namespace _Chi.Scripts.Mono.Ui
             gameObject.SetActive(false);
         }
 
-        public void Toggle()
+        public void OpenWindow(string rewardSet, string title)
         {
-            if (this.gameObject.activeSelf)
+            if (rewardSet == null)
             {
-                this.gameObject.SetActive(false);
-                Gamesystem.instance.Unpause();
-                
-                ApplyOnClose();
+                moduleSelector.Initialise(ModuleSelectorMode.ShowAllItems, true, null, title);
             }
             else
             {
-                Initialise();
-                this.gameObject.SetActive(true);
-                Gamesystem.instance.Pause();
+                moduleSelector.Initialise(ModuleSelectorMode.RewardSet, true, rewardSet, title);
             }
+
+            Initialise();
+            this.gameObject.SetActive(true);
+            Gamesystem.instance.Pause();
             
             Gamesystem.instance.uiManager.UpdateFullscreenOverlay();
         }
 
+        public void CloseWindow()
+        {
+            this.gameObject.SetActive(false);
+            Gamesystem.instance.Unpause();
+                
+            ApplyOnClose();
+            
+            Gamesystem.instance.uiManager.UpdateFullscreenOverlay();
+        }
+        
+        public void Toggle(bool showAllModules)
+        {
+            if (this.gameObject.activeSelf)
+            {
+                CloseWindow();
+            }
+            else
+            {
+                OpenWindow(null, null);
+            }
+        }
+
         public void Close()
+        {
+            if (moduleSelector.CanClose())
+            {
+                DoClose();
+            }
+            else
+            {
+                Gamesystem.instance.uiManager.ShowConfirmDialog("Are you sure?", "You have not claimed your reward.", 
+                    DoClose, () => {}, () => {});
+            }
+        }
+
+        private void DoClose()
         {
             ApplyOnClose();
             

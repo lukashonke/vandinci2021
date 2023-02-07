@@ -16,10 +16,18 @@ using UnityEngine.Pool;
 public class BulletBehavior : BaseBulletBehaviour
 {
 	private Module ownerModule;
+	private TrailRenderer trail;
 
 	private int piercedEnemies = 0;
 	private BulletReceiver[] collidedWith = new BulletReceiver[8];
-	
+
+	public override void Awake()
+	{
+		base.Awake();
+		
+		trail = transform.GetChild(0).gameObject.GetComponent<TrailRenderer>();
+	}
+
 	// You can access this.bullet to get the parent bullet script.
 	// After bullet's death, you can delay this script's death : use this.lifetimeAfterBulletDeath.
 
@@ -29,6 +37,10 @@ public class BulletBehavior : BaseBulletBehaviour
 		base.OnBulletBirth();
 
 		ownerModule = bullet.emitter.gameObject.GetModule();
+		
+		trail.Clear();
+		
+		ApplyTrailParameters();
 
 		piercedEnemies = 0;
 
@@ -37,6 +49,23 @@ public class BulletBehavior : BaseBulletBehaviour
 			for (var index = 0; index < collidedWith.Length; index++)
 			{
 				collidedWith[index] = null;
+			}
+		}
+	}
+
+	private void ApplyTrailParameters()
+	{
+		if (ownerModule is OffensiveModule offensiveModule)
+		{
+			if (offensiveModule.trailParameters != null && offensiveModule.trailParameters.useTrail)
+			{
+				trail.enabled = true;
+				trail.material = offensiveModule.trailParameters.material;
+				trail.time = offensiveModule.trailParameters.trailLengthTime;
+			}
+			else
+			{
+				trail.enabled = false;
 			}
 		}
 	}
@@ -66,6 +95,8 @@ public class BulletBehavior : BaseBulletBehaviour
 	public override void OnBulletDeath()
 	{
 		base.OnBulletDeath();
+		
+		trail.enabled = false;
 
 		// Your code here
 	}

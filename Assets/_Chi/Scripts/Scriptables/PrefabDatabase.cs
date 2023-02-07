@@ -19,6 +19,9 @@ namespace _Chi.Scripts.Scriptables
         public List<PrefabItem> prefabs;
 
         [TableList]
+        public List<RewardSet> rewardSets;
+
+        [TableList]
         public List<PrefabVariant> variants;
         [NonSerialized] public Dictionary<string, PrefabVariant> variantsLookup;
 
@@ -35,6 +38,8 @@ namespace _Chi.Scripts.Scriptables
         {
             return prefabs.FirstOrDefault(p => p.id == id);
         }
+
+        public RewardSet GetRewardSet(string setName) => rewardSets.First(r => r.name == setName);
 
         public PrefabVariant GetVariant(string variant)
         {
@@ -83,5 +88,21 @@ namespace _Chi.Scripts.Scriptables
         [Required]
         [VerticalGroup("Stats")]
         public NpcStats npcStats;
+    }
+
+    [Serializable]
+    public class RewardSet
+    {
+        [Required]
+        [VerticalGroup("Name")]
+        public string name;
+
+        [Multiline]
+        [VerticalGroup("Name")]
+        public string note;
+
+        [Required]
+        [VerticalGroup("Items")]
+        public List<int> prefabIds;
     }
 }

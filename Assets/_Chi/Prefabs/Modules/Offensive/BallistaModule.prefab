@@ -64,6 +64,7 @@ MonoBehaviour:
   targetUpdateInterval: 0.2
   rotationSpeed: 500
   instantRotation: 1
+  muzzles: []
   stats:
     projectileCount:
       baseValue: 1
@@ -109,6 +110,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2888de4cdfdab9d49a4833d8ea420960, type: 2}
   shootVfx: {fileID: 0}
   affectType: 0
+  trailParameters:
+    useTrail: 1
+    material: {fileID: 2100000, guid: 4694e4e3c9249ba4084dcc1980931f5d, type: 2}
+    trailLengthTime: 0.125
 --- !u!114 &2526313433823586861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,6 +143,7 @@ MonoBehaviour:
   targetUpdateInterval: 0.2
   rotationSpeed: 1000
   instantRotation: 0
+  muzzles: []
   stats:
     projectileCount:
       baseValue: 1
@@ -183,6 +189,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2888de4cdfdab9d49a4833d8ea420960, type: 2}
   shootVfx: {fileID: 0}
   affectType: 0
+  trailParameters:
+    useTrail: 0
+    material: {fileID: 0}
+    trailLengthTime: 0
   targetType: 0
 --- !u!212 &6177911479989981830
 SpriteRenderer:

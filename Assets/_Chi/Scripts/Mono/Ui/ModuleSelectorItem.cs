@@ -15,6 +15,12 @@ namespace _Chi.Scripts.Mono.Ui
         public TextMeshProUGUI description;
         public Image icon;
 
+        public Color weaponSubtitleColor;
+        public Color defensiveModuleSubtitleColor;
+        public Color passiveModuleSubtitleColor;
+        public Color mutatorSubtitleColor;
+        public Color skillSubtitleColor;
+
         private List<ActionsPanelButton> buttons;
         private Action abort;
 
@@ -30,7 +36,9 @@ namespace _Chi.Scripts.Mono.Ui
         private void InitialiseUi(string title, Image icon, string description, List<ActionsPanelButton> buttons, Action abort)
         {
             this.title.text = title;
-            this.subTitle.text = GetSubtitle();
+            var subtitleColor = GetSubtitle();
+            this.subTitle.text = subtitleColor.Item1;
+            if(subtitleColor.Item2.HasValue) this.subTitle.color = subtitleColor.Item2.Value;
             this.description.text = description ?? "";
             this.icon.sprite = icon.sprite;
 
@@ -38,7 +46,7 @@ namespace _Chi.Scripts.Mono.Ui
             this.abort = abort;
         }
 
-        private string GetSubtitle()
+        private (string, Color?) GetSubtitle()
         {
             if (item.prefab != null)
             {
@@ -46,19 +54,29 @@ namespace _Chi.Scripts.Mono.Ui
 
                 if (module is OffensiveModule)
                 {
-                    return "Weapon";
+                    return ("Weapon", weaponSubtitleColor);
                 }
-                else if (module is DefensiveModule)
+                if (module is DefensiveModule)
                 {
-                    return "Defense Module";
+                    return ("Defense Module", defensiveModuleSubtitleColor);
                 }
-                else if (module is PassiveModule)
+                if (module is PassiveModule)
                 {
-                    return "Weapon Upgrade";
+                    return ("Weapon Upgrade", passiveModuleSubtitleColor);
                 }
             }
-            
-            return this.item.type.ToString();
+
+            if (item.skill != null)
+            {
+                return ("Skill", skillSubtitleColor);
+            }
+
+            if (item.mutator != null)
+            {
+                return ("Mutator", mutatorSubtitleColor);
+            }
+
+            return (this.item.type.ToString(), null);
         }
         
         public void OnClick()
