@@ -252,11 +252,11 @@ namespace _Chi.Scripts.Mono.Entities
                 if (damage > 0)
                 {
                     ReceiveDamage(damage, monster);
-                    var effect = Gamesystem.instance.poolSystem.SpawnVfx(damageEffect);
+                    var effect = Gamesystem.instance.poolSystem.SpawnGo(damageEffect);
                     effect.transform.position = triggerCollider.bounds.ClosestPoint(monster.GetPosition());
                     effect.transform.parent = transform;
                     
-                    Gamesystem.instance.Schedule(Time.time + 1f, () => Gamesystem.instance.poolSystem.DespawnVfx(damageEffect, effect));
+                    Gamesystem.instance.Schedule(Time.time + 1f, () => Gamesystem.instance.poolSystem.DespawnGo(damageEffect, effect));
                 }
                 monster.nextDamageTime = Time.time + monster.stats.contactDamageInterval;
 
@@ -391,9 +391,9 @@ namespace _Chi.Scripts.Mono.Entities
             return null;
         }
 
-        public SkillData GetSkillData(Skill skill)
+        public override SkillData GetSkillData(Skill skill)
         {
-            return skillDatas[skill];
+            return skillDatas.TryGetValue(skill, out var data) ? data : null;
         }
 
         public void AddMutator(Mutator mutator)
@@ -447,7 +447,7 @@ namespace _Chi.Scripts.Mono.Entities
             skillDatas.Remove(skill);
         }
 
-        public void OnSkillUse()
+        public override void OnSkillUse()
         {
             var restoreHealth = stats.skillUseHealthPercent.GetValue();
 

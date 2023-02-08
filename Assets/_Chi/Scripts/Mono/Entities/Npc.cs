@@ -32,6 +32,7 @@ namespace _Chi.Scripts.Mono.Entities
         #region publics
 
         public string currentVariant;
+        [NonSerialized] public PrefabVariant currentVariantInstance;
         
         public float size = 1f;
         public bool goDirectlyToPlayer;
@@ -45,6 +46,8 @@ namespace _Chi.Scripts.Mono.Entities
         [NonSerialized] public float? maxDistanceFromPlayerBeforeDespawn = null;
 
         public float activateWhenCloseToPlayerDist2 = 0;
+        
+        [NonSerialized] public Dictionary<Skill, SkillData> skillDatas;
 
         #endregion
         #region privates
@@ -58,6 +61,10 @@ namespace _Chi.Scripts.Mono.Entities
         private float nextPushTime;
 
         private float originalSpeed;
+
+        private bool isRegisteredWithSkills;
+
+        
 
         #endregion
         
@@ -157,7 +164,7 @@ namespace _Chi.Scripts.Mono.Entities
             canMove = false;
             maxDistanceFromPlayerBeforeDespawn = null;
             
-            immobilizedUntil = 0;
+            SetImmobilizedUntil(0);
             
             currentEffects.Clear();
 
@@ -165,7 +172,7 @@ namespace _Chi.Scripts.Mono.Entities
             {
                 foreach (var vfx in vfx)
                 {
-                    Gamesystem.instance.poolSystem.DespawnVfx(vfx.Key, vfx.Value);
+                    Gamesystem.instance.poolSystem.DespawnGo(vfx.Key, vfx.Value);
                 }
                 
                 vfx.Clear();
@@ -175,6 +182,13 @@ namespace _Chi.Scripts.Mono.Entities
             stats.speed = originalSpeed;
             
             gameObject.SetActive(false);
+
+            if (isRegisteredWithSkills)
+            {
+                Gamesystem.instance.objects.UnregisterNpcWithSkills(this);
+                skillDatas?.Clear();
+                isRegisteredWithSkills = false;
+            }
         }
 
         public void ApplyVariant(string variant)
@@ -193,6 +207,7 @@ namespace _Chi.Scripts.Mono.Entities
             }
 
             currentVariant = variant;
+            currentVariantInstance = variantInstance;
             entityStats.CopyFrom(variantInstance.entityStats);
             stats.CopyFrom(variantInstance.npcStats);
 
@@ -204,12 +219,28 @@ namespace _Chi.Scripts.Mono.Entities
                 if (variantInstance.animatorController != null)
                 {
                     animator.enabled = true;
+                    animatorSetup = true;
                     animator.runtimeAnimatorController = variantInstance.animatorController;
+                    animator.SetFloat("MovementSpeed", stats.speed);
                 }
                 else
                 {
+                    animatorSetup = false;
                     animator.enabled = false;
                 }
+            }
+
+            if (variantInstance.skills != null && variantInstance.skills.Count > 0)
+            {
+                skillDatas = new();
+                Gamesystem.instance.objects.RegisterNpcWithSkills(this);
+                isRegisteredWithSkills = true;
+            }
+            else if(isRegisteredWithSkills)
+            {   
+                skillDatas?.Clear();
+                Gamesystem.instance.objects.UnregisterNpcWithSkills(this);
+                isRegisteredWithSkills = false;
             }
         }
         
@@ -227,6 +258,11 @@ namespace _Chi.Scripts.Mono.Entities
             {
                 if (!isDissolving)
                 {
+                    if (currentVariantInstance?.skillOnDie != null)
+                    {
+                        currentVariantInstance.skillOnDie.Trigger(this, force: true);
+                    }
+                    
                     Gamesystem.instance.OnKilled(this);
 
                     Gamesystem.instance.killEffectManager.StartDissolve(this);
@@ -261,6 +297,13 @@ namespace _Chi.Scripts.Mono.Entities
             base.OnDestroy();
             
             pathData.OnDestroy();
+            
+            if (isRegisteredWithSkills)
+            {   
+                skillDatas?.Clear();
+                Gamesystem.instance.objects.UnregisterNpcWithSkills(this);
+                isRegisteredWithSkills = false;
+            }
         }
         
         public bool HasMoveTarget()
@@ -351,7 +394,10 @@ namespace _Chi.Scripts.Mono.Entities
 
         public void SetPhysicsActivated(bool b)
         {
-            if (b == physicsActivated) return;
+            if (b == physicsActivated)
+            {
+                return;
+            }
 
             physicsActivated = b;
 
@@ -389,6 +435,13 @@ namespace _Chi.Scripts.Mono.Entities
             {
                 rvoController.enabled = true;
             }
+        }
+        
+        public override SkillData GetSkillData(Skill skill)
+        {
+            if (skillDatas == null) return null;
+            
+            return skillDatas.TryGetValue(skill, out var data) ? data : null;
         }
     }
 }

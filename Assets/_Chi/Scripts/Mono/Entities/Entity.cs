@@ -4,6 +4,7 @@ using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Movement;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
+using _Chi.Scripts.Utilities;
 using Pathfinding;
 using Pathfinding.RVO;
 using UnityEngine;
@@ -20,6 +21,7 @@ namespace _Chi.Scripts.Mono.Entities
         [NonSerialized] public Collider2D triggerCollider; 
         [NonSerialized] public SpriteRenderer renderer;
         [NonSerialized] public bool hasAnimator;
+        [NonSerialized] public bool animatorSetup;
         [NonSerialized] public Animator animator;
 
         #endregion
@@ -221,7 +223,7 @@ namespace _Chi.Scripts.Mono.Entities
             if (hasRb && CanBePushed())
             {
                 rb.AddForce(force);
-                immobilizedUntil = Time.time + pushDuration;
+                SetImmobilizedUntil(Time.time + pushDuration);
             }
         }
 
@@ -240,6 +242,16 @@ namespace _Chi.Scripts.Mono.Entities
             {
                 return transform.position;
             }
+        }
+        
+        public Vector3 GetForwardVector()
+        {
+            return Utils.GetHeading(this.transform);
+        }
+
+        public Vector3 GetForwardVector(float angle)
+        {
+            return Quaternion.Euler(new Vector3(0, 0, angle)) * GetForwardVector();
         }
 
         public void SetCanMove(bool b)
@@ -324,7 +336,7 @@ namespace _Chi.Scripts.Mono.Entities
         {
             if (vfx.ContainsKey(prefab)) return;
             
-            var instance = Gamesystem.instance.poolSystem.SpawnVfx(prefab);
+            var instance = Gamesystem.instance.poolSystem.SpawnGo(prefab);
             vfx.Add(prefab, instance);
 
             instance.transform.position = this.transform.position;
@@ -332,7 +344,7 @@ namespace _Chi.Scripts.Mono.Entities
 
             if (duration > 0)
             {
-                Gamesystem.instance.Schedule(Time.time + duration, () => Gamesystem.instance.poolSystem.DespawnVfx(prefab, instance));
+                Gamesystem.instance.Schedule(Time.time + duration, () => Gamesystem.instance.poolSystem.DespawnGo(prefab, instance));
             }
         }
 
@@ -341,7 +353,7 @@ namespace _Chi.Scripts.Mono.Entities
             if (vfx.TryGetValue(prefab, out var instance))
             {
                 vfx.Remove(prefab);
-                Gamesystem.instance.poolSystem.DespawnVfx(prefab, instance);
+                Gamesystem.instance.poolSystem.DespawnGo(prefab, instance);
             }
         }
         
@@ -373,6 +385,11 @@ namespace _Chi.Scripts.Mono.Entities
             UpdateImmobilized();
         }
 
+        public void SetImmobilizedUntil(float time)
+        {
+            immobilizedUntil = time;
+        }
+
         public virtual void UpdateImmobilized()
         {
             
@@ -380,10 +397,20 @@ namespace _Chi.Scripts.Mono.Entities
 
         public void SetMoving(float speed)
         {
-            if (hasAnimator)
+            //TODO disable for optimization
+            /*if (animatorSetup)
             {
                 animator.SetFloat("MovementSpeed", speed);
-            }
+            }*/
+        }
+        
+        public virtual void OnSkillUse()
+        {
+        }
+        
+        public virtual SkillData GetSkillData(Skill skill)
+        {
+            return null;
         }
     }
 }

@@ -8,6 +8,7 @@ using DamageNumbersPro;
 using Sirenix.OdinInspector;
 using UnityEditor.Animations;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace _Chi.Scripts.Scriptables
 {
@@ -59,7 +60,7 @@ namespace _Chi.Scripts.Scriptables
 
         public void ApplyPrefabVariant(Npc npc, string variant)
         {
-            npc.currentVariant = variant;
+            npc.ApplyVariant(variant);
         }
     }
 
@@ -88,6 +89,26 @@ namespace _Chi.Scripts.Scriptables
         [Required]
         [VerticalGroup("Stats")]
         public NpcStats npcStats;
+
+        [VerticalGroup("Stats")]
+        public List<PrefabVariantSkill> skills;
+
+        [VerticalGroup("Stats")]
+        public Skill skillOnDie;
+    }
+
+    [Serializable]
+    public class PrefabVariantSkill
+    {
+        public PrefabVariantSkillTrigger trigger;
+        
+        public Skill skill;
+    }
+
+    [Serializable]
+    public class PrefabVariantSkillTrigger
+    {
+        //TODO
     }
 
     [Serializable]
@@ -103,6 +124,46 @@ namespace _Chi.Scripts.Scriptables
 
         [Required]
         [VerticalGroup("Items")]
-        public List<int> prefabIds;
+        public List<RewardSetItemWithWeight> prefabs;
+
+        [VerticalGroup("Name")]
+        [MinValue(1)] 
+        public int minCountShownItems = 1;
+
+        public List<int> CalculateShownItems(Player player)
+        {
+            List<int> kv = new();
+
+            foreach (var prefab in prefabs)
+            {
+                for (int i = 0; i < prefab.weight; i++)
+                {
+                    kv.Add(prefab.prefabId);
+                }
+            }
+
+            var itemsToShow = minCountShownItems;
+
+            var retValue = new List<int>();
+
+            for (int i = 0; i < itemsToShow; i++)
+            {
+                if (kv.Count == 0) break;
+                
+                var random = Random.Range(0, kv.Count);
+                var prefab = kv[random];
+                retValue.Add(prefab);
+                kv.RemoveAll(i => i == prefab);
+            }
+
+            return retValue;
+        }
+    }
+
+    [Serializable]
+    public class RewardSetItemWithWeight
+    {
+        public int prefabId;
+        public int weight;
     }
 }

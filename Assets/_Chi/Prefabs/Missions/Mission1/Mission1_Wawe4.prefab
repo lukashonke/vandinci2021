@@ -85,8 +85,8 @@ MonoBehaviour:
       prefabVariant: ZombieBloater
     spawnTime: 0
     repeatSpawn: 1
-    repeatSpawnInterval: 5
-    repeatCount: 5
+    repeatSpawnInterval: 4
+    repeatCount: 6
     spawnCountMin: 10
     spawnCountMax: 15
     distanceFromPlayer: 8

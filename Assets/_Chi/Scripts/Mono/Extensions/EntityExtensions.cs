@@ -13,11 +13,11 @@ namespace _Chi.Scripts.Mono.Extensions
     {
         public static Npc SpawnPooledNpc(this Npc prefab, Vector3 position, Quaternion rotation)
         {
-            var projectile = Gamesystem.instance.poolSystem.Spawn(prefab);
+            var npc = Gamesystem.instance.poolSystem.Spawn(prefab);
 
-            projectile.Setup(position, rotation);
+            npc.Setup(position, rotation);
 
-            return projectile;
+            return npc;
         }
 
         public static bool DeletePooledNpc(this Npc instance)

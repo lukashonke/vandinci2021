@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2091413172466918208}
-  - component: {fileID: 7055376836833957700}
   - component: {fileID: -1498859969196064892}
   m_Layer: 0
   m_Name: Mission1_Wawe6
@@ -33,67 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7055376836833957700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091413172466918211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  spawns:
-  - possiblePrefabs:
-    - type: 0
-      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 10
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: Zombie
-    - type: 0
-      prefab: {fileID: 0}
-      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 2
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieFast
-    - type: 0
-      prefab: {fileID: 0}
-      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 2
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieFat
-    - type: 0
-      prefab: {fileID: 0}
-      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 1
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieBloater
-    spawnTime: 0
-    repeatSpawn: 1
-    repeatSpawnInterval: 5
-    repeatCount: 5
-    spawnCountMin: 15
-    spawnCountMax: 20
-    distanceFromPlayer: 8
-    spawnGroupSpreadMin: 0.5
-    spawnGroupSpreadMax: 0.5
-    distanceFromPlayerToDespawn: 40
 --- !u!114 &-1498859969196064892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,13 +76,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: ZombieFat
-    - type: 0
-      prefab: {fileID: 0}
-      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 1
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieBloater
     countPerMinuteCurve:
       serializedVersion: 2
       m_Curve:
@@ -224,15 +155,6 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -241,16 +163,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
+        value: 3
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -275,8 +188,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    spawnGroupSpreadMin: 0.5
-    spawnGroupSpreadMax: 0.5
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 2
     distanceFromPlayerToDespawn: 40
     nextSpawnTime: 0
     startAtTime: 0

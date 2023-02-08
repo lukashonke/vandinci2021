@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using _Chi.Scripts.Mono.Entities;
@@ -12,6 +13,12 @@ namespace _Chi.Scripts.Mono.Mission.Events
     [Serializable]
     public abstract class MissionEvent
     {
+        protected Mission currentMission;
+        public void Initialise(Mission mission)
+        {
+            currentMission = mission;
+        }
+        
         public abstract void Start(float currentTime);
 
         public abstract bool CanStart(float currentTime);
@@ -32,10 +39,32 @@ namespace _Chi.Scripts.Mono.Mission.Events
         {
             
         }
+        
+        [VerticalGroup("Settings")]
+        [HideInEditorMode]
+        [Button]
+        public void SimulateThisOne()
+        {
+            currentMission.StartCoroutine(Simulate());
+        }
+
+        [VerticalGroup("Settings")]
+        [HideInEditorMode]
+        [Button]
+        public void SimulateUpToThisOne()
+        {
+            currentMission.SimulateUpToEvent(this);
+        }
+
+        public virtual IEnumerator Simulate()
+        {
+            yield return null;
+        }
     }
 
     public class EndAllMissionHandlersEvent : MissionEvent
     {
+        [VerticalGroup("Settings")]
         public bool waitUntilAllEnemiesDead;
         
         public override void Start(float currentTime)
@@ -71,16 +100,20 @@ namespace _Chi.Scripts.Mono.Mission.Events
 
     public class StartMissionHandlerEvent : MissionEvent
     {
-        public List<GameObject> handlers;
-
         //public bool hasFixedDuration;
         //[ShowIf("hasFixedDuration")]
         
+        [VerticalGroup("Settings")]
         public float fixedDuration;
 
+        [VerticalGroup("Settings")]
         public bool waitTillAllSpawnedAreDead;
 
+        [VerticalGroup("Settings")]
         public bool waitTillAllWawesSpawn = true;
+        
+        [VerticalGroup("Handlers")]
+        public List<GameObject> handlers;
 
         private bool allDead;
 
@@ -168,6 +201,7 @@ namespace _Chi.Scripts.Mono.Mission.Events
 
     public class ShowMessage : MissionEvent
     {
+        [VerticalGroup("Settings")]
         public string text;
         
         public override void Start(float currentTime)
@@ -182,6 +216,7 @@ namespace _Chi.Scripts.Mono.Mission.Events
 
     public class Delay : MissionEvent
     {
+        [VerticalGroup("Settings")]
         public float delay;
         private float startedAt;
         
@@ -237,9 +272,11 @@ namespace _Chi.Scripts.Mono.Mission.Events
 
     public class ReceiveRewardHandler : MissionEvent
     {
+        [VerticalGroup("Settings")]
         [Required]
         public string rewardSet;
 
+        [VerticalGroup("Settings")]
         [Required]
         public string title;
         
@@ -261,6 +298,18 @@ namespace _Chi.Scripts.Mono.Mission.Events
         public override bool CanEnd(float currentTime)
         {
             return true;
+        }
+
+        public override IEnumerator Simulate()
+        {
+            yield return null;
+            
+            Gamesystem.instance.uiManager.OpenRewardSetWindow(rewardSet, title);
+            
+            while (Gamesystem.instance.uiManager.vehicleSettingsWindow.Opened())
+            {
+                yield return null;
+            }
         }
     }
     

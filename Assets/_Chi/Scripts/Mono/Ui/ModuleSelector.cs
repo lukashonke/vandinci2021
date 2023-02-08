@@ -65,8 +65,10 @@ namespace _Chi.Scripts.Mono.Ui
             else if (currentMode == ModuleSelectorMode.RewardSet)
             {
                 var set = Gamesystem.instance.prefabDatabase.GetRewardSet(rewardSet);
+
+                var shownItems = set.CalculateShownItems(Gamesystem.instance.objects.currentPlayer).ToHashSet();
                 
-                foreach (var item in db.prefabs.Where(t => set.prefabIds.Contains(t.id)))
+                foreach (var item in db.prefabs.Where(t => shownItems.Contains(t.id)))
                 {
                     var newItem = Instantiate(itemInfoPrefab, transform.position, Quaternion.identity, transform);
                     var newItemItem = newItem.GetComponent<ModuleSelectorItem>();

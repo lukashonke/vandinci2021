@@ -58,7 +58,7 @@ namespace _Chi.Scripts.Mono.Modules
             DeactivateEffects();
             
             // chci deaktivovat tento slot
-            if (slot.connectedFrom.Any())
+            if (slot.connectedFrom != null && slot.connectedFrom.Any())
             {
                 // sloty napojené na tento slot
                 foreach (var moduleSlot in slot.connectedFrom)

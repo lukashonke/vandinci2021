@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
-    SerializedBytes: 0101060000006500760065006e00740073002f00000000016d000000530079007300740065006d002e0043006f006c006c0065006300740069006f006e0073002e00470065006e0065007200690063002e004c00690073007400600031005b005b005f004300680069002e0053006300720069007000740073002e004d006f006e006f002e004d0069007300730069006f006e002e004500760065006e00740073002e004d0069007300730069006f006e004500760065006e0074002c00200041007300730065006d0062006c0079002d004300530068006100720070005d005d002c0020006d00730063006f0072006c006900620000000000061400000000000000022f0100000001460000005f004300680069002e0053006300720069007000740073002e004d006f006e006f002e004d0069007300730069006f006e002e004500760065006e00740073002e005200650063006500690076006500520065007700610072006400480061006e0064006c00650072002c00200041007300730065006d0062006c0079002d0043005300680061007200700001000000270109000000720065007700610072006400530065007400010f0000006f006600660065006e0073006900760065005f00620061007300690063002701050000007400690074006c006500010f000000430068006f006f00730065002000310020006d006f00640075006c00650005022f02000000013d0000005f004300680069002e0053006300720069007000740073002e004d006f006e006f002e004d0069007300730069006f006e002e004500760065006e00740073002e00530068006f0077004d006500730073006100670065002c00200041007300730065006d0062006c0079002d00430053006800610072007000020000002701040000007400650078007400012a0000004f0062006a006500630074006900760065003a0020005300750072007600690076006500200066006f00720020006100730020006c006f006e006700200061007300200070006f0073007300690062006c00650005022f03000000014a0000005f004300680069002e0053006300720069007000740073002e004d006f006e006f002e004d0069007300730069006f006e002e004500760065006e00740073002e00530074006100720074004d0069007300730069006f006e00480061006e0064006c00650072004500760065006e0074002c00200041007300730065006d0062006c0079002d0043005300680061007200700003000000010108000000680061006e0064006c006500720073002f04000000015d000000530079007300740065006d002e0043006f006c006c0065006300740069006f006e0073002e00470065006e0065007200690063002e004c00690073007400600031005b005b0055006e0069007400790045006e00670069006e0065002e00470061006d0065004f0062006a006500630074002c00200055006e0069007400790045006e00670069006e0065002e0043006f00720065004d006f00640075006c0065005d005d002c0020006d00730063006f0072006c0069006200040000000601000000000000000c0000000007051f010d000000660069007800650064004400750072006100740069006f006e000000a0412b01190000007700610069007400540069006c006c0041006c006c0053007000610077006e00650064004100720065004400650061006400002b01150000007700610069007400540069006c006c0041006c006c005700610077006500730053007000610077006e000005022f05000000014c0000005f004300680069002e0053006300720069007000740073002e004d006f006e006f002e004d0069007300730069006f006e002e004500760065006e00740073002e0045006e00640041006c006c004d0069007300730069006f006e00480061006e0064006c006500720073004500760065006e0074002c00200041007300730065006d0062006c0079002d00430053006800610072007000050000002b0117000000770061006900740055006e00740069006c0041006c006c0045006e0065006d0069006500730044006500610064000105023001000000060000002d01090000007200650077006100720064005300650074002d01050000007400690074006c0065000502300300000007000000010108000000680061006e0064006c006500720073003004000000080000000601000000000000000c0100000007051f010d000000660069007800650064004400750072006100740069006f006e000000f0412b01190000007700610069007400540069006c006c0041006c006c0053007000610077006e00650064004100720065004400650061006400002b01150000007700610069007400540069006c006c0041006c006c005700610077006500730053007000610077006e000105023005000000090000002b0117000000770061006900740055006e00740069006c0041006c006c0045006e0065006d00690065007300440065006100640001050230010000000a0000002d01090000007200650077006100720064005300650074002d01050000007400690074006c006500050230030000000b000000010108000000680061006e0064006c0065007200730030040000000c0000000601000000000000000c0200000007051f010d000000660069007800650064004400750072006100740069006f006e00000020422b01190000007700610069007400540069006c006c0041006c006c0053007000610077006e00650064004100720065004400650061006400002b01150000007700610069007400540069006c006c0041006c006c005700610077006500730053007000610077006e0001050230050000000d0000002b0117000000770061006900740055006e00740069006c0041006c006c0045006e0065006d00690065007300440065006100640001050230010000000e0000002d01090000007200650077006100720064005300650074002d01050000007400690074006c006500050230030000000f000000010108000000680061006e0064006c006500720073003004000000100000000601000000000000000c0300000007051f010d000000660069007800650064004400750072006100740069006f006e00000000002b01190000007700610069007400540069006c006c0041006c006c0053007000610077006e00650064004100720065004400650061006400002b01150000007700610069007400540069006c006c0041006c006c005700610077006500730053007000610077006e000105023005000000110000002b0117000000770061006900740055006e00740069006c0041006c006c0045006e0065006d0069006500730044006500610064000105023001000000120000002d01090000007200650077006100720064005300650074002d01050000007400690074006c0065000502300300000013000000010108000000680061006e0064006c006500720073003004000000140000000601000000000000000c0400000007051f010d000000660069007800650064004400750072006100740069006f006e00000048422b01190000007700610069007400540069006c006c0041006c006c0053007000610077006e00650064004100720065004400650061006400002b01150000007700610069007400540069006c006c0041006c006c005700610077006500730053007000610077006e000105023005000000150000002b0117000000770061006900740055006e00740069006c0041006c006c0045006e0065006d0069006500730044006500610064000105023001000000160000002d01090000007200650077006100720064005300650074002d01050000007400690074006c0065000502300300000017000000010108000000680061006e0064006c006500720073003004000000180000000601000000000000000c0500000007051f010d000000660069007800650064004400750072006100740069006f006e00000048422b01190000007700610069007400540069006c006c0041006c006c0053007000610077006e00650064004100720065004400650061006400002b01150000007700610069007400540069006c006c0041006c006c005700610077006500730053007000610077006e000105023005000000190000002b0117000000770061006900740055006e00740069006c0041006c006c0045006e0065006d00690065007300440065006100640001050230010000001a0000002d01090000007200650077006100720064005300650074002d01050000007400690074006c0065000507052d010c000000630075007200720065006e0074004500760065006e007400
+    SerializedFormat: 2
+    SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 2091413172466918211, guid: b089a080f13ed6d48a2594ab28cee8dd, type: 3}
     - {fileID: 2091413172466918211, guid: d0ae6a246a94ad449893298f7e888b8d, type: 3}
@@ -54,10 +54,462 @@ MonoBehaviour:
     - {fileID: 2091413172466918211, guid: 84bec239ca9197c499c623ed75eed898, type: 3}
     - {fileID: 2091413172466918211, guid: 5f903fb19362d124784fa2578e3e047e, type: 3}
     - {fileID: 2091413172466918211, guid: 564171d711610774a9ef71193c3aab2c, type: 3}
+    - {fileID: 2091413172466918211, guid: 59a5e5be299edf642a42752dfa98db91, type: 3}
+    - {fileID: 2091413172466918211, guid: 51570879634519e418a591a893a5793b, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  startIndex: 0
+    SerializationNodes:
+    - Name: events
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[_Chi.Scripts.Mono.Mission.Events.MissionEvent,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 26
+    - Name: 
+      Entry: 7
+      Data: 1|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
+    - Name: rewardSet
+      Entry: 1
+      Data: offensive_basic
+    - Name: title
+      Entry: 1
+      Data: Choose starting weapon
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|_Chi.Scripts.Mono.Mission.Events.ShowMessage, Assembly-CSharp
+    - Name: text
+      Entry: 1
+      Data: 'Objective: Survive for as long as possible'
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: fixedDuration
+      Entry: 4
+      Data: 20
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: false
+    - Name: handlers
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+    - Name: waitUntilAllEnemiesDead
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
+    - Name: rewardSet
+      Entry: 1
+      Data: passive_basic
+    - Name: title
+      Entry: 1
+      Data: Choose 1 module
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: fixedDuration
+      Entry: 4
+      Data: 30
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: true
+    - Name: handlers
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+    - Name: waitUntilAllEnemiesDead
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
+    - Name: rewardSet
+      Entry: 1
+      Data: offensive_basic
+    - Name: title
+      Entry: 1
+      Data: Choose your next weapon
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 11|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: fixedDuration
+      Entry: 4
+      Data: 60
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: true
+    - Name: handlers
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+    - Name: waitUntilAllEnemiesDead
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 14|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
+    - Name: rewardSet
+      Entry: 1
+      Data: passive_basic
+    - Name: title
+      Entry: 1
+      Data: Choose 1 module
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: fixedDuration
+      Entry: 4
+      Data: 0
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: true
+    - Name: handlers
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 17|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+    - Name: waitUntilAllEnemiesDead
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 18|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
+    - Name: rewardSet
+      Entry: 1
+      Data: passive_basic
+    - Name: title
+      Entry: 1
+      Data: Choose 1 module
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 19|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: fixedDuration
+      Entry: 4
+      Data: 70
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: true
+    - Name: handlers
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 21|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+    - Name: waitUntilAllEnemiesDead
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 22|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
+    - Name: rewardSet
+      Entry: 1
+      Data: passive_basic
+    - Name: title
+      Entry: 1
+      Data: Choose 1 module
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 23|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: fixedDuration
+      Entry: 4
+      Data: 70
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: true
+    - Name: handlers
+      Entry: 7
+      Data: 24|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 25|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+    - Name: waitUntilAllEnemiesDead
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 26|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
+    - Name: rewardSet
+      Entry: 1
+      Data: offensive_basic
+    - Name: title
+      Entry: 1
+      Data: Choose next weapon
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 27|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: fixedDuration
+      Entry: 4
+      Data: 80
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: true
+    - Name: handlers
+      Entry: 7
+      Data: 28|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 29|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+    - Name: waitUntilAllEnemiesDead
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 30|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
+    - Name: rewardSet
+      Entry: 1
+      Data: passive_basic
+    - Name: title
+      Entry: 1
+      Data: Choose 1 module
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 31|_Chi.Scripts.Mono.Mission.Events.ShowMessage, Assembly-CSharp
+    - Name: text
+      Entry: 1
+      Data: Miniboss Incoming!
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 32|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: fixedDuration
+      Entry: 4
+      Data: 100
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: true
+    - Name: handlers
+      Entry: 7
+      Data: 33|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 34|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+    - Name: waitUntilAllEnemiesDead
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: currentEvent
+      Entry: 6
+      Data: 
+  startIndex: 24
   loopEvents: 0

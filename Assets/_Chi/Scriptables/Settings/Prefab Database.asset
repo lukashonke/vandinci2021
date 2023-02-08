@@ -77,12 +77,12 @@ MonoBehaviour:
     skill: {fileID: 0}
     mutator: {fileID: 0}
   - id: 2003
-    label: Large Crossbow Module
+    label: Ballista Module
     description: 
     type: 3
     predefinedId: 0
-    prefab: {fileID: 1232174764404154631, guid: e2af129d57276dd4088a2d824a14837a, type: 3}
-    prefabUi: {fileID: 3314847274656908133, guid: 23afcf472f42ce244b6cfb6276ee13b6, type: 3}
+    prefab: {fileID: 1232174764404154631, guid: 00d24dfa39d483648a081dd6a914af83, type: 3}
+    prefabUi: {fileID: 3314847274656908133, guid: 81fe0c54ccbfba34794ab41cabdfd085, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
   - id: 2004
@@ -92,15 +92,6 @@ MonoBehaviour:
     predefinedId: 0
     prefab: {fileID: 1232174764404154631, guid: 3b85c6c6878286b4986962d6bb1c7c91, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 71486843aebbd8346a9701479eb3e484, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-  - id: 2005
-    label: Ballista Module
-    description: 
-    type: 3
-    predefinedId: 0
-    prefab: {fileID: 1232174764404154631, guid: 00d24dfa39d483648a081dd6a914af83, type: 3}
-    prefabUi: {fileID: 3314847274656908133, guid: 81fe0c54ccbfba34794ab41cabdfd085, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
   - id: 2500
@@ -130,7 +121,7 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: dfe0bb5f4a5dc446a8c7dd1d1bc7fa3f, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
-  - id: 2504
+  - id: 2503
     label: Increase Damage
     description: Increases damage output of the weapon.
     type: 3
@@ -139,7 +130,7 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: aa1d2220c65d144a9a5e686510f53193, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
-  - id: 2506
+  - id: 2504
     label: Increase Projectile Push Force
     description: Increases the force applied to hit enemies, they will be pushed
       away.
@@ -370,7 +361,42 @@ MonoBehaviour:
   rewardSets:
   - name: offensive_basic
     note: 
-    prefabIds: d0070000d1070000d2070000d3070000d4070000d5070000
+    prefabs:
+    - prefabId: 2000
+      weight: 1
+    - prefabId: 2001
+      weight: 1
+    - prefabId: 2002
+      weight: 1
+    - prefabId: 2003
+      weight: 1
+    - prefabId: 2004
+      weight: 1
+    minCountShownItems: 100
+  - name: passive_basic
+    note: 
+    prefabs:
+    - prefabId: 2500
+      weight: 1
+    - prefabId: 2501
+      weight: 1
+    - prefabId: 2502
+      weight: 1
+    - prefabId: 2503
+      weight: 1
+    - prefabId: 2504
+      weight: 1
+    minCountShownItems: 100
+  - name: defensive_basic
+    note: 
+    prefabs:
+    - prefabId: 2600
+      weight: 1
+    - prefabId: 2601
+      weight: 1
+    - prefabId: 2602
+      weight: 1
+    minCountShownItems: 100
   variants:
   - variant: Zombie
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
@@ -386,6 +412,8 @@ MonoBehaviour:
       rotationSpeed: 10
       contactDamage: 10
       contactDamageInterval: 1
+    skills: []
+    skillOnDie: {fileID: 0}
   - variant: ZombieFast
     sprite: {fileID: 21300000, guid: ada51a819fa2e4745b6756e5c835e252, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -400,6 +428,8 @@ MonoBehaviour:
       rotationSpeed: 10
       contactDamage: 10
       contactDamageInterval: 1
+    skills: []
+    skillOnDie: {fileID: 0}
   - variant: ZombieFat
     sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -414,6 +444,8 @@ MonoBehaviour:
       rotationSpeed: 10
       contactDamage: 10
       contactDamageInterval: 1
+    skills: []
+    skillOnDie: {fileID: 0}
   - variant: ZombieElite
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
@@ -428,6 +460,8 @@ MonoBehaviour:
       rotationSpeed: 10
       contactDamage: 10
       contactDamageInterval: 1
+    skills: []
+    skillOnDie: {fileID: 0}
   - variant: ZombieBloody
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 4461f9e1a8c439b40bd7fafb428820cf, type: 2}
@@ -442,6 +476,8 @@ MonoBehaviour:
       rotationSpeed: 10
       contactDamage: 10
       contactDamageInterval: 1
+    skills: []
+    skillOnDie: {fileID: 0}
   - variant: ZombieDemonic
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 803fe10b4c4635a4c92bb2f6ad6629a8, type: 2}
@@ -456,6 +492,8 @@ MonoBehaviour:
       rotationSpeed: 10
       contactDamage: 10
       contactDamageInterval: 1
+    skills: []
+    skillOnDie: {fileID: 0}
   - variant: ZombieBloater
     sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -470,6 +508,26 @@ MonoBehaviour:
       rotationSpeed: 10
       contactDamage: 10
       contactDamageInterval: 1
+    skills: []
+    skillOnDie: {fileID: 11400000, guid: 72694b8bf13e46e4bbac179d1d403dd3, type: 2}
+  - variant: ZombieBloater_Boss
+    sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: ee3e4ece0fd6dd64caa864088dd87de9, type: 2}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 1500
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 1500
+    npcStats:
+      speed: 1.4
+      rotationSpeed: 10
+      contactDamage: 25
+      contactDamageInterval: 1
+    skills:
+    - skill: {fileID: 11400000, guid: 72694b8bf13e46e4bbac179d1d403dd3, type: 2}
+    - skill: {fileID: 11400000, guid: 7dacf98ac6858cc42bb43407350ac4aa, type: 2}
+    skillOnDie: {fileID: 0}
   - variant: ShootingTarget
     sprite: {fileID: 21300000, guid: b2d676c7bb55561468c8d8a336439404, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -484,6 +542,8 @@ MonoBehaviour:
       rotationSpeed: 10
       contactDamage: 10
       contactDamageInterval: 1
+    skills: []
+    skillOnDie: {fileID: 0}
   - variant: Knight
     sprite: {fileID: 21300000, guid: 3269b21d08792aa43931fee87716aa98, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -498,6 +558,8 @@ MonoBehaviour:
       rotationSpeed: 10
       contactDamage: 10
       contactDamageInterval: 1
+    skills: []
+    skillOnDie: {fileID: 0}
   - variant: Soldier
     sprite: {fileID: 21300000, guid: 1cf393b0ae37b0448b9742e8b04b0048, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -512,6 +574,8 @@ MonoBehaviour:
       rotationSpeed: 10
       contactDamage: 10
       contactDamageInterval: 1
+    skills: []
+    skillOnDie: {fileID: 0}
   - variant: Worker
     sprite: {fileID: 21300000, guid: 13bd5d3e30908ab499d449233123097d, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -526,5 +590,7 @@ MonoBehaviour:
       rotationSpeed: 10
       contactDamage: 3
       contactDamageInterval: 1
+    skills: []
+    skillOnDie: {fileID: 0}
   playerCriticalDealtDamage: {fileID: 4974115115264481549, guid: 0beaac1fcb69845319cc168500b1bc84, type: 3}
   playerDealtDamage: {fileID: 184639617188728617, guid: 314716765f8ab6548bd010be7ce6a255, type: 3}

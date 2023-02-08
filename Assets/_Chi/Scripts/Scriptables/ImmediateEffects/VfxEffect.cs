@@ -16,11 +16,11 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
         public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength)
         {
-            var obj = Gamesystem.instance.poolSystem.SpawnVfx(vfxPrefab, vfxPoolSize);
+            var obj = Gamesystem.instance.poolSystem.SpawnGo(vfxPrefab, vfxPoolSize);
 
             obj.transform.position = target.GetPosition();
             
-            Gamesystem.instance.Schedule(Time.time + vfxDespawn, () => Gamesystem.instance.poolSystem.DespawnVfx(vfxPrefab, obj));
+            Gamesystem.instance.Schedule(Time.time + vfxDespawn, () => Gamesystem.instance.poolSystem.DespawnGo(vfxPrefab, obj));
             return true;
         }    
     }

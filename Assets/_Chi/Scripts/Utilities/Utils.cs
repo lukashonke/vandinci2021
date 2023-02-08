@@ -18,6 +18,12 @@ namespace _Chi.Scripts.Utilities
         {
             return (x - y).sqrMagnitude;
         }
+        
+        public static Vector3 GetHeading(Transform transform)
+        {
+            float angleRad = (transform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
+            return new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad), 0);
+        }
 
         /// <summary>
         /// vypocita presnout vzdalenost (vyuziva odmocninu, tato metoda je vyrazne pomalejsi nez dist2)

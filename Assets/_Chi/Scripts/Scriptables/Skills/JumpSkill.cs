@@ -12,9 +12,9 @@ namespace _Chi.Scripts.Scriptables.Skills
 
         public float jumpLength;
         
-        public override bool Trigger(Entity entity)
+        public override bool Trigger(Entity entity, bool force = false)
         {
-            if (!CanTrigger(entity)) return false;
+            if (!force && !CanTrigger(entity)) return false;
 
             if (entity is Player player)
             {
@@ -29,6 +29,7 @@ namespace _Chi.Scripts.Scriptables.Skills
 
         private IEnumerator Jump(Player player)
         {
+            SpawnPrefabVfx(player.GetPosition(), player.transform.rotation, null);
             player.OnSkillUse();
             
             var force = jumpForce * player.stats.skillPowerMul.GetValue();

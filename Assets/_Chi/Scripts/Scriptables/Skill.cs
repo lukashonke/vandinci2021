@@ -8,17 +8,16 @@ namespace _Chi.Scripts.Scriptables
     public abstract class Skill : SerializedScriptableObject
     {
         public float reuseDelay = 1f;
+
+        public GameObject vfx;
+        [ShowIf("vfx")]
+        public float vfxDespawnAfter;
         
-        public abstract bool Trigger(Entity entity);
+        public abstract bool Trigger(Entity entity, bool force = false);
         
         public T GetSkillData<T>(Entity entity) where T : SkillData
         {
-            if (entity is Player player)
-            {
-                return player.GetSkillData(this) as T;
-            }
-
-            return null;
+            return entity.GetSkillData(this) as T;
         }
 
         public virtual bool CanTrigger(Entity entity)
@@ -40,9 +39,34 @@ namespace _Chi.Scripts.Scriptables
             skillData.lastUse = Time.time;
         }
 
-        public float GetReuseDelay(Player player)
+        private float GetReuseDelay(Player player)
         {
             return reuseDelay * player.stats.skillReuseMul.GetValue();
+        }
+        
+        public float GetReuseDelay(Entity entity)
+        {
+            if (entity is Player player)
+            {
+                return GetReuseDelay(player);
+            }
+            return reuseDelay;
+        }
+
+        public void SpawnPrefabVfx(Vector3 position, Quaternion rotation, Transform parent)
+        {
+            if (vfx == null) return;
+            
+            var instance = Gamesystem.instance.poolSystem.SpawnGo(vfx);
+
+            instance.transform.position = position;
+            //instance.transform.rotation = rotation;
+            instance.transform.parent = parent;
+
+            if (vfxDespawnAfter > 0)
+            {
+                Gamesystem.instance.Schedule(Time.time + vfxDespawnAfter, () => Gamesystem.instance.poolSystem.DespawnGo(vfx, instance));
+            }
         }
 
         public abstract SkillData CreateDefaultSkillData();

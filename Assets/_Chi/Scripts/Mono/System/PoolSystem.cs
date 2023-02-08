@@ -14,7 +14,7 @@ namespace _Chi.Scripts.Mono.System
         
         [NonSerialized] public Dictionary<int, ObjectPool<Npc>> npcPools;
         
-        [NonSerialized] public Dictionary<GameObject, ObjectPool<GameObject>> vfxPool;
+        [NonSerialized] public Dictionary<GameObject, ObjectPool<GameObject>> goPool;
 
         public bool collectionChecks = true;
 
@@ -22,12 +22,12 @@ namespace _Chi.Scripts.Mono.System
         {
             projectilePools = new Dictionary<int, ObjectPool<Projectile>>();
             npcPools = new Dictionary<int, ObjectPool<Npc>>();
-            vfxPool = new();
+            goPool = new();
         }
 
-        public GameObject SpawnVfx(GameObject prefab, int maxPoolSize = 100)
+        public GameObject SpawnGo(GameObject prefab, int maxPoolSize = 100)
         {
-            if (vfxPool.TryGetValue(prefab, out var pool))
+            if (goPool.TryGetValue(prefab, out var pool))
             {
                 return pool.Get();
             }
@@ -35,7 +35,7 @@ namespace _Chi.Scripts.Mono.System
             {
                 var newPool = new ObjectPool<GameObject>(() => CreatePooledItem(prefab), OnTakeFromPool,
                     OnReturnedToPool, OnDestroyPoolObject, collectionChecks, maxPoolSize);
-                vfxPool.Add(prefab, newPool);
+                goPool.Add(prefab, newPool);
 
                 return newPool.Get();
             }
@@ -78,9 +78,9 @@ namespace _Chi.Scripts.Mono.System
             }
         }
         
-        public bool DespawnVfx(GameObject prefab, GameObject instance)
+        public bool DespawnGo(GameObject prefab, GameObject instance)
         {
-            if (vfxPool.TryGetValue(prefab, out var pool))
+            if (goPool.TryGetValue(prefab, out var pool))
             {
                 pool.Release(instance);
                 return true;

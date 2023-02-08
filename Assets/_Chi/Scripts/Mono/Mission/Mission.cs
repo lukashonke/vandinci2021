@@ -11,6 +11,7 @@ namespace _Chi.Scripts.Mono.Mission
 {
     public class Mission : SerializedMonoBehaviour
     {
+        [TableList(ShowIndexLabels = true)]
         public List<MissionEvent> events;
 
         public int startIndex = 0;
@@ -24,6 +25,11 @@ namespace _Chi.Scripts.Mono.Mission
         void Start()
         {
             alive = true;
+
+            foreach (var missionEvent in events)
+            {
+                missionEvent.Initialise(this);
+            }
 
             StartCoroutine(UpdateLoop());
         }
@@ -78,6 +84,22 @@ namespace _Chi.Scripts.Mono.Mission
 
                 yield return waiter;
                 timePassed += loopInterval;
+            }
+        }
+
+        public void SimulateUpToEvent(MissionEvent currentEvent)
+        {
+            StartCoroutine(SimulateUpToEventCoroutine(currentEvent));
+        }
+
+        private IEnumerator SimulateUpToEventCoroutine(MissionEvent currentEvent)
+        {
+            var index = events.IndexOf(currentEvent);
+
+            for (int i = 0; i <= index; i++)
+            {
+                var ev  = events[i];
+                yield return ev.Simulate();
             }
         }
         

@@ -66,6 +66,11 @@ namespace _Chi.Scripts.Mono.Ui
             }
         }
 
+        public bool Opened()
+        {
+            return this.gameObject.activeSelf;
+        }
+
         public void Close()
         {
             if (moduleSelector.CanClose())
