@@ -25,15 +25,19 @@ namespace _Chi.Scripts.Scriptables.Skills
 
         public override bool Trigger(Entity entity, bool force = false)
         {
-            if (!force && !CanTrigger(entity)) return false;
+            bool usedExtraCharge = false;            
+            if (!force && !CanTrigger(entity, out usedExtraCharge)) return false;
 
             entity.StartCoroutine(DoSpawn(entity));
                 
             entity.OnSkillUse();
             
             SpawnPrefabVfx(entity.GetPosition(), entity.transform.rotation, entity.transform);
-                
-            SetNextSkillUse(entity, GetReuseDelay(entity));
+
+            if (!usedExtraCharge)
+            {
+                SetNextSkillUse(entity, GetReuseDelay(entity));
+            }
             return true;
         }
 

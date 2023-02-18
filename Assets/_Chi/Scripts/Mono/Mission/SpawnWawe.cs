@@ -5,21 +5,22 @@ using System.Linq;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Mission.Events;
+using Pathfinding;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 namespace _Chi.Scripts.Mono.Mission
 {
-    //TODO wawe spawn
-    //TODO initial delay to activate
-    //TODo repeated wawe, repeat interval, repeat count
-    //TODO set direction from player
-    //TODO possibility to track
-
     public class SpawnWawe : SerializedMonoBehaviour, IMissionHandler
     {
+        [HorizontalGroup("Main")]
+        public string waveName;
+        [HorizontalGroup("Main")]
+        public bool disable;
+        
         public List<SpawnWaweData> spawns;
 
         [NonSerialized] private float nextCurvesUpdate = 0;
@@ -35,7 +36,7 @@ namespace _Chi.Scripts.Mono.Mission
             foreach (var settings in spawns)
             {
                 settings.Initialise(Time.time);
-                settings.nextSpawnTime = Time.time + settings.spawnTime;
+                settings.nextSpawnTime = Time.time + Random.Range(settings.spawnTimeMin, settings.spawnTimeMax);
             }
 
             running = true;
@@ -61,6 +62,11 @@ namespace _Chi.Scripts.Mono.Mission
             {
                 yield return waiter;
 
+                if (disable)
+                {
+                    continue;
+                }
+
                 var player = Gamesystem.instance.objects.currentPlayer;
                 var playerPosition = player.GetPosition();
                 var time = Time.time;
@@ -78,8 +84,41 @@ namespace _Chi.Scripts.Mono.Mission
                         int squareSize = (int) Math.Ceiling(Math.Sqrt(spawnCount));
 
                         var distance = settings.GetDistanceFromPlayer(time);
-                        var dir = (Vector3) Random.insideUnitCircle.normalized * distance;
-                        var spawnPosition = playerPosition + dir;
+                        
+                        var relativePos = settings.relativePosition;
+                        if (relativePos == SpawnRelativePosition.FrontOrBehindPlayer)
+                        {
+                            relativePos = Random.Range(0, 2) == 0 ? SpawnRelativePosition.FrontOfPlayer : SpawnRelativePosition.BehindPlayer;
+                        }
+
+                        Vector3 spawnPosition = Vector3.zero;
+                        switch (relativePos)
+                        {
+                            case SpawnRelativePosition.AroundPlayer:
+                                var dir1 = (Vector3) Random.insideUnitCircle.normalized * distance;
+                                spawnPosition = playerPosition + dir1;
+                                break;
+                            case SpawnRelativePosition.FrontOfPlayer:
+                                var dir2 = player.GetForwardVector().normalized * distance;
+                                spawnPosition = playerPosition + dir2;
+                                break;
+                            case SpawnRelativePosition.BehindPlayer:
+                                var dir3 = -player.GetForwardVector().normalized * distance;
+                                spawnPosition = playerPosition + dir3;
+                                break;
+                        }
+
+                        Vector3? goToDirection = null;
+                        if (settings.behavior == SpawnBehavior.RoamRandomly)
+                        {
+                            goToDirection = (Vector3) Random.insideUnitCircle.normalized * settings.roamDistance;
+                            goToDirection += (Vector3) Random.insideUnitCircle * settings.roamRandomRadius;
+                        }
+                        else if(settings.behavior == SpawnBehavior.RoamTowardsPlayer)
+                        {
+                            goToDirection = (playerPosition - spawnPosition).normalized * settings.roamDistance;
+                            goToDirection += (Vector3) Random.insideUnitCircle * settings.roamRandomRadius;
+                        }
 
                         if (spawnCount <= 2)
                         {
@@ -90,8 +129,17 @@ namespace _Chi.Scripts.Mono.Mission
                                 var targetPosition = spawnPosition + (new Vector3(i*spread, 0, 0));
                         
                                 var spawned = settings.SpawnOnPosition(targetPosition, settings.GetRandomPrefab(), playerPosition);
-                                ev.TrackAliveEntity(spawned);
-                                Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
+                                
+                                if (spawned != null)
+                                {
+                                    ev.TrackAliveEntity(spawned);
+                                    Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
+
+                                    if (goToDirection.HasValue && spawned is Npc npc)
+                                    {
+                                        npc.SetFixedMoveTarget(targetPosition + goToDirection.Value, settings.stopWhenReachFixedMoveTarget, settings.dieWhenReachFixedMoveTarget);
+                                    }
+                                }
                             }
                         }
                         else
@@ -108,8 +156,17 @@ namespace _Chi.Scripts.Mono.Mission
 
                                     var spawned = settings.SpawnOnPosition(targetPosition, settings.GetRandomPrefab(),
                                         playerPosition);
-                                    ev.TrackAliveEntity(spawned);
-                                    Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
+
+                                    if (spawned != null)
+                                    {
+                                        ev.TrackAliveEntity(spawned);
+                                        Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
+                                        
+                                        if (goToDirection.HasValue && spawned is Npc npc)
+                                        {
+                                            npc.SetFixedMoveTarget(targetPosition + goToDirection.Value, settings.stopWhenReachFixedMoveTarget, settings.dieWhenReachFixedMoveTarget);
+                                        }
+                                    }
 
                                     spawnCount--;
                                 }
@@ -123,7 +180,7 @@ namespace _Chi.Scripts.Mono.Mission
                         {
                             if (settings.repeatedCount < settings.repeatCount)
                             {
-                                settings.nextSpawnTime = settings.lastSpawnTime + settings.repeatSpawnInterval;
+                                settings.nextSpawnTime = settings.lastSpawnTime + Random.Range(settings.repeatSpawnIntervalMin, settings.repeatSpawnIntervalMax);
                                 settings.repeatedCount++;
                             }
                             else
@@ -148,12 +205,29 @@ namespace _Chi.Scripts.Mono.Mission
     {
         public List<SpawnPrefab> possiblePrefabs;
 
-        public float spawnTime;
+        public SpawnRelativePosition relativePosition;
+        
+        public SpawnBehavior behavior;
+
+        [HideIf("behavior", SpawnBehavior.AttackPlayer)]
+        public float roamDistance;
+        [HideIf("behavior", SpawnBehavior.AttackPlayer)]
+        public float roamRandomRadius;
+
+        [HideIf("behavior", SpawnBehavior.AttackPlayer)]
+        public bool dieWhenReachFixedMoveTarget;
+        [HideIf("behavior", SpawnBehavior.AttackPlayer)]
+        public bool stopWhenReachFixedMoveTarget;
+
+        public float spawnTimeMin;
+        public float spawnTimeMax;
 
         public bool repeatSpawn;
         
         [ShowIf("repeatSpawn")]
-        public float repeatSpawnInterval;
+        public float repeatSpawnIntervalMin;
+        [ShowIf("repeatSpawn")]
+        public float repeatSpawnIntervalMax;
         [ShowIf("repeatSpawn")]
         public int repeatCount;
 
@@ -161,6 +235,7 @@ namespace _Chi.Scripts.Mono.Mission
         public int spawnCountMax;
 
         public float distanceFromPlayer;
+        public float despawnAfter;
 
         public float spawnGroupSpreadMin = 1;
         public float spawnGroupSpreadMax = 1;
@@ -238,14 +313,27 @@ namespace _Chi.Scripts.Mono.Mission
                     npc.maxDistanceFromPlayerBeforeDespawn = distanceFromPlayerToDespawn * distanceFromPlayerToDespawn;
                     return npc;
                 case SpawnPrefabType.NonPooledNpc:
-                    var go = GameObject.Instantiate(prefab.prefabNpc.gameObject, position, rotation);
+                    var go = Object.Instantiate(prefab.prefabNpc.gameObject, position, rotation);
 
                     var npc2 = go.GetComponent<Npc>();
                     Gamesystem.instance.prefabDatabase.ApplyPrefabVariant(npc2, prefab.prefabVariant);
                     npc2.maxDistanceFromPlayerBeforeDespawn = distanceFromPlayerToDespawn * distanceFromPlayerToDespawn;
                     return npc2;
                 case SpawnPrefabType.Gameobject:
-                    throw new NotImplementedException();
+                    var go2 = Object.Instantiate(prefab.prefab);
+                    go2.transform.position = position;
+                    go2.transform.rotation = rotation;
+                    if (despawnAfter > 0)
+                    {
+                        Object.Destroy(go2, despawnAfter);
+                    }
+                    return null;
+                case SpawnPrefabType.PoolableGo:
+                    var poolable = Gamesystem.instance.poolSystem.SpawnPoolable(prefab.prefab);
+                    poolable.MoveTo(position);
+                    poolable.Rotate(rotation);
+                    poolable.Run();
+                    return null;
                 default:
                     throw new ArgumentOutOfRangeException();
             }

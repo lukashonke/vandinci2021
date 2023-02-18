@@ -13,6 +13,9 @@ namespace _Chi.Scripts.Mono.Mission.Events
     [Serializable]
     public abstract class MissionEvent
     {
+        [VerticalGroup("Settings")]
+        public string eventName;
+        
         protected Mission currentMission;
         public void Initialise(Mission mission)
         {

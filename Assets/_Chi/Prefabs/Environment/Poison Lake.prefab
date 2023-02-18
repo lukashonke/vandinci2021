@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7053117793360955556}
   - component: {fileID: 1085827529485122312}
   - component: {fileID: 8821160990760532398}
-  - component: {fileID: 4778531840740161181}
   - component: {fileID: 1262579799241233204}
   - component: {fileID: 1604446926220672689}
   m_Layer: 0
@@ -4873,18 +4872,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &4778531840740161181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8889423923064880148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c5dbbb1030d96d438905b0e01caa8d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1262579799241233204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4897,9 +4884,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53dafd6178f84764affe1202195edfed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 11400000, guid: e9ee23c6ec6fda646a0ca63e5b6a0d15, type: 2}
+  effects:
+  - {fileID: 11400000, guid: e9ee23c6ec6fda646a0ca63e5b6a0d15, type: 2}
+  effectInterval: 1
   team: 2
-  effectStrength: 20
+  effectStrength: 5
+  loseInterestAfterDist2: 16
   despawnDelay: 6000
 --- !u!58 &1604446926220672689
 CircleCollider2D:
@@ -4916,4 +4906,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.49999997
+  m_Radius: 0.85

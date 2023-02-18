@@ -28,7 +28,10 @@ namespace _Chi.Scripts.Mono.System
         public void StartDissolve(Npc npc)
         {
             npc.deathDirection = (npc.GetPosition() - Gamesystem.instance.objects.currentPlayer.GetPosition()).normalized;
-            npc.renderer.material = disolveMaterial;
+            if (npc.hasRenderer)
+            {
+                npc.renderer.material = disolveMaterial;
+            }
             dissolves.Add(npc);
         }
 
@@ -48,8 +51,11 @@ namespace _Chi.Scripts.Mono.System
                 }
                 
                 npc.Move(npc.deathDirection * (Time.deltaTime * 500));
-                npc.renderer.material.SetFloat(fadePropertyId, npc.currentDissolveProcess);
-                npc.renderer.material.SetColor(colorPropertyId, Color.Lerp(Color.black, Color.white, npc.currentDissolveProcess));
+                if (npc.hasRenderer)
+                {
+                    npc.renderer.material.SetFloat(fadePropertyId, npc.currentDissolveProcess);
+                    npc.renderer.material.SetColor(colorPropertyId, Color.Lerp(Color.black, Color.white, npc.currentDissolveProcess));
+                }
                 //npc.renderer.material.SetVector(colorPropertyId, npc.rotationTarget ?? Vector3.zero);
             }
 

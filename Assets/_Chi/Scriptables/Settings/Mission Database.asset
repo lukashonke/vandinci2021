@@ -23,17 +23,12 @@ MonoBehaviour:
     SerializationNodes: []
   missions:
   - index: 0
-    name: Idle Mission
+    name: No Mission
     description: 
     missionScenarios:
     - {fileID: 2091413172466918211, guid: e724ba2924e374d49a900dbd47436ceb, type: 3}
   - index: 1
-    name: Mission 1
+    name: Zombies
     description: 
     missionScenarios:
     - {fileID: 2091413172466918211, guid: 62c0f3a42e78397498ffab3704166e51, type: 3}
-  - index: 2
-    name: Mission 2
-    description: 
-    missionScenarios:
-    - {fileID: 2091413172466918211, guid: 4677b3f3fa9851743b7f1cbc2e624338, type: 3}

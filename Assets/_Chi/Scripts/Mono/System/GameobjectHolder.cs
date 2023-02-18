@@ -53,7 +53,7 @@ public class GameobjectHolder : MonoBehaviour
                     }
 
                     //TODO more sophisticated triggering by npcs, use 'trigger' obj
-                    if (skill.CanTrigger(npc))
+                    if (skill.CanTrigger(npc, out _))
                     {
                         skill.Trigger(npc);
                     }

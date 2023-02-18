@@ -24,6 +24,7 @@ MonoBehaviour:
   prefabs:
   - id: 100
     label: Zombie
+    enabled: 0
     description: 
     type: 1
     predefinedId: 1
@@ -33,6 +34,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 101
     label: Shooting Target
+    enabled: 0
     description: 
     type: 1
     predefinedId: 0
@@ -42,6 +44,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 1000
     label: First Body
+    enabled: 0
     description: 
     type: 2
     predefinedId: 0
@@ -51,6 +54,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 2000
     label: Crossbow Module
+    enabled: 1
     description: Shoots arrows at nearby enemies.
     type: 3
     predefinedId: 0
@@ -60,7 +64,8 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 2001
     label: Gun Module
-    description: 
+    enabled: 0
+    description: Shoots bullets at nearby enemies in the direction of the gun.
     type: 3
     predefinedId: 0
     prefab: {fileID: 1232174764404154631, guid: 90060e3a449a7e04bbc0cf7080ff75cd, type: 3}
@@ -69,7 +74,8 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 2002
     label: Large Gun Module
-    description: 
+    enabled: 0
+    description: Shoots enemies in the direction of the vehicle.
     type: 3
     predefinedId: 0
     prefab: {fileID: 1232174764404154631, guid: cdc938b384d12174ea3ca334b8fde5f1, type: 3}
@@ -78,7 +84,8 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 2003
     label: Ballista Module
-    description: 
+    enabled: 0
+    description: Shoots large penetrating arrows in the direction of the vehicle.
     type: 3
     predefinedId: 0
     prefab: {fileID: 1232174764404154631, guid: 00d24dfa39d483648a081dd6a914af83, type: 3}
@@ -87,15 +94,57 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 2004
     label: Catapult Module
-    description: 
+    enabled: 0
+    description: Shoots small spread projecties.
     type: 3
     predefinedId: 0
     prefab: {fileID: 1232174764404154631, guid: 3b85c6c6878286b4986962d6bb1c7c91, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 71486843aebbd8346a9701479eb3e484, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+  - id: 2005
+    label: Shuriken Module
+    enabled: 0
+    description: Shoots shurikens which choose next target after they hit one.
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: 304751909030c5e45bb25e28c62d5e90, type: 3}
+    prefabUi: {fileID: 3314847274656908133, guid: 12fa71c4605378b4b833306d9b6ecfc1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 2006
+    label: Shotgun Module
+    enabled: 0
+    description: Short-range high-spread low-fire rate gun.
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: 2252c8f8b885d5e4fa56e1cb5498c6a7, type: 3}
+    prefabUi: {fileID: 3314847274656908133, guid: 771548b76fc8815498deec6f50b2b621, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 2007
+    label: Cannon Module
+    enabled: 0
+    description: Shoots strong projectile in the fixed direction.
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: 31452cde8923a6e49987cbef5066b863, type: 3}
+    prefabUi: {fileID: 3314847274656908133, guid: 3c6803d6c55da61478cebcebaae83172, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 2008
+    label: Bombarder Module
+    enabled: 0
+    description: Bombards random area around player.
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: 25d0ca9f407a6de42898ebe5341a2b7e, type: 3}
+    prefabUi: {fileID: 3314847274656908133, guid: 263c03c040e2fc04296f1942616d1050, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
   - id: 2500
     label: Add Projectile
+    enabled: 1
     description: Adds projectiles to the weapon.
     type: 3
     predefinedId: 0
@@ -105,6 +154,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 2501
     label: Add Stun Effect
+    enabled: 1
     description: Adds a stun effect to the weapon.
     type: 3
     predefinedId: 0
@@ -114,7 +164,9 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 2502
     label: Add Pierced Enemy
-    description: Has effect only if the weapon has piercing effect.
+    enabled: 0
+    description: Increases number of pierced enemies. Has effect only if the weapon
+      has piercing effect.
     type: 3
     predefinedId: 0
     prefab: {fileID: 1232174764404154631, guid: 6a4aed355462d4bac9c88ce9beeadd41, type: 3}
@@ -123,6 +175,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 2503
     label: Increase Damage
+    enabled: 1
     description: Increases damage output of the weapon.
     type: 3
     predefinedId: 0
@@ -132,6 +185,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 2504
     label: Increase Projectile Push Force
+    enabled: 0
     description: Increases the force applied to hit enemies, they will be pushed
       away.
     type: 3
@@ -140,8 +194,39 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: 87ba2637bd53e4165a8fb327efa7a4e6, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+  - id: 2505
+    label: Increase Projectile Area
+    enabled: 0
+    description: Increases the size of projectile. Effecient for area of effect projectiles.
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: ea8604a9caf97e74a8d482fb6e350684, type: 3}
+    prefabUi: {fileID: 8309321105186295158, guid: 00d499bca0117394da209828403d8daa, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 2506
+    label: Fire Rate Module
+    enabled: 1
+    description: 
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: 5b88700f3dcfb4622b5a4cb64a7e16a9, type: 3}
+    prefabUi: {fileID: 8309321105186295158, guid: 846012403b0174a9f94a34a5c6a80847, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 2507
+    label: Range Module
+    enabled: 1
+    description: Increases the size of projectile. Effecient for area of effect projectiles.
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: 37156396185f5a348abec7c9b6e5a56f, type: 3}
+    prefabUi: {fileID: 8309321105186295158, guid: c27d9d519644590438d3a8f76019e2a8, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
   - id: 2600
     label: Shield Module
+    enabled: 1
     description: Gives you a shield, which recharges over time and absorbs one hit
       by enemies.
     type: 3
@@ -152,6 +237,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 2601
     label: Repairing Module
+    enabled: 1
     description: Increases HP regeneration per second.
     type: 3
     predefinedId: 0
@@ -161,6 +247,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 2602
     label: Speed Module
+    enabled: 0
     description: Increases movement speed.
     type: 3
     predefinedId: 0
@@ -168,8 +255,51 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: 21189be4bde0a3849998b1f24149801f, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+  - id: 2603
+    label: Skill Charge Storage
+    enabled: 0
+    description: 'Holds one extra charge for skills. '
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: c01e49c1dc2312e42a7fe7acaf17945a, type: 3}
+    prefabUi: {fileID: 8309321105186295158, guid: 6f9dd26c7a2c9aa4c88d151d62ea11a0, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 2604
+    label: Skill Improver
+    enabled: 0
+    description: Decreases skills reuse delay.
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: dedb45b7396885f4c8b39364564bafc2, type: 3}
+    prefabUi: {fileID: 8309321105186295158, guid: 7190df77de7efa2419ef50c8e7bd8d59, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 2605
+    label: Spikes
+    enabled: 0
+    description: Adds Spikes to the vehicle, increasing damage done by high vehicle
+      velocity.
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: 7d6b599b03c836a40b9a7ff2c6f2c6b4, type: 3}
+    prefabUi: {fileID: 8309321105186295158, guid: 3b74172898b63154d9464367b10ee2f5, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+  - id: 2606
+    label: Blade
+    enabled: 0
+    description: Adds rotating blades to the vehicle, which deal damage to nearby
+      enemies.
+    type: 3
+    predefinedId: 0
+    prefab: {fileID: 1232174764404154631, guid: a3abedfce3572ff4aaf086051b86b2d2, type: 3}
+    prefabUi: {fileID: 8309321105186295158, guid: 45ed084f93ccfa844bbe011c72bbce99, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
   - id: 3000
     label: Tree 1
+    enabled: 0
     description: 
     type: 6
     predefinedId: 0
@@ -179,6 +309,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 3001
     label: Tree 2
+    enabled: 0
     description: 
     type: 6
     predefinedId: 0
@@ -188,6 +319,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 3002
     label: Tree 3
+    enabled: 0
     description: 
     type: 6
     predefinedId: 0
@@ -197,6 +329,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 3003
     label: Bush 1
+    enabled: 0
     description: 
     type: 0
     predefinedId: 0
@@ -206,6 +339,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 3004
     label: Bush 2
+    enabled: 0
     description: 
     type: 0
     predefinedId: 0
@@ -215,6 +349,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 3005
     label: Dead Tree
+    enabled: 0
     description: 
     type: 0
     predefinedId: 0
@@ -224,6 +359,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 3020
     label: Resource Stone
+    enabled: 0
     description: 
     type: 7
     predefinedId: 0
@@ -233,6 +369,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 3021
     label: Resource Iron
+    enabled: 0
     description: 
     type: 7
     predefinedId: 0
@@ -242,6 +379,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 3022
     label: Resource Explosium
+    enabled: 0
     description: 
     type: 7
     predefinedId: 0
@@ -251,6 +389,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 3030
     label: Barricade
+    enabled: 0
     description: 
     type: 0
     predefinedId: 0
@@ -260,6 +399,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 3031
     label: Wooden Wall
+    enabled: 0
     description: 
     type: 0
     predefinedId: 0
@@ -269,6 +409,7 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 3032
     label: Stone Wall
+    enabled: 0
     description: 
     type: 0
     predefinedId: 0
@@ -278,15 +419,39 @@ MonoBehaviour:
     mutator: {fileID: 0}
   - id: 10000
     label: 'Skill: Jump'
-    description: 
+    enabled: 0
+    description: Quickly jumps in the desired direction. Temporarily increases velocity
+      so it can push damage enemies.
     type: 4
     predefinedId: 0
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: a233808f68c59d541b62cf99caa36b75, type: 3}
     skill: {fileID: 11400000, guid: cc69fe99998b25a4d8a301159bd9f639, type: 2}
     mutator: {fileID: 0}
+  - id: 10001
+    label: 'Skill: Overdrive'
+    enabled: 0
+    description: When this skill is active, it increases fire rate of weapons, but
+      also damages the vehicle.
+    type: 4
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 3314847274656908133, guid: 41f98db91a1f1ca42a7fed186d43fb43, type: 3}
+    skill: {fileID: 11400000, guid: ad31f96bc529c89469eed49d1304685e, type: 2}
+    mutator: {fileID: 0}
+  - id: 10002
+    label: 'Skill: Shockwave'
+    enabled: 0
+    description: When activated, a shockwave pushes nearby enemies away.
+    type: 4
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 3314847274656908133, guid: 7d23fef34052b4f4da59434a86fc7834, type: 3}
+    skill: {fileID: 11400000, guid: 6a4d5195185ff524a802fb55de0fc5fa, type: 2}
+    mutator: {fileID: 0}
   - id: 11000
     label: Critical Damage
+    enabled: 0
     description: Increases Critical damage but decreases regular damage. Useful if
       you are able to create a build focused on Critical rate.
     type: 5
@@ -297,6 +462,7 @@ MonoBehaviour:
     mutator: {fileID: 11400000, guid: 2aa1b31b8ba3742f4857873588186ba4, type: 2}
   - id: 11001
     label: Healing Skills
+    enabled: 0
     description: You will be healed when you cast a skill.
     type: 5
     predefinedId: 0
@@ -306,7 +472,8 @@ MonoBehaviour:
     mutator: {fileID: 11400000, guid: 6c7d1b91a21b742a598c261330139c6e, type: 2}
   - id: 11002
     label: Heavier Vehicle
-    description: 
+    enabled: 0
+    description: Vehicle has more HP, but is slower.
     type: 5
     predefinedId: 0
     prefab: {fileID: 0}
@@ -315,7 +482,8 @@ MonoBehaviour:
     mutator: {fileID: 11400000, guid: 13905431c11b64e1c849f9cbacb658bd, type: 2}
   - id: 11003
     label: Lighter Vehicle
-    description: 
+    enabled: 0
+    description: 'Vehicle is faster, but has less HP. '
     type: 5
     predefinedId: 0
     prefab: {fileID: 0}
@@ -324,7 +492,8 @@ MonoBehaviour:
     mutator: {fileID: 11400000, guid: f69b0788b4a264eeea4db1c8ca74d20f, type: 2}
   - id: 11004
     label: Reinforced Materials
-    description: 
+    enabled: 0
+    description: Vehicle has slightly increased HP.
     type: 5
     predefinedId: 0
     prefab: {fileID: 0}
@@ -333,7 +502,8 @@ MonoBehaviour:
     mutator: {fileID: 11400000, guid: a6ec005a1ae9145879d304e52c88afc8, type: 2}
   - id: 11005
     label: Power-up Skills
-    description: 
+    enabled: 0
+    description: Increases the power of skills and decreases their reuse delay.
     type: 5
     predefinedId: 0
     prefab: {fileID: 0}
@@ -342,7 +512,9 @@ MonoBehaviour:
     mutator: {fileID: 11400000, guid: 8c9917fef272d459ea7caeaf57052994, type: 2}
   - id: 11006
     label: Superlight Vehicle
-    description: 
+    enabled: 0
+    description: 'Greatly decreases vehicle HP, but also gives base critical rate
+      to all weapons. '
     type: 5
     predefinedId: 0
     prefab: {fileID: 0}
@@ -351,7 +523,8 @@ MonoBehaviour:
     mutator: {fileID: 11400000, guid: 5b864471844b04a5ca359898a116cdf5, type: 2}
   - id: 11007
     label: Protecting Skills
-    description: 
+    enabled: 0
+    description: After casting a skill, you will temporarily take less damage.
     type: 5
     predefinedId: 0
     prefab: {fileID: 0}
@@ -364,27 +537,19 @@ MonoBehaviour:
     prefabs:
     - prefabId: 2000
       weight: 1
-    - prefabId: 2001
-      weight: 1
-    - prefabId: 2002
-      weight: 1
-    - prefabId: 2003
-      weight: 1
-    - prefabId: 2004
-      weight: 1
     minCountShownItems: 100
   - name: passive_basic
     note: 
     prefabs:
     - prefabId: 2500
       weight: 1
-    - prefabId: 2501
-      weight: 1
-    - prefabId: 2502
-      weight: 1
     - prefabId: 2503
       weight: 1
-    - prefabId: 2504
+    - prefabId: 2506
+      weight: 1
+    - prefabId: 2507
+      weight: 1
+    - prefabId: 2501
       weight: 1
     minCountShownItems: 100
   - name: defensive_basic
@@ -395,6 +560,14 @@ MonoBehaviour:
     - prefabId: 2601
       weight: 1
     - prefabId: 2602
+      weight: 1
+    - prefabId: 2603
+      weight: 1
+    - prefabId: 2604
+      weight: 1
+    - prefabId: 2605
+      weight: 1
+    - prefabId: 2606
       weight: 1
     minCountShownItems: 100
   variants:
@@ -408,28 +581,65 @@ MonoBehaviour:
       maxHpMul: 1
       hp: 20
     npcStats:
-      speed: 1
+      speed: 1.5
       rotationSpeed: 10
       contactDamage: 10
       contactDamageInterval: 1
     skills: []
     skillOnDie: {fileID: 0}
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+  - variant: ZombieIdle
+    sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 3dd12299c05371f44abf211a2d5a3e59, type: 2}
+    animatorController: {fileID: 9100000, guid: f54b0e0d088b20346a942a6b13ad2b87, type: 2}
+    entityStats:
+      maxHp: 10
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 10
+    npcStats:
+      speed: 2.2
+      rotationSpeed: 10
+      contactDamage: 10
+      contactDamageInterval: 1
+    skills: []
+    skillOnDie: {fileID: 0}
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0
+      disableRvoCollision: 1
+      setRvoLayers: 0
+      rvoLayer: 1
+      rvoCollidesWith: 1073741824
   - variant: ZombieFast
     sprite: {fileID: 21300000, guid: ada51a819fa2e4745b6756e5c835e252, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     animatorController: {fileID: 0}
     entityStats:
-      maxHp: 20
+      maxHp: 15
       maxHpAdd: 0
       maxHpMul: 1
-      hp: 20
+      hp: 15
     npcStats:
-      speed: 1.4
+      speed: 2
       rotationSpeed: 10
       contactDamage: 10
       contactDamageInterval: 1
     skills: []
     skillOnDie: {fileID: 0}
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
   - variant: ZombieFat
     sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -446,6 +656,36 @@ MonoBehaviour:
       contactDamageInterval: 1
     skills: []
     skillOnDie: {fileID: 0}
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+  - variant: ZombieSneaky
+    sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 8bf4bdf6f6e10984fb430e8d4362c064, type: 2}
+    animatorController: {fileID: 9100000, guid: f54b0e0d088b20346a942a6b13ad2b87, type: 2}
+    entityStats:
+      maxHp: 40
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 40
+    npcStats:
+      speed: 2.2
+      rotationSpeed: 10
+      contactDamage: 10
+      contactDamageInterval: 1
+    skills: []
+    skillOnDie: {fileID: 0}
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 1
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
   - variant: ZombieElite
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
@@ -462,6 +702,13 @@ MonoBehaviour:
       contactDamageInterval: 1
     skills: []
     skillOnDie: {fileID: 0}
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
   - variant: ZombieBloody
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 4461f9e1a8c439b40bd7fafb428820cf, type: 2}
@@ -478,6 +725,13 @@ MonoBehaviour:
       contactDamageInterval: 1
     skills: []
     skillOnDie: {fileID: 0}
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
   - variant: ZombieDemonic
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 803fe10b4c4635a4c92bb2f6ad6629a8, type: 2}
@@ -494,6 +748,13 @@ MonoBehaviour:
       contactDamageInterval: 1
     skills: []
     skillOnDie: {fileID: 0}
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
   - variant: ZombieBloater
     sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -510,6 +771,13 @@ MonoBehaviour:
       contactDamageInterval: 1
     skills: []
     skillOnDie: {fileID: 11400000, guid: 72694b8bf13e46e4bbac179d1d403dd3, type: 2}
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
   - variant: ZombieBloater_Boss
     sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
     spriteMaterial: {fileID: 2100000, guid: ee3e4ece0fd6dd64caa864088dd87de9, type: 2}
@@ -528,6 +796,13 @@ MonoBehaviour:
     - skill: {fileID: 11400000, guid: 72694b8bf13e46e4bbac179d1d403dd3, type: 2}
     - skill: {fileID: 11400000, guid: 7dacf98ac6858cc42bb43407350ac4aa, type: 2}
     skillOnDie: {fileID: 0}
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
   - variant: ShootingTarget
     sprite: {fileID: 21300000, guid: b2d676c7bb55561468c8d8a336439404, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -544,6 +819,13 @@ MonoBehaviour:
       contactDamageInterval: 1
     skills: []
     skillOnDie: {fileID: 0}
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
   - variant: Knight
     sprite: {fileID: 21300000, guid: 3269b21d08792aa43931fee87716aa98, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -560,6 +842,13 @@ MonoBehaviour:
       contactDamageInterval: 1
     skills: []
     skillOnDie: {fileID: 0}
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
   - variant: Soldier
     sprite: {fileID: 21300000, guid: 1cf393b0ae37b0448b9742e8b04b0048, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -576,6 +865,13 @@ MonoBehaviour:
       contactDamageInterval: 1
     skills: []
     skillOnDie: {fileID: 0}
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
   - variant: Worker
     sprite: {fileID: 21300000, guid: 13bd5d3e30908ab499d449233123097d, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -592,5 +888,81 @@ MonoBehaviour:
       contactDamageInterval: 1
     skills: []
     skillOnDie: {fileID: 0}
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+  - variant: ZombieSpawner_ZombieSneaky
+    sprite: {fileID: 21300000, guid: e1649ff1a78909d49a09c25d027780fe, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 999
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 999
+    npcStats:
+      speed: 1.1
+      rotationSpeed: 10
+      contactDamage: 3
+      contactDamageInterval: 1
+    skills: []
+    skillOnDie: {fileID: 0}
+    parameters:
+      spawnAroundEntityGroupName: ZombieSneaky
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+  - variant: ZombieSpawner_ZombieGroup
+    sprite: {fileID: 21300000, guid: e1649ff1a78909d49a09c25d027780fe, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 999
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 999
+    npcStats:
+      speed: 1.1
+      rotationSpeed: 10
+      contactDamage: 3
+      contactDamageInterval: 1
+    skills: []
+    skillOnDie: {fileID: 0}
+    parameters:
+      spawnAroundEntityGroupName: Zombie_Group
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+  - variant: ZombieSpawner_Zombie
+    sprite: {fileID: 21300000, guid: e1649ff1a78909d49a09c25d027780fe, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 999
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 999
+    npcStats:
+      speed: 1.1
+      rotationSpeed: 10
+      contactDamage: 3
+      contactDamageInterval: 1
+    skills: []
+    skillOnDie: {fileID: 0}
+    parameters:
+      spawnAroundEntityGroupName: Zombie
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
   playerCriticalDealtDamage: {fileID: 4974115115264481549, guid: 0beaac1fcb69845319cc168500b1bc84, type: 3}
   playerDealtDamage: {fileID: 184639617188728617, guid: 314716765f8ab6548bd010be7ce6a255, type: 3}

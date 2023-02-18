@@ -15,6 +15,9 @@ namespace _Chi.Scripts.Scriptables.Dtos
         public string label;
         
         [VerticalGroup("Text")]
+        public bool enabled;
+        
+        [VerticalGroup("Text")]
         [Multiline(2)]
         public string description;
 

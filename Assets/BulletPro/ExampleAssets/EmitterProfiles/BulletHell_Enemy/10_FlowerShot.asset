@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 15816107
+  uniqueIndex: 4886559
   profile: {fileID: 11400000}
   parent: {fileID: 114973981610224202}
   children:
@@ -44418,7 +44418,7 @@ MonoBehaviour:
   m_Name: Flower Spiral
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 6064661
+  uniqueIndex: 6431067
   profile: {fileID: 11400000}
   parent: {fileID: 114903376110388710}
   children:
@@ -78613,7 +78613,7 @@ MonoBehaviour:
   m_Name: Petal Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 11933198
+  uniqueIndex: 14277344
   profile: {fileID: 11400000}
   parent: {fileID: 114166477808826438}
   children:
@@ -81189,7 +81189,7 @@ MonoBehaviour:
   m_Name: Main Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 3678657
+  uniqueIndex: 1070642
   profile: {fileID: 11400000}
   parent: {fileID: 114084119151855526}
   children:
@@ -83765,7 +83765,7 @@ MonoBehaviour:
   m_Name: Petal Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 2704917
+  uniqueIndex: 8958511
   profile: {fileID: 11400000}
   parent: {fileID: 114412960885941272}
   children: []
@@ -91251,7 +91251,7 @@ MonoBehaviour:
   m_Name: Green Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 330597
+  uniqueIndex: 1728553
   profile: {fileID: 11400000}
   parent: {fileID: 114636591556706544}
   children:
@@ -98847,7 +98847,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 1937303
+  uniqueIndex: 3210668
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:

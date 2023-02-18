@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 8108864
+  uniqueIndex: 7188246
   profile: {fileID: 11400000}
   parent: {fileID: 114676994745875216}
   children:
@@ -365,6 +365,7 @@ MonoBehaviour:
     bulletOrigin: {x: 0, y: 0, z: 0}
     useDifferentBullet: 0
     bulletParams: {fileID: 0}
+  hasUnknownBulletAmount: 0
   modifiers:
   - modifierType: 10
     globalMovement:
@@ -7608,6 +7609,7 @@ MonoBehaviour:
   highestValues: {x: 2.8636365, y: 0, z: 0}
   lowestValues: {x: -2.8636365, y: 0, z: 0}
   hasBeenSerializedOnce: 1
+  fakeBulletAmount: 0
   foldout0: 0
   foldout1: 0
   foldout2: 0
@@ -7650,7 +7652,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 5234316
+  uniqueIndex: 15851363
   profile: {fileID: 11400000}
   parent: {fileID: 114247147085833590}
   children: []
@@ -8343,6 +8345,7 @@ MonoBehaviour:
     typeName: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     requiredComponentName: 
+  layer: 0
   sortingOrder:
     valueTree:
     - settings:
@@ -16619,7 +16622,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 2632220
+  uniqueIndex: 3398226
   profile: {fileID: 11400000}
   parent: {fileID: 114964359049590580}
   children:
@@ -22688,8 +22691,7 @@ MonoBehaviour:
             parameterType: 0
             relativeTo: 0
             parameterName: 
-          defaultValue: {fileID: 8300000, guid: 97f3fcac368ba42c8b07e851dc54aa6e,
-            type: 3}
+          defaultValue: {fileID: 8300000, guid: 97f3fcac368ba42c8b07e851dc54aa6e, type: 3}
         narrowType: 1
         requireComponent: 0
         typeName: UnityEngine.AudioClip, UnityEngine.AudioModule, Version=0.0.0.0,
@@ -40963,7 +40965,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 9308226
+  uniqueIndex: 4748002
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -41657,6 +41659,7 @@ MonoBehaviour:
     typeName: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     requiredComponentName: 
+  layer: 0
   sortingOrder:
     valueTree:
     - settings:

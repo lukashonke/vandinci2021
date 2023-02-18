@@ -16,6 +16,8 @@ namespace _Chi.Scripts.Mono.Mission
 
         public int startIndex = 0;
 
+        public bool forceStartAtIndex;
+
         public bool loopEvents;
 
         [ReadOnly] public MissionEvent currentEvent;

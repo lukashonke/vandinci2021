@@ -26,9 +26,12 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                 case ShootNearestTargetType.InFront:
                     nearestTargetFilterFunc = entity => ProjectileExtensions.CanFire(entity.GetPosition(), slot.transform.rotation * originalRotation, transform.position, 90);
                     break;
+                case ShootNearestTargetType.NoRotation:
+                    nearestTargetFilterFunc = entity => ProjectileExtensions.CanFire(entity.GetPosition(), slot.transform.rotation * originalRotation, transform.position, 15);
+                    break;
             }
         }
-
+        
         public override IEnumerator UpdateLoop()  
         {
             var waiter = new WaitForFixedUpdate();
@@ -46,37 +49,28 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                 if (nextTargetUpdate > Time.time)
                 {
                     nextTargetUpdate = Time.time + targetUpdateInterval + Random.Range(0.1f, 0.2f);
-
-                    var nearest = ((Player) parent).GetNearestEnemy(GetPosition(), nearestTargetFilterFunc);
-
-                    if (nearest != null && Utils.Dist2(nearest.GetPosition(), GetPosition()) < Mathf.Pow(stats.targetRange.GetValue(), 2))
+                    
+                    if (targetType == ShootNearestTargetType.NoRotation)
                     {
-                        currentTarget = nearest.transform;
                         emitter.Play();
                     }
                     else
                     {
-                        currentTarget = null;
-                        emitter.Pause();
-                    }
+                        var nearest = ((Player) parent).GetNearestEnemy(GetPosition(), nearestTargetFilterFunc);
 
-                    if (emitter.rootBullet != null)
-                    {
-                        emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileCount, stats.projectileCount.GetValueInt());
-                        emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpeed, stats.projectileSpeed.GetValue());
-                        emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.WaitDuration, stats.fireRate.GetValue());
-                        emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpread, stats.projectileSpreadAngle.GetValue());
-
-                        if (stats.projectileLifetime.GetValue() > 0)
+                        if (nearest != null && Utils.Dist2(nearest.GetPosition(), GetPosition()) < Mathf.Pow(stats.targetRange.GetValue(), 2))
                         {
-                            emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileLifetime, stats.projectileLifetime.GetValue());
+                            currentTarget = nearest.transform;
+                            emitter.Play();
                         }
-
-                        if (stats.projectileRange.GetValue() > 0)
+                        else
                         {
-                            emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileRange, stats.projectileRange.GetValue());
+                            currentTarget = null;
+                            emitter.Pause();
                         }
                     }
+
+                    ApplyParams();
                 }
 
                 if (currentTarget != null)
@@ -100,12 +94,36 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                     
                         projectile.ScheduleUnspawn(DamageExtensions.CalculateProjectileLifetime(stats.projectileLifetime, this));
                     }*/
-                    
-                    RotateTowards(currentTarget.position, instantRotation);
+
+                    if (targetType != ShootNearestTargetType.NoRotation)
+                    {
+                        RotateTowards(currentTarget.position, instantRotation);
+                    }
                 }
                 else
                 {
                     this.transform.localRotation = originalRotation;
+                }
+            }
+        }
+
+        private void ApplyParams()
+        {
+            if (emitter.rootBullet != null)
+            {
+                emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileCount, stats.projectileCount.GetValueInt() * stats.projectileMultiplier.GetValueInt());
+                emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpeed, stats.projectileSpeed.GetValue());
+                emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.WaitDuration, GetFireRate());
+                emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpread, stats.projectileSpreadAngle.GetValue());
+
+                if (stats.projectileLifetime.GetValue() > 0)
+                {
+                    emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileLifetime, stats.projectileLifetime.GetValue());
+                }
+
+                if (stats.projectileRange.GetValue() > 0)
+                {
+                    emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileRange, stats.projectileRange.GetValue());
                 }
             }
         }
@@ -131,6 +149,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
     public enum ShootNearestTargetType
     {
         Any,
-        InFront
+        InFront,
+        NoRotation
     }
 }

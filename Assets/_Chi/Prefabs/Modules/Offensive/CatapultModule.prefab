@@ -68,6 +68,9 @@ MonoBehaviour:
     projectileCount:
       baseValue: 4
       value: 3
+    projectileMultiplier:
+      baseValue: 1
+      value: 0
     projectileSpreadAngle:
       baseValue: 7.5
       value: 0
@@ -84,10 +87,10 @@ MonoBehaviour:
       baseValue: 6
       value: 0
     projectileRange:
-      baseValue: 10
+      baseValue: 8
       value: 0
     projectileLifetime:
-      baseValue: 10
+      baseValue: 0
       value: 0
     canProjectilePierce: 0
     projectilePierceCount:
@@ -112,6 +115,7 @@ MonoBehaviour:
     useTrail: 1
     material: {fileID: 2100000, guid: 876433a5b1e6bcb4e8ee8f4f02775631, type: 2}
     trailLengthTime: 0.1
+  bulletBehavior: 0
   targetType: 0
 --- !u!212 &6177911479989981830
 SpriteRenderer:

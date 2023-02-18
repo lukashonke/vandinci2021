@@ -48,9 +48,10 @@ namespace _Chi.Scripts.Mono.Ui
             if (currentMode == ModuleSelectorMode.ShowAllItems)
             {
                 foreach (var item in db.prefabs.Where(t => 
-                             t.type == PrefabItemType.Module
+                             t.enabled &&
+                             (t.type == PrefabItemType.Module
                              || t.type == PrefabItemType.Skill
-                             || t.type == PrefabItemType.Mutator
+                             || t.type == PrefabItemType.Mutator)
                          ))
                 {
                     var newItem = Instantiate(itemInfoPrefab, transform.position, Quaternion.identity, transform);
@@ -68,7 +69,7 @@ namespace _Chi.Scripts.Mono.Ui
 
                 var shownItems = set.CalculateShownItems(Gamesystem.instance.objects.currentPlayer).ToHashSet();
                 
-                foreach (var item in db.prefabs.Where(t => shownItems.Contains(t.id)))
+                foreach (var item in db.prefabs.Where(t => shownItems.Contains(t.id) && t.enabled))
                 {
                     var newItem = Instantiate(itemInfoPrefab, transform.position, Quaternion.identity, transform);
                     var newItemItem = newItem.GetComponent<ModuleSelectorItem>();

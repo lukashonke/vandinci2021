@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Mission.Events;
@@ -8,12 +9,18 @@ using _Chi.Scripts.Scriptables;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 namespace _Chi.Scripts.Mono.Mission
 {
     public class SpawnAroundPlayer : SerializedMonoBehaviour, IMissionHandler
     {
+        [HorizontalGroup("Main")]
+        public string attacksName;
+        [HorizontalGroup("Main")]
+        public bool disable;
+        
         public List<Spawn> spawns;
         
         [NonSerialized] private float nextCurvesUpdate = 0;
@@ -53,6 +60,11 @@ namespace _Chi.Scripts.Mono.Mission
 
         public void Update()
         {
+            if (disable)
+            {
+                return;
+            }
+            
             var player = Gamesystem.instance.objects.currentPlayer;
             var playerPosition = player.GetPosition();
             var time = Time.time;
@@ -78,9 +90,30 @@ namespace _Chi.Scripts.Mono.Mission
                     settings.nextSpawnTime = settings.lastSpawnTime + (60 / settings.GetCountPerMinute(time-settings.startAtTime));
 
                     var distance = settings.GetDistanceFromPlayer(time);
-                    var dir = (Vector3) Random.insideUnitCircle.normalized * distance;
-                    var spawnPosition = playerPosition + dir;
                     
+                    var relativePos = settings.relativePosition;
+                    if (relativePos == SpawnRelativePosition.FrontOrBehindPlayer)
+                    {
+                        relativePos = Random.Range(0, 2) == 0 ? SpawnRelativePosition.FrontOfPlayer : SpawnRelativePosition.BehindPlayer;
+                    }
+
+                    Vector3 spawnPosition = Vector3.zero;
+                    switch (relativePos)
+                    {
+                        case SpawnRelativePosition.AroundPlayer:
+                            var dir1 = (Vector3) Random.insideUnitCircle.normalized * distance;
+                            spawnPosition = playerPosition + dir1;
+                            break;
+                        case SpawnRelativePosition.FrontOfPlayer:
+                            var dir2 = player.GetForwardVector().normalized * distance;
+                            spawnPosition = playerPosition + dir2;
+                            break;
+                        case SpawnRelativePosition.BehindPlayer:
+                            var dir3 = -player.GetForwardVector().normalized * distance;
+                            spawnPosition = playerPosition + dir3;
+                            break;
+                    }
+
                     var spawnCount = settings.GetCountToSpawn(time);
 
                     if (spawnCount <= 2)
@@ -91,9 +124,13 @@ namespace _Chi.Scripts.Mono.Mission
                         
                             var targetPosition = spawnPosition + (new Vector3(i*spread, 0, 0));
                         
-                            var spawned = settings.SpawnOnPosition(targetPosition, settings.GetRandomPrefab(), playerPosition);
-                            ev.TrackAliveEntity(spawned);
-                            Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
+                            var spawnedEntity = settings.SpawnOnPosition(targetPosition, settings.GetRandomPrefab(), playerPosition);
+
+                            if (spawnedEntity != null)
+                            {
+                                ev.TrackAliveEntity(spawnedEntity);
+                                Gamesystem.instance.missionManager.TrackAliveEntity(spawnedEntity);
+                            }
                         }
                     }
                     else
@@ -111,8 +148,12 @@ namespace _Chi.Scripts.Mono.Mission
                                 var targetPosition = spawnPosition + (new Vector3(column*spread, row*spread, 0));
                                 
                                 var spawned = settings.SpawnOnPosition(targetPosition, settings.GetRandomPrefab(), playerPosition);
-                                ev.TrackAliveEntity(spawned);
-                                Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
+
+                                if (spawned != null)
+                                {
+                                    ev.TrackAliveEntity(spawned);
+                                    Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
+                                }
                                 
                                 spawnCount--;
                             }
@@ -130,10 +171,13 @@ namespace _Chi.Scripts.Mono.Mission
     {
         public List<SpawnPrefab> possiblePrefabs;
 
+        public SpawnRelativePosition relativePosition;
+
         public AnimationCurve countPerMinuteCurve;
         
         [FormerlySerializedAs("countPerMinute")] [ReadOnly] public float baseCountPerMinute;
-        public float countPerMinuteRandomAdd = 0;
+        public float countPerMinuteRandomAddFrom = 0;
+        public float countPerMinuteRandomAddTo = 0;
         public float countPerMinuteRandomMulFrom = 1;
         public float countPerMinuteRandomMulTo = 1;
 
@@ -149,6 +193,7 @@ namespace _Chi.Scripts.Mono.Mission
         public float spawnGroupSpreadMax = 1;
         
         public float distanceFromPlayerToDespawn = 100;
+        public float despawnAfter = 0;
         
         // runtime
         [ReadOnly] public float nextSpawnTime;
@@ -183,7 +228,7 @@ namespace _Chi.Scripts.Mono.Mission
             return baseCountPerMinute
                    * countPerMinuteRandomMulCurve.Evaluate(time)
                    * Random.Range(countPerMinuteRandomMulFrom, countPerMinuteRandomMulTo)
-                   + Random.Range(-countPerMinuteRandomAdd, countPerMinuteRandomAdd)
+                   + Random.Range(countPerMinuteRandomAddFrom, countPerMinuteRandomAddTo)
                    + countPerMinuteRandomAddCurve.Evaluate(time);
         }
 
@@ -231,7 +276,20 @@ namespace _Chi.Scripts.Mono.Mission
                     npc.maxDistanceFromPlayerBeforeDespawn = distanceFromPlayerToDespawn * distanceFromPlayerToDespawn;
                     return npc;
                 case SpawnPrefabType.Gameobject:
-                    throw new NotImplementedException();
+                    var go2 = GameObject.Instantiate(prefab.prefab);
+                    go2.transform.position = position;
+                    go2.transform.rotation = rotation;
+                    if (despawnAfter > 0)
+                    {
+                        Object.Destroy(go2, despawnAfter);
+                    }
+                    return null;
+                case SpawnPrefabType.PoolableGo:
+                    var poolable = Gamesystem.instance.poolSystem.SpawnPoolable(prefab.prefab);
+                    poolable.MoveTo(position);
+                    poolable.Rotate(rotation);
+                    poolable.Run();
+                    return null;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -245,10 +303,11 @@ namespace _Chi.Scripts.Mono.Mission
     {
         public SpawnPrefabType type;
         
-        [ShowIf("type", SpawnPrefabType.Gameobject)]
+        //[ShowIf("type", SpawnPrefabType.Gameobject)]
+        [EnableIf("@this.type == SpawnPrefabType.Gameobject || this.type == SpawnPrefabType.PoolableGo")]
         public GameObject prefab;
         
-        [HideIf("type", SpawnPrefabType.Gameobject)]
+        [EnableIf("@this.type == SpawnPrefabType.PooledNpc || this.type == SpawnPrefabType.NonPooledNpc")]
         public Npc prefabNpc;
         
         [Min(1)]
@@ -270,6 +329,22 @@ namespace _Chi.Scripts.Mono.Mission
     {
         PooledNpc,
         NonPooledNpc,
+        PoolableGo,
         Gameobject
+    }
+
+    public enum SpawnRelativePosition
+    {
+        AroundPlayer,
+        FrontOfPlayer,
+        BehindPlayer,
+        FrontOrBehindPlayer
+    }
+
+    public enum SpawnBehavior
+    {
+        AttackPlayer,
+        RoamRandomly,
+        RoamTowardsPlayer
     }
 }

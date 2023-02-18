@@ -10,9 +10,7 @@ Material:
   m_Name: PlayerDamageEffect
   m_Shader: {fileID: 4800000, guid: 6eb86e4931b506a408fd1477edec61ea, type: 3}
   m_ValidKeywords:
-  - COLORRAMP_ON
-  - PREMULTIPLYCOLOR_ON
-  - SHAPE2_ON
+  - ADDITIVECONFIG_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -24,7 +22,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _ColorRampTex:
-        m_Texture: {fileID: -324203586596245745, guid: 9c70d3164354e504c8ab210feffa54db, type: 2}
+        m_Texture: {fileID: -6005546421080157531, guid: 72b7f470b9834014787e22707fb9e79b, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ColorRampTexGradient:
@@ -52,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7c39b8f36d353704ab4bc228822d7cba, type: 3}
+        m_Texture: {fileID: 2800000, guid: d0ae225514c7cca408c1a8b9f111f3b4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -93,7 +91,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 1
+    - _Alpha: 0.524
     - _AlphaCutoffValue: 0.25
     - _AlphaFadeAmount: -0.1
     - _AlphaFadePow: 1
@@ -106,7 +104,7 @@ Material:
     - _ColorGradingMidPoint: 0.5
     - _ColorMask: 15
     - _ColorRampBlend: 0.782
-    - _ColorRampLuminosity: -0.37
+    - _ColorRampLuminosity: -0.443
     - _CullingOption: 0
     - _DebugShape: 1
     - _DepthGlow: 1
@@ -120,7 +118,7 @@ Material:
     - _DistortionPower: 10
     - _DistortionScrollXSpeed: 0
     - _DistortionScrollYSpeed: 0
-    - _DstMode: 10
+    - _DstMode: 1
     - _EditorDrawers: 61
     - _FadeAmount: -0.1
     - _FadeBurnGlow: 5
@@ -146,7 +144,7 @@ Material:
     - _RandomSh1Mult: 1
     - _RandomSh2Mult: 1
     - _RandomSh3Mult: 1
-    - _RenderingMode: 5
+    - _RenderingMode: 1
     - _RimAddAmount: 1
     - _RimBias: 0
     - _RimErodesAlpha: 0
@@ -199,10 +197,10 @@ Material:
     - _ShapeDistortYSpeed: 0.1
     - _ShapeRotationOffset: 0
     - _ShapeRotationSpeed: 0
-    - _ShapeXSpeed: 0.1
-    - _ShapeYSpeed: 0.1
+    - _ShapeXSpeed: 0
+    - _ShapeYSpeed: 0
     - _SoftFactor: 0.5
-    - _SrcMode: 5
+    - _SrcMode: 1
     - _TextureScrollXSpeed: 1
     - _TextureScrollYSpeed: 0
     - _TimingSeed: 0

@@ -5,6 +5,7 @@ using _Chi.Scripts.Movement;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
 using _Chi.Scripts.Utilities;
+using BulletPro;
 using Pathfinding;
 using Pathfinding.RVO;
 using UnityEngine;
@@ -20,9 +21,12 @@ namespace _Chi.Scripts.Mono.Entities
         [NonSerialized] public bool hasRb;
         [NonSerialized] public Collider2D triggerCollider; 
         [NonSerialized] public SpriteRenderer renderer;
+        [NonSerialized] public bool hasRenderer;
         [NonSerialized] public bool hasAnimator;
         [NonSerialized] public bool animatorSetup;
         [NonSerialized] public Animator animator;
+        [NonSerialized] public bool hasBulletReceiver;
+        [NonSerialized] public BulletReceiver bulletReceiver;
 
         #endregion
 
@@ -70,16 +74,25 @@ namespace _Chi.Scripts.Mono.Entities
 
             animator = GetComponent<Animator>();
             hasAnimator = animator != null;
+            if (hasAnimator)
+            {
+                GetComponent<Animator>().SetFloat("Offset", Random.Range(0.0f, 1.0f));
+            }
+            
+            bulletReceiver = GetComponent<BulletReceiver>();
+            hasBulletReceiver = bulletReceiver != null;
 
             Register();
 
             miscSettingsReference = Gamesystem.instance.miscSettings;
             
             renderer = GetComponent<SpriteRenderer>();
-            if (renderer != null)
+            hasRenderer = renderer != null;
+            if (hasRenderer)
             {
                 originalMaterial = renderer.material;
             }
+
             
             currentEffects = new Dictionary<ImmediateEffect, float>(32);
             vfx = new Dictionary<GameObject, GameObject>(16);
@@ -178,7 +191,7 @@ namespace _Chi.Scripts.Mono.Entities
             return true;
         }
 
-        public bool ReceiveDamage(float damage, Entity damager, DamageFlags damageFlags = DamageFlags.None)
+        public virtual bool ReceiveDamage(float damage, Entity damager, DamageFlags damageFlags = DamageFlags.None)
         {
             if (damage <= 0 || !canReceiveDamage) return false;
 
@@ -359,7 +372,7 @@ namespace _Chi.Scripts.Mono.Entities
         
         public void SetTemporaryMaterial(Material material, float duration = 0)
         {
-            if (renderer.material == originalMaterial)
+            if (hasRenderer && renderer.material == originalMaterial)
             {
                 renderer.material = material;
 
@@ -372,7 +385,7 @@ namespace _Chi.Scripts.Mono.Entities
 
         public void ResetTemporaryMaterial(Material material)
         {
-            if (renderer.sharedMaterial == material)
+            if (hasRenderer && renderer.sharedMaterial == material)
             {
                 renderer.material = originalMaterial;
             }

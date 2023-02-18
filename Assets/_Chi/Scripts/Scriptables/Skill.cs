@@ -19,14 +19,35 @@ namespace _Chi.Scripts.Scriptables
         {
             return entity.GetSkillData(this) as T;
         }
-
-        public virtual bool CanTrigger(Entity entity)
+        
+        public virtual void SetActivated(Entity entity, bool activated)
         {
             SkillData skillData = GetSkillData<SkillData>(entity);
 
-            if (skillData == null) return false;
+            if (skillData == null) return;
 
-            return skillData.nextPossibleUse <= Time.time;
+            skillData.activated = activated;
+        }
+
+        public virtual bool CanTrigger(Entity entity, out bool consumedSkillCharge)
+        {
+            consumedSkillCharge = false;
+            
+            SkillData skillData = GetSkillData<SkillData>(entity);
+
+            if (skillData == null) return false;
+            
+            if(skillData.activated) return false;
+            
+            if(entity is Player player && player.extraSkillCharges[this] > 0)
+            {
+                consumedSkillCharge = true;
+                player.RemoveExtraSkillCharges(this, 1);
+                return true;
+            }
+            
+            var skillReady = skillData.nextPossibleUse <= Time.time;
+            return skillReady;
         }
 
         public virtual void SetNextSkillUse(Entity entity, float delay)
@@ -53,9 +74,9 @@ namespace _Chi.Scripts.Scriptables
             return reuseDelay;
         }
 
-        public void SpawnPrefabVfx(Vector3 position, Quaternion rotation, Transform parent)
+        public GameObject SpawnPrefabVfx(Vector3 position, Quaternion rotation, Transform parent)
         {
-            if (vfx == null) return;
+            if (vfx == null) return null;
             
             var instance = Gamesystem.instance.poolSystem.SpawnGo(vfx);
 
@@ -67,6 +88,8 @@ namespace _Chi.Scripts.Scriptables
             {
                 Gamesystem.instance.Schedule(Time.time + vfxDespawnAfter, () => Gamesystem.instance.poolSystem.DespawnGo(vfx, instance));
             }
+
+            return instance;
         }
 
         public abstract SkillData CreateDefaultSkillData();
@@ -74,6 +97,8 @@ namespace _Chi.Scripts.Scriptables
 
     public abstract class SkillData
     {
+        public bool activated;
+        
         public float nextPossibleUse;
 
         public float lastUse;

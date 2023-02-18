@@ -95,5 +95,19 @@ namespace _Chi.Scripts.Utilities
                 Object.Destroy(c.gameObject);
             }
         }
+        
+        public static Vector2 GetRandomPositionAround(Vector2 center, float minDistance, float maxDistance)
+        {
+            float x = Random.Range(minDistance, maxDistance);
+            float y = Random.Range(minDistance, maxDistance);
+
+            if (Random.Range(0, 2) == 0)
+                x *= -1;
+
+            if (Random.Range(0, 2) == 0)
+                y *= -1;
+
+            return new Vector2(center.x + x, center.y + y);
+        }
     }
 }

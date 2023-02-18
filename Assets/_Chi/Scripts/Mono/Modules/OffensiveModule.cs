@@ -2,8 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
+using _Chi.Scripts.Mono.Entities;
+using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
+using _Chi.Scripts.Utilities;
 using BulletPro;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -13,6 +16,7 @@ namespace _Chi.Scripts.Mono.Modules
     public abstract class OffensiveModule : Module, IBulletEmitterEntityParameters
     {
         [NonSerialized] public BulletEmitter emitter;
+        [NonSerialized] public bool hasEmitter;
 
         public List<Transform> muzzles;
         private int lastMuzzle;
@@ -29,6 +33,8 @@ namespace _Chi.Scripts.Mono.Modules
 
         public TrailParameters trailParameters;
 
+        public BulletBehaviorType bulletBehavior = BulletBehaviorType.Default;
+
         protected bool activated;
 
         public override void Awake()
@@ -37,6 +43,7 @@ namespace _Chi.Scripts.Mono.Modules
 
             additionalEffects = new();
             emitter = GetComponent<BulletEmitter>();
+            hasEmitter = emitter != null;
         }
 
         public override void Start()
@@ -47,8 +54,11 @@ namespace _Chi.Scripts.Mono.Modules
         public override bool ActivateEffects()
         {
             if (!base.ActivateEffects() || activated) return false;
-            
-            emitter.shootInstruction.AddListener(OnShootInstruction);
+
+            if (hasEmitter)
+            {
+                emitter.shootInstruction.AddListener(OnShootInstruction);
+            }
             
             activated = true;
             StartCoroutine(UpdateLoop());
@@ -59,7 +69,11 @@ namespace _Chi.Scripts.Mono.Modules
         public override bool DeactivateEffects()
         {
             if (!base.DeactivateEffects() || !activated) return false;
-            emitter.shootInstruction.RemoveListener(OnShootInstruction);
+
+            if (hasEmitter)
+            {
+                emitter.shootInstruction.RemoveListener(OnShootInstruction);
+            }
             activated = false;
             return true;
         }
@@ -85,6 +99,44 @@ namespace _Chi.Scripts.Mono.Modules
         {
             
         }
+
+        public virtual void OnBulletEffectGiven(Bullet bullet, BulletBehavior behavior, bool bulletWillDie)
+        {
+            if (!bulletWillDie && bulletBehavior.HasFlag(BulletBehaviorType.RetargetOnCollision))
+            {
+                var nearest = ((Player) parent).GetNearestEnemy(bullet.self.position, (e) =>
+                {
+                    if (behavior.lastAffectedEnemy == e) return false;
+
+                    for (var index = 0; index < behavior.collidedWith.Length; index++)
+                    {
+                        var bulletReceiver = behavior.collidedWith[index];
+                        if (bulletReceiver == null) break;
+                        if(e.hasBulletReceiver && e.bulletReceiver == bulletReceiver) return false;
+                    }
+                    
+                    var angle = bullet.moduleMovement.GetAngleTo(e.transform);
+                    
+                    return Math.Abs(angle) < 75 && Utils.Dist2(e.GetPosition(), bullet.self.position) < Math.Pow(stats.projectileRange.GetValue(), 2);
+                });
+
+                if (nearest != null)
+                {
+                    bullet.moduleMovement.Rotate(bullet.moduleMovement.GetAngleTo(nearest.transform));
+                }
+            }
+        }
+
+        public float GetFireRate()
+        {
+            var retValue = stats.fireRate.GetValue();
+            if (parent is Player player)
+            {
+                retValue *= player.stats.moduleFireRateMul.GetValue();
+            }
+
+            return retValue;
+        }
     }
 
     [Serializable]
@@ -95,5 +147,12 @@ namespace _Chi.Scripts.Mono.Modules
         public Material material;
 
         public float trailLengthTime;
+    }
+
+    [Flags]
+    public enum BulletBehaviorType
+    {
+        Default = 0,
+        RetargetOnCollision = 1
     }
 }

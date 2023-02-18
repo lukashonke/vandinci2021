@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3bddc995d524823b745a20abca403e0, type: 3}
+  m_Name: Shockwave
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  reuseDelay: 4
+  vfx: {fileID: 7352320764658738527, guid: e5e5400d7a40da74e81783a56fb1e236, type: 3}
+  vfxDespawnAfter: 0
+  effects:
+  - {fileID: 11400000, guid: 2888de4cdfdab9d49a4833d8ea420960, type: 2}
+  baseRadius: 3.5
+  effectStrength: 20
+  effectsDelay: 0.1
+  targetType: 0

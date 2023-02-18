@@ -58,7 +58,13 @@ namespace _Chi.Scripts.Mono.Mission
 
             foreach (var prefab in mission.missionScenarios)
             {
-                Instantiate(prefab, this.gameObject.transform);
+                var mi = Instantiate(prefab, this.gameObject.transform);
+                var mission = mi.GetComponent<Mission>();
+
+                if (!mission.forceStartAtIndex)
+                {
+                    mission.startIndex = run.missionWaweIndex;
+                }
             }
 
             StartCoroutine(Updater());
@@ -84,9 +90,24 @@ namespace _Chi.Scripts.Mono.Mission
         {
             var run = Gamesystem.instance.progress.progressData.run;
             run.missionIndex = index;
+            run.missionWaweIndex = 0;
             Gamesystem.instance.progress.Save();
             
             ReloadScene();
+        }
+        
+        public void ChangeMissionWave(int index)
+        {
+            var run = Gamesystem.instance.progress.progressData.run;
+            run.missionWaweIndex = index;
+            Gamesystem.instance.progress.Save();
+            
+            ReloadScene();
+        }
+
+        public Mission GetCurrentFirstMission()
+        {
+            return this.GetComponentInChildren<Mission>();
         }
 
         public void OnPlayerDie()

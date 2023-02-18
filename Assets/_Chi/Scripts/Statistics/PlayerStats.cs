@@ -28,6 +28,10 @@ namespace _Chi.Scripts.Statistics
         public Stat skillReuseMul = new Stat();
 
         public Stat skillPowerMul = new Stat();
+        
+        public Stat skillExtraChargeCount = new Stat();
+        
+        public Stat skillExtraChargeLoadMul = new Stat();
 
         public Stat skillUseHealthPercent = new Stat();
 
@@ -40,5 +44,7 @@ namespace _Chi.Scripts.Statistics
         public Stat takeDamageAfterSkillUseMul = new Stat();
 
         public Stat takeDamageFaterSkillUseDuration = new Stat();
+
+        public Stat moduleFireRateMul = new Stat();
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Mono.Ui;
 using _Chi.Scripts.Mono.Ui.Dialogs;
@@ -10,6 +11,7 @@ using _Chi.Scripts.Utilities;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
@@ -35,7 +37,8 @@ public class UiManager : MonoBehaviour
     [Required] public TextMeshProUGUI gold;
     [Required] public TextMeshProUGUI time;
     [Required] public TextMeshProUGUI killed;
-    [Required] public TMPro.TMP_Dropdown dropdown;
+    [FormerlySerializedAs("dropdown")] [Required] public TMPro.TMP_Dropdown missionSelector;
+    [Required] public TMPro.TMP_Dropdown missionWaweSelector;
     [Required] public TextMeshProUGUI missionText;
 
     public SkillIndicatorUi[] skillIndicators;
@@ -50,26 +53,45 @@ public class UiManager : MonoBehaviour
 
         skillIndicators = GetComponentsInChildren<SkillIndicatorUi>();
         
-        dropdown.onValueChanged.AddListener(OnMissionSelectorChange);
+        missionSelector.onValueChanged.AddListener(OnMissionSelectorChange);
+        missionWaweSelector.onValueChanged.AddListener(OnMissionWaweSelectorChange);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        dropdown.options.Add(new TMP_Dropdown.OptionData()
+        missionSelector.options.Add(new TMP_Dropdown.OptionData()
         {
             text = "Change mission"
         });  
         
+        StartCoroutine(UpdateCoroutine());
+        StartCoroutine(LoadMissionWawes());
+    }
+
+    private IEnumerator LoadMissionWawes()
+    {
+        yield return null;
+        
         foreach (var mission in Gamesystem.instance.missionDatabase.missions)
         {
-            dropdown.options.Add(new TMP_Dropdown.OptionData()
+            missionSelector.options.Add(new TMP_Dropdown.OptionData()
             {
-                text = mission.name
+                text = mission.name,
+                
             });    
         }
-        
-        StartCoroutine(UpdateCoroutine());
+
+        foreach (var go in Gamesystem.instance.missionManager.GetCurrentFirstMission().events)
+        {
+            if (!string.IsNullOrEmpty(go.eventName))
+            {
+                missionWaweSelector.options.Add(new TMP_Dropdown.OptionData()
+                {
+                    text = go.eventName
+                });
+            }
+        }
     }
 
     private IEnumerator UpdateCoroutine()
@@ -104,12 +126,21 @@ public class UiManager : MonoBehaviour
         {
             var skill = player.skills[index];
             var data = player.GetSkillData(skill);
-            float reloadPercentage;
-            reloadPercentage = (Time.time - data.lastUse) / skill.GetReuseDelay(player);
-            if (reloadPercentage > 1) reloadPercentage = 1;
 
+            if (skill.GetReuseDelay(player) > 0)
+            {
+                float reloadPercentage;
+                reloadPercentage = (Time.time - data.lastUse) / skill.GetReuseDelay(player);
+                if (reloadPercentage > 1) reloadPercentage = 1;
+
+                skillIndicators[index].SetReloadPercentage(reloadPercentage);
+            }
+            else
+            {
+                skillIndicators[index].SetReloadPercentage(1);
+            }
+            
             skillIndicators[index].SetSkill(skill);
-            skillIndicators[index].SetReloadPercentage(reloadPercentage);
         }
     }
 
@@ -187,7 +218,7 @@ public class UiManager : MonoBehaviour
         }
         
         // set to this to show on top
-        currentActionsPanel.transform.parent = this.transform;
+        currentActionsPanel.transform.SetParent(this.transform, true);
     }
 
     public void SetAddingUiItem(AddingUiItem module)
@@ -290,7 +321,7 @@ public class UiManager : MonoBehaviour
         }
         
         currentTooltip = Instantiate(moduleTooltipPrefab, pos, Quaternion.identity, targetTransform);
-        currentTooltip.transform.parent = this.transform;
+        currentTooltip.transform.SetParent(this.transform, true);
         var dialog = currentTooltip.GetComponent<ModuleTooltip>();
         dialog.Initialise(prefab, level, type);
     }
@@ -298,6 +329,16 @@ public class UiManager : MonoBehaviour
     public void OnMissionSelectorChange(int index)
     {
         Gamesystem.instance.missionManager.ChangeMission(index - 1);
+    }
+    
+    public void OnMissionWaweSelectorChange(int optionIndex)
+    {
+        var option = missionWaweSelector.options[optionIndex];
+        var name = option.text;
+        var wave = Gamesystem.instance.missionManager.GetCurrentFirstMission().events.First(e => e.eventName == name);
+        var waveIndex = Gamesystem.instance.missionManager.GetCurrentFirstMission().events.IndexOf(wave);
+        
+        Gamesystem.instance.missionManager.ChangeMissionWave(waveIndex);
     }
 
     public enum TooltipAlign

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
+using _Chi.Scripts.Mono.Misc;
 using _Chi.Scripts.Utilities;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -19,6 +20,8 @@ namespace _Chi.Scripts.Mono.Modules
         public float rotationSpeed = 500;
 
         public bool instantRotation = true;
+
+        public List<SetVisualItemSlot> visualItems;
 
         [NonSerialized] public bool effectsActivated;
 
@@ -51,6 +54,14 @@ namespace _Chi.Scripts.Mono.Modules
         public virtual void OnAddedToSlot()
         {
             ActivateEffects();
+
+            if (visualItems != null && parent is Player player)
+            {
+                foreach (var item in visualItems)
+                {
+                    player.SetVisualItems(item, false);
+                }
+            }
         }
 
         public virtual void OnRemovedFromSlot()
@@ -67,6 +78,14 @@ namespace _Chi.Scripts.Mono.Modules
                     {
                         moduleSlot.currentModule.DeactivateEffects();
                     }
+                }
+            }
+            
+            if (visualItems != null && parent is Player player)
+            {
+                foreach (var item in visualItems)
+                {
+                    player.SetVisualItems(item, true);
                 }
             }
         }
@@ -121,5 +140,11 @@ namespace _Chi.Scripts.Mono.Modules
         }
 
         public virtual List<(string title, string value)> GetUiStats(int level) => null;
+    }
+
+    public class SetVisualItemSlot
+    {
+        public VisualItemSlotType slotType;
+        public GameObject prefab;
     }
 }

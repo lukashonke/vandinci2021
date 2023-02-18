@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using _Chi.Scripts.Persistence;
 using _Chi.Scripts.Scriptables.Dtos;
 using _Chi.Scripts.Utilities;
@@ -136,6 +137,13 @@ namespace _Chi.Scripts.Mono.Ui
             var run = Gamesystem.instance.progress.progressData.run;
 
             if (run.skillPrefabIds == null) run.skillPrefabIds = new List<SlotItem>();
+
+            var existing = run.skillPrefabIds.FirstOrDefault(s => s.slot == slot.index);
+
+            if (existing != null)
+            {
+                run.skillPrefabIds.Remove(existing);
+            }
             
             run.skillPrefabIds.Add(new SlotItem()
             {

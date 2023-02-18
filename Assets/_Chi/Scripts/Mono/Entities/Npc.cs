@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Extensions;
+using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Movement;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
@@ -36,6 +37,9 @@ namespace _Chi.Scripts.Mono.Entities
         
         public float size = 1f;
         public bool goDirectlyToPlayer;
+        public Vector3? fixedMoveTarget;
+        public bool stopWhenReachFixedMoveTarget;
+        public bool dieWhenReachFixedMoveTarget;
         [NonSerialized] public float dist2ToPlayer;
         [NonSerialized] public float nextDamageTime;
         [NonSerialized] public Vector3 deathDirection;
@@ -49,11 +53,13 @@ namespace _Chi.Scripts.Mono.Entities
         
         [NonSerialized] public Dictionary<Skill, SkillData> skillDatas;
 
+        public ParticleSystem spawnEffect;
+
         #endregion
         #region privates
 
         private float nextPathSeekTime = 0f;
-        private Func<Path> pathToFind = null;
+        public Func<Path> pathToFind = null;
         private bool resetPath;
         private bool isDissolving = false;
         
@@ -63,8 +69,6 @@ namespace _Chi.Scripts.Mono.Entities
         private float originalSpeed;
 
         private bool isRegisteredWithSkills;
-
-        
 
         #endregion
         
@@ -129,7 +133,7 @@ namespace _Chi.Scripts.Mono.Entities
             }
         }
         
-        public void Setup(Vector3 position, Quaternion rotation)
+        public virtual void Setup(Vector3 position, Quaternion rotation)
         {
             Register();
 
@@ -148,9 +152,14 @@ namespace _Chi.Scripts.Mono.Entities
             currentDissolveProcess = 1f;
             
             gameObject.SetActive(true);
+
+            if (spawnEffect != null)
+            {
+                spawnEffect.Play();
+            }
         }
         
-        public void Cleanup()
+        public virtual void Cleanup()
         {
             Unregister();
             
@@ -159,7 +168,10 @@ namespace _Chi.Scripts.Mono.Entities
             this.Heal();
             pathData.SetPath(null);
             pathData.SetDestination(null);
-            renderer.material = originalMaterial;
+            if (hasRenderer)
+            {
+                renderer.material = originalMaterial;
+            }
             isDissolving = false;
             canMove = false;
             maxDistanceFromPlayerBeforeDespawn = null;
@@ -189,9 +201,20 @@ namespace _Chi.Scripts.Mono.Entities
                 skillDatas?.Clear();
                 isRegisteredWithSkills = false;
             }
+
+            fixedMoveTarget = null;
+            stopWhenReachFixedMoveTarget = false;
+            dieWhenReachFixedMoveTarget = false;
+            hasRvoController = rvoController != null;
+            
+            if (hasRvoController)
+            {
+                rvoController.layer = (RVOLayer) 1;
+                rvoController.collidesWith = (RVOLayer) (1);
+            }
         }
 
-        public void ApplyVariant(string variant)
+        public virtual void ApplyVariant(string variant)
         {
             if (variant == null)
             {
@@ -211,8 +234,11 @@ namespace _Chi.Scripts.Mono.Entities
             entityStats.CopyFrom(variantInstance.entityStats);
             stats.CopyFrom(variantInstance.npcStats);
 
-            renderer.sprite = variantInstance.sprite;
-            renderer.material = variantInstance.spriteMaterial;
+            if (hasRenderer)
+            {
+                renderer.sprite = variantInstance.sprite;
+                renderer.material = variantInstance.spriteMaterial;
+            }
 
             if (hasAnimator)
             {
@@ -227,6 +253,22 @@ namespace _Chi.Scripts.Mono.Entities
                 {
                     animatorSetup = false;
                     animator.enabled = false;
+                }
+            }
+
+            if (hasRvoController && variantInstance.parameters != null)
+            {
+                rvoController.priority = variantInstance.parameters.rvoPriority;
+                if (variantInstance.parameters.setRvoLayers)
+                {
+                    rvoController.layer = variantInstance.parameters.rvoLayer;
+                    rvoController.collidesWith = variantInstance.parameters.rvoCollidesWith;
+                }
+
+                if (variantInstance.parameters.disableRvoCollision)
+                {
+                    rvoController.layer = RVOLayer.Layer30;
+                    rvoController.collidesWith = (RVOLayer) (0);
                 }
             }
 
@@ -277,6 +319,12 @@ namespace _Chi.Scripts.Mono.Entities
             }
             else if(cause == DieCause.Despawned)
             {
+                if (hasRvoController)
+                {
+                    rvoController.enabled = false;
+                }
+                canMove = false;
+                
                 if (!this.DeletePooledNpc())
                 {
                     Destroy(this.gameObject);
@@ -309,6 +357,38 @@ namespace _Chi.Scripts.Mono.Entities
         public bool HasMoveTarget()
         {
             return pathToFind != null || pathData.IsPathReady();
+        }
+
+        public void SetFixedMoveTarget(Vector3? target, bool stopWhenReachFixedTarget = false, bool dieWhenReachFixedTarget = false)
+        {
+            if (target == null && dieWhenReachFixedMoveTarget)
+            {
+                OnDie(DieCause.Despawned);
+                return;
+            }
+            else if (target == null && stopWhenReachFixedMoveTarget)
+            {
+                return;
+            }
+            
+            fixedMoveTarget = target;
+            pathData.reachedEndOfPath = false;
+            dieWhenReachFixedMoveTarget = dieWhenReachFixedTarget;
+            stopWhenReachFixedMoveTarget = stopWhenReachFixedTarget;
+        }
+        
+        public void SetMovePath(Path path)
+        {
+            if (path != null)
+            {
+                pathToFind = () => path;
+            }
+            else
+            {
+                resetPath = true;
+                pathToFind = null;
+                SetRotationTarget(null);
+            }
         }
 
         public void SetMoveTarget(Func<Vector3> target)
@@ -361,7 +441,7 @@ namespace _Chi.Scripts.Mono.Entities
 
             if (maxDistanceFromPlayerBeforeDespawn.HasValue)
             {
-                if (dist2ToPlayer > Math.Pow(maxDistanceFromPlayerBeforeDespawn.Value, 2))
+                if (dist2ToPlayer > maxDistanceFromPlayerBeforeDespawn.Value)
                 {
                     if(physicsActivated)
                     {

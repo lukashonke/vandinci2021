@@ -8,6 +8,8 @@ namespace _Chi.Scripts.Statistics
     {
         public Stat projectileCount = new Stat();
         
+        public Stat projectileMultiplier = new Stat();
+        
         public Stat projectileSpreadAngle = new Stat();
         
         public Stat projectileSpeed = new Stat();
@@ -27,6 +29,8 @@ namespace _Chi.Scripts.Statistics
         public Stat projectilePierceCount = new Stat();
 
         public Stat projectilePushForce = new Stat();
+
+        public Stat projectileScale = new Stat();
         
         public float projectilePierceChance;
 

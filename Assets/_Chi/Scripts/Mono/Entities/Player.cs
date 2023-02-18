@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Extensions;
+using _Chi.Scripts.Mono.Misc;
 using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Mono.System;
 using _Chi.Scripts.Mono.Ui;
 using _Chi.Scripts.Persistence;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
+using Com.LuisPedroFonseca.ProCamera2D;
 using DamageNumbersPro;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -18,7 +20,6 @@ namespace _Chi.Scripts.Mono.Entities
 {
     public class Player : Entity
     {
-        
         public PlayerStats stats;
 
         public List<Skill> skills;
@@ -27,6 +28,7 @@ namespace _Chi.Scripts.Mono.Entities
 
         [NonSerialized] public PlayerBody body;
         [NonSerialized] public List<ModuleSlot> slots;
+        [NonSerialized] public PlayerControls controls;
         
         public float nearestEnemiesDetectorRange = 15f;
         
@@ -49,11 +51,18 @@ namespace _Chi.Scripts.Mono.Entities
         public GameObject shieldEffectVfx;
         public GameObject shieldAfterSkillUseVfx;
 
+        [NonSerialized] public Dictionary<Skill, int> extraSkillCharges;
+        [NonSerialized] public Dictionary<Skill, float> extraSkillChargesLoadProgress;
+        [NonSerialized] public VisualItemSlot[] visualItemSlots;
+
         public override void Awake()
         {
             base.Awake();
 
+            extraSkillCharges = new();
+            extraSkillChargesLoadProgress = new();
             body = GetComponentInChildren<PlayerBody>();
+            controls = GetComponent<PlayerControls>();
             slots = new List<ModuleSlot>();
             
             InitializeBody();
@@ -99,7 +108,8 @@ namespace _Chi.Scripts.Mono.Entities
         
         private IEnumerator StatsJob()
         {
-            var waiter = new WaitForSeconds(0.05f);
+            const float refreshDelay = 0.05f;
+            var waiter = new WaitForSeconds(refreshDelay);
 
             float nextHeal = Time.time + 1f;
             
@@ -147,7 +157,25 @@ namespace _Chi.Scripts.Mono.Entities
                         shieldAfterSkillUseVfx.SetActive(false);
                     }
                 }
-                
+
+                var skillCharges = stats.skillExtraChargeCount.GetValueInt();
+                if (skillCharges > 0)
+                {
+                    foreach (var charge in extraSkillCharges)
+                    {
+                        if (charge.Value < skillCharges)
+                        {
+                            extraSkillChargesLoadProgress[charge.Key] += refreshDelay;
+                        }
+                        
+                        if(extraSkillChargesLoadProgress[charge.Key] >= charge.Key.GetReuseDelay(this))
+                        {
+                            extraSkillChargesLoadProgress[charge.Key] = 0;
+                            extraSkillCharges[charge.Key]++;
+                            break;
+                        }
+                    }
+                }
 
                 yield return waiter;
             }   
@@ -267,6 +295,18 @@ namespace _Chi.Scripts.Mono.Entities
             }
         }
 
+        public override bool ReceiveDamage(float damage, Entity damager, DamageFlags damageFlags = DamageFlags.None)
+        {
+            var ret = base.ReceiveDamage(damage, damager, damageFlags);
+
+            if (damage > 0)
+            {
+                ProCamera2DShake.Instance.Shake("PlayerDamage");
+            }
+            
+            return ret;
+        }
+
         public override bool CanReceiveDamage(float damage, Entity damager)
         {
             nextRestoreShield = Time.time + stats.singleShieldRechargeDelay.GetValue();
@@ -349,6 +389,9 @@ namespace _Chi.Scripts.Mono.Entities
         public void InitializeBody()
         {
             slots = body.GetComponentsInChildren<ModuleSlot>().ToList();
+            visualItemSlots = GetComponentsInChildren<VisualItemSlot>();
+
+            body.Initialise();
         }
 
         public ModuleSlot GetSlotById(int slotId)
@@ -381,6 +424,11 @@ namespace _Chi.Scripts.Mono.Entities
             return skill.Trigger(this);
         }
 
+        public bool IsStillActivated(Skill skill)
+        {
+            return controls.IsActionPressed(GetSkillSlot(skill));
+        }
+
         public Skill GetSkill(int slot)
         {
             if (skills.Count - 1 >= slot)
@@ -389,6 +437,11 @@ namespace _Chi.Scripts.Mono.Entities
             }
 
             return null;
+        }
+
+        public int GetSkillSlot(Skill skill)
+        {
+            return skills.IndexOf(skill);
         }
 
         public override SkillData GetSkillData(Skill skill)
@@ -431,6 +484,16 @@ namespace _Chi.Scripts.Mono.Entities
             {
                 skillDatas[skill] = skill.CreateDefaultSkillData();
             }
+
+            if (!extraSkillCharges.ContainsKey(skill))
+            {
+                extraSkillCharges[skill] = 0;
+            }
+            
+            if(!extraSkillChargesLoadProgress.ContainsKey(skill))
+            {
+                extraSkillChargesLoadProgress[skill] = 0;
+            }
         }
 
         public void RemoveSkills()
@@ -445,6 +508,8 @@ namespace _Chi.Scripts.Mono.Entities
         {
             skills.Remove(skill);
             skillDatas.Remove(skill);
+            extraSkillCharges.Remove(skill);
+            extraSkillChargesLoadProgress.Remove(skill);
         }
 
         public override void OnSkillUse()
@@ -458,6 +523,34 @@ namespace _Chi.Scripts.Mono.Entities
             }
 
             lastSkillUseTime = Time.time;
+        }
+
+        public void AddExtraSkillCharges(Skill skill, int count)
+        {
+            extraSkillCharges[skill] += count;
+        }
+        
+        public void RemoveExtraSkillCharges(Skill skill, int count)
+        {
+            extraSkillCharges[skill] -= count;
+        }
+
+        public void SetVisualItems(SetVisualItemSlot item, bool remove)
+        {
+            foreach (var slot in visualItemSlots)
+            {
+                if (slot.slotType == item.slotType)
+                {
+                    if (remove)
+                    {
+                        slot.SetContent(null);   
+                    }
+                    else
+                    {
+                        slot.SetContent(item.prefab);
+                    }
+                }
+            }
         }
     }
 }

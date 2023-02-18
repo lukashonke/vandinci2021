@@ -33,6 +33,9 @@ public class Gamesystem : MonoBehaviour
     [Required] public MapGenSettings mapGenSettings;
     [Required] public Tilemap mapGenTilemap;
 
+    [Required]
+    public SpawnAroundSettings spawnAroundSettings;
+
     [Required] public GameObject world;
     [Required] public GameObject worldGenerated;
 
@@ -49,6 +52,7 @@ public class Gamesystem : MonoBehaviour
         instance = this;
         
         prefabDatabase.Initialise();
+        spawnAroundSettings.Initialise();
         
         schedules = new List<FloatWithAction>();
         toRemoveSchedules = new List<int>();

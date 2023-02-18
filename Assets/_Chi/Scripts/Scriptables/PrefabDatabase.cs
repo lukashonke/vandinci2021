@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using _Chi.Scripts.Mono.Entities;
+using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Scriptables.Dtos;
 using _Chi.Scripts.Statistics;
 using DamageNumbersPro;
+using Pathfinding.RVO;
 using Sirenix.OdinInspector;
-using UnityEditor.Animations;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -80,8 +81,8 @@ namespace _Chi.Scripts.Scriptables
         public Material spriteMaterial;
         
         [VerticalGroup("Visuals")]
-        public AnimatorController animatorController;
-
+        public RuntimeAnimatorController animatorController;
+        
         [Required]
         [VerticalGroup("Stats")]
         public EntityStats entityStats;
@@ -95,6 +96,25 @@ namespace _Chi.Scripts.Scriptables
 
         [VerticalGroup("Stats")]
         public Skill skillOnDie;
+        
+        [VerticalGroup("Stats")]
+        public SpawnPrefabParameters parameters;
+    }
+    
+    [Serializable]
+    public class SpawnPrefabParameters
+    {
+        public string spawnAroundEntityGroupName;
+
+        public float rvoPriority = 0.5f;
+
+        public bool disableRvoCollision;
+
+        public bool setRvoLayers;
+        [ShowIf("setRvoLayers")]
+        public RVOLayer rvoLayer;
+        [ShowIf("setRvoLayers")]
+        public RVOLayer rvoCollidesWith;
     }
 
     [Serializable]

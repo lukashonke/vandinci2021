@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
@@ -19,7 +20,8 @@ public class BulletBehavior : BaseBulletBehaviour
 	private TrailRenderer trail;
 
 	private int piercedEnemies = 0;
-	private BulletReceiver[] collidedWith = new BulletReceiver[8];
+	[NonSerialized] public BulletReceiver[] collidedWith = new BulletReceiver[8];
+	[NonSerialized] public Entity lastAffectedEnemy;
 
 	public override void Awake()
 	{
@@ -176,6 +178,8 @@ public class BulletBehavior : BaseBulletBehaviour
 					list.Clear();
 					ListPool<ImmediateEffect>.Release(list);
 				}
+
+				lastAffectedEnemy = entity;
 				
 				bool deactivate = false;
 
@@ -192,6 +196,8 @@ public class BulletBehavior : BaseBulletBehaviour
 				{
 					deactivate = true;
 				}
+				
+				offensiveModule.OnBulletEffectGiven(bullet, this, bulletWillDie: deactivate);
 
 				if (deactivate)
 				{

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Extensions;
@@ -20,6 +21,7 @@ namespace _Chi.Scripts.Mono.Entities
 
         [NonSerialized] public Rigidbody2D rb;
         [NonSerialized] public bool hasRb;
+        [NonSerialized] public Collider2D projectileCollider;
         
         public List<ImmediateEffect> effects;
 
@@ -27,7 +29,10 @@ namespace _Chi.Scripts.Mono.Entities
 
         [NonSerialized] public ProjectileInstanceStats stats;
 
-        [NonSerialized] public int poolId;
+        public int poolId;
+
+        public bool getHitsOnSpawn;
+        public bool noDespawnAfterHit;
 
         public void Shoot(Vector3 direction)
         {
@@ -36,15 +41,23 @@ namespace _Chi.Scripts.Mono.Entities
         
         public void Awake()
         {
-            poolId = this.gameObject.GetInstanceID();
-
             stats = new ProjectileInstanceStats();
+            projectileCollider = GetComponent<Collider2D>();
             rb = GetComponent<Rigidbody2D>();
             hasRb = rb != null;
+        }
+        
+        private List<Collider2D> buffer = new List<Collider2D>(256);
+
+        public void Start()
+        {
+            
         }
 
         public void OnTriggerEnter2D(Collider2D col)
         {
+            if (getHitsOnSpawn) return;
+            
             var entity = col.gameObject.GetEntity();
             if (entity != null && CanAffect(entity))
             {
@@ -67,16 +80,22 @@ namespace _Chi.Scripts.Mono.Entities
             for (var index = 0; index < effects.Count; index++)
             {
                 var effect = effects[index];
-                effect.Apply(entity, owner, null, null, 1);
+                effect.Apply(entity, owner, null, ownerModule, 1);
 
-                bool deactivate = false;
-
-                if (hasOwnerModule && ownerModule is OffensiveModule offensiveModule)
+                if (!noDespawnAfterHit)
                 {
-                    if (offensiveModule.stats.canProjectilePierce > 0)
+                    bool deactivate = false;
+                    if (hasOwnerModule && ownerModule is OffensiveModule offensiveModule)
                     {
-                        stats.piercedEnemies++;
-                        if (stats.piercedEnemies >= offensiveModule.stats.projectilePierceCount.GetValueInt())
+                        if (offensiveModule.stats.canProjectilePierce > 0)
+                        {
+                            stats.piercedEnemies++;
+                            if (stats.piercedEnemies >= offensiveModule.stats.projectilePierceCount.GetValueInt())
+                            {
+                                deactivate = true;
+                            }
+                        }
+                        else
                         {
                             deactivate = true;
                         }
@@ -85,15 +104,11 @@ namespace _Chi.Scripts.Mono.Entities
                     {
                         deactivate = true;
                     }
-                }
-                else
-                {
-                    deactivate = true;
-                }
 
-                if (deactivate)
-                {
-                    Deactivate();
+                    if (deactivate)
+                    {
+                        Deactivate();
+                    }
                 }
             }
         }
@@ -135,6 +150,11 @@ namespace _Chi.Scripts.Mono.Entities
 
             Setup();
         }
+
+        public void SetScale(float f)
+        {
+            transform.localScale = new Vector3(f, f, f);
+        }
         
         private void Setup()
         {
@@ -149,6 +169,34 @@ namespace _Chi.Scripts.Mono.Entities
             }
             
             stats.Reset();
+
+            if (getHitsOnSpawn)
+            {
+                StartCoroutine(GetHitsCoroutine());
+            }
+        }
+
+        private IEnumerator GetHitsCoroutine()
+        {
+            yield return new WaitForFixedUpdate();
+            
+            if (getHitsOnSpawn)
+            {
+                Physics2D.OverlapCollider(projectileCollider, new ContactFilter2D()
+                {
+                    useTriggers = true
+                }, buffer);
+                
+                for (var index = 0; index < buffer.Count; index++)
+                {
+                    var col = buffer[index];
+                    var entity = col.gameObject.GetEntity();
+                    if (entity != null && CanAffect(entity))
+                    {
+                        Affect(entity);
+                    }
+                }
+            }
         }
 
         public void Cleanup()

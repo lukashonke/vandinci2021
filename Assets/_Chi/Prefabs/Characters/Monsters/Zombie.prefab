@@ -34,7 +34,8 @@ Transform:
   m_LocalPosition: {x: 1.31, y: -0.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1814318631217423827}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -119,9 +120,12 @@ MonoBehaviour:
   currentVariant: Zombie
   size: 1
   goDirectlyToPlayer: 1
+  stopWhenReachFixedMoveTarget: 0
+  dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
   poolId: 2
   activateWhenCloseToPlayerDist2: 0
+  spawnEffect: {fileID: 7629372734104407246}
 --- !u!114 &5954188515519120313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,11 +144,11 @@ MonoBehaviour:
   centerBackingField: 1
   locked: 0
   lockWhenNotMoving: 0
-  agentTimeHorizon: 2
-  obstacleTimeHorizon: 2
+  agentTimeHorizon: 0
+  obstacleTimeHorizon: 0
   maxNeighbours: 10
   layer: 1
-  collidesWith: -1
+  collidesWith: 1
   wallAvoidForce: 1
   wallAvoidFalloff: 1
   priority: 0.5
@@ -260,3 +264,54 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1001 &3813434397149436170
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5954188515519120261}
+    m_Modifications:
+    - target: {fileID: 3297139944712010969, guid: ceb725ed0959e904eb75d06473adeeb5, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297139944712010969, guid: ceb725ed0959e904eb75d06473adeeb5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297139944712010969, guid: ceb725ed0959e904eb75d06473adeeb5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297139944712010969, guid: ceb725ed0959e904eb75d06473adeeb5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589917999631807949, guid: ceb725ed0959e904eb75d06473adeeb5, type: 3}
+      propertyPath: m_Name
+      value: SpawnEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704998332210681284, guid: ceb725ed0959e904eb75d06473adeeb5, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704998332210681284, guid: ceb725ed0959e904eb75d06473adeeb5, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704998332210681284, guid: ceb725ed0959e904eb75d06473adeeb5, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ceb725ed0959e904eb75d06473adeeb5, type: 3}
+--- !u!4 &1814318631217423827 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3297139944712010969, guid: ceb725ed0959e904eb75d06473adeeb5, type: 3}
+  m_PrefabInstance: {fileID: 3813434397149436170}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7629372734104407246 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6704998332210681284, guid: ceb725ed0959e904eb75d06473adeeb5, type: 3}
+  m_PrefabInstance: {fileID: 3813434397149436170}
+  m_PrefabAsset: {fileID: 0}

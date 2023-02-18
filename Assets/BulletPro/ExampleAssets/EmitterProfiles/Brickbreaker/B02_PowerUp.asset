@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 15745831
+  uniqueIndex: 8461132
   profile: {fileID: 11400000}
   parent: {fileID: 114630862730644202}
   children: []
@@ -737,6 +737,7 @@ MonoBehaviour:
     typeName: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     requiredComponentName: 
+  layer: 0
   sortingOrder:
     valueTree:
     - settings:
@@ -7538,7 +7539,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 15774328
+  uniqueIndex: 14438465
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -8232,6 +8233,7 @@ MonoBehaviour:
     typeName: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     requiredComponentName: 
+  layer: 0
   sortingOrder:
     valueTree:
     - settings:
@@ -14649,7 +14651,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 3406616
+  uniqueIndex: 9095026
   profile: {fileID: 11400000}
   parent: {fileID: 114697344616406384}
   children:
@@ -14886,6 +14888,7 @@ MonoBehaviour:
     bulletOrigin: {x: 0, y: 0, z: 0}
     useDifferentBullet: 0
     bulletParams: {fileID: 0}
+  hasUnknownBulletAmount: 0
   modifiers: []
   bulletParamsRandom: 0
   listOfPossibleBulletParams: []
@@ -14893,6 +14896,7 @@ MonoBehaviour:
   highestValues: {x: 0, y: 0, z: 0}
   lowestValues: {x: 0, y: 0, z: 0}
   hasBeenSerializedOnce: 1
+  fakeBulletAmount: 0
   foldout0: 0
   foldout1: 0
   foldout2: 0
@@ -14935,7 +14939,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 8412992
+  uniqueIndex: 14098687
   profile: {fileID: 11400000}
   parent: {fileID: 114494325993625066}
   children:

@@ -98,6 +98,26 @@ namespace _Chi.Scripts.Mono.Extensions
 
             return nearest;
         }
+        
+        public static Entity GetFirstEnemy(this Player player, Vector3 from, Func<Entity, bool> condition)
+        {
+            Entity target = null;
+
+            foreach (var entity in player.targetableEnemies)
+            {
+                if (entity is Npc npc && npc.activated && npc.AreEnemies(player) && npc != null)
+                {
+                    //var dist = Utils.Dist2(npc.GetPosition(), from);
+                    if (condition == null || condition(npc))
+                    {
+                        target = entity;
+                        break;
+                    }
+                }
+            }
+
+            return target;
+        }
 
         public static Entity GetNearestEnemy(this Player player, Vector3 from, Func<Entity, bool> condition)
         {
@@ -119,7 +139,7 @@ namespace _Chi.Scripts.Mono.Extensions
 
             return nearest;
         }
-
+        
         private static int GetLayerMask(Entity source, TargetType type)
         {
             int layerMask;
@@ -195,7 +215,16 @@ namespace _Chi.Scripts.Mono.Extensions
                     npc.maxDistanceFromPlayerBeforeDespawn = distanceBeforeDespawn;
                     break;
                 case SpawnPrefabType.Gameobject:
-                    throw new NotImplementedException();
+                    var go2 = GameObject.Instantiate(prefab.prefab);
+                    go2.transform.position = position;
+                    go2.transform.rotation = rotation;
+                    break;
+                case SpawnPrefabType.PoolableGo:
+                    var poolable = Gamesystem.instance.poolSystem.SpawnPoolable(prefab.prefab);
+                    poolable.MoveTo(position);
+                    poolable.Rotate(rotation);
+                    poolable.Run();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }

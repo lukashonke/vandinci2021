@@ -267,7 +267,7 @@ Material:
     - _HologramLineGap: 3
     - _HologramLineSpeed: 0.01
     - _HologramMinAlpha: 0.2
-    - _Hue: 0.579
+    - _Hue: 0.626
     - _InkSpreadContrast: 2
     - _InkSpreadDistance: 3
     - _InkSpreadFade: 1
@@ -291,9 +291,9 @@ Material:
     - _PixelatePixelDensity: 16
     - _PixelsPerUnit: 100
     - _PoisonDensity: 3
-    - _PoisonFade: 0.484
+    - _PoisonFade: 0.8
     - _PoisonNoiseBrightness: 1
-    - _PoisonRecolorFactor: 0.5
+    - _PoisonRecolorFactor: 0
     - _PoisonShiftSpeed: 0.2
     - _RainbowBrightness: 2
     - _RainbowContrast: 1
@@ -305,7 +305,7 @@ Material:
     - _RecolorFade: 1
     - _RectHeight: 100
     - _RectWidth: 100
-    - _Saturation: 1
+    - _Saturation: 0.84
     - _ScreenWidthUnits: 10
     - _ShaderSpace: 0
     - _ShiftHueFade: 1
@@ -454,7 +454,7 @@ Material:
     - _OuterOutlineDistortionIntensity: {r: 0.01, g: 0.01, b: 0, a: 0}
     - _OuterOutlineNoiseScale: {r: 4, g: 4, b: 0, a: 0}
     - _OuterOutlineNoiseSpeed: {r: 0, g: 0.1, b: 0, a: 0}
-    - _PoisonColor: {r: 1.595736, g: 0.19544314, b: 4.6037736, a: 0}
+    - _PoisonColor: {r: 1.6420014, g: 0.15891154, b: 4.8127465, a: 0}
     - _PoisonNoiseScale: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _PoisonNoiseSpeed: {r: 0, g: -0.2, b: 0, a: 0}
     - _RainbowCenter: {r: 0, g: 0, b: 0, a: 0}

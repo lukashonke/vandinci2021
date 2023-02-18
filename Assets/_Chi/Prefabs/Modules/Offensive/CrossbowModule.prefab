@@ -47,14 +47,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
-    SerializedBytes: 2d01110000006100640064006900740069006f006e0061006c004500660066006500630074007300
+    SerializedFormat: 2
+    SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: additionalEffects
+      Entry: 6
+      Data: 
   parent: {fileID: 0}
   slot: {fileID: 0}
   targetUpdateInterval: 0.2
@@ -65,6 +68,9 @@ MonoBehaviour:
     projectileCount:
       baseValue: 1
       value: 1
+    projectileMultiplier:
+      baseValue: 1
+      value: 0
     projectileSpreadAngle:
       baseValue: 5
       value: 0
@@ -81,10 +87,10 @@ MonoBehaviour:
       baseValue: 6
       value: 0
     projectileRange:
-      baseValue: 10
+      baseValue: 8
       value: 0
     projectileLifetime:
-      baseValue: 10
+      baseValue: 0
       value: 0
     canProjectilePierce: 0
     projectilePierceCount:
@@ -109,6 +115,7 @@ MonoBehaviour:
     useTrail: 1
     material: {fileID: 2100000, guid: e88813b48891c204abd79c284e160462, type: 2}
     trailLengthTime: 0.1
+  bulletBehavior: 0
   targetType: 0
 --- !u!212 &6177911479989981830
 SpriteRenderer:

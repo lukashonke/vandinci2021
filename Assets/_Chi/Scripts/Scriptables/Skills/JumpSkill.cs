@@ -14,13 +14,17 @@ namespace _Chi.Scripts.Scriptables.Skills
         
         public override bool Trigger(Entity entity, bool force = false)
         {
-            if (!force && !CanTrigger(entity)) return false;
+            bool usedExtraCharge = false;            
+            if (!force && !CanTrigger(entity, out usedExtraCharge)) return false;
 
             if (entity is Player player)
             {
                 player.StartCoroutine(Jump(player));
-                
-                SetNextSkillUse(entity, GetReuseDelay(player));
+
+                if (!usedExtraCharge)
+                {
+                    SetNextSkillUse(entity, GetReuseDelay(player));
+                }
                 return true;
             }
 
@@ -29,6 +33,8 @@ namespace _Chi.Scripts.Scriptables.Skills
 
         private IEnumerator Jump(Player player)
         {
+            SetActivated(player, true);
+
             SpawnPrefabVfx(player.GetPosition(), player.transform.rotation, null);
             player.OnSkillUse();
             
@@ -54,6 +60,8 @@ namespace _Chi.Scripts.Scriptables.Skills
             player.SetCanReceiveDamage(true);
             
             player.rb.velocity = Vector2.zero;
+            
+            SetActivated(player, false);
         }
 
         public override SkillData CreateDefaultSkillData()

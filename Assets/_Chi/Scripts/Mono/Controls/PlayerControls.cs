@@ -104,6 +104,23 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
+    public bool IsActionPressed(int slot)
+    {
+        switch (slot)
+        {
+            case 0:
+                return _actionses.Skill1.IsPressed;
+            case 1:
+                return _actionses.Skill2.IsPressed;
+            case 2:
+                return _actionses.Skill3.IsPressed;
+            case 3:
+                return _actionses.Skill4.IsPressed;
+        }
+
+        return false;
+    }
+
     private void PerformMovement()
     {
         if (!player.CanMove()) return;
@@ -112,7 +129,7 @@ public class PlayerControls : MonoBehaviour
 
         if (moveDirection.x > 0 || moveDirection.x < 0 || moveDirection.y > 0 || moveDirection.y < 0)
         {
-            player.Move(moveDirection * player.stats.speed.GetValue());
+            player.Move(moveDirection.normalized * player.stats.speed.GetValue());
         }
         else
         {

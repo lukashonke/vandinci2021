@@ -28,6 +28,42 @@ namespace _Chi.Scripts.Movement
             simulator = rvoSimulator.GetSimulator();
         }
         
+        public void OnFixedUpdate()
+        {
+            List<Npc> toMove = holder.npcEntitiesList;
+            int movablesCount = toMove.Count;
+
+            var playerPosition = Gamesystem.instance.objects.currentPlayer.GetPosition();
+
+            foreach (var npc in toMove)
+            {
+                if (npc.fixedMoveTarget.HasValue)
+                {
+                    npc.pathData.currentWaypoint = 0;
+                    npc.pathData.pathWaypoints[0] = npc.GetPosition();
+                    npc.pathData.pathWaypoints[1] = npc.fixedMoveTarget.Value;
+                    npc.SetRotationTarget(npc.fixedMoveTarget.Value);
+                }
+                else if (npc.goDirectlyToPlayer)
+                {
+                    npc.pathData.currentWaypoint = 0;
+                    npc.pathData.pathWaypoints[0] = npc.GetPosition();
+                    npc.pathData.pathWaypoints[1] = playerPosition;
+                    npc.SetRotationTarget(playerPosition);
+                }
+            }
+            
+            (NativeArray<JobHandle> jobHandles, MoveToTargetJob[] movementJobs) result = CreateJobs(toMove, movablesCount);
+            
+            JobHandle.CompleteAll(result.jobHandles);
+            
+            movablesCount = toMove.Count;
+
+            ProcessJobs(toMove, movablesCount, result.jobHandles, result.movementJobs);
+            
+            result.jobHandles.Dispose();
+        }
+        
         /*static readonly ProfilerMarker createJob1 = new ProfilerMarker(ProfilerCategory.Ai, "VanDinci.CreateJob.1");
         static readonly ProfilerMarker createJob2 = new ProfilerMarker(ProfilerCategory.Ai, "VanDinci.CreateJob.2");
         static readonly ProfilerMarker createJob3 = new ProfilerMarker(ProfilerCategory.Ai, "VanDinci.CreateJob.3");*/
@@ -43,7 +79,7 @@ namespace _Chi.Scripts.Movement
             for (var index = 0; index < movablesCount; index++)
             {
                 var npc = toMove[index];
-                if ((npc.pathData.IsPathReady() || npc.goDirectlyToPlayer) && npc.CanMove())
+                if ((npc.pathData.IsPathReady() || npc.goDirectlyToPlayer || npc.fixedMoveTarget.HasValue) && npc.CanMove())
                 {
                     float3 rotateTarget = float3.zero;
 
@@ -73,7 +109,7 @@ namespace _Chi.Scripts.Movement
 
                     npc.pathData.job.movePath = doPath;
                     npc.pathData.job.maxSpeed = doPath ? npc.stats.speed : 0;
-                    npc.pathData.job.reachedEndOfPath = doPath ? npc.pathData.reachedEndOfPath : false;
+                    npc.pathData.job.reachedEndOfPath = false; //doPath ? npc.pathData.reachedEndOfPath : false;
 
                     npc.pathData.job.rvoCalculatedSpeed = npc.pathData.job.hasRvo ? npc.rvoController.rvoAgent.CalculatedSpeed : 0;
                     npc.pathData.job.rvoCalculatedTargetPoint = npc.pathData.job.hasRvo
@@ -93,10 +129,10 @@ namespace _Chi.Scripts.Movement
             var player = Gamesystem.instance.objects.currentPlayer;
             var playerPosition = player.GetPosition();
             
-            for (var index = 0; index < movablesCount; index++)
+            for (var index = movablesCount - 1; index >= 0; index--)
             {
                 var npc = toMove[index];
-                if (!npc.pathData.jobDisposed && (npc.pathData.IsPathReady() || npc.goDirectlyToPlayer) && npc.CanMove())
+                if (!npc.pathData.jobDisposed && (npc.pathData.IsPathReady() || npc.goDirectlyToPlayer || npc.fixedMoveTarget.HasValue) && npc.CanMove())
                 {
                     var data = movementJobs[index];
 
@@ -106,7 +142,7 @@ namespace _Chi.Scripts.Movement
                         
                         npc.pathData.reachedEndOfPath = data.reachedEndOfPath;
                         npc.pathData.currentWaypoint = data.outputWaypoints[0];
-    
+
                         //bool stop = false;
                         
                         //character.pathData.rvoDensityBehavior.Update(character.rvoController.enabled, character.pathData.ReachedDestination(), ref stop, ref character.rvoController.priorityMultiplier, ref character.rvoController.flowFollowingStrength, character.GetPosition());
@@ -150,6 +186,11 @@ namespace _Chi.Scripts.Movement
                         {
                             npc.pathData.reachedEndOfPath = true;
                             npc.pathData.SetPathReady(false);
+                            
+                            if (npc.fixedMoveTarget.HasValue)
+                            {
+                                npc.SetFixedMoveTarget(null);
+                            }
                         }
     
                         if (data.outputs[4])
@@ -183,33 +224,6 @@ namespace _Chi.Scripts.Movement
                     }
                 }
             }
-        }
-
-        public void OnFixedUpdate()
-        {
-            List<Npc> toMove = holder.npcEntitiesList;
-            int movablesCount = toMove.Count;
-
-            var playerPosition = Gamesystem.instance.objects.currentPlayer.GetPosition();
-
-            foreach (var npc in toMove)
-            {
-                if (npc.goDirectlyToPlayer)
-                {
-                    npc.pathData.currentWaypoint = 0;
-                    npc.pathData.pathWaypoints[0] = npc.GetPosition();
-                    npc.pathData.pathWaypoints[1] = playerPosition;
-                    npc.SetRotationTarget(playerPosition);
-                }
-            }
-            
-            (NativeArray<JobHandle> jobHandles, MoveToTargetJob[] movementJobs) result = CreateJobs(toMove, movablesCount);
-            
-            JobHandle.CompleteAll(result.jobHandles);
-
-            ProcessJobs(toMove, movablesCount, result.jobHandles, result.movementJobs);
-            
-            result.jobHandles.Dispose();
         }
     }
     

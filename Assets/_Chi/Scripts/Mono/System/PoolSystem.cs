@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -15,6 +15,8 @@ namespace _Chi.Scripts.Mono.System
         [NonSerialized] public Dictionary<int, ObjectPool<Npc>> npcPools;
         
         [NonSerialized] public Dictionary<GameObject, ObjectPool<GameObject>> goPool;
+        
+        [NonSerialized] public Dictionary<GameObject, ObjectPool<IPoolable>> poolablePool;
 
         public bool collectionChecks = true;
 
@@ -23,6 +25,23 @@ namespace _Chi.Scripts.Mono.System
             projectilePools = new Dictionary<int, ObjectPool<Projectile>>();
             npcPools = new Dictionary<int, ObjectPool<Npc>>();
             goPool = new();
+            poolablePool = new();
+        }
+        
+        public IPoolable SpawnPoolable(GameObject prefab, int maxPoolSize = 100)
+        {
+            if (poolablePool.TryGetValue(prefab, out var pool))
+            {
+                return pool.Get();
+            }
+            else
+            {
+                var newPool = new ObjectPool<IPoolable>(() => CreatePoolableItem(prefab), (a) => OnTakeFromPool(a, prefab),
+                    OnReturnedToPool, OnDestroyPoolObject, collectionChecks, maxPoolSize);
+                poolablePool.Add(prefab, newPool);
+
+                return newPool.Get();
+            }
         }
 
         public GameObject SpawnGo(GameObject prefab, int maxPoolSize = 100)
@@ -76,6 +95,17 @@ namespace _Chi.Scripts.Mono.System
 
                 return newPool.Get();
             }
+        }
+        
+        public bool Despawn(GameObject prefab, IPoolable instance)
+        {
+            if (poolablePool.TryGetValue(prefab, out var pool))
+            {
+                pool.Release(instance);
+                return true;
+            }
+
+            return false;
         }
         
         public bool DespawnGo(GameObject prefab, GameObject instance)
@@ -164,6 +194,28 @@ namespace _Chi.Scripts.Mono.System
         void OnDestroyPoolObject(Npc npc)
         {
             Destroy(npc.gameObject);
+        }
+        
+        IPoolable CreatePoolableItem(GameObject prefab)
+        {
+            var go = Instantiate(prefab.gameObject);
+
+            return go.GetComponent<IPoolable>();
+        }
+
+        void OnReturnedToPool(IPoolable go)
+        {
+            go.Reset();
+        }
+
+        void OnTakeFromPool(IPoolable go, GameObject prefab)
+        {
+            go.Setup(prefab);
+        }
+
+        void OnDestroyPoolObject(IPoolable go)
+        {
+            go.Destroy();
         }
         
         GameObject CreatePooledItem(GameObject prefab)

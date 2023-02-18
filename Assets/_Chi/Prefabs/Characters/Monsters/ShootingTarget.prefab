@@ -118,9 +118,12 @@ MonoBehaviour:
   currentVariant: ShootingTarget
   size: 1
   goDirectlyToPlayer: 1
+  stopWhenReachFixedMoveTarget: 0
+  dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
   poolId: 1
   activateWhenCloseToPlayerDist2: 0
+  spawnEffect: {fileID: 0}
 --- !u!114 &5954188515519120313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +146,7 @@ MonoBehaviour:
   obstacleTimeHorizon: 2
   maxNeighbours: 10
   layer: 1
-  collidesWith: -1
+  collidesWith: 1
   wallAvoidForce: 1
   wallAvoidFalloff: 1
   priority: 0.5

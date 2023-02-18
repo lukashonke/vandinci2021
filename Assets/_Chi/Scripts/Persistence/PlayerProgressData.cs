@@ -23,6 +23,8 @@ namespace _Chi.Scripts.Persistence
 
         public int missionIndex;
         
+        public int missionWaweIndex;
+        
         public List<ModuleInSlot> modulesInSlots;
 
         public List<SlotItem> skillPrefabIds;
