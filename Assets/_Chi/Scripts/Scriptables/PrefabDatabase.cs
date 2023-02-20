@@ -95,7 +95,10 @@ namespace _Chi.Scripts.Scriptables
         public List<PrefabVariantSkill> skills;
 
         [VerticalGroup("Stats")]
-        public Skill skillOnDie;
+        public List<Skill> skillsOnDie;
+        
+        [VerticalGroup("Stats")]
+        public List<ImmediateEffect> effectsOnDie;
         
         [VerticalGroup("Stats")]
         public SpawnPrefabParameters parameters;

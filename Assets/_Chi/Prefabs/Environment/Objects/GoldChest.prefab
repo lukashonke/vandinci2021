@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6549855113248904363}
   - component: {fileID: 5570863261562565206}
   m_Layer: 0
-  m_Name: Chest
+  m_Name: GoldChest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c5c6db557f476780c1782e3fb2d5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   entityStats:
     maxHp: 100
     maxHpAdd: 0
@@ -140,9 +139,15 @@ MonoBehaviour:
     rotationSpeed: 500
     contactDamage: 0
     contactDamageInterval: 1
+  currentVariant: 
   size: 1
   goDirectlyToPlayer: 0
+  stopWhenReachFixedMoveTarget: 0
+  dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
+  poolId: 2000
+  activateWhenCloseToPlayerDist2: 0
+  spawnEffect: {fileID: 0}
 --- !u!114 &5570863261562565206
 MonoBehaviour:
   m_ObjectHideFlags: 0

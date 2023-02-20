@@ -19,6 +19,7 @@ namespace _Chi.Scripts.Mono.Entities
         [ReadOnly] private bool hasOwner;
         [ReadOnly] private bool hasOwnerModule;
 
+
         [NonSerialized] public Rigidbody2D rb;
         [NonSerialized] public bool hasRb;
         [NonSerialized] public Collider2D projectileCollider;
@@ -30,6 +31,7 @@ namespace _Chi.Scripts.Mono.Entities
         [NonSerialized] public ProjectileInstanceStats stats;
 
         public int poolId;
+        public float baseStrength = 1;
 
         public bool getHitsOnSpawn;
         public bool noDespawnAfterHit;
@@ -80,7 +82,7 @@ namespace _Chi.Scripts.Mono.Entities
             for (var index = 0; index < effects.Count; index++)
             {
                 var effect = effects[index];
-                effect.Apply(entity, owner, null, ownerModule, 1);
+                effect.Apply(entity, owner, null, ownerModule, baseStrength);
 
                 if (!noDespawnAfterHit)
                 {
@@ -136,9 +138,12 @@ namespace _Chi.Scripts.Mono.Entities
 
         public void Setup(Module module)
         {
-            this.owner = module.parent;
-            this.ownerModule = module;
-            this.transform.position = ownerModule.GetProjectilePosition();
+            if (module != null)
+            {
+                this.owner = module.parent;
+                this.ownerModule = module;
+                this.transform.position = ownerModule.GetProjectilePosition();
+            }
             
             Setup();
         }

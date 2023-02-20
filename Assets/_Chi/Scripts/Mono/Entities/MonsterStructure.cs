@@ -107,16 +107,7 @@ namespace _Chi.Scripts.Mono.Entities
 
         public void Initialise()
         {
-            prefabsByWeightValues = new Dictionary<int, SpawnPrefab>();
-
-            int index = 0;
-            foreach (var pp in prefabsToSpawn)
-            {
-                for (int i = 0; i < pp.weight; i++)
-                {
-                    prefabsByWeightValues.Add(index++, pp);
-                }
-            }
+            prefabsByWeightValues = prefabsToSpawn.ToWeights();
         }
         
         public SpawnPrefab GetRandomPrefab()

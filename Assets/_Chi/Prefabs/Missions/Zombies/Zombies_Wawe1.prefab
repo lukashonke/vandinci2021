@@ -12,9 +12,14 @@ GameObject:
   - component: {fileID: -2275858408632581110}
   - component: {fileID: 530404185182147840}
   - component: {fileID: -3837949277647058563}
+  - component: {fileID: 766136386234732296}
   - component: {fileID: 8998190245610271498}
   - component: {fileID: -4000076046673859097}
   - component: {fileID: -6502435416312752660}
+  - component: {fileID: -4211533515045996565}
+  - component: {fileID: -5390413756141119465}
+  - component: {fileID: -50647473022081503}
+  - component: {fileID: -4888117272967698136}
   m_Layer: 0
   m_Name: Zombies_Wawe1
   m_TagString: Untagged
@@ -59,7 +64,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   attacksName: 
-  disable: 0
+  disable: 1
   spawns:
   - possiblePrefabs:
     - type: 0
@@ -72,7 +77,7 @@ MonoBehaviour:
     - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 3
+      weight: 2
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: ZombieFast
@@ -89,7 +94,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 20
+        value: 30
         inSlope: 0.083333336
         outSlope: 0.083333336
         tangentMode: 34
@@ -98,7 +103,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 60
-        value: 25
+        value: 35
         inSlope: 0.083333336
         outSlope: 0.083333336
         tangentMode: 34
@@ -253,7 +258,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   waveName: Slow Lake
-  disable: 0
+  disable: 1
   spawns:
   - possiblePrefabs:
     - type: 3
@@ -318,7 +323,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   waveName: Poison Lake
-  disable: 0
+  disable: 1
   spawns:
   - possiblePrefabs:
     - type: 3
@@ -361,6 +366,57 @@ MonoBehaviour:
     spawnGroupSpreadMin: 2
     spawnGroupSpreadMax: 3
     distanceFromPlayerToDespawn: 100
+--- !u!114 &766136386234732296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091413172466918211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  waveName: Walkers
+  disable: 0
+  spawns:
+  - possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieIdleWalker
+    relativePosition: 0
+    behavior: 1
+    roamDistance: 100
+    roamRandomRadius: 3
+    dieWhenReachFixedMoveTarget: 0
+    stopWhenReachFixedMoveTarget: 0
+    spawnTimeMin: 1
+    spawnTimeMax: 2
+    repeatSpawn: 1
+    repeatSpawnIntervalMin: 3
+    repeatSpawnIntervalMax: 4
+    repeatCount: 100
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayer: 5
+    despawnAfter: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 15
 --- !u!114 &8998190245610271498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,7 +439,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   waveName: Runners
-  disable: 0
+  disable: 1
   spawns:
   - possiblePrefabs:
     - type: 0
@@ -392,7 +448,7 @@ MonoBehaviour:
       weight: 1
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: ZombieIdle
+      prefabVariant: ZombieIdleRunner
     relativePosition: 0
     behavior: 2
     roamDistance: 100
@@ -434,7 +490,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   waveName: Spawners
-  disable: 0
+  disable: 1
   spawns:
   - possiblePrefabs:
     - type: 0
@@ -485,7 +541,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   waveName: Spawners Group
-  disable: 0
+  disable: 1
   spawns:
   - possiblePrefabs:
     - type: 0
@@ -514,3 +570,207 @@ MonoBehaviour:
     spawnGroupSpreadMin: 2
     spawnGroupSpreadMax: 3
     distanceFromPlayerToDespawn: 100
+--- !u!114 &-4211533515045996565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091413172466918211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  waveName: Gold Chest
+  disable: 1
+  spawns:
+  - possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      prefabNpc: {fileID: 6549855113248904363, guid: 1c81a7dae3b95f84c8b9d6f332adf2f1, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 0
+      noRotation: 1
+      prefabVariant: GoldChestSmall
+    relativePosition: 0
+    behavior: 3
+    roamDistance: 100
+    roamRandomRadius: 3
+    dieWhenReachFixedMoveTarget: 0
+    stopWhenReachFixedMoveTarget: 0
+    spawnTimeMin: 1
+    spawnTimeMax: 2
+    repeatSpawn: 1
+    repeatSpawnIntervalMin: 3
+    repeatSpawnIntervalMax: 4
+    repeatCount: 100
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayer: 5
+    despawnAfter: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 1500
+--- !u!114 &-5390413756141119465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091413172466918211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  waveName: Monster House
+  disable: 1
+  spawns:
+  - possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      prefabNpc: {fileID: 4644276642516627949, guid: 53c3ec728c7d7424bba79414dc812cd2, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 0
+      noRotation: 1
+      prefabVariant: MonsterHouseSmall
+    relativePosition: 0
+    behavior: 3
+    roamDistance: 100
+    roamRandomRadius: 3
+    dieWhenReachFixedMoveTarget: 0
+    stopWhenReachFixedMoveTarget: 0
+    spawnTimeMin: 1
+    spawnTimeMax: 2
+    repeatSpawn: 1
+    repeatSpawnIntervalMin: 3
+    repeatSpawnIntervalMax: 4
+    repeatCount: 100
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayer: 5
+    despawnAfter: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 1500
+--- !u!114 &-50647473022081503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091413172466918211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  waveName: Exploding Decoys
+  disable: 1
+  spawns:
+  - possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      prefabNpc: {fileID: 6549855113248904363, guid: 95485f9b1a9973140bc1febcd04fe496, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 0
+      noRotation: 1
+      prefabVariant: ExplodingDecoy
+    relativePosition: 0
+    behavior: 3
+    roamDistance: 100
+    roamRandomRadius: 3
+    dieWhenReachFixedMoveTarget: 0
+    stopWhenReachFixedMoveTarget: 0
+    spawnTimeMin: 1
+    spawnTimeMax: 2
+    repeatSpawn: 1
+    repeatSpawnIntervalMin: 3
+    repeatSpawnIntervalMax: 4
+    repeatCount: 100
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayer: 5
+    despawnAfter: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 1500
+--- !u!114 &-4888117272967698136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091413172466918211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  waveName: Exploding Decoys
+  disable: 1
+  spawns:
+  - possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieBloaterExploding
+    relativePosition: 0
+    behavior: 0
+    roamDistance: 100
+    roamRandomRadius: 3
+    dieWhenReachFixedMoveTarget: 0
+    stopWhenReachFixedMoveTarget: 0
+    spawnTimeMin: 1
+    spawnTimeMax: 2
+    repeatSpawn: 1
+    repeatSpawnIntervalMin: 3
+    repeatSpawnIntervalMax: 4
+    repeatCount: 100
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayer: 5
+    despawnAfter: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 1500

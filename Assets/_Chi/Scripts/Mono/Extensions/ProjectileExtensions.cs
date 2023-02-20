@@ -8,6 +8,17 @@ namespace _Chi.Scripts.Mono.Extensions
 {
     public static class ProjectileExtensions
     {
+        public static Projectile SpawnProjectile(this Projectile prefab, Entity entity)
+        {
+            var projectile = Gamesystem.instance.poolSystem.Spawn(prefab);
+
+            var hash = projectile.GetHashCode();
+
+            projectile.Setup(entity);
+
+            return projectile;
+        }
+        
         public static Projectile SpawnProjectile(this Projectile prefab, Module module)
         {
             var projectile = Gamesystem.instance.poolSystem.Spawn(prefab);

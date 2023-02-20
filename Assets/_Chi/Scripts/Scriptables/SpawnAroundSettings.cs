@@ -48,9 +48,10 @@ namespace _Chi.Scripts.Scriptables
                     var spread = Random.Range(settings.spawnGroupSpreadMin, settings.spawnGroupSpreadMax);
             
                     var targetPosition = spawnPosition + (new Vector3(i*spread, 0, 0));
+                    
+                    var spawnPrefab = settings.GetRandomPrefab();
+                    var spawned = spawnPrefab.SpawnOnPosition(targetPosition, position, settings.distanceFromPlayerToDespawn);
             
-                    var spawned = settings.SpawnOnPosition(targetPosition, settings.GetRandomPrefab(), position);
-
                     if (spawned != null)
                     {
                         Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
@@ -69,7 +70,9 @@ namespace _Chi.Scripts.Scriptables
 
                         var targetPosition = spawnPosition + (new Vector3(column * spread, row * spread, 0));
 
-                        var spawned = settings.SpawnOnPosition(targetPosition, settings.GetRandomPrefab(), position);
+                        var spawnPrefab = settings.GetRandomPrefab();
+                        var spawned = spawnPrefab.SpawnOnPosition(targetPosition, position, settings.distanceFromPlayerToDespawn);
+                        
                         Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
 
                         spawnCount--;
@@ -103,16 +106,7 @@ namespace _Chi.Scripts.Scriptables
 
         public void Initialise(float time)
         {
-            prefabsByWeightValues = new Dictionary<int, SpawnPrefab>();
-
-            int index = 0;
-            foreach (var pp in possiblePrefabs)
-            {
-                for (int i = 0; i < pp.weight; i++)
-                {
-                    prefabsByWeightValues.Add(index++, pp);
-                }
-            }
+            prefabsByWeightValues = possiblePrefabs.ToWeights();
         }
         
         public float GetCountToSpawn(float time)
@@ -132,57 +126,6 @@ namespace _Chi.Scripts.Scriptables
         public float GetDistanceFromPlayer(float time)
         {
             return distanceFromPlayer;
-        }
-
-        public Entity SpawnOnPosition(Vector3 position, SpawnPrefab prefab, Vector3 attackTarget)
-        {
-            Quaternion rotation;
-
-            if (prefab.rotateTowardsPlayer)
-            {
-                rotation = Quaternion.LookRotation(position - attackTarget, Vector3.forward);
-                rotation.x = 0;
-                rotation.y = 0;
-            }
-            else if (prefab.noRotation)
-            {
-                rotation = Quaternion.identity;
-            }
-            else
-            {
-                rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
-            }
-            
-            switch (prefab.type)
-            {
-                case SpawnPrefabType.PooledNpc:
-                    var npc = prefab.prefabNpc.SpawnPooledNpc(position, rotation);
-                    Gamesystem.instance.prefabDatabase.ApplyPrefabVariant(npc, prefab.prefabVariant);
-                    npc.maxDistanceFromPlayerBeforeDespawn = distanceFromPlayerToDespawn * distanceFromPlayerToDespawn;
-                    return npc;
-                case SpawnPrefabType.NonPooledNpc:
-                    var go = Object.Instantiate(prefab.prefabNpc.gameObject, position, rotation);
-
-                    var npc2 = go.GetComponent<Npc>();
-                    Gamesystem.instance.prefabDatabase.ApplyPrefabVariant(npc2, prefab.prefabVariant);
-                    npc2.maxDistanceFromPlayerBeforeDespawn = distanceFromPlayerToDespawn * distanceFromPlayerToDespawn;
-                    return npc2;
-                case SpawnPrefabType.Gameobject:
-                    var go2 = Object.Instantiate(prefab.prefab);
-                    go2.transform.position = position;
-                    go2.transform.rotation = rotation;
-                    return null;
-                case SpawnPrefabType.PoolableGo:
-                    var poolable = Gamesystem.instance.poolSystem.SpawnPoolable(prefab.prefab);
-                    poolable.MoveTo(position);
-                    poolable.Rotate(rotation);
-                    poolable.Run();
-                    return null;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-
-            return null;
         }
     }
 }

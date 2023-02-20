@@ -22,6 +22,8 @@ namespace _Chi.Scripts.Mono.Entities
 
         public void OnTriggerEnter2D(Collider2D col)
         {
+            if (col.gameObject.name != "Player") return;
+            
             var entity = col.gameObject.GetEntity();
             if (CanPickup(entity))
             {

@@ -140,7 +140,7 @@ namespace _Chi.Scripts.Mono.Entities
             var transform1 = transform;
             transform1.position = position;
             transform1.rotation = rotation;
-            canMove = true;
+            SetCanMove(true);
             
             if (hasRvoController)
             {
@@ -173,7 +173,7 @@ namespace _Chi.Scripts.Mono.Entities
                 renderer.material = originalMaterial;
             }
             isDissolving = false;
-            canMove = false;
+            SetCanMove(false);
             maxDistanceFromPlayerBeforeDespawn = null;
             
             SetImmobilizedUntil(0);
@@ -247,7 +247,7 @@ namespace _Chi.Scripts.Mono.Entities
                     animator.enabled = true;
                     animatorSetup = true;
                     animator.runtimeAnimatorController = variantInstance.animatorController;
-                    animator.SetFloat("MovementSpeed", stats.speed);
+                    animator.SetFloat("MovementSpeed", canMove ? stats.speed : 0);
                 }
                 else
                 {
@@ -300,9 +300,12 @@ namespace _Chi.Scripts.Mono.Entities
             {
                 if (!isDissolving)
                 {
-                    if (currentVariantInstance?.skillOnDie != null)
+                    if (currentVariantInstance?.skillsOnDie != null)
                     {
-                        currentVariantInstance.skillOnDie.Trigger(this, force: true);
+                        foreach (var skill in currentVariantInstance.skillsOnDie)
+                        {
+                            skill.Trigger(this, force: true);    
+                        }
                     }
                     
                     Gamesystem.instance.OnKilled(this);
@@ -310,7 +313,7 @@ namespace _Chi.Scripts.Mono.Entities
                     Gamesystem.instance.killEffectManager.StartDissolve(this);
             
                     isDissolving = true;
-                    canMove = false;
+                    SetCanMove(false);
                     if (hasRvoController)
                     {
                         rvoController.enabled = false;
@@ -323,7 +326,7 @@ namespace _Chi.Scripts.Mono.Entities
                 {
                     rvoController.enabled = false;
                 }
-                canMove = false;
+                SetCanMove(false);
                 
                 if (!this.DeletePooledNpc())
                 {
@@ -454,6 +457,13 @@ namespace _Chi.Scripts.Mono.Entities
                 }
             }
 
+
+            /*var visible = player.stats.visibilityRange.GetValue() > dist2ToPlayer;
+            if (hasRenderer)
+            {
+                renderer.enabled = visible;
+            }*/
+
             if (!physicsActivated && player.IsInNearbyDistance(dist2))
             {
                 player.AddNearbyEnemy(this);
@@ -522,6 +532,16 @@ namespace _Chi.Scripts.Mono.Entities
             if (skillDatas == null) return null;
             
             return skillDatas.TryGetValue(skill, out var data) ? data : null;
+        }
+
+        public override void SetCanMove(bool b)
+        {
+            base.SetCanMove(b);
+
+            if (hasAnimator)
+            {
+                animator.SetFloat("MovementSpeed", canMove ? stats.speed : 0);
+            }
         }
     }
 }

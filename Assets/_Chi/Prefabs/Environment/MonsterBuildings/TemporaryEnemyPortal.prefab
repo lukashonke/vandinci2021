@@ -1,0 +1,194 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1406369169015866087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8997715243490514361}
+  - component: {fileID: 8331878488859867078}
+  m_Layer: 0
+  m_Name: TemporaryEnemyPortal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8997715243490514361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406369169015866087}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.99, y: 1.77, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4365103525194340721}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8331878488859867078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406369169015866087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 865471a0b15c4444b618ac201eb4191c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityStats:
+    maxHp: 999
+    maxHpAdd: 0
+    maxHpMul: 1
+    hp: 999
+  team: 1
+  healthbarOffset: {x: 0, y: 0, z: 0}
+  seeker: {fileID: 0}
+  rvoController: {fileID: 0}
+  stats:
+    speed: 1
+    rotationSpeed: 500
+    contactDamage: 0
+    contactDamageInterval: 1
+  currentVariant: 
+  size: 1
+  goDirectlyToPlayer: 0
+  stopWhenReachFixedMoveTarget: 0
+  dieWhenReachFixedMoveTarget: 0
+  dissolveSpeed: 2
+  poolId: 2004
+  activateWhenCloseToPlayerDist2: 5
+  spawnEffect: {fileID: 0}
+  emitter: {fileID: 0}
+  canShoot: 0
+  prefabProjectile: {fileID: 0}
+  projectilePreview: {fileID: 0}
+  projectilePreviewDuration: 0
+  dropProjectile: {fileID: 0}
+  projectileLifetime: 0
+  projectileRandomRotation: 0
+  dropProjectileLifetime: 0
+  projectileShootInterval: 0
+  distanceToPlayerToShoot: 0
+  continuousPrefabsToSpawn:
+  - type: 0
+    prefab: {fileID: 0}
+    prefabNpc: {fileID: 8399383809299790540, guid: 79f3b2b44854d1645804e36864c7bea1, type: 3}
+    weight: 1
+    rotateTowardsPlayer: 1
+    noRotation: 0
+    prefabVariant: ZombieSpawner_Zombie
+  continuousSpawnIntervalMin: 0.25
+  continuousSpawnIntervalMax: 0.75
+  continuousSpawnWhenPlayerNearbyDist2: 81
+  continuousSpawnAtOnceCount: 1
+  continuousSpawnSpread: 1.5
+  distanceBeforeDespawn: 100
+  despawnAfterTime: 4
+--- !u!1 &2695244379914977390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4365103525194340721}
+  - component: {fileID: 9045822747273635891}
+  - component: {fileID: 243288349414497402}
+  - component: {fileID: 5211900533198323682}
+  m_Layer: 0
+  m_Name: TemporaryEnemyPortalD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4365103525194340721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2695244379914977390}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8997715243490514361}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &9045822747273635891
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2695244379914977390}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &243288349414497402
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2695244379914977390}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1cff03f45f783624db3323abcb076171, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5211900533198323682
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2695244379914977390}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}

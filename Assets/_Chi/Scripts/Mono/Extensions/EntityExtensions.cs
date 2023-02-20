@@ -5,6 +5,7 @@ using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Utilities;
 using UnityEngine;
+using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 namespace _Chi.Scripts.Mono.Extensions
@@ -66,8 +67,6 @@ namespace _Chi.Scripts.Mono.Extensions
 
         public static int GetNearest(this Entity source, Vector3 from, float range, TargetType targetType, Collider2D[] buffer)
         {
-            GetLayerMask(source, targetType);
-
             var count = Utils.GetObjectsAtPosition(from, buffer, range, GetLayerMask(source, targetType));
 
             return count;
@@ -140,7 +139,7 @@ namespace _Chi.Scripts.Mono.Extensions
             return nearest;
         }
         
-        private static int GetLayerMask(Entity source, TargetType type)
+        public static int GetLayerMask(this Entity source, TargetType type)
         {
             int layerMask;
             if (type == TargetType.EnemyOnly)
@@ -190,44 +189,6 @@ namespace _Chi.Scripts.Mono.Extensions
 
             var nextRotation = Quaternion.RotateTowards(rotation, newRotation, rotationSpeed * Time.fixedDeltaTime);
             return nextRotation;
-        }
-        
-        public static void SpawnOnPosition(this SpawnPrefab prefab, Vector3 position, Vector3 attackTarget, float distanceBeforeDespawn)
-        {
-            Quaternion rotation;
-
-            if (prefab.rotateTowardsPlayer)
-            {
-                rotation = Quaternion.LookRotation(position - attackTarget, Vector3.forward);
-                rotation.x = 0;
-                rotation.y = 0;
-            }
-            else
-            {
-                rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
-            }
-            
-            switch (prefab.type)
-            {
-                case SpawnPrefabType.PooledNpc:
-                    var npc = prefab.prefabNpc.SpawnPooledNpc(position, rotation);
-                    Gamesystem.instance.prefabDatabase.ApplyPrefabVariant(npc, prefab.prefabVariant);
-                    npc.maxDistanceFromPlayerBeforeDespawn = distanceBeforeDespawn;
-                    break;
-                case SpawnPrefabType.Gameobject:
-                    var go2 = GameObject.Instantiate(prefab.prefab);
-                    go2.transform.position = position;
-                    go2.transform.rotation = rotation;
-                    break;
-                case SpawnPrefabType.PoolableGo:
-                    var poolable = Gamesystem.instance.poolSystem.SpawnPoolable(prefab.prefab);
-                    poolable.MoveTo(position);
-                    poolable.Rotate(rotation);
-                    poolable.Run();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
         }
     }
 }

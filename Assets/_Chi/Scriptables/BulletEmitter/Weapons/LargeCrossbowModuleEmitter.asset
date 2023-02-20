@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da8a7c80eab4c474da1e90eb12356b89, type: 3}
-  m_Name: CrossbowModuleEmitter
+  m_Name: LargeCrossbowModuleEmitter
   m_EditorClassIdentifier: 
   rootBullet: {fileID: 114671512830859702}
   subAssets:
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 11510025
+  uniqueIndex: 12591642
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children: []
@@ -7645,7 +7645,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 2975773
+  uniqueIndex: 13480367
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -9204,7 +9204,7 @@ MonoBehaviour:
           parameterType: 0
           relativeTo: 0
           parameterName: _ProjectileSpread
-        defaultValue: 5
+        defaultValue: 1.5
       useSlider: 0
       sliderMin: 0
       sliderMax: 0
@@ -10063,7 +10063,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 627034
+  uniqueIndex: 5765467
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -20619,7 +20619,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 2098593
+  uniqueIndex: 3044413
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:

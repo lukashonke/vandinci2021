@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Utilities;
+using Com.LuisPedroFonseca.ProCamera2D;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -68,6 +69,8 @@ namespace _Chi.Scripts.Mono.Mission
             }
 
             StartCoroutine(Updater());
+            
+            ProCamera2D.Instance.gameObject.GetComponent<ProCamera2DTransitionsFX>().TransitionEnter();
         }
 
         private IEnumerator Updater()

@@ -581,12 +581,13 @@ MonoBehaviour:
       maxHpMul: 1
       hp: 20
     npcStats:
-      speed: 1.5
+      speed: 1.1
       rotationSpeed: 10
       contactDamage: 10
       contactDamageInterval: 1
     skills: []
-    skillOnDie: {fileID: 0}
+    skillsOnDie: []
+    effectsOnDie: []
     parameters:
       spawnAroundEntityGroupName: 
       rvoPriority: 0.5
@@ -594,7 +595,7 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
-  - variant: ZombieIdle
+  - variant: ZombieIdleRunner
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 3dd12299c05371f44abf211a2d5a3e59, type: 2}
     animatorController: {fileID: 9100000, guid: f54b0e0d088b20346a942a6b13ad2b87, type: 2}
@@ -604,12 +605,37 @@ MonoBehaviour:
       maxHpMul: 1
       hp: 10
     npcStats:
-      speed: 2.2
+      speed: 2
       rotationSpeed: 10
       contactDamage: 10
       contactDamageInterval: 1
     skills: []
-    skillOnDie: {fileID: 0}
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0
+      disableRvoCollision: 1
+      setRvoLayers: 0
+      rvoLayer: 1
+      rvoCollidesWith: 1073741824
+  - variant: ZombieIdleWalker
+    sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 3dd12299c05371f44abf211a2d5a3e59, type: 2}
+    animatorController: {fileID: 9100000, guid: f54b0e0d088b20346a942a6b13ad2b87, type: 2}
+    entityStats:
+      maxHp: 10
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 10
+    npcStats:
+      speed: 0.8
+      rotationSpeed: 10
+      contactDamage: 10
+      contactDamageInterval: 1
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
     parameters:
       spawnAroundEntityGroupName: 
       rvoPriority: 0
@@ -627,12 +653,13 @@ MonoBehaviour:
       maxHpMul: 1
       hp: 15
     npcStats:
-      speed: 2
+      speed: 1.9
       rotationSpeed: 10
       contactDamage: 10
       contactDamageInterval: 1
     skills: []
-    skillOnDie: {fileID: 0}
+    skillsOnDie: []
+    effectsOnDie: []
     parameters:
       spawnAroundEntityGroupName: 
       rvoPriority: 0.5
@@ -650,12 +677,13 @@ MonoBehaviour:
       maxHpMul: 1
       hp: 30
     npcStats:
-      speed: 1
+      speed: 0.85
       rotationSpeed: 10
       contactDamage: 10
       contactDamageInterval: 1
     skills: []
-    skillOnDie: {fileID: 0}
+    skillsOnDie: []
+    effectsOnDie: []
     parameters:
       spawnAroundEntityGroupName: 
       rvoPriority: 0.5
@@ -678,7 +706,8 @@ MonoBehaviour:
       contactDamage: 10
       contactDamageInterval: 1
     skills: []
-    skillOnDie: {fileID: 0}
+    skillsOnDie: []
+    effectsOnDie: []
     parameters:
       spawnAroundEntityGroupName: 
       rvoPriority: 1
@@ -701,7 +730,8 @@ MonoBehaviour:
       contactDamage: 10
       contactDamageInterval: 1
     skills: []
-    skillOnDie: {fileID: 0}
+    skillsOnDie: []
+    effectsOnDie: []
     parameters:
       spawnAroundEntityGroupName: 
       rvoPriority: 0.5
@@ -724,7 +754,8 @@ MonoBehaviour:
       contactDamage: 10
       contactDamageInterval: 1
     skills: []
-    skillOnDie: {fileID: 0}
+    skillsOnDie: []
+    effectsOnDie: []
     parameters:
       spawnAroundEntityGroupName: 
       rvoPriority: 0.5
@@ -747,7 +778,8 @@ MonoBehaviour:
       contactDamage: 10
       contactDamageInterval: 1
     skills: []
-    skillOnDie: {fileID: 0}
+    skillsOnDie: []
+    effectsOnDie: []
     parameters:
       spawnAroundEntityGroupName: 
       rvoPriority: 0.5
@@ -770,7 +802,34 @@ MonoBehaviour:
       contactDamage: 10
       contactDamageInterval: 1
     skills: []
-    skillOnDie: {fileID: 11400000, guid: 72694b8bf13e46e4bbac179d1d403dd3, type: 2}
+    skillsOnDie:
+    - {fileID: 11400000, guid: 7dacf98ac6858cc42bb43407350ac4aa, type: 2}
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+  - variant: ZombieBloaterExploding
+    sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 5
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 5
+    npcStats:
+      speed: 1
+      rotationSpeed: 10
+      contactDamage: 10
+      contactDamageInterval: 1
+    skills: []
+    skillsOnDie:
+    - {fileID: 11400000, guid: 0a3ea7bd06d4ba4409e2d2353afe0c06, type: 2}
+    effectsOnDie: []
     parameters:
       spawnAroundEntityGroupName: 
       rvoPriority: 0.5
@@ -795,7 +854,8 @@ MonoBehaviour:
     skills:
     - skill: {fileID: 11400000, guid: 72694b8bf13e46e4bbac179d1d403dd3, type: 2}
     - skill: {fileID: 11400000, guid: 7dacf98ac6858cc42bb43407350ac4aa, type: 2}
-    skillOnDie: {fileID: 0}
+    skillsOnDie: []
+    effectsOnDie: []
     parameters:
       spawnAroundEntityGroupName: 
       rvoPriority: 0.5
@@ -818,7 +878,8 @@ MonoBehaviour:
       contactDamage: 10
       contactDamageInterval: 1
     skills: []
-    skillOnDie: {fileID: 0}
+    skillsOnDie: []
+    effectsOnDie: []
     parameters:
       spawnAroundEntityGroupName: 
       rvoPriority: 0.5
@@ -841,7 +902,8 @@ MonoBehaviour:
       contactDamage: 10
       contactDamageInterval: 1
     skills: []
-    skillOnDie: {fileID: 0}
+    skillsOnDie: []
+    effectsOnDie: []
     parameters:
       spawnAroundEntityGroupName: 
       rvoPriority: 0.5
@@ -864,7 +926,8 @@ MonoBehaviour:
       contactDamage: 10
       contactDamageInterval: 1
     skills: []
-    skillOnDie: {fileID: 0}
+    skillsOnDie: []
+    effectsOnDie: []
     parameters:
       spawnAroundEntityGroupName: 
       rvoPriority: 0.5
@@ -887,7 +950,8 @@ MonoBehaviour:
       contactDamage: 3
       contactDamageInterval: 1
     skills: []
-    skillOnDie: {fileID: 0}
+    skillsOnDie: []
+    effectsOnDie: []
     parameters:
       spawnAroundEntityGroupName: 
       rvoPriority: 0.5
@@ -910,7 +974,8 @@ MonoBehaviour:
       contactDamage: 3
       contactDamageInterval: 1
     skills: []
-    skillOnDie: {fileID: 0}
+    skillsOnDie: []
+    effectsOnDie: []
     parameters:
       spawnAroundEntityGroupName: ZombieSneaky
       rvoPriority: 0.5
@@ -933,7 +998,8 @@ MonoBehaviour:
       contactDamage: 3
       contactDamageInterval: 1
     skills: []
-    skillOnDie: {fileID: 0}
+    skillsOnDie: []
+    effectsOnDie: []
     parameters:
       spawnAroundEntityGroupName: Zombie_Group
       rvoPriority: 0.5
@@ -956,9 +1022,131 @@ MonoBehaviour:
       contactDamage: 3
       contactDamageInterval: 1
     skills: []
-    skillOnDie: {fileID: 0}
+    skillsOnDie: []
+    effectsOnDie: []
     parameters:
       spawnAroundEntityGroupName: Zombie
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+  - variant: GoldChestSmall
+    sprite: {fileID: 21300000, guid: 5043a681e42e8d4438d161f29b39054c, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 50
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 50
+    npcStats:
+      speed: 0
+      rotationSpeed: 10
+      contactDamage: 3
+      contactDamageInterval: 1
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+  - variant: MonsterHouseSmall
+    sprite: {fileID: 21300000, guid: 580e6778c4bccbb46a0da7b9c9b647a0, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 100
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 100
+    npcStats:
+      speed: 0
+      rotationSpeed: 10
+      contactDamage: 3
+      contactDamageInterval: 1
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+  - variant: MonsterHouseMedium
+    sprite: {fileID: 21300000, guid: e38259388df912c42927c2f1996b6081, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 200
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 200
+    npcStats:
+      speed: 0
+      rotationSpeed: 10
+      contactDamage: 3
+      contactDamageInterval: 1
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+  - variant: MonsterHouseLarge
+    sprite: {fileID: 21300000, guid: e2840be09ed7d4f4c9c31ba368d9aed7, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 400
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 400
+    npcStats:
+      speed: 0
+      rotationSpeed: 10
+      contactDamage: 3
+      contactDamageInterval: 1
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+  - variant: ExplodingDecoy
+    sprite: {fileID: 21300000, guid: 8780cd2edf891e047b180ebab1c1daf4, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 5
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 5
+    npcStats:
+      speed: 0
+      rotationSpeed: 10
+      contactDamage: 10
+      contactDamageInterval: 1
+    skills: []
+    skillsOnDie:
+    - {fileID: 11400000, guid: c32dee8d1749386468bd7f2159a1132b, type: 2}
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
       rvoPriority: 0.5
       disableRvoCollision: 0
       setRvoLayers: 0

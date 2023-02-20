@@ -11,6 +11,7 @@ using _Chi.Scripts.Mono.Ui;
 using _Chi.Scripts.Persistence;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
+using BulletPro;
 using Com.LuisPedroFonseca.ProCamera2D;
 using DamageNumbersPro;
 using Sirenix.OdinInspector;
@@ -551,6 +552,13 @@ namespace _Chi.Scripts.Mono.Entities
                     }
                 }
             }
+        }
+        
+        public void OnHitByBullet(Bullet bullet, Vector3 pos)
+        {
+            var damage = bullet.moduleParameters.GetFloat("_Damage");
+             
+            ReceiveDamage(damage, null);
         }
     }
 }

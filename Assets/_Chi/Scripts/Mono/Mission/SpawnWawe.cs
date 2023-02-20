@@ -54,6 +54,144 @@ namespace _Chi.Scripts.Mono.Mission
             return spawns.All(s => s.finished);
         }
 
+        public static void Spawn(SpawnWaweData settings, Vector3 playerPosition, float time, Entity relativeTo, MissionEvent ev)
+        {
+            settings.lastSpawnTime = time;
+            settings.nextSpawnTime = 0;
+
+            //SPAWN
+            var spawnCount = settings.GetCountToSpawn(time);
+
+            int squareSize = (int) Math.Ceiling(Math.Sqrt(spawnCount));
+
+            var distance = settings.GetDistanceFromPlayer(time);
+            
+            var relativePos = settings.relativePosition;
+            if (relativePos == SpawnRelativePosition.FrontOrBehindPlayer)
+            {
+                relativePos = Random.Range(0, 2) == 0 ? SpawnRelativePosition.FrontOfPlayer : SpawnRelativePosition.BehindPlayer;
+            }
+
+            Vector3 spawnPosition = Vector3.zero;
+            switch (relativePos)
+            {
+                case SpawnRelativePosition.AroundPlayer:
+                    var dir1 = (Vector3) Random.insideUnitCircle.normalized * distance;
+                    spawnPosition = playerPosition + dir1;
+                    break;
+                case SpawnRelativePosition.FrontOfPlayer:
+                    var dir2 = relativeTo.GetForwardVector().normalized * distance;
+                    spawnPosition = playerPosition + dir2;
+                    break;
+                case SpawnRelativePosition.BehindPlayer:
+                    var dir3 = -relativeTo.GetForwardVector().normalized * distance;
+                    spawnPosition = playerPosition + dir3;
+                    break;
+            }
+
+            Vector3? goToDirection = null;
+            if (settings.behavior == SpawnBehavior.RoamRandomly)
+            {
+                goToDirection = (Vector3) Random.insideUnitCircle.normalized * settings.roamDistance;
+                goToDirection += (Vector3) Random.insideUnitCircle * settings.roamRandomRadius;
+            }
+            else if(settings.behavior == SpawnBehavior.RoamTowardsPlayer)
+            {
+                goToDirection = (playerPosition - spawnPosition).normalized * settings.roamDistance;
+                goToDirection += (Vector3) Random.insideUnitCircle * settings.roamRandomRadius;
+            }
+
+            if (spawnCount <= 2)
+            {
+                for (int i = 0; i < spawnCount; i++)
+                {
+                    var spread = Random.Range(settings.spawnGroupSpreadMin, settings.spawnGroupSpreadMax);
+            
+                    var targetPosition = spawnPosition + (new Vector3(i*spread, 0, 0));
+
+                    var spawnPrefab = settings.GetRandomPrefab();
+
+                    var spawned = spawnPrefab.SpawnOnPosition(targetPosition, playerPosition, settings.distanceFromPlayerToDespawn, settings.despawnAfter);
+                    if (spawned != null)
+                    {
+                        ev?.TrackAliveEntity(spawned);
+                        Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
+
+                        if (spawned is Npc npc)
+                        {
+                            if (settings.behavior == SpawnBehavior.StandIdle)
+                            {
+                                npc.SetCanMove(false);
+                            }
+                            else if (goToDirection.HasValue)
+                            {
+                                npc.SetFixedMoveTarget(targetPosition + goToDirection.Value, settings.stopWhenReachFixedMoveTarget, settings.dieWhenReachFixedMoveTarget);
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                for (int row = 0; row < squareSize; row++)
+                {
+                    for (int column = 0; column < squareSize; column++)
+                    {
+                        if (spawnCount == 0) break;
+
+                        var spread = Random.Range(settings.spawnGroupSpreadMin, settings.spawnGroupSpreadMax);
+
+                        var targetPosition = spawnPosition + (new Vector3(column * spread, row * spread, 0));
+
+                        var spawnPrefab = settings.GetRandomPrefab();
+                        var spawned = spawnPrefab.SpawnOnPosition(targetPosition, playerPosition, settings.distanceFromPlayerToDespawn, settings.despawnAfter);
+
+                        if (spawned != null)
+                        {
+                            ev?.TrackAliveEntity(spawned);
+                            Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
+                            
+                            if (spawned is Npc npc)
+                            {
+                                if (settings.behavior == SpawnBehavior.StandIdle)
+                                {
+                                    npc.SetCanMove(false);
+                                }
+                                else if (goToDirection.HasValue)
+                                {
+                                    npc.SetFixedMoveTarget(targetPosition + goToDirection.Value, settings.stopWhenReachFixedMoveTarget, settings.dieWhenReachFixedMoveTarget);
+                                }
+                            }
+                        }
+
+                        spawnCount--;
+                    }
+
+                    if (spawnCount == 0) break;
+                }
+            }
+            
+
+            if (settings.repeatSpawn)
+            {
+                if (settings.repeatedCount < settings.repeatCount)
+                {
+                    settings.nextSpawnTime = settings.lastSpawnTime + Random.Range(settings.repeatSpawnIntervalMin, settings.repeatSpawnIntervalMax);
+                    settings.repeatedCount++;
+                }
+                else
+                {
+                    settings.finished = true;
+                }
+            }
+            else
+            {
+                settings.finished = true;
+            }
+
+            settings.firstSpawnDone = true;
+        }
+
         private IEnumerator UpdateRoutine()
         {
             var waiter = new WaitForSeconds(0.2f);
@@ -75,125 +213,7 @@ namespace _Chi.Scripts.Mono.Mission
                 {
                     if (!settings.finished && settings.nextSpawnTime < time)
                     {
-                        settings.lastSpawnTime = time;
-                        settings.nextSpawnTime = 0;
-
-                        //SPAWN
-                        var spawnCount = settings.GetCountToSpawn(time);
-
-                        int squareSize = (int) Math.Ceiling(Math.Sqrt(spawnCount));
-
-                        var distance = settings.GetDistanceFromPlayer(time);
-                        
-                        var relativePos = settings.relativePosition;
-                        if (relativePos == SpawnRelativePosition.FrontOrBehindPlayer)
-                        {
-                            relativePos = Random.Range(0, 2) == 0 ? SpawnRelativePosition.FrontOfPlayer : SpawnRelativePosition.BehindPlayer;
-                        }
-
-                        Vector3 spawnPosition = Vector3.zero;
-                        switch (relativePos)
-                        {
-                            case SpawnRelativePosition.AroundPlayer:
-                                var dir1 = (Vector3) Random.insideUnitCircle.normalized * distance;
-                                spawnPosition = playerPosition + dir1;
-                                break;
-                            case SpawnRelativePosition.FrontOfPlayer:
-                                var dir2 = player.GetForwardVector().normalized * distance;
-                                spawnPosition = playerPosition + dir2;
-                                break;
-                            case SpawnRelativePosition.BehindPlayer:
-                                var dir3 = -player.GetForwardVector().normalized * distance;
-                                spawnPosition = playerPosition + dir3;
-                                break;
-                        }
-
-                        Vector3? goToDirection = null;
-                        if (settings.behavior == SpawnBehavior.RoamRandomly)
-                        {
-                            goToDirection = (Vector3) Random.insideUnitCircle.normalized * settings.roamDistance;
-                            goToDirection += (Vector3) Random.insideUnitCircle * settings.roamRandomRadius;
-                        }
-                        else if(settings.behavior == SpawnBehavior.RoamTowardsPlayer)
-                        {
-                            goToDirection = (playerPosition - spawnPosition).normalized * settings.roamDistance;
-                            goToDirection += (Vector3) Random.insideUnitCircle * settings.roamRandomRadius;
-                        }
-
-                        if (spawnCount <= 2)
-                        {
-                            for (int i = 0; i < spawnCount; i++)
-                            {
-                                var spread = Random.Range(settings.spawnGroupSpreadMin, settings.spawnGroupSpreadMax);
-                        
-                                var targetPosition = spawnPosition + (new Vector3(i*spread, 0, 0));
-                        
-                                var spawned = settings.SpawnOnPosition(targetPosition, settings.GetRandomPrefab(), playerPosition);
-                                
-                                if (spawned != null)
-                                {
-                                    ev.TrackAliveEntity(spawned);
-                                    Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
-
-                                    if (goToDirection.HasValue && spawned is Npc npc)
-                                    {
-                                        npc.SetFixedMoveTarget(targetPosition + goToDirection.Value, settings.stopWhenReachFixedMoveTarget, settings.dieWhenReachFixedMoveTarget);
-                                    }
-                                }
-                            }
-                        }
-                        else
-                        {
-                            for (int row = 0; row < squareSize; row++)
-                            {
-                                for (int column = 0; column < squareSize; column++)
-                                {
-                                    if (spawnCount == 0) break;
-
-                                    var spread = Random.Range(settings.spawnGroupSpreadMin, settings.spawnGroupSpreadMax);
-
-                                    var targetPosition = spawnPosition + (new Vector3(column * spread, row * spread, 0));
-
-                                    var spawned = settings.SpawnOnPosition(targetPosition, settings.GetRandomPrefab(),
-                                        playerPosition);
-
-                                    if (spawned != null)
-                                    {
-                                        ev.TrackAliveEntity(spawned);
-                                        Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
-                                        
-                                        if (goToDirection.HasValue && spawned is Npc npc)
-                                        {
-                                            npc.SetFixedMoveTarget(targetPosition + goToDirection.Value, settings.stopWhenReachFixedMoveTarget, settings.dieWhenReachFixedMoveTarget);
-                                        }
-                                    }
-
-                                    spawnCount--;
-                                }
-
-                                if (spawnCount == 0) break;
-                            }
-                        }
-                        
-
-                        if (settings.repeatSpawn)
-                        {
-                            if (settings.repeatedCount < settings.repeatCount)
-                            {
-                                settings.nextSpawnTime = settings.lastSpawnTime + Random.Range(settings.repeatSpawnIntervalMin, settings.repeatSpawnIntervalMax);
-                                settings.repeatedCount++;
-                            }
-                            else
-                            {
-                                settings.finished = true;
-                            }
-                        }
-                        else
-                        {
-                            settings.finished = true;
-                        }
-
-                        settings.firstSpawnDone = true;
+                        Spawn(settings, playerPosition, time, player, ev);
                     }
                 }
             }
@@ -254,17 +274,8 @@ namespace _Chi.Scripts.Mono.Mission
         {
             firstSpawnDone = false;
             finished = false;
-            
-            prefabsByWeightValues = new Dictionary<int, SpawnPrefab>();
 
-            int index = 0;
-            foreach (var pp in possiblePrefabs)
-            {
-                for (int i = 0; i < pp.weight; i++)
-                {
-                    prefabsByWeightValues.Add(index++, pp);
-                }
-            }
+            prefabsByWeightValues = possiblePrefabs.ToWeights();
         }
         
         public float GetCountToSpawn(float time)
@@ -284,61 +295,6 @@ namespace _Chi.Scripts.Mono.Mission
         public float GetDistanceFromPlayer(float time)
         {
             return distanceFromPlayer;
-        }
-
-        public Entity SpawnOnPosition(Vector3 position, SpawnPrefab prefab, Vector3 attackTarget)
-        {
-            Quaternion rotation;
-
-            if (prefab.rotateTowardsPlayer)
-            {
-                rotation = Quaternion.LookRotation(position - attackTarget, Vector3.forward);
-                rotation.x = 0;
-                rotation.y = 0;
-            }
-            else if (prefab.noRotation)
-            {
-                rotation = Quaternion.identity;
-            }
-            else
-            {
-                rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
-            }
-            
-            switch (prefab.type)
-            {
-                case SpawnPrefabType.PooledNpc:
-                    var npc = prefab.prefabNpc.SpawnPooledNpc(position, rotation);
-                    Gamesystem.instance.prefabDatabase.ApplyPrefabVariant(npc, prefab.prefabVariant);
-                    npc.maxDistanceFromPlayerBeforeDespawn = distanceFromPlayerToDespawn * distanceFromPlayerToDespawn;
-                    return npc;
-                case SpawnPrefabType.NonPooledNpc:
-                    var go = Object.Instantiate(prefab.prefabNpc.gameObject, position, rotation);
-
-                    var npc2 = go.GetComponent<Npc>();
-                    Gamesystem.instance.prefabDatabase.ApplyPrefabVariant(npc2, prefab.prefabVariant);
-                    npc2.maxDistanceFromPlayerBeforeDespawn = distanceFromPlayerToDespawn * distanceFromPlayerToDespawn;
-                    return npc2;
-                case SpawnPrefabType.Gameobject:
-                    var go2 = Object.Instantiate(prefab.prefab);
-                    go2.transform.position = position;
-                    go2.transform.rotation = rotation;
-                    if (despawnAfter > 0)
-                    {
-                        Object.Destroy(go2, despawnAfter);
-                    }
-                    return null;
-                case SpawnPrefabType.PoolableGo:
-                    var poolable = Gamesystem.instance.poolSystem.SpawnPoolable(prefab.prefab);
-                    poolable.MoveTo(position);
-                    poolable.Rotate(rotation);
-                    poolable.Run();
-                    return null;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-
-            return null;
         }
     }
 }

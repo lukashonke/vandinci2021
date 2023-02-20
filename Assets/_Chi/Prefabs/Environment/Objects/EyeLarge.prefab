@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a347743b9b44eeb3d281b7c6b9c6e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   entityStats:
     maxHp: 100
     maxHpAdd: 0
@@ -113,9 +112,26 @@ MonoBehaviour:
     rotationSpeed: 500
     contactDamage: 0
     contactDamageInterval: 1
+  currentVariant: 
   size: 1
   goDirectlyToPlayer: 0
+  stopWhenReachFixedMoveTarget: 0
+  dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
+  poolId: 0
+  activateWhenCloseToPlayerDist2: 0
+  spawnEffect: {fileID: 0}
+  emitter: {fileID: 0}
+  canShoot: 1
+  prefabProjectile: {fileID: 3094098865178039913, guid: 52d8462b775af3c44975110ba93f000c, type: 3}
+  projectilePreview: {fileID: 6365469441854767041, guid: 3124d9d5e7a24a84c889d2ecee19d34c, type: 3}
+  projectilePreviewDuration: 1
+  dropProjectile: {fileID: 8251612291115825949, guid: b71c283f1b89d634eafe48c19bcc2c5c, type: 3}
+  projectileLifetime: 1
+  projectileRandomRotation: 0
+  dropProjectileLifetime: 0.3
+  projectileShootInterval: 1
+  distanceToPlayerToShoot: 10
 --- !u!114 &1194128561228351877
 MonoBehaviour:
   m_ObjectHideFlags: 0

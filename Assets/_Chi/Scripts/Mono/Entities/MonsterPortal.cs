@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Mission;
 using UnityEngine;
@@ -22,34 +23,34 @@ namespace _Chi.Scripts.Mono.Entities
         public float continuousSpawnSpread = 1.5f;
         public float distanceBeforeDespawn = 100f;
 
+        public float despawnAfterTime = 0;
+
         public override void Start()
         {
             base.Start();
             
-            prefabsByWeightValues = new Dictionary<int, SpawnPrefab>();
-
-            int index = 0;
-            foreach (var pp in continuousPrefabsToSpawn)
-            {
-                for (int i = 0; i < pp.weight; i++)
-                {
-                    prefabsByWeightValues.Add(index++, pp);
-                }
-            }
+            prefabsByWeightValues = continuousPrefabsToSpawn.ToWeights();
 
             StartCoroutine(Updater());
         }
-        
 
         private IEnumerator Updater()
         {
             var waiter = new WaitForSeconds(0.05f);
 
             float nextSpawn = 0;
+            
+            var despawn = despawnAfterTime > 0 ? Time.time + despawnAfterTime : 0;
 
             while (isAlive)
             {
                 yield return waiter;
+                
+                if (despawn > 0 && despawn < Time.time)
+                {
+                    OnDie(DieCause.Despawned);
+                    yield break;
+                }
                 
                 UpdaterAction();
                 

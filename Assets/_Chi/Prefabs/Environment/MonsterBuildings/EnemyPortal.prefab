@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 865471a0b15c4444b618ac201eb4191c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   entityStats:
     maxHp: 300
     maxHpAdd: 0
@@ -113,38 +112,41 @@ MonoBehaviour:
     rotationSpeed: 500
     contactDamage: 0
     contactDamageInterval: 1
+  currentVariant: 
   size: 1
   goDirectlyToPlayer: 0
+  stopWhenReachFixedMoveTarget: 0
+  dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
-  poolId: 0
-  activateWhenCloseToPlayerDist2: 0
+  poolId: 2004
+  activateWhenCloseToPlayerDist2: 5
+  spawnEffect: {fileID: 0}
+  emitter: {fileID: 0}
+  canShoot: 0
+  prefabProjectile: {fileID: 0}
+  projectilePreview: {fileID: 0}
+  projectilePreviewDuration: 0
+  dropProjectile: {fileID: 0}
+  projectileLifetime: 0
+  projectileRandomRotation: 0
+  dropProjectileLifetime: 0
+  projectileShootInterval: 0
+  distanceToPlayerToShoot: 0
   continuousPrefabsToSpawn:
   - type: 0
     prefab: {fileID: 0}
-    prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-    weight: 7
-    rotateTowardsPlayer: 1
-  - type: 0
-    prefab: {fileID: 0}
-    prefabNpc: {fileID: 5954188515519120312, guid: 6865f2ce12f622849b1c682ef902fe54, type: 3}
-    weight: 3
-    rotateTowardsPlayer: 1
-  - type: 0
-    prefab: {fileID: 0}
-    prefabNpc: {fileID: 5954188515519120312, guid: e9797147ab774344b8a2be82b128eaca, type: 3}
-    weight: 3
-    rotateTowardsPlayer: 1
-  - type: 0
-    prefab: {fileID: 0}
-    prefabNpc: {fileID: 5954188515519120312, guid: 4e58ba0edb87fe441b493c86ddb4e59e, type: 3}
+    prefabNpc: {fileID: 8399383809299790540, guid: 79f3b2b44854d1645804e36864c7bea1, type: 3}
     weight: 1
     rotateTowardsPlayer: 1
+    noRotation: 0
+    prefabVariant: ZombieSpawner_Zombie
   continuousSpawnIntervalMin: 0.25
   continuousSpawnIntervalMax: 0.75
   continuousSpawnWhenPlayerNearbyDist2: 81
   continuousSpawnAtOnceCount: 1
   continuousSpawnSpread: 1.5
   distanceBeforeDespawn: 100
+  despawnAfterTime: 0
 --- !u!114 &9108500398223514987
 MonoBehaviour:
   m_ObjectHideFlags: 0

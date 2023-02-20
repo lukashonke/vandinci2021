@@ -93,16 +93,15 @@ namespace _Chi.Scripts.Mono.Entities
                 originalMaterial = renderer.material;
             }
 
-            
             currentEffects = new Dictionary<ImmediateEffect, float>(32);
             vfx = new Dictionary<GameObject, GameObject>(16);
+            SetCanMove(true);
         }
         
         public virtual void Start()
         {
             entityStats.hp = GetMaxHp();
             isAlive = entityStats.hp > 0;
-            canMove = true;
         }
 
         // Update is called once per frame
@@ -267,7 +266,7 @@ namespace _Chi.Scripts.Mono.Entities
             return Quaternion.Euler(new Vector3(0, 0, angle)) * GetForwardVector();
         }
 
-        public void SetCanMove(bool b)
+        public virtual void SetCanMove(bool b)
         {
             canMove = b;
         }

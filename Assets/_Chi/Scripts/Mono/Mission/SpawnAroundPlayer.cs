@@ -124,12 +124,14 @@ namespace _Chi.Scripts.Mono.Mission
                         
                             var targetPosition = spawnPosition + (new Vector3(i*spread, 0, 0));
                         
-                            var spawnedEntity = settings.SpawnOnPosition(targetPosition, settings.GetRandomPrefab(), playerPosition);
+                            var spawnPrefab = settings.GetRandomPrefab();
 
-                            if (spawnedEntity != null)
+                            var spawned = spawnPrefab.SpawnOnPosition(targetPosition, playerPosition, settings.distanceFromPlayerToDespawn, settings.despawnAfter);
+
+                            if (spawned != null)
                             {
-                                ev.TrackAliveEntity(spawnedEntity);
-                                Gamesystem.instance.missionManager.TrackAliveEntity(spawnedEntity);
+                                ev.TrackAliveEntity(spawned);
+                                Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
                             }
                         }
                     }
@@ -147,8 +149,9 @@ namespace _Chi.Scripts.Mono.Mission
                                     
                                 var targetPosition = spawnPosition + (new Vector3(column*spread, row*spread, 0));
                                 
-                                var spawned = settings.SpawnOnPosition(targetPosition, settings.GetRandomPrefab(), playerPosition);
-
+                                var spawnPrefab = settings.GetRandomPrefab();
+                                var spawned = spawnPrefab.SpawnOnPosition(targetPosition, playerPosition, settings.distanceFromPlayerToDespawn, settings.despawnAfter);
+                                
                                 if (spawned != null)
                                 {
                                     ev.TrackAliveEntity(spawned);
@@ -203,16 +206,7 @@ namespace _Chi.Scripts.Mono.Mission
 
         public void Initialise()
         {
-            prefabsByWeightValues = new Dictionary<int, SpawnPrefab>();
-
-            int index = 0;
-            foreach (var pp in possiblePrefabs)
-            {
-                for (int i = 0; i < pp.weight; i++)
-                {
-                    prefabsByWeightValues.Add(index++, pp);
-                }
-            }
+            prefabsByWeightValues = possiblePrefabs.ToWeights();
         }
         
         public void Recalculate(float time)
@@ -247,54 +241,6 @@ namespace _Chi.Scripts.Mono.Mission
         public int GetCountToSpawn(float time)
         {
             return (int)Math.Round(Random.Range(minSpawnCount.Evaluate(time), maxSpawnCount.Evaluate(time)));
-        }
-
-        public Entity SpawnOnPosition(Vector3 position, SpawnPrefab prefab, Vector3 attackTarget)
-        {
-            Quaternion rotation;
-
-            if (prefab.rotateTowardsPlayer)
-            {
-                rotation = Quaternion.LookRotation(position - attackTarget, Vector3.forward);
-                rotation.x = 0;
-                rotation.y = 0;
-            }
-            else if (prefab.noRotation)
-            {
-                rotation = Quaternion.identity;
-            }
-            else
-            {
-                rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
-            }
-            
-            switch (prefab.type)
-            {
-                case SpawnPrefabType.PooledNpc:
-                    var npc = prefab.prefabNpc.SpawnPooledNpc(position, rotation);
-                    Gamesystem.instance.prefabDatabase.ApplyPrefabVariant(npc, prefab.prefabVariant);
-                    npc.maxDistanceFromPlayerBeforeDespawn = distanceFromPlayerToDespawn * distanceFromPlayerToDespawn;
-                    return npc;
-                case SpawnPrefabType.Gameobject:
-                    var go2 = GameObject.Instantiate(prefab.prefab);
-                    go2.transform.position = position;
-                    go2.transform.rotation = rotation;
-                    if (despawnAfter > 0)
-                    {
-                        Object.Destroy(go2, despawnAfter);
-                    }
-                    return null;
-                case SpawnPrefabType.PoolableGo:
-                    var poolable = Gamesystem.instance.poolSystem.SpawnPoolable(prefab.prefab);
-                    poolable.MoveTo(position);
-                    poolable.Rotate(rotation);
-                    poolable.Run();
-                    return null;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-
-            return null;
         }
     }
 
@@ -345,6 +291,7 @@ namespace _Chi.Scripts.Mono.Mission
     {
         AttackPlayer,
         RoamRandomly,
-        RoamTowardsPlayer
+        RoamTowardsPlayer,
+        StandIdle,
     }
 }

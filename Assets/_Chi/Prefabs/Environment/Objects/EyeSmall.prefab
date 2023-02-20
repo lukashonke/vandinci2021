@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1972562973974619251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7282183069491555332}
+  - component: {fileID: 8233977395235515062}
+  m_Layer: 0
+  m_Name: Shooter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7282183069491555332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972562973974619251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1848656859600750159}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8233977395235515062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972562973974619251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a676b285f069c3c4884c27e78d0fc696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emitterProfile: {fileID: 11400000, guid: 3f5e45ebcb4a9c94282509ec40bdbf63, type: 2}
+  patternOrigin: {fileID: 0}
+  playAtStart: 0
+  shootInstruction:
+    m_PersistentCalls:
+      m_Calls: []
+  useDefaultGizmoColor: 1
+  gizmoColor: {r: 0, g: 1, b: 0, a: 1}
+  gizmoSize: 0.5
 --- !u!1 &4357852453351177147
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,7 +83,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7282183069491555332}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -98,12 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a347743b9b44eeb3d281b7c6b9c6e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   entityStats:
-    maxHp: 30
+    maxHp: 300
     maxHpAdd: 0
     maxHpMul: 1
-    hp: 30
+    hp: 300
   team: 2
   healthbarOffset: {x: 0, y: 0, z: 0}
   seeker: {fileID: 0}
@@ -113,9 +166,18 @@ MonoBehaviour:
     rotationSpeed: 500
     contactDamage: 0
     contactDamageInterval: 1
+  currentVariant: 
   size: 1
   goDirectlyToPlayer: 0
+  stopWhenReachFixedMoveTarget: 0
+  dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
+  poolId: 0
+  activateWhenCloseToPlayerDist2: 0
+  spawnEffect: {fileID: 0}
+  emitter: {fileID: 8233977395235515062}
+  canShoot: 1
+  distanceToPlayerToShoot: 100
 --- !u!114 &-751567569723741111
 MonoBehaviour:
   m_ObjectHideFlags: 0

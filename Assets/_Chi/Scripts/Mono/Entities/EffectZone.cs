@@ -50,7 +50,7 @@ namespace _Chi.Scripts.Mono.Entities
             
             yield return new WaitForSeconds(Random.Range(0, 0.2f));
             
-            var waiter = new WaitForSeconds(0.2f);
+            var waiter = new WaitForSeconds(0.10f);
             while (this != null)
             {
                 var position = transform.position;
