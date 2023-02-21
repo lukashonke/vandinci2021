@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Persistence;
 using _Chi.Scripts.Scriptables.Dtos;
 using _Chi.Scripts.Utilities;
 using Pathfinding.Ionic.Zip;
 using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
 
 namespace _Chi.Scripts.Mono.Ui
@@ -22,20 +24,28 @@ namespace _Chi.Scripts.Mono.Ui
         
         [NonSerialized] public MutatorSlotUi[] mutatorSlots;
 
+        [Required] public TextMeshProUGUI playerGold;
+
         public void Awake()
         {
             gameObject.SetActive(false);
         }
 
-        public void OpenWindow(string rewardSet, string title)
+        public void OpenWindow(string rewardSet, string title, TriggeredShop triggeredShop)
         {
-            if (rewardSet == null)
+            UpdateCurrentMoney();
+                
+            if (rewardSet == null && triggeredShop == null)
             {
-                moduleSelector.Initialise(ModuleSelectorMode.ShowAllItems, true, null, title);
+                moduleSelector.Initialise(ModuleSelectorMode.ShowAllItems, true, null, title, null);
+            }
+            else if(triggeredShop != null)
+            {
+                moduleSelector.Initialise(ModuleSelectorMode.ShopSet, true, rewardSet, title, triggeredShop);
             }
             else
             {
-                moduleSelector.Initialise(ModuleSelectorMode.RewardSet, true, rewardSet, title);
+                moduleSelector.Initialise(ModuleSelectorMode.SingleRewardSet, true, rewardSet, title, null);
             }
 
             Initialise();
@@ -43,6 +53,11 @@ namespace _Chi.Scripts.Mono.Ui
             Gamesystem.instance.Pause();
             
             Gamesystem.instance.uiManager.UpdateFullscreenOverlay();
+        }
+
+        public void UpdateCurrentMoney()
+        {
+            playerGold.text = Gamesystem.instance.progress.progressData.run.gold.ToString();
         }
 
         public void CloseWindow()
@@ -63,7 +78,7 @@ namespace _Chi.Scripts.Mono.Ui
             }
             else
             {
-                OpenWindow(null, null);
+                OpenWindow(null, null, null);
             }
         }
 
@@ -80,7 +95,7 @@ namespace _Chi.Scripts.Mono.Ui
             }
             else
             {
-                Gamesystem.instance.uiManager.ShowConfirmDialog("Are you sure?", "You have not claimed your reward.", 
+                Gamesystem.instance.uiManager.ShowConfirmDialog("Leave Shop?", "Have you spent your gold wisely?", 
                     DoClose, () => {}, () => {});
             }
         }

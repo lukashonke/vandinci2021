@@ -32,6 +32,7 @@ public class Gamesystem : MonoBehaviour
     [Required] public MissionDatabase missionDatabase;
     [Required] public MapGenSettings mapGenSettings;
     [Required] public Tilemap mapGenTilemap;
+    [Required] public DropManager dropManager;
 
     [Required]
     public SpawnAroundSettings spawnAroundSettings;
@@ -152,6 +153,32 @@ public class Gamesystem : MonoBehaviour
         if (e is Npc npc)
         {
             progress.progressData.run.killed++;
+
+            if (npc.currentVariantInstance?.reward != null)
+            {
+                var chance = npc.currentVariantInstance.reward.dropChance;
+                var doDrop = UnityEngine.Random.Range(0f, 100f) < chance;
+                if (doDrop)
+                {
+                    var player = Gamesystem.instance.objects.currentPlayer;
+                    var drops = Math.Max(1, player.stats.playerGoldDropped.GetValueInt());
+
+                    for (int i = 0; i < drops; i++)
+                    {
+                        Vector3 position;
+                        if (drops > 1)
+                        {
+                            const float spread = 0.4f;
+                            position = npc.GetPosition() + new Vector3(UnityEngine.Random.Range(-spread, spread), UnityEngine.Random.Range(-spread, spread));
+                        }
+                        else
+                        {
+                            position = npc.GetPosition();
+                        }
+                        dropManager.Drop(npc.currentVariantInstance.reward.dropType, position);
+                    }
+                }
+            }
         }
     }
 }

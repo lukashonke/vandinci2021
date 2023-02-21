@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using _Chi.Scripts.Mono.Misc;
+using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Mono.Ui;
 using _Chi.Scripts.Mono.Ui.Dialogs;
@@ -19,6 +21,8 @@ public class UiManager : MonoBehaviour
     [Required] public GameObject fullscreenWindowBackground;
     [Required] public GameObject overlay;
     [Required] public GameObject windows;
+
+    [Required] public ProgressBar goldProgressBar;
 
     [Required] public GameObject confirmDialogPrefab;
     private GameObject confirmDialog;
@@ -154,9 +158,9 @@ public class UiManager : MonoBehaviour
         vehicleSettingsWindow.Toggle(true);
     }
 
-    public void OpenRewardSetWindow(string rewardSet, string title)
+    public void OpenRewardSetWindow(string rewardSet, string title, TriggeredShop triggeredShop)
     {
-        vehicleSettingsWindow.OpenWindow(rewardSet, title);
+        vehicleSettingsWindow.OpenWindow(rewardSet, title, triggeredShop);
     }
 
     public void UpdateFullscreenOverlay()

@@ -133,5 +133,41 @@ namespace _Chi.Scripts.Mono.System
             
             this.InitializeProgressData();
         }
+
+        public void AddGold(int gold, bool countToProgress = true)
+        {
+            this.progressData.run.gold += gold;
+            this.progressData.run.acumulatedGold += gold;
+            
+            if (countToProgress)
+            {
+                Gamesystem.instance.uiManager.goldProgressBar.AddValue(gold);
+            }
+        }
+        
+        public int GetGold()
+        {
+            return this.progressData.run.gold;
+        }
+        
+        public int GetAcumulatedGold()
+        {
+            return this.progressData.run.acumulatedGold;
+        }
+        
+        public long GetChaos()
+        {
+            return this.progressData.run.chaos;
+        }
+        
+        public void AddChaos(long chaos)
+        {
+            this.progressData.run.chaos += chaos;
+        }
+        
+        public void RemoveGold(int gold)
+        {
+            this.progressData.run.gold -= gold;
+        }
     }
 }

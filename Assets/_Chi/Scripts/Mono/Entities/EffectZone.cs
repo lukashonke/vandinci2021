@@ -14,6 +14,10 @@ namespace _Chi.Scripts.Mono.Entities
     public class EffectZone : MonoBehaviour
     {
         public List<ImmediateEffect> effects;
+        
+        public List<EntityStatsEffect> statsEffects;
+
+        public int statsEffectLevel = 1;
 
         public float effectInterval;
 
@@ -27,10 +31,12 @@ namespace _Chi.Scripts.Mono.Entities
 
         private Collider2D collider;
         private Dictionary<Entity, float> entitiesInside;
+        private HashSet<Entity> statsEffectsApplied;
 
         private void Awake()
         {
             collider = GetComponent<Collider2D>();
+            statsEffectsApplied = new();
         }
 
         void Start()
@@ -39,6 +45,25 @@ namespace _Chi.Scripts.Mono.Entities
             
             StartCoroutine(Despawn());
             StartCoroutine(Updater());
+        }
+
+        public void OnDestroy()
+        {
+            foreach (var kp in entitiesInside)
+            {
+                var entity = kp.Key;
+                if (entity != null)
+                {
+                    foreach (var effect in statsEffects)
+                    {
+                        if (statsEffectsApplied.Contains(entity))
+                        {
+                            effect.Remove(entity, this);
+                            statsEffectsApplied.Remove(entity);
+                        }
+                    }
+                }
+            }
         }
 
         private IEnumerator Updater()
@@ -57,14 +82,37 @@ namespace _Chi.Scripts.Mono.Entities
                 foreach (var kp in entitiesInside)
                 {
                     var entity = kp.Key;
-                    if (entity != null && kp.Value < Time.time && IsInsideEffectArea(entity))
+                    if (entity != null && kp.Value < Time.time)
                     {
                         if ((team == Teams.Monster && entity is Player) 
                             || team == Teams.Player && entity is Npc npc && npc.AreEnemies(currentPlayer))
                         {
-                            foreach (var effect in effects)
+                            if (IsInsideEffectArea(entity))
                             {
-                                effect.Apply(entity, null, null, null, effectStrength);
+                                foreach (var effect in effects)
+                                {
+                                    effect.Apply(entity, null, null, null, effectStrength);
+                                }
+                                
+                                foreach (var effect in statsEffects)
+                                {
+                                    if (!statsEffectsApplied.Contains(entity))
+                                    {
+                                        effect.Apply(entity, this, statsEffectLevel);
+                                        statsEffectsApplied.Add(entity);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                foreach (var effect in statsEffects)
+                                {
+                                    if (statsEffectsApplied.Contains(entity))
+                                    {
+                                        effect.Remove(entity, this);
+                                        statsEffectsApplied.Remove(entity);
+                                    }
+                                }
                             }
                         }
                         
@@ -104,9 +152,12 @@ namespace _Chi.Scripts.Mono.Entities
 
         private IEnumerator Despawn()
         {
-            yield return new WaitForSeconds(despawnDelay);
-            
-            Destroy(this.gameObject);
+            if (despawnDelay > 0)
+            {
+                yield return new WaitForSeconds(despawnDelay);
+                
+                Destroy(this.gameObject);
+            }
         }
 
         public void OnTriggerEnter2D(Collider2D col)

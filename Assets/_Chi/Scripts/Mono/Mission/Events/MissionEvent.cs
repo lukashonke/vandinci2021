@@ -287,7 +287,7 @@ namespace _Chi.Scripts.Mono.Mission.Events
         {
             //Time.timeScale = 0f;
 
-            Gamesystem.instance.uiManager.OpenRewardSetWindow(rewardSet, title);
+            Gamesystem.instance.uiManager.OpenRewardSetWindow(rewardSet, title, null);
             
             /*Gamesystem.instance.uiManager.ShowConfirmDialog("Reward Time!", "Here is when you pick a new reward.", 
                 () => Time.timeScale = 1f, () => Time.timeScale = 1f, () => Time.timeScale = 1f);*/
@@ -307,7 +307,7 @@ namespace _Chi.Scripts.Mono.Mission.Events
         {
             yield return null;
             
-            Gamesystem.instance.uiManager.OpenRewardSetWindow(rewardSet, title);
+            Gamesystem.instance.uiManager.OpenRewardSetWindow(rewardSet, title, null);
             
             while (Gamesystem.instance.uiManager.vehicleSettingsWindow.Opened())
             {

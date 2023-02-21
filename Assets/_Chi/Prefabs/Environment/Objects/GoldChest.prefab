@@ -148,6 +148,26 @@ MonoBehaviour:
   poolId: 2000
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
+  emitter: {fileID: 0}
+  canShoot: 0
+  prefabProjectile: {fileID: 0}
+  projectilePreview: {fileID: 0}
+  projectilePreviewDuration: 0
+  dropProjectile: {fileID: 0}
+  projectileLifetime: 0
+  projectileRandomRotation: 0
+  dropProjectileLifetime: 0
+  projectileShootInterval: 0
+  distanceToPlayerToShoot: 0
+  drops:
+  - dropCountMin: 10
+    dropCountMax: 20
+    dropType: 0
+    chance: 100
+  - dropCountMin: 1
+    dropCountMax: 2
+    dropType: 1
+    chance: 50
 --- !u!114 &5570863261562565206
 MonoBehaviour:
   m_ObjectHideFlags: 0

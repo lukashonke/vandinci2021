@@ -48,5 +48,11 @@ namespace _Chi.Scripts.Statistics
         public Stat moduleFireRateMul = new Stat();
 
         public Stat visibilityRange = new Stat();
+
+        public Stat pickupAttractRange = new Stat();
+        
+        public Stat pickupRange = new Stat();
+
+        public Stat playerGoldDropped = new Stat();
     }
 }

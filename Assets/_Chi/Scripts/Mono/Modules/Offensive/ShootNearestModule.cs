@@ -69,9 +69,9 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                             emitter.Pause();
                         }
                     }
-
-                    ApplyParams();
                 }
+                
+                ApplyParams();
 
                 if (currentTarget != null)
                 {

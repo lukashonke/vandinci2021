@@ -7,7 +7,7 @@ namespace _Chi.Scripts.Persistence
     [Serializable]
     public class PlayerProgressData
     {
-        public int level;
+        public int level = 1;
 
         public PlayerRun run;
     }
@@ -18,10 +18,14 @@ namespace _Chi.Scripts.Persistence
         public int bodyId;
 
         public int gold;
+        
+        public int acumulatedGold;
+
+        public long chaos;
 
         public int killed;
 
-        public int missionIndex;
+        public int missionIndex = 1;
         
         public int missionWaweIndex;
         

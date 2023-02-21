@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Scriptables.Dtos;
 using _Chi.Scripts.Utilities;
@@ -25,7 +26,7 @@ namespace _Chi.Scripts.Mono.Ui
             //Initialise(ModuleSelectorMode.ShowAllItems, true);
         }
 
-        public void Initialise(ModuleSelectorMode mode, bool canExit, string rewardSet = null, string title = null)
+        public void Initialise(ModuleSelectorMode mode, bool canExit, string rewardSets = null, string title = null, TriggeredShop triggeredShop = null)
         {
             var db = Gamesystem.instance.prefabDatabase;
 
@@ -59,30 +60,36 @@ namespace _Chi.Scripts.Mono.Ui
                     
                     newItemItem.Initialise(item, new List<ActionsPanelButton>()
                     {
-                        new ActionsPanelButton("Add", () => StartAddingItem(item))
-                    }, AbortAddingItem);
+                        new ActionsPanelButton("Add", () => StartAddingItem(item, null))
+                    }, AbortAddingItem, 0);
                 }
             }
-            else if (currentMode == ModuleSelectorMode.RewardSet)
+            else if (currentMode == ModuleSelectorMode.ShopSet || currentMode == ModuleSelectorMode.SingleRewardSet)
             {
-                var set = Gamesystem.instance.prefabDatabase.GetRewardSet(rewardSet);
-
-                var shownItems = set.CalculateShownItems(Gamesystem.instance.objects.currentPlayer).ToHashSet();
-                
-                foreach (var item in db.prefabs.Where(t => shownItems.Contains(t.id) && t.enabled))
+                foreach (var rewardSet in rewardSets.Split(";"))
                 {
-                    var newItem = Instantiate(itemInfoPrefab, transform.position, Quaternion.identity, transform);
-                    var newItemItem = newItem.GetComponent<ModuleSelectorItem>();
-                    
-                    newItemItem.Initialise(item, new List<ActionsPanelButton>()
+                    var set = Gamesystem.instance.prefabDatabase.GetRewardSet(rewardSet);
+
+                    var shownItems = set.CalculateShownItems(Gamesystem.instance.objects.currentPlayer).ToHashSet();
+                    var shownItemsHash = shownItems.Select(s => s.prefabId).ToHashSet();
+
+                    foreach (var rewardSetItemWithWeight in shownItems)
                     {
-                        new ActionsPanelButton("Add", () => StartAddingItem(item))
-                    }, AbortAddingItem);
+                        var item = db.GetById(rewardSetItemWithWeight.prefabId);
+                    
+                        var newItem = Instantiate(itemInfoPrefab, transform.position, Quaternion.identity, transform);
+                        var newItemItem = newItem.GetComponent<ModuleSelectorItem>();
+
+                        newItemItem.Initialise(item, new List<ActionsPanelButton>()
+                        {
+                            new ActionsPanelButton("Buy", () => StartAddingItem(item, rewardSetItemWithWeight.price))
+                        }, AbortAddingItem, (int?) (rewardSetItemWithWeight.price * (triggeredShop?.priceMultiplier ?? 1)));
+                    }
                 }
             }
         }
 
-        public void StartAddingItem(PrefabItem item)
+        public void StartAddingItem(PrefabItem item, int? price)
         {
             var info = new AddingUiItem()
             {
@@ -92,14 +99,20 @@ namespace _Chi.Scripts.Mono.Ui
                 level = 1
             };
 
-            info.finishCallback = () => ModuleAdded(info);
+            info.finishCallback = () => ModuleAdded(info, price);
             
             Gamesystem.instance.uiManager.SetAddingUiItem(info);
         }
 
-        public void ModuleAdded(AddingUiItem addingUiItem)
+        public void ModuleAdded(AddingUiItem addingUiItem, int? price)
         {
-            if (currentMode == ModuleSelectorMode.RewardSet)
+            if (price.HasValue)
+            {
+                Gamesystem.instance.progress.RemoveGold(price.Value);
+                Gamesystem.instance.uiManager.vehicleSettingsWindow.UpdateCurrentMoney();
+            }
+            
+            if (currentMode == ModuleSelectorMode.SingleRewardSet)
             {
                 Gamesystem.instance.uiManager.vehicleSettingsWindow.CloseWindow();
             }
@@ -112,13 +125,14 @@ namespace _Chi.Scripts.Mono.Ui
 
         public bool CanClose()
         {
-            return currentMode != ModuleSelectorMode.RewardSet;
+            return currentMode == ModuleSelectorMode.ShowAllItems;
         }
     }
 
     public enum ModuleSelectorMode
     {
         ShowAllItems,
-        RewardSet
+        ShopSet,
+        SingleRewardSet
     }
 }

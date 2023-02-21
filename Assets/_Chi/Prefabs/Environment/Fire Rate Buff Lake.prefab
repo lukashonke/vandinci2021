@@ -4827,9 +4827,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53dafd6178f84764affe1202195edfed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effects:
-  - {fileID: 11400000, guid: baed0f3175bf048419499b87df9578c9, type: 2}
-  effectInterval: 1
+  effects: []
+  statsEffects:
+  - {fileID: 11400000, guid: b075e486503f6084da6704cd70327df4, type: 2}
+  statsEffectLevel: 1
+  effectInterval: 0.25
   team: 2
   effectStrength: 1
   loseInterestAfterDist2: 16

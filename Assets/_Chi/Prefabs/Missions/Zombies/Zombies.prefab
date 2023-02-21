@@ -592,3 +592,14 @@ MonoBehaviour:
   startIndex: 0
   forceStartAtIndex: 0
   loopEvents: 0
+  progressSettings:
+    shops:
+    - goldAcumulatedRequired: 100
+      shopSet: shop_passives_basic
+      priceMultiplier: 1
+    - goldAcumulatedRequired: 200
+      shopSet: shop_passives_basic
+      priceMultiplier: 1.5
+    - goldAcumulatedRequired: 300
+      shopSet: shop_passives_basic
+      priceMultiplier: 2

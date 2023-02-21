@@ -19,6 +19,8 @@ namespace _Chi.Scripts.Mono.Mission
         public bool forceStartAtIndex;
 
         public bool loopEvents;
+        
+        public MissionProgressSettings progressSettings;
 
         [ReadOnly] public MissionEvent currentEvent;
 
@@ -42,10 +44,46 @@ namespace _Chi.Scripts.Mono.Mission
             const float loopInterval = 0.5f;
             var waiter = new WaitForSeconds(loopInterval);
 
+            var initialShop = progressSettings.shops[0];
+            
+            Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(initialShop.goldAcumulatedRequired);
+            Gamesystem.instance.uiManager.goldProgressBar.ResetValue();
+
             int currentEventIndex = startIndex;
             
             while (alive)
             {
+                var gold = Gamesystem.instance.progress.GetAcumulatedGold();
+
+                var shopIndex = progressSettings.lastGoldTriggeredShopLevelIndex;
+                
+                if(shopIndex + 1 < progressSettings.shops.Count)
+                {
+                    var nextShop = progressSettings.shops[shopIndex + 1];
+
+                    if (gold >= nextShop.goldAcumulatedRequired)
+                    {
+                        shopIndex++;
+
+                        if (shopIndex - 1 >= 0)
+                        {
+                            var currentShop = progressSettings.shops[shopIndex - 1];
+                            Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(nextShop.goldAcumulatedRequired - currentShop.goldAcumulatedRequired);
+                        }
+                        else
+                        {
+                            Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(nextShop.goldAcumulatedRequired);
+                        }
+                    
+                        Gamesystem.instance.uiManager.goldProgressBar.ResetValue();
+                    
+                        //TODO trigger shop
+                        Gamesystem.instance.uiManager.OpenRewardSetWindow(nextShop.shopSet, "Shop", nextShop);
+                    
+                        progressSettings.lastGoldTriggeredShopLevelIndex = shopIndex;
+                    }
+                }
+                
                 if (currentEvent != null && currentEvent.CanEnd(timePassed))
                 {
                     currentEvent.End(timePassed);
@@ -109,5 +147,22 @@ namespace _Chi.Scripts.Mono.Mission
         {
             alive = false;
         }
+    }
+
+    [Serializable]
+    public class MissionProgressSettings
+    {
+        public List<TriggeredShop> shops;
+
+        [NonSerialized] public int lastGoldTriggeredShopLevelIndex = -1; 
+    }
+
+    [Serializable]
+    public class TriggeredShop
+    {
+        public int goldAcumulatedRequired;
+        public string shopSet;
+
+        public float priceMultiplier;
     }
 }

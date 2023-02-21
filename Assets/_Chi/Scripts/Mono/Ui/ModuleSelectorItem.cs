@@ -13,6 +13,7 @@ namespace _Chi.Scripts.Mono.Ui
         public TextMeshProUGUI title;
         public TextMeshProUGUI subTitle;
         public TextMeshProUGUI description;
+        public TextMeshProUGUI price;
         public Image icon;
 
         public Color weaponSubtitleColor;
@@ -25,15 +26,17 @@ namespace _Chi.Scripts.Mono.Ui
         private Action abort;
 
         private PrefabItem item;
+        private int? priceValue;
         
-        public void Initialise(PrefabItem item, List<ActionsPanelButton> buttons, Action abort)
+        public void Initialise(PrefabItem item, List<ActionsPanelButton> buttons, Action abort, int? price)
         {
             this.item = item;
-            
-            InitialiseUi(item.label, item.prefabUi.GetComponent<Image>(), item.description, buttons, abort);
+            this.priceValue = price;
+
+            InitialiseUi(item.label, item.prefabUi.GetComponent<Image>(), item.description, buttons, abort, price);
         }
         
-        private void InitialiseUi(string title, Image icon, string description, List<ActionsPanelButton> buttons, Action abort)
+        private void InitialiseUi(string title, Image icon, string description, List<ActionsPanelButton> buttons, Action abort, int? price)
         {
             this.title.text = title;
             var subtitleColor = GetSubtitle();
@@ -44,6 +47,16 @@ namespace _Chi.Scripts.Mono.Ui
 
             this.buttons = buttons;
             this.abort = abort;
+            
+            if (price.HasValue)
+            {
+                this.price.gameObject.transform.parent.gameObject.SetActive(true);
+                this.price.text = price.Value.ToString();
+            }
+            else
+            {
+                this.price.gameObject.transform.parent.gameObject.SetActive(false);
+            }
         }
 
         private (string, Color?) GetSubtitle()
@@ -81,12 +94,17 @@ namespace _Chi.Scripts.Mono.Ui
         
         public void OnClick()
         {
-            Gamesystem.instance.uiManager.SetActionsPanel(new ActionsPanel()
+            var playerGold = Gamesystem.instance.progress.GetGold();
+
+            if (priceValue == null || playerGold >= priceValue)
             {
-                source = this,
-                buttons = this.buttons,
-                abortFunction = abort
-            }, (RectTransform) transform);
+                Gamesystem.instance.uiManager.SetActionsPanel(new ActionsPanel()
+                {
+                    source = this,
+                    buttons = this.buttons,
+                    abortFunction = abort
+                }, (RectTransform) transform);
+            }
         }
         
         public void OnHoverEnter()

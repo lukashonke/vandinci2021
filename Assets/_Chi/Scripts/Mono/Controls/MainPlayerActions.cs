@@ -2,8 +2,6 @@
 
 namespace _Chi.Scripts.Mono.Controls
 {
-    
-    
     public class MainPlayerActions : PlayerActionSet
     {
         public PlayerAction Left;

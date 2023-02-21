@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   permanent: 0
-  lifetime: 0.75
+  lifetime: 0.5
   unscaledTime: 0
   enable3DGame: 0
   faceCameraView: 1
@@ -192,30 +192,30 @@ MonoBehaviour:
   durationFadeIn: 0.2
   enableOffsetFadeIn: 0
   offsetFadeIn: {x: 0.5, y: 0}
-  enableScaleFadeIn: 1
-  scaleFadeIn: {x: 1, y: 2}
-  enableCrossScaleFadeIn: 0
-  crossScaleFadeIn: {x: 1, y: 1.5}
-  enableShakeFadeIn: 1
+  enableScaleFadeIn: 0
+  scaleFadeIn: {x: 2, y: 2}
+  enableCrossScaleFadeIn: 1
+  crossScaleFadeIn: {x: 3, y: 3}
+  enableShakeFadeIn: 0
   shakeOffsetFadeIn: {x: 0, y: 1.5}
-  shakeFrequencyFadeIn: 2
-  durationFadeOut: 0.2
+  shakeFrequencyFadeIn: 4
+  durationFadeOut: 0.1
   enableOffsetFadeOut: 0
   offsetFadeOut: {x: 0.5, y: 0}
-  enableScaleFadeOut: 1
-  scaleFadeOut: {x: 0.6, y: 1.4}
+  enableScaleFadeOut: 0
+  scaleFadeOut: {x: 0.4, y: 0.4}
   enableCrossScaleFadeOut: 0
   crossScaleFadeOut: {x: 1, y: 1.5}
-  enableShakeFadeOut: 1
-  shakeOffsetFadeOut: {x: 0, y: -1}
-  shakeFrequencyFadeOut: 2
-  enableLerp: 0
+  enableShakeFadeOut: 0
+  shakeOffsetFadeOut: {x: 0, y: 1.5}
+  shakeFrequencyFadeOut: 4
+  enableLerp: 1
   lerpSettings:
-    speed: 1
-    minX: 0
-    maxX: 0
+    speed: 5
+    minX: -0.2
+    maxX: 0.2
     minY: 0.5
-    maxY: 0.5
+    maxY: 1
     randomFlip: 0
   enableVelocity: 0
   velocitySettings:
@@ -318,11 +318,11 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   spamGroup: Default
-  enableCombination: 1
+  enableCombination: 0
   combinationSettings:
     method: 0
-    maxDistance: 0.2
-    spawnDelay: 0
+    maxDistance: 10
+    spawnDelay: 0.2
     absorbDuration: 0.4
     scaleCurve:
       serializedVersion: 2
@@ -459,7 +459,7 @@ MonoBehaviour:
     radius: 3
     pushOffset: 1
   updateDelay: 0.03333
-  enablePooling: 1
+  enablePooling: 0
   poolSize: 500
   position: {x: 0, y: 0, z: 0}
 --- !u!210 &6502758380141417012
@@ -666,7 +666,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0.7924528, g: 0.53453183, b: 0.59440625, a: 0.6509804}
+  m_fontColor: {r: 0.7924528, g: 0.53453183, b: 0.59440625, a: 0.9019608}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -683,8 +683,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.25
-  m_fontSizeBase: 2.25
+  m_fontSize: 2.4
+  m_fontSizeBase: 2.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

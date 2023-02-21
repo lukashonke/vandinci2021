@@ -17,6 +17,8 @@ namespace _Chi.Scripts.Mono.System
         [NonSerialized] public Dictionary<GameObject, ObjectPool<GameObject>> goPool;
         
         [NonSerialized] public Dictionary<GameObject, ObjectPool<IPoolable>> poolablePool;
+        
+        [NonSerialized] public Dictionary<DropType, ObjectPool<GameObject>> dropPool;
 
         public bool collectionChecks = true;
 
@@ -26,6 +28,23 @@ namespace _Chi.Scripts.Mono.System
             npcPools = new Dictionary<int, ObjectPool<Npc>>();
             goPool = new();
             poolablePool = new();
+            dropPool = new();
+        }
+        
+        public GameObject Spawn(DropType drop, GameObject prefab, int maxPoolSize = 100)
+        {
+            if (dropPool.TryGetValue(drop, out var pool))
+            {
+                return pool.Get();
+            }
+            else
+            {
+                var newPool = new ObjectPool<GameObject>(() => CreatePoolableDropItem(prefab), (a) => OnTakeDropFromPool(a),
+                    OnReturnedDropToPool, OnDestroyDropPoolObject, collectionChecks, maxPoolSize);
+                dropPool.Add(drop, newPool);
+
+                return newPool.Get();
+            }
         }
         
         public IPoolable SpawnPoolable(GameObject prefab, int maxPoolSize = 100)
@@ -139,6 +158,14 @@ namespace _Chi.Scripts.Mono.System
                 pool.Release(projectileInstance);
             }
         }
+        
+        public void Despawn(DropType drop, GameObject instance)
+        {
+            if (dropPool.TryGetValue(drop, out var pool))
+            {
+                pool.Release(instance);
+            }
+        }
 
         Projectile CreatePooledItem(Projectile projectile)
         {
@@ -216,6 +243,28 @@ namespace _Chi.Scripts.Mono.System
         void OnDestroyPoolObject(IPoolable go)
         {
             go.Destroy();
+        }
+        
+        GameObject CreatePoolableDropItem(GameObject prefab)
+        {
+            var go = Instantiate(prefab.gameObject);
+
+            return go;
+        }
+
+        void OnReturnedDropToPool(GameObject go)
+        {
+            go.SetActive(false);
+        }
+
+        void OnTakeDropFromPool(GameObject go)
+        {
+            go.SetActive(true);
+        }
+
+        void OnDestroyDropPoolObject(GameObject go)
+        {
+            Destroy(go);
         }
         
         GameObject CreatePooledItem(GameObject prefab)

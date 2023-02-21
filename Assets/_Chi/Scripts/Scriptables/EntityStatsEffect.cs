@@ -19,7 +19,7 @@ namespace _Chi.Scripts.Scriptables
 
         [HideIf("hasLevelScaledValue")]
         public float value;
-        
+
         public abstract bool Apply(Entity target, object source, int level);
         
         public abstract bool Remove(Entity target, object source);

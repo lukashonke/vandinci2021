@@ -12,7 +12,7 @@ namespace _Chi.Scripts.Scriptables
     public class MissionDatabase : SerializedScriptableObject
     {
         public List<MissionDatabaseItem> missions;
-
+        
         public MissionDatabaseItem GetMission(int index)
         {
             return missions.FirstOrDefault(m => m.index == index);

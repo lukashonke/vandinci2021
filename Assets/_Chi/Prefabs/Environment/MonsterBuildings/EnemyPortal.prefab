@@ -119,7 +119,7 @@ MonoBehaviour:
   dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
   poolId: 2004
-  activateWhenCloseToPlayerDist2: 5
+  activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
   emitter: {fileID: 0}
   canShoot: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
     prefabVariant: ZombieSpawner_Zombie
   continuousSpawnIntervalMin: 0.25
   continuousSpawnIntervalMax: 0.75
-  continuousSpawnWhenPlayerNearbyDist2: 81
+  continuousSpawnWhenPlayerNearbyDist2: 16
   continuousSpawnAtOnceCount: 1
   continuousSpawnSpread: 1.5
   distanceBeforeDespawn: 100

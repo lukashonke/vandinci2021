@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Scriptables.Dtos;
@@ -38,6 +39,7 @@ namespace _Chi.Scripts.Scriptables
 
         public PrefabItem GetById(int id)
         {
+            //TODO optimise
             return prefabs.FirstOrDefault(p => p.id == id);
         }
 
@@ -102,6 +104,16 @@ namespace _Chi.Scripts.Scriptables
         
         [VerticalGroup("Stats")]
         public SpawnPrefabParameters parameters;
+        
+        [VerticalGroup("Stats")]
+        public Reward reward;
+    }
+
+    [Serializable]
+    public class Reward
+    {
+        public DropType dropType;
+        public float dropChance;
     }
     
     [Serializable]
@@ -153,21 +165,21 @@ namespace _Chi.Scripts.Scriptables
         [MinValue(1)] 
         public int minCountShownItems = 1;
 
-        public List<int> CalculateShownItems(Player player)
+        public List<RewardSetItemWithWeight> CalculateShownItems(Player player)
         {
-            List<int> kv = new();
+            List<RewardSetItemWithWeight> kv = new();
 
             foreach (var prefab in prefabs)
             {
                 for (int i = 0; i < prefab.weight; i++)
                 {
-                    kv.Add(prefab.prefabId);
+                    kv.Add(prefab);
                 }
             }
 
             var itemsToShow = minCountShownItems;
 
-            var retValue = new List<int>();
+            var retValue = new List<RewardSetItemWithWeight>();
 
             for (int i = 0; i < itemsToShow; i++)
             {
@@ -188,5 +200,6 @@ namespace _Chi.Scripts.Scriptables
     {
         public int prefabId;
         public int weight;
+        public int price;
     }
 }
