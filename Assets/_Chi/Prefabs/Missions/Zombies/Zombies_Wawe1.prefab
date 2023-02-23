@@ -1,5 +1,99 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &605070906527956956
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8807107732509143040}
+  - component: {fileID: 3723093661133715203}
+  m_Layer: 0
+  m_Name: NameContainer(EditorOnly)
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8807107732509143040
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605070906527956956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2091413172466918208}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3723093661133715203
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605070906527956956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOverride: Damaging Lake
+  tooltipOverride: 
+  target: {fileID: -3837949277647058563}
+--- !u!1 &1558673939304336037
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8402064086459977770}
+  - component: {fileID: 6635509998598834666}
+  m_Layer: 0
+  m_Name: NameContainer(EditorOnly)
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8402064086459977770
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558673939304336037}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2091413172466918208}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6635509998598834666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558673939304336037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOverride: Walkers Randomly
+  tooltipOverride: 
+  target: {fileID: 766136386234732296}
 --- !u!1 &2091413172466918211
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,15 +104,15 @@ GameObject:
   m_Component:
   - component: {fileID: 2091413172466918208}
   - component: {fileID: -2275858408632581110}
-  - component: {fileID: 530404185182147840}
   - component: {fileID: -3837949277647058563}
+  - component: {fileID: -50647473022081503}
   - component: {fileID: 766136386234732296}
+  - component: {fileID: 530404185182147840}
   - component: {fileID: 8998190245610271498}
   - component: {fileID: -4000076046673859097}
   - component: {fileID: -6502435416312752660}
   - component: {fileID: -4211533515045996565}
   - component: {fileID: -5390413756141119465}
-  - component: {fileID: -50647473022081503}
   - component: {fileID: -4888117272967698136}
   m_Layer: 0
   m_Name: Zombies_Wawe1
@@ -38,7 +132,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1705948514094642084}
+  - {fileID: 4367574329516000590}
+  - {fileID: 8807107732509143040}
+  - {fileID: 3355180346132351446}
+  - {fileID: 8402064086459977770}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -64,7 +163,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   attacksName: 
-  disable: 1
+  disable: 0
   spawns:
   - possiblePrefabs:
     - type: 0
@@ -94,18 +193,18 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 30
-        inSlope: 0.083333336
-        outSlope: 0.083333336
+        value: 25
+        inSlope: 0.041666668
+        outSlope: 0.041666668
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 60
-        value: 35
-        inSlope: 0.083333336
-        outSlope: 0.083333336
+        time: 120
+        value: 30
+        inSlope: 0.041666668
+        outSlope: 0.041666668
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -236,6 +335,173 @@ MonoBehaviour:
     nextSpawnTime: 0
     startAtTime: 0
     lastSpawnTime: 0
+--- !u!114 &-3837949277647058563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091413172466918211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  waveName: Poison Lake
+  disable: 0
+  spawns:
+  - possiblePrefabs:
+    - type: 3
+      prefab: {fileID: 8889423923064880148, guid: 54a965e37b784114c92ecea464337270, type: 3}
+      prefabNpc: {fileID: 0}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: none
+    - type: 3
+      prefab: {fileID: 8889423923064880148, guid: 78e1d67201b888c4dbfedb5aff6bb020, type: 3}
+      prefabNpc: {fileID: 0}
+      weight: 2
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: none
+    - type: 3
+      prefab: {fileID: 8889423923064880148, guid: e4d464f1456f6fc40a55ac4fe9ead654, type: 3}
+      prefabNpc: {fileID: 0}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: none
+    relativePosition: 0
+    behavior: 0
+    roamDistance: 0
+    roamRandomRadius: 0
+    dieWhenReachFixedMoveTarget: 0
+    stopWhenReachFixedMoveTarget: 0
+    spawnTimeMin: 10
+    spawnTimeMax: 12
+    repeatSpawn: 1
+    repeatSpawnIntervalMin: 12
+    repeatSpawnIntervalMax: 12
+    repeatCount: 100
+    spawnCountMin: 2
+    spawnCountMax: 3
+    distanceFromPlayer: 6
+    despawnAfter: 60
+    spawnGroupSpreadMin: 2
+    spawnGroupSpreadMax: 3
+    distanceFromPlayerToDespawn: 100
+--- !u!114 &-50647473022081503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091413172466918211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  waveName: Exploding Decoys
+  disable: 0
+  spawns:
+  - possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      prefabNpc: {fileID: 6549855113248904363, guid: 95485f9b1a9973140bc1febcd04fe496, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 0
+      noRotation: 1
+      prefabVariant: ExplodingDecoy
+    relativePosition: 0
+    behavior: 3
+    roamDistance: 100
+    roamRandomRadius: 3
+    dieWhenReachFixedMoveTarget: 0
+    stopWhenReachFixedMoveTarget: 0
+    spawnTimeMin: 15
+    spawnTimeMax: 20
+    repeatSpawn: 1
+    repeatSpawnIntervalMin: 15
+    repeatSpawnIntervalMax: 20
+    repeatCount: 100
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayer: 6
+    despawnAfter: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 15
+--- !u!114 &766136386234732296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091413172466918211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  waveName: Walkers
+  disable: 0
+  spawns:
+  - possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieIdleWalker
+    relativePosition: 0
+    behavior: 1
+    roamDistance: 100
+    roamRandomRadius: 3
+    dieWhenReachFixedMoveTarget: 0
+    stopWhenReachFixedMoveTarget: 0
+    spawnTimeMin: 6
+    spawnTimeMax: 10
+    repeatSpawn: 1
+    repeatSpawnIntervalMin: 6
+    repeatSpawnIntervalMax: 10
+    repeatCount: 100
+    spawnCountMin: 1
+    spawnCountMax: 3
+    distanceFromPlayer: 5
+    despawnAfter: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 15
 --- !u!114 &530404185182147840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,11 +554,11 @@ MonoBehaviour:
     roamRandomRadius: 0
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 10
-    spawnTimeMax: 15
+    spawnTimeMin: 30
+    spawnTimeMax: 35
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 5
-    repeatSpawnIntervalMax: 10
+    repeatSpawnIntervalMin: 30
+    repeatSpawnIntervalMax: 35
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 4
@@ -301,122 +567,6 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1.5
     spawnGroupSpreadMax: 2.5
     distanceFromPlayerToDespawn: 100
---- !u!114 &-3837949277647058563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091413172466918211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  waveName: Poison Lake
-  disable: 1
-  spawns:
-  - possiblePrefabs:
-    - type: 3
-      prefab: {fileID: 8889423923064880148, guid: 54a965e37b784114c92ecea464337270, type: 3}
-      prefabNpc: {fileID: 0}
-      weight: 1
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: none
-    - type: 3
-      prefab: {fileID: 8889423923064880148, guid: 78e1d67201b888c4dbfedb5aff6bb020, type: 3}
-      prefabNpc: {fileID: 0}
-      weight: 2
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: none
-    - type: 3
-      prefab: {fileID: 8889423923064880148, guid: e4d464f1456f6fc40a55ac4fe9ead654, type: 3}
-      prefabNpc: {fileID: 0}
-      weight: 1
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: none
-    relativePosition: 0
-    behavior: 0
-    roamDistance: 0
-    roamRandomRadius: 0
-    dieWhenReachFixedMoveTarget: 0
-    stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 25
-    spawnTimeMax: 35
-    repeatSpawn: 1
-    repeatSpawnIntervalMin: 25
-    repeatSpawnIntervalMax: 35
-    repeatCount: 100
-    spawnCountMin: 2
-    spawnCountMax: 3
-    distanceFromPlayer: 6
-    despawnAfter: 60
-    spawnGroupSpreadMin: 2
-    spawnGroupSpreadMax: 3
-    distanceFromPlayerToDespawn: 100
---- !u!114 &766136386234732296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091413172466918211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  waveName: Walkers
-  disable: 1
-  spawns:
-  - possiblePrefabs:
-    - type: 0
-      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 1
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieIdleWalker
-    relativePosition: 0
-    behavior: 1
-    roamDistance: 100
-    roamRandomRadius: 3
-    dieWhenReachFixedMoveTarget: 0
-    stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 1
-    spawnTimeMax: 2
-    repeatSpawn: 1
-    repeatSpawnIntervalMin: 3
-    repeatSpawnIntervalMax: 4
-    repeatCount: 100
-    spawnCountMin: 1
-    spawnCountMax: 1
-    distanceFromPlayer: 5
-    despawnAfter: 0
-    spawnGroupSpreadMin: 1
-    spawnGroupSpreadMax: 1
-    distanceFromPlayerToDespawn: 15
 --- !u!114 &8998190245610271498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,57 +822,6 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 1500
---- !u!114 &-50647473022081503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091413172466918211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  waveName: Exploding Decoys
-  disable: 1
-  spawns:
-  - possiblePrefabs:
-    - type: 0
-      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      prefabNpc: {fileID: 6549855113248904363, guid: 95485f9b1a9973140bc1febcd04fe496, type: 3}
-      weight: 1
-      rotateTowardsPlayer: 0
-      noRotation: 1
-      prefabVariant: ExplodingDecoy
-    relativePosition: 0
-    behavior: 3
-    roamDistance: 100
-    roamRandomRadius: 3
-    dieWhenReachFixedMoveTarget: 0
-    stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 1
-    spawnTimeMax: 2
-    repeatSpawn: 1
-    repeatSpawnIntervalMin: 3
-    repeatSpawnIntervalMax: 4
-    repeatCount: 100
-    spawnCountMin: 1
-    spawnCountMax: 1
-    distanceFromPlayer: 5
-    despawnAfter: 0
-    spawnGroupSpreadMin: 1
-    spawnGroupSpreadMax: 1
-    distanceFromPlayerToDespawn: 1500
 --- !u!114 &-4888117272967698136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,3 +873,144 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 1500
+--- !u!1 &3022428695798256735
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1705948514094642084}
+  - component: {fileID: 3816455377767374175}
+  m_Layer: 0
+  m_Name: NameContainer(EditorOnly)
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1705948514094642084
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3022428695798256735}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2091413172466918208}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3816455377767374175
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3022428695798256735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOverride: Continuous Spawns Around Player
+  tooltipOverride: 
+  target: {fileID: -2275858408632581110}
+--- !u!1 &4169575077988990815
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3355180346132351446}
+  - component: {fileID: 4893780517313715286}
+  m_Layer: 0
+  m_Name: NameContainer(EditorOnly)
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3355180346132351446
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4169575077988990815}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2091413172466918208}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4893780517313715286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4169575077988990815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOverride: Exploding Decoys
+  tooltipOverride: 
+  target: {fileID: -50647473022081503}
+--- !u!1 &5200784002971579261
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4367574329516000590}
+  - component: {fileID: 8593602803856434678}
+  m_Layer: 0
+  m_Name: NameContainer(EditorOnly)
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4367574329516000590
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5200784002971579261}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2091413172466918208}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8593602803856434678
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5200784002971579261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOverride: Slowing Lake
+  tooltipOverride: 
+  target: {fileID: 530404185182147840}

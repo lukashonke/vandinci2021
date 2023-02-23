@@ -254,7 +254,8 @@ namespace _Chi.Scripts.Mono.Mission
         public int spawnCountMin;
         public int spawnCountMax;
 
-        public float distanceFromPlayer;
+        [FormerlySerializedAs("distanceFromPlayer")] public float distanceFromPlayerMin;
+        [FormerlySerializedAs("distanceFromPlayer")] public float distanceFromPlayerMax;
         public float despawnAfter;
 
         public float spawnGroupSpreadMin = 1;
@@ -294,7 +295,7 @@ namespace _Chi.Scripts.Mono.Mission
 
         public float GetDistanceFromPlayer(float time)
         {
-            return distanceFromPlayer;
+            return Random.Range(distanceFromPlayerMin, distanceFromPlayerMax);
         }
     }
 }

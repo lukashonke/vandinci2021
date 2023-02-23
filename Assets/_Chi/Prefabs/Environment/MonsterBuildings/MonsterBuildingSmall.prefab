@@ -181,7 +181,7 @@ MonoBehaviour:
     rotationSpeed: 500
     contactDamage: 0
     contactDamageInterval: 1
-  currentVariant: 
+  currentVariant: MonsterHouseSmall
   size: 1
   goDirectlyToPlayer: 0
   stopWhenReachFixedMoveTarget: 0
@@ -195,16 +195,38 @@ MonoBehaviour:
   prefabProjectile: {fileID: 0}
   projectilePreview: {fileID: 0}
   projectilePreviewDuration: 0
+  projectilePreviewLifetime: 0
   dropProjectile: {fileID: 0}
   projectileLifetime: 0
   projectileRandomRotation: 0
   dropProjectileLifetime: 0
   projectileShootInterval: 0
   distanceToPlayerToShoot: 0
-  continuousPrefabsToSpawn: []
+  continuousPrefabsToSpawn:
+  - type: 0
+    prefab: {fileID: 0}
+    prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+    weight: 3
+    rotateTowardsPlayer: 1
+    noRotation: 0
+    prefabVariant: Zombie
+  - type: 0
+    prefab: {fileID: 0}
+    prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+    weight: 1
+    rotateTowardsPlayer: 1
+    noRotation: 0
+    prefabVariant: ZombieFat
+  - type: 0
+    prefab: {fileID: 0}
+    prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+    weight: 1
+    rotateTowardsPlayer: 1
+    noRotation: 0
+    prefabVariant: ZombieFast
   continuousSpawnIntervalMin: 1
   continuousSpawnIntervalMax: 3
-  continuousSpawnWhenPlayerNearbyDist2: 81
+  continuousSpawnWhenPlayerNearbyDist2: 100
   continuousSpawnAtOnceCount: 1
   continuousSpawnSpread: 1.5
   distanceBeforeDespawn: 100
@@ -216,10 +238,44 @@ MonoBehaviour:
     - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 5
+      weight: 6
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: Zombie
-    spawnCountMin: 15
-    spawnCountMax: 20
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 2
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieFast
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 2
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieFat
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieBloaterExploding
+    spawnCountMin: 5
+    spawnCountMax: 15
+    spawnSpread: 1.5
+  - spawnAtHpPercentIsRepeated: 0
+    spawnAtHpPercent: 0.1
+    prefabsToSpawn:
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieBloaterExploding
+    spawnCountMin: 1
+    spawnCountMax: 1
     spawnSpread: 1.5

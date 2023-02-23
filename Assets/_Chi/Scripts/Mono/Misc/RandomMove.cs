@@ -8,7 +8,9 @@ namespace _Chi.Scripts.Mono.Misc
     {
         public bool chooseOneDirection;
 
-        public float speed;
+        public float speedMin;
+        
+        public float speedMax;
 
         private Vector3 direction;
 
@@ -16,7 +18,7 @@ namespace _Chi.Scripts.Mono.Misc
         {
             if (chooseOneDirection)
             {
-                direction = Random.insideUnitCircle.normalized * speed;
+                direction = Random.insideUnitCircle.normalized * Random.Range(speedMin, speedMax);
             }
         }
 

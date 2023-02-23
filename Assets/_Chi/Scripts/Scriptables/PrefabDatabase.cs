@@ -29,8 +29,8 @@ namespace _Chi.Scripts.Scriptables
         [NonSerialized] public Dictionary<string, PrefabVariant> variantsLookup;
 
         [Required] public DamageNumber playerCriticalDealtDamage;
-
         [Required] public DamageNumber playerDealtDamage;
+        [Required] public DamageNumber playerGoldReceived;
 
         public void Initialise()
         {
@@ -94,12 +94,15 @@ namespace _Chi.Scripts.Scriptables
         public NpcStats npcStats;
 
         [VerticalGroup("Stats")]
+        [FoldoutGroup("Stats/Skills")]
         public List<PrefabVariantSkill> skills;
 
         [VerticalGroup("Stats")]
+        [FoldoutGroup("Stats/Skills")]
         public List<Skill> skillsOnDie;
         
         [VerticalGroup("Stats")]
+        [FoldoutGroup("Stats/Skills")]
         public List<ImmediateEffect> effectsOnDie;
         
         [VerticalGroup("Stats")]
@@ -112,8 +115,17 @@ namespace _Chi.Scripts.Scriptables
     [Serializable]
     public class Reward
     {
+        public List<RewardItem> items;
+    }
+
+    [Serializable]
+    public class RewardItem
+    {
         public DropType dropType;
-        public float dropChance;
+        public float dropChance = 100;
+
+        public int amountMin = 1;
+        public int amountMax = 1;
     }
     
     [Serializable]

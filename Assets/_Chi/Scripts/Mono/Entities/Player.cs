@@ -30,7 +30,7 @@ namespace _Chi.Scripts.Mono.Entities
         [NonSerialized] public PlayerBody body;
         [NonSerialized] public List<ModuleSlot> slots;
         [NonSerialized] public PlayerControls controls;
-        
+
         public float nearestEnemiesDetectorRange = 15f;
         
         private Collider2D[] buffer = new Collider2D[4096];
@@ -252,7 +252,7 @@ namespace _Chi.Scripts.Mono.Entities
 
                 if (velocity >= stats.minVelocityToDamage.GetValue())
                 {
-                    var damage = stats.velocityToDamageMul.GetValue() * velocity;
+                    var damage = stats.velocityToDamageMul.GetValue() * velocity * rb.mass;
 
                     if (damage > 0 && monster.CanBePushed())
                     {

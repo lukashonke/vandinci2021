@@ -832,7 +832,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.64
+      value: 0.82
       mode: 0
       spread: 0
       speed:
@@ -951,7 +951,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 13
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5008,6 +5008,7 @@ GameObject:
   - component: {fileID: 4331917670686664908}
   - component: {fileID: 5932062968405953321}
   - component: {fileID: 5679299228448911541}
+  - component: {fileID: 4330026314289064019}
   m_Layer: 13
   m_Name: BlackHole
   m_TagString: Untagged
@@ -5111,7 +5112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chooseOneDirection: 1
-  speed: 0.5
+  speedMin: 0.2
+  speedMax: 0.7
 --- !u!50 &5679299228448911541
 Rigidbody2D:
   serializedVersion: 4
@@ -5133,3 +5135,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4330026314289064019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5543541136632558941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce57998b65bd4b8dab771774b4b355e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  attachedLimit: 100
+  force: 4

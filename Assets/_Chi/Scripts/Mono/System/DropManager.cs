@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Utilities;
 using ProjectDawn.Collections;
+using ProjectDawn.Collections.LowLevel.Unsafe;
 using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine;
+using BurstGridSearch;
+using KNN;
+using KNN.Jobs;
+using Unity.Jobs;
 
 namespace _Chi.Scripts.Mono.System
 {
@@ -24,18 +30,33 @@ namespace _Chi.Scripts.Mono.System
         public float pickupMoveSpeed = 2f;
 
         [NonSerialized] private int lastId = 0;
+        
+        // BUG 1 - drops se nepickupují nekdy
+        // BUG 2 - smaze se nejaka entita a pak blbne
 
         [NonSerialized] private Dictionary<int, GameObject> drops;
-        [NonSerialized] private NativeKdTree<float3, TreeComparer> tree;
+        [NonSerialized] private UnsafeKdTree<float3, TreeComparer> tree;
+
+        [NonSerialized] private List<float3> positionsList;
+        [NonSerialized] private NativeArray<float3> positions;
+        [NonSerialized] private List<GameObject> gameObjects;
 
         [NonSerialized] private List<GameObject> beingPickedUp;
+        [NonSerialized] GridSearchBurst gsb;
+        
+        [NonSerialized] KnnContainer knnContainer;
 
         void Awake()
         {
-            tree = new NativeKdTree<float3, TreeComparer>(1, Allocator.Persistent, new TreeComparer());
+            tree = new UnsafeKdTree<float3, TreeComparer>(1, Allocator.Persistent, new TreeComparer());
 
             drops = new();
             beingPickedUp = new();
+            
+            positionsList = new();
+            gameObjects = new();
+            
+            knnContainer = new KnnContainer(positions, false, Allocator.TempJob);
         }
 
         public void OnDestroy()
@@ -70,21 +91,35 @@ namespace _Chi.Scripts.Mono.System
             var player = Gamesystem.instance.objects.currentPlayer;
             var playerPos = player.GetPosition();
             
+            var rebuildJob = new KnnRebuildJob(knnContainer);
+            rebuildJob.Schedule().Complete();
+            
+            gsb.initGrid(positions);
+            
             //TODO jobify and burst
 
             if (!tree.IsEmpty)
             {
-                var handle = tree.FindNearest(new float3(playerPos.x, playerPos.y, 0), out _);
+                UnsafeKdTree<float3, TreeComparer>.Handle handle = tree.FindNearest(new float3(playerPos.x, playerPos.y, 0), out _);
 
                 if (handle.Valid)
                 {
-                    var dist = Utils.Dist2(playerPos, new Vector3(handle.Value.x, handle.Value.y, 0));
+                    var foundPos = tree[handle];
+                    var dist = Utils.Dist2(playerPos, new Vector3(foundPos.x, foundPos.y, 0));
+                    
+                    Debug.DrawLine(player.GetPosition(), new Vector3(foundPos.x, foundPos.y, 0), Color.red);
                     if (dist < player.stats.pickupAttractRange.GetValue())
                     {
-                        beingPickedUp.Add(drops[(int) handle.Value.z]);
+                        beingPickedUp.Add(drops[(int) foundPos.z]);
+                        drops.Remove((int) foundPos.z);
                         tree.RemoveAt(handle);
                     }
                 }
+            }
+
+            if (Input.GetMouseButton(0))
+            {
+                Drop(DropType.Level1Gold, Utils.GetMousePosition());
             }
         }
         
@@ -139,7 +174,16 @@ namespace _Chi.Scripts.Mono.System
             int id = lastId++;
             drops[id] = go;
             
-            tree.Add(new float3(position.x, position.y, id));
+            //tree.Add(new float3(position.x, position.y, id));
+            
+            positionsList.Add(position);
+            gameObjects.Add(go);
+            
+            //TODO dat na vic vlaken
+            //TOD BG jobs - dokud neni prepocitano, zadny pickupy se nekonaj
+            //https://github.com/ArthurBrussee/KNN
+            
+            positions = new NativeArray<float3>(positionsList.ToArray(), Allocator.Persistent);
         }
 
         public void Pickup(GameObject go)

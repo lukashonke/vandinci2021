@@ -14,6 +14,7 @@ Material:
   - PREMULTIPLYALPHA_ON
   - PREMULTIPLYCOLOR_ON
   - SHAPE2_ON
+  - TWISTUV_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -25,7 +26,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _ColorRampTex:
-        m_Texture: {fileID: -6196184613464321539, guid: 5b0d2ad2895f20040a5b2d376c894fc8, type: 2}
+        m_Texture: {fileID: 28761834029838142, guid: e88813b48891c204abd79c284e160462, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ColorRampTexGradient:
@@ -106,8 +107,8 @@ Material:
     - _CamDistProximityFade: 0
     - _ColorGradingMidPoint: 0.5
     - _ColorMask: 15
-    - _ColorRampBlend: 1
-    - _ColorRampLuminosity: 0
+    - _ColorRampBlend: 0.812
+    - _ColorRampLuminosity: -0.148
     - _CullingOption: 0
     - _DebugShape: 1
     - _DepthGlow: 1
@@ -169,9 +170,9 @@ Material:
     - _ShakeUvX: 5
     - _ShakeUvY: 4
     - _Shape1MaskPow: 1
-    - _Shape2AlphaWeight: 1.56
+    - _Shape2AlphaWeight: 1.43
     - _Shape2Brightness: 0
-    - _Shape2ColorWeight: 1.56
+    - _Shape2ColorWeight: 1.43
     - _Shape2Contrast: 1
     - _Shape2DistortAmount: 0.5
     - _Shape2DistortXSpeed: 0.1
@@ -191,9 +192,9 @@ Material:
     - _Shape3RotationSpeed: 0
     - _Shape3XSpeed: 0.22
     - _Shape3YSpeed: 0.24
-    - _ShapeAlphaWeight: 1.51
+    - _ShapeAlphaWeight: 0.96
     - _ShapeBrightness: 0
-    - _ShapeColorWeight: 1.51
+    - _ShapeColorWeight: 0.96
     - _ShapeContrast: 1
     - _ShapeDistortAmount: 0.5
     - _ShapeDistortXSpeed: 0.1
@@ -208,7 +209,7 @@ Material:
     - _TextureScrollYSpeed: 0
     - _TimingSeed: 0
     - _TrailWidthPower: 1
-    - _TwistUvAmount: 1
+    - _TwistUvAmount: 0.206
     - _TwistUvPosX: 0.5
     - _TwistUvPosY: 0.5
     - _TwistUvRadius: 0.75

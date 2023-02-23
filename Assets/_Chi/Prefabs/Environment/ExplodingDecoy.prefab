@@ -139,7 +139,7 @@ MonoBehaviour:
     rotationSpeed: 500
     contactDamage: 0
     contactDamageInterval: 1
-  currentVariant: 
+  currentVariant: ExplodingDecoy
   size: 1
   goDirectlyToPlayer: 0
   stopWhenReachFixedMoveTarget: 0
@@ -148,6 +148,18 @@ MonoBehaviour:
   poolId: 2000
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
+  emitter: {fileID: 0}
+  canShoot: 0
+  prefabProjectile: {fileID: 0}
+  projectilePreview: {fileID: 0}
+  projectilePreviewDuration: 0
+  dropProjectile: {fileID: 0}
+  projectileLifetime: 0
+  projectileRandomRotation: 0
+  dropProjectileLifetime: 0
+  projectileShootInterval: 0
+  distanceToPlayerToShoot: 0
+  drops: []
 --- !u!114 &5570863261562565206
 MonoBehaviour:
   m_ObjectHideFlags: 0

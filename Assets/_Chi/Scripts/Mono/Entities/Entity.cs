@@ -241,6 +241,16 @@ namespace _Chi.Scripts.Mono.Entities
 
         public virtual void OnDie(DieCause cause)
         {
+            try
+            {
+                throw new Exception();
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("3 destroying npc " + name);
+                Debug.LogError(e);
+            }
+            
             Destroy(this.gameObject);
         }
         

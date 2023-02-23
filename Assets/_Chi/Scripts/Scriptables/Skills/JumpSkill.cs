@@ -38,7 +38,7 @@ namespace _Chi.Scripts.Scriptables.Skills
             SpawnPrefabVfx(player.GetPosition(), player.transform.rotation, null);
             player.OnSkillUse();
             
-            var force = jumpForce * player.stats.skillPowerMul.GetValue();
+            var force = jumpForce * player.stats.skillPowerMul.GetValue() * player.rb.mass;
             
             var direction = (Utils.GetMousePosition() - player.GetPosition()).normalized;
             var jumpUntil = Time.time + jumpLength;

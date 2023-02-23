@@ -4865,4 +4865,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chooseOneDirection: 1
-  speed: 0.5
+  speedMin: 0.5
+  speedMax: 1

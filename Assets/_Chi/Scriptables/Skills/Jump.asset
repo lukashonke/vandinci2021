@@ -22,5 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   reuseDelay: 10
-  jumpForce: 15
-  jumpLength: 0.3
+  vfx: {fileID: 0}
+  vfxDespawnAfter: 0
+  jumpForce: 12
+  jumpLength: 0.25

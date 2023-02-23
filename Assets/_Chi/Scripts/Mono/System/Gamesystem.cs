@@ -13,6 +13,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 
 public class Gamesystem : MonoBehaviour
 {
@@ -156,26 +157,23 @@ public class Gamesystem : MonoBehaviour
 
             if (npc.currentVariantInstance?.reward != null)
             {
-                var chance = npc.currentVariantInstance.reward.dropChance;
-                var doDrop = UnityEngine.Random.Range(0f, 100f) < chance;
-                if (doDrop)
+                foreach (var item in npc.currentVariantInstance.reward.items ?? Enumerable.Empty<RewardItem>())
                 {
-                    var player = Gamesystem.instance.objects.currentPlayer;
-                    var drops = Math.Max(1, player.stats.playerGoldDropped.GetValueInt());
-
-                    for (int i = 0; i < drops; i++)
+                    var chance = item.dropChance;
+                    var doDrop = UnityEngine.Random.Range(0f, 100f) < chance;
+                    if (doDrop)
                     {
-                        Vector3 position;
-                        if (drops > 1)
+                        var player = Gamesystem.instance.objects.currentPlayer;
+                        var drops = Random.Range(item.amountMin, item.amountMax) * Math.Max(1, player.stats.playerGoldDropped.GetValueInt());
+
+                        for (int i = 0; i < drops; i++)
                         {
+                            Vector3 position;
                             const float spread = 0.4f;
                             position = npc.GetPosition() + new Vector3(UnityEngine.Random.Range(-spread, spread), UnityEngine.Random.Range(-spread, spread));
+                        
+                            dropManager.Drop(item.dropType, position);
                         }
-                        else
-                        {
-                            position = npc.GetPosition();
-                        }
-                        dropManager.Drop(npc.currentVariantInstance.reward.dropType, position);
                     }
                 }
             }

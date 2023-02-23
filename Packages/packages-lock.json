@@ -21,6 +21,17 @@
       },
       "url": "https://arongranberg.com/packages/53e017c869bf50c971ddbec63e7c9f846009de79ec609"
     },
+    "com.nezix.nsgb": {
+      "version": "https://github.com/nezix/NeighborSearchGridBurst.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.burst": "1.4.6",
+        "com.unity.collections": "0.9.0-preview.6",
+        "com.unity.mathematics": "1.2.1"
+      },
+      "hash": "08b60dd30de59df07f3bb777ef14b85c15a783c0"
+    },
     "com.projectdawn.dotsplus": {
       "version": "file:com.projectdawn.dotsplus",
       "depth": 0,

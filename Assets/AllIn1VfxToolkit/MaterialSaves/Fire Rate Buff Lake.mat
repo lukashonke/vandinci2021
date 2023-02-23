@@ -96,7 +96,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.555
+    - _Alpha: 1
     - _AlphaCutoffValue: 0.348
     - _AlphaFadeAmount: -0.1
     - _AlphaFadePow: 1
@@ -136,7 +136,7 @@ Material:
     - _GlowGlobal: 1
     - _HandDrawnAmount: 10
     - _HandDrawnSpeed: 5
-    - _HsvBright: 0.619
+    - _HsvBright: 0.775
     - _HsvSaturation: 0.951
     - _HsvShift: 360
     - _LightAmount: 0

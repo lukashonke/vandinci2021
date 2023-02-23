@@ -2,7 +2,7 @@
   "scopedRegistries": [
     {
       "name": "A* Pathfinding Project",
-      "url": "https://arongranberg.com/packages/53e017c869bf50c971ddbec63e7c9f846009de79ec609/",
+      "url": "https://arongranberg.com/packages/53e017c869bf50c971ddbec63e7c9f846009de79ec609",
       "scopes": [
         "com.arongranberg.astar"
       ]
@@ -10,6 +10,7 @@
   ],
   "dependencies": {
     "com.arongranberg.astar": "4.3.61",
+    "com.nezix.nsgb": "https://github.com/nezix/NeighborSearchGridBurst.git",
     "com.unity.collab-proxy": "1.17.7",
     "com.unity.feature.2d": "1.0.0",
     "com.unity.ide.rider": "3.0.16",

@@ -49,13 +49,9 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 2091413172466918211, guid: b089a080f13ed6d48a2594ab28cee8dd, type: 3}
-    - {fileID: 2091413172466918211, guid: d0ae6a246a94ad449893298f7e888b8d, type: 3}
-    - {fileID: 2091413172466918211, guid: 8013aa71981e9174d95050888df3f3e7, type: 3}
+    - {fileID: 2091413172466918211, guid: b938c9b532682cb47aef33842e8b4b90, type: 3}
+    - {fileID: 2091413172466918211, guid: ae02bd94f0e73a643be5c892a3156430, type: 3}
     - {fileID: 2091413172466918211, guid: 84bec239ca9197c499c623ed75eed898, type: 3}
-    - {fileID: 2091413172466918211, guid: 5f903fb19362d124784fa2578e3e047e, type: 3}
-    - {fileID: 2091413172466918211, guid: 564171d711610774a9ef71193c3aab2c, type: 3}
-    - {fileID: 2091413172466918211, guid: 59a5e5be299edf642a42752dfa98db91, type: 3}
-    - {fileID: 2091413172466918211, guid: 51570879634519e418a591a893a5793b, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -67,7 +63,7 @@ MonoBehaviour:
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 26
+      Data: 11
     - Name: 
       Entry: 7
       Data: 1|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
@@ -103,7 +99,7 @@ MonoBehaviour:
       Data: 
     - Name: fixedDuration
       Entry: 4
-      Data: 600
+      Data: 60
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
@@ -137,43 +133,28 @@ MonoBehaviour:
       Data: 
     - Name: waitUntilAllEnemiesDead
       Entry: 5
-      Data: true
+      Data: false
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
-    - Name: eventName
-      Entry: 6
-      Data: 
-    - Name: rewardSet
-      Entry: 1
-      Data: passive_basic
-    - Name: title
-      Entry: 1
-      Data: Choose 1 module
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 7|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 6|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 2
     - Name: fixedDuration
       Entry: 4
-      Data: 30
+      Data: 70
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
     - Name: waitTillAllWawesSpawn
       Entry: 5
-      Data: true
+      Data: false
     - Name: handlers
       Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 7|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -192,7 +173,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+      Data: 8|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
     - Name: eventName
       Entry: 6
       Data: 
@@ -204,37 +185,22 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 10|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
-    - Name: eventName
-      Entry: 6
-      Data: 
-    - Name: rewardSet
-      Entry: 1
-      Data: offensive_basic
-    - Name: title
-      Entry: 1
-      Data: Choose your next weapon
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 11|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 9|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 3
     - Name: fixedDuration
       Entry: 4
-      Data: 60
+      Data: 90
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
     - Name: waitTillAllWawesSpawn
       Entry: 5
-      Data: true
+      Data: false
     - Name: handlers
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 10|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -253,19 +219,19 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 13|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+      Data: 11|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
     - Name: eventName
       Entry: 6
       Data: 
     - Name: waitUntilAllEnemiesDead
       Entry: 5
-      Data: true
+      Data: false
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 14|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
+      Data: 12|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
     - Name: eventName
       Entry: 6
       Data: 
@@ -274,28 +240,28 @@ MonoBehaviour:
       Data: passive_basic
     - Name: title
       Entry: 1
-      Data: Choose 1 module
+      Data: END FOR NOW
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 13|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 4
     - Name: fixedDuration
       Entry: 4
-      Data: 0
+      Data: 80
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
     - Name: waitTillAllWawesSpawn
       Entry: 5
-      Data: true
+      Data: false
     - Name: handlers
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 14|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -314,263 +280,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 17|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
-    - Name: eventName
-      Entry: 6
-      Data: 
-    - Name: waitUntilAllEnemiesDead
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 18|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
-    - Name: eventName
-      Entry: 6
-      Data: 
-    - Name: rewardSet
-      Entry: 1
-      Data: passive_basic
-    - Name: title
-      Entry: 1
-      Data: Choose 1 module
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 19|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
-    - Name: eventName
-      Entry: 1
-      Data: Wawe 5
-    - Name: fixedDuration
-      Entry: 4
-      Data: 70
-    - Name: waitTillAllSpawnedAreDead
-      Entry: 5
-      Data: false
-    - Name: waitTillAllWawesSpawn
-      Entry: 5
-      Data: true
-    - Name: handlers
-      Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 10
-      Data: 4
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 21|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
-    - Name: eventName
-      Entry: 6
-      Data: 
-    - Name: waitUntilAllEnemiesDead
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 22|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
-    - Name: eventName
-      Entry: 6
-      Data: 
-    - Name: rewardSet
-      Entry: 1
-      Data: passive_basic
-    - Name: title
-      Entry: 1
-      Data: Choose 1 module
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 23|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
-    - Name: eventName
-      Entry: 1
-      Data: Wawe 6
-    - Name: fixedDuration
-      Entry: 4
-      Data: 70
-    - Name: waitTillAllSpawnedAreDead
-      Entry: 5
-      Data: false
-    - Name: waitTillAllWawesSpawn
-      Entry: 5
-      Data: true
-    - Name: handlers
-      Entry: 7
-      Data: 24|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 10
-      Data: 5
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 25|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
-    - Name: eventName
-      Entry: 6
-      Data: 
-    - Name: waitUntilAllEnemiesDead
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 26|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
-    - Name: eventName
-      Entry: 6
-      Data: 
-    - Name: rewardSet
-      Entry: 1
-      Data: offensive_basic
-    - Name: title
-      Entry: 1
-      Data: Choose next weapon
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 27|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
-    - Name: eventName
-      Entry: 1
-      Data: Wawe 7
-    - Name: fixedDuration
-      Entry: 4
-      Data: 80
-    - Name: waitTillAllSpawnedAreDead
-      Entry: 5
-      Data: false
-    - Name: waitTillAllWawesSpawn
-      Entry: 5
-      Data: true
-    - Name: handlers
-      Entry: 7
-      Data: 28|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 10
-      Data: 6
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 29|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
-    - Name: eventName
-      Entry: 6
-      Data: 
-    - Name: waitUntilAllEnemiesDead
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 30|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
-    - Name: eventName
-      Entry: 6
-      Data: 
-    - Name: rewardSet
-      Entry: 1
-      Data: passive_basic
-    - Name: title
-      Entry: 1
-      Data: Choose 1 module
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 31|_Chi.Scripts.Mono.Mission.Events.ShowMessage, Assembly-CSharp
-    - Name: eventName
-      Entry: 6
-      Data: 
-    - Name: text
-      Entry: 1
-      Data: Miniboss Incoming!
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 32|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
-    - Name: eventName
-      Entry: 1
-      Data: Mini Boss
-    - Name: fixedDuration
-      Entry: 4
-      Data: 100
-    - Name: waitTillAllSpawnedAreDead
-      Entry: 5
-      Data: false
-    - Name: waitTillAllWawesSpawn
-      Entry: 5
-      Data: true
-    - Name: handlers
-      Entry: 7
-      Data: 33|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 10
-      Data: 7
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 34|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+      Data: 15|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
     - Name: eventName
       Entry: 6
       Data: 
@@ -594,12 +304,12 @@ MonoBehaviour:
   loopEvents: 0
   progressSettings:
     shops:
-    - goldAcumulatedRequired: 100
-      shopSet: shop_passives_basic
-      priceMultiplier: 1
-    - goldAcumulatedRequired: 200
-      shopSet: shop_passives_basic
-      priceMultiplier: 1.5
-    - goldAcumulatedRequired: 300
+    - goldAcumulatedRequired: 25
       shopSet: shop_passives_basic
       priceMultiplier: 2
+    - goldAcumulatedRequired: 100
+      shopSet: shop_passives_basic
+      priceMultiplier: 7
+    - goldAcumulatedRequired: 200
+      shopSet: shop_passives_basic
+      priceMultiplier: 10

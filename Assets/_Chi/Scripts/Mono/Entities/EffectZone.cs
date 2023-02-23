@@ -82,10 +82,16 @@ namespace _Chi.Scripts.Mono.Entities
                 foreach (var kp in entitiesInside)
                 {
                     var entity = kp.Key;
-                    if (entity != null && kp.Value < Time.time)
+                    if (entity == null)
+                    {
+                        toRemove.Add(entity);
+                        continue;
+                    }
+                    if (kp.Value < Time.time)
                     {
                         if ((team == Teams.Monster && entity is Player) 
-                            || team == Teams.Player && entity is Npc npc && npc.AreEnemies(currentPlayer))
+                            || team == Teams.Player && entity is Npc npc && npc.AreEnemies(currentPlayer)
+                            || team == Teams.Neutral)
                         {
                             if (IsInsideEffectArea(entity))
                             {

@@ -27,10 +27,24 @@ MonoBehaviour:
     - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 1
+      weight: 5
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: Zombie
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 2
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieFat
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieFast
     relativePosition: 0
     behavior: 0
     roamDistance: 0
@@ -43,9 +57,9 @@ MonoBehaviour:
     repeatSpawnIntervalMin: 0
     repeatSpawnIntervalMax: 0
     repeatCount: 0
-    spawnCountMin: 5
-    spawnCountMax: 10
-    distanceFromPlayer: 7
+    spawnCountMin: 10
+    spawnCountMax: 20
+    distanceFromPlayer: 12
     despawnAfter: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1

@@ -23,9 +23,9 @@ namespace _Chi.Scripts.Mono.Misc
             Recalculate();
         }
 
-        public void ResetValue()
+        public void ResetValue(int value = 0)
         {
-            currentVal = 0;
+            currentVal = value;
             
             Recalculate();
         }

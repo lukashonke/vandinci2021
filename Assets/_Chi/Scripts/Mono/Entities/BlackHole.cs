@@ -14,6 +14,8 @@ namespace _Chi.Scripts.Mono.Entities
 
         public int attachedLimit = 100;
 
+        public float minDistance2 = 2.5f;
+
         public float force;
 
         public void Awake()
@@ -29,10 +31,19 @@ namespace _Chi.Scripts.Mono.Entities
         public void FixedUpdate()
         {
             var position = (Vector2) transform.position;
-            foreach (Rigidbody2D rb in attached)
+            for (var index = attached.Count - 1; index >= 0; index--)
             {
+                Rigidbody2D rb = attached[index];
                 var dir = (position - rb.position);
-                if (dir.sqrMagnitude > 0.1f)
+                if(dir.sqrMagnitude > minDistance2)
+                {
+                    attached.RemoveAt(index);
+                    var entity = rb.gameObject.GetEntity();
+                    entity.SetCanMove(true);
+                    continue;
+                }
+                
+                //if (dir.sqrMagnitude > 0.1f)
                 {
                     rb.MovePosition(rb.position + (position - rb.position).normalized * (force * Time.fixedDeltaTime));
                 }

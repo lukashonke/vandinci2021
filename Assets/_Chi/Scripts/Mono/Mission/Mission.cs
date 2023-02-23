@@ -48,6 +48,7 @@ namespace _Chi.Scripts.Mono.Mission
             
             Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(initialShop.goldAcumulatedRequired);
             Gamesystem.instance.uiManager.goldProgressBar.ResetValue();
+            progressSettings.lastGoldTriggeredShopLevelIndex = -1;
 
             int currentEventIndex = startIndex;
             
@@ -64,21 +65,23 @@ namespace _Chi.Scripts.Mono.Mission
                     if (gold >= nextShop.goldAcumulatedRequired)
                     {
                         shopIndex++;
+                        
+                        //TODO trigger shop
+                        Gamesystem.instance.uiManager.OpenRewardSetWindow(nextShop.shopSet, "Shop", nextShop);
+                        
+                        nextShop = progressSettings.shops[shopIndex + 1];
 
-                        if (shopIndex - 1 >= 0)
+                        if (shopIndex >= 0)
                         {
-                            var currentShop = progressSettings.shops[shopIndex - 1];
-                            Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(nextShop.goldAcumulatedRequired - currentShop.goldAcumulatedRequired);
+                            var prevShop = progressSettings.shops[shopIndex];
+                            Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(nextShop.goldAcumulatedRequired - prevShop.goldAcumulatedRequired);
                         }
                         else
                         {
                             Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(nextShop.goldAcumulatedRequired);
                         }
-                    
+                        
                         Gamesystem.instance.uiManager.goldProgressBar.ResetValue();
-                    
-                        //TODO trigger shop
-                        Gamesystem.instance.uiManager.OpenRewardSetWindow(nextShop.shopSet, "Shop", nextShop);
                     
                         progressSettings.lastGoldTriggeredShopLevelIndex = shopIndex;
                     }
@@ -154,7 +157,7 @@ namespace _Chi.Scripts.Mono.Mission
     {
         public List<TriggeredShop> shops;
 
-        [NonSerialized] public int lastGoldTriggeredShopLevelIndex = -1; 
+        [NonSerialized] public int lastGoldTriggeredShopLevelIndex = 0;
     }
 
     [Serializable]

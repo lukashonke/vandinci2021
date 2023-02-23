@@ -26,6 +26,9 @@ namespace _Chi.Scripts.Mono.Entities
         public float projectilePreviewDuration;
         
         [ShowIf("canShoot")]
+        public float projectilePreviewLifetime;
+        
+        [ShowIf("canShoot")]
         public GameObject dropProjectile;
 
         [ShowIf("canShoot")]
@@ -118,7 +121,7 @@ namespace _Chi.Scripts.Mono.Entities
                 previewProjectileInstance.MoveTo(spawnPosition);
                 previewProjectileInstance.Rotate(spawnRotation);
                 previewProjectileInstance.Run();
-                Gamesystem.instance.Schedule(Time.time + projectilePreviewDuration, () => Gamesystem.instance.poolSystem.Despawn(projectilePreview, previewProjectileInstance));
+                Gamesystem.instance.Schedule(Time.time + projectilePreviewLifetime, () => Gamesystem.instance.poolSystem.Despawn(projectilePreview, previewProjectileInstance));
                 
                 yield return new WaitForSeconds(projectilePreviewDuration);
             }

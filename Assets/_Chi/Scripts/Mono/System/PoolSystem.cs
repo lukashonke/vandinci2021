@@ -140,6 +140,11 @@ namespace _Chi.Scripts.Mono.System
         
         public bool Despawn(Npc npcInstance)
         {
+            if (npcInstance.despawned)
+            {
+                return false;
+            }
+            
             if (npcPools.TryGetValue(npcInstance.poolId, out var pool))
             {
                 pool.Release(npcInstance);

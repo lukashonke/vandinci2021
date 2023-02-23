@@ -11,6 +11,7 @@ using BulletPro;
 using Pathfinding;
 using Pathfinding.RVO;
 using Sirenix.OdinInspector;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -55,6 +56,8 @@ namespace _Chi.Scripts.Mono.Entities
 
         public ParticleSystem spawnEffect;
 
+        [NonSerialized] public bool despawned;
+
         #endregion
         #region privates
 
@@ -88,6 +91,8 @@ namespace _Chi.Scripts.Mono.Entities
             SetPhysicsActivated(false);
 
             pathData = new PathData(this);
+
+            despawned = false;
         }
 
         public override void Start()
@@ -137,25 +142,35 @@ namespace _Chi.Scripts.Mono.Entities
         {
             Register();
 
-            var transform1 = transform;
-            transform1.position = position;
-            transform1.rotation = rotation;
-            SetCanMove(true);
-            
-            if (hasRvoController)
+            try
             {
-                rvoController.enabled = true;
-            }
+                var transform1 = transform;
+                transform1.position = position;
+                transform1.rotation = rotation;
+                SetCanMove(true);
             
-            SetPhysicsActivated(false);
+                if (hasRvoController)
+                {
+                    rvoController.enabled = true;
+                }
             
-            currentDissolveProcess = 1f;
+                SetPhysicsActivated(false);
             
-            gameObject.SetActive(true);
+                currentDissolveProcess = 1f;
+            
+                gameObject.SetActive(true);
 
-            if (spawnEffect != null)
+                if (spawnEffect != null)
+                {
+                    spawnEffect.Play();
+                }
+            
+                despawned = false;
+            }
+            catch (Exception e)
             {
-                spawnEffect.Play();
+                Debug.LogError(name);
+                throw;
             }
         }
         
@@ -212,6 +227,8 @@ namespace _Chi.Scripts.Mono.Entities
                 rvoController.layer = (RVOLayer) 1;
                 rvoController.collidesWith = (RVOLayer) (1);
             }
+            
+            despawned = true;
         }
 
         public virtual void ApplyVariant(string variant)
@@ -330,6 +347,16 @@ namespace _Chi.Scripts.Mono.Entities
                 
                 if (!this.DeletePooledNpc())
                 {
+                    try
+                    {
+                        throw new Exception();
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError("2 destroying npc " + name);
+                        Debug.LogError(e);
+                    }
+                    
                     Destroy(this.gameObject);
                 }
             }
@@ -339,6 +366,16 @@ namespace _Chi.Scripts.Mono.Entities
         {
             if (!this.DeletePooledNpc())
             {
+                try
+                {
+                    throw new Exception();
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError("1 destroying npc " + name);
+                    Debug.LogError(e);
+                }
+                
                 Destroy(this.gameObject);
             }
         }
@@ -346,6 +383,16 @@ namespace _Chi.Scripts.Mono.Entities
         public override void OnDestroy()
         {
             base.OnDestroy();
+            
+            try
+            {
+                throw new Exception();
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("destroying npc " + name);
+                Debug.LogError(e);
+            }
             
             pathData.OnDestroy();
             

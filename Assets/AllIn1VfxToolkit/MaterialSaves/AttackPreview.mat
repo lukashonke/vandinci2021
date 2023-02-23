@@ -170,9 +170,9 @@ Material:
     - _ShakeUvX: 5
     - _ShakeUvY: 4
     - _Shape1MaskPow: 1
-    - _Shape2AlphaWeight: 0
+    - _Shape2AlphaWeight: 0.64
     - _Shape2Brightness: 0
-    - _Shape2ColorWeight: 0
+    - _Shape2ColorWeight: 0.64
     - _Shape2Contrast: 1
     - _Shape2DistortAmount: 0.5
     - _Shape2DistortXSpeed: 0.1

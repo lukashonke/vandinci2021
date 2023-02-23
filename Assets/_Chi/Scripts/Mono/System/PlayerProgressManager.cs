@@ -13,6 +13,7 @@ namespace _Chi.Scripts.Mono.System
 
         public bool loadFileFromStart = true;
         public bool applyRunOnStart = false;
+        public bool resetStatsOnStart = false;
         
         public void Awake()
         {
@@ -123,6 +124,13 @@ namespace _Chi.Scripts.Mono.System
             {
                 ApplyRunToPlayer(Gamesystem.instance.objects.currentPlayer, progressData.run);
             }
+
+            if (resetStatsOnStart)
+            {
+                progressData.run.gold = 0;
+                progressData.run.acumulatedGold = 0;
+                progressData.run.killed = 0;
+            }
         }
 
         [Button]
@@ -142,6 +150,8 @@ namespace _Chi.Scripts.Mono.System
             if (countToProgress)
             {
                 Gamesystem.instance.uiManager.goldProgressBar.AddValue(gold);
+                
+                Gamesystem.instance.prefabDatabase.playerGoldReceived.Spawn(Gamesystem.instance.objects.currentPlayer.GetPosition(), gold);
             }
         }
         

@@ -181,7 +181,7 @@ MonoBehaviour:
     rotationSpeed: 500
     contactDamage: 0
     contactDamageInterval: 1
-  currentVariant: 
+  currentVariant: MonsterHouseLarge
   size: 1
   goDirectlyToPlayer: 0
   stopWhenReachFixedMoveTarget: 0
@@ -190,6 +190,17 @@ MonoBehaviour:
   poolId: 2003
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
+  emitter: {fileID: 0}
+  canShoot: 0
+  prefabProjectile: {fileID: 0}
+  projectilePreview: {fileID: 0}
+  projectilePreviewDuration: 0
+  dropProjectile: {fileID: 0}
+  projectileLifetime: 0
+  projectileRandomRotation: 0
+  dropProjectileLifetime: 0
+  projectileShootInterval: 0
+  distanceToPlayerToShoot: 0
   continuousPrefabsToSpawn:
   - type: 0
     prefab: {fileID: 0}
@@ -204,6 +215,7 @@ MonoBehaviour:
   continuousSpawnAtOnceCount: 1
   continuousSpawnSpread: 1.5
   distanceBeforeDespawn: 100
+  despawnAfterTime: 0
   damageBasedSpawns:
   - spawnAtHpPercentIsRepeated: 1
     spawnAtHpPercent: 0.2

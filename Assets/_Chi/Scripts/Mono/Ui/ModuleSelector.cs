@@ -112,10 +112,10 @@ namespace _Chi.Scripts.Mono.Ui
                 Gamesystem.instance.uiManager.vehicleSettingsWindow.UpdateCurrentMoney();
             }
             
-            if (currentMode == ModuleSelectorMode.SingleRewardSet)
+            /*if (currentMode == ModuleSelectorMode.SingleRewardSet)
             {
                 Gamesystem.instance.uiManager.vehicleSettingsWindow.CloseWindow();
-            }
+            }*/
         }
 
         public void AbortAddingItem()

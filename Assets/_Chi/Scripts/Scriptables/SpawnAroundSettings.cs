@@ -6,6 +6,7 @@ using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Mission;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
@@ -94,7 +95,8 @@ namespace _Chi.Scripts.Scriptables
         public int spawnCountMin;
         public int spawnCountMax;
 
-        public float distanceFromPlayer;
+        [FormerlySerializedAs("distanceFromPlayer")] public float distanceFromPlayerMin;
+        [FormerlySerializedAs("distanceFromPlayer")] public float distanceFromPlayerMax;
 
         public float spawnGroupSpreadMin = 1;
         public float spawnGroupSpreadMax = 1;
@@ -125,7 +127,7 @@ namespace _Chi.Scripts.Scriptables
 
         public float GetDistanceFromPlayer(float time)
         {
-            return distanceFromPlayer;
+            return Random.Range(distanceFromPlayerMin, distanceFromPlayerMax);
         }
     }
 }
