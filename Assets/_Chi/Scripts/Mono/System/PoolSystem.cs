@@ -142,7 +142,7 @@ namespace _Chi.Scripts.Mono.System
         {
             if (npcInstance.despawned)
             {
-                return false;
+                return true;
             }
             
             if (npcPools.TryGetValue(npcInstance.poolId, out var pool))

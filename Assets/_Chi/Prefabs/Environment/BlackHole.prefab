@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6010624728005040231}
   - component: {fileID: 5690547904661247531}
   - component: {fileID: 7025278837497960905}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 557037149086329092}
   - component: {fileID: 1929237977781337709}
   - component: {fileID: 1393060042261465995}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5009,7 +5009,7 @@ GameObject:
   - component: {fileID: 5932062968405953321}
   - component: {fileID: 5679299228448911541}
   - component: {fileID: 4330026314289064019}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: BlackHole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5112,6 +5112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chooseOneDirection: 1
+  chanceToGoAgainstPlayer: 100
   speedMin: 0.2
   speedMax: 0.7
 --- !u!50 &5679299228448911541
@@ -5147,6 +5148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce57998b65bd4b8dab771774b4b355e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  team: 1
   attachedLimit: 100
+  minDistance2: 2.5
   force: 4

@@ -386,6 +386,9 @@ MonoBehaviour:
       noRotation: 0
       prefabVariant: none
     relativePosition: 0
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 0
     roamDistance: 0
     roamRandomRadius: 0
@@ -452,6 +455,9 @@ MonoBehaviour:
       noRotation: 0
       prefabVariant: none
     relativePosition: 0
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 0
     roamDistance: 0
     roamRandomRadius: 0
@@ -504,6 +510,9 @@ MonoBehaviour:
       noRotation: 1
       prefabVariant: ExplodingDecoy
     relativePosition: 0
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 3
     roamDistance: 100
     roamRandomRadius: 3
@@ -556,6 +565,9 @@ MonoBehaviour:
       noRotation: 0
       prefabVariant: ZombieIdleWalker
     relativePosition: 0
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 1
     roamDistance: 100
     roamRandomRadius: 3
@@ -608,6 +620,9 @@ MonoBehaviour:
       noRotation: 0
       prefabVariant: ZombieIdleRunner
     relativePosition: 0
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 2
     roamDistance: 100
     roamRandomRadius: 3
@@ -660,6 +675,9 @@ MonoBehaviour:
       noRotation: 0
       prefabVariant: ZombieSpawner_ZombieSneaky
     relativePosition: 3
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 0
     roamDistance: 0
     roamRandomRadius: 0
@@ -718,14 +736,10 @@ MonoBehaviour:
       rotateTowardsPlayer: 0
       noRotation: 1
       prefabVariant: '-'
-    - type: 3
-      prefab: {fileID: 5543541136632558941, guid: e535f34a6b06ee146ac44ae895452eb3, type: 3}
-      prefabNpc: {fileID: 6549855113248904363, guid: 95485f9b1a9973140bc1febcd04fe496, type: 3}
-      weight: 1
-      rotateTowardsPlayer: 0
-      noRotation: 1
-      prefabVariant: '-'
     relativePosition: 0
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 3
     roamDistance: 100
     roamRandomRadius: 3
@@ -778,6 +792,9 @@ MonoBehaviour:
       noRotation: 0
       prefabVariant: ZombieSpawner_Zombie
     relativePosition: 3
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 0
     roamDistance: 0
     roamRandomRadius: 0
@@ -830,6 +847,9 @@ MonoBehaviour:
       noRotation: 1
       prefabVariant: GoldChestSmall
     relativePosition: 0
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 3
     roamDistance: 100
     roamRandomRadius: 3
@@ -882,6 +902,9 @@ MonoBehaviour:
       noRotation: 1
       prefabVariant: MonsterHouseSmall
     relativePosition: 0
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 3
     roamDistance: 100
     roamRandomRadius: 3
@@ -934,6 +957,9 @@ MonoBehaviour:
       noRotation: 0
       prefabVariant: ZombieBloaterExploding
     relativePosition: 0
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 0
     roamDistance: 100
     roamRandomRadius: 3

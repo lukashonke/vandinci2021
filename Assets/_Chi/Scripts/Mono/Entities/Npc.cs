@@ -48,7 +48,16 @@ namespace _Chi.Scripts.Mono.Entities
         public float dissolveSpeed = 2f;
         [NonSerialized] public float currentDissolveProcess;
         public int poolId;
+
+        [Button]
+        [HideInPlayMode]
+        public void RandomPoolId()
+        {
+            poolId = GetInstanceID();
+        }
+        
         [NonSerialized] public float? maxDistanceFromPlayerBeforeDespawn = null;
+        [NonSerialized] public float? despawnTime = 0;
 
         public float activateWhenCloseToPlayerDist2 = 0;
         
@@ -92,6 +101,7 @@ namespace _Chi.Scripts.Mono.Entities
 
             pathData = new PathData(this);
 
+            despawnTime = null;
             despawned = false;
         }
 
@@ -134,6 +144,15 @@ namespace _Chi.Scripts.Mono.Entities
 
                         pathToFind = null;
                     }
+                }
+            }
+
+            if (despawnTime.HasValue)
+            {
+                if(despawnTime.Value < Time.time)
+                {
+                    OnDie(DieCause.Despawned);
+                    despawnTime = null;
                 }
             }
         }
@@ -227,6 +246,8 @@ namespace _Chi.Scripts.Mono.Entities
                 rvoController.layer = (RVOLayer) 1;
                 rvoController.collidesWith = (RVOLayer) (1);
             }
+
+            despawnTime = null;
             
             despawned = true;
         }
@@ -313,6 +334,11 @@ namespace _Chi.Scripts.Mono.Entities
 
         public override void OnDie(DieCause cause)
         {
+            if (isDissolving || despawned)
+            {
+                return;
+            }
+            
             if (cause == DieCause.Killed)
             {
                 if (!isDissolving)
@@ -362,7 +388,7 @@ namespace _Chi.Scripts.Mono.Entities
             }
         }
         
-        public void OnFinishedDissolve()
+        public bool OnFinishedDissolve()
         {
             if (!this.DeletePooledNpc())
             {
@@ -377,7 +403,11 @@ namespace _Chi.Scripts.Mono.Entities
                 }
                 
                 Destroy(this.gameObject);
+
+                return false;
             }
+
+            return true;
         }
 
         public override void OnDestroy()

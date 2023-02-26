@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5543541135633729520}
   - component: {fileID: 5543541135633729527}
   - component: {fileID: 5543541135633729526}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: SolidOrbDistort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 3300286650203900647}
   - component: {fileID: 1499030055039769264}
   - component: {fileID: -1039690135397503047}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: DamagingOrb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chooseOneDirection: 1
+  chanceToGoAgainstPlayer: 100
   speedMin: 0.2
   speedMax: 1.2
 --- !u!114 &3300286650203900647

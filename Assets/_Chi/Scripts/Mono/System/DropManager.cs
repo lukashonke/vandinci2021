@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using _Chi.Scripts.Mono.Common;
-using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Utilities;
-using ProjectDawn.Collections;
-using ProjectDawn.Collections.LowLevel.Unsafe;
 using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine;
-using BurstGridSearch;
 using KNN;
 using KNN.Jobs;
 using Unity.Jobs;
@@ -30,38 +25,91 @@ namespace _Chi.Scripts.Mono.System
         public float pickupMoveSpeed = 2f;
 
         [NonSerialized] private int lastId = 0;
+        [NonSerialized] private List<GameObject> beingPickedUp;
         
-        // BUG 1 - drops se nepickupují nekdy
+        [NonSerialized] private List<float3> pointsList;
+        [NonSerialized] private List<GameObject> gameObjects;
+        
         // BUG 2 - smaze se nejaka entita a pak blbne
 
-        [NonSerialized] private Dictionary<int, GameObject> drops;
-        [NonSerialized] private UnsafeKdTree<float3, TreeComparer> tree;
-
-        [NonSerialized] private List<float3> positionsList;
-        [NonSerialized] private NativeArray<float3> positions;
-        [NonSerialized] private List<GameObject> gameObjects;
-
-        [NonSerialized] private List<GameObject> beingPickedUp;
-        [NonSerialized] GridSearchBurst gsb;
-        
         [NonSerialized] KnnContainer knnContainer;
+        [NonSerialized] NativeArray<float3> points;
+        
+        private JobHandle rebuildJobHandle;
+        private JobHandle queryJobHandle;
+        
+        private bool isQueryJobRunning = false;
+        private NativeArray<int> queryResults;
 
         void Awake()
         {
-            tree = new UnsafeKdTree<float3, TreeComparer>(1, Allocator.Persistent, new TreeComparer());
-
-            drops = new();
             beingPickedUp = new();
-            
-            positionsList = new();
+            pointsList = new();
             gameObjects = new();
             
-            knnContainer = new KnnContainer(positions, false, Allocator.TempJob);
+            points = new NativeArray<float3>(2048*2, Allocator.Persistent);
+            knnContainer = new KnnContainer(points, false, Allocator.Persistent);
+        }
+
+        public void Start()
+        {
         }
 
         public void OnDestroy()
         {
-            tree.Dispose();
+            points.Dispose();
+            knnContainer.Dispose();
+            queryResults.Dispose();
+        }
+
+        public void Update()
+        {
+            for (var index = 0; index < pointsList.Count; index++)
+            {
+                var point = pointsList[index];
+
+                points[index] = point;
+            }
+
+            for (int index = pointsList.Count; index < points.Length; index++)
+            {
+                points[index] = new float3(1000000, 1000000, 1000000);
+            }
+            
+            var rebuild = new KnnRebuildJob(knnContainer);
+            rebuildHandle = rebuild.Schedule();
+        }
+        
+        JobHandle rebuildHandle;
+
+        public void LateUpdate()
+        {
+            const int neighbours = 1;
+
+            var player = Gamesystem.instance.objects.currentPlayer;
+            var playerPos = player.GetPosition();
+            var playerPosFloat3 = new float3(playerPos.x, playerPos.y, 0);
+
+            queryResults = new NativeArray<int>(neighbours, Allocator.TempJob);
+            
+            var queryJob = new QueryKNearestJob(knnContainer, playerPosFloat3, queryResults);
+            queryJob.Schedule(rebuildHandle).Complete();
+            
+            for (int i = 0; i < neighbours; i++)
+            {
+                var index = queryResults[i];
+                var pos = points[index];
+                
+                var dist = Utils.Dist2(playerPos, new Vector3(pos.x, pos.y, 0));
+                if (dist < player.stats.pickupAttractRange.GetValue())
+                {
+                    var go = gameObjects[index];
+                    beingPickedUp.Add(go);
+                    RemoveDrop(index);
+                }
+            }
+
+            queryResults.Dispose();
         }
 
         public void FixedUpdate()
@@ -83,66 +131,6 @@ namespace _Chi.Scripts.Mono.System
                     beingPickedUp.RemoveAt(index);
                     Pickup(go);
                 }
-            }
-        }
-
-        public void Update()
-        {
-            var player = Gamesystem.instance.objects.currentPlayer;
-            var playerPos = player.GetPosition();
-            
-            var rebuildJob = new KnnRebuildJob(knnContainer);
-            rebuildJob.Schedule().Complete();
-            
-            gsb.initGrid(positions);
-            
-            //TODO jobify and burst
-
-            if (!tree.IsEmpty)
-            {
-                UnsafeKdTree<float3, TreeComparer>.Handle handle = tree.FindNearest(new float3(playerPos.x, playerPos.y, 0), out _);
-
-                if (handle.Valid)
-                {
-                    var foundPos = tree[handle];
-                    var dist = Utils.Dist2(playerPos, new Vector3(foundPos.x, foundPos.y, 0));
-                    
-                    Debug.DrawLine(player.GetPosition(), new Vector3(foundPos.x, foundPos.y, 0), Color.red);
-                    if (dist < player.stats.pickupAttractRange.GetValue())
-                    {
-                        beingPickedUp.Add(drops[(int) foundPos.z]);
-                        drops.Remove((int) foundPos.z);
-                        tree.RemoveAt(handle);
-                    }
-                }
-            }
-
-            if (Input.GetMouseButton(0))
-            {
-                Drop(DropType.Level1Gold, Utils.GetMousePosition());
-            }
-        }
-        
-        struct TreeComparer : IKdTreeComparer<float3>
-        {
-            public int Compare(float3 x, float3 y, int depth)
-            {
-                int axis = depth % 2;
-                return x[axis].CompareTo(y[axis]);
-            }
-
-            public float DistanceSq(float3 x, float3 y)
-            {
-                var x2 = new float2(x.x, x.y);
-                var y2 = new float2(y.x, y.y);
-                
-                return math.distancesq(x2, y2);
-            }
-
-            public float DistanceToSplitSq(float3 x, float3 y, int depth)
-            {
-                int axis = depth % 2;
-                return (x[axis] - y[axis]) * (x[axis] - y[axis]);
             }
         }
         
@@ -171,19 +159,19 @@ namespace _Chi.Scripts.Mono.System
             
             go.name = drop.ToString();
 
-            int id = lastId++;
-            drops[id] = go;
-            
-            //tree.Add(new float3(position.x, position.y, id));
-            
-            positionsList.Add(position);
+            AddDrop(position, go);
+        }
+
+        private void AddDrop(Vector3 position, GameObject go)
+        {
+            pointsList.Add(position);
             gameObjects.Add(go);
-            
-            //TODO dat na vic vlaken
-            //TOD BG jobs - dokud neni prepocitano, zadny pickupy se nekonaj
-            //https://github.com/ArthurBrussee/KNN
-            
-            positions = new NativeArray<float3>(positionsList.ToArray(), Allocator.Persistent);
+        }
+        
+        private void RemoveDrop(int index)
+        {
+            pointsList.RemoveAt(index);
+            gameObjects.RemoveAt(index);
         }
 
         public void Pickup(GameObject go)

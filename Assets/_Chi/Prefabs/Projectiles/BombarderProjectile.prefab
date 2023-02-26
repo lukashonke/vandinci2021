@@ -44088,7 +44088,8 @@ MonoBehaviour:
   effects:
   - {fileID: 11400000, guid: e9ee23c6ec6fda646a0ca63e5b6a0d15, type: 2}
   affectType: 0
-  poolId: 100
+  poolId: 41402
+  baseStrength: 1
   getHitsOnSpawn: 1
   noDespawnAfterHit: 1
 --- !u!50 &4560028205628344789

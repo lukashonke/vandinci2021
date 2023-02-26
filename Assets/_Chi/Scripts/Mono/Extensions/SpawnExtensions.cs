@@ -38,6 +38,10 @@ namespace _Chi.Scripts.Mono.Extensions
                     var npc = prefab.prefabNpc.SpawnPooledNpc(position, rotation);
                     Gamesystem.instance.prefabDatabase.ApplyPrefabVariant(npc, prefab.prefabVariant);
                     npc.maxDistanceFromPlayerBeforeDespawn = distanceFromPlayerToDespawn * distanceFromPlayerToDespawn;
+                    if (despawnAfter > 0)
+                    {
+                        npc.despawnTime = Time.time + despawnAfter;
+                    }
                     return npc;
                 case SpawnPrefabType.NonPooledNpc:
                     var go = Object.Instantiate(prefab.prefabNpc.gameObject, position, rotation);
@@ -45,6 +49,10 @@ namespace _Chi.Scripts.Mono.Extensions
                     var npc2 = go.GetComponent<Npc>();
                     Gamesystem.instance.prefabDatabase.ApplyPrefabVariant(npc2, prefab.prefabVariant);
                     npc2.maxDistanceFromPlayerBeforeDespawn = distanceFromPlayerToDespawn * distanceFromPlayerToDespawn;
+                    if (despawnAfter > 0)
+                    {
+                        npc2.despawnTime = Time.time + despawnAfter;
+                    }
                     return npc2;
                 case SpawnPrefabType.Gameobject:
                     var go2 = Object.Instantiate(prefab.prefab);

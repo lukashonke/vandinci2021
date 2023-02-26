@@ -8,6 +8,8 @@ namespace _Chi.Scripts.Mono.Misc
     {
         public bool chooseOneDirection;
 
+        public int chanceToGoAgainstPlayer;
+
         public float speedMin;
         
         public float speedMax;
@@ -18,7 +20,14 @@ namespace _Chi.Scripts.Mono.Misc
         {
             if (chooseOneDirection)
             {
-                direction = Random.insideUnitCircle.normalized * Random.Range(speedMin, speedMax);
+                if (chanceToGoAgainstPlayer > 0 && Random.Range(0, 100) < chanceToGoAgainstPlayer)
+                {
+                    direction = (Gamesystem.instance.objects.currentPlayer.GetPosition() - transform.position).normalized * Random.Range(speedMin, speedMax);
+                }
+                else
+                {
+                    direction = Random.insideUnitCircle.normalized * Random.Range(speedMin, speedMax);
+                }
             }
         }
 

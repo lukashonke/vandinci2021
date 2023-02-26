@@ -5,6 +5,7 @@ using System.Linq;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Mission.Events;
+using _Chi.Scripts.Utilities;
 using Pathfinding;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -101,76 +102,70 @@ namespace _Chi.Scripts.Mono.Mission
                 goToDirection += (Vector3) Random.insideUnitCircle * settings.roamRandomRadius;
             }
 
-            if (spawnCount <= 2)
+            int rows = 1;
+            float theta = 0;
+
+            switch (settings.formation)
             {
-                for (int i = 0; i < spawnCount; i++)
-                {
-                    var spread = Random.Range(settings.spawnGroupSpreadMin, settings.spawnGroupSpreadMax);
+                case SpawnFormation.Grid:
+                    rows = FormationsUtils.GetGridRows((int) spawnCount);
+                    break;
+                case SpawnFormation.Arc:
+                    theta = FormationsUtils.GetArcTheta((int) spawnCount);
+                    break;
+                case SpawnFormation.Circle:
+                    theta = FormationsUtils.GetCircleTheta((int) spawnCount);
+                    break;
+                case SpawnFormation.Line:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
             
-                    var targetPosition = spawnPosition + (new Vector3(i*spread, 0, 0));
+            for (int i = 0; i < spawnCount; i++)
+            {
+                var spread = Random.Range(settings.spawnGroupSpreadMin, settings.spawnGroupSpreadMax);
+                
+                Vector3 targetPosition;
+                switch (settings.formation)
+                {
+                    case SpawnFormation.Grid:
+                        targetPosition = FormationsUtils.GetGridTargetPosition(spawnPosition, Quaternion.identity, i, settings.formationLookAhead, rows, new Vector2(spread, spread));
+                        break;
+                    case SpawnFormation.Arc:
+                        targetPosition = FormationsUtils.GetArcPosition(spawnPosition, Quaternion.identity, i, theta, spread, settings.formationLookAhead, true);
+                        break;
+                    case SpawnFormation.Circle:
+                        targetPosition = FormationsUtils.GetCirclePosition(spawnPosition, Quaternion.identity, i, theta, spread, settings.formationLookAhead);
+                        break;
+                    case SpawnFormation.Line:
+                        targetPosition = FormationsUtils.GetLinePosition(spawnPosition, Quaternion.identity, i, spread, settings.formationLookAhead, true);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
 
-                    var spawnPrefab = settings.GetRandomPrefab();
+                var spawnPrefab = settings.GetRandomPrefab();
 
-                    var spawned = spawnPrefab.SpawnOnPosition(targetPosition, playerPosition, settings.distanceFromPlayerToDespawn, settings.despawnAfter);
-                    if (spawned != null)
+                var spawned = spawnPrefab.SpawnOnPosition(targetPosition, playerPosition, settings.distanceFromPlayerToDespawn, settings.despawnAfter);
+                if (spawned != null)
+                {
+                    ev?.TrackAliveEntity(spawned);
+                    Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
+
+                    if (spawned is Npc npc)
                     {
-                        ev?.TrackAliveEntity(spawned);
-                        Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
-
-                        if (spawned is Npc npc)
+                        if (settings.behavior == SpawnBehavior.StandIdle)
                         {
-                            if (settings.behavior == SpawnBehavior.StandIdle)
-                            {
-                                npc.SetCanMove(false);
-                            }
-                            else if (goToDirection.HasValue)
-                            {
-                                npc.SetFixedMoveTarget(targetPosition + goToDirection.Value, settings.stopWhenReachFixedMoveTarget, settings.dieWhenReachFixedMoveTarget);
-                            }
+                            npc.SetCanMove(false);
+                        }
+                        else if (goToDirection.HasValue)
+                        {
+                            npc.SetFixedMoveTarget(targetPosition + goToDirection.Value, settings.stopWhenReachFixedMoveTarget, settings.dieWhenReachFixedMoveTarget);
                         }
                     }
                 }
             }
-            else
-            {
-                for (int row = 0; row < squareSize; row++)
-                {
-                    for (int column = 0; column < squareSize; column++)
-                    {
-                        if (spawnCount == 0) break;
-
-                        var spread = Random.Range(settings.spawnGroupSpreadMin, settings.spawnGroupSpreadMax);
-
-                        var targetPosition = spawnPosition + (new Vector3(column * spread, row * spread, 0));
-
-                        var spawnPrefab = settings.GetRandomPrefab();
-                        var spawned = spawnPrefab.SpawnOnPosition(targetPosition, playerPosition, settings.distanceFromPlayerToDespawn, settings.despawnAfter);
-
-                        if (spawned != null)
-                        {
-                            ev?.TrackAliveEntity(spawned);
-                            Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
-                            
-                            if (spawned is Npc npc)
-                            {
-                                if (settings.behavior == SpawnBehavior.StandIdle)
-                                {
-                                    npc.SetCanMove(false);
-                                }
-                                else if (goToDirection.HasValue)
-                                {
-                                    npc.SetFixedMoveTarget(targetPosition + goToDirection.Value, settings.stopWhenReachFixedMoveTarget, settings.dieWhenReachFixedMoveTarget);
-                                }
-                            }
-                        }
-
-                        spawnCount--;
-                    }
-
-                    if (spawnCount == 0) break;
-                }
-            }
-            
 
             if (settings.repeatSpawn)
             {
@@ -226,6 +221,12 @@ namespace _Chi.Scripts.Mono.Mission
         public List<SpawnPrefab> possiblePrefabs;
 
         public SpawnRelativePosition relativePosition;
+
+        public SpawnFormation formation;
+
+        public float formationLookAhead = 2f;
+
+        public float formationRadius = 5f;
         
         public SpawnBehavior behavior;
 

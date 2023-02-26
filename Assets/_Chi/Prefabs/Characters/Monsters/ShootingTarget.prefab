@@ -121,7 +121,7 @@ MonoBehaviour:
   stopWhenReachFixedMoveTarget: 0
   dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
-  poolId: 1
+  poolId: 62362
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
 --- !u!114 &5954188515519120313

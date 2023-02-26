@@ -64,8 +64,10 @@ MonoBehaviour:
   currentVariant: 
   size: 1
   goDirectlyToPlayer: 0
+  stopWhenReachFixedMoveTarget: 0
+  dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
-  poolId: 11
+  poolId: 916260
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
   spawnGroupName: 

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8997715243490514361}
   - component: {fileID: 8331878488859867078}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TemporaryEnemyPortal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ MonoBehaviour:
   stopWhenReachFixedMoveTarget: 0
   dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
-  poolId: 2004
+  poolId: 750578
   activateWhenCloseToPlayerDist2: 5
   spawnEffect: {fileID: 0}
   emitter: {fileID: 0}
@@ -73,6 +73,7 @@ MonoBehaviour:
   prefabProjectile: {fileID: 0}
   projectilePreview: {fileID: 0}
   projectilePreviewDuration: 0
+  projectilePreviewLifetime: 0
   dropProjectile: {fileID: 0}
   projectileLifetime: 0
   projectileRandomRotation: 0
@@ -106,7 +107,7 @@ GameObject:
   - component: {fileID: 9045822747273635891}
   - component: {fileID: 243288349414497402}
   - component: {fileID: 5211900533198323682}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TemporaryEnemyPortalD
   m_TagString: Untagged
   m_Icon: {fileID: 0}

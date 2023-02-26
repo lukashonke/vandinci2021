@@ -287,6 +287,14 @@ namespace _Chi.Scripts.Mono.Mission
         FrontOrBehindPlayer
     }
 
+    public enum SpawnFormation
+    {
+        Grid,
+        Circle,
+        Arc,
+        Line
+    }
+
     public enum SpawnBehavior
     {
         AttackPlayer,

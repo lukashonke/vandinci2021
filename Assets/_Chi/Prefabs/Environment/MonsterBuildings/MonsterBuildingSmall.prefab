@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 471434138012855446}
   - component: {fileID: 6514668266673016213}
   - component: {fileID: 4644276642516627949}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: MonsterBuildingSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ MonoBehaviour:
   stopWhenReachFixedMoveTarget: 0
   dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
-  poolId: 2001
+  poolId: 39092
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
   emitter: {fileID: 0}
@@ -233,7 +233,7 @@ MonoBehaviour:
   despawnAfterTime: 0
   damageBasedSpawns:
   - spawnAtHpPercentIsRepeated: 1
-    spawnAtHpPercent: 0.2
+    spawnAtHpPercent: 0.25
     prefabsToSpawn:
     - type: 0
       prefab: {fileID: 0}
@@ -265,17 +265,4 @@ MonoBehaviour:
       prefabVariant: ZombieBloaterExploding
     spawnCountMin: 5
     spawnCountMax: 15
-    spawnSpread: 1.5
-  - spawnAtHpPercentIsRepeated: 0
-    spawnAtHpPercent: 0.1
-    prefabsToSpawn:
-    - type: 0
-      prefab: {fileID: 0}
-      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 1
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieBloaterExploding
-    spawnCountMin: 1
-    spawnCountMax: 1
     spawnSpread: 1.5

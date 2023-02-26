@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1538222381371449363}
   - component: {fileID: 4607921551200526849}
   - component: {fileID: 8893669948804822593}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: MonsterBuildingLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ MonoBehaviour:
   stopWhenReachFixedMoveTarget: 0
   dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
-  poolId: 2003
+  poolId: 62464
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
   emitter: {fileID: 0}
@@ -195,6 +195,7 @@ MonoBehaviour:
   prefabProjectile: {fileID: 0}
   projectilePreview: {fileID: 0}
   projectilePreviewDuration: 0
+  projectilePreviewLifetime: 0
   dropProjectile: {fileID: 0}
   projectileLifetime: 0
   projectileRandomRotation: 0

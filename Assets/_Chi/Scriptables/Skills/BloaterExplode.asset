@@ -25,6 +25,6 @@ MonoBehaviour:
   vfx: {fileID: 0}
   vfxDespawnAfter: 0
   effects:
-  - {fileID: 11400000, guid: f0d78f8b51e909245882cbf0ec7f6870, type: 2}
-  - {fileID: 11400000, guid: 0d7d06e7729fdd94885e0dcccab32e96, type: 2}
+  - {fileID: 11400000, guid: 0a155894498716c4ca4178d887b58ab5, type: 2}
+  - {fileID: 11400000, guid: 0116f55a357ef5a42bf8d6bbf0365965, type: 2}
   effectStrength: 20

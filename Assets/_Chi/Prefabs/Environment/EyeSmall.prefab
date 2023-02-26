@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7282183069491555332}
   - component: {fileID: 8233977395235515062}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 7574486064482207242}
   - component: {fileID: 2547656127239185665}
   - component: {fileID: -751567569723741111}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EyeSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ MonoBehaviour:
   stopWhenReachFixedMoveTarget: 0
   dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
-  poolId: 0
+  poolId: 62354
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
   emitter: {fileID: 8233977395235515062}

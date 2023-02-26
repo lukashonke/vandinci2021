@@ -145,7 +145,7 @@ MonoBehaviour:
   stopWhenReachFixedMoveTarget: 0
   dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
-  poolId: 2000
+  poolId: 39100
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
   emitter: {fileID: 0}
@@ -153,6 +153,7 @@ MonoBehaviour:
   prefabProjectile: {fileID: 0}
   projectilePreview: {fileID: 0}
   projectilePreviewDuration: 0
+  projectilePreviewLifetime: 0
   dropProjectile: {fileID: 0}
   projectileLifetime: 0
   projectileRandomRotation: 0

@@ -22,7 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   order: 20
-  radius: 2
+  radius: 1.5
   applyDelay: 0.05
   effects:
   - {fileID: 11400000, guid: e9ee23c6ec6fda646a0ca63e5b6a0d15, type: 2}

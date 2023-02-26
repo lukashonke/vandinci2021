@@ -45,7 +45,10 @@ namespace _Chi.Scripts.Mono.System
                 npc.currentDissolveProcess -= Time.deltaTime * npc.dissolveSpeed;
                 if (npc.currentDissolveProcess < 0)
                 {
-                    npc.OnFinishedDissolve();
+                    if (!npc.OnFinishedDissolve())
+                    {
+                        
+                    }
                     anyFinished = true;
                     continue;
                 }

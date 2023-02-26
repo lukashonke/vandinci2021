@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1079718519245281092}
   - component: {fileID: 4615498626008005052}
   - component: {fileID: 1194128561228351877}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: EyeLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ MonoBehaviour:
   stopWhenReachFixedMoveTarget: 0
   dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
-  poolId: 0
+  poolId: 419692
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
   emitter: {fileID: 0}

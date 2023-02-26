@@ -76,14 +76,17 @@ namespace _Chi.Scripts.Mono.Ui
                     foreach (var rewardSetItemWithWeight in shownItems)
                     {
                         var item = db.GetById(rewardSetItemWithWeight.prefabId);
+                        if (!item.enabled) continue;
                     
                         var newItem = Instantiate(itemInfoPrefab, transform.position, Quaternion.identity, transform);
                         var newItemItem = newItem.GetComponent<ModuleSelectorItem>();
 
+                        int? price = (int?) (rewardSetItemWithWeight.price * (triggeredShop?.priceMultiplier ?? 1));
+
                         newItemItem.Initialise(item, new List<ActionsPanelButton>()
                         {
-                            new ActionsPanelButton("Buy", () => StartAddingItem(item, rewardSetItemWithWeight.price))
-                        }, AbortAddingItem, (int?) (rewardSetItemWithWeight.price * (triggeredShop?.priceMultiplier ?? 1)));
+                            new ActionsPanelButton("Buy", () => StartAddingItem(item, price))
+                        }, AbortAddingItem, price);
                     }
                 }
             }

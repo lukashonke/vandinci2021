@@ -118,9 +118,12 @@ MonoBehaviour:
   currentVariant: Soldier
   size: 1
   goDirectlyToPlayer: 1
+  stopWhenReachFixedMoveTarget: 0
+  dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
-  poolId: 101
+  poolId: 45736
   activateWhenCloseToPlayerDist2: 64
+  spawnEffect: {fileID: 0}
 --- !u!114 &5954188515519120313
 MonoBehaviour:
   m_ObjectHideFlags: 0

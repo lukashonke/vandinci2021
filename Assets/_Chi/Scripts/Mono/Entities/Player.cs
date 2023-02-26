@@ -42,8 +42,8 @@ namespace _Chi.Scripts.Mono.Entities
         [ReadOnly] public int shieldCharges;
         
         private Dictionary<Skill, SkillData> skillDatas;
-        
-        private float nextRestoreShield = -1;
+
+        [NonSerialized] private float nextRestoreShield = 1;
 
         [NonSerialized] public float lastSkillUseTime;
 
@@ -126,12 +126,9 @@ namespace _Chi.Scripts.Mono.Entities
                 {
                     nextRestoreShield = Time.time + stats.singleShieldRechargeDelay.GetValue();
                 }
-                else if (nextRestoreShield > 0 && nextRestoreShield <= Time.time)
+                else if (nextRestoreShield > 0 && nextRestoreShield <= Time.time && shieldCharges < stats.shieldChargesCount.GetValue())
                 {
-                    if (shieldCharges < stats.shieldChargesCount.GetValue())
-                    {
-                        shieldCharges++;
-                    }
+                    shieldCharges++;
                     nextRestoreShield = -1;
                 }
 
@@ -180,6 +177,17 @@ namespace _Chi.Scripts.Mono.Entities
 
                 yield return waiter;
             }   
+        }
+
+        public void RestoreShield(int charges)
+        {
+            for (int i = 0; i < charges; i++)
+            {
+                if(shieldCharges < stats.shieldChargesCount.GetValue())
+                {
+                    shieldCharges++;
+                }
+            }
         }
 
         private IEnumerator DamageByNearbyCoroutine()

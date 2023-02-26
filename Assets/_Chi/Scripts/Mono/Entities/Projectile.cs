@@ -6,7 +6,7 @@ using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
-using Unity.Collections;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Object = System.Object;
 
@@ -14,10 +14,10 @@ namespace _Chi.Scripts.Mono.Entities
 {
     public class Projectile : MonoBehaviour
     {
-        [ReadOnly] public Entity owner;
-        [ReadOnly] public Module ownerModule;
-        [ReadOnly] private bool hasOwner;
-        [ReadOnly] private bool hasOwnerModule;
+        [Unity.Collections.ReadOnly] public Entity owner;
+        [Unity.Collections.ReadOnly] public Module ownerModule;
+        [Unity.Collections.ReadOnly] private bool hasOwner;
+        [Unity.Collections.ReadOnly] private bool hasOwnerModule;
 
 
         [NonSerialized] public Rigidbody2D rb;
@@ -31,6 +31,14 @@ namespace _Chi.Scripts.Mono.Entities
         [NonSerialized] public ProjectileInstanceStats stats;
 
         public int poolId;
+        
+        [Button]
+        [HideInPlayMode]
+        public void RandomPoolId()
+        {
+            poolId = GetInstanceID();
+        }
+        
         public float baseStrength = 1;
 
         public bool getHitsOnSpawn;

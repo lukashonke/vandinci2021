@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5543541135633729520}
   - component: {fileID: 5543541135633729527}
   - component: {fileID: 5543541135633729526}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: SolidOrbDistort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 6058682813130614867}
   - component: {fileID: 4119915304266482757}
   - component: {fileID: 6881511629753952530}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: SolidOrb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,6 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chooseOneDirection: 1
+  chanceToGoAgainstPlayer: 100
   speedMin: 0.5
   speedMax: 4
 --- !u!114 &6058682813130614867
@@ -234,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 0
   attachedLimit: 100
-  radius2: 1
+  radius2: 3
   force: 1
 --- !u!50 &4119915304266482757
 Rigidbody2D:
