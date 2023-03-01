@@ -44,11 +44,14 @@ namespace _Chi.Scripts.Mono.Mission
             const float loopInterval = 0.5f;
             var waiter = new WaitForSeconds(loopInterval);
 
-            var initialShop = progressSettings.shops[0];
+            if (progressSettings.shops.Count > 0)
+            {
+                var initialShop = progressSettings.shops[0];
             
-            Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(initialShop.goldAcumulatedRequired);
-            Gamesystem.instance.uiManager.goldProgressBar.ResetValue();
-            progressSettings.lastGoldTriggeredShopLevelIndex = -1;
+                Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(initialShop.goldAcumulatedRequired);
+                Gamesystem.instance.uiManager.goldProgressBar.ResetValue();
+                progressSettings.lastGoldTriggeredShopLevelIndex = -1;
+            }
 
             int currentEventIndex = startIndex;
             

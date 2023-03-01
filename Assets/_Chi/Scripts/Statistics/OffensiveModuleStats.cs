@@ -32,6 +32,8 @@ namespace _Chi.Scripts.Statistics
 
         public Stat projectileScale = new Stat();
         
+        public Stat shotsPerShot = new Stat();
+        
         public float projectilePierceChance;
 
         public bool hasAreaEffect = false;
@@ -44,5 +46,6 @@ namespace _Chi.Scripts.Statistics
         public float pushForce = 0;
 
         public float effectDuration = 1f;
+
     }
 }

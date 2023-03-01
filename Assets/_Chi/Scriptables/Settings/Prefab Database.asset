@@ -32,6 +32,9 @@ MonoBehaviour:
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 101
     label: Shooting Target
     enabled: 0
@@ -42,6 +45,9 @@ MonoBehaviour:
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 1000
     label: First Body
     enabled: 0
@@ -52,6 +58,9 @@ MonoBehaviour:
     prefabUi: {fileID: 1669959372494101077, guid: 0ca96be5bd0b8be478a294c2e8be1148, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2000
     label: Crossbow Module
     enabled: 1
@@ -62,6 +71,9 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 1a44fcc45acc5c1438750ee0dba35732, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2001
     label: Gun Module
     enabled: 0
@@ -72,6 +84,9 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: e3ea5d3bb551aa34c8f61fe3e92fd823, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2002
     label: Large Gun Module
     enabled: 0
@@ -82,6 +97,9 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 62b510b84d407454092694e465192d93, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2003
     label: Ballista Module
     enabled: 0
@@ -92,6 +110,9 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 81fe0c54ccbfba34794ab41cabdfd085, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2004
     label: Catapult Module
     enabled: 0
@@ -102,6 +123,9 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 71486843aebbd8346a9701479eb3e484, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2005
     label: Shuriken Module
     enabled: 0
@@ -112,6 +136,9 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 12fa71c4605378b4b833306d9b6ecfc1, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2006
     label: Shotgun Module
     enabled: 0
@@ -122,6 +149,9 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 771548b76fc8815498deec6f50b2b621, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2007
     label: Cannon Module
     enabled: 0
@@ -132,6 +162,9 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 3c6803d6c55da61478cebcebaae83172, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2008
     label: Bombarder Module
     enabled: 0
@@ -142,6 +175,9 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 263c03c040e2fc04296f1942616d1050, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2500
     label: Add Projectile
     enabled: 1
@@ -152,6 +188,9 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: 4f7c9cf6fe61edd47a81937e10ffbef4, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2501
     label: Add Stun Effect
     enabled: 1
@@ -162,6 +201,9 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: 85287e5b2153c4a3b92497f24e09e0a6, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2502
     label: Add Pierced Enemy
     enabled: 0
@@ -173,6 +215,9 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: dfe0bb5f4a5dc446a8c7dd1d1bc7fa3f, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2503
     label: Increase Damage
     enabled: 1
@@ -183,6 +228,9 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: aa1d2220c65d144a9a5e686510f53193, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2504
     label: Increase Projectile Push Force
     enabled: 0
@@ -194,6 +242,9 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: 87ba2637bd53e4165a8fb327efa7a4e6, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2505
     label: Increase Projectile Area
     enabled: 0
@@ -204,6 +255,9 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: 00d499bca0117394da209828403d8daa, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2506
     label: Fire Rate Module
     enabled: 1
@@ -214,6 +268,9 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: 846012403b0174a9f94a34a5c6a80847, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2507
     label: Range Module
     enabled: 0
@@ -224,6 +281,9 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: c27d9d519644590438d3a8f76019e2a8, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2600
     label: Shield Module
     enabled: 1
@@ -235,6 +295,9 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: 5d082eacc5d146f46ae9abb61fb7b4c9, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2601
     label: Repairing Module
     enabled: 0
@@ -245,6 +308,9 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: 0e5be0f3c47fe704cbf39de32cc8b6be, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2602
     label: Speed Module
     enabled: 1
@@ -255,6 +321,9 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: 21189be4bde0a3849998b1f24149801f, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2603
     label: Skill Charge Storage
     enabled: 0
@@ -265,6 +334,9 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: 6f9dd26c7a2c9aa4c88d151d62ea11a0, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2604
     label: Skill Improver
     enabled: 1
@@ -275,6 +347,9 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: 7190df77de7efa2419ef50c8e7bd8d59, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2605
     label: Spikes
     enabled: 0
@@ -286,6 +361,9 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: 3b74172898b63154d9464367b10ee2f5, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 2606
     label: Blade
     enabled: 0
@@ -297,6 +375,9 @@ MonoBehaviour:
     prefabUi: {fileID: 8309321105186295158, guid: 45ed084f93ccfa844bbe011c72bbce99, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 3000
     label: Tree 1
     enabled: 0
@@ -307,6 +388,9 @@ MonoBehaviour:
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 3001
     label: Tree 2
     enabled: 0
@@ -317,6 +401,9 @@ MonoBehaviour:
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 3002
     label: Tree 3
     enabled: 0
@@ -327,6 +414,9 @@ MonoBehaviour:
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 3003
     label: Bush 1
     enabled: 0
@@ -337,6 +427,9 @@ MonoBehaviour:
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 3004
     label: Bush 2
     enabled: 0
@@ -347,6 +440,9 @@ MonoBehaviour:
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 3005
     label: Dead Tree
     enabled: 0
@@ -357,6 +453,9 @@ MonoBehaviour:
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 3020
     label: Resource Stone
     enabled: 0
@@ -367,6 +466,9 @@ MonoBehaviour:
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 3021
     label: Resource Iron
     enabled: 0
@@ -377,6 +479,9 @@ MonoBehaviour:
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 3022
     label: Resource Explosium
     enabled: 0
@@ -387,6 +492,9 @@ MonoBehaviour:
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 3030
     label: Barricade
     enabled: 0
@@ -397,6 +505,9 @@ MonoBehaviour:
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 3031
     label: Wooden Wall
     enabled: 0
@@ -407,6 +518,9 @@ MonoBehaviour:
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 3032
     label: Stone Wall
     enabled: 0
@@ -417,9 +531,64 @@ MonoBehaviour:
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+  - id: 4000
+    label: Test Player Upgrade
+    enabled: 1
+    description: ppp
+    type: 8
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 168331709e0bebb4daefe12771c0dc4a, type: 2}
+    skillUpgradeItem: {fileID: 0}
+  - id: 4200
+    label: 'Crossbow: Add Magazine'
+    enabled: 1
+    description: The weapon shoots twice before having to reload.
+    type: 9
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 0226e8169f971714090e1ca32a1d0ca9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 9889d599e604a2b489b0386002b92d51, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+  - id: 4400
+    label: Jump Charged Jump
+    enabled: 1
+    description: 'Jumps has more force, making you jump for longer distances. '
+    type: 10
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 46396cb41dd63794a8aa16cba7094c09, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 8c40a862ade93944b8c5d0e5bb618e13, type: 2}
+  - id: 4401
+    label: Jump Protection
+    enabled: 1
+    description: After jumping, receive no damage for 1 second.
+    type: 10
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 0633cec118387254e854be997b787ef6, type: 2}
   - id: 10000
-    label: 'Skill: Jump'
-    enabled: 0
+    label: Jump
+    enabled: 1
     description: Quickly jumps in the desired direction. Temporarily increases velocity
       so it can push damage enemies.
     type: 4
@@ -428,8 +597,11 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: a233808f68c59d541b62cf99caa36b75, type: 3}
     skill: {fileID: 11400000, guid: cc69fe99998b25a4d8a301159bd9f639, type: 2}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 10001
-    label: 'Skill: Overdrive'
+    label: Overdrive
     enabled: 0
     description: When this skill is active, it increases fire rate of weapons, but
       also damages the vehicle.
@@ -439,8 +611,11 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 41f98db91a1f1ca42a7fed186d43fb43, type: 3}
     skill: {fileID: 11400000, guid: ad31f96bc529c89469eed49d1304685e, type: 2}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 10002
-    label: 'Skill: Shockwave'
+    label: Shockwave
     enabled: 0
     description: When activated, a shockwave pushes nearby enemies away.
     type: 4
@@ -449,6 +624,9 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 7d23fef34052b4f4da59434a86fc7834, type: 3}
     skill: {fileID: 11400000, guid: 6a4d5195185ff524a802fb55de0fc5fa, type: 2}
     mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 11000
     label: Critical Damage
     enabled: 0
@@ -460,6 +638,9 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: ac0052fb6806b3b4babc28e21b84380a, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: 2aa1b31b8ba3742f4857873588186ba4, type: 2}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 11001
     label: Healing Skills
     enabled: 0
@@ -470,6 +651,9 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 6c062dfd13a3e498eb29fd75819f632f, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: 6c7d1b91a21b742a598c261330139c6e, type: 2}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 11002
     label: Heavier Vehicle
     enabled: 0
@@ -480,6 +664,9 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 67cd6793657fe4d7a8cbea26fdb11233, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: 13905431c11b64e1c849f9cbacb658bd, type: 2}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 11003
     label: Lighter Vehicle
     enabled: 0
@@ -490,6 +677,9 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 780785b901c184f3595b762be424b914, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: f69b0788b4a264eeea4db1c8ca74d20f, type: 2}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 11004
     label: Reinforced Materials
     enabled: 0
@@ -500,6 +690,9 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 96e697b9e72e44d639f26c7537f35e12, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: a6ec005a1ae9145879d304e52c88afc8, type: 2}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 11005
     label: Power-up Skills
     enabled: 0
@@ -510,6 +703,9 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 8e6bdfcbcea623040bc4a645e3fe7187, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: 8c9917fef272d459ea7caeaf57052994, type: 2}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 11006
     label: Superlight Vehicle
     enabled: 0
@@ -521,6 +717,9 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 77aa7eceff9dd49718af591b6c71e712, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: 5b864471844b04a5ca359898a116cdf5, type: 2}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 11007
     label: Protecting Skills
     enabled: 0
@@ -531,65 +730,108 @@ MonoBehaviour:
     prefabUi: {fileID: 3314847274656908133, guid: 1bb3c56d297ae4a8ab7fc79aabae25b9, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: 58d69053369904376be7a9adeaa41350, type: 2}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   rewardSets:
   - name: shop_passives_basic
     note: 
     prefabs:
     - prefabId: 2500
       weight: 1
-      price: 10
+      price: 1
+      priceMultiplyForEveryOwned: 0.4
     - prefabId: 2503
       weight: 1
-      price: 10
+      price: 1
+      priceMultiplyForEveryOwned: 0.4
     - prefabId: 2506
       weight: 1
-      price: 10
+      price: 1
+      priceMultiplyForEveryOwned: 0.4
     - prefabId: 2507
       weight: 1
-      price: 10
+      price: 1
+      priceMultiplyForEveryOwned: 0.4
     minCountShownItems: 100
-  - name: offensive_basic
-    note: 
-    prefabs:
-    - prefabId: 2000
-      weight: 1
-      price: 0
-    - prefabId: 10000
-      weight: 1
-      price: 0
-    minCountShownItems: 100
-  - name: passive_basic
-    note: 
-    prefabs:
-    - prefabId: 2500
-      weight: 1
-      price: 0
-    - prefabId: 2503
-      weight: 1
-      price: 0
-    - prefabId: 2506
-      weight: 1
-      price: 0
-    - prefabId: 2507
-      weight: 1
-      price: 0
-    - prefabId: 2501
-      weight: 1
-      price: 0
-    minCountShownItems: 100
+    closeOnFirstPurchase: 0
   - name: shop_defensive_basic
     note: 
     prefabs:
     - prefabId: 2600
       weight: 1
-      price: 10
+      price: 1
+      priceMultiplyForEveryOwned: 1
     - prefabId: 2602
       weight: 1
-      price: 10
+      price: 1
+      priceMultiplyForEveryOwned: 1
     - prefabId: 2604
       weight: 1
-      price: 10
+      price: 1
+      priceMultiplyForEveryOwned: 1
     minCountShownItems: 100
+    closeOnFirstPurchase: 0
+  - name: shop_chaos_upgrades
+    note: 
+    prefabs:
+    - prefabId: 4200
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+    minCountShownItems: 3
+    closeOnFirstPurchase: 0
+  - name: free_start_weapon
+    note: 
+    prefabs:
+    - prefabId: 2000
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 10000
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+    minCountShownItems: 100
+    closeOnFirstPurchase: 0
+  - name: free_skill_upgrades
+    note: 
+    prefabs:
+    - prefabId: 4400
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4401
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+    minCountShownItems: 3
+    closeOnFirstPurchase: 1
+  - name: free_passive_basic
+    note: 
+    prefabs:
+    - prefabId: 2500
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 2503
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 2506
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 2507
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 2501
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+    minCountShownItems: 100
+    closeOnFirstPurchase: 0
   variants:
   - variant: Zombie
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
@@ -604,7 +846,7 @@ MonoBehaviour:
       speed: 1.1
       rotationSpeed: 10
       contactDamage: 20
-      contactDamageInterval: 3
+      contactDamageInterval: 0.5
     skills: []
     skillsOnDie: []
     effectsOnDie: []
@@ -634,7 +876,7 @@ MonoBehaviour:
       speed: 2
       rotationSpeed: 10
       contactDamage: 20
-      contactDamageInterval: 3
+      contactDamageInterval: 0.5
     skills: []
     skillsOnDie: []
     effectsOnDie: []
@@ -649,12 +891,8 @@ MonoBehaviour:
       items:
       - dropType: 0
         dropChance: 100
-        amountMin: 1
-        amountMax: 1
-      - dropType: 0
-        dropChance: 50
-        amountMin: 1
-        amountMax: 1
+        amountMin: 2
+        amountMax: 2
   - variant: ZombieFat
     sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -668,7 +906,7 @@ MonoBehaviour:
       speed: 0.85
       rotationSpeed: 10
       contactDamage: 20
-      contactDamageInterval: 3
+      contactDamageInterval: 0.5
     skills: []
     skillsOnDie: []
     effectsOnDie: []
@@ -683,12 +921,8 @@ MonoBehaviour:
       items:
       - dropType: 0
         dropChance: 100
-        amountMin: 1
-        amountMax: 1
-      - dropType: 0
-        dropChance: 50
-        amountMin: 1
-        amountMax: 1
+        amountMin: 2
+        amountMax: 2
   - variant: ZombieIdleRunner
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 3dd12299c05371f44abf211a2d5a3e59, type: 2}
@@ -732,7 +966,7 @@ MonoBehaviour:
       speed: 0.8
       rotationSpeed: 10
       contactDamage: 20
-      contactDamageInterval: 3
+      contactDamageInterval: 0.5
     skills: []
     skillsOnDie: []
     effectsOnDie: []
@@ -762,7 +996,7 @@ MonoBehaviour:
       speed: 2.2
       rotationSpeed: 10
       contactDamage: 20
-      contactDamageInterval: 3
+      contactDamageInterval: 0.5
     skills: []
     skillsOnDie: []
     effectsOnDie: []
@@ -792,7 +1026,7 @@ MonoBehaviour:
       speed: 1
       rotationSpeed: 10
       contactDamage: 20
-      contactDamageInterval: 3
+      contactDamageInterval: 0.5
     skills: []
     skillsOnDie: []
     effectsOnDie: []
@@ -818,7 +1052,7 @@ MonoBehaviour:
       speed: 1
       rotationSpeed: 10
       contactDamage: 20
-      contactDamageInterval: 3
+      contactDamageInterval: 0.5
     skills: []
     skillsOnDie: []
     effectsOnDie: []
@@ -844,7 +1078,7 @@ MonoBehaviour:
       speed: 1
       rotationSpeed: 10
       contactDamage: 20
-      contactDamageInterval: 3
+      contactDamageInterval: 0.5
     skills: []
     skillsOnDie: []
     effectsOnDie: []
@@ -870,7 +1104,7 @@ MonoBehaviour:
       speed: 1
       rotationSpeed: 10
       contactDamage: 20
-      contactDamageInterval: 3
+      contactDamageInterval: 0.5
     skills: []
     skillsOnDie:
     - {fileID: 11400000, guid: 7dacf98ac6858cc42bb43407350ac4aa, type: 2}
@@ -897,7 +1131,7 @@ MonoBehaviour:
       speed: 1
       rotationSpeed: 10
       contactDamage: 20
-      contactDamageInterval: 3
+      contactDamageInterval: 0.5
     skills: []
     skillsOnDie:
     - {fileID: 11400000, guid: 0a3ea7bd06d4ba4409e2d2353afe0c06, type: 2}
@@ -910,7 +1144,11 @@ MonoBehaviour:
       rvoLayer: 0
       rvoCollidesWith: 0
     reward:
-      items: []
+      items:
+      - dropType: 1
+        dropChance: 100
+        amountMin: 1
+        amountMax: 1
   - variant: ZombieBloater_Boss
     sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
     spriteMaterial: {fileID: 2100000, guid: ee3e4ece0fd6dd64caa864088dd87de9, type: 2}
@@ -952,7 +1190,7 @@ MonoBehaviour:
       speed: 0
       rotationSpeed: 10
       contactDamage: 20
-      contactDamageInterval: 3
+      contactDamageInterval: 0.5
     skills: []
     skillsOnDie: []
     effectsOnDie: []
@@ -1004,7 +1242,7 @@ MonoBehaviour:
       speed: 1
       rotationSpeed: 10
       contactDamage: 20
-      contactDamageInterval: 3
+      contactDamageInterval: 0.5
     skills: []
     skillsOnDie: []
     effectsOnDie: []
@@ -1030,7 +1268,7 @@ MonoBehaviour:
       speed: 1.1
       rotationSpeed: 10
       contactDamage: 10
-      contactDamageInterval: 3
+      contactDamageInterval: 0.5
     skills: []
     skillsOnDie: []
     effectsOnDie: []
@@ -1056,7 +1294,7 @@ MonoBehaviour:
       speed: 1.1
       rotationSpeed: 10
       contactDamage: 3
-      contactDamageInterval: 1
+      contactDamageInterval: 0.5
     skills: []
     skillsOnDie: []
     effectsOnDie: []
@@ -1082,7 +1320,7 @@ MonoBehaviour:
       speed: 1.1
       rotationSpeed: 10
       contactDamage: 3
-      contactDamageInterval: 1
+      contactDamageInterval: 0.5
     skills: []
     skillsOnDie: []
     effectsOnDie: []
@@ -1108,7 +1346,7 @@ MonoBehaviour:
       speed: 1.1
       rotationSpeed: 10
       contactDamage: 3
-      contactDamageInterval: 1
+      contactDamageInterval: 0.5
     skills: []
     skillsOnDie: []
     effectsOnDie: []

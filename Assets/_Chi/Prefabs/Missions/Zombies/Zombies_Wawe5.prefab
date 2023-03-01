@@ -160,9 +160,7 @@ GameObject:
   - component: {fileID: -6502435416312752660}
   - component: {fileID: 6469568978721038765}
   - component: {fileID: -3204359601985624663}
-  - component: {fileID: -4211533515045996565}
-  - component: {fileID: -5390413756141119465}
-  - component: {fileID: -4888117272967698136}
+  - component: {fileID: 9000068432140191412}
   m_Layer: 0
   m_Name: Zombies_Wawe5
   m_TagString: Untagged
@@ -192,6 +190,7 @@ Transform:
   - {fileID: 3699230580347241388}
   - {fileID: 3750697999516981359}
   - {fileID: 5885289525060756674}
+  - {fileID: 3781662074522254375}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -223,21 +222,21 @@ MonoBehaviour:
     - type: 0
       prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 12
+      weight: 6
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: Zombie
     - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 4
+      weight: 6
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: ZombieFast
     - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 3
+      weight: 2
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: ZombieFat
@@ -254,18 +253,18 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 90
-        inSlope: 0.5555556
-        outSlope: 0.5555556
+        value: 120
+        inSlope: 0.6666667
+        outSlope: 0.6666667
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 90
-        value: 140
-        inSlope: 0.5555556
-        outSlope: 0.5555556
+        value: 180
+        inSlope: 0.6666667
+        outSlope: 0.6666667
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -507,7 +506,7 @@ MonoBehaviour:
     - type: 3
       prefab: {fileID: 8889423923064880148, guid: e4d464f1456f6fc40a55ac4fe9ead654, type: 3}
       prefabNpc: {fileID: 0}
-      weight: 1
+      weight: 2
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: none
@@ -520,11 +519,11 @@ MonoBehaviour:
     roamRandomRadius: 0
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 10
-    spawnTimeMax: 12
+    spawnTimeMin: 6
+    spawnTimeMax: 8
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 12
-    repeatSpawnIntervalMax: 12
+    repeatSpawnIntervalMin: 8
+    repeatSpawnIntervalMax: 8
     repeatCount: 100
     spawnCountMin: 2
     spawnCountMax: 3
@@ -926,117 +925,7 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 30
---- !u!114 &-4211533515045996565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091413172466918211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  waveName: Gold Chest
-  disable: 1
-  spawns:
-  - possiblePrefabs:
-    - type: 0
-      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      prefabNpc: {fileID: 6549855113248904363, guid: 1c81a7dae3b95f84c8b9d6f332adf2f1, type: 3}
-      weight: 1
-      rotateTowardsPlayer: 0
-      noRotation: 1
-      prefabVariant: GoldChestSmall
-    relativePosition: 0
-    formation: 0
-    formationLookAhead: 2
-    formationRadius: 5
-    behavior: 3
-    roamDistance: 100
-    roamRandomRadius: 3
-    dieWhenReachFixedMoveTarget: 0
-    stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 1
-    spawnTimeMax: 5
-    repeatSpawn: 0
-    repeatSpawnIntervalMin: 3
-    repeatSpawnIntervalMax: 4
-    repeatCount: 100
-    spawnCountMin: 1
-    spawnCountMax: 1
-    distanceFromPlayerMin: 5
-    distanceFromPlayerMax: 5
-    despawnAfter: 0
-    spawnGroupSpreadMin: 1
-    spawnGroupSpreadMax: 1
-    distanceFromPlayerToDespawn: 1500
---- !u!114 &-5390413756141119465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091413172466918211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  waveName: Monster House
-  disable: 1
-  spawns:
-  - possiblePrefabs:
-    - type: 0
-      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      prefabNpc: {fileID: 4644276642516627949, guid: 53c3ec728c7d7424bba79414dc812cd2, type: 3}
-      weight: 1
-      rotateTowardsPlayer: 0
-      noRotation: 1
-      prefabVariant: MonsterHouseSmall
-    relativePosition: 0
-    formation: 0
-    formationLookAhead: 2
-    formationRadius: 5
-    behavior: 3
-    roamDistance: 100
-    roamRandomRadius: 3
-    dieWhenReachFixedMoveTarget: 0
-    stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 1
-    spawnTimeMax: 2
-    repeatSpawn: 1
-    repeatSpawnIntervalMin: 3
-    repeatSpawnIntervalMax: 4
-    repeatCount: 100
-    spawnCountMin: 1
-    spawnCountMax: 1
-    distanceFromPlayerMin: 5
-    distanceFromPlayerMax: 5
-    despawnAfter: 0
-    spawnGroupSpreadMin: 1
-    spawnGroupSpreadMax: 1
-    distanceFromPlayerToDespawn: 1500
---- !u!114 &-4888117272967698136
+--- !u!114 &9000068432140191412
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1058,39 +947,39 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   waveName: Exploding Decoys
-  disable: 1
+  disable: 0
   spawns:
   - possiblePrefabs:
-    - type: 0
-      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+    - type: 3
+      prefab: {fileID: 2016706442665377444, guid: bf24f171362aa9446a4ce3505421ba88, type: 3}
+      prefabNpc: {fileID: 6549855113248904363, guid: 95485f9b1a9973140bc1febcd04fe496, type: 3}
       weight: 1
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieBloaterExploding
+      rotateTowardsPlayer: 0
+      noRotation: 1
+      prefabVariant: '-'
     relativePosition: 0
     formation: 0
-    formationLookAhead: 2
-    formationRadius: 5
-    behavior: 0
+    formationLookAhead: 1
+    formationRadius: 1
+    behavior: 3
     roamDistance: 100
     roamRandomRadius: 3
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
     spawnTimeMin: 1
-    spawnTimeMax: 2
-    repeatSpawn: 1
-    repeatSpawnIntervalMin: 3
-    repeatSpawnIntervalMax: 4
+    spawnTimeMax: 30
+    repeatSpawn: 0
+    repeatSpawnIntervalMin: 10
+    repeatSpawnIntervalMax: 10
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
-    distanceFromPlayerMin: 5
-    distanceFromPlayerMax: 5
-    despawnAfter: 0
+    distanceFromPlayerMin: 8
+    distanceFromPlayerMax: 12
+    despawnAfter: 300
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
-    distanceFromPlayerToDespawn: 1500
+    distanceFromPlayerToDespawn: 1000
 --- !u!1 &3022428695798256735
 GameObject:
   m_ObjectHideFlags: 1
@@ -1326,6 +1215,53 @@ MonoBehaviour:
   nameOverride: Orb
   tooltipOverride: 
   target: {fileID: 6469568978721038765}
+--- !u!1 &6781723485087484944
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3781662074522254375}
+  - component: {fileID: 6265690262645441050}
+  m_Layer: 0
+  m_Name: NameContainer(EditorOnly)
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3781662074522254375
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6781723485087484944}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2091413172466918208}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6265690262645441050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6781723485087484944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOverride: Heals
+  tooltipOverride: 
+  target: {fileID: 9000068432140191412}
 --- !u!1 &7556783089262672092
 GameObject:
   m_ObjectHideFlags: 1

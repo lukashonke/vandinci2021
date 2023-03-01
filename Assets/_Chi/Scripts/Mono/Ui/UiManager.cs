@@ -8,6 +8,7 @@ using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Mono.Ui;
 using _Chi.Scripts.Mono.Ui.Dialogs;
 using _Chi.Scripts.Mono.Ui.Tooltips;
+using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Scriptables.Dtos;
 using _Chi.Scripts.Utilities;
 using Sirenix.OdinInspector;
@@ -184,6 +185,8 @@ public class UiManager : MonoBehaviour
             }
             
             Destroy(currentActionsPanel);
+
+            currentActionsPanelData = null;
         }
     }
 
@@ -225,14 +228,14 @@ public class UiManager : MonoBehaviour
         currentActionsPanel.transform.SetParent(this.transform, true);
     }
 
-    public void SetAddingUiItem(AddingUiItem module)
+    public void SetAddingUiItem(AddingUiItem uiItem)
     {
         if (this.addingUiItem != null)
         {
             this.addingUiItem.abortCallback?.Invoke();
         }
         
-        this.addingUiItem = module;
+        this.addingUiItem = uiItem;
 
         if (vehicleSettingsWindow.gameObject.activeSelf && vehicleSettingsWindow.ui != null)
         {
@@ -240,7 +243,7 @@ public class UiManager : MonoBehaviour
             {
                 if (addingUiItem != null)
                 {
-                    uiSlot.NotifyAddingModule(module);
+                    uiSlot.NotifyAddingModule(uiItem);
                 }
                 else
                 {
@@ -252,7 +255,7 @@ public class UiManager : MonoBehaviour
             {
                 if (addingUiItem != null)
                 {
-                    uiSlot.NotifyAddingItem(module);
+                    uiSlot.NotifyAddingItem(uiItem);
                 }
                 else
                 {
@@ -264,7 +267,7 @@ public class UiManager : MonoBehaviour
             {
                 if (addingUiItem != null)
                 {
-                    uiSlot.NotifyAddingItem(module);
+                    uiSlot.NotifyAddingItem(uiItem);
                 }
                 else
                 {
@@ -311,7 +314,7 @@ public class UiManager : MonoBehaviour
         }
     }
 
-    public void ShowItemTooltip(RectTransform targetTransform, PrefabItem prefab, int level, TooltipAlign align = TooltipAlign.TopRight, TooltipType type = TooltipType.Default)
+    public void ShowItemTooltip(RectTransform targetTransform, PrefabItem prefab, int level, TooltipAlign align = TooltipAlign.TopRight, TooltipType type = TooltipType.Default, List<UpgradeItem> upgrades = null)
     {
         var pos = targetTransform.position;
 
@@ -327,7 +330,7 @@ public class UiManager : MonoBehaviour
         currentTooltip = Instantiate(moduleTooltipPrefab, pos, Quaternion.identity, targetTransform);
         currentTooltip.transform.SetParent(this.transform, true);
         var dialog = currentTooltip.GetComponent<ModuleTooltip>();
-        dialog.Initialise(prefab, level, type);
+        dialog.Initialise(prefab, level, type, upgrades);
     }
 
     public void OnMissionSelectorChange(int index)
@@ -343,6 +346,11 @@ public class UiManager : MonoBehaviour
         var waveIndex = Gamesystem.instance.missionManager.GetCurrentFirstMission().events.IndexOf(wave);
         
         Gamesystem.instance.missionManager.ChangeMissionWave(waveIndex);
+    }
+
+    public void ResetRun()
+    {
+        Gamesystem.instance.progress.ResetRun();
     }
 
     public enum TooltipAlign

@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Persistence;
+using _Chi.Scripts.Scriptables;
 using InControl;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -45,6 +48,21 @@ namespace _Chi.Scripts.Mono.System
             //TODO restore player data
         }
 
+        public void ResetRun()
+        {
+            progressData.run = new PlayerRun();
+            progressData.run.bodyId = 1000;
+            
+            progressData.run.modulesInSlots = new ();
+            progressData.run.moduleUpgradeItems = new();
+            progressData.run.skillUpgradeItems = new();
+            progressData.run.playerUpgradeItems = new();
+            progressData.run.skillPrefabIds = new();
+            progressData.run.mutatorPrefabIds = new();
+            
+            Gamesystem.instance.missionManager.OnPlayerDie();
+        }
+
         public void ApplyRunToPlayer(Player player, PlayerRun run)
         {
             var db = Gamesystem.instance.prefabDatabase;
@@ -69,8 +87,10 @@ namespace _Chi.Scripts.Mono.System
                         Debug.LogError($"Prefab {moduleInSlot.moduleId} does not exist.");
                         continue;
                     }
+
+                    var upgrades = moduleInSlot.upgradeItems?.Select(si => db.GetById(si.prefabId).moduleUpgradeItem).ToList() ?? new List<ModuleUpgradeItem>();
                 
-                    player.SetModuleInSlot(slot, modulePrefab.prefab, moduleInSlot.level, moduleInSlot.rotation);
+                    player.SetModuleInSlot(slot, modulePrefab.prefab, moduleInSlot.level, moduleInSlot.rotation, upgrades);
                 }
             }
             
@@ -105,6 +125,40 @@ namespace _Chi.Scripts.Mono.System
                     }
                     
                     player.AddMutator(mutatorPrefab.mutator);
+                }
+            }
+            
+            player.RemovePlayerUpgradeItems();
+
+            if (run.playerUpgradeItems != null)
+            {
+                foreach (var playerUpgradeItem in run.playerUpgradeItems)
+                {
+                    var prefabItem = db.GetById(playerUpgradeItem.prefabId);
+                    if (prefabItem == null)
+                    {
+                        Debug.LogError($"Prefab {playerUpgradeItem.prefabId} does not exist.");
+                        continue;
+                    }
+                    
+                    player.AddPlayerUpgradeItem(prefabItem.playerUpgradeItem);
+                }
+            }
+            
+            player.RemoveSkillUpgradeItems();
+            
+            if (run.skillUpgradeItems != null)
+            {
+                foreach (var skillUpgradeItem in run.skillUpgradeItems)
+                {
+                    var prefabItem = db.GetById(skillUpgradeItem.prefabId);
+                    if (prefabItem == null)
+                    {
+                        Debug.LogError($"Prefab {skillUpgradeItem.prefabId} does not exist.");
+                        continue;
+                    }
+                    
+                    player.AddSkillUpgradeItem(prefabItem.skillUpgradeItem);
                 }
             }
         }

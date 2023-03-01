@@ -41,6 +41,18 @@ namespace _Chi.Scripts.Scriptables.Dtos
         [VerticalGroup("Prefab")]
         [ShowIf("type", PrefabItemType.Mutator)]
         public Mutator mutator;
+        
+        [VerticalGroup("Prefab")]
+        [ShowIf("type", PrefabItemType.UpgradeItemModule)]
+        public ModuleUpgradeItem moduleUpgradeItem;
+        
+        [VerticalGroup("Prefab")]
+        [ShowIf("type", PrefabItemType.UpgradeItemPlayer)]
+        public PlayerUpgradeItem playerUpgradeItem;
+        
+        [VerticalGroup("Prefab")]
+        [ShowIf("type", PrefabItemType.UpgradeItemSkill)]
+        public SkillUpgradeItem skillUpgradeItem;
     }
 
     public enum PrefabItemType
@@ -52,6 +64,9 @@ namespace _Chi.Scripts.Scriptables.Dtos
         Skill,
         Mutator,
         Tree,
-        Resource
+        Resource,
+        UpgradeItemPlayer,
+        UpgradeItemModule,
+        UpgradeItemSkill,
     }
 }

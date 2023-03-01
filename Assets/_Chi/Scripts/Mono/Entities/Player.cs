@@ -26,7 +26,11 @@ namespace _Chi.Scripts.Mono.Entities
         public List<Skill> skills;
         
         public List<Mutator> mutators;
-
+        
+        public List<PlayerUpgradeItem> playerUpgradeItems;
+        
+        public List<SkillUpgradeItem> skillUpgradeItems;
+        
         [NonSerialized] public PlayerBody body;
         [NonSerialized] public List<ModuleSlot> slots;
         [NonSerialized] public PlayerControls controls;
@@ -82,6 +86,16 @@ namespace _Chi.Scripts.Mono.Entities
             foreach (var mutator in mutators)
             {
                 AddMutator(mutator);
+            }
+            
+            foreach (var upgradeItem in playerUpgradeItems)
+            {
+                AddPlayerUpgradeItem(upgradeItem);
+            }
+            
+            foreach (var upgradeItem in skillUpgradeItems)
+            {
+                AddSkillUpgradeItem(upgradeItem);
             }
         }
 
@@ -308,7 +322,7 @@ namespace _Chi.Scripts.Mono.Entities
         {
             var ret = base.ReceiveDamage(damage, damager, damageFlags);
 
-            if (damage > 0)
+            if (ret && damage > 0)
             {
                 ProCamera2DShake.Instance.Shake("PlayerDamage");
             }
@@ -316,12 +330,17 @@ namespace _Chi.Scripts.Mono.Entities
             return ret;
         }
 
+        private float nextReceiveDamage;
+
         public override bool CanReceiveDamage(float damage, Entity damager)
         {
-            nextRestoreShield = Time.time + stats.singleShieldRechargeDelay.GetValue();
+            if (nextReceiveDamage > Time.time) return false;
+
+            nextReceiveDamage = Time.time + stats.receiveDamageMinInterval.GetValue();
             
             if (shieldCharges > 0)
             {
+                nextRestoreShield = Time.time + stats.singleShieldRechargeDelay.GetValue();
                 shieldCharges--;
                 //TODO add vfx
                 return false;
@@ -408,7 +427,7 @@ namespace _Chi.Scripts.Mono.Entities
             return slots.FirstOrDefault(s => s.slotId == slotId);
         }
 
-        public void SetModuleInSlot(ModuleSlot slot, GameObject modulePrefab, int level, int rotation)
+        public void SetModuleInSlot(ModuleSlot slot, GameObject modulePrefab, int level, int rotation, List<ModuleUpgradeItem> moduleUpgradeItems)
         {
             if (slot.currentModule != null)
             {
@@ -420,6 +439,7 @@ namespace _Chi.Scripts.Mono.Entities
 
             module.level = level;
             module.SetOriginalRotation(rotation);
+            module.upgrades = moduleUpgradeItems;
             
             slot.SetModuleInSlot(module);
         }
@@ -473,14 +493,62 @@ namespace _Chi.Scripts.Mono.Entities
                 mutator.RemoveFromPlayer(this);
             }
         }
-
+        
         public void RemoveMutators()
         {
             foreach (var mutator in mutators.ToArray())
             {
                 RemoveMutator(mutator);
             }
-        } 
+        }
+
+        public void AddPlayerUpgradeItem(PlayerUpgradeItem item)
+        {
+            if (playerUpgradeItems.Contains(item)) return;
+            
+            playerUpgradeItems.Add(item);
+            item.ApplyToPlayer(this);
+        }
+
+        public void RemovePlayerUpgradeItem(PlayerUpgradeItem item)
+        {
+            if (playerUpgradeItems.Remove(item))
+            {
+                item.RemoveFromPlayer(this);
+            }
+        }
+
+        public void RemovePlayerUpgradeItems()
+        {
+            foreach (var item in playerUpgradeItems.ToArray())
+            {
+                RemovePlayerUpgradeItem(item);
+            }
+        }
+        
+        public void AddSkillUpgradeItem(SkillUpgradeItem item)
+        {
+            if (skillUpgradeItems.Contains(item)) return;
+            
+            skillUpgradeItems.Add(item);
+            item.ApplyToPlayer(this);
+        }
+
+        public void RemoveSkillUpgradeItem(SkillUpgradeItem item)
+        {
+            if (skillUpgradeItems.Remove(item))
+            {
+                item.RemoveFromPlayer(this);
+            }
+        }
+
+        public void RemoveSkillUpgradeItems()
+        {
+            foreach (var item in skillUpgradeItems.ToArray())
+            {
+                RemoveSkillUpgradeItem(item);
+            }
+        }
 
         public void AddSkill(Skill skill)
         {

@@ -89,7 +89,7 @@ namespace _Chi.Scripts.Mono.Ui
 
         public void Close()
         {
-            if (moduleSelector.CanClose())
+            if (moduleSelector.CanClose() || moduleSelector.options.Count == 0)
             {
                 DoClose();
             }
@@ -168,7 +168,56 @@ namespace _Chi.Scripts.Mono.Ui
 
             slot.SetPrefab(skillItem);
 
+            if (run.skillUpgradeItems != null)
+            {
+                run.skillUpgradeItems = new List<SlotItem>();
+            }
+
             return true;
+        }
+
+        public bool AddSkillUpgrade(SkillSlotUi skillSlotUi, PrefabItem item)
+        {
+            var run = Gamesystem.instance.progress.progressData.run;
+
+            if (run.skillUpgradeItems == null) run.skillUpgradeItems = new List<SlotItem>();
+
+            if (item != null && item.skillUpgradeItem != null)
+            {
+                if(run.skillUpgradeItems.Any(i => i.prefabId == item.id)) return false;
+                
+                run.skillUpgradeItems.Add(new SlotItem()
+                {
+                    prefabId = item.id,
+                    slot = 0,
+                });
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool AddPlayerUpgradeItem(PrefabItem item) 
+        {
+            var run = Gamesystem.instance.progress.progressData.run;
+
+            if (run.playerUpgradeItems == null) run.playerUpgradeItems = new List<SlotItem>();
+
+            if (item != null && item.playerUpgradeItem != null)
+            {
+                if(run.playerUpgradeItems.Any(i => i.prefabId == item.id)) return false;
+                
+                run.playerUpgradeItems.Add(new SlotItem()
+                {
+                    prefabId = item.id,
+                    slot = 0,
+                });
+
+                return true;
+            }
+
+            return false;
         }
         
         public bool SetMutator(MutatorSlotUi slot, PrefabItem skillItem)

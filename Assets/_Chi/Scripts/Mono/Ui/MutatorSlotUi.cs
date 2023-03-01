@@ -114,6 +114,7 @@ namespace _Chi.Scripts.Mono.Ui
         {
             if (Gamesystem.instance.uiManager.vehicleSettingsWindow.SetMutator(this, module.prefab))
             {
+                module.finishCallback?.Invoke();
             }
         }
         

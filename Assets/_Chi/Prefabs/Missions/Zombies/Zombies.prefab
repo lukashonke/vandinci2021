@@ -64,7 +64,7 @@ MonoBehaviour:
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 14
+      Data: 13
     - Name: 
       Entry: 7
       Data: 1|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
@@ -73,7 +73,7 @@ MonoBehaviour:
       Data: Start
     - Name: rewardSet
       Entry: 1
-      Data: offensive_basic
+      Data: free_start_weapon
     - Name: title
       Entry: 1
       Data: Choose starting weapon
@@ -146,7 +146,7 @@ MonoBehaviour:
       Data: Wawe 2
     - Name: fixedDuration
       Entry: 4
-      Data: 70
+      Data: 80
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
@@ -180,7 +180,7 @@ MonoBehaviour:
       Data: 
     - Name: waitUntilAllEnemiesDead
       Entry: 5
-      Data: true
+      Data: false
     - Name: 
       Entry: 8
       Data: 
@@ -238,7 +238,7 @@ MonoBehaviour:
       Data: Wawe 4
     - Name: fixedDuration
       Entry: 4
-      Data: 60
+      Data: 90
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
@@ -272,13 +272,28 @@ MonoBehaviour:
       Data: 
     - Name: waitUntilAllEnemiesDead
       Entry: 5
-      Data: true
+      Data: false
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 15|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
+    - Name: eventName
+      Entry: 1
+      Data: Upgrade your skill
+    - Name: rewardSet
+      Entry: 1
+      Data: free_skill_upgrades
+    - Name: title
+      Entry: 1
+      Data: Upgrade your skill
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 5 TODO
@@ -293,7 +308,7 @@ MonoBehaviour:
       Data: false
     - Name: handlers
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 17|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -312,59 +327,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 17|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+      Data: 18|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
     - Name: eventName
       Entry: 6
       Data: 
     - Name: waitUntilAllEnemiesDead
       Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 18|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
-    - Name: eventName
-      Entry: 1
-      Data: TODO WAWE 6
-    - Name: fixedDuration
-      Entry: 4
-      Data: 90
-    - Name: waitTillAllSpawnedAreDead
-      Entry: 5
       Data: false
-    - Name: waitTillAllWawesSpawn
-      Entry: 5
-      Data: false
-    - Name: handlers
-      Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 10
-      Data: 4
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 20|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
-    - Name: eventName
-      Entry: 6
-      Data: 
-    - Name: waitUntilAllEnemiesDead
-      Entry: 5
-      Data: true
     - Name: 
       Entry: 8
       Data: 
@@ -383,14 +352,14 @@ MonoBehaviour:
   progressSettings:
     shops:
     - goldAcumulatedRequired: 25
-      shopSet: shop_passives_basic
-      priceMultiplier: 2
-    - goldAcumulatedRequired: 100
-      shopSet: shop_passives_basic
-      priceMultiplier: 7
-    - goldAcumulatedRequired: 200
       shopSet: shop_passives_basic;shop_defensive_basic
-      priceMultiplier: 10
+      priceMultiplier: 20
+    - goldAcumulatedRequired: 100
+      shopSet: shop_passives_basic;shop_defensive_basic
+      priceMultiplier: 30
+    - goldAcumulatedRequired: 200
+      shopSet: shop_chaos_upgrades;shop_passives_basic;shop_defensive_basic
+      priceMultiplier: 40
     - goldAcumulatedRequired: 300
-      shopSet: shop_passives_basic
-      priceMultiplier: 10
+      shopSet: shop_chaos_upgrades;shop_passives_basic;shop_defensive_basic
+      priceMultiplier: 50

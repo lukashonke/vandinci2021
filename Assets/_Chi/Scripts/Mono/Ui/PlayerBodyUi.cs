@@ -96,7 +96,8 @@ namespace _Chi.Scripts.Mono.Ui
                 {
                     slotId = uiSlot.slotId,
                     moduleId = prefab.id,
-                    level = level
+                    level = level,
+                    upgradeItems = new (),
                 });
                 
                 uiSlot.SetModulePrefab(prefab, level, 0);
@@ -106,6 +107,36 @@ namespace _Chi.Scripts.Mono.Ui
                 Gamesystem.instance.uiManager.SetAddingUiItem(null);
 
                 return true;
+            }
+
+            return false;
+        }
+
+        public bool AddModuleUpgradeItemToSlot(ModuleSlotUi uiSlot, AddingUiItem item)
+        {
+            var run = Gamesystem.instance.progress.progressData.run;
+
+            var db = Gamesystem.instance.prefabDatabase;
+
+            var prefab = db.GetById(item.prefab.id);
+            if (prefab != null)
+            {
+                var existing = run.modulesInSlots.FirstOrDefault(s => s.slotId == uiSlot.slotId);
+                if (existing != null)
+                {
+                    if(existing.upgradeItems == null) existing.upgradeItems = new List<SlotItem>();
+                    
+                    if (existing.upgradeItems.Any(u => u.prefabId == item.prefab.id))
+                    {
+                        return false;
+                    }
+                    
+                    existing.upgradeItems.Add(new SlotItem()
+                    {
+                        prefabId = item.prefab.id,
+                        slot = 0
+                    });
+                }
             }
 
             return false;

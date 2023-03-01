@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Scriptables.Dtos;
 using UnityEngine;
 
@@ -46,27 +49,53 @@ namespace _Chi.Scripts.Mono.Ui
         {
             var addingSkill = Gamesystem.instance.uiManager.addingUiItem;
             
-            if (addingSkill == null || addingSkill.prefab.type != PrefabItemType.Skill)
+            if (addingSkill == null)
+            {
+                return false;
+            }
+
+            if (addingSkill.prefab.skillUpgradeItem == null && addingSkill.prefab.type != PrefabItemType.Skill)
             {
                 return false;
             }
             
-            //TODO merge passive modules
-            
-            string title = "Confirm";
-            string text = "Are you sure?";
-            
-            //TODO hlaska podle typu
-            
-            Gamesystem.instance.uiManager.ShowConfirmDialog(title, text, () => TrySetSkill(addingSkill), () =>
+            if(addingSkill.prefab.skillUpgradeItem != null && currentSkill != null && !CanApplyUpgradeItem(addingSkill))
             {
-                Gamesystem.instance.uiManager.SetAddingUiItem(null);
+                return false;
+            }
 
-            }, () =>
+            if (addingSkill.prefab.skillUpgradeItem != null)
             {
-                Gamesystem.instance.uiManager.SetAddingUiItem(null);
-            });
+                string title = "Confirm";
+                string text = "Are you sure?";
+            
+                //TODO hlaska podle typu
+            
+                Gamesystem.instance.uiManager.ShowConfirmDialog(title, text, () => TrySetSkillUpgradeItem(addingSkill), () =>
+                {
+                    Gamesystem.instance.uiManager.SetAddingUiItem(null);
 
+                }, () =>
+                {
+                    Gamesystem.instance.uiManager.SetAddingUiItem(null);
+                });
+            }
+            else
+            {
+                string title = "Confirm";
+                string text = "Are you sure?";
+            
+                //TODO hlaska podle typu
+            
+                Gamesystem.instance.uiManager.ShowConfirmDialog(title, text, () => TrySetSkill(addingSkill), () =>
+                {
+                    Gamesystem.instance.uiManager.SetAddingUiItem(null);
+
+                }, () =>
+                {
+                    Gamesystem.instance.uiManager.SetAddingUiItem(null);
+                });
+            }
             return true;
         }
         
@@ -74,6 +103,15 @@ namespace _Chi.Scripts.Mono.Ui
         {
             if (Gamesystem.instance.uiManager.vehicleSettingsWindow.SetSkill(this, module.prefab))
             {
+                module.finishCallback?.Invoke();
+            }
+        }
+        
+        public void TrySetSkillUpgradeItem(AddingUiItem module)
+        {
+            if (Gamesystem.instance.uiManager.vehicleSettingsWindow.AddSkillUpgrade(this, module.prefab))
+            {
+                module.finishCallback?.Invoke();
             }
         }
         
@@ -93,11 +131,29 @@ namespace _Chi.Scripts.Mono.Ui
             }
         }
         
-        public void NotifyAddingItem(AddingUiItem moduleCandidate)
+        public void NotifyAddingItem(AddingUiItem item)
         {
-            bool highlight = moduleCandidate != null && moduleCandidate.prefab.type == PrefabItemType.Skill;
+            bool highlight = item != null 
+                             && (item.prefab.type == PrefabItemType.Skill || (currentSkill != null && item.prefab.skillUpgradeItem != null && CanApplyUpgradeItem(item)));
             
             SetHighlighted(highlight);
+        }
+
+        private bool CanApplyUpgradeItem(AddingUiItem item)
+        {
+            if (item.prefab.skillUpgradeItem.target != currentSkill.skill) return false;
+            
+            var run = Gamesystem.instance.progress.progressData.run;
+
+            if (run.skillUpgradeItems != null)
+            {
+                if (run.skillUpgradeItems.Any(s => s.prefabId == item.prefab.id))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         public void OnClick()
@@ -113,7 +169,30 @@ namespace _Chi.Scripts.Mono.Ui
         {
             if (moduleGo != null && currentSkill != null)
             {
-                Gamesystem.instance.uiManager.ShowItemTooltip((RectTransform) this.transform, currentSkill, 0);
+                var upgrades = new List<UpgradeItem>();
+                
+                var run = Gamesystem.instance.progress.progressData.run;
+                var db = Gamesystem.instance.prefabDatabase;
+
+                if (run.skillUpgradeItems != null)
+                {
+                    foreach (var upgradeItem in run.skillUpgradeItems)
+                    {
+                        var upgradeItemPrefab = db.GetById(upgradeItem.prefabId);
+                        if (upgradeItemPrefab == null)
+                        {
+                            Debug.LogError($"Prefab {upgradeItem.prefabId} does not exist.");
+                            continue;
+                        }
+                        
+                        if (upgradeItemPrefab.skillUpgradeItem.target == currentSkill.skill)
+                        {
+                            upgrades.Add(upgradeItemPrefab.skillUpgradeItem);
+                        }
+                    }
+                }
+                
+                Gamesystem.instance.uiManager.ShowItemTooltip((RectTransform) this.transform, currentSkill, 0, UiManager.TooltipAlign.TopRight, UiManager.TooltipType.Default, upgrades);
             }
         }
 

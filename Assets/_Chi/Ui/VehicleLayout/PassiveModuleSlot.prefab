@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 259724129687046158}
   - component: {fileID: 2195463614256988920}
   - component: {fileID: 4257134869110703759}
+  - component: {fileID: 2585972627793701379}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -58,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 841383bcf41f46d4ba97e8d47bf84f9b, type: 2}
   m_Color: {r: 0.26657462, g: 1, b: 0.25, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -76,6 +77,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2585972627793701379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5053640596246514346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63a2ab99367c41ef937f344bb92e57e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 4257134869110703759}
+  propertyName: _TimeValue
 --- !u!1 &6297480507088187349
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,15 +240,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightGo: {fileID: 5053640596246514346}
+  rotation: 0
   slotType: 2
   connectedTo: []
   moduleGo: {fileID: 0}
+  onHoverGo: {fileID: 0}
   modulePrefabItem:
     id: 0
+    label: 
+    enabled: 0
+    description: 
     type: 0
     predefinedId: 0
     prefab: {fileID: 0}
     prefabUi: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+  moduleLevel: 0
 --- !u!114 &8922518316899660188
 MonoBehaviour:
   m_ObjectHideFlags: 0

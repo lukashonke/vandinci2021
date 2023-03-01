@@ -55,11 +55,15 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: visualItems
+      Entry: 6
+      Data: 
     - Name: additionalEffects
       Entry: 6
       Data: 
   parent: {fileID: 0}
   slot: {fileID: 0}
+  upgrades: []
   targetUpdateInterval: 0.2
   rotationSpeed: 1500
   instantRotation: 1
@@ -98,6 +102,12 @@ MonoBehaviour:
       value: 0
     projectilePushForce:
       baseValue: 60
+      value: 0
+    projectileScale:
+      baseValue: 0
+      value: 0
+    shotsPerShot:
+      baseValue: 1
       value: 0
     projectilePierceChance: 0
     hasAreaEffect: 0

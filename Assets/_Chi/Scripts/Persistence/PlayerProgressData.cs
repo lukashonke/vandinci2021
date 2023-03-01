@@ -34,6 +34,12 @@ namespace _Chi.Scripts.Persistence
         public List<SlotItem> skillPrefabIds;
 
         public List<SlotItem> mutatorPrefabIds;
+
+        public List<SlotItem> playerUpgradeItems;
+        
+        public List<SlotItem> skillUpgradeItems;
+        
+        public List<SlotItem> moduleUpgradeItems;
     }
 
     [Serializable]
@@ -43,6 +49,8 @@ namespace _Chi.Scripts.Persistence
         public int moduleId;
         public int level = 1;
         public int rotation;
+        
+        public List<SlotItem> upgradeItems;
     }
 
     [Serializable]

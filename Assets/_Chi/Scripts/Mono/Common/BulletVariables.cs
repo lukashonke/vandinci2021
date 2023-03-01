@@ -10,5 +10,7 @@
         public const string ProjectileLifetime = "_ProjectileLifetime";
         
         public const string ProjectileSpread = "_ProjectileSpread";
+        
+        public const string ProjectileShotsPerShot = "_ProjectileShotsPerShot";
     }
 }

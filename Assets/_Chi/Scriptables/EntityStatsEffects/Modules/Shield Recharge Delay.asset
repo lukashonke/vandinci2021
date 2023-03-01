@@ -21,13 +21,11 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  modifier: 2
+  modifier: 0
   order: 10
   hasLevelScaledValue: 1
   levelScaledValue:
-  - 0
-  - -0.1
-  - -0.1
-  - -0.2
-  - -0.2
+  - 20
+  - 18
+  - 16
   value: 0

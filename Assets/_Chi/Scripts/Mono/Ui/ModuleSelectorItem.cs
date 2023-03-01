@@ -22,6 +22,10 @@ namespace _Chi.Scripts.Mono.Ui
         public Color mutatorSubtitleColor;
         public Color skillSubtitleColor;
 
+        public Color moduleUpgradeItemColor;
+        public Color playerUpgradeItemColor;
+        public Color skillUpgradeItemColor;
+
         private List<ActionsPanelButton> buttons;
         private Action abort;
 
@@ -44,6 +48,7 @@ namespace _Chi.Scripts.Mono.Ui
             if(subtitleColor.Item2.HasValue) this.subTitle.color = subtitleColor.Item2.Value;
             this.description.text = description ?? "";
             this.icon.sprite = icon.sprite;
+            this.icon.material = icon.material;
 
             this.buttons = buttons;
             this.abort = abort;
@@ -89,6 +94,21 @@ namespace _Chi.Scripts.Mono.Ui
                 return ("Mutator", mutatorSubtitleColor);
             }
 
+            if (item.moduleUpgradeItem != null)
+            {
+                return ("Chaos Weapon Upgrade", moduleUpgradeItemColor);
+            }
+            
+            if (item.skillUpgradeItem != null)
+            {
+                return ("Skill Upgrade", skillUpgradeItemColor);
+            }
+            
+            if (item.playerUpgradeItem != null)
+            {
+                return ("Player Upgrade", playerUpgradeItemColor);
+            }
+
             return (this.item.type.ToString(), null);
         }
         
@@ -98,12 +118,26 @@ namespace _Chi.Scripts.Mono.Ui
 
             if (priceValue == null || playerGold >= priceValue)
             {
-                Gamesystem.instance.uiManager.SetActionsPanel(new ActionsPanel()
+                if (this.buttons.Count == 1)
                 {
-                    source = this,
-                    buttons = this.buttons,
-                    abortFunction = abort
-                }, (RectTransform) transform);
+                    buttons[0].action();
+                    
+                    /*Gamesystem.instance.uiManager.SetActionsPanel(new ActionsPanel()
+                    {
+                        source = this,
+                        buttons = this.buttons,
+                        abortFunction = abort
+                    }, (RectTransform) transform);*/
+                }
+                else
+                {
+                    Gamesystem.instance.uiManager.SetActionsPanel(new ActionsPanel()
+                    {
+                        source = this,
+                        buttons = this.buttons,
+                        abortFunction = abort
+                    }, (RectTransform) transform);
+                }
             }
         }
         

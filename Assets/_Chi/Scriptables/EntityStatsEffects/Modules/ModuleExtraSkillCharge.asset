@@ -23,6 +23,9 @@ MonoBehaviour:
     SerializationNodes: []
   modifier: 1
   order: 10
-  hasLevelScaledValue: 0
-  levelScaledValue: []
+  hasLevelScaledValue: 1
+  levelScaledValue:
+  - 1
+  - 2
+  - 3
   value: 1

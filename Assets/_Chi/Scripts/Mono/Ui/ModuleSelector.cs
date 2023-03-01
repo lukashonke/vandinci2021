@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Mono.Modules;
+using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Scriptables.Dtos;
 using _Chi.Scripts.Utilities;
 using Sirenix.OdinInspector;
@@ -20,9 +22,12 @@ namespace _Chi.Scripts.Mono.Ui
         [Required] public GameObject exitGo;
 
         private ModuleSelectorMode currentMode;
-        
+        private List<RewardSet> currentRewardSets;
+        [NonSerialized] public Dictionary<PrefabItem, GameObject> options;
+
         public void Start()
         {
+            currentRewardSets = new();
             //Initialise(ModuleSelectorMode.ShowAllItems, true);
         }
 
@@ -45,6 +50,16 @@ namespace _Chi.Scripts.Mono.Ui
 
                 newTitle.gameObject.GetComponentsInChildren<Image>().ForEach(s => s.enabled = true);
             }
+            
+            var run = Gamesystem.instance.progress.progressData.run;
+
+            if (currentRewardSets == null)
+            {
+                currentRewardSets = new();
+            }
+            currentRewardSets.Clear();
+            if(options == null) options = new();
+            options.Clear();
 
             if (currentMode == ModuleSelectorMode.ShowAllItems)
             {
@@ -52,10 +67,14 @@ namespace _Chi.Scripts.Mono.Ui
                              t.enabled &&
                              (t.type == PrefabItemType.Module
                              || t.type == PrefabItemType.Skill
-                             || t.type == PrefabItemType.Mutator)
+                             || t.type == PrefabItemType.Mutator
+                             || t.type == PrefabItemType.UpgradeItemModule
+                             || t.type == PrefabItemType.UpgradeItemSkill
+                             || t.type == PrefabItemType.UpgradeItemPlayer)
                          ))
                 {
                     var newItem = Instantiate(itemInfoPrefab, transform.position, Quaternion.identity, transform);
+                    options.Add(item, newItem);
                     var newItemItem = newItem.GetComponent<ModuleSelectorItem>();
                     
                     newItemItem.Initialise(item, new List<ActionsPanelButton>()
@@ -69,6 +88,8 @@ namespace _Chi.Scripts.Mono.Ui
                 foreach (var rewardSet in rewardSets.Split(";"))
                 {
                     var set = Gamesystem.instance.prefabDatabase.GetRewardSet(rewardSet);
+                    
+                    currentRewardSets.Add(set);
 
                     var shownItems = set.CalculateShownItems(Gamesystem.instance.objects.currentPlayer).ToHashSet();
                     var shownItemsHash = shownItems.Select(s => s.prefabId).ToHashSet();
@@ -79,9 +100,15 @@ namespace _Chi.Scripts.Mono.Ui
                         if (!item.enabled) continue;
                     
                         var newItem = Instantiate(itemInfoPrefab, transform.position, Quaternion.identity, transform);
+                        options.Add(item, newItem);
                         var newItemItem = newItem.GetComponent<ModuleSelectorItem>();
 
+                        var count = run.GetCountOfPrefabs(item.id);
+                        
                         int? price = (int?) (rewardSetItemWithWeight.price * (triggeredShop?.priceMultiplier ?? 1));
+                        int? priceToAdd = (int?) (price * (count * rewardSetItemWithWeight.priceMultiplyForEveryOwned));
+                        
+                        price += priceToAdd;
 
                         newItemItem.Initialise(item, new List<ActionsPanelButton>()
                         {
@@ -102,9 +129,27 @@ namespace _Chi.Scripts.Mono.Ui
                 level = 1
             };
 
-            info.finishCallback = () => ModuleAdded(info, price);
-            
-            Gamesystem.instance.uiManager.SetAddingUiItem(info);
+            if (item.playerUpgradeItem != null)
+            {
+                Gamesystem.instance.uiManager.ShowConfirmDialog("Confirm upgrade", "Are you sure you want to buy this upgrade?", () =>
+                {
+                    if (Gamesystem.instance.uiManager.vehicleSettingsWindow.AddPlayerUpgradeItem(item))
+                    {
+                        ModuleAdded(info, price);
+                    }
+                }, () =>
+                {
+
+                }, () =>
+                {
+
+                }, "Confirm", "Cancel");
+            }
+            else
+            {
+                info.finishCallback = () => ModuleAdded(info, price);
+                Gamesystem.instance.uiManager.SetAddingUiItem(info);
+            }
         }
 
         public void ModuleAdded(AddingUiItem addingUiItem, int? price)
@@ -115,10 +160,16 @@ namespace _Chi.Scripts.Mono.Ui
                 Gamesystem.instance.uiManager.vehicleSettingsWindow.UpdateCurrentMoney();
             }
             
-            /*if (currentMode == ModuleSelectorMode.SingleRewardSet)
+            if (currentRewardSets.Any(rs => rs.closeOnFirstPurchase))
             {
                 Gamesystem.instance.uiManager.vehicleSettingsWindow.CloseWindow();
-            }*/
+            }
+            
+            if (options.TryGetValue(addingUiItem.prefab, out var go))
+            {
+                Destroy(go);
+                options.Remove(addingUiItem.prefab);
+            }
         }
 
         public void AbortAddingItem()

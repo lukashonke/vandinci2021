@@ -31,6 +31,42 @@ namespace _Chi.Scripts.Scriptables.Skills
             return false;
         }
 
+        private float GetJumpDuration(Player player)
+        {
+            var length = jumpLength;
+
+            foreach (var upgradeItem in player.skillUpgradeItems)
+            {
+                if (upgradeItem.target == this)
+                {
+                    if (upgradeItem.parameters != null && upgradeItem.parameters.TryGetValue("jumpLength", out var jumpLength))
+                    {
+                        length += jumpLength;
+                    }
+                }
+            }
+
+            return length;
+        }
+        
+        private float GetJumpForce(Player player)
+        {
+            var force = jumpForce;
+
+            foreach (var upgradeItem in player.skillUpgradeItems)
+            {
+                if (upgradeItem.target == this)
+                {
+                    if (upgradeItem.parameters != null && upgradeItem.parameters.TryGetValue("jumpForce", out var jumpForce))
+                    {
+                        force += jumpForce;
+                    }
+                }
+            }
+
+            return force;
+        }
+
         private IEnumerator Jump(Player player)
         {
             SetActivated(player, true);
@@ -38,10 +74,10 @@ namespace _Chi.Scripts.Scriptables.Skills
             SpawnPrefabVfx(player.GetPosition(), player.transform.rotation, null);
             player.OnSkillUse();
             
-            var force = jumpForce * player.stats.skillPowerMul.GetValue() * player.rb.mass;
+            var force = GetJumpForce(player) * player.stats.skillPowerMul.GetValue() * (1/player.rb.mass);
             
             var direction = (Utils.GetMousePosition() - player.GetPosition()).normalized;
-            var jumpUntil = Time.time + jumpLength;
+            var jumpUntil = Time.time + GetJumpDuration(player);
             
             player.SetCanMove(false);
             player.SetCanReceiveDamage(false);

@@ -18,18 +18,24 @@ namespace _Chi.Scripts.Scriptables
     public class PrefabDatabase : SerializedScriptableObject
     {
         [AssetsOnly]
-        [TableList]
+        [TableList(AlwaysExpanded = true)]
+        [TabGroup("Prefabs")]
         public List<PrefabItem> prefabs;
 
-        [TableList]
+        [TableList(AlwaysExpanded = true)]
+        [TabGroup("RewardSets")]
         public List<RewardSet> rewardSets;
 
-        [TableList]
+        [TableList(AlwaysExpanded = true)]
+        [TabGroup("Variants")]
         public List<PrefabVariant> variants;
         [NonSerialized] public Dictionary<string, PrefabVariant> variantsLookup;
 
+        [TabGroup("Prefabs")]
         [Required] public DamageNumber playerCriticalDealtDamage;
+        [TabGroup("Prefabs")]
         [Required] public DamageNumber playerDealtDamage;
+        [TabGroup("Prefabs")]
         [Required] public DamageNumber playerGoldReceived;
 
         public void Initialise()
@@ -55,6 +61,7 @@ namespace _Chi.Scripts.Scriptables
             return null;
         }
 
+        [TabGroup("Prefabs")]
         [Button]
         public void Reorder()
         {
@@ -177,6 +184,9 @@ namespace _Chi.Scripts.Scriptables
         [MinValue(1)] 
         public int minCountShownItems = 1;
 
+        [VerticalGroup("Items")]
+        public bool closeOnFirstPurchase;
+
         public List<RewardSetItemWithWeight> CalculateShownItems(Player player)
         {
             List<RewardSetItemWithWeight> kv = new();
@@ -199,19 +209,85 @@ namespace _Chi.Scripts.Scriptables
                 
                 var random = Random.Range(0, kv.Count);
                 var prefab = kv[random];
+                if (!CanApply(player, prefab))
+                {
+                    kv.RemoveAt(random);
+                    i--;
+                    continue;
+                }
+                
                 retValue.Add(prefab);
                 kv.RemoveAll(i => i == prefab);
             }
 
             return retValue;
         }
+
+        private bool CanApply(Player player, RewardSetItemWithWeight item)
+        {
+            var prefab = Gamesystem.instance.prefabDatabase.GetById(item.prefabId);
+            var run = Gamesystem.instance.progress.progressData.run;
+            
+            if (prefab == null) return false;
+
+            switch (prefab.type)
+            {
+                case PrefabItemType.UpgradeItemPlayer:
+                {
+                    if (run.playerUpgradeItems != null && run.playerUpgradeItems.Any(i => i.prefabId == item.prefabId))
+                    {
+                        return false;
+                    }
+
+                    break;
+                }
+                case PrefabItemType.UpgradeItemSkill:
+                {
+                    if (run.skillUpgradeItems != null && run.skillUpgradeItems.Any(i => i.prefabId == item.prefabId))
+                    {
+                        return false;
+                    }
+                    
+                    break;
+                }
+                case PrefabItemType.Skill:
+                {
+                    if (run.skillPrefabIds != null && run.skillPrefabIds.Any(i => i.prefabId == item.prefabId))
+                    {
+                        return false;
+                    }
+                    
+                    break;
+                }
+                case PrefabItemType.UpgradeItemModule:
+                {
+                    var moduleId = prefab.moduleUpgradeItem.modulePrefabId;
+
+                    var moduleInSlot = run.modulesInSlots.FirstOrDefault(m => m.moduleId == moduleId);
+                    if (moduleInSlot == null || moduleInSlot.upgradeItems.Any(u => u.prefabId == prefab.id))
+                    {
+                        return false;
+                    }
+
+                    break;
+                }
+            }
+
+            return true;
+        }
     }
 
     [Serializable]
     public class RewardSetItemWithWeight
     {
+        [HorizontalGroup("Prefab")]
         public int prefabId;
+        [HorizontalGroup("Prefab")]
         public int weight;
-        public int price;
+        
+        [HorizontalGroup("Price")]
+        public float price;
+        [HorizontalGroup("Price")]
+        public float priceMultiplyForEveryOwned = 0f;
     }
 }

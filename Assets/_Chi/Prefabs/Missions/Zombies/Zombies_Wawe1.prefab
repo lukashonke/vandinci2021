@@ -382,6 +382,9 @@ MonoBehaviour:
       noRotation: 0
       prefabVariant: none
     relativePosition: 0
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 0
     roamDistance: 0
     roamRandomRadius: 0
@@ -395,7 +398,8 @@ MonoBehaviour:
     repeatCount: 100
     spawnCountMin: 2
     spawnCountMax: 3
-    distanceFromPlayer: 6
+    distanceFromPlayerMin: 6
+    distanceFromPlayerMax: 6
     despawnAfter: 60
     spawnGroupSpreadMin: 2
     spawnGroupSpreadMax: 3
@@ -433,6 +437,9 @@ MonoBehaviour:
       noRotation: 1
       prefabVariant: ExplodingDecoy
     relativePosition: 0
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 3
     roamDistance: 100
     roamRandomRadius: 3
@@ -446,7 +453,8 @@ MonoBehaviour:
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
-    distanceFromPlayer: 6
+    distanceFromPlayerMin: 6
+    distanceFromPlayerMax: 6
     despawnAfter: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
@@ -484,6 +492,9 @@ MonoBehaviour:
       noRotation: 0
       prefabVariant: ZombieIdleWalker
     relativePosition: 0
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 1
     roamDistance: 100
     roamRandomRadius: 3
@@ -497,7 +508,8 @@ MonoBehaviour:
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 3
-    distanceFromPlayer: 5
+    distanceFromPlayerMin: 5
+    distanceFromPlayerMax: 5
     despawnAfter: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
@@ -549,6 +561,9 @@ MonoBehaviour:
       noRotation: 0
       prefabVariant: none
     relativePosition: 0
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 0
     roamDistance: 0
     roamRandomRadius: 0
@@ -562,7 +577,8 @@ MonoBehaviour:
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 4
-    distanceFromPlayer: 5
+    distanceFromPlayerMin: 5
+    distanceFromPlayerMax: 5
     despawnAfter: 60
     spawnGroupSpreadMin: 1.5
     spawnGroupSpreadMax: 2.5
@@ -600,6 +616,9 @@ MonoBehaviour:
       noRotation: 0
       prefabVariant: ZombieIdleRunner
     relativePosition: 0
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 2
     roamDistance: 100
     roamRandomRadius: 3
@@ -613,7 +632,8 @@ MonoBehaviour:
     repeatCount: 100
     spawnCountMin: 5
     spawnCountMax: 15
-    distanceFromPlayer: 5
+    distanceFromPlayerMin: 5
+    distanceFromPlayerMax: 5
     despawnAfter: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
@@ -651,6 +671,9 @@ MonoBehaviour:
       noRotation: 0
       prefabVariant: ZombieSpawner_ZombieSneaky
     relativePosition: 3
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 0
     roamDistance: 0
     roamRandomRadius: 0
@@ -664,7 +687,8 @@ MonoBehaviour:
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
-    distanceFromPlayer: 2.5
+    distanceFromPlayerMin: 2.5
+    distanceFromPlayerMax: 2.5
     despawnAfter: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
@@ -702,6 +726,9 @@ MonoBehaviour:
       noRotation: 0
       prefabVariant: ZombieSpawner_Zombie
     relativePosition: 3
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 0
     roamDistance: 0
     roamRandomRadius: 0
@@ -715,7 +742,8 @@ MonoBehaviour:
     repeatCount: 100
     spawnCountMin: 3
     spawnCountMax: 5
-    distanceFromPlayer: 0
+    distanceFromPlayerMin: 0
+    distanceFromPlayerMax: 0
     despawnAfter: 0
     spawnGroupSpreadMin: 2
     spawnGroupSpreadMax: 3
@@ -753,6 +781,9 @@ MonoBehaviour:
       noRotation: 1
       prefabVariant: GoldChestSmall
     relativePosition: 0
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 3
     roamDistance: 100
     roamRandomRadius: 3
@@ -766,7 +797,8 @@ MonoBehaviour:
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
-    distanceFromPlayer: 5
+    distanceFromPlayerMin: 5
+    distanceFromPlayerMax: 5
     despawnAfter: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
@@ -804,6 +836,9 @@ MonoBehaviour:
       noRotation: 1
       prefabVariant: MonsterHouseSmall
     relativePosition: 0
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 3
     roamDistance: 100
     roamRandomRadius: 3
@@ -817,7 +852,8 @@ MonoBehaviour:
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
-    distanceFromPlayer: 5
+    distanceFromPlayerMin: 5
+    distanceFromPlayerMax: 5
     despawnAfter: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
@@ -855,6 +891,9 @@ MonoBehaviour:
       noRotation: 0
       prefabVariant: ZombieBloaterExploding
     relativePosition: 0
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 0
     roamDistance: 100
     roamRandomRadius: 3
@@ -868,7 +907,8 @@ MonoBehaviour:
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
-    distanceFromPlayer: 5
+    distanceFromPlayerMin: 5
+    distanceFromPlayerMax: 5
     despawnAfter: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1

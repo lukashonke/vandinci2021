@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using _Chi.Scripts.Mono.Modules;
+using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Scriptables.Dtos;
 using Sirenix.OdinInspector;
 using TMPro;
@@ -20,7 +23,10 @@ namespace _Chi.Scripts.Mono.Ui.Tooltips
         [Required] public GameObject statsContainer;
         [Required] public GameObject statsItem;
         
-        public void Initialise(PrefabItem modulePrefabItem, int level, UiManager.TooltipType tooltipType)
+        [Required] public GameObject upgradesContainer;
+        [Required] public GameObject upgradesItem;
+        
+        public void Initialise(PrefabItem modulePrefabItem, int level, UiManager.TooltipType tooltipType, List<UpgradeItem> upgradeItems)
         {
             if (tooltipType == UiManager.TooltipType.ExcludeTitleLogoDescription)
             {
@@ -43,11 +49,35 @@ namespace _Chi.Scripts.Mono.Ui.Tooltips
                 }
             }
             
-
             if (!InitialiseStats(modulePrefabItem, level))
             {
                 statsContainer.SetActive(false);
             }
+            
+            if (!InitialiseUpgrades(upgradeItems))
+            {
+                upgradesContainer.SetActive(false);
+            }
+        }
+        
+        private bool InitialiseUpgrades(List<UpgradeItem> upgradeItems)
+        {
+            upgradesItem.SetActive(false);
+            
+            if (upgradeItems != null && upgradeItems.Any())
+            {
+                foreach (var item in upgradeItems)
+                {
+                    var go = Instantiate(upgradesItem, upgradesContainer.transform);
+                    go.transform.Find("Title").GetComponent<TextMeshProUGUI>().text = item.uiName;
+                    go.transform.Find("Description").GetComponent<TextMeshProUGUI>().text = item.uiDescription;
+                    go.SetActive(true);
+                }
+
+                return true;
+            }
+
+            return false;
         }
 
         private bool InitialiseStats(PrefabItem modulePrefabItem, int level)

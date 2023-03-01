@@ -4,6 +4,7 @@ using System.Linq;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Misc;
+using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Utilities;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -15,6 +16,8 @@ namespace _Chi.Scripts.Mono.Modules
         [ReadOnly] public Entity parent;
         [ReadOnly] public ModuleSlot slot;
 
+        public List<ModuleUpgradeItem> upgrades;
+        
         public float targetUpdateInterval = 0.2f;
 
         public float rotationSpeed = 500;
@@ -95,6 +98,11 @@ namespace _Chi.Scripts.Mono.Modules
             if (effectsActivated) return false;
             effectsActivated = true;
             
+            foreach (var upgrade in upgrades)
+            {
+                upgrade.ApplyEffects(this);
+            }
+            
             return true;
         }
 
@@ -102,6 +110,11 @@ namespace _Chi.Scripts.Mono.Modules
         {
             if (!effectsActivated) return false;
             effectsActivated = false;
+            
+            foreach (var upgrade in upgrades)
+            {
+                upgrade.RemoveEffects(this);
+            }
 
             return true;
         }
