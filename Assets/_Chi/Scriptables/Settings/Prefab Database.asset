@@ -288,7 +288,7 @@ MonoBehaviour:
     label: Shield Module
     enabled: 1
     description: Gives you a shield, which recharges over time and absorbs one hit
-      by enemies.
+      by enemies. When shield bursts, it damages nearby enemies.
     type: 3
     predefinedId: 0
     prefab: {fileID: 1232174764404154631, guid: d705c7605dc9bb841a8b7ba32c05d922, type: 3}
@@ -561,9 +561,10 @@ MonoBehaviour:
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
   - id: 4400
-    label: Jump Charged Jump
+    label: Jump Charge
     enabled: 1
-    description: 'Jumps has more force, making you jump for longer distances. '
+    description: Jumps has more force, making you jump for longer distances and deadling
+      more damage.
     type: 10
     predefinedId: 0
     prefab: {fileID: 0}
@@ -576,7 +577,7 @@ MonoBehaviour:
   - id: 4401
     label: Jump Protection
     enabled: 1
-    description: After jumping, receive no damage for 1 second.
+    description: Right after jumping, receive no damage for 2 seconds.
     type: 10
     predefinedId: 0
     prefab: {fileID: 0}
@@ -1018,12 +1019,12 @@ MonoBehaviour:
     spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
     animatorController: {fileID: 9100000, guid: f54b0e0d088b20346a942a6b13ad2b87, type: 2}
     entityStats:
-      maxHp: 20
+      maxHp: 60
       maxHpAdd: 0
       maxHpMul: 1
-      hp: 20
+      hp: 60
     npcStats:
-      speed: 1
+      speed: 1.2
       rotationSpeed: 10
       contactDamage: 20
       contactDamageInterval: 0.5
@@ -1038,10 +1039,164 @@ MonoBehaviour:
       rvoLayer: 0
       rvoCollidesWith: 0
     reward:
-      items: []
+      items:
+      - dropType: 0
+        dropChance: 100
+        amountMin: 2
+        amountMax: 2
+  - variant: ZombieEliteFast
+    sprite: {fileID: 21300000, guid: ada51a819fa2e4745b6756e5c835e252, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 45
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 45
+    npcStats:
+      speed: 2.2
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+    reward:
+      items:
+      - dropType: 0
+        dropChance: 100
+        amountMin: 4
+        amountMax: 4
+  - variant: ZombieEliteFat
+    sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 90
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 90
+    npcStats:
+      speed: 1.2
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+    reward:
+      items:
+      - dropType: 0
+        dropChance: 100
+        amountMin: 4
+        amountMax: 4
   - variant: ZombieBloody
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 4461f9e1a8c439b40bd7fafb428820cf, type: 2}
+    animatorController: {fileID: 9100000, guid: f54b0e0d088b20346a942a6b13ad2b87, type: 2}
+    entityStats:
+      maxHp: 180
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 180
+    npcStats:
+      speed: 1.4
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+    reward:
+      items:
+      - dropType: 1
+        dropChance: 50
+        amountMin: 1
+        amountMax: 1
+  - variant: ZombieBloodyFast
+    sprite: {fileID: 21300000, guid: ada51a819fa2e4745b6756e5c835e252, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 4461f9e1a8c439b40bd7fafb428820cf, type: 2}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 135
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 135
+    npcStats:
+      speed: 2.4
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+    reward:
+      items:
+      - dropType: 1
+        dropChance: 75
+        amountMin: 1
+        amountMax: 1
+  - variant: ZombieBloodyFat
+    sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 4461f9e1a8c439b40bd7fafb428820cf, type: 2}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 270
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 270
+    npcStats:
+      speed: 1.4
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+    reward:
+      items:
+      - dropType: 1
+        dropChance: 75
+        amountMin: 1
+        amountMax: 1
+  - variant: ZombieDemonic
+    sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 803fe10b4c4635a4c92bb2f6ad6629a8, type: 2}
     animatorController: {fileID: 9100000, guid: f54b0e0d088b20346a942a6b13ad2b87, type: 2}
     entityStats:
       maxHp: 20
@@ -1065,10 +1220,36 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items: []
-  - variant: ZombieDemonic
-    sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
+  - variant: ZombieDemonicFast
+    sprite: {fileID: 21300000, guid: ada51a819fa2e4745b6756e5c835e252, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 803fe10b4c4635a4c92bb2f6ad6629a8, type: 2}
-    animatorController: {fileID: 9100000, guid: f54b0e0d088b20346a942a6b13ad2b87, type: 2}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 20
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 20
+    npcStats:
+      speed: 1
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+    reward:
+      items: []
+  - variant: ZombieDemonicFat
+    sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 803fe10b4c4635a4c92bb2f6ad6629a8, type: 2}
+    animatorController: {fileID: 0}
     entityStats:
       maxHp: 20
       maxHpAdd: 0
@@ -1121,6 +1302,99 @@ MonoBehaviour:
   - variant: ZombieBloaterExploding
     sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 100
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 100
+    npcStats:
+      speed: 1
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+    skills: []
+    skillsOnDie:
+    - {fileID: 11400000, guid: 0a3ea7bd06d4ba4409e2d2353afe0c06, type: 2}
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+    reward:
+      items:
+      - dropType: 1
+        dropChance: 100
+        amountMin: 1
+        amountMax: 1
+  - variant: ZombieEliteBloaterExploding
+    sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 300
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 300
+    npcStats:
+      speed: 1.2
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+    skills: []
+    skillsOnDie:
+    - {fileID: 11400000, guid: 0a3ea7bd06d4ba4409e2d2353afe0c06, type: 2}
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+    reward:
+      items:
+      - dropType: 1
+        dropChance: 100
+        amountMin: 2
+        amountMax: 2
+  - variant: ZombieBloodyBloaterExploding
+    sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 4461f9e1a8c439b40bd7fafb428820cf, type: 2}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 900
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 900
+    npcStats:
+      speed: 1.4
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+    skills: []
+    skillsOnDie:
+    - {fileID: 11400000, guid: 0a3ea7bd06d4ba4409e2d2353afe0c06, type: 2}
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+    reward:
+      items:
+      - dropType: 1
+        dropChance: 100
+        amountMin: 4
+        amountMax: 4
+  - variant: ZombieDemonicBloaterExploding
+    sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 803fe10b4c4635a4c92bb2f6ad6629a8, type: 2}
     animatorController: {fileID: 0}
     entityStats:
       maxHp: 100
@@ -1359,6 +1633,84 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items: []
+  - variant: ZombieSpawner_ZombieElite
+    sprite: {fileID: 21300000, guid: e1649ff1a78909d49a09c25d027780fe, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 999
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 999
+    npcStats:
+      speed: 1.1
+      rotationSpeed: 10
+      contactDamage: 3
+      contactDamageInterval: 0.5
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: ZombieElite
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+    reward:
+      items: []
+  - variant: ZombieSpawner_ZombieBloody
+    sprite: {fileID: 21300000, guid: e1649ff1a78909d49a09c25d027780fe, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 999
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 999
+    npcStats:
+      speed: 1.1
+      rotationSpeed: 10
+      contactDamage: 3
+      contactDamageInterval: 0.5
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: ZombieBloody
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+    reward:
+      items: []
+  - variant: ZombieSpawner_ZombieDemonic
+    sprite: {fileID: 21300000, guid: e1649ff1a78909d49a09c25d027780fe, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 999
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 999
+    npcStats:
+      speed: 1.1
+      rotationSpeed: 10
+      contactDamage: 3
+      contactDamageInterval: 0.5
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: ZombieDemonic
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+    reward:
+      items: []
   - variant: GoldChestSmall
     sprite: {fileID: 21300000, guid: 5043a681e42e8d4438d161f29b39054c, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -1420,10 +1772,10 @@ MonoBehaviour:
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     animatorController: {fileID: 0}
     entityStats:
-      maxHp: 200
+      maxHp: 1200
       maxHpAdd: 0
       maxHpMul: 1
-      hp: 200
+      hp: 1200
     npcStats:
       speed: 0
       rotationSpeed: 10
@@ -1440,7 +1792,11 @@ MonoBehaviour:
       rvoLayer: 0
       rvoCollidesWith: 0
     reward:
-      items: []
+      items:
+      - dropType: 1
+        dropChance: 100
+        amountMin: 4
+        amountMax: 4
   - variant: MonsterHouseLarge
     sprite: {fileID: 21300000, guid: e2840be09ed7d4f4c9c31ba368d9aed7, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}

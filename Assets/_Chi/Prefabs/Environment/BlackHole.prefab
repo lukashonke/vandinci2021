@@ -5149,6 +5149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  attachedLimit: 100
+  attachedLimit: 10
   minDistance2: 2.5
   force: 4

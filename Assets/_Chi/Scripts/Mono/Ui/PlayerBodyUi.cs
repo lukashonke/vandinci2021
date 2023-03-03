@@ -136,6 +136,12 @@ namespace _Chi.Scripts.Mono.Ui
                         prefabId = item.prefab.id,
                         slot = 0
                     });
+                    
+                    item.finishCallback?.Invoke();
+                
+                    Gamesystem.instance.uiManager.SetAddingUiItem(null);
+
+                    return true;
                 }
             }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
@@ -16,6 +17,7 @@ namespace _Chi.Scripts.Mono.Modules
     public abstract class OffensiveModule : Module, IBulletEmitterEntityParameters
     {
         [NonSerialized] public BulletEmitter emitter;
+        [NonSerialized] public BulletEmitter[] childEmitters;
         [NonSerialized] public bool hasEmitter;
 
         public List<Transform> muzzles;
@@ -43,6 +45,7 @@ namespace _Chi.Scripts.Mono.Modules
 
             additionalEffects = new();
             emitter = GetComponent<BulletEmitter>();
+            childEmitters = GetComponentsInChildren<BulletEmitter>().Where(e => e != emitter).ToArray();
             hasEmitter = emitter != null;
         }
 

@@ -12,7 +12,7 @@ Material:
   m_ValidKeywords:
   - _ENABLEPOISON_ON
   - _SHADERSPACE_UV
-  - _TIMESETTINGS_CUSTOM_VALUE
+  - _TIMESETTINGS_LINEAR_DEFAULT
   - _UBERFADING_NONE
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -361,8 +361,8 @@ Material:
     - _TimeFrequency: 2
     - _TimeRange: 0.5
     - _TimeScale: 1
-    - _TimeSettings: 5
-    - _TimeValue: 1
+    - _TimeSettings: 0
+    - _TimeValue: 8.634246
     - _UVDistortFade: 1
     - _UVRotateSpeed: 1
     - _UVSec: 0

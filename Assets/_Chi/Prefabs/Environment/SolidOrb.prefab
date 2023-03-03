@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed7217233b44562bb774826bec8f947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  team: 1
   attachedLimit: 100
   radius2: 3
   force: 1

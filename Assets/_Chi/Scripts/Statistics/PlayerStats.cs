@@ -25,6 +25,10 @@ namespace _Chi.Scripts.Statistics
 
         public Stat singleShieldRechargeDelay = new Stat();
 
+        public Stat shieldEffectsStrength = new Stat();
+        
+        public Stat shieldEffectsRadius = new Stat();
+
         public Stat skillReuseMul = new Stat();
 
         public Stat skillPowerMul = new Stat();

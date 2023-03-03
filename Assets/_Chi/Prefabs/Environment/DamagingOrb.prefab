@@ -222,7 +222,7 @@ MonoBehaviour:
   statsEffectLevel: 1
   effectInterval: 0.5
   team: 0
-  effectStrength: 10
+  effectStrength: 20
   loseInterestAfterDist2: 16
   despawnDelay: 10
 --- !u!114 &1499030055039769264

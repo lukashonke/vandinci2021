@@ -254,17 +254,17 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 120
-        inSlope: 0.6666667
-        outSlope: 0.6666667
+        inSlope: 0.6
+        outSlope: 0.6
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 90
+        time: 100
         value: 180
-        inSlope: 0.6666667
-        outSlope: 0.6666667
+        inSlope: 0.6
+        outSlope: 0.6
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -337,15 +337,6 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -354,16 +345,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -520,18 +502,18 @@ MonoBehaviour:
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
     spawnTimeMin: 6
-    spawnTimeMax: 8
+    spawnTimeMax: 6
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 8
-    repeatSpawnIntervalMax: 8
+    repeatSpawnIntervalMin: 6
+    repeatSpawnIntervalMax: 6
     repeatCount: 100
-    spawnCountMin: 2
-    spawnCountMax: 3
+    spawnCountMin: 3
+    spawnCountMax: 4
     distanceFromPlayerMin: 6
-    distanceFromPlayerMax: 6
-    despawnAfter: 60
-    spawnGroupSpreadMin: 2
-    spawnGroupSpreadMax: 3
+    distanceFromPlayerMax: 6.5
+    despawnAfter: 45
+    spawnGroupSpreadMin: 3
+    spawnGroupSpreadMax: 4
     distanceFromPlayerToDespawn: 100
 --- !u!114 &-50647473022081503
 MonoBehaviour:

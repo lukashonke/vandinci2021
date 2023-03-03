@@ -33,7 +33,8 @@ MonoBehaviour:
       prefabVariant: ZombieSneaky
     spawnCountMin: 1
     spawnCountMax: 1
-    distanceFromPlayer: 0
+    distanceFromPlayerMin: 0
+    distanceFromPlayerMax: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 100
@@ -55,7 +56,8 @@ MonoBehaviour:
       prefabVariant: ZombieFast
     spawnCountMin: 3
     spawnCountMax: 5
-    distanceFromPlayer: 0
+    distanceFromPlayerMin: 0
+    distanceFromPlayerMax: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 100
@@ -84,7 +86,98 @@ MonoBehaviour:
       prefabVariant: ZombieFat
     spawnCountMin: 1
     spawnCountMax: 1
-    distanceFromPlayer: 0
+    distanceFromPlayerMin: 0
+    distanceFromPlayerMax: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 100
+  - name: ZombieElite
+    possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieElite
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieEliteFast
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieEliteFat
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayerMin: 0
+    distanceFromPlayerMax: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 100
+  - name: ZombieBloody
+    possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieBloody
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieBloodyFast
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieBloodyFat
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayerMin: 0
+    distanceFromPlayerMax: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 100
+  - name: ZombieDemonic
+    possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieDemonic
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieDemonicFast
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieDemonicFat
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayerMin: 0
+    distanceFromPlayerMax: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 100

@@ -45,6 +45,8 @@ namespace _Chi.Scripts.Mono.Entities
 
         [ReadOnly] public int shieldCharges;
         
+        public List<ImmediateEffect> shieldEffects = new List<ImmediateEffect>();
+
         private Dictionary<Skill, SkillData> skillDatas;
 
         [NonSerialized] private float nextRestoreShield = 1;
@@ -342,11 +344,29 @@ namespace _Chi.Scripts.Mono.Entities
             {
                 nextRestoreShield = Time.time + stats.singleShieldRechargeDelay.GetValue();
                 shieldCharges--;
+                ShieldPushAwayEnemies();
                 //TODO add vfx
                 return false;
             }
 
             return true;
+        }
+
+        private void ShieldPushAwayEnemies()
+        {
+            var count = EntityExtensions.GetNearest(this, GetPosition(), stats.shieldEffectsRadius.GetValue(), TargetType.EnemyOnly, buffer);
+            for (int i = 0; i < count; i++)
+            {
+                var col = buffer[i];
+                var entity = col.gameObject.GetEntity();
+                if (entity is Npc npc && npc.CanBePushed() && this.AreEnemies(npc))
+                {
+                    foreach (var effect in shieldEffects)
+                    {
+                        effect.Apply(npc, this, null, null, stats.shieldEffectsStrength.GetValue());
+                    }
+                }
+            }
         }
 
         public void AddNearbyEnemy(Npc npc)

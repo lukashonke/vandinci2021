@@ -6,6 +6,7 @@ using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Ui;
 using _Chi.Scripts.Utilities;
+using BulletPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -31,12 +32,25 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                     break;
             }
         }
-        
+
+        public void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                var b = emitter.emitterProfile.rootBullet.patternsShot[0];
+                
+                ApplyParams(childEmitters[0]);
+                childEmitters[0].Play();
+            }
+        }
+
         public override IEnumerator UpdateLoop()  
         {
             var waiter = new WaitForFixedUpdate();
 
             float nextTargetUpdate = Time.time + targetUpdateInterval;
+
+            float lastFire = 0;
 
             //float nextFireRate = Time.time + stats.fireRate;
 
@@ -44,7 +58,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
             
             while (activated && parent.CanShoot())
             {
-                yield return waiter;
+                yield return null;
 
                 if (nextTargetUpdate > Time.time)
                 {
@@ -52,7 +66,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                     
                     if (targetType == ShootNearestTargetType.NoRotation)
                     {
-                        emitter.Play();
+                        //emitter.Play();
                     }
                     else
                     {
@@ -61,20 +75,28 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                         if (nearest != null && Utils.Dist2(nearest.GetPosition(), GetPosition()) < Mathf.Pow(stats.targetRange.GetValue(), 2))
                         {
                             currentTarget = nearest.transform;
-                            emitter.Play();
+                            //emitter.Play();
                         }
                         else
                         {
                             currentTarget = null;
-                            emitter.Pause();
+                            //emitter.Pause();
                         }
                     }
                 }
                 
-                ApplyParams();
+                ApplyParams(emitter);
 
                 if (currentTarget != null)
                 {
+                    if (lastFire + stats.fireRate.GetValue() <= Time.time)
+                    {
+                        lastFire = Time.time;
+                        emitter.Play();
+                        
+                        //TOPDO moc nefunguje
+                    }
+                    
                     /*if (nextFireRate < Time.time && ProjectileExtensions.CanFire(currentTarget.position, transform.rotation, transform.position, 5f))
                     {
                         nextFireRate = Time.time + stats.fireRate;
@@ -107,7 +129,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
             }
         }
 
-        private void ApplyParams()
+        private void ApplyParams(BulletEmitter emitter)
         {
             if (emitter.rootBullet != null)
             {

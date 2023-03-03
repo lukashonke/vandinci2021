@@ -25,7 +25,7 @@ MonoBehaviour:
   order: 10
   hasLevelScaledValue: 1
   levelScaledValue:
+  - 30
+  - 30
   - 20
-  - 18
-  - 16
   value: 0

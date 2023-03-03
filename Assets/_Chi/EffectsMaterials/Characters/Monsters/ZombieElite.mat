@@ -12,7 +12,7 @@ Material:
   m_ValidKeywords:
   - _ENABLEBRIGHTNESS_ON
   - _ENABLECONTRAST_ON
-  - _ENABLESATURATION_ON
+  - _ENABLESINEGLOW_ON
   - _SHADERSPACE_UV
   - _TIMESETTINGS_LINEAR_DEFAULT
   - _UBERFADING_NONE
@@ -121,8 +121,8 @@ Material:
     m_Ints: []
     m_Floats:
     - PixelSnap: 0
-    - _AddColorContrast: 0.5
-    - _AddColorFade: 1
+    - _AddColorContrast: 1
+    - _AddColorFade: 0.363
     - _AddHueBrightness: 2
     - _AddHueContrast: 1
     - _AddHueFade: 1
@@ -157,7 +157,7 @@ Material:
     - _ColorReplaceFade: 1
     - _ColorReplaceHueTolerance: 1
     - _ColorReplaceSaturationTolerance: 1
-    - _Contrast: 1.28
+    - _Contrast: 1
     - _CustomFadeAlpha: 1
     - _CustomFadeNoiseFactor: 0
     - _CustomFadeSmoothness: 2
@@ -211,10 +211,10 @@ Material:
     - _EnablePoison: 0
     - _EnableRainbow: 0
     - _EnableRecolor: 0
-    - _EnableSaturation: 1
+    - _EnableSaturation: 0
     - _EnableShiftHue: 0
     - _EnableShine: 0
-    - _EnableSineGlow: 0
+    - _EnableSineGlow: 1
     - _EnableSineMove: 0
     - _EnableSineRotate: 0
     - _EnableSmoke: 0
@@ -268,7 +268,7 @@ Material:
     - _HologramLineGap: 3
     - _HologramLineSpeed: 0.01
     - _HologramMinAlpha: 0.2
-    - _Hue: 0.441
+    - _Hue: 0.305
     - _InkSpreadContrast: 2
     - _InkSpreadDistance: 3
     - _InkSpreadFade: 1
@@ -321,9 +321,9 @@ Material:
     - _ShineWidth: 0.1
     - _SineGlowContrast: 1
     - _SineGlowFade: 1
-    - _SineGlowFrequency: 4
-    - _SineGlowMax: 1
-    - _SineGlowMin: 0
+    - _SineGlowFrequency: 1.5
+    - _SineGlowMax: 0.55
+    - _SineGlowMin: 0.4
     - _SineMoveFade: 1
     - _SineRotateAngle: 15
     - _SineRotateFade: 1
@@ -383,7 +383,7 @@ Material:
     - _WindXPosition: 0
     - _ZWrite: 1
     m_Colors:
-    - _AddColorColor: {r: 4, g: 0, b: 0, a: 0}
+    - _AddColorColor: {r: 1.5617898, g: 0.18806891, b: 0, a: 0}
     - _AlphaTintColor: {r: 23.96863, g: 1.254902, b: 23.96863, a: 0}
     - _BlackTintColor: {r: 1, g: 0, b: 0, a: 0}
     - _BurnEdgeColor: {r: 11.98431, g: 1.129412, b: 0.1254902, a: 0}
@@ -464,10 +464,10 @@ Material:
     - _RecolorCyanTint: {r: 1, g: 1, b: 1, a: 0.5019608}
     - _RecolorGreenTint: {r: 1, g: 1, b: 1, a: 0.5019608}
     - _RecolorPurpleTint: {r: 1, g: 1, b: 1, a: 0.5019608}
-    - _RecolorRedTint: {r: 1, g: 1, b: 1, a: 0.5019608}
+    - _RecolorRedTint: {r: 0.8727521, g: 1, b: 0, a: 0.5019608}
     - _RecolorYellowTint: {r: 1, g: 1, b: 1, a: 0.5019608}
     - _ShineColor: {r: 11.98431, g: 11.98431, b: 11.98431, a: 0}
-    - _SineGlowColor: {r: 0, g: 2.007843, b: 2.996078, a: 0}
+    - _SineGlowColor: {r: 1.319508, g: 0.47088325, b: 0, a: 0}
     - _SineMoveFrequency: {r: 1, g: 1, b: 0, a: 0}
     - _SineMoveOffset: {r: 0, g: 0.5, b: 0, a: 0}
     - _SineRotatePivot: {r: 0.5, g: 0.5, b: 0, a: 0}
