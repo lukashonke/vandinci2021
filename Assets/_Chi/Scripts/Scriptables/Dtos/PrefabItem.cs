@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -53,6 +54,9 @@ namespace _Chi.Scripts.Scriptables.Dtos
         [VerticalGroup("Prefab")]
         [ShowIf("type", PrefabItemType.UpgradeItemSkill)]
         public SkillUpgradeItem skillUpgradeItem;
+
+        [VerticalGroup("Text")]
+        public List<string> additionalTexts;
     }
 
     public enum PrefabItemType

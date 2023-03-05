@@ -34,6 +34,7 @@ public class Gamesystem : MonoBehaviour
     [Required] public MapGenSettings mapGenSettings;
     [Required] public Tilemap mapGenTilemap;
     [Required] public DropManager dropManager;
+    [Required] public TextDatabase textDatabase;
 
     [Required]
     public SpawnAroundSettings spawnAroundSettings;

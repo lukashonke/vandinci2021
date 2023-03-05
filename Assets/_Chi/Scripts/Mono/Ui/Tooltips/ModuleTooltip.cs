@@ -15,16 +15,20 @@ namespace _Chi.Scripts.Mono.Ui.Tooltips
     {
         [Required] public GameObject topRowContainer;
         [Required] public GameObject contentContainer; 
-        [Required]public TextMeshProUGUI title;
-        [Required]public TextMeshProUGUI text;
-        [Required]public TextMeshProUGUI level;
-        [Required]public Image logo;
+
+        [Required] public TextMeshProUGUI title;
+        [Required] public TextMeshProUGUI text;
+        [Required] public TextMeshProUGUI level;
+        [Required] public Image logo;
 
         [Required] public GameObject statsContainer;
         [Required] public GameObject statsItem;
         
         [Required] public GameObject upgradesContainer;
         [Required] public GameObject upgradesItem;
+
+        [Required] public GameObject additionalTextsContainer; 
+        [Required] public GameObject additionalTextsItem;
         
         public void Initialise(PrefabItem modulePrefabItem, int level, UiManager.TooltipType tooltipType, List<UpgradeItem> upgradeItems)
         {
@@ -58,6 +62,33 @@ namespace _Chi.Scripts.Mono.Ui.Tooltips
             {
                 upgradesContainer.SetActive(false);
             }
+
+            if (!InitialiseAdditionalTexts(modulePrefabItem))
+            {
+                additionalTextsContainer.SetActive(false);
+            }
+        }
+
+        private bool InitialiseAdditionalTexts(PrefabItem item)
+        {
+            additionalTextsItem.SetActive(false);
+            
+            if (item.additionalTexts != null && item.additionalTexts.Count > 0)
+            {
+                additionalTextsContainer.SetActive(true);
+
+                foreach (var key in item.additionalTexts)
+                {
+                    var go = Instantiate(additionalTextsItem, additionalTextsContainer.transform);
+                    var data = Gamesystem.instance.textDatabase.GetText(key);
+                    go.transform.Find("Icon").GetComponent<Image>().sprite = data.sprite;
+                    go.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = $"{data.title}: {data.text}";
+                    go.SetActive(true);
+                }
+                return true;
+            }
+
+            return false;
         }
         
         private bool InitialiseUpgrades(List<UpgradeItem> upgradeItems)
