@@ -33,17 +33,6 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
             }
         }
 
-        public void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                var b = emitter.emitterProfile.rootBullet.patternsShot[0];
-                
-                ApplyParams(childEmitters[0]);
-                childEmitters[0].Play();
-            }
-        }
-
         public override IEnumerator UpdateLoop()  
         {
             var waiter = new WaitForFixedUpdate();
@@ -60,7 +49,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
             {
                 yield return null;
 
-                if (nextTargetUpdate > Time.time)
+                if (nextTargetUpdate <= Time.time)
                 {
                     nextTargetUpdate = Time.time + targetUpdateInterval + Random.Range(0.1f, 0.2f);
                     
@@ -85,16 +74,18 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                     }
                 }
                 
-                ApplyParams(emitter);
-
+                //emitter.ApplyParams(stats, parent);
+                
                 if (currentTarget != null)
                 {
-                    if (lastFire + stats.fireRate.GetValue() <= Time.time)
+                    if (lastFire + GetFireRate() <= Time.time)
                     {
                         lastFire = Time.time;
+                        emitter.applyBulletParamsAction = () =>
+                        {
+                            emitter.ApplyParams(stats, parent);
+                        };
                         emitter.Play();
-                        
-                        //TOPDO moc nefunguje
                     }
                     
                     /*if (nextFireRate < Time.time && ProjectileExtensions.CanFire(currentTarget.position, transform.rotation, transform.position, 5f))
@@ -125,29 +116,6 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                 else
                 {
                     this.transform.localRotation = originalRotation;
-                }
-            }
-        }
-
-        private void ApplyParams(BulletEmitter emitter)
-        {
-            if (emitter.rootBullet != null)
-            {
-                emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileCount, stats.projectileCount.GetValueInt() * stats.projectileMultiplier.GetValueInt());
-                emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpeed, stats.projectileSpeed.GetValue());
-                emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.WaitDuration, GetFireRate());
-                emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpread, stats.projectileSpreadAngle.GetValue());
-
-                emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileShotsPerShot, stats.shotsPerShot.GetValueInt());
-
-                if (stats.projectileLifetime.GetValue() > 0)
-                {
-                    emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileLifetime, stats.projectileLifetime.GetValue());
-                }
-
-                if (stats.projectileRange.GetValue() > 0)
-                {
-                    emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileRange, stats.projectileRange.GetValue());
                 }
             }
         }

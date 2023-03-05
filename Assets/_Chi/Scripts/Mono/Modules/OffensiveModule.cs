@@ -17,7 +17,6 @@ namespace _Chi.Scripts.Mono.Modules
     public abstract class OffensiveModule : Module, IBulletEmitterEntityParameters
     {
         [NonSerialized] public BulletEmitter emitter;
-        [NonSerialized] public BulletEmitter[] childEmitters;
         [NonSerialized] public bool hasEmitter;
 
         public List<Transform> muzzles;
@@ -45,7 +44,7 @@ namespace _Chi.Scripts.Mono.Modules
 
             additionalEffects = new();
             emitter = GetComponent<BulletEmitter>();
-            childEmitters = GetComponentsInChildren<BulletEmitter>().Where(e => e != emitter).ToArray();
+            subEmitters = new();
             hasEmitter = emitter != null;
         }
 
@@ -100,7 +99,13 @@ namespace _Chi.Scripts.Mono.Modules
 
         public virtual void OnShootInstruction()
         {
-            
+            foreach (var subEmitter in subEmitters.Values)
+            {
+                foreach (var su in subEmitter)
+                {
+                    su.OnParentShoot();
+                }
+            }
         }
 
         public virtual void OnBulletEffectGiven(Bullet bullet, BulletBehavior behavior, bool bulletWillDie)

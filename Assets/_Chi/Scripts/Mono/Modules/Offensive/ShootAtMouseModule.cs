@@ -52,25 +52,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                 {
                     nextTargetUpdate = Time.time + targetUpdateInterval + Random.Range(0.1f, 0.2f);
 
-                    if (emitter.rootBullet != null)
-                    {
-                        emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileCount, stats.projectileCount.GetValueInt() * stats.projectileMultiplier.GetValueInt());
-                        emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpeed, stats.projectileSpeed.GetValue());
-                        emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.WaitDuration, GetFireRate());
-                        emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpread, stats.projectileSpreadAngle.GetValue());
-                        
-                        emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileShotsPerShot, stats.shotsPerShot.GetValueInt());
-
-                        if (stats.projectileLifetime.GetValue() > 0)
-                        {
-                            emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileLifetime, stats.projectileLifetime.GetValue());
-                        }
-
-                        if (stats.projectileRange.GetValue() > 0)
-                        {
-                            emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileRange, stats.projectileRange.GetValue());
-                        }
-                    }
+                    emitter.ApplyParams(stats, parent);
                 }
 
                 RotateTowards(Utils.GetMousePosition());

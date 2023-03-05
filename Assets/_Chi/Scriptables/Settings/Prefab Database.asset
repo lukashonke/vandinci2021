@@ -560,6 +560,33 @@ MonoBehaviour:
     moduleUpgradeItem: {fileID: 11400000, guid: 9889d599e604a2b489b0386002b92d51, type: 2}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
+  - id: 4201
+    label: 'Crossbow: Continuous Arrows'
+    enabled: 1
+    description: When you move, the weapon shoots arrows. Faster you move, faster
+      it shoots.
+    type: 9
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 922dc682e5e216848ae44c1f98593789, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 6d5c536845b02fd4f85d7b9636cef27e, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+  - id: 4202
+    label: 'Crossbow: Wild Arrows'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 45a901171fa6a504ea3458d8bd5cc5f5, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 3edb65365be1ca5469efc5a20e561968, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
   - id: 4400
     label: Jump Charge
     enabled: 1

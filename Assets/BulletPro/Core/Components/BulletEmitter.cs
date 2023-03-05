@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
+using _Chi.Scripts.Statistics;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 // This script is part of the BulletPro package for Unity.
 // Author : Simon Albou <albou.simon@gmail.com>
@@ -20,6 +23,8 @@ namespace BulletPro
 		private BulletParams firstBulletParams;
 		public Transform patternOrigin;
 		public bool playAtStart;
+
+		public Action applyBulletParamsAction;
 
 		public UnityEvent shootInstruction;
 
@@ -239,7 +244,7 @@ namespace BulletPro
 			}
 
 			b.ApplyBulletParams(firstBulletParams);
-
+			
 			// Set orientation if homing and not delayed
 			if (firstBulletParams.homing)
 			{
@@ -257,6 +262,8 @@ namespace BulletPro
 			subEmitters.Add(b);
 			b.isRootBullet = true; // this bool prevents it from re-registering as subEmitter later on
 			bullets.Add(b);
+			
+			applyBulletParamsAction?.Invoke();
 
 			// Instantiate additional behaviour if needed.
 			// Done here instead of ApplyBulletParams() to avoid behaviour stacking if one calls ChangeBulletParams().

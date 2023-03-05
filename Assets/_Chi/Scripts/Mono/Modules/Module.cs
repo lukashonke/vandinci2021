@@ -4,6 +4,7 @@ using System.Linq;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Misc;
+using _Chi.Scripts.Mono.Modules.Offensive.Subs;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Utilities;
 using Sirenix.OdinInspector;
@@ -13,6 +14,8 @@ namespace _Chi.Scripts.Mono.Modules
 {
     public abstract class Module : SerializedMonoBehaviour
     {
+        [NonSerialized] public Dictionary<object, List<SubEmitter>> subEmitters;
+        
         [ReadOnly] public Entity parent;
         [ReadOnly] public ModuleSlot slot;
 
@@ -117,6 +120,29 @@ namespace _Chi.Scripts.Mono.Modules
             }
 
             return true;
+        }
+        
+        public void AddSubEmitter(object source, SubEmitter go)
+        {
+            if (!subEmitters.ContainsKey(source))
+            {
+                subEmitters.Add(source, new List<SubEmitter>());
+            }
+            
+            subEmitters[source].Add(go);
+        }
+
+        public void DestroySubEmitters(object source)
+        {
+            if (subEmitters.ContainsKey(source))
+            {
+                foreach (var su in subEmitters[source])
+                {
+                    Destroy(su.gameObject);
+                }
+
+                subEmitters.Remove(source);
+            }
         }
 
         public Vector3 GetProjectilePosition()

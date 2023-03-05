@@ -19,7 +19,6 @@ namespace _Chi.Scripts.Mono.Entities
         [Unity.Collections.ReadOnly] private bool hasOwner;
         [Unity.Collections.ReadOnly] private bool hasOwnerModule;
 
-
         [NonSerialized] public Rigidbody2D rb;
         [NonSerialized] public bool hasRb;
         [NonSerialized] public Collider2D projectileCollider;

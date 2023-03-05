@@ -57,6 +57,11 @@ namespace _Chi.Scripts.Mono.Extensions
         
         public static Module GetModule(this GameObject obj)
         {
+            if (obj.CompareTag(Tags.LookAtParent))
+            {
+                return obj.transform.parent.GetComponent<Module>();                
+            }
+
             return obj.GetComponent<Module>();
         }
         
@@ -125,7 +130,7 @@ namespace _Chi.Scripts.Mono.Extensions
 
             foreach (var entity in player.targetableEnemies)
             {
-                if (entity is Npc npc && npc.activated && npc.AreEnemies(player) && npc != null)
+                if (entity is Npc npc && npc != null && npc.activated && npc.AreEnemies(player))
                 {
                     var dist = Utils.Dist2(npc.GetPosition(), from);
                     if (dist < nearestDistance && (condition == null || condition(npc)))

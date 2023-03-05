@@ -1,7 +1,10 @@
 ﻿using System;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Modules;
+using _Chi.Scripts.Statistics;
 using _Chi.Scripts.Utilities;
+using BulletPro;
 using UnityEngine;
 
 namespace _Chi.Scripts.Mono.Extensions
@@ -61,6 +64,40 @@ namespace _Chi.Scripts.Mono.Extensions
             }
 
             return true;
+        }
+        
+        public static void ApplyParams(this BulletEmitter emitter, OffensiveModuleStats stats, Entity entity)
+        {
+            if (emitter.rootBullet != null)
+            {
+                emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileCount, stats.projectileCount.GetValueInt() * stats.projectileMultiplier.GetValueInt());
+                emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpeed, stats.projectileSpeed.GetValue());
+                emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.WaitDuration, GetFireRate(entity, stats));
+                emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpread, stats.projectileSpreadAngle.GetValue());
+
+                emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileShotsPerShot, stats.shotsPerShot.GetValueInt());
+
+                if (stats.projectileLifetime.GetValue() > 0)
+                {
+                    emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileLifetime, stats.projectileLifetime.GetValue());
+                }
+
+                if (stats.projectileRange.GetValue() > 0)
+                {
+                    emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileRange, stats.projectileRange.GetValue());
+                }
+            }
+        }
+        
+        public static float GetFireRate(Entity entity, OffensiveModuleStats stats)
+        {
+            var retValue = stats.fireRate.GetValue();
+            if (entity is Player player)
+            {
+                retValue *= player.stats.moduleFireRateMul.GetValue();
+            }
+
+            return retValue;
         }
     }
 }
