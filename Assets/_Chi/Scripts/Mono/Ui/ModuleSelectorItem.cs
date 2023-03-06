@@ -16,6 +16,8 @@ namespace _Chi.Scripts.Mono.Ui
         public TextMeshProUGUI price;
         public Image icon;
 
+        public Button lockButton;
+
         public Color weaponSubtitleColor;
         public Color defensiveModuleSubtitleColor;
         public Color passiveModuleSubtitleColor;
@@ -62,6 +64,10 @@ namespace _Chi.Scripts.Mono.Ui
             {
                 this.price.gameObject.transform.parent.gameObject.SetActive(false);
             }
+            
+            var locked = Gamesystem.instance.uiManager.vehicleSettingsWindow.moduleSelector.IsLocked(item);
+            
+            lockButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = locked ? "Unlock" : "Lock";
         }
 
         private (string, Color?) GetSubtitle()
@@ -140,12 +146,21 @@ namespace _Chi.Scripts.Mono.Ui
                 }
             }
         }
+
+        public void OnLockItem()
+        {
+            var locked = !Gamesystem.instance.uiManager.vehicleSettingsWindow.moduleSelector.IsLocked(item);
+            
+            Gamesystem.instance.uiManager.vehicleSettingsWindow.moduleSelector.SetLocked(item, locked);
+            
+            lockButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = locked ? "Unlock" : "Lock";
+        }
         
         public void OnHoverEnter()
         {
             if (item != null)
             {
-                if ((item.prefab != null && item.prefab.GetComponent<Module>() != null) || item.mutator != null)
+                if ((item.prefab != null && item.prefab.GetComponent<Module>() != null) || item.mutator != null || item.moduleUpgradeItem != null || item.skillUpgradeItem != null || item.playerUpgradeItem != null)
                 {
                     Gamesystem.instance.uiManager.ShowItemTooltip((RectTransform) this.transform, item, 1, UiManager.TooltipAlign.BottomLeft, UiManager.TooltipType.ExcludeTitleLogoDescription);
                 }
@@ -167,7 +182,7 @@ namespace _Chi.Scripts.Mono.Ui
         {
             if (item != null)
             {
-                if ((item.prefab != null && item.prefab.GetComponent<Module>() != null) || item.mutator != null)
+                if ((item.prefab != null && item.prefab.GetComponent<Module>() != null) || item.mutator != null || item.moduleUpgradeItem != null || item.skillUpgradeItem != null || item.playerUpgradeItem != null)
                 {
                     Gamesystem.instance.uiManager.HideTooltip();
                 }

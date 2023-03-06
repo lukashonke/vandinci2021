@@ -187,37 +187,46 @@ namespace _Chi.Scripts.Scriptables
         [VerticalGroup("Items")]
         public bool closeOnFirstPurchase;
 
-        public List<RewardSetItemWithWeight> CalculateShownItems(Player player)
+        public List<RewardSetItemWithWeight> CalculateShownItems(Player player, Dictionary<int, bool> lockedPrefabIds)
         {
-            List<RewardSetItemWithWeight> kv = new();
+            List<RewardSetItemWithWeight> allItemsWithWeights = new();
 
             foreach (var prefab in prefabs)
             {
                 for (int i = 0; i < prefab.weight; i++)
                 {
-                    kv.Add(prefab);
+                    allItemsWithWeights.Add(prefab);
                 }
             }
 
             var itemsToShow = minCountShownItems;
 
             var retValue = new List<RewardSetItemWithWeight>();
-
+            
             for (int i = 0; i < itemsToShow; i++)
             {
-                if (kv.Count == 0) break;
-                
-                var random = Random.Range(0, kv.Count);
-                var prefab = kv[random];
+                if (allItemsWithWeights.Count == 0) break;
+
+                var index = Random.Range(0, allItemsWithWeights.Count);
+                for (var index1 = 0; index1 < allItemsWithWeights.Count; index1++)
+                {
+                    var itemWithWeight = allItemsWithWeights[index1];
+                    if (lockedPrefabIds.ContainsKey(itemWithWeight.prefabId))
+                    {
+                        index = index1;
+                    }
+                }
+
+                var prefab = allItemsWithWeights[index];
                 if (!CanApply(player, prefab))
                 {
-                    kv.RemoveAt(random);
+                    allItemsWithWeights.RemoveAt(index);
                     i--;
                     continue;
                 }
                 
                 retValue.Add(prefab);
-                kv.RemoveAll(i => i == prefab);
+                allItemsWithWeights.RemoveAll(i => i == prefab);
             }
 
             return retValue;

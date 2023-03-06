@@ -116,6 +116,11 @@ namespace _Chi.Scripts.Mono.Ui
             Gamesystem.instance.progress.ApplyRunToPlayer(Gamesystem.instance.objects.currentPlayer, Gamesystem.instance.progress.progressData.run);
         }
 
+        public void OnBodyChange()
+        {
+            Initialise();
+        }
+
         public void Initialise()
         {
             var currentBody = Gamesystem.instance.progress.progressData.run.bodyId;

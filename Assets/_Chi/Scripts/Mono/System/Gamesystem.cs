@@ -54,6 +54,8 @@ public class Gamesystem : MonoBehaviour
     {
         instance = this;
         
+        
+        
         prefabDatabase.Initialise();
         spawnAroundSettings.Initialise();
         

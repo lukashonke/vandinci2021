@@ -30,8 +30,24 @@ namespace _Chi.Scripts.Mono.Ui
             }
         }
 
+        private bool isReloaded;
+
+        public bool IsReloaded()
+        {
+            return isReloaded;
+        }
+
         public void SetReloadPercentage(float percent)
         {
+            if (percent >= 1)
+            {
+                isReloaded = true;
+            }
+            else
+            {
+                isReloaded = false;
+            }
+            
             progressMask.localScale = new Vector3(1 - percent, 1, 0);
         }
     }

@@ -91,7 +91,7 @@ namespace _Chi.Scripts.Mono.Ui
                     
                     currentRewardSets.Add(set);
 
-                    var shownItems = set.CalculateShownItems(Gamesystem.instance.objects.currentPlayer).ToHashSet();
+                    var shownItems = set.CalculateShownItems(Gamesystem.instance.objects.currentPlayer, locks).ToHashSet();
                     var shownItemsHash = shownItems.Select(s => s.prefabId).ToHashSet();
 
                     foreach (var rewardSetItemWithWeight in shownItems)
@@ -170,6 +170,8 @@ namespace _Chi.Scripts.Mono.Ui
                 Destroy(go);
                 options.Remove(addingUiItem.prefab);
             }
+            
+            SetLocked(addingUiItem.prefab, false);
         }
 
         public void AbortAddingItem()
@@ -180,6 +182,20 @@ namespace _Chi.Scripts.Mono.Ui
         public bool CanClose()
         {
             return currentMode == ModuleSelectorMode.ShowAllItems;
+        }
+
+        private Dictionary<int, bool> locks = new(); 
+
+        public bool IsLocked(PrefabItem item)
+        {
+            if(locks == null) locks = new();
+            return locks.TryGetValue(item.id, out var locked) && locked;
+        }
+
+        public void SetLocked(PrefabItem item, bool locked)
+        {
+            if(locks == null) locks = new();
+            locks[item.id] = locked;
         }
     }
 

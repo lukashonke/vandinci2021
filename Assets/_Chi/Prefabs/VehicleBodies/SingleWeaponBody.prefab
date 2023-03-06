@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 6490715808701182695}
   - component: {fileID: 7522271542625084939}
   m_Layer: 6
-  m_Name: SmallBody
+  m_Name: SingleWeaponBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

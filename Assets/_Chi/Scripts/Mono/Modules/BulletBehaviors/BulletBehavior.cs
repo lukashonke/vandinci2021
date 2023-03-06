@@ -10,10 +10,6 @@ using UnityEngine;
 using BulletPro;
 using UnityEngine.Pool;
 
-// This script is supported by the BulletPro package for Unity.
-// Template author : Simon Albou <albou.simon@gmail.com>
-
-// This script is actually a MonoBehaviour for coding advanced things with Bullets.
 public class BulletBehavior : BaseBulletBehaviour
 {
 	private Module ownerModule;

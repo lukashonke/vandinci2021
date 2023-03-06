@@ -1,4 +1,5 @@
-﻿using _Chi.Scripts.Mono.Entities;
+﻿using _Chi.Scripts.Mono.Common;
+using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Modules;
 using UnityEngine;
@@ -10,16 +11,20 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
     {
         public float baseDamage;
 
+        public Effects? effect;
+
+        public Color? damageTextColor;
+
         public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength)
         {
             var sourceDamage = baseDamage * strength;
-            if (sourceModule is OffensiveModule offensiveModule)
+            if (sourceModule is OffensiveModule offensiveModule && !effect.HasValue)
             {
                 sourceDamage = offensiveModule.stats.projectileDamage.GetValue();
             }
             
             var dmgWithFlags = DamageExtensions.CalculateEffectDamage(sourceDamage, target, sourceEntity);
-            target.ReceiveDamage(dmgWithFlags.damage, sourceEntity, dmgWithFlags.flags);
+            target.ReceiveDamage(dmgWithFlags.damage, sourceEntity, dmgWithFlags.flags, damageTextColor);
             return true;
         }    
     }

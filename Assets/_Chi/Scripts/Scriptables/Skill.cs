@@ -101,6 +101,6 @@ namespace _Chi.Scripts.Scriptables
         
         public float nextPossibleUse;
 
-        public float lastUse;
+        public float lastUse = -100f;
     }
 }

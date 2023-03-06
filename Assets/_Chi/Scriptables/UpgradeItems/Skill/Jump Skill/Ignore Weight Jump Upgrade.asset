@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b13c71adf44f5fbd158d848135e788, type: 3}
+  m_Name: Ignore Weight Jump Upgrade
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: parameters
+      Entry: 6
+      Data: 
+  uiName: Ignore Weight
+  uiDescription: Ignores weight of player. Large body jumps as fast as small body.
+  effects:
+  - {fileID: 11400000, guid: 4b552e9e3c5e4f749adc6ec1fc9ee763, type: 2}
+  target: {fileID: 11400000, guid: cc69fe99998b25a4d8a301159bd9f639, type: 2}
+  upgradeId: jump_ignore_weight

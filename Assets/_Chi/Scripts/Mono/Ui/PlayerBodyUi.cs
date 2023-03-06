@@ -29,7 +29,7 @@ namespace _Chi.Scripts.Mono.Ui
                     var uiSlot = GetSlotById(moduleInSlot.slotId);
                     if (uiSlot == null)
                     {
-                        Debug.LogError($"Slot {moduleInSlot.slotId} does not exist.");
+                        //Debug.LogError($"Slot {moduleInSlot.slotId} does not exist.");
                         continue;
                     }
 

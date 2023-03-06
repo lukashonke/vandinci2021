@@ -25,7 +25,7 @@ MonoBehaviour:
       Entry: 6
       Data: 
   uiName: Protection
-  uiDescription: After jumping, receive no damage for 1 second.
+  uiDescription: After jumping, receive no damage for 2 second.
   effects:
   - {fileID: 11400000, guid: d5d550bcfb3ad324ebb68139ffabd365, type: 2}
   - {fileID: 11400000, guid: 685c0d4b478a73842a2f3dc2c48bf4a1, type: 2}

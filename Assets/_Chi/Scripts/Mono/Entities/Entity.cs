@@ -190,7 +190,7 @@ namespace _Chi.Scripts.Mono.Entities
             return true;
         }
 
-        public virtual bool ReceiveDamage(float damage, Entity damager, DamageFlags damageFlags = DamageFlags.None)
+        public virtual bool ReceiveDamage(float damage, Entity damager, DamageFlags damageFlags = DamageFlags.None, Color? damageTextColor = null)
         {
             if (damage <= 0 || !canReceiveDamage) return false;
 
@@ -220,11 +220,25 @@ namespace _Chi.Scripts.Mono.Entities
 
             if (damageFlags.HasFlag(DamageFlags.Critical))
             {
-                Gamesystem.instance.prefabDatabase.playerCriticalDealtDamage.Spawn(transform.position, damage);
+                if (damageTextColor.HasValue)
+                {
+                    Gamesystem.instance.prefabDatabase.playerCriticalDealtDamage.Spawn(transform.position, damage, damageTextColor.Value);
+                }
+                else
+                {
+                    Gamesystem.instance.prefabDatabase.playerCriticalDealtDamage.Spawn(transform.position, damage);
+                }
             }
             else
             {
-                Gamesystem.instance.prefabDatabase.playerDealtDamage.Spawn(transform.position, damage);
+                if (damageTextColor.HasValue)
+                {
+                    Gamesystem.instance.prefabDatabase.playerDealtDamage.Spawn(transform.position, damage, damageTextColor.Value);
+                }
+                else
+                {
+                    Gamesystem.instance.prefabDatabase.playerDealtDamage.Spawn(transform.position, damage);
+                }
             }
 
             return true;

@@ -33,6 +33,8 @@ namespace _Chi.Scripts.Statistics
 
         public Stat skillPowerMul = new Stat();
         
+        public Stat weightMul = new Stat();
+        
         public Stat skillExtraChargeCount = new Stat();
         
         public Stat skillExtraChargeLoadMul = new Stat();

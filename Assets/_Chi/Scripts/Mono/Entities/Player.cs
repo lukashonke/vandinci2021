@@ -172,7 +172,7 @@ namespace _Chi.Scripts.Mono.Entities
                     }
                 }
 
-                var skillCharges = stats.skillExtraChargeCount.GetValueInt();
+                /*var skillCharges = stats.skillExtraChargeCount.GetValueInt();
                 if (skillCharges > 0)
                 {
                     foreach (var charge in extraSkillCharges)
@@ -189,7 +189,7 @@ namespace _Chi.Scripts.Mono.Entities
                             break;
                         }
                     }
-                }
+                }*/
 
                 yield return waiter;
             }   
@@ -320,7 +320,7 @@ namespace _Chi.Scripts.Mono.Entities
             }
         }
 
-        public override bool ReceiveDamage(float damage, Entity damager, DamageFlags damageFlags = DamageFlags.None)
+        public override bool ReceiveDamage(float damage, Entity damager, DamageFlags damageFlags = DamageFlags.None, Color? damageTextColor = null)
         {
             var ret = base.ReceiveDamage(damage, damager, damageFlags);
 
@@ -439,7 +439,7 @@ namespace _Chi.Scripts.Mono.Entities
             slots = body.GetComponentsInChildren<ModuleSlot>().ToList();
             visualItemSlots = GetComponentsInChildren<VisualItemSlot>();
 
-            body.Initialise();
+            body.Initialise(this);
         }
 
         public ModuleSlot GetSlotById(int slotId)
@@ -620,6 +620,11 @@ namespace _Chi.Scripts.Mono.Entities
             }
 
             lastSkillUseTime = Time.time;
+        }
+
+        public void ResetExtraSkillCharges(Skill skill)
+        {
+            extraSkillCharges[skill] = stats.skillExtraChargeCount.GetValueInt();
         }
 
         public void AddExtraSkillCharges(Skill skill, int count)

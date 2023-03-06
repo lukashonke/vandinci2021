@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Utilities;
 using UnityEngine;
@@ -73,8 +74,11 @@ namespace _Chi.Scripts.Scriptables.Skills
 
             SpawnPrefabVfx(player.GetPosition(), player.transform.rotation, null);
             player.OnSkillUse();
+
+            var weight = player.rb.mass;
+            weight = Math.Max(1, player.stats.weightMul.GetValue() * weight); // TODO make it better somehow
             
-            var force = GetJumpForce(player) * player.stats.skillPowerMul.GetValue() * (1/player.rb.mass);
+            var force = GetJumpForce(player) * player.stats.skillPowerMul.GetValue() * (1/(weight));
             
             var direction = (Utils.GetMousePosition() - player.GetPosition()).normalized;
             var jumpUntil = Time.time + GetJumpDuration(player);
