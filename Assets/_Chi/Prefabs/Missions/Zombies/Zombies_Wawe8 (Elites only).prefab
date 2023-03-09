@@ -951,9 +951,9 @@ MonoBehaviour:
     spawnTimeMin: 1
     spawnTimeMax: 30
     repeatSpawn: 0
-    repeatSpawnIntervalMin: 10
-    repeatSpawnIntervalMax: 10
-    repeatCount: 100
+    repeatSpawnIntervalMin: 30
+    repeatSpawnIntervalMax: 30
+    repeatCount: 1
     spawnCountMin: 1
     spawnCountMax: 1
     distanceFromPlayerMin: 8

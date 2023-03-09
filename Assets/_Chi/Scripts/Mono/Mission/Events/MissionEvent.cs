@@ -67,8 +67,14 @@ namespace _Chi.Scripts.Mono.Mission.Events
 
     public class EndAllMissionHandlersEvent : MissionEvent
     {
-        [VerticalGroup("Settings")]
+        [VerticalGroup("Waiting")]
         public bool waitUntilAllEnemiesDead;
+
+        [ShowIf("waitUntilAllEnemiesDead")]
+        [VerticalGroup("Waiting")]
+        public float maxWaitTime;
+
+        [NonSerialized] private float waitStarted;
         
         public override void Start(float currentTime)
         {
@@ -84,6 +90,8 @@ namespace _Chi.Scripts.Mono.Mission.Events
             {
                 Object.Destroy(transform.gameObject);
             }
+            
+            waitStarted = currentTime;
         }
 
         public override bool CanStart(float currentTime)
@@ -95,6 +103,14 @@ namespace _Chi.Scripts.Mono.Mission.Events
         {
             if (waitUntilAllEnemiesDead)
             {
+                if (maxWaitTime > 0)
+                {
+                    if (waitStarted + maxWaitTime < currentTime)
+                    {
+                        return true;
+                    }
+                }
+                
                 return Gamesystem.instance.missionManager.AreTrackedEntitiesDead();
             }
             return true;
@@ -109,10 +125,10 @@ namespace _Chi.Scripts.Mono.Mission.Events
         [VerticalGroup("Settings")]
         public float fixedDuration;
 
-        [VerticalGroup("Settings")]
+        [VerticalGroup("Waiting")]
         public bool waitTillAllSpawnedAreDead;
 
-        [VerticalGroup("Settings")]
+        [VerticalGroup("Waiting")]
         public bool waitTillAllWawesSpawn = true;
         
         [VerticalGroup("Handlers")]

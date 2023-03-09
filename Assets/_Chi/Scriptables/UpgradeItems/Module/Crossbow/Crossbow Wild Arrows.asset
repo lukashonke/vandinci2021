@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Wild Arrows
-  uiDescription: TODO
+  uiName: Fire from Above
+  uiDescription: For every arrow you fire, you will also land an arrow to a nearby
+    enemy.
   effects: []
   modulePrefabId: 2000
   moduleEffects: []

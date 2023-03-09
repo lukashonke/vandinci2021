@@ -187,8 +187,23 @@ namespace _Chi.Scripts.Scriptables
         [VerticalGroup("Items")]
         public bool closeOnFirstPurchase;
 
-        public List<RewardSetItemWithWeight> CalculateShownItems(Player player, Dictionary<int, bool> lockedPrefabIds)
+        public List<RewardSetItemWithWeight> CalculateShownItems(Player player, Dictionary<int, bool> lockedPrefabIds, bool showOnlyLocked)
         {
+            var retValue = new List<RewardSetItemWithWeight>();
+            
+            if (showOnlyLocked)
+            {
+                foreach (var prefab in prefabs)
+                {
+                    if (lockedPrefabIds.TryGetValue(prefab.prefabId, out var val) && val)
+                    {
+                        retValue.Add(prefab);                        
+                    }
+                }
+
+                return retValue;
+            }
+            
             List<RewardSetItemWithWeight> allItemsWithWeights = new();
 
             foreach (var prefab in prefabs)
@@ -200,8 +215,6 @@ namespace _Chi.Scripts.Scriptables
             }
 
             var itemsToShow = minCountShownItems;
-
-            var retValue = new List<RewardSetItemWithWeight>();
             
             for (int i = 0; i < itemsToShow; i++)
             {

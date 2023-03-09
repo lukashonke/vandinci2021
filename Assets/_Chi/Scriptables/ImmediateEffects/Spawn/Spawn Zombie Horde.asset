@@ -46,6 +46,9 @@ MonoBehaviour:
       noRotation: 0
       prefabVariant: ZombieFast
     relativePosition: 0
+    formation: 4
+    formationLookAhead: 2
+    formationRadius: 5
     behavior: 0
     roamDistance: 0
     roamRandomRadius: 0
@@ -57,9 +60,10 @@ MonoBehaviour:
     repeatSpawnIntervalMin: 0
     repeatSpawnIntervalMax: 0
     repeatCount: 0
-    spawnCountMin: 10
-    spawnCountMax: 20
-    distanceFromPlayer: 12
+    spawnCountMin: 30
+    spawnCountMax: 40
+    distanceFromPlayerMin: 12
+    distanceFromPlayerMax: 12
     despawnAfter: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1

@@ -5,5 +5,6 @@
         Level1Gold,
         Level2Gold,
         Level3Gold,
+        Level15Gold,
     }
 }

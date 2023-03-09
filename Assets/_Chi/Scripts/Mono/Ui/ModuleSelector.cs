@@ -23,7 +23,15 @@ namespace _Chi.Scripts.Mono.Ui
 
         private ModuleSelectorMode currentMode;
         private List<RewardSet> currentRewardSets;
-        [NonSerialized] public Dictionary<PrefabItem, GameObject> options;
+        [NonSerialized] public Dictionary<PrefabItem, OptionData> options;
+
+        public class OptionData
+        {
+            public GameObject go;
+            public RewardSetItemWithWeight rewardSetItemWithWeight;
+            public PrefabItem prefabItem;
+            public TriggeredShop triggeredShop;
+        }
 
         public void Start()
         {
@@ -74,12 +82,18 @@ namespace _Chi.Scripts.Mono.Ui
                          ))
                 {
                     var newItem = Instantiate(itemInfoPrefab, transform.position, Quaternion.identity, transform);
-                    options.Add(item, newItem);
+                    var option = new OptionData()
+                    {
+                        go = newItem,
+                        prefabItem = item,
+                        triggeredShop = triggeredShop,
+                    };
+                    options.Add(item, option);
                     var newItemItem = newItem.GetComponent<ModuleSelectorItem>();
                     
                     newItemItem.Initialise(item, new List<ActionsPanelButton>()
                     {
-                        new ActionsPanelButton("Add", () => StartAddingItem(item, null))
+                        new ActionsPanelButton("Add", () => StartAddingItem(option))
                     }, AbortAddingItem, 0);
                 }
             }
@@ -87,11 +101,20 @@ namespace _Chi.Scripts.Mono.Ui
             {
                 foreach (var rewardSet in rewardSets.Split(";"))
                 {
-                    var set = Gamesystem.instance.prefabDatabase.GetRewardSet(rewardSet);
+                    string rewardSetValue = rewardSet;
+                    bool showOnlyLocked = false;
+                    
+                    if (rewardSetValue.Contains("--only-locked"))
+                    {
+                        rewardSetValue = rewardSetValue.Replace("--only-locked", "");
+                        showOnlyLocked = true;
+                    }
+                    
+                    var set = Gamesystem.instance.prefabDatabase.GetRewardSet(rewardSetValue);
                     
                     currentRewardSets.Add(set);
 
-                    var shownItems = set.CalculateShownItems(Gamesystem.instance.objects.currentPlayer, locks).ToHashSet();
+                    var shownItems = set.CalculateShownItems(Gamesystem.instance.objects.currentPlayer, locks, showOnlyLocked).ToHashSet();
                     var shownItemsHash = shownItems.Select(s => s.prefabId).ToHashSet();
 
                     foreach (var rewardSetItemWithWeight in shownItems)
@@ -100,40 +123,62 @@ namespace _Chi.Scripts.Mono.Ui
                         if (!item.enabled) continue;
                     
                         var newItem = Instantiate(itemInfoPrefab, transform.position, Quaternion.identity, transform);
-                        options.Add(item, newItem);
+                        var option = new OptionData()
+                        {
+                            go = newItem,
+                            prefabItem = item,
+                            rewardSetItemWithWeight = rewardSetItemWithWeight,
+                            triggeredShop = triggeredShop
+                        };
+                        options.Add(item, option);
                         var newItemItem = newItem.GetComponent<ModuleSelectorItem>();
 
-                        var count = run.GetCountOfPrefabs(item.id);
-                        
-                        int? price = (int?) (rewardSetItemWithWeight.price * (triggeredShop?.priceMultiplier ?? 1));
-                        int? priceToAdd = (int?) (price * (count * rewardSetItemWithWeight.priceMultiplyForEveryOwned));
-                        
-                        price += priceToAdd;
+                        var price = GetPrice(option);
 
                         newItemItem.Initialise(item, new List<ActionsPanelButton>()
                         {
-                            new ActionsPanelButton("Buy", () => StartAddingItem(item, price))
+                            new ActionsPanelButton("Buy", () => StartAddingItem(option))
                         }, AbortAddingItem, price);
                     }
                 }
             }
         }
 
-        public void StartAddingItem(PrefabItem item, int? price)
+        private int? GetPrice(OptionData option)
         {
+            if (option.rewardSetItemWithWeight == null) return 0;
+            
+            var run = Gamesystem.instance.progress.progressData.run;
+
+            var count = run.GetCountOfPrefabs(option.prefabItem.id);
+                        
+            int? price = (int?) (option.rewardSetItemWithWeight.price * (option.triggeredShop?.priceMultiplier ?? 1));
+            int? priceToAdd = (int?) (price * (count * option.rewardSetItemWithWeight.priceMultiplyForEveryOwned));
+                        
+            price += priceToAdd;
+
+            return price;
+        }
+
+        public void StartAddingItem(OptionData option)
+        {
+            var prefabItem = option.prefabItem;
+            
+            var price = GetPrice(option);
+            
             var info = new AddingUiItem()
             {
-                prefab = item,
-                prefabModule = item.prefab != null ? item.prefab.GetComponent<Module>() : null,
+                prefab = prefabItem,
+                prefabModule = prefabItem.prefab != null ? prefabItem.prefab.GetComponent<Module>() : null,
                 type = AddingModuleInfoType.Add,
                 level = 1
             };
 
-            if (item.playerUpgradeItem != null)
+            if (prefabItem.playerUpgradeItem != null)
             {
                 Gamesystem.instance.uiManager.ShowConfirmDialog("Confirm upgrade", "Are you sure you want to buy this upgrade?", () =>
                 {
-                    if (Gamesystem.instance.uiManager.vehicleSettingsWindow.AddPlayerUpgradeItem(item))
+                    if (Gamesystem.instance.uiManager.vehicleSettingsWindow.AddPlayerUpgradeItem(prefabItem))
                     {
                         ModuleAdded(info, price);
                     }
@@ -165,10 +210,19 @@ namespace _Chi.Scripts.Mono.Ui
                 Gamesystem.instance.uiManager.vehicleSettingsWindow.CloseWindow();
             }
             
-            if (options.TryGetValue(addingUiItem.prefab, out var go))
+            if (options.TryGetValue(addingUiItem.prefab, out var option))
             {
-                Destroy(go);
-                options.Remove(addingUiItem.prefab);
+                if (addingUiItem.prefab.playerUpgradeItem != null || addingUiItem.prefab.skillUpgradeItem != null ||
+                    addingUiItem.prefab.moduleUpgradeItem != null)
+                {
+                    Destroy(option.go);
+                    options.Remove(addingUiItem.prefab);
+                }
+                else
+                {
+                    var item = option.go.GetComponent<ModuleSelectorItem>();
+                    item.SetPrice(GetPrice(option));
+                }
             }
             
             SetLocked(addingUiItem.prefab, false);

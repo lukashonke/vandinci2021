@@ -108,7 +108,11 @@ namespace _Chi.Scripts.Mono.Mission
             switch (settings.formation)
             {
                 case SpawnFormation.Grid:
+                case SpawnFormation.ShightlyShiftedGrid:
                     rows = FormationsUtils.GetGridRows((int) spawnCount);
+                    break;
+                case SpawnFormation.Horde:
+                    rows = FormationsUtils.GetHordeRows((int) spawnCount);
                     break;
                 case SpawnFormation.Arc:
                     theta = FormationsUtils.GetArcTheta((int) spawnCount);
@@ -132,6 +136,15 @@ namespace _Chi.Scripts.Mono.Mission
                     case SpawnFormation.Grid:
                         targetPosition = FormationsUtils.GetGridTargetPosition(spawnPosition, Quaternion.identity, i, settings.formationLookAhead, rows, new Vector2(spread, spread));
                         break;
+                    case SpawnFormation.ShightlyShiftedGrid:
+                        targetPosition = FormationsUtils.GetGridTargetPosition(spawnPosition, Quaternion.identity, i, settings.formationLookAhead, rows, new Vector2(spread, spread), 0.2f);
+                        break;
+                    case SpawnFormation.Horde:
+                        targetPosition = FormationsUtils.GetHordeTargetPosition(spawnPosition, Quaternion.identity, i, settings.formationLookAhead, rows, new Vector2(spread, spread), Random.Range(0, 1f), 0.1f);
+                        break;
+                    case SpawnFormation.RandomPack:
+                        targetPosition = FormationsUtils.GetHordeTargetPosition(spawnPosition, Quaternion.identity, i, settings.formationLookAhead, rows, new Vector2(spread, spread));
+                        break;
                     case SpawnFormation.Arc:
                         targetPosition = FormationsUtils.GetArcPosition(spawnPosition, Quaternion.identity, i, theta, spread, settings.formationLookAhead, true);
                         break;
@@ -150,8 +163,11 @@ namespace _Chi.Scripts.Mono.Mission
                 var spawned = spawnPrefab.SpawnOnPosition(targetPosition, playerPosition, settings.distanceFromPlayerToDespawn, settings.despawnAfter);
                 if (spawned != null)
                 {
-                    ev?.TrackAliveEntity(spawned);
-                    Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
+                    if (settings.trackEntityForMission)
+                    {
+                        ev?.TrackAliveEntity(spawned);
+                        Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
+                    }
 
                     if (spawned is Npc npc)
                     {
@@ -263,6 +279,8 @@ namespace _Chi.Scripts.Mono.Mission
         public float spawnGroupSpreadMax = 1;
         
         public float distanceFromPlayerToDespawn = 100;
+
+        public bool trackEntityForMission = false;
         
         // runtime
         [NonSerialized] public float nextSpawnTime;

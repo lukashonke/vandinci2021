@@ -66,13 +66,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41e73d69e4be4b98ae191d630e74a061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomRotation: 1
+  randomRotation: 0
+  scaleWithModuleFireRate: 1
+  baselineModuleFireRate: 1
   projectilesPerSecondBySpeedCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
+      time: -0.030410767
+      value: -0.76104736
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -80,22 +82,31 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 3.9981775
-      value: 2.487539
-      inSlope: 2.2249675
-      outSlope: 2.2249675
+      time: 2.82703
+      value: 0.32895362
+      inSlope: 1.6098486
+      outSlope: 1.6098486
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.10266466
-      outWeight: 0.33333334
+      inWeight: 0.1758917
+      outWeight: 0.12440521
     - serializedVersion: 3
-      time: 24
-      value: 37.871605
-      inSlope: 2
-      outSlope: 2
+      time: 4.996345
+      value: 3.874048
+      inSlope: 1.4349614
+      outSlope: 1.4349614
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.09362269
+      outWeight: 0.0019406689
+    - serializedVersion: 3
+      time: 50
+      value: 200
+      inSlope: 8.125175
+      outSlope: 8.125175
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.03221429
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

@@ -22,8 +22,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Continuous Arrows
-  uiDescription: When you move, the weapon shoots arrows. Faster you move, faster
-    it shoots.
+  uiDescription: When you move, the weapon shoots arrows. The faster you move, faster
+    it shoots, speed increases exponentially.
   effects: []
   modulePrefabId: 2000
   moduleEffects: []

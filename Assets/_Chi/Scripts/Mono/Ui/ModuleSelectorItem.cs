@@ -37,7 +37,6 @@ namespace _Chi.Scripts.Mono.Ui
         public void Initialise(PrefabItem item, List<ActionsPanelButton> buttons, Action abort, int? price)
         {
             this.item = item;
-            this.priceValue = price;
 
             InitialiseUi(item.label, item.prefabUi.GetComponent<Image>(), item.description, buttons, abort, price);
         }
@@ -54,6 +53,17 @@ namespace _Chi.Scripts.Mono.Ui
 
             this.buttons = buttons;
             this.abort = abort;
+
+            SetPrice(price);
+            
+            var locked = Gamesystem.instance.uiManager.vehicleSettingsWindow.moduleSelector.IsLocked(item);
+            
+            lockButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = locked ? "Unlock" : "Lock";
+        }
+
+        public void SetPrice(int? price)
+        {
+            this.priceValue = price;
             
             if (price.HasValue)
             {
@@ -64,10 +74,6 @@ namespace _Chi.Scripts.Mono.Ui
             {
                 this.price.gameObject.transform.parent.gameObject.SetActive(false);
             }
-            
-            var locked = Gamesystem.instance.uiManager.vehicleSettingsWindow.moduleSelector.IsLocked(item);
-            
-            lockButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = locked ? "Unlock" : "Lock";
         }
 
         private (string, Color?) GetSubtitle()

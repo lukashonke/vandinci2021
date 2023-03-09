@@ -635,8 +635,9 @@ MonoBehaviour:
   - id: 4201
     label: 'Crossbow: Continuous Arrows'
     enabled: 1
-    description: When you move, the weapon shoots arrows. Faster you move, faster
-      it shoots.
+    description: When you move, the weapon shoots arrows. The faster you move, faster
+      it shoots, speed increases exponentially. Fire Rate buffs also apply to firing
+      speed.
     type: 9
     predefinedId: 0
     prefab: {fileID: 0}
@@ -648,9 +649,10 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
   - id: 4202
-    label: 'Crossbow: Wild Arrows'
+    label: 'Crossbow: Fire from Above'
     enabled: 1
-    description: TODO
+    description: For every arrow you fire, you will also land an arrow to a nearby
+      enemy.
     type: 9
     predefinedId: 0
     prefab: {fileID: 0}
@@ -662,9 +664,9 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
   - id: 4203
-    label: 'Crossbow: Fire Arrows'
+    label: 'Crossbow: Flame Arrows'
     enabled: 1
-    description: TODO
+    description: Your arrows will put enemies on Fire.
     type: 9
     predefinedId: 0
     prefab: {fileID: 0}
@@ -677,7 +679,7 @@ MonoBehaviour:
     additionalTexts:
     - fire_effect_description
   - id: 4400
-    label: Jump Charge
+    label: 'Jump: Enhance Power'
     enabled: 1
     description: Jumps has more force, making you jump for longer distances and deadling
       more damage.
@@ -692,7 +694,7 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 11400000, guid: 8c40a862ade93944b8c5d0e5bb618e13, type: 2}
     additionalTexts: []
   - id: 4401
-    label: Jump Protection
+    label: 'Jump: Landing Protection'
     enabled: 1
     description: Right after jumping, receive no damage for 2 seconds.
     type: 10
@@ -706,9 +708,10 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 11400000, guid: 0633cec118387254e854be997b787ef6, type: 2}
     additionalTexts: []
   - id: 4402
-    label: 'Jump: Extra Charge'
+    label: 'Jump: Redirect Power'
     enabled: 1
-    description: Adds 1 extra jump use before having to reload.
+    description: Adds 1 extra jump use before having to reload. Slows you down by
+      10%.
     type: 10
     predefinedId: 0
     prefab: {fileID: 0}
@@ -720,7 +723,7 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 11400000, guid: 4c7e7fe52e6d3b2459c133b701c280e0, type: 2}
     additionalTexts: []
   - id: 4403
-    label: Jump Ignore Weight
+    label: 'Jump: Deny Gravity'
     enabled: 1
     description: Jump now ignores weight of player. Large body jumps as fast as small
       body.
@@ -735,9 +738,9 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 11400000, guid: 012a6d1be4511c84abed78b88e356167, type: 2}
     additionalTexts: []
   - id: 4404
-    label: Jump Additional Protection
+    label: 'Jump: Landing Protection'
     enabled: 1
-    description: Right after jumping, receive no damage for another 2 seconds.
+    description: Right after jumping, receive no damage for 2 seconds.
     type: 10
     predefinedId: 0
     prefab: {fileID: 0}
@@ -979,6 +982,23 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
     minCountShownItems: 100
     closeOnFirstPurchase: 0
+  - name: free_skill_upgrades_2
+    note: 
+    prefabs:
+    - prefabId: 4402
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4403
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4404
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+    minCountShownItems: 100
+    closeOnFirstPurchase: 1
   - name: free_skill_upgrades
     note: 
     prefabs:
@@ -1254,10 +1274,10 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 0
-        dropChance: 100
-        amountMin: 4
-        amountMax: 4
+      - dropType: 3
+        dropChance: 80
+        amountMin: 1
+        amountMax: 1
   - variant: ZombieEliteFat
     sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
@@ -1284,10 +1304,10 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 0
-        dropChance: 100
-        amountMin: 4
-        amountMax: 4
+      - dropType: 3
+        dropChance: 80
+        amountMin: 1
+        amountMax: 1
   - variant: ZombieBloody
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 4461f9e1a8c439b40bd7fafb428820cf, type: 2}
@@ -1456,33 +1476,6 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items: []
-  - variant: ZombieBloater
-    sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
-    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-    animatorController: {fileID: 0}
-    entityStats:
-      maxHp: 100
-      maxHpAdd: 0
-      maxHpMul: 1
-      hp: 100
-    npcStats:
-      speed: 1
-      rotationSpeed: 10
-      contactDamage: 20
-      contactDamageInterval: 0.5
-    skills: []
-    skillsOnDie:
-    - {fileID: 11400000, guid: 7dacf98ac6858cc42bb43407350ac4aa, type: 2}
-    effectsOnDie: []
-    parameters:
-      spawnAroundEntityGroupName: 
-      rvoPriority: 0.5
-      disableRvoCollision: 0
-      setRvoLayers: 0
-      rvoLayer: 0
-      rvoCollidesWith: 0
-    reward:
-      items: []
   - variant: ZombieBloaterExploding
     sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -1612,12 +1605,12 @@ MonoBehaviour:
     spriteMaterial: {fileID: 2100000, guid: ee3e4ece0fd6dd64caa864088dd87de9, type: 2}
     animatorController: {fileID: 0}
     entityStats:
-      maxHp: 1500
+      maxHp: 2000
       maxHpAdd: 0
       maxHpMul: 1
-      hp: 1500
+      hp: 2000
     npcStats:
-      speed: 1.4
+      speed: 1.1
       rotationSpeed: 10
       contactDamage: 20
       contactDamageInterval: 3
@@ -1625,6 +1618,63 @@ MonoBehaviour:
     - skill: {fileID: 11400000, guid: 72694b8bf13e46e4bbac179d1d403dd3, type: 2}
     - skill: {fileID: 11400000, guid: 7dacf98ac6858cc42bb43407350ac4aa, type: 2}
     skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+    reward:
+      items:
+      - dropType: 1
+        dropChance: 100
+        amountMin: 20
+        amountMax: 20
+  - variant: ZombieBloater_BossSpawn
+    sprite: {fileID: 21300000, guid: ada51a819fa2e4745b6756e5c835e252, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 15
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 15
+    npcStats:
+      speed: 2
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+    reward:
+      items: []
+  - variant: ZombieBloater
+    sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
+    spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 100
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 100
+    npcStats:
+      speed: 1
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+    skills: []
+    skillsOnDie:
+    - {fileID: 11400000, guid: 7dacf98ac6858cc42bb43407350ac4aa, type: 2}
     effectsOnDie: []
     parameters:
       spawnAroundEntityGroupName: 
@@ -1956,10 +2006,10 @@ MonoBehaviour:
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     animatorController: {fileID: 0}
     entityStats:
-      maxHp: 1200
+      maxHp: 4000
       maxHpAdd: 0
       maxHpMul: 1
-      hp: 1200
+      hp: 4000
     npcStats:
       speed: 0
       rotationSpeed: 10
@@ -1977,10 +2027,10 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 1
+      - dropType: 2
         dropChance: 100
-        amountMin: 4
-        amountMax: 4
+        amountMin: 2
+        amountMax: 2
   - variant: MonsterHouseLarge
     sprite: {fileID: 21300000, guid: e2840be09ed7d4f4c9c31ba368d9aed7, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}

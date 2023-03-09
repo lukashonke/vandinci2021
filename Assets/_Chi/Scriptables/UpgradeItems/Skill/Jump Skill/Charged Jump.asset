@@ -65,8 +65,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  uiName: Charged Jump
-  uiDescription: 'Jumps has more force, making you jump for longer distances. '
+  uiName: Enhance Power
+  uiDescription: Jump has more force, making you jump for longer distances and deadling
+    more damage.
   effects: []
   target: {fileID: 11400000, guid: cc69fe99998b25a4d8a301159bd9f639, type: 2}
   upgradeId: charged_jump

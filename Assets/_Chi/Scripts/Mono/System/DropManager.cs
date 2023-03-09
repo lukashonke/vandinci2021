@@ -16,6 +16,9 @@ namespace _Chi.Scripts.Mono.System
         public GameObject level1GoldPrefab;
         public int level1GoldAmount = 1;
         
+        public GameObject level15GoldPrefab;
+        public int level15GoldAmount = 1;
+        
         public GameObject level2GoldPrefab;
         public int level2GoldAmount = 1;
         
@@ -47,7 +50,7 @@ namespace _Chi.Scripts.Mono.System
             pointsList = new();
             gameObjects = new();
             
-            points = new NativeArray<float3>(2048*2, Allocator.Persistent);
+            points = new NativeArray<float3>(2048*4, Allocator.Persistent);
             knnContainer = new KnnContainer(points, false, Allocator.Persistent);
         }
 
@@ -143,6 +146,9 @@ namespace _Chi.Scripts.Mono.System
                 case DropType.Level1Gold:
                     prefab = level1GoldPrefab;
                     break;
+                case DropType.Level15Gold:
+                    prefab = level15GoldPrefab;
+                    break;
                 case DropType.Level2Gold:
                     prefab = level2GoldPrefab;
                     break;
@@ -182,6 +188,9 @@ namespace _Chi.Scripts.Mono.System
             {
                 case DropType.Level1Gold:
                     Gamesystem.instance.progress.AddGold(level1GoldAmount);
+                    break;
+                case DropType.Level15Gold:
+                    Gamesystem.instance.progress.AddGold(level15GoldAmount);
                     break;
                 case DropType.Level2Gold:
                     Gamesystem.instance.progress.AddGold(level2GoldAmount);

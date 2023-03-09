@@ -22,4 +22,4 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   order: 20
-  baseHeal: 20
+  baseHeal: 30

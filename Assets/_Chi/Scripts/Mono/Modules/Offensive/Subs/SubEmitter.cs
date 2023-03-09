@@ -40,6 +40,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
             if (parentModule is OffensiveModule offensiveModule)
             {
                 emitter.ApplyParams(offensiveModule.stats, parentModule.parent);
+                offensiveModule.OnShootInstruction();
             }
             emitter.Play();
         }

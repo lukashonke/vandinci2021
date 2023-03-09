@@ -36,6 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8756748668108058858}
+  - {fileID: 2187764482354817971}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -109,7 +110,7 @@ MonoBehaviour:
     maxHpMul: 1
     hp: 20
   team: 2
-  healthbarOffset: {x: 0, y: 0, z: 0}
+  healthbarOffset: {x: -0.5, y: -1, z: 0}
   seeker: {fileID: 0}
   rvoController: {fileID: 0}
   stats:
@@ -5076,3 +5077,57 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1001 &3231127261647768225
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5954188515519120261}
+    m_Modifications:
+    - target: {fileID: 1101485356869148441, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: scalePer1Hp
+      value: 0.00025
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.616
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613974520338816212, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: m_Name
+      value: Healthbar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157438153637878850, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+--- !u!4 &2187764482354817971 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3642221415905698066, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+  m_PrefabInstance: {fileID: 3231127261647768225}
+  m_PrefabAsset: {fileID: 0}

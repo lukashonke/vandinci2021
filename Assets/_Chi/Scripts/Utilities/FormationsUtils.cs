@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace _Chi.Scripts.Utilities
 {
@@ -7,6 +9,18 @@ namespace _Chi.Scripts.Utilities
         public static int GetGridRows(int count)
         {
             return Mathf.CeilToInt(Mathf.Sqrt(count));
+        }
+
+        public static int GetHordeRows(int count)
+        {
+            var gridRows = GetGridRows(count);
+            
+            if(gridRows % 2 == 0)
+            {
+                gridRows++;
+            }
+            
+            return gridRows;
         }
 
         public static float GetArcTheta(int agents)
@@ -27,13 +41,31 @@ namespace _Chi.Scripts.Utilities
             return around.TransformPoint(separation.x * column, 0, -separation.y * row + zLookAhead);
         }
         
-        public static Vector3 GetGridTargetPosition(Vector3 around, Quaternion rotation, int index, float zLookAhead, int rows, Vector2 separation)
+        public static Vector3 GetGridTargetPosition(Vector3 around, Quaternion rotation, int index, float zLookAhead, int rows, Vector2 separation, float randomSpreadMax = 0f)
         {
             var row = index % rows;
             var column = index / rows;
 
             return Transform(around,
-                new Vector3(separation.x * column, -separation.y * row + zLookAhead, 0),
+                new Vector3(separation.x * column + Random.Range(-randomSpreadMax, randomSpreadMax), -separation.y * row + zLookAhead + Random.Range(-randomSpreadMax, randomSpreadMax), 0),
+                rotation,
+                new Vector3(1, 1));
+        }
+        
+        public static Vector3 GetRandomPackTargetPosition(Vector3 around, Quaternion rotation, int index, float zLookAhead, int rows, Vector2 separation)
+        {
+            throw new NotImplementedException();
+        }
+        
+        public static Vector3 GetHordeTargetPosition(Vector3 around, Quaternion rotation, int index, float zLookAhead, int rows, Vector2 separation, float shift = 0.5f, float randomSpreadMax = 0f)
+        {
+            var row = index % rows;
+            var column = index / rows;
+            
+            var shiftBy = row % 2 == 0 ? 0 : shift;
+
+            return Transform(around,
+                new Vector3(separation.x * column + shiftBy + Random.Range(-randomSpreadMax, randomSpreadMax), -separation.y * row + zLookAhead + Random.Range(-randomSpreadMax, randomSpreadMax), 0),
                 rotation,
                 new Vector3(1, 1));
         }

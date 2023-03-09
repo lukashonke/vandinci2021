@@ -24,8 +24,8 @@ MonoBehaviour:
     - Name: parameters
       Entry: 6
       Data: 
-  uiName: Protection
-  uiDescription: After jumping, receive no damage for another 2 second.
+  uiName: ' Landing Protection'
+  uiDescription: After jumping, receive no damage for 2 second.
   effects:
   - {fileID: 11400000, guid: a55f00e55e81d4c428d95b13b96d9e84, type: 2}
   - {fileID: 11400000, guid: e7a7615a52145844a8ee9212bb70e52a, type: 2}

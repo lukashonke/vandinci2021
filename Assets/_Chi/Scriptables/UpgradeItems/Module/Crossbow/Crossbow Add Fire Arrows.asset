@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Fire Arrows
-  uiDescription: TODO
+  uiName: Flame Arrows
+  uiDescription: Your arrows will put enemies on Fire.
   effects: []
   modulePrefabId: 2000
   moduleEffects:

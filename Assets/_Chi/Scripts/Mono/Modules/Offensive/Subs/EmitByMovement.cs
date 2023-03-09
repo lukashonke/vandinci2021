@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
@@ -8,6 +9,10 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
         private Vector3 lastPos;
 
         public bool randomRotation;
+
+        public bool scaleWithModuleFireRate;
+
+        public float baselineModuleFireRate;
         
         public AnimationCurve projectilesPerSecondBySpeedCurve;
 
@@ -29,7 +34,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
                 var velocity = (currentPosition - lastPosition).magnitude / Time.fixedDeltaTime;
                 if (velocity > 0)
                 {
-                    Debug.Log(velocity);
+                    //Debug.Log(velocity);
                 }
                 
                 if(lastShoot + GetFireRate(velocity) < Time.time)
@@ -50,7 +55,15 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
 
         public float GetFireRate(float velocity)
         {
-            return 1 / projectilesPerSecondBySpeedCurve.Evaluate(velocity);
+            var rate = 1 / Math.Max(0.001f, projectilesPerSecondBySpeedCurve.Evaluate(velocity));
+
+            if (scaleWithModuleFireRate && parentModule is OffensiveModule offensiveModule)
+            {
+                var mul = offensiveModule.stats.fireRate.GetValue() / baselineModuleFireRate;
+                rate *= mul;
+            }
+
+            return rate;
         }
     }
 }

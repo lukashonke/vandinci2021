@@ -49,8 +49,8 @@ namespace _Chi.Scripts.Scriptables.Skills
 
             return length;
         }
-        
-        private float GetJumpForce(Player player)
+
+        public float GetJumpForce(Player player)
         {
             var force = jumpForce;
 

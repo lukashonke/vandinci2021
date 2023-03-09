@@ -53,6 +53,8 @@ MonoBehaviour:
     - {fileID: 2091413172466918211, guid: ae02bd94f0e73a643be5c892a3156430, type: 3}
     - {fileID: 2091413172466918211, guid: 84bec239ca9197c499c623ed75eed898, type: 3}
     - {fileID: 2091413172466918211, guid: 7b6404c77edb2b64aa24fb9267204f38, type: 3}
+    - {fileID: 2091413172466918211, guid: 885c0e79ee9739c4aa035b51b167b87b, type: 3}
+    - {fileID: 2091413172466918211, guid: 2dd491e58326d6547a2845e25a8c23d3, type: 3}
     - {fileID: 2091413172466918211, guid: 0334eb60c6b7ebf4587f86f62eb96f79, type: 3}
     - {fileID: 2091413172466918211, guid: ceeacf6b55e61854cbc0f7afe5d691f3, type: 3}
     - {fileID: 2091413172466918211, guid: 7bde508cc31740e4aa94ea86f4ccc83b, type: 3}
@@ -69,7 +71,7 @@ MonoBehaviour:
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 23
+      Data: 27
     - Name: 
       Entry: 7
       Data: 1|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
@@ -140,6 +142,9 @@ MonoBehaviour:
     - Name: waitUntilAllEnemiesDead
       Entry: 5
       Data: false
+    - Name: maxWaitTime
+      Entry: 4
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -186,6 +191,9 @@ MonoBehaviour:
     - Name: waitUntilAllEnemiesDead
       Entry: 5
       Data: false
+    - Name: maxWaitTime
+      Entry: 4
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -232,6 +240,9 @@ MonoBehaviour:
     - Name: waitUntilAllEnemiesDead
       Entry: 5
       Data: false
+    - Name: maxWaitTime
+      Entry: 4
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -278,6 +289,9 @@ MonoBehaviour:
     - Name: waitUntilAllEnemiesDead
       Entry: 5
       Data: false
+    - Name: maxWaitTime
+      Entry: 4
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -339,6 +353,9 @@ MonoBehaviour:
     - Name: waitUntilAllEnemiesDead
       Entry: 5
       Data: false
+    - Name: maxWaitTime
+      Entry: 4
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -347,10 +364,10 @@ MonoBehaviour:
       Data: 19|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
-      Data: Wawe 6
+      Data: Wawe 5.5
     - Name: fixedDuration
       Entry: 4
-      Data: 100
+      Data: 60
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
@@ -385,6 +402,9 @@ MonoBehaviour:
     - Name: waitUntilAllEnemiesDead
       Entry: 5
       Data: false
+    - Name: maxWaitTime
+      Entry: 4
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -393,10 +413,10 @@ MonoBehaviour:
       Data: 22|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
-      Data: Wawe 7
+      Data: Wawe 5.9 Mini Boss
     - Name: fixedDuration
       Entry: 4
-      Data: 100
+      Data: 10
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
@@ -430,7 +450,10 @@ MonoBehaviour:
       Data: 
     - Name: waitUntilAllEnemiesDead
       Entry: 5
-      Data: false
+      Data: true
+    - Name: maxWaitTime
+      Entry: 4
+      Data: 100
     - Name: 
       Entry: 8
       Data: 
@@ -439,7 +462,7 @@ MonoBehaviour:
       Data: 25|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
-      Data: Wawe 8
+      Data: Wawe 6
     - Name: fixedDuration
       Entry: 4
       Data: 100
@@ -477,6 +500,9 @@ MonoBehaviour:
     - Name: waitUntilAllEnemiesDead
       Entry: 5
       Data: false
+    - Name: maxWaitTime
+      Entry: 4
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -485,7 +511,7 @@ MonoBehaviour:
       Data: 28|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
-      Data: Wawe 9 (houses)
+      Data: Wawe 7
     - Name: fixedDuration
       Entry: 4
       Data: 100
@@ -523,6 +549,9 @@ MonoBehaviour:
     - Name: waitUntilAllEnemiesDead
       Entry: 5
       Data: false
+    - Name: maxWaitTime
+      Entry: 4
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -531,7 +560,7 @@ MonoBehaviour:
       Data: 31|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
-      Data: Wawe 10
+      Data: Wawe 8
     - Name: fixedDuration
       Entry: 4
       Data: 100
@@ -569,6 +598,107 @@ MonoBehaviour:
     - Name: waitUntilAllEnemiesDead
       Entry: 5
       Data: false
+    - Name: maxWaitTime
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 34|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: eventName
+      Entry: 1
+      Data: Wawe 9 (houses)
+    - Name: fixedDuration
+      Entry: 4
+      Data: 100
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: false
+    - Name: handlers
+      Entry: 7
+      Data: 35|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 10
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 36|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+    - Name: eventName
+      Entry: 6
+      Data: 
+    - Name: waitUntilAllEnemiesDead
+      Entry: 5
+      Data: false
+    - Name: maxWaitTime
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 37|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: eventName
+      Entry: 1
+      Data: Wawe 10
+    - Name: fixedDuration
+      Entry: 4
+      Data: 100
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: false
+    - Name: handlers
+      Entry: 7
+      Data: 38|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 39|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+    - Name: eventName
+      Entry: 6
+      Data: 
+    - Name: waitUntilAllEnemiesDead
+      Entry: 5
+      Data: false
+    - Name: maxWaitTime
+      Entry: 4
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -588,22 +718,34 @@ MonoBehaviour:
     shops:
     - goldAcumulatedRequired: 25
       shopSet: shop_passives_basic
-      priceMultiplier: 20
+      priceMultiplier: 2
     - goldAcumulatedRequired: 100
       shopSet: shop_passives_basic;shop_defensive_basic
       priceMultiplier: 30
     - goldAcumulatedRequired: 200
       shopSet: shop_chaos_upgrades;shop_passives_basic;shop_defensive_basic
       priceMultiplier: 40
-    - goldAcumulatedRequired: 300
-      shopSet: shop_chaos_upgrades;shop_passives_basic;shop_defensive_basic
+    - goldAcumulatedRequired: 335
+      shopSet: shop_chaos_upgrades--only-locked;shop_passives_basic;shop_defensive_basic
       priceMultiplier: 50
-    - goldAcumulatedRequired: 450
-      shopSet: shop_chaos_upgrades;shop_passives_basic;shop_defensive_basic
-      priceMultiplier: 60
-    - goldAcumulatedRequired: 650
+    - goldAcumulatedRequired: 600
       shopSet: shop_chaos_upgrades;shop_passives_basic;shop_defensive_basic
       priceMultiplier: 70
+    - goldAcumulatedRequired: 900
+      shopSet: shop_chaos_upgrades--only-locked;shop_passives_basic;shop_defensive_basic
+      priceMultiplier: 100
+    - goldAcumulatedRequired: 1300
+      shopSet: shop_chaos_upgrades;shop_passives_basic;shop_defensive_basic
+      priceMultiplier: 130
+    - goldAcumulatedRequired: 1800
+      shopSet: shop_chaos_upgrades;shop_passives_basic;shop_defensive_basic
+      priceMultiplier: 160
+    - goldAcumulatedRequired: 3600
+      shopSet: shop_chaos_upgrades;shop_passives_basic;shop_defensive_basic
+      priceMultiplier: 260
+    - goldAcumulatedRequired: 7200
+      shopSet: shop_chaos_upgrades;shop_passives_basic;shop_defensive_basic
+      priceMultiplier: 360
     - goldAcumulatedRequired: 10000
       shopSet: shop_chaos_upgrades;shop_passives_basic;shop_defensive_basic
       priceMultiplier: 100

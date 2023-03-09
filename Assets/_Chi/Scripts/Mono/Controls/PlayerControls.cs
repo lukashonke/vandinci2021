@@ -44,13 +44,13 @@ public class PlayerControls : MonoBehaviour
         _actionses.Right.AddDefaultBinding( Key.D );
         _actionses.Right.AddDefaultBinding( InputControlType.DPadRight );
         
-        _actionses.Skill1.AddDefaultBinding(Key.Q);
+        _actionses.Skill1.AddDefaultBinding(Key.Space);
         _actionses.Skill1.AddDefaultBinding(InputControlType.Action1);
-        _actionses.Skill2.AddDefaultBinding(Key.E);
+        _actionses.Skill2.AddDefaultBinding(Key.Q);
         _actionses.Skill2.AddDefaultBinding(InputControlType.Action2);
-        _actionses.Skill3.AddDefaultBinding(Key.R);
+        _actionses.Skill3.AddDefaultBinding(Key.E);
         _actionses.Skill3.AddDefaultBinding(InputControlType.Action3);
-        _actionses.Skill4.AddDefaultBinding(Key.T);
+        _actionses.Skill4.AddDefaultBinding(Key.R);
         _actionses.Skill4.AddDefaultBinding(InputControlType.Action4);
     }
     

@@ -138,8 +138,6 @@ public class UiManager : MonoBehaviour
                 reloadPercentage = (Time.time - data.lastUse) / skill.GetReuseDelay(player);
                 if (reloadPercentage > 1) reloadPercentage = 1;
                 
-                Debug.Log(reloadPercentage);
-
                 var wasReloaded = skillIndicators[index].IsReloaded();
 
                 skillIndicators[index].SetReloadPercentage(reloadPercentage);

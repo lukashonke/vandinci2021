@@ -24,9 +24,11 @@ MonoBehaviour:
     - Name: parameters
       Entry: 6
       Data: 
-  uiName: Extra Charge
-  uiDescription: Adds 1 extra jump use before having to reload.
+  uiName: Redirect Power
+  uiDescription: Adds 1 extra jump use before having to reload. Slows you down by
+    10%.
   effects:
   - {fileID: 11400000, guid: b3103a848f490ff4a8ba4734d3940992, type: 2}
+  - {fileID: 11400000, guid: e800f62946ce0554eb20a77394c68ad4, type: 2}
   target: {fileID: 11400000, guid: cc69fe99998b25a4d8a301159bd9f639, type: 2}
   upgradeId: jump_extra_charge

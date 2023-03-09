@@ -24,7 +24,7 @@ MonoBehaviour:
     - Name: parameters
       Entry: 6
       Data: 
-  uiName: Ignore Weight
+  uiName: Deny Gravity
   uiDescription: Ignores weight of player. Large body jumps as fast as small body.
   effects:
   - {fileID: 11400000, guid: 4b552e9e3c5e4f749adc6ec1fc9ee763, type: 2}

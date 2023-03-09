@@ -24,6 +24,6 @@ MonoBehaviour:
   order: 20
   vfxPrefab: {fileID: 610610226938605263, guid: eb54da683565c704f8ab30d0f31de424, type: 3}
   interval: 1
-  intervalsCount: 5
+  intervalsCount: 10
   applyEffectOnInterval: {fileID: 11400000, guid: 2ea1845711e9a3f438d3c4bc74b1998e, type: 2}
-  applyEffectOnIntervalStrength: 5
+  applyEffectOnIntervalStrength: 2

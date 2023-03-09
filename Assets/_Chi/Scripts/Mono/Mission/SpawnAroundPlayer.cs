@@ -130,8 +130,11 @@ namespace _Chi.Scripts.Mono.Mission
 
                             if (spawned != null)
                             {
-                                ev.TrackAliveEntity(spawned);
-                                Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
+                                if (settings.trackEntityForMission)
+                                {
+                                    ev.TrackAliveEntity(spawned);
+                                    Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
+                                }
                             }
                         }
                     }
@@ -154,8 +157,11 @@ namespace _Chi.Scripts.Mono.Mission
                                 
                                 if (spawned != null)
                                 {
-                                    ev.TrackAliveEntity(spawned);
-                                    Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
+                                    if (settings.trackEntityForMission)
+                                    {
+                                        ev.TrackAliveEntity(spawned);
+                                        Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
+                                    }
                                 }
                                 
                                 spawnCount--;
@@ -197,6 +203,8 @@ namespace _Chi.Scripts.Mono.Mission
         
         public float distanceFromPlayerToDespawn = 100;
         public float despawnAfter = 0;
+        
+        public bool trackEntityForMission = false;
         
         // runtime
         [ReadOnly] public float nextSpawnTime;
@@ -292,7 +300,10 @@ namespace _Chi.Scripts.Mono.Mission
         Grid,
         Circle,
         Arc,
-        Line
+        Line,
+        Horde,
+        ShightlyShiftedGrid,
+        RandomPack
     }
 
     public enum SpawnBehavior
