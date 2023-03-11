@@ -1154,35 +1154,35 @@ MonoBehaviour:
     prefabs:
     - prefabId: 4400
       weight: 2
-      price: 2
+      price: 1.75
       priceMultiplyForEveryOwned: 0
     - prefabId: 4401
       weight: 2
-      price: 2
+      price: 1.75
       priceMultiplyForEveryOwned: 0
     - prefabId: 4402
       weight: 1
-      price: 2
+      price: 1.75
       priceMultiplyForEveryOwned: 0
     - prefabId: 4403
       weight: 2
-      price: 2
+      price: 1.75
       priceMultiplyForEveryOwned: 0
     - prefabId: 4404
       weight: 2
-      price: 2
+      price: 1.75
       priceMultiplyForEveryOwned: 0
     - prefabId: 4405
       weight: 2
-      price: 2
+      price: 1.75
       priceMultiplyForEveryOwned: 0
     - prefabId: 4406
       weight: 2
-      price: 2
+      price: 1.75
       priceMultiplyForEveryOwned: 0
     - prefabId: 4407
       weight: 2
-      price: 2
+      price: 1.75
       priceMultiplyForEveryOwned: 0
     minCountShownItems: 1
     closeOnFirstPurchase: 0
@@ -1271,6 +1271,7 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 1
         amountMax: 1
+        bypassGlobalDropChance: 0
   - variant: ZombieFast
     sprite: {fileID: 21300000, guid: ada51a819fa2e4745b6756e5c835e252, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -1301,6 +1302,7 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 2
         amountMax: 2
+        bypassGlobalDropChance: 0
   - variant: ZombieFat
     sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -1331,6 +1333,7 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 2
         amountMax: 2
+        bypassGlobalDropChance: 0
   - variant: ZombieIdleRunner
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 3dd12299c05371f44abf211a2d5a3e59, type: 2}
@@ -1361,6 +1364,7 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 1
         amountMax: 1
+        bypassGlobalDropChance: 0
   - variant: ZombieIdleWalker
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 3dd12299c05371f44abf211a2d5a3e59, type: 2}
@@ -1391,6 +1395,38 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 1
         amountMax: 1
+        bypassGlobalDropChance: 0
+  - variant: ZombieIdleFatWalker
+    sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 3dd12299c05371f44abf211a2d5a3e59, type: 2}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 30
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 30
+    npcStats:
+      speed: 0.8
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0
+      disableRvoCollision: 1
+      setRvoLayers: 0
+      rvoLayer: 1
+      rvoCollidesWith: 1073741824
+    reward:
+      items:
+      - dropType: 0
+        dropChance: 100
+        amountMin: 2
+        amountMax: 2
+        bypassGlobalDropChance: 0
   - variant: ZombieSneaky
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 8bf4bdf6f6e10984fb430e8d4362c064, type: 2}
@@ -1421,6 +1457,7 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 5
         amountMax: 6
+        bypassGlobalDropChance: 1
   - variant: ZombieElite
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
@@ -1451,6 +1488,7 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 1
         amountMax: 1
+        bypassGlobalDropChance: 0
   - variant: ZombieEliteFast
     sprite: {fileID: 21300000, guid: ada51a819fa2e4745b6756e5c835e252, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
@@ -1481,6 +1519,7 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 2
         amountMax: 2
+        bypassGlobalDropChance: 0
   - variant: ZombieEliteFat
     sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
@@ -1511,6 +1550,7 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 2
         amountMax: 2
+        bypassGlobalDropChance: 0
   - variant: ZombieBloody
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 4461f9e1a8c439b40bd7fafb428820cf, type: 2}
@@ -1541,6 +1581,7 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 1
         amountMax: 1
+        bypassGlobalDropChance: 0
   - variant: ZombieBloodyFast
     sprite: {fileID: 21300000, guid: ada51a819fa2e4745b6756e5c835e252, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 4461f9e1a8c439b40bd7fafb428820cf, type: 2}
@@ -1571,6 +1612,7 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 2
         amountMax: 2
+        bypassGlobalDropChance: 0
   - variant: ZombieBloodyFat
     sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 4461f9e1a8c439b40bd7fafb428820cf, type: 2}
@@ -1601,6 +1643,7 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 1
         amountMax: 1
+        bypassGlobalDropChance: 0
   - variant: ZombieDemonic
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 803fe10b4c4635a4c92bb2f6ad6629a8, type: 2}
@@ -1689,7 +1732,7 @@ MonoBehaviour:
       maxHpMul: 1
       hp: 100
     npcStats:
-      speed: 1
+      speed: 0.85
       rotationSpeed: 10
       contactDamage: 20
       contactDamageInterval: 0.5
@@ -1706,10 +1749,11 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 1
+      - dropType: 3
         dropChance: 100
         amountMin: 1
         amountMax: 1
+        bypassGlobalDropChance: 1
   - variant: ZombieEliteBloaterExploding
     sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
@@ -1720,7 +1764,7 @@ MonoBehaviour:
       maxHpMul: 1
       hp: 300
     npcStats:
-      speed: 0.9
+      speed: 0.7
       rotationSpeed: 10
       contactDamage: 20
       contactDamageInterval: 0.5
@@ -1737,10 +1781,11 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 1
+      - dropType: 3
         dropChance: 100
         amountMin: 1
         amountMax: 1
+        bypassGlobalDropChance: 1
   - variant: ZombieBloodyBloaterExploding
     sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 4461f9e1a8c439b40bd7fafb428820cf, type: 2}
@@ -1772,6 +1817,7 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 4
         amountMax: 4
+        bypassGlobalDropChance: 1
   - variant: ZombieDemonicBloaterExploding
     sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 803fe10b4c4635a4c92bb2f6ad6629a8, type: 2}
@@ -1803,6 +1849,7 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 1
         amountMax: 1
+        bypassGlobalDropChance: 1
   - variant: ZombieBloater_Boss
     sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
     spriteMaterial: {fileID: 2100000, guid: ee3e4ece0fd6dd64caa864088dd87de9, type: 2}
@@ -1833,8 +1880,41 @@ MonoBehaviour:
       items:
       - dropType: 1
         dropChance: 100
-        amountMin: 20
-        amountMax: 20
+        amountMin: 10
+        amountMax: 10
+        bypassGlobalDropChance: 1
+  - variant: ZombieBloater_MiniBoss
+    sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 2f3fc085afccd9142b6e0e263bd5ba55, type: 2}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 2000
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 2000
+    npcStats:
+      speed: 0.85
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 3
+    skills:
+    - skill: {fileID: 11400000, guid: 72694b8bf13e46e4bbac179d1d403dd3, type: 2}
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+    reward:
+      items:
+      - dropType: 1
+        dropChance: 100
+        amountMin: 5
+        amountMax: 5
+        bypassGlobalDropChance: 1
   - variant: ZombieBloater_BossSpawn
     sprite: {fileID: 21300000, guid: ada51a819fa2e4745b6756e5c835e252, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -2179,10 +2259,10 @@ MonoBehaviour:
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     animatorController: {fileID: 0}
     entityStats:
-      maxHp: 400
+      maxHp: 500
       maxHpAdd: 0
       maxHpMul: 1
-      hp: 400
+      hp: 500
     npcStats:
       speed: 0
       rotationSpeed: 10
@@ -2204,6 +2284,7 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 2
         amountMax: 2
+        bypassGlobalDropChance: 1
   - variant: MonsterHouseMedium
     sprite: {fileID: 21300000, guid: e38259388df912c42927c2f1996b6081, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -2234,6 +2315,7 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 2
         amountMax: 2
+        bypassGlobalDropChance: 1
   - variant: MonsterHouseLarge
     sprite: {fileID: 21300000, guid: e2840be09ed7d4f4c9c31ba368d9aed7, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -2291,6 +2373,7 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 1
         amountMax: 2
+        bypassGlobalDropChance: 0
   - variant: EyeSmall
     sprite: {fileID: 21300000, guid: 4511afa1ddeb3464f831b55d477b8ad4, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -2321,6 +2404,7 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 1
         amountMax: 1
+        bypassGlobalDropChance: 1
   - variant: EyeLarge
     sprite: {fileID: 21300000, guid: 4c7d080bbd1b41547a9b0f9689553070, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -2351,6 +2435,7 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 1
         amountMax: 1
+        bypassGlobalDropChance: 1
   playerCriticalDealtDamage: {fileID: 4974115115264481549, guid: 0beaac1fcb69845319cc168500b1bc84, type: 3}
   playerDealtDamage: {fileID: 184639617188728617, guid: 314716765f8ab6548bd010be7ce6a255, type: 3}
   playerGoldReceived: {fileID: 184639617188728617, guid: 017fd53f536748c4db0118c707017b48, type: 3}

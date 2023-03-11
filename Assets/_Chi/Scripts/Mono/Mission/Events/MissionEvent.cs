@@ -13,7 +13,12 @@ namespace _Chi.Scripts.Mono.Mission.Events
     [Serializable]
     public abstract class MissionEvent
     {
+        [HideInInspector]
+        private string eventType => this.GetType().Name;
+        
         [VerticalGroup("Settings")]
+        [Title("$eventType")]
+        [HideLabel]
         public string eventName;
         
         protected Mission currentMission;
@@ -67,11 +72,11 @@ namespace _Chi.Scripts.Mono.Mission.Events
 
     public class EndAllMissionHandlersEvent : MissionEvent
     {
-        [VerticalGroup("Waiting")]
+        [FoldoutGroup("Additional")]
         public bool waitUntilAllEnemiesDead;
 
         [ShowIf("waitUntilAllEnemiesDead")]
-        [VerticalGroup("Waiting")]
+        [FoldoutGroup("Additional")]
         public float maxWaitTime;
 
         [NonSerialized] private float waitStarted;
@@ -117,18 +122,40 @@ namespace _Chi.Scripts.Mono.Mission.Events
         }
     }
 
+    public class SetParameters : MissionEvent
+    {
+        [VerticalGroup("Additional")]
+        public bool setGlobalDropChance;
+        
+        [ShowIf("setGlobalDropChance")]
+        [VerticalGroup("Additional")]
+        public float globalDropChance;
+        
+        public override void Start(float currentTime)
+        {
+            if (setGlobalDropChance)
+            {
+                Gamesystem.instance.dropManager.globalDropChance = globalDropChance;
+            }
+        }
+
+        public override bool CanStart(float currentTime) => true;
+
+        public override bool CanEnd(float currentTime) => true;
+    }
+
     public class StartMissionHandlerEvent : MissionEvent
     {
         //public bool hasFixedDuration;
         //[ShowIf("hasFixedDuration")]
         
-        [VerticalGroup("Settings")]
+        [FoldoutGroup("Additional")]
         public float fixedDuration;
 
-        [VerticalGroup("Waiting")]
+        [FoldoutGroup("Additional")]
         public bool waitTillAllSpawnedAreDead;
 
-        [VerticalGroup("Waiting")]
+        [FoldoutGroup("Additional")]
         public bool waitTillAllWawesSpawn = true;
         
         [VerticalGroup("Handlers")]

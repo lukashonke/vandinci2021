@@ -7,6 +7,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using KNN;
 using KNN.Jobs;
+using QFSW.QC;
 using Unity.Jobs;
 
 namespace _Chi.Scripts.Mono.System
@@ -43,6 +44,8 @@ namespace _Chi.Scripts.Mono.System
         
         private bool isQueryJobRunning = false;
         private NativeArray<int> queryResults;
+
+        public float globalDropChance = 100f;
 
         void Awake()
         {
@@ -136,9 +139,16 @@ namespace _Chi.Scripts.Mono.System
                 }
             }
         }
-        
-        public void Drop(DropType drop, Vector3 position)
+
+        private bool CheckDropChance()
         {
+            return UnityEngine.Random.Range(0f, 100f) <= globalDropChance;
+        }
+        
+        public void Drop(DropType drop, Vector3 position, bool bypassDropChance = false)
+        {
+            if (!bypassDropChance && !CheckDropChance()) return;
+            
             GameObject go;
             GameObject prefab;
             switch (drop)

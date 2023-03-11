@@ -233,7 +233,7 @@ MonoBehaviour:
   despawnAfterTime: 0
   damageBasedSpawns:
   - spawnAtHpPercentIsRepeated: 1
-    spawnAtHpPercent: 0.25
+    spawnAtHpPercent: 0.2
     prefabsToSpawn:
     - type: 0
       prefab: {fileID: 0}
@@ -263,6 +263,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: ZombieBloaterExploding
-    spawnCountMin: 5
+    spawnCountMin: 10
     spawnCountMax: 15
     spawnSpread: 1.5

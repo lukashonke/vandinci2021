@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 6469568978721038765}
   - component: {fileID: -3204359601985624663}
   - component: {fileID: 9000068432140191412}
+  - component: {fileID: -8490184538130329446}
   m_Layer: 0
   m_Name: Zombies_Wawe6 (many)
   m_TagString: Untagged
@@ -191,6 +192,7 @@ Transform:
   - {fileID: 3750697999516981359}
   - {fileID: 5885289525060756674}
   - {fileID: 3781662074522254375}
+  - {fileID: 1965214561287318120}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -374,6 +376,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 2
     distanceFromPlayerToDespawn: 40
     despawnAfter: 0
+    trackEntityForMission: 0
     nextSpawnTime: 0
     startAtTime: 0
     lastSpawnTime: 0
@@ -446,6 +449,7 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1.5
     spawnGroupSpreadMax: 2.5
     distanceFromPlayerToDespawn: 100
+    trackEntityForMission: 0
 --- !u!114 &-3837949277647058563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,6 +519,7 @@ MonoBehaviour:
     spawnGroupSpreadMin: 3
     spawnGroupSpreadMax: 4
     distanceFromPlayerToDespawn: 100
+    trackEntityForMission: 0
 --- !u!114 &-50647473022081503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,6 +575,7 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
+    trackEntityForMission: 0
 --- !u!114 &766136386234732296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,6 +631,7 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
+    trackEntityForMission: 0
 --- !u!114 &8998190245610271498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,6 +687,7 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
+    trackEntityForMission: 0
 --- !u!114 &-4000076046673859097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,6 +743,7 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 100
+    trackEntityForMission: 0
 --- !u!114 &-6502435416312752660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -790,6 +799,7 @@ MonoBehaviour:
     spawnGroupSpreadMin: 2
     spawnGroupSpreadMax: 3
     distanceFromPlayerToDespawn: 100
+    trackEntityForMission: 0
 --- !u!114 &6469568978721038765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -852,6 +862,7 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
+    trackEntityForMission: 0
 --- !u!114 &-3204359601985624663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -907,6 +918,7 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 30
+    trackEntityForMission: 0
 --- !u!114 &9000068432140191412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -962,6 +974,63 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 1000
+    trackEntityForMission: 0
+--- !u!114 &-8490184538130329446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091413172466918211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  waveName: Spawners Group
+  disable: 0
+  spawns:
+  - possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieBloater_MiniBoss
+    relativePosition: 3
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
+    behavior: 0
+    roamDistance: 0
+    roamRandomRadius: 0
+    dieWhenReachFixedMoveTarget: 0
+    stopWhenReachFixedMoveTarget: 0
+    spawnTimeMin: 10
+    spawnTimeMax: 10
+    repeatSpawn: 0
+    repeatSpawnIntervalMin: 10
+    repeatSpawnIntervalMax: 20
+    repeatCount: 100
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayerMin: 9
+    distanceFromPlayerMax: 9
+    despawnAfter: 0
+    spawnGroupSpreadMin: 2
+    spawnGroupSpreadMax: 3
+    distanceFromPlayerToDespawn: 100
+    trackEntityForMission: 0
 --- !u!1 &3022428695798256735
 GameObject:
   m_ObjectHideFlags: 1
@@ -1291,6 +1360,53 @@ MonoBehaviour:
   nameOverride: Fire Rate Buff Zone
   tooltipOverride: 
   target: {fileID: -3204359601985624663}
+--- !u!1 &8324543600194012247
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1965214561287318120}
+  - component: {fileID: 9148554541762654231}
+  m_Layer: 0
+  m_Name: NameContainer(EditorOnly)
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1965214561287318120
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8324543600194012247}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2091413172466918208}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9148554541762654231
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8324543600194012247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOverride: Spawn Mini Boss
+  tooltipOverride: 
+  target: {fileID: -8490184538130329446}
 --- !u!1 &8916042786223728663
 GameObject:
   m_ObjectHideFlags: 1

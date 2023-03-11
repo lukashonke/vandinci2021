@@ -27,4 +27,4 @@ MonoBehaviour:
   effects:
   - {fileID: 11400000, guid: 0a155894498716c4ca4178d887b58ab5, type: 2}
   - {fileID: 11400000, guid: 0116f55a357ef5a42bf8d6bbf0365965, type: 2}
-  effectStrength: 20
+  effectStrength: 30

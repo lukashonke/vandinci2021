@@ -133,6 +133,8 @@ namespace _Chi.Scripts.Scriptables
 
         public int amountMin = 1;
         public int amountMax = 1;
+
+        public bool bypassGlobalDropChance = false;
     }
     
     [Serializable]

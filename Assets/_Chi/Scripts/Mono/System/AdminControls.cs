@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Utilities;
+using QFSW.QC;
 using UnityEngine;
 
 public class AdminControls : MonoBehaviour
@@ -14,6 +15,8 @@ public class AdminControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (QuantumConsole.Instance.IsActive) return;
+        
         if (Input.GetKeyDown(KeyCode.Keypad0) || Input.GetKeyDown(KeyCode.U))
         {
             Spawn(0, false);

@@ -175,7 +175,7 @@ public class Gamesystem : MonoBehaviour
                             const float spread = 0.4f;
                             position = npc.GetPosition() + new Vector3(UnityEngine.Random.Range(-spread, spread), UnityEngine.Random.Range(-spread, spread));
                         
-                            dropManager.Drop(item.dropType, position);
+                            dropManager.Drop(item.dropType, position, item.bypassGlobalDropChance);
                         }
                     }
                 }
