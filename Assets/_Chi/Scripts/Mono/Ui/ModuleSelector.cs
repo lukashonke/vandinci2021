@@ -39,7 +39,7 @@ namespace _Chi.Scripts.Mono.Ui
             //Initialise(ModuleSelectorMode.ShowAllItems, true);
         }
 
-        public void Initialise(ModuleSelectorMode mode, bool canExit, string rewardSets = null, string title = null, TriggeredShop triggeredShop = null)
+        public void Initialise(ModuleSelectorMode mode, bool canExit, List<TriggeredShopSet> rewardSets = null, string title = null, TriggeredShop triggeredShop = null)
         {
             var db = Gamesystem.instance.prefabDatabase;
 
@@ -99,18 +99,11 @@ namespace _Chi.Scripts.Mono.Ui
             }
             else if (currentMode == ModuleSelectorMode.ShopSet || currentMode == ModuleSelectorMode.SingleRewardSet)
             {
-                foreach (var rewardSet in rewardSets.Split(";"))
+                foreach (var rewardSet in rewardSets)
                 {
-                    string rewardSetValue = rewardSet;
-                    bool showOnlyLocked = false;
-                    
-                    if (rewardSetValue.Contains("--only-locked"))
-                    {
-                        rewardSetValue = rewardSetValue.Replace("--only-locked", "");
-                        showOnlyLocked = true;
-                    }
-                    
-                    var set = Gamesystem.instance.prefabDatabase.GetRewardSet(rewardSetValue);
+                    bool showOnlyLocked = rewardSet.showOnlyPreviouslyLocked;
+
+                    var set = Gamesystem.instance.prefabDatabase.GetRewardSet(rewardSet.name);
                     
                     currentRewardSets.Add(set);
 
@@ -250,6 +243,19 @@ namespace _Chi.Scripts.Mono.Ui
         {
             if(locks == null) locks = new();
             locks[item.id] = locked;
+        }
+
+        public void UnlockAll()
+        {
+            foreach (var key in locks.Keys.ToArray())
+            {
+                locks[key] = false;
+            }
+
+            foreach (var option in options)
+            {
+                option.Value.go.GetComponent<ModuleSelectorItem>().SetLocked(false);
+            }
         }
     }
 

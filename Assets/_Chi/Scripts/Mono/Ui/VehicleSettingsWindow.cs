@@ -31,7 +31,7 @@ namespace _Chi.Scripts.Mono.Ui
             gameObject.SetActive(false);
         }
 
-        public void OpenWindow(string rewardSet, string title, TriggeredShop triggeredShop)
+        public void OpenWindow(List<TriggeredShopSet> rewardSet, string title, TriggeredShop triggeredShop)
         {
             UpdateCurrentMoney();
                 
@@ -211,7 +211,7 @@ namespace _Chi.Scripts.Mono.Ui
 
             if (item != null && item.playerUpgradeItem != null)
             {
-                if(run.playerUpgradeItems.Any(i => i.prefabId == item.id)) return false;
+                if(!item.playerUpgradeItem.canBeStacked && run.playerUpgradeItems.Any(i => i.prefabId == item.id)) return false;
                 
                 run.playerUpgradeItems.Add(new SlotItem()
                 {

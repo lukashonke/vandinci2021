@@ -167,8 +167,26 @@ namespace _Chi.Scripts.Mono.Mission
     public class TriggeredShop
     {
         public int goldAcumulatedRequired;
-        public string shopSet;
+        
+        [HorizontalGroup("ShopSet")]
+        public List<TriggeredShopSet> shopSet;
 
+        [HorizontalGroup("ShopSet")]
         public float priceMultiplier;
+
+        [HideInEditorMode]
+        [Button]
+        public void Show()
+        {
+            Gamesystem.instance.uiManager.OpenRewardSetWindow(shopSet, "Shop", this);
+        }
+    }
+    
+    [Serializable]
+    public class TriggeredShopSet
+    {
+        public string name;
+
+        public bool showOnlyPreviouslyLocked;
     }
 }

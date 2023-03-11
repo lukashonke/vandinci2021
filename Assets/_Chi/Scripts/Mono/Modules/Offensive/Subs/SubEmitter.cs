@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using _Chi.Scripts.Mono.Extensions;
+using _Chi.Scripts.Scriptables;
 using BulletPro;
 using UnityEditor;
 using UnityEngine;
@@ -35,12 +36,27 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
             isEnabled = b;
         }
 
-        public void PlayEmitter()
+        public void ApplyParentParameters()
         {
             if (parentModule is OffensiveModule offensiveModule)
             {
                 emitter.ApplyParams(offensiveModule.stats, parentModule.parent);
-                offensiveModule.OnShootInstruction();
+            }
+        }
+
+        public void PlayEmitter(bool applyParentModuleParameters = true, bool triggerShootInstruction = true)
+        {
+            if (parentModule is OffensiveModule offensiveModule)
+            {
+                if (applyParentModuleParameters)
+                {
+                    ApplyParentParameters();
+                }
+
+                if (triggerShootInstruction)
+                {
+                    offensiveModule.OnShootInstruction(this);
+                }
             }
             emitter.Play();
         }
@@ -51,7 +67,17 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
             transform.rotation = rotation;
         }
 
-        public virtual void OnParentShoot()
+        public virtual void OnParentShoot(object source)
+        {
+            
+        }
+
+        public virtual void OnSkillUse(Skill skill)
+        {
+            
+        }
+        
+        public virtual void OnAfterSkillUse(Skill skill)
         {
             
         }

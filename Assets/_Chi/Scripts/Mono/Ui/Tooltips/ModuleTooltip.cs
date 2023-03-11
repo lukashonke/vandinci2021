@@ -152,6 +152,22 @@ namespace _Chi.Scripts.Mono.Ui.Tooltips
                     return true;
                 }
             }
+            else if (modulePrefabItem.playerUpgradeItem != null || modulePrefabItem.moduleUpgradeItem != null || modulePrefabItem.skillUpgradeItem != null)
+            {
+                var stats = modulePrefabItem.playerUpgradeItem?.GetUiStats(level) ?? modulePrefabItem.moduleUpgradeItem?.GetUiStats(level) ?? modulePrefabItem.skillUpgradeItem?.GetUiStats(level);
+                if (stats != null)
+                {
+                    foreach (var stat in stats)
+                    {
+                        var go = Instantiate(statsItem, statsContainer.transform);
+                        go.transform.Find("Title").GetComponent<TextMeshProUGUI>().text = stat.title;
+                        go.transform.Find("Value").GetComponent<TextMeshProUGUI>().text = stat.value;
+                        go.SetActive(true);
+                    }
+
+                    return true;
+                }
+            }
 
             return false;
         }

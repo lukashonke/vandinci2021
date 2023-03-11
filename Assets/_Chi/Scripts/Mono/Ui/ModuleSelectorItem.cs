@@ -39,6 +39,15 @@ namespace _Chi.Scripts.Mono.Ui
             this.item = item;
 
             InitialiseUi(item.label, item.prefabUi.GetComponent<Image>(), item.description, buttons, abort, price);
+            
+            /*if(item.playerUpgradeItem != null || item.moduleUpgradeItem != null || item.skillUpgradeItem != null)
+            {
+                lockButton.gameObject.SetActive(true);
+            }
+            else
+            {
+                lockButton.gameObject.SetActive(false);
+            }*/
         }
         
         private void InitialiseUi(string title, Image icon, string description, List<ActionsPanelButton> buttons, Action abort, int? price)
@@ -58,7 +67,7 @@ namespace _Chi.Scripts.Mono.Ui
             
             var locked = Gamesystem.instance.uiManager.vehicleSettingsWindow.moduleSelector.IsLocked(item);
             
-            lockButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = locked ? "Unlock" : "Lock";
+            SetLocked(locked);
         }
 
         public void SetPrice(int? price)
@@ -155,11 +164,21 @@ namespace _Chi.Scripts.Mono.Ui
 
         public void OnLockItem()
         {
-            var locked = !Gamesystem.instance.uiManager.vehicleSettingsWindow.moduleSelector.IsLocked(item);
+            var doLock = !Gamesystem.instance.uiManager.vehicleSettingsWindow.moduleSelector.IsLocked(item);
+
+            if (doLock)
+            {
+                Gamesystem.instance.uiManager.vehicleSettingsWindow.moduleSelector.UnlockAll();
+            }
             
-            Gamesystem.instance.uiManager.vehicleSettingsWindow.moduleSelector.SetLocked(item, locked);
+            Gamesystem.instance.uiManager.vehicleSettingsWindow.moduleSelector.SetLocked(item, doLock);
             
-            lockButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = locked ? "Unlock" : "Lock";
+            SetLocked(doLock);
+        }
+
+        public void SetLocked(bool b)
+        {
+            lockButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = b ? "Unlock" : "Lock";
         }
         
         public void OnHoverEnter()

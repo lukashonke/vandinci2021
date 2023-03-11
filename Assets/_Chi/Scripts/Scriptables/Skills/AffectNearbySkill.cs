@@ -48,7 +48,7 @@ namespace _Chi.Scripts.Scriptables.Skills
             SetActivated(player, true);
 
             SpawnPrefabVfx(player.GetPosition(), player.transform.rotation, null);
-            player.OnSkillUse();
+            player.OnSkillUse(this);
 
             if (effectsDelay > 0)
             {
@@ -70,6 +70,8 @@ namespace _Chi.Scripts.Scriptables.Skills
                     effect.Apply(target, player, null, null, effectStrength * player.stats.skillPowerMul.GetValue());
                 }
             }
+            
+            player.OnAfterSkillUse(this);
             
             SetActivated(player, false);
         }

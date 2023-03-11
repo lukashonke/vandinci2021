@@ -23,5 +23,5 @@ MonoBehaviour:
     SerializationNodes: []
   order: 20
   basePush: 20
-  pushDuration: 0.5
-  setCannotBePushedFor: 0.5
+  pushDuration: 0.4
+  setCannotBePushedFor: 0.4

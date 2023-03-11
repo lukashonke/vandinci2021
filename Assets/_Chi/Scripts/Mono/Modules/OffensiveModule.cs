@@ -59,7 +59,7 @@ namespace _Chi.Scripts.Mono.Modules
 
             if (hasEmitter)
             {
-                emitter.shootInstruction.AddListener(OnShootInstruction);
+                emitter.shootInstruction.AddListener(OnEmitterShootInstruction);
             }
             
             activated = true;
@@ -74,7 +74,7 @@ namespace _Chi.Scripts.Mono.Modules
 
             if (hasEmitter)
             {
-                emitter.shootInstruction.RemoveListener(OnShootInstruction);
+                emitter.shootInstruction.RemoveListener(OnEmitterShootInstruction);
             }
             activated = false;
             return true;
@@ -97,13 +97,18 @@ namespace _Chi.Scripts.Mono.Modules
             }
         }
 
-        public virtual void OnShootInstruction()
+        public virtual void OnEmitterShootInstruction()
+        {
+            OnShootInstruction(emitter);
+        }
+
+        public virtual void OnShootInstruction(object source)
         {
             foreach (var subEmitter in subEmitters.Values)
             {
                 foreach (var su in subEmitter)
                 {
-                    su.OnParentShoot();
+                    su.OnParentShoot(source);
                 }
             }
         }

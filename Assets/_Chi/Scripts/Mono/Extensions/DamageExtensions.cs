@@ -72,6 +72,10 @@ namespace _Chi.Scripts.Mono.Extensions
                 damage *= player.stats.takeDamageAfterSkillUseMul.GetValue();
             }
 
+            damage *= player.stats.receiveDamageMul.GetValue();
+            
+            damage += player.stats.receiveDamageAdd.GetValue();
+
             return damage;
         }
     }

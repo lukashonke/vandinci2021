@@ -43,6 +43,8 @@ namespace _Chi.Scripts.Mono.Entities
         [NonSerialized] public HashSet<Entity> damagingEnemies;
         private List<Entity> damagingEnemiesToRemove;
 
+        [NonSerialized] private bool canDealPushDamage = true;
+
         [ReadOnly] public int shieldCharges;
         
         public List<ImmediateEffect> shieldEffects = new List<ImmediateEffect>();
@@ -274,7 +276,7 @@ namespace _Chi.Scripts.Mono.Entities
             {
                 var velocity = rb.velocity.magnitude;
 
-                if (velocity >= stats.minVelocityToDamage.GetValue())
+                if (velocity >= stats.minVelocityToDamage.GetValue() && canDealPushDamage)
                 {
                     var damage = stats.velocityToDamageMul.GetValue() * velocity * rb.mass;
 
@@ -524,7 +526,7 @@ namespace _Chi.Scripts.Mono.Entities
 
         public void AddPlayerUpgradeItem(PlayerUpgradeItem item)
         {
-            if (playerUpgradeItems.Contains(item)) return;
+            if (playerUpgradeItems.Contains(item) && !item.canBeStacked) return;
             
             playerUpgradeItems.Add(item);
             item.ApplyToPlayer(this);
@@ -609,17 +611,50 @@ namespace _Chi.Scripts.Mono.Entities
             extraSkillChargesLoadProgress.Remove(skill);
         }
 
-        public override void OnSkillUse()
+        public override void OnSkillUse(Skill skill)
         {
             var restoreHealth = stats.skillUseHealthPercent.GetValue();
 
             if (restoreHealth > 0)
             {
-                var toRestore = entityStats.maxHp * restoreHealth;
+                var toRestore = GetMaxHp() * restoreHealth;
                 this.Heal(toRestore);
             }
 
             lastSkillUseTime = Time.time;
+
+            foreach (var slot in slots)
+            {
+                if (slot.currentModule != null && slot.currentModule.subEmitters != null)
+                {
+                    foreach (var kp in slot.currentModule.subEmitters)
+                    {
+                        foreach (var subEmitter in kp.Value)
+                        {
+                            subEmitter.OnSkillUse(skill);
+                        }
+                    }
+                }
+            }
+        }
+
+        public override void OnAfterSkillUse(Skill skill)
+        {
+            base.OnAfterSkillUse(skill);
+            
+            foreach (var slot in slots)
+            {
+                if (slot.currentModule != null && slot.currentModule.subEmitters != null)
+                {
+                    foreach (var kp in slot.currentModule.subEmitters)
+                    {
+                        foreach (var subEmitter in kp.Value)
+                        {
+                            subEmitter.OnAfterSkillUse(skill);
+                        }
+                    }
+                }
+            }
         }
 
         public void ResetExtraSkillCharges(Skill skill)
@@ -660,6 +695,11 @@ namespace _Chi.Scripts.Mono.Entities
             var damage = bullet.moduleParameters.GetFloat("_Damage");
              
             ReceiveDamage(damage, null);
+        }
+
+        public void SetCanDealPushDamage(bool b)
+        {
+            canDealPushDamage = b;
         }
     }
 }

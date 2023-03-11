@@ -61,9 +61,9 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
             }
         }
 
-        public override void OnParentShoot()
+        public override void OnParentShoot(object source)
         {
-            base.OnParentShoot();
+            base.OnParentShoot(source);
             
             if (triggerType == AffectRandomEnemyTriggerType.OnShoot)
             {

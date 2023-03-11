@@ -75,9 +75,9 @@ namespace _Chi.Scripts.Mono.Misc
             while(time > 0)
             {
                 yield return waiter;
-                time -= Time.deltaTime;
+                time -= Time.fixedDeltaTime;
 
-                transform1.position += Vector3.down * dist / duration * Time.deltaTime;
+                transform1.position += Vector3.down * dist / duration * Time.fixedDeltaTime;
             }
 
             actionWhenDropped?.Invoke();

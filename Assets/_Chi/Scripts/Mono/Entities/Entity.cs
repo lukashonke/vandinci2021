@@ -440,7 +440,11 @@ namespace _Chi.Scripts.Mono.Entities
             }*/
         }
         
-        public virtual void OnSkillUse()
+        public virtual void OnSkillUse(Skill skill)
+        {
+        }
+
+        public virtual void OnAfterSkillUse(Skill skill)
         {
         }
         

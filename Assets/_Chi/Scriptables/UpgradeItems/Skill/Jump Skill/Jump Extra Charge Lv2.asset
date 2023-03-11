@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b13c71adf44f5fbd158d848135e788, type: 3}
+  m_Name: Jump Extra Charge Lv2
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: parameters
+      Entry: 6
+      Data: 
+  uiName: Redirect Power
+  uiDescription: Adds 1 extra jump use before having to reload. Slows you down by
+    10%.
+  effects:
+  - {fileID: 11400000, guid: b3103a848f490ff4a8ba4734d3940992, type: 2}
+  - {fileID: 11400000, guid: e800f62946ce0554eb20a77394c68ad4, type: 2}
+  target: {fileID: 11400000, guid: cc69fe99998b25a4d8a301159bd9f639, type: 2}
+  upgradeId: jump_extra_charge_2

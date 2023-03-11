@@ -52,6 +52,10 @@ namespace _Chi.Scripts.Statistics
         public Stat takeDamageFaterSkillUseDuration = new Stat();
 
         public Stat receiveDamageMinInterval = new Stat();
+        
+        public Stat receiveDamageMul = new Stat();
+        
+        public Stat receiveDamageAdd = new Stat();
 
         public Stat moduleFireRateMul = new Stat();
 

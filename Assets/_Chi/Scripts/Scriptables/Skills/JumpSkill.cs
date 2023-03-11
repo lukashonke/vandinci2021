@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
+using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Utilities;
 using UnityEngine;
 
@@ -12,6 +14,8 @@ namespace _Chi.Scripts.Scriptables.Skills
         public float jumpForce = 10;
 
         public float jumpLength;
+
+        public ImmediateEffect shockwaveEffect;
         
         public override bool Trigger(Entity entity, bool force = false)
         {
@@ -68,12 +72,67 @@ namespace _Chi.Scripts.Scriptables.Skills
             return force;
         }
 
+        public bool GetJumpCanPush(Player player)
+        {
+            foreach (var upgradeItem in player.skillUpgradeItems)
+            {
+                if (upgradeItem.target == this)
+                {
+                    if (upgradeItem.parameters != null && upgradeItem.parameters.TryGetValue("jumpNoPush", out var jumpNoPush))
+                    {
+                        if (jumpNoPush > 0.1f)
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        public float GetJumpShockwaveStrength(Player player)
+        {
+            float force = 0;
+
+            foreach (var upgradeItem in player.skillUpgradeItems)
+            {
+                if (upgradeItem.target == this)
+                {
+                    if (upgradeItem.parameters != null && upgradeItem.parameters.TryGetValue("shockwave-strength", out var strength))
+                    {
+                        force += strength;
+                    }
+                }
+            }
+
+            return force;
+        }
+        
+        public float GetJumpShockwaveRadius(Player player)
+        {
+            float shockwaveRadius = 0;
+
+            foreach (var upgradeItem in player.skillUpgradeItems)
+            {
+                if (upgradeItem.target == this)
+                {
+                    if (upgradeItem.parameters != null && upgradeItem.parameters.TryGetValue("shockwave-radius", out var radius))
+                    {
+                        shockwaveRadius += radius;
+                    }
+                }
+            }
+
+            return shockwaveRadius;
+        }
+
         private IEnumerator Jump(Player player)
         {
             SetActivated(player, true);
 
             SpawnPrefabVfx(player.GetPosition(), player.transform.rotation, null);
-            player.OnSkillUse();
+            player.OnSkillUse(this);
 
             var weight = player.rb.mass;
             weight = Math.Max(1, player.stats.weightMul.GetValue() * weight); // TODO make it better somehow
@@ -85,6 +144,7 @@ namespace _Chi.Scripts.Scriptables.Skills
             
             player.SetCanMove(false);
             player.SetCanReceiveDamage(false);
+            player.SetCanDealPushDamage(GetJumpCanPush(player));
             var waiter = new WaitForFixedUpdate();
 
             while (jumpUntil >= Time.time)
@@ -98,11 +158,33 @@ namespace _Chi.Scripts.Scriptables.Skills
             
             player.SetCanMove(true);
             player.SetCanReceiveDamage(true);
+            player.SetCanDealPushDamage(true);
             
             player.rb.velocity = Vector2.zero;
             
+            var shockwaveStrength = GetJumpShockwaveStrength(player);
+            if (shockwaveStrength > 0.1f)
+            {
+                var shockwaveRadius = GetJumpShockwaveRadius(player);
+                
+                var count = EntityExtensions.GetNearest(player, player.GetPosition(), shockwaveRadius, TargetType.EnemyOnly, buffer);
+                for (int i = 0; i < count; i++)
+                {
+                    var col = buffer[i];
+                    var entity = col.gameObject.GetEntity();
+                    if (entity is Npc npc && npc.CanBePushed() && player.AreEnemies(npc))
+                    {
+                        shockwaveEffect.Apply(npc, player, null, null, shockwaveStrength);
+                    }
+                }
+            }
+            
+            player.OnAfterSkillUse(this);
+            
             SetActivated(player, false);
         }
+        
+        private Collider2D[] buffer = new Collider2D[4096];
 
         public override SkillData CreateDefaultSkillData()
         {

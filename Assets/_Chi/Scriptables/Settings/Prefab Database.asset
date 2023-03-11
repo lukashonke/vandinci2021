@@ -295,7 +295,7 @@ MonoBehaviour:
     additionalTexts: []
   - id: 2505
     label: Increase Projectile Area
-    enabled: 0
+    enabled: 1
     description: Increases the size of projectile. Effecient for area of effect projectiles.
     type: 3
     predefinedId: 0
@@ -605,9 +605,9 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
   - id: 4000
-    label: Test Player Upgrade
+    label: Max HP Upgrade
     enabled: 1
-    description: ppp
+    description: Increases maximum HP.
     type: 8
     predefinedId: 0
     prefab: {fileID: 0}
@@ -616,6 +616,76 @@ MonoBehaviour:
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
     playerUpgradeItem: {fileID: 11400000, guid: 168331709e0bebb4daefe12771c0dc4a, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 4001
+    label: Defence Upgrade
+    enabled: 1
+    description: Reduces incoming damage.
+    type: 8
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 5bfc9c8de501d704dbc05f8a88c274e5, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 4002
+    label: Move Speed Upgrade
+    enabled: 1
+    description: Increases movement speed.
+    type: 8
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 6e2047aad0e6ab24fbf5cb470c370cb3, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 4003
+    label: HP Regeneration Upgrade
+    enabled: 1
+    description: Increases HP regeneration rate.
+    type: 8
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 4bb551b06fbe04044a777b96986d2c97, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 4004
+    label: Pickup Range Upgrade
+    enabled: 1
+    description: Increases pickup range.
+    type: 8
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 72c40f0fd5f33fd46a3ef3bf8ca81939, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 4005
+    label: Skill Reuse Delay Upgrade
+    enabled: 1
+    description: Decreases reuse delay of skills.
+    type: 8
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 5ee176dc6096a614caee84136f46a29b, type: 2}
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
   - id: 4200
@@ -633,7 +703,7 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
   - id: 4201
-    label: 'Crossbow: Continuous Arrows'
+    label: 'Crossbow: Dispense Arrows'
     enabled: 1
     description: When you move, the weapon shoots arrows. The faster you move, faster
       it shoots, speed increases exponentially. Fire Rate buffs also apply to firing
@@ -674,6 +744,38 @@ MonoBehaviour:
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 6da5de15c00c57441b7f9239ecc19741, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 4204
+    label: 'Crossbow: Skill Trigger'
+    enabled: 1
+    description: After skill use, shoots out current projectile count x 4, in 360
+      degree.
+    type: 9
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 43f0face60b13c5429bb97f81ec3620f, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 4205
+    label: 'Crossbow: Spread Fire'
+    enabled: 1
+    description: After every 3rd shot, shoots out current projectile count x2, in
+      360 degree.
+    type: 9
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 9dddab6eb4d61da488ada5dcf038cc16, type: 2}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts:
@@ -750,6 +852,50 @@ MonoBehaviour:
     moduleUpgradeItem: {fileID: 0}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 11400000, guid: 2f4f757e2466ffd4fa9de079c3626813, type: 2}
+    additionalTexts: []
+  - id: 4405
+    label: 'Jump: Redirect Power'
+    enabled: 1
+    description: Adds 1 extra jump use before having to reload. Slows you down by
+      10%.
+    type: 10
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 38f4c16a2cb74f942ac94be34511a03f, type: 2}
+    additionalTexts: []
+  - id: 4406
+    label: 'Jump: Ethereal Jump'
+    enabled: 1
+    description: You won't deal contact damage via jumping into enemies, but jump
+      cooldown will be -50%.
+    type: 10
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 71e6ccdce06074c408dcf912e0738ef6, type: 2}
+    additionalTexts: []
+  - id: 4407
+    label: 'Jump: Shockwave'
+    enabled: 1
+    description: In the landing zone after jump, push away nearby enemies.
+    type: 10
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: cc101f231a848a04082f7e6370dbb094, type: 2}
     additionalTexts: []
   - id: 10000
     label: Jump
@@ -914,22 +1060,22 @@ MonoBehaviour:
     note: 
     prefabs:
     - prefabId: 2500
-      weight: 1
+      weight: 15
       price: 1
-      priceMultiplyForEveryOwned: 0.4
+      priceMultiplyForEveryOwned: 0.25
     - prefabId: 2503
-      weight: 1
+      weight: 10
       price: 1
-      priceMultiplyForEveryOwned: 0.4
+      priceMultiplyForEveryOwned: 0.25
     - prefabId: 2506
-      weight: 1
+      weight: 10
       price: 1
-      priceMultiplyForEveryOwned: 0.4
-    - prefabId: 2507
-      weight: 1
+      priceMultiplyForEveryOwned: 0.25
+    - prefabId: 2505
+      weight: 10
       price: 1
-      priceMultiplyForEveryOwned: 0.4
-    minCountShownItems: 100
+      priceMultiplyForEveryOwned: 0.25
+    minCountShownItems: 2
     closeOnFirstPurchase: 0
   - name: shop_defensive_basic
     note: 
@@ -937,16 +1083,16 @@ MonoBehaviour:
     - prefabId: 2600
       weight: 1
       price: 1
-      priceMultiplyForEveryOwned: 1
+      priceMultiplyForEveryOwned: 0.75
     - prefabId: 2602
       weight: 1
       price: 1
-      priceMultiplyForEveryOwned: 1
+      priceMultiplyForEveryOwned: 0.75
     - prefabId: 2604
       weight: 1
       price: 1
-      priceMultiplyForEveryOwned: 1
-    minCountShownItems: 100
+      priceMultiplyForEveryOwned: 0.75
+    minCountShownItems: 1
     closeOnFirstPurchase: 0
   - name: shop_chaos_upgrades
     note: 
@@ -964,6 +1110,10 @@ MonoBehaviour:
       price: 2.5
       priceMultiplyForEveryOwned: 0
     - prefabId: 4203
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4204
       weight: 1
       price: 2.5
       priceMultiplyForEveryOwned: 0
@@ -998,20 +1148,73 @@ MonoBehaviour:
       price: 0
       priceMultiplyForEveryOwned: 0
     minCountShownItems: 100
-    closeOnFirstPurchase: 1
-  - name: free_skill_upgrades
+    closeOnFirstPurchase: 0
+  - name: shop_skill_upgrades
     note: 
     prefabs:
     - prefabId: 4400
-      weight: 1
-      price: 0
+      weight: 2
+      price: 2
       priceMultiplyForEveryOwned: 0
     - prefabId: 4401
-      weight: 1
-      price: 0
+      weight: 2
+      price: 2
       priceMultiplyForEveryOwned: 0
-    minCountShownItems: 3
-    closeOnFirstPurchase: 1
+    - prefabId: 4402
+      weight: 1
+      price: 2
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4403
+      weight: 2
+      price: 2
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4404
+      weight: 2
+      price: 2
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4405
+      weight: 2
+      price: 2
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4406
+      weight: 2
+      price: 2
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4407
+      weight: 2
+      price: 2
+      priceMultiplyForEveryOwned: 0
+    minCountShownItems: 1
+    closeOnFirstPurchase: 0
+  - name: shop_player_upgrades
+    note: 
+    prefabs:
+    - prefabId: 4000
+      weight: 1
+      price: 1
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4001
+      weight: 1
+      price: 1
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4002
+      weight: 1
+      price: 1
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4003
+      weight: 1
+      price: 1
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4004
+      weight: 1
+      price: 1
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4005
+      weight: 1
+      price: 1
+      priceMultiplyForEveryOwned: 0
+    minCountShownItems: 1
+    closeOnFirstPurchase: 0
   - name: free_passive_basic
     note: 
     prefabs:
@@ -1228,7 +1431,37 @@ MonoBehaviour:
       maxHpMul: 1
       hp: 60
     npcStats:
-      speed: 1.2
+      speed: 0.9
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+    reward:
+      items:
+      - dropType: 0
+        dropChance: 100
+        amountMin: 1
+        amountMax: 1
+  - variant: ZombieEliteFast
+    sprite: {fileID: 21300000, guid: ada51a819fa2e4745b6756e5c835e252, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 45
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 45
+    npcStats:
+      speed: 1.6
       rotationSpeed: 10
       contactDamage: 20
       contactDamageInterval: 0.5
@@ -1248,36 +1481,6 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 2
         amountMax: 2
-  - variant: ZombieEliteFast
-    sprite: {fileID: 21300000, guid: ada51a819fa2e4745b6756e5c835e252, type: 3}
-    spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
-    animatorController: {fileID: 0}
-    entityStats:
-      maxHp: 45
-      maxHpAdd: 0
-      maxHpMul: 1
-      hp: 45
-    npcStats:
-      speed: 2.2
-      rotationSpeed: 10
-      contactDamage: 20
-      contactDamageInterval: 0.5
-    skills: []
-    skillsOnDie: []
-    effectsOnDie: []
-    parameters:
-      spawnAroundEntityGroupName: 
-      rvoPriority: 0.5
-      disableRvoCollision: 0
-      setRvoLayers: 0
-      rvoLayer: 0
-      rvoCollidesWith: 0
-    reward:
-      items:
-      - dropType: 3
-        dropChance: 80
-        amountMin: 1
-        amountMax: 1
   - variant: ZombieEliteFat
     sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
@@ -1288,7 +1491,7 @@ MonoBehaviour:
       maxHpMul: 1
       hp: 90
     npcStats:
-      speed: 1.2
+      speed: 0.7
       rotationSpeed: 10
       contactDamage: 20
       contactDamageInterval: 0.5
@@ -1304,10 +1507,10 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 3
-        dropChance: 80
-        amountMin: 1
-        amountMax: 1
+      - dropType: 0
+        dropChance: 100
+        amountMin: 2
+        amountMax: 2
   - variant: ZombieBloody
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 4461f9e1a8c439b40bd7fafb428820cf, type: 2}
@@ -1334,8 +1537,8 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 1
-        dropChance: 50
+      - dropType: 0
+        dropChance: 100
         amountMin: 1
         amountMax: 1
   - variant: ZombieBloodyFast
@@ -1364,10 +1567,10 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 1
-        dropChance: 75
-        amountMin: 1
-        amountMax: 1
+      - dropType: 0
+        dropChance: 100
+        amountMin: 2
+        amountMax: 2
   - variant: ZombieBloodyFat
     sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 4461f9e1a8c439b40bd7fafb428820cf, type: 2}
@@ -1394,8 +1597,8 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 1
-        dropChance: 75
+      - dropType: 0
+        dropChance: 100
         amountMin: 1
         amountMax: 1
   - variant: ZombieDemonic
@@ -1517,7 +1720,7 @@ MonoBehaviour:
       maxHpMul: 1
       hp: 300
     npcStats:
-      speed: 1.2
+      speed: 0.9
       rotationSpeed: 10
       contactDamage: 20
       contactDamageInterval: 0.5
@@ -1536,8 +1739,8 @@ MonoBehaviour:
       items:
       - dropType: 1
         dropChance: 100
-        amountMin: 2
-        amountMax: 2
+        amountMin: 1
+        amountMax: 1
   - variant: ZombieBloodyBloaterExploding
     sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 4461f9e1a8c439b40bd7fafb428820cf, type: 2}
@@ -1605,10 +1808,10 @@ MonoBehaviour:
     spriteMaterial: {fileID: 2100000, guid: ee3e4ece0fd6dd64caa864088dd87de9, type: 2}
     animatorController: {fileID: 0}
     entityStats:
-      maxHp: 2000
+      maxHp: 3000
       maxHpAdd: 0
       maxHpMul: 1
-      hp: 2000
+      hp: 3000
     npcStats:
       speed: 1.1
       rotationSpeed: 10

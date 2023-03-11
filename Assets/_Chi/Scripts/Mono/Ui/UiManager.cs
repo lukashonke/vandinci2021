@@ -168,7 +168,7 @@ public class UiManager : MonoBehaviour
         vehicleSettingsWindow.Toggle(true);
     }
 
-    public void OpenRewardSetWindow(string rewardSet, string title, TriggeredShop triggeredShop)
+    public void OpenRewardSetWindow(List<TriggeredShopSet> rewardSet, string title, TriggeredShop triggeredShop)
     {
         vehicleSettingsWindow.OpenWindow(rewardSet, title, triggeredShop);
     }

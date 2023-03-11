@@ -30,7 +30,7 @@ namespace _Chi.Scripts.Scriptables.Skills
 
             entity.StartCoroutine(DoSpawn(entity));
                 
-            entity.OnSkillUse();
+            entity.OnSkillUse(this);
             
             SpawnPrefabVfx(entity.GetPosition(), entity.transform.rotation, entity.transform);
 
@@ -38,6 +38,9 @@ namespace _Chi.Scripts.Scriptables.Skills
             {
                 SetNextSkillUse(entity, GetReuseDelay(entity));
             }
+            
+            entity.OnAfterSkillUse(this);
+            
             return true;
         }
 

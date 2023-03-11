@@ -26,3 +26,4 @@ MonoBehaviour:
   vfxDespawnAfter: 0
   jumpForce: 12
   jumpLength: 0.25
+  shockwaveEffect: {fileID: 11400000, guid: 84ff82f70818b604ebd24e507395a7d8, type: 2}

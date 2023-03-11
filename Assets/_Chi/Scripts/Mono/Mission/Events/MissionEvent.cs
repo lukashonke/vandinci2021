@@ -293,7 +293,7 @@ namespace _Chi.Scripts.Mono.Mission.Events
     {
         [VerticalGroup("Settings")]
         [Required]
-        public string rewardSet;
+        public List<TriggeredShopSet> rewardSet;
 
         [VerticalGroup("Settings")]
         [Required]

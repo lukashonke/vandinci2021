@@ -11,6 +11,6 @@ namespace _Chi.Scripts.Scriptables
     [CreateAssetMenu(fileName = "Player Upgrade Item", menuName = "Gama/Upgrade Items/Player")]
     public class PlayerUpgradeItem : UpgradeItem
     {
-        
+        public bool canBeStacked;
     }
 }

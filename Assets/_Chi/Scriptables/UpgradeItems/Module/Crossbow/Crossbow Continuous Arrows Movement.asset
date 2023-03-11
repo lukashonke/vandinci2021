@@ -21,7 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Continuous Arrows
+  uiName: Dispense Arrows
   uiDescription: When you move, the weapon shoots arrows. The faster you move, faster
     it shoots, speed increases exponentially.
   effects: []
