@@ -1099,23 +1099,23 @@ MonoBehaviour:
     prefabs:
     - prefabId: 4200
       weight: 1
-      price: 2.5
+      price: 2.75
       priceMultiplyForEveryOwned: 0
     - prefabId: 4201
       weight: 1
-      price: 2.5
+      price: 2.75
       priceMultiplyForEveryOwned: 0
     - prefabId: 4202
       weight: 1
-      price: 2.5
+      price: 2.75
       priceMultiplyForEveryOwned: 0
     - prefabId: 4203
       weight: 1
-      price: 2.5
+      price: 2.75
       priceMultiplyForEveryOwned: 0
     - prefabId: 4204
       weight: 1
-      price: 2.5
+      price: 2.75
       priceMultiplyForEveryOwned: 0
     minCountShownItems: 1
     closeOnFirstPurchase: 0
@@ -1127,23 +1127,6 @@ MonoBehaviour:
       price: 0
       priceMultiplyForEveryOwned: 0
     - prefabId: 10000
-      weight: 1
-      price: 0
-      priceMultiplyForEveryOwned: 0
-    minCountShownItems: 100
-    closeOnFirstPurchase: 0
-  - name: free_skill_upgrades_2
-    note: 
-    prefabs:
-    - prefabId: 4402
-      weight: 1
-      price: 0
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4403
-      weight: 1
-      price: 0
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4404
       weight: 1
       price: 0
       priceMultiplyForEveryOwned: 0
@@ -1186,6 +1169,15 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
     minCountShownItems: 1
     closeOnFirstPurchase: 0
+  - name: shop_weapons
+    note: 
+    prefabs:
+    - prefabId: 2000
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+    minCountShownItems: 1
+    closeOnFirstPurchase: 0
   - name: shop_player_upgrades
     note: 
     prefabs:
@@ -1214,31 +1206,6 @@ MonoBehaviour:
       price: 1
       priceMultiplyForEveryOwned: 0
     minCountShownItems: 1
-    closeOnFirstPurchase: 0
-  - name: free_passive_basic
-    note: 
-    prefabs:
-    - prefabId: 2500
-      weight: 1
-      price: 0
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 2503
-      weight: 1
-      price: 0
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 2506
-      weight: 1
-      price: 0
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 2507
-      weight: 1
-      price: 0
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 2501
-      weight: 1
-      price: 0
-      priceMultiplyForEveryOwned: 0
-    minCountShownItems: 100
     closeOnFirstPurchase: 0
   variants:
   - variant: Zombie

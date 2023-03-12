@@ -757,6 +757,8 @@ MonoBehaviour:
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
       priceMultiplier: 35
     - goldAcumulatedRequired: 200
       shopSet:
@@ -768,7 +770,7 @@ MonoBehaviour:
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades
+      - name: shop_weapons
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 35
     - goldAcumulatedRequired: 335
@@ -783,6 +785,8 @@ MonoBehaviour:
         showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
       priceMultiplier: 45
     - goldAcumulatedRequired: 670
       shopSet:
@@ -796,7 +800,9 @@ MonoBehaviour:
         showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
-      priceMultiplier: 90
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+      priceMultiplier: 95
     - goldAcumulatedRequired: 1300
       shopSet:
       - name: shop_passives_basic
@@ -809,7 +815,9 @@ MonoBehaviour:
         showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
-      priceMultiplier: 135
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+      priceMultiplier: 145
     - goldAcumulatedRequired: 2500
       shopSet:
       - name: shop_passives_basic
@@ -822,8 +830,10 @@ MonoBehaviour:
         showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
-      priceMultiplier: 200
-    - goldAcumulatedRequired: 5000
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+      priceMultiplier: 230
+    - goldAcumulatedRequired: 4900
       shopSet:
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
@@ -835,7 +845,9 @@ MonoBehaviour:
         showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
-      priceMultiplier: 300
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+      priceMultiplier: 430
     - goldAcumulatedRequired: 10000
       shopSet:
       - name: shop_passives_basic
@@ -847,6 +859,8 @@ MonoBehaviour:
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
+        showOnlyPreviouslyLocked: 0
+      - name: shop_weapons
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 450
     - goldAcumulatedRequired: 15000
@@ -861,6 +875,8 @@ MonoBehaviour:
         showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
       priceMultiplier: 500
     - goldAcumulatedRequired: 20000
       shopSet:
@@ -874,6 +890,8 @@ MonoBehaviour:
         showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
       priceMultiplier: 500
     - goldAcumulatedRequired: 30000
       shopSet:
@@ -886,5 +904,7 @@ MonoBehaviour:
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
+        showOnlyPreviouslyLocked: 0
+      - name: shop_weapons
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 600
