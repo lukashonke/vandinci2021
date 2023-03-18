@@ -36,14 +36,7 @@ namespace _Chi.Scripts.Mono.Mission
             }
 
             StartCoroutine(UpdateLoop());
-        }
-
-        private IEnumerator UpdateLoop()
-        {
-            float timePassed = 0;
-            const float loopInterval = 0.5f;
-            var waiter = new WaitForSeconds(loopInterval);
-
+            
             if (progressSettings.shops.Count > 0)
             {
                 var initialShop = progressSettings.shops[0];
@@ -52,44 +45,56 @@ namespace _Chi.Scripts.Mono.Mission
                 Gamesystem.instance.uiManager.goldProgressBar.ResetValue();
                 progressSettings.lastGoldTriggeredShopLevelIndex = -1;
             }
+            
+            Gamesystem.instance.missionManager.currentMission = this;
+        }
+        
+        public void OnAddedGold()
+        {
+            var gold = Gamesystem.instance.progress.GetAcumulatedGold();
+
+            var shopIndex = progressSettings.lastGoldTriggeredShopLevelIndex;
+                
+            if(shopIndex + 1 < progressSettings.shops.Count)
+            {
+                var nextShop = progressSettings.shops[shopIndex + 1];
+
+                if (gold >= nextShop.goldAcumulatedRequired)
+                {
+                    shopIndex++;
+                        
+                    //TODO trigger shop
+                    Gamesystem.instance.uiManager.OpenRewardSetWindow(nextShop.shopSet, "Shop", nextShop);
+                        
+                    nextShop = progressSettings.shops[shopIndex + 1];
+
+                    if (shopIndex >= 0)
+                    {
+                        var prevShop = progressSettings.shops[shopIndex];
+                        Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(nextShop.goldAcumulatedRequired - prevShop.goldAcumulatedRequired);
+                    }
+                    else
+                    {
+                        Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(nextShop.goldAcumulatedRequired);
+                    }
+                        
+                    Gamesystem.instance.uiManager.goldProgressBar.ResetValue();
+                    
+                    progressSettings.lastGoldTriggeredShopLevelIndex = shopIndex;
+                }
+            }
+        }
+
+        private IEnumerator UpdateLoop()
+        {
+            float timePassed = 0;
+            const float loopInterval = 0.5f;
+            var waiter = new WaitForSeconds(loopInterval);
 
             int currentEventIndex = startIndex;
             
             while (alive)
             {
-                var gold = Gamesystem.instance.progress.GetAcumulatedGold();
-
-                var shopIndex = progressSettings.lastGoldTriggeredShopLevelIndex;
-                
-                if(shopIndex + 1 < progressSettings.shops.Count)
-                {
-                    var nextShop = progressSettings.shops[shopIndex + 1];
-
-                    if (gold >= nextShop.goldAcumulatedRequired)
-                    {
-                        shopIndex++;
-                        
-                        //TODO trigger shop
-                        Gamesystem.instance.uiManager.OpenRewardSetWindow(nextShop.shopSet, "Shop", nextShop);
-                        
-                        nextShop = progressSettings.shops[shopIndex + 1];
-
-                        if (shopIndex >= 0)
-                        {
-                            var prevShop = progressSettings.shops[shopIndex];
-                            Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(nextShop.goldAcumulatedRequired - prevShop.goldAcumulatedRequired);
-                        }
-                        else
-                        {
-                            Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(nextShop.goldAcumulatedRequired);
-                        }
-                        
-                        Gamesystem.instance.uiManager.goldProgressBar.ResetValue();
-                    
-                        progressSettings.lastGoldTriggeredShopLevelIndex = shopIndex;
-                    }
-                }
-                
                 if (currentEvent != null && currentEvent.CanEnd(timePassed))
                 {
                     currentEvent.End(timePassed);

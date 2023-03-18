@@ -29,6 +29,10 @@ namespace _Chi.Scripts.Mono.Entities
         
         public float despawnDelay;
 
+        public float firstEffectAfterSpawnDelay;
+
+        private float applySinceTime;
+
         private Collider2D collider;
         private Dictionary<Entity, float> entitiesInside;
         private HashSet<Entity> statsEffectsApplied;
@@ -51,6 +55,8 @@ namespace _Chi.Scripts.Mono.Entities
             
             StartCoroutine(Despawn());
             StartCoroutine(Updater());
+            
+            applySinceTime = Time.time + firstEffectAfterSpawnDelay;
         }
 
         public void OnDestroy()
@@ -74,6 +80,11 @@ namespace _Chi.Scripts.Mono.Entities
 
         private void UpdaterApply(Player player)
         {
+            if (Time.time < applySinceTime)
+            {
+                return;
+            }
+            
             var position = transform.position;
             foreach (var kp in entitiesInside)
             {
@@ -148,7 +159,7 @@ namespace _Chi.Scripts.Mono.Entities
         private IEnumerator Updater()
         {
             yield return new WaitForSeconds(Random.Range(0, 0.2f));
-            
+
             var waiter = new WaitForSeconds(0.10f);
             while (this != null)
             {

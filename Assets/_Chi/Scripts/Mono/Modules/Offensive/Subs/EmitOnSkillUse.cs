@@ -48,7 +48,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
                 }
             };
             
-            PlayEmitter();
+            PlayEmitter(applyParentModuleParameters: false);
         }
 
         public override IEnumerator UpdateCoroutine()

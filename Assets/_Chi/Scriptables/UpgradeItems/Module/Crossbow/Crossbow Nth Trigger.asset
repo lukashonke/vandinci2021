@@ -21,7 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Spread Fire
+  uiName: Scattershot
   uiDescription: After every 3rd shot, shoots out current projectile count x2, in
     360 degree.
   effects: []

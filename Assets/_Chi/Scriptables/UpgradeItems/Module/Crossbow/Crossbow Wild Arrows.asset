@@ -21,7 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Fire from Above
+  uiName: Skyfall Strike
   uiDescription: For every arrow you fire, you will also land an arrow to a nearby
     enemy.
   effects: []

@@ -3,10 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Movement;
-using _Chi.Scripts.Scriptables;
-using Pathfinding.RVO;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class GameobjectHolder : MonoBehaviour
 {
@@ -23,7 +20,7 @@ public class GameobjectHolder : MonoBehaviour
         npcEntitiesList = new();
         npcWithSkill = new();
 
-        pathJob = new PathJob(this, RVOSimulator.active);
+        pathJob = new PathJob(this);
     }
 
     // Start is called before the first frame update

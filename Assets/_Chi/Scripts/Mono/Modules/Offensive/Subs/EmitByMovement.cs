@@ -43,7 +43,13 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
                     {
                         RotateRandomly();
                     }
-                    PlayEmitter();
+                    
+                    emitter.applyBulletParamsAction = () =>
+                    {
+                        ApplyParentParameters();
+                    };
+                    
+                    PlayEmitter(applyParentModuleParameters: false);
                     lastShoot = Time.time;
                 }
                 

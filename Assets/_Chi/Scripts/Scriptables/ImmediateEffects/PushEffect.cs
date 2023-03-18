@@ -33,7 +33,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
             target.ReceivePush((target.GetPosition() - source).normalized * sourcePush, pushDuration);
             if (setCannotBePushedFor > 0)
             {
-                target.SetCannotBePushed(pushDuration);
+                target.SetCannotBePushed(setCannotBePushedFor);
             }
             
             return true;

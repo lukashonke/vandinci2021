@@ -689,7 +689,7 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
   - id: 4200
-    label: 'Crossbow: Add Magazine'
+    label: 'Crossbow: Dual-Load Destruction'
     enabled: 1
     description: The weapon shoots twice before having to reload.
     type: 9
@@ -703,7 +703,7 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
   - id: 4201
-    label: 'Crossbow: Dispense Arrows'
+    label: 'Crossbow: Momentum Maelstrom'
     enabled: 1
     description: When you move, the weapon shoots arrows. The faster you move, faster
       it shoots, speed increases exponentially. Fire Rate buffs also apply to firing
@@ -719,7 +719,7 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
   - id: 4202
-    label: 'Crossbow: Fire from Above'
+    label: 'Crossbow: Skyfall Strike'
     enabled: 1
     description: For every arrow you fire, you will also land an arrow to a nearby
       enemy.
@@ -734,7 +734,7 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
   - id: 4203
-    label: 'Crossbow: Flame Arrows'
+    label: 'Crossbow: Inferno Incursion'
     enabled: 1
     description: Your arrows will put enemies on Fire.
     type: 9
@@ -749,7 +749,7 @@ MonoBehaviour:
     additionalTexts:
     - fire_effect_description
   - id: 4204
-    label: 'Crossbow: Skill Trigger'
+    label: 'Crossbow: Skill Barrage'
     enabled: 1
     description: After skill use, shoots out current projectile count x 4, in 360
       degree.
@@ -765,7 +765,7 @@ MonoBehaviour:
     additionalTexts:
     - fire_effect_description
   - id: 4205
-    label: 'Crossbow: Spread Fire'
+    label: 'Crossbow: Scattershot'
     enabled: 1
     description: After every 3rd shot, shoots out current projectile count x2, in
       360 degree.
@@ -780,8 +780,24 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 0}
     additionalTexts:
     - fire_effect_description
+  - id: 4206
+    label: 'Crossbow: Kinetic Kickback'
+    enabled: 1
+    description: Increases the speed of projectiles and gives your projectiles a
+      pushback effect.
+    type: 9
+    predefinedId: 0
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 87db14706f5a5224fbf7b3e0713aa9c3, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
   - id: 4400
-    label: 'Jump: Enhance Power'
+    label: 'Chaotic Leap: Enhance Power'
     enabled: 1
     description: Jumps has more force, making you jump for longer distances and deadling
       more damage.
@@ -796,7 +812,7 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 11400000, guid: 8c40a862ade93944b8c5d0e5bb618e13, type: 2}
     additionalTexts: []
   - id: 4401
-    label: 'Jump: Landing Protection'
+    label: 'Chaotic Leap: Landing Protection'
     enabled: 1
     description: Right after jumping, receive no damage for 2 seconds.
     type: 10
@@ -810,7 +826,7 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 11400000, guid: 0633cec118387254e854be997b787ef6, type: 2}
     additionalTexts: []
   - id: 4402
-    label: 'Jump: Redirect Power'
+    label: 'Chaotic Leap: Redirect Power'
     enabled: 1
     description: Adds 1 extra jump use before having to reload. Slows you down by
       10%.
@@ -825,7 +841,7 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 11400000, guid: 4c7e7fe52e6d3b2459c133b701c280e0, type: 2}
     additionalTexts: []
   - id: 4403
-    label: 'Jump: Deny Gravity'
+    label: 'Chaotic Leap: Deny Gravity'
     enabled: 1
     description: Jump now ignores weight of player. Large body jumps as fast as small
       body.
@@ -840,7 +856,7 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 11400000, guid: 012a6d1be4511c84abed78b88e356167, type: 2}
     additionalTexts: []
   - id: 4404
-    label: 'Jump: Landing Protection'
+    label: 'Chaotic Leap: Landing Protection'
     enabled: 1
     description: Right after jumping, receive no damage for 2 seconds.
     type: 10
@@ -854,7 +870,7 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 11400000, guid: 2f4f757e2466ffd4fa9de079c3626813, type: 2}
     additionalTexts: []
   - id: 4405
-    label: 'Jump: Redirect Power'
+    label: 'Chaotic Leap: Redirect Power'
     enabled: 1
     description: Adds 1 extra jump use before having to reload. Slows you down by
       10%.
@@ -869,7 +885,7 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 11400000, guid: 38f4c16a2cb74f942ac94be34511a03f, type: 2}
     additionalTexts: []
   - id: 4406
-    label: 'Jump: Ethereal Jump'
+    label: 'Chaotic Leap: Ethereal Jump'
     enabled: 1
     description: You won't deal contact damage via jumping into enemies, but jump
       cooldown will be -50%.
@@ -884,7 +900,7 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 11400000, guid: 71e6ccdce06074c408dcf912e0738ef6, type: 2}
     additionalTexts: []
   - id: 4407
-    label: 'Jump: Shockwave'
+    label: 'Chaotic Leap: Shockwave'
     enabled: 1
     description: In the landing zone after jump, push away nearby enemies.
     type: 10
@@ -898,7 +914,7 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 11400000, guid: cc101f231a848a04082f7e6370dbb094, type: 2}
     additionalTexts: []
   - id: 10000
-    label: Jump
+    label: Chaotic Leap
     enabled: 1
     description: Quickly jumps in the desired direction. Temporarily increases velocity
       so it can push damage enemies.
@@ -1062,19 +1078,19 @@ MonoBehaviour:
     - prefabId: 2500
       weight: 15
       price: 1
-      priceMultiplyForEveryOwned: 0.25
+      priceMultiplyForEveryOwned: 0.2
     - prefabId: 2503
       weight: 10
       price: 1
-      priceMultiplyForEveryOwned: 0.25
+      priceMultiplyForEveryOwned: 0.2
     - prefabId: 2506
       weight: 10
       price: 1
-      priceMultiplyForEveryOwned: 0.25
+      priceMultiplyForEveryOwned: 0.2
     - prefabId: 2505
       weight: 10
       price: 1
-      priceMultiplyForEveryOwned: 0.25
+      priceMultiplyForEveryOwned: 0.2
     minCountShownItems: 2
     closeOnFirstPurchase: 0
   - name: shop_defensive_basic
@@ -1099,23 +1115,23 @@ MonoBehaviour:
     prefabs:
     - prefabId: 4200
       weight: 1
-      price: 2.75
+      price: 2.5
       priceMultiplyForEveryOwned: 0
     - prefabId: 4201
       weight: 1
-      price: 2.75
+      price: 2.5
       priceMultiplyForEveryOwned: 0
     - prefabId: 4202
       weight: 1
-      price: 2.75
+      price: 2.5
       priceMultiplyForEveryOwned: 0
     - prefabId: 4203
       weight: 1
-      price: 2.75
+      price: 2.5
       priceMultiplyForEveryOwned: 0
     - prefabId: 4204
       weight: 1
-      price: 2.75
+      price: 2.5
       priceMultiplyForEveryOwned: 0
     minCountShownItems: 1
     closeOnFirstPurchase: 0
@@ -1137,35 +1153,31 @@ MonoBehaviour:
     prefabs:
     - prefabId: 4400
       weight: 2
-      price: 1.75
+      price: 1.25
       priceMultiplyForEveryOwned: 0
     - prefabId: 4401
       weight: 2
-      price: 1.75
+      price: 1.25
       priceMultiplyForEveryOwned: 0
     - prefabId: 4402
       weight: 1
-      price: 1.75
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4403
-      weight: 2
-      price: 1.75
+      price: 1.25
       priceMultiplyForEveryOwned: 0
     - prefabId: 4404
       weight: 2
-      price: 1.75
+      price: 1.25
       priceMultiplyForEveryOwned: 0
     - prefabId: 4405
       weight: 2
-      price: 1.75
+      price: 1.25
       priceMultiplyForEveryOwned: 0
     - prefabId: 4406
       weight: 2
-      price: 1.75
+      price: 1.25
       priceMultiplyForEveryOwned: 0
     - prefabId: 4407
       weight: 2
-      price: 1.75
+      price: 1.25
       priceMultiplyForEveryOwned: 0
     minCountShownItems: 1
     closeOnFirstPurchase: 0
@@ -1174,7 +1186,7 @@ MonoBehaviour:
     prefabs:
     - prefabId: 2000
       weight: 1
-      price: 2.5
+      price: 2.25
       priceMultiplyForEveryOwned: 0
     minCountShownItems: 1
     closeOnFirstPurchase: 0
@@ -1183,27 +1195,27 @@ MonoBehaviour:
     prefabs:
     - prefabId: 4000
       weight: 1
-      price: 1
+      price: 0.75
       priceMultiplyForEveryOwned: 0
     - prefabId: 4001
       weight: 1
-      price: 1
+      price: 0.75
       priceMultiplyForEveryOwned: 0
     - prefabId: 4002
       weight: 1
-      price: 1
+      price: 0.75
       priceMultiplyForEveryOwned: 0
     - prefabId: 4003
       weight: 1
-      price: 1
+      price: 0.75
       priceMultiplyForEveryOwned: 0
     - prefabId: 4004
       weight: 1
-      price: 1
+      price: 0.75
       priceMultiplyForEveryOwned: 0
     - prefabId: 4005
       weight: 1
-      price: 1
+      price: 0.75
       priceMultiplyForEveryOwned: 0
     minCountShownItems: 1
     closeOnFirstPurchase: 0

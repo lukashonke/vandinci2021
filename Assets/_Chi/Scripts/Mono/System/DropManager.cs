@@ -39,7 +39,7 @@ namespace _Chi.Scripts.Mono.System
         [NonSerialized] KnnContainer knnContainer;
         [NonSerialized] NativeArray<float3> points;
         
-        private JobHandle rebuildJobHandle;
+        private JobHandle rebuildHandle;
         private JobHandle queryJobHandle;
         
         private bool isQueryJobRunning = false;
@@ -82,12 +82,44 @@ namespace _Chi.Scripts.Mono.System
                 points[index] = new float3(1000000, 1000000, 1000000);
             }
             
+            var player = Gamesystem.instance.objects.currentPlayer;
+            var playerPos = player.GetPosition();
+            var playerPosFloat3 = new float3(playerPos.x, playerPos.y, 0);
+            const int neighbours = 1;
+            
+            if (isQueryJobRunning)
+            {
+                rebuildHandle.Complete();
+                queryJobHandle.Complete();
+                
+                for (int i = 0; i < neighbours; i++)
+                {
+                    var index = queryResults[i];
+                    var pos = points[index];
+                
+                    var dist = Utils.Dist2(playerPos, new Vector3(pos.x, pos.y, 0));
+                    if (dist < player.stats.pickupAttractRange.GetValue())
+                    {
+                        var go = gameObjects[index];
+                        beingPickedUp.Add(go);
+                        RemoveDrop(index);
+                    }
+                }
+
+                queryResults.Dispose();
+            }
+            
             var rebuild = new KnnRebuildJob(knnContainer);
             rebuildHandle = rebuild.Schedule();
+            
+            
+            queryResults = new NativeArray<int>(neighbours, Allocator.TempJob);
+            
+            var queryJob = new QueryKNearestJob(knnContainer, playerPosFloat3, queryResults);
+            queryJobHandle = queryJob.Schedule(rebuildHandle);
+            isQueryJobRunning = true;
         }
         
-        JobHandle rebuildHandle;
-
         public void LateUpdate()
         {
             const int neighbours = 1;
@@ -96,26 +128,27 @@ namespace _Chi.Scripts.Mono.System
             var playerPos = player.GetPosition();
             var playerPosFloat3 = new float3(playerPos.x, playerPos.y, 0);
 
-            queryResults = new NativeArray<int>(neighbours, Allocator.TempJob);
-            
-            var queryJob = new QueryKNearestJob(knnContainer, playerPosFloat3, queryResults);
-            queryJob.Schedule(rebuildHandle).Complete();
-            
-            for (int i = 0; i < neighbours; i++)
+            /*if (isQueryJobRunning)
             {
-                var index = queryResults[i];
-                var pos = points[index];
+                rebuildHandle.Complete();
+                queryJobHandle.Complete();
                 
-                var dist = Utils.Dist2(playerPos, new Vector3(pos.x, pos.y, 0));
-                if (dist < player.stats.pickupAttractRange.GetValue())
+                for (int i = 0; i < neighbours; i++)
                 {
-                    var go = gameObjects[index];
-                    beingPickedUp.Add(go);
-                    RemoveDrop(index);
+                    var index = queryResults[i];
+                    var pos = points[index];
+                
+                    var dist = Utils.Dist2(playerPos, new Vector3(pos.x, pos.y, 0));
+                    if (dist < player.stats.pickupAttractRange.GetValue())
+                    {
+                        var go = gameObjects[index];
+                        beingPickedUp.Add(go);
+                        RemoveDrop(index);
+                    }
                 }
-            }
 
-            queryResults.Dispose();
+                queryResults.Dispose();
+            }*/
         }
 
         public void FixedUpdate()

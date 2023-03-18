@@ -24,3 +24,4 @@ MonoBehaviour:
   order: 20
   basePush: 20
   pushDuration: 0.5
+  setCannotBePushedFor: 0.1

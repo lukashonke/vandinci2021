@@ -290,7 +290,7 @@ namespace _Chi.Scripts.Mono.Ui
             }
             else
             {
-                return parentBody.AddModuleToSlot(this, module, 1);
+                return parentBody.AddModuleToSlot(this, module, Math.Max(1, module.level));
             }
         }
 

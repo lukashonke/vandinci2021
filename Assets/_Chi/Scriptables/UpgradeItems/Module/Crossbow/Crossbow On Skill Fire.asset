@@ -21,7 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Skill Trigger
+  uiName: Skill Barrage
   uiDescription: After skill use, shoots out current projectile count x 4, in 360
     degree.
   effects: []

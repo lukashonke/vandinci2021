@@ -21,10 +21,11 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Add Magazine
+  uiName: Dual-Load Destruction
   uiDescription: The weapon now shoots twice before having to reload.
   effects: []
   modulePrefabId: 2000
   moduleEffects:
   - {fileID: 11400000, guid: 4a6d6ece2a49efd45aa0210a109876c5, type: 2}
+  addSubEmitters: []
   effectsLevel: 1

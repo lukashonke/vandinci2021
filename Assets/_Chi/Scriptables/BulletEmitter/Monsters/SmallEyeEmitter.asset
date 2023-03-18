@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 9141185
+  uniqueIndex: 1544881
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children: []
@@ -956,12 +956,12 @@ MonoBehaviour:
         indexOfTo: 0
         indexOfBlendedChildren: 
         weight: 0
-        headerTitle: 
+        headerTitle: Sorting Layer Name
         blendColor: {r: 0, g: 0, b: 0, a: 0}
         parameterType: 0
         relativeTo: 0
         parameterName: 
-      defaultValue: Projectiles
+      defaultValue: Status
   color:
     valueTree:
     - settings:
@@ -2704,7 +2704,7 @@ MonoBehaviour:
         parameterType: 0
         relativeTo: 0
         parameterName: 
-      defaultValue: 0.5
+      defaultValue: 0.85
     useSlider: 0
     sliderMin: 0
     sliderMax: 0
@@ -7530,7 +7530,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 897890
+  uniqueIndex: 9752167
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -9948,7 +9948,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 11961570
+  uniqueIndex: 13041003
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -17060,7 +17060,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 2431593
+  uniqueIndex: 8592916
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:

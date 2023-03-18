@@ -158,8 +158,18 @@ namespace _Chi.Scripts.Mono.Mission.Events
         [FoldoutGroup("Additional")]
         public bool waitTillAllWawesSpawn = true;
         
+        [FoldoutGroup("Additional")]
+        public bool setGlobalDropChance;
+        
+        [ShowIf("setGlobalDropChance")]
+        [FoldoutGroup("Additional")]
+        public float globalDropChance;
+        
         [VerticalGroup("Handlers")]
         public List<GameObject> handlers;
+
+        [FoldoutGroup("Additional")] 
+        public bool endAfterFixedDuration;
 
         private bool allDead;
 
@@ -176,6 +186,11 @@ namespace _Chi.Scripts.Mono.Mission.Events
 
             trackAliveEntities = new();
             allDead = false;
+            
+            if (setGlobalDropChance)
+            {
+                Gamesystem.instance.dropManager.globalDropChance = globalDropChance;
+            }
             
             foreach (var prefab in handlers)
             {
@@ -215,6 +230,27 @@ namespace _Chi.Scripts.Mono.Mission.Events
             }
 
             return false;
+        }
+
+        public override void End(float currentTime)
+        {
+            base.End(currentTime);
+
+            if (endAfterFixedDuration)
+            {
+                var toDelete = new List<Transform>();
+                foreach (Transform transform in Gamesystem.instance.missionManager.transform)
+                {
+                    if (transform.GetComponent<Mission>() != null) continue;
+                
+                    toDelete.Add(transform);
+                }
+
+                foreach (var transform in toDelete)
+                {
+                    Object.Destroy(transform.gameObject);
+                }
+            }
         }
 
         public override void Update()

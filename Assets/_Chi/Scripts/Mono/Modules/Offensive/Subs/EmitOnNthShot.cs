@@ -46,7 +46,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
                     }
                 };
             
-                PlayEmitter(triggerShootInstruction: false);
+                PlayEmitter(triggerShootInstruction: false, applyParentModuleParameters: false);
 
                 for (int i = 0; i < projectileMul; i++)
                 {

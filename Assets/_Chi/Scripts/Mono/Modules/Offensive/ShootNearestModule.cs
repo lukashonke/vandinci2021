@@ -33,8 +33,10 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
             }
         }
 
-        public override IEnumerator UpdateLoop()  
+        public override IEnumerator UpdateLoop()
         {
+            yield return new WaitForSeconds(Random.Range(0.05f, 0.5f));
+            
             var waiter = new WaitForFixedUpdate();
 
             float nextTargetUpdate = Time.time + targetUpdateInterval;

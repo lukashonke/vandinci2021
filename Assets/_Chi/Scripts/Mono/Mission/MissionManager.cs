@@ -24,6 +24,8 @@ namespace _Chi.Scripts.Mono.Mission
         
         [NonSerialized] private List<Entity> trackAliveEntities;
         [NonSerialized] private bool allTrackedEntitiesDead = false;
+
+        public Mission currentMission;
         
         public void Awake()
         {

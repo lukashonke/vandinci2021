@@ -1,13 +1,10 @@
 using System;
 using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
-using _Chi.Scripts.Movement;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
 using _Chi.Scripts.Utilities;
 using BulletPro;
-using Pathfinding;
-using Pathfinding.RVO;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -74,7 +71,7 @@ namespace _Chi.Scripts.Mono.Entities
 
             animator = GetComponent<Animator>();
             hasAnimator = animator != null;
-            if (hasAnimator)
+            if (hasAnimator && animator.runtimeAnimatorController != null && animator.gameObject.activeSelf)
             {
                 GetComponent<Animator>().SetFloat("Offset", Random.Range(0.0f, 1.0f));
             }

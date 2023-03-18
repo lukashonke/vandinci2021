@@ -207,8 +207,10 @@ namespace _Chi.Scripts.Mono.System
                 
                 Gamesystem.instance.prefabDatabase.playerGoldReceived.Spawn(Gamesystem.instance.objects.currentPlayer.GetPosition(), gold);
             }
+            
+            Gamesystem.instance.missionManager.currentMission.OnAddedGold();
         }
-        
+
         public int GetGold()
         {
             return this.progressData.run.gold;

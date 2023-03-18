@@ -88,8 +88,6 @@ namespace _Chi.Scripts.Mono.Entities
         {
             base.Awake();
             
-            seeker = GetComponent<Seeker>();
-            hasSeeker = seeker != null;
             rvoController = GetComponent<RVOController>();
             hasRvoController = rvoController != null;
             
@@ -122,7 +120,7 @@ namespace _Chi.Scripts.Mono.Entities
                 return;
             }
 
-            if (hasSeeker)
+            /*if (hasSeeker)
             {
                 if (pathData.Path == null
                     || Time.time > nextPathSeekTime
@@ -145,7 +143,7 @@ namespace _Chi.Scripts.Mono.Entities
                         pathToFind = null;
                     }
                 }
-            }
+            }*/
 
             if (despawnTime.HasValue)
             {
@@ -200,7 +198,7 @@ namespace _Chi.Scripts.Mono.Entities
             entityStats.maxHpAdd = 0;
             entityStats.maxHpMul = 1;
             this.Heal();
-            pathData.SetPath(null);
+            //pathData.SetPath(null);
             pathData.SetDestination(null);
             if (hasRenderer)
             {
@@ -433,11 +431,6 @@ namespace _Chi.Scripts.Mono.Entities
                 isRegisteredWithSkills = false;
             }
         }
-        
-        public bool HasMoveTarget()
-        {
-            return pathToFind != null || pathData.IsPathReady();
-        }
 
         public void SetFixedMoveTarget(Vector3? target, bool stopWhenReachFixedTarget = false, bool dieWhenReachFixedTarget = false)
         {
@@ -615,7 +608,7 @@ namespace _Chi.Scripts.Mono.Entities
         {
             base.SetCanMove(b);
 
-            if (hasAnimator)
+            if (hasAnimator && animator.gameObject.activeSelf && animator.runtimeAnimatorController != null)
             {
                 animator.SetFloat("MovementSpeed", canMove ? stats.speed : 0);
             }

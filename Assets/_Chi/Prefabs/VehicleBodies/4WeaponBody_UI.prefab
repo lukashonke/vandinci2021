@@ -1361,6 +1361,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DefensiveModuleSlot (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6297480507088187349, guid: 9450c75571ffe5349a1ee6ef93963b5c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9450c75571ffe5349a1ee6ef93963b5c, type: 3}
 --- !u!224 &2280972678152608919 stripped

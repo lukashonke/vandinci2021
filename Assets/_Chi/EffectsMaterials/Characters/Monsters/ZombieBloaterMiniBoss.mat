@@ -10,7 +10,6 @@ Material:
   m_Name: ZombieBloaterMiniBoss
   m_Shader: {fileID: 4800000, guid: 0803c241834332942abfcbd27c498b46, type: 3}
   m_ValidKeywords:
-  - _ENABLEHUE_ON
   - _SHADERSPACE_UV
   - _TIMESETTINGS_LINEAR_DEFAULT
   - _UBERFADING_NONE
@@ -200,7 +199,7 @@ Material:
     - _EnableGlitch: 0
     - _EnableHalftone: 0
     - _EnableHologram: 0
-    - _EnableHue: 1
+    - _EnableHue: 0
     - _EnableInkSpread: 0
     - _EnableInnerOutline: 0
     - _EnableMetal: 0
@@ -304,7 +303,7 @@ Material:
     - _RecolorFade: 1
     - _RectHeight: 100
     - _RectWidth: 100
-    - _Saturation: 1.32
+    - _Saturation: 0.18
     - _ScreenWidthUnits: 10
     - _ShaderSpace: 0
     - _ShiftHueFade: 1
