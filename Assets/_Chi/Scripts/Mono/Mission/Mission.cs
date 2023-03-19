@@ -165,9 +165,11 @@ namespace _Chi.Scripts.Mono.Mission
     {
         public List<TriggeredShop> shops;
 
+        public List<int> rerollPrices;
+
         [NonSerialized] public int lastGoldTriggeredShopLevelIndex = 0;
     }
-
+    
     [Serializable]
     public class TriggeredShop
     {

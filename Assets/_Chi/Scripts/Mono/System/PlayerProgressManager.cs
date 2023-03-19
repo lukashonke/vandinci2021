@@ -184,6 +184,7 @@ namespace _Chi.Scripts.Mono.System
                 progressData.run.gold = 0;
                 progressData.run.acumulatedGold = 0;
                 progressData.run.killed = 0;
+                progressData.run.rerolls = 0;
             }
         }
 

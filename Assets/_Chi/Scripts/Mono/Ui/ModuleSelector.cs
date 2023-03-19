@@ -21,6 +21,8 @@ namespace _Chi.Scripts.Mono.Ui
         [Required] public GameObject itemInfoPrefab;
         [Required] public GameObject exitGo;
 
+        private TextMeshProUGUI rerollPriceText;
+
         private ModuleSelectorMode currentMode;
         private List<RewardSet> currentRewardSets;
         [NonSerialized] public Dictionary<PrefabItem, OptionData> options;
@@ -41,25 +43,44 @@ namespace _Chi.Scripts.Mono.Ui
 
         public void Initialise(ModuleSelectorMode mode, bool canExit, List<TriggeredShopSet> rewardSets = null, string title = null, TriggeredShop triggeredShop = null)
         {
-            var db = Gamesystem.instance.prefabDatabase;
-
             exitGo.SetActive(canExit);
 
+            this.title = title;
+            this.rewardSets = rewardSets;
+            this.triggeredShop = triggeredShop;
+            this.currentMode = mode;
+            
+            ShowItems();
+            
+            UpdateRerollPrice();
+        }
+
+        private List<TriggeredShopSet> rewardSets;
+        private TriggeredShop triggeredShop;
+        private string title;
+
+        private void ShowItems()
+        {
+            var db = Gamesystem.instance.prefabDatabase;
+            var run = Gamesystem.instance.progress.progressData.run;
+            
             transform.RemoveAllChildren();
-
-            currentMode = mode;
-
             if (title != null)
             {
                 var newTitle = Instantiate(titlePrefab, transform.position, Quaternion.identity, transform);
                 var text = newTitle.GetComponentInChildren<TextMeshProUGUI>();
                 text.text = title;
                 text.enabled = true;
+                
+                rerollPriceText = newTitle.transform.Find("PriceValue").GetComponent<TextMeshProUGUI>();
+                newTitle.transform.Find("RerollButton").GetComponent<Button>().onClick.AddListener(() => Reroll());
 
                 newTitle.gameObject.GetComponentsInChildren<Image>().ForEach(s => s.enabled = true);
             }
-            
-            var run = Gamesystem.instance.progress.progressData.run;
+            else
+            {
+                rerollPriceText = null;
+            }
 
             if (currentRewardSets == null)
             {
@@ -74,11 +95,11 @@ namespace _Chi.Scripts.Mono.Ui
                 foreach (var item in db.prefabs.Where(t => 
                              t.enabled &&
                              (t.type == PrefabItemType.Module
-                             || t.type == PrefabItemType.Skill
-                             || t.type == PrefabItemType.Mutator
-                             || t.type == PrefabItemType.UpgradeItemModule
-                             || t.type == PrefabItemType.UpgradeItemSkill
-                             || t.type == PrefabItemType.UpgradeItemPlayer)
+                              || t.type == PrefabItemType.Skill
+                              || t.type == PrefabItemType.Mutator
+                              || t.type == PrefabItemType.UpgradeItemModule
+                              || t.type == PrefabItemType.UpgradeItemSkill
+                              || t.type == PrefabItemType.UpgradeItemPlayer)
                          ))
                 {
                     var newItem = Instantiate(itemInfoPrefab, transform.position, Quaternion.identity, transform);
@@ -99,41 +120,84 @@ namespace _Chi.Scripts.Mono.Ui
             }
             else if (currentMode == ModuleSelectorMode.ShopSet || currentMode == ModuleSelectorMode.SingleRewardSet)
             {
-                foreach (var rewardSet in rewardSets)
+                ShowRandomRewardSetItems();
+            }
+        }
+
+        private void ShowRandomRewardSetItems()
+        {
+            var db = Gamesystem.instance.prefabDatabase;
+
+            foreach (var rewardSet in rewardSets)
+            {
+                bool showOnlyLocked = rewardSet.showOnlyPreviouslyLocked;
+
+                var set = Gamesystem.instance.prefabDatabase.GetRewardSet(rewardSet.name);
+                    
+                currentRewardSets.Add(set);
+
+                var shownItems = set.CalculateShownItems(Gamesystem.instance.objects.currentPlayer, locks, showOnlyLocked).ToHashSet();
+                var shownItemsHash = shownItems.Select(s => s.prefabId).ToHashSet();
+
+                foreach (var rewardSetItemWithWeight in shownItems)
                 {
-                    bool showOnlyLocked = rewardSet.showOnlyPreviouslyLocked;
-
-                    var set = Gamesystem.instance.prefabDatabase.GetRewardSet(rewardSet.name);
+                    var item = db.GetById(rewardSetItemWithWeight.prefabId);
+                    if (!item.enabled) continue;
                     
-                    currentRewardSets.Add(set);
-
-                    var shownItems = set.CalculateShownItems(Gamesystem.instance.objects.currentPlayer, locks, showOnlyLocked).ToHashSet();
-                    var shownItemsHash = shownItems.Select(s => s.prefabId).ToHashSet();
-
-                    foreach (var rewardSetItemWithWeight in shownItems)
+                    var newItem = Instantiate(itemInfoPrefab, transform.position, Quaternion.identity, transform);
+                    var option = new OptionData()
                     {
-                        var item = db.GetById(rewardSetItemWithWeight.prefabId);
-                        if (!item.enabled) continue;
-                    
-                        var newItem = Instantiate(itemInfoPrefab, transform.position, Quaternion.identity, transform);
-                        var option = new OptionData()
-                        {
-                            go = newItem,
-                            prefabItem = item,
-                            rewardSetItemWithWeight = rewardSetItemWithWeight,
-                            triggeredShop = triggeredShop
-                        };
-                        options.Add(item, option);
-                        var newItemItem = newItem.GetComponent<ModuleSelectorItem>();
+                        go = newItem,
+                        prefabItem = item,
+                        rewardSetItemWithWeight = rewardSetItemWithWeight,
+                        triggeredShop = triggeredShop
+                    };
+                    options.Add(item, option);
+                    var newItemItem = newItem.GetComponent<ModuleSelectorItem>();
 
-                        var price = GetPrice(option);
+                    var price = GetPrice(option);
 
-                        newItemItem.Initialise(item, new List<ActionsPanelButton>()
-                        {
-                            new ActionsPanelButton("Buy", () => StartAddingItem(option))
-                        }, AbortAddingItem, price);
-                    }
+                    newItemItem.Initialise(item, new List<ActionsPanelButton>()
+                    {
+                        new ActionsPanelButton("Buy", () => StartAddingItem(option))
+                    }, AbortAddingItem, price);
                 }
+            }
+        }
+
+        private void UpdateRerollPrice()
+        {
+            if (rerollPriceText == null) return;
+            
+            if (Gamesystem.instance.missionManager.currentMission?.progressSettings?.rerollPrices != null)
+            {
+                var progress = Gamesystem.instance.progress.progressData;
+                var run = progress.run;
+
+                var nextRerollPrice = Gamesystem.instance.missionManager.currentMission.progressSettings.rerollPrices[run.rerolls];
+                rerollPriceText.text = nextRerollPrice.ToString();
+            }
+            else
+            {
+                rerollPriceText.text = "0";
+            }
+        }
+
+        public void Reroll()
+        {
+            var progress = Gamesystem.instance.progress.progressData;
+            var run = progress.run;
+
+            var nextRerollPrice = Gamesystem.instance.missionManager.currentMission.progressSettings.rerollPrices[run.rerolls];
+
+            if (nextRerollPrice <= run.gold)
+            {
+                Gamesystem.instance.progress.RemoveGold(nextRerollPrice);
+                Gamesystem.instance.uiManager.vehicleSettingsWindow.UpdateCurrentMoney();
+                run.rerolls++;
+                
+                ShowItems();
+                UpdateRerollPrice();
             }
         }
 

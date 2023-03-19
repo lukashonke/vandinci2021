@@ -4,6 +4,7 @@ using System.Linq;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Mission;
+using _Chi.Scripts.Persistence;
 using _Chi.Scripts.Scriptables.Dtos;
 using _Chi.Scripts.Statistics;
 using DamageNumbersPro;
@@ -191,6 +192,39 @@ namespace _Chi.Scripts.Scriptables
 
         public List<RewardSetItemWithWeight> CalculateShownItems(Player player, Dictionary<int, bool> lockedPrefabIds, bool showOnlyLocked)
         {
+            List<PrefabItem> ownedItems = GetPlayerItems();
+
+            Dictionary<int, WeightSettingsItem> weightAlters = new();
+            foreach (var item in ownedItems)
+            {
+                if (item.weightSettings?.alteredWeights != null)
+                {
+                    foreach (var aw in item.weightSettings.alteredWeights)
+                    {
+                        if (!weightAlters.ContainsKey(aw.prefabId))
+                        {
+                            weightAlters.Add(aw.prefabId, aw);
+                        }
+                    }
+                }
+            }
+
+            var db = Gamesystem.instance.prefabDatabase;
+            float averageCount = 0;
+            int totalCount = 0;
+
+            foreach (var alter in weightAlters)
+            {
+                var owned = ownedItems.Count(i => i.id == alter.Key);
+                averageCount += owned;
+                totalCount += owned;
+            }
+
+            if (totalCount > 0)
+            {
+                averageCount /= totalCount;
+            }
+
             var retValue = new List<RewardSetItemWithWeight>();
             
             if (showOnlyLocked)
@@ -210,7 +244,21 @@ namespace _Chi.Scripts.Scriptables
 
             foreach (var prefab in prefabs)
             {
-                for (int i = 0; i < prefab.weight; i++)
+                var weight = prefab.weight;
+                if(weightAlters.TryGetValue(prefab.prefabId, out var val))
+                {
+                    var owned = ownedItems.Count(i => i.id == prefab.prefabId);
+                    if (owned < averageCount)
+                    {
+                        weight += val.additionalWeightWhenHavingLessThanAverage + val.addWeight;
+                    }
+                    else
+                    {
+                        weight += val.addWeight;
+                    }
+                }
+                
+                for (int i = 0; i < weight; i++)
                 {
                     allItemsWithWeights.Add(prefab);
                 }
@@ -242,6 +290,55 @@ namespace _Chi.Scripts.Scriptables
                 
                 retValue.Add(prefab);
                 allItemsWithWeights.RemoveAll(i => i == prefab);
+            }
+
+            return retValue;
+        }
+
+        public List<PrefabItem> GetPlayerItems()
+        {
+            var retValue = new List<PrefabItem>();
+            var db = Gamesystem.instance.prefabDatabase;
+            var run = Gamesystem.instance.progress.progressData.run;
+
+            foreach (var slot in run.modulesInSlots ?? Enumerable.Empty<ModuleInSlot>())
+            {
+                if (slot.moduleId > 0)
+                {
+                    for (int i = 0; i < Math.Max(1, slot.level); i++)
+                    {
+                        retValue.Add(db.GetById(slot.moduleId));
+                    }
+                }
+                foreach (var slotItem in slot.upgradeItems)
+                {
+                    if(slotItem.prefabId > 0) retValue.Add(db.GetById(slotItem.prefabId));
+                }
+            }
+
+            foreach (var item in run.skillPrefabIds ?? Enumerable.Empty<SlotItem>())
+            {
+                if(item.prefabId > 0) retValue.Add(db.GetById(item.prefabId));
+            }
+
+            foreach (var item in run.playerUpgradeItems ?? Enumerable.Empty<SlotItem>())
+            {
+                if(item.prefabId > 0) retValue.Add(db.GetById(item.prefabId));
+            }
+            
+            foreach (var item in run.mutatorPrefabIds ?? Enumerable.Empty<SlotItem>())
+            {
+                if(item.prefabId > 0) retValue.Add(db.GetById(item.prefabId));
+            }
+            
+            foreach (var item in run.moduleUpgradeItems ?? Enumerable.Empty<SlotItem>())
+            {
+                if(item.prefabId > 0) retValue.Add(db.GetById(item.prefabId));
+            }
+            
+            foreach (var item in run.skillUpgradeItems ?? Enumerable.Empty<SlotItem>())
+            {
+                if(item.prefabId > 0) retValue.Add(db.GetById(item.prefabId));
             }
 
             return retValue;

@@ -18,6 +18,8 @@ namespace _Chi.Scripts.Persistence
         public int bodyId;
 
         public int gold;
+
+        public int rerolls;
         
         public int acumulatedGold;
 

@@ -28,6 +28,8 @@ MonoBehaviour:
     description: 
     type: 1
     predefinedId: 1
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -42,6 +44,8 @@ MonoBehaviour:
     description: 
     type: 1
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 5954188515519120314, guid: fc2659e7534bf4828a7c867aa17bf6b2, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -57,6 +61,8 @@ MonoBehaviour:
       body.
     type: 2
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 5863446121643124079, guid: 17100200d27d78347bf006864161e432, type: 3}
     prefabUi: {fileID: 1669959372494101077, guid: 0ca96be5bd0b8be478a294c2e8be1148, type: 3}
     skill: {fileID: 0}
@@ -72,6 +78,8 @@ MonoBehaviour:
       single weapon body.
     type: 2
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 5863446121643124079, guid: d63e8bef7a4007443b0625ab5cb40e75, type: 3}
     prefabUi: {fileID: 1669959372494101077, guid: 20790d890819e0f4fa0b626cf94d16aa, type: 3}
     skill: {fileID: 0}
@@ -87,6 +95,8 @@ MonoBehaviour:
       dual weapon body.
     type: 2
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 5863446121643124079, guid: 7d03e4fbda3224f438c91f80ad9ea733, type: 3}
     prefabUi: {fileID: 1669959372494101077, guid: 2790b69c088dc33479f601dd97ae7075, type: 3}
     skill: {fileID: 0}
@@ -101,6 +111,17 @@ MonoBehaviour:
     description: Shoots arrows at nearby enemies.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights:
+      - prefabId: 2500
+        addWeight: 10
+        additionalWeightWhenHavingLessThanAverage: 5
+      - prefabId: 2503
+        addWeight: 5
+        additionalWeightWhenHavingLessThanAverage: 5
+      - prefabId: 2506
+        addWeight: 5
+        additionalWeightWhenHavingLessThanAverage: 5
     prefab: {fileID: 1232174764404154631, guid: 91a363bd1f1eb294daab200b77bba099, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 1a44fcc45acc5c1438750ee0dba35732, type: 3}
     skill: {fileID: 0}
@@ -115,6 +136,8 @@ MonoBehaviour:
     description: Shoots bullets at nearby enemies in the direction of the gun.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: 90060e3a449a7e04bbc0cf7080ff75cd, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: e3ea5d3bb551aa34c8f61fe3e92fd823, type: 3}
     skill: {fileID: 0}
@@ -129,6 +152,8 @@ MonoBehaviour:
     description: Shoots enemies in the direction of the vehicle.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: cdc938b384d12174ea3ca334b8fde5f1, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 62b510b84d407454092694e465192d93, type: 3}
     skill: {fileID: 0}
@@ -143,6 +168,8 @@ MonoBehaviour:
     description: Shoots large penetrating arrows in the direction of the vehicle.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: 00d24dfa39d483648a081dd6a914af83, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 81fe0c54ccbfba34794ab41cabdfd085, type: 3}
     skill: {fileID: 0}
@@ -157,6 +184,8 @@ MonoBehaviour:
     description: Shoots small spread projecties.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: 3b85c6c6878286b4986962d6bb1c7c91, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 71486843aebbd8346a9701479eb3e484, type: 3}
     skill: {fileID: 0}
@@ -171,6 +200,8 @@ MonoBehaviour:
     description: Shoots shurikens which choose next target after they hit one.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: 304751909030c5e45bb25e28c62d5e90, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 12fa71c4605378b4b833306d9b6ecfc1, type: 3}
     skill: {fileID: 0}
@@ -185,6 +216,8 @@ MonoBehaviour:
     description: Short-range high-spread low-fire rate gun.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: 2252c8f8b885d5e4fa56e1cb5498c6a7, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 771548b76fc8815498deec6f50b2b621, type: 3}
     skill: {fileID: 0}
@@ -199,6 +232,8 @@ MonoBehaviour:
     description: Shoots strong projectile in the fixed direction.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: 31452cde8923a6e49987cbef5066b863, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 3c6803d6c55da61478cebcebaae83172, type: 3}
     skill: {fileID: 0}
@@ -213,6 +248,8 @@ MonoBehaviour:
     description: Bombards random area around player.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: 25d0ca9f407a6de42898ebe5341a2b7e, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 263c03c040e2fc04296f1942616d1050, type: 3}
     skill: {fileID: 0}
@@ -227,6 +264,8 @@ MonoBehaviour:
     description: Adds projectiles to the weapon.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: 583f45b9fcab5ce4a904a3843655576b, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 4f7c9cf6fe61edd47a81937e10ffbef4, type: 3}
     skill: {fileID: 0}
@@ -241,6 +280,8 @@ MonoBehaviour:
     description: Adds a stun effect to the weapon.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: b10d1850c23e344c98a3612afb16da0e, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 85287e5b2153c4a3b92497f24e09e0a6, type: 3}
     skill: {fileID: 0}
@@ -256,6 +297,8 @@ MonoBehaviour:
       has piercing effect.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: 6a4aed355462d4bac9c88ce9beeadd41, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: dfe0bb5f4a5dc446a8c7dd1d1bc7fa3f, type: 3}
     skill: {fileID: 0}
@@ -270,6 +313,8 @@ MonoBehaviour:
     description: Increases damage output of the weapon.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: 8ed30a3973a3248428d31f25f4e9673a, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: aa1d2220c65d144a9a5e686510f53193, type: 3}
     skill: {fileID: 0}
@@ -285,6 +330,8 @@ MonoBehaviour:
       away.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: d8ee08b861083488dbb0f4bb9f894186, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 87ba2637bd53e4165a8fb327efa7a4e6, type: 3}
     skill: {fileID: 0}
@@ -299,6 +346,8 @@ MonoBehaviour:
     description: Increases the size of projectile. Effecient for area of effect projectiles.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: ea8604a9caf97e74a8d482fb6e350684, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 00d499bca0117394da209828403d8daa, type: 3}
     skill: {fileID: 0}
@@ -313,6 +362,8 @@ MonoBehaviour:
     description: 'Increases the fire rate of the weapon. '
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: 5b88700f3dcfb4622b5a4cb64a7e16a9, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 846012403b0174a9f94a34a5c6a80847, type: 3}
     skill: {fileID: 0}
@@ -327,6 +378,8 @@ MonoBehaviour:
     description: Increases the size of projectile. Efficient for area of effect projectiles.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: 37156396185f5a348abec7c9b6e5a56f, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: c27d9d519644590438d3a8f76019e2a8, type: 3}
     skill: {fileID: 0}
@@ -342,6 +395,11 @@ MonoBehaviour:
       by enemies. When shield bursts, it damages nearby enemies.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights:
+      - prefabId: 2600
+        addWeight: 20
+        additionalWeightWhenHavingLessThanAverage: 0
     prefab: {fileID: 1232174764404154631, guid: d705c7605dc9bb841a8b7ba32c05d922, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 5d082eacc5d146f46ae9abb61fb7b4c9, type: 3}
     skill: {fileID: 0}
@@ -356,6 +414,8 @@ MonoBehaviour:
     description: Increases HP regeneration per second.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: c501ca09a721c9c4a9fde387dacda408, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 0e5be0f3c47fe704cbf39de32cc8b6be, type: 3}
     skill: {fileID: 0}
@@ -370,6 +430,8 @@ MonoBehaviour:
     description: Increases movement speed.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: a5a08309ec1ef8f4880982838a622fb3, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 21189be4bde0a3849998b1f24149801f, type: 3}
     skill: {fileID: 0}
@@ -384,6 +446,8 @@ MonoBehaviour:
     description: 'Holds one extra charge for skills. '
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: c01e49c1dc2312e42a7fe7acaf17945a, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 6f9dd26c7a2c9aa4c88d151d62ea11a0, type: 3}
     skill: {fileID: 0}
@@ -398,6 +462,8 @@ MonoBehaviour:
     description: Decreases skills reuse delay.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: dedb45b7396885f4c8b39364564bafc2, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 7190df77de7efa2419ef50c8e7bd8d59, type: 3}
     skill: {fileID: 0}
@@ -413,6 +479,8 @@ MonoBehaviour:
       velocity.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: 7d6b599b03c836a40b9a7ff2c6f2c6b4, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 3b74172898b63154d9464367b10ee2f5, type: 3}
     skill: {fileID: 0}
@@ -428,6 +496,8 @@ MonoBehaviour:
       enemies.
     type: 3
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: a3abedfce3572ff4aaf086051b86b2d2, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 45ed084f93ccfa844bbe011c72bbce99, type: 3}
     skill: {fileID: 0}
@@ -442,6 +512,8 @@ MonoBehaviour:
     description: 
     type: 6
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 888702218433590844, guid: e2cab7bf9867aeb4d90808cd6df0bee7, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -456,6 +528,8 @@ MonoBehaviour:
     description: 
     type: 6
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 888702218433590844, guid: 1c2f06e4437162c4d8beaa950bdaa649, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -470,6 +544,8 @@ MonoBehaviour:
     description: 
     type: 6
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 888702218433590844, guid: 3a64e6681888e934f8d2bbf8a42d7af6, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -484,6 +560,8 @@ MonoBehaviour:
     description: 
     type: 0
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 888702218433590844, guid: a4bf972126b426241a9baf6066e7b086, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -498,6 +576,8 @@ MonoBehaviour:
     description: 
     type: 0
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 888702218433590844, guid: 67fa6a350eb211943a0948ee1d4c15a8, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -512,6 +592,8 @@ MonoBehaviour:
     description: 
     type: 0
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 888702218433590844, guid: f3e4ccd5eacb1ab42b352e557c931594, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -526,6 +608,8 @@ MonoBehaviour:
     description: 
     type: 7
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 3668401319161006958, guid: f00a5983cf859534787a124135e4f08b, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -540,6 +624,8 @@ MonoBehaviour:
     description: 
     type: 7
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 3668401319161006958, guid: 61ec5d2b2f1b4ef4da70fe75aed31fa3, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -554,6 +640,8 @@ MonoBehaviour:
     description: 
     type: 7
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 3668401319161006958, guid: aca31db6dd86940498b8cbb456cc08ad, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -568,6 +656,8 @@ MonoBehaviour:
     description: 
     type: 0
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 3020955417211395267, guid: 64723082099b5494c9573f968c41ec65, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -582,6 +672,8 @@ MonoBehaviour:
     description: 
     type: 0
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 6463370211903710501, guid: 5c73a5a502acb0b48a6f0b8ee04d09c5, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -596,6 +688,8 @@ MonoBehaviour:
     description: 
     type: 0
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 7564076516500285006, guid: af613e0bde311224ba9fd97c8838f95d, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -610,6 +704,8 @@ MonoBehaviour:
     description: Increases maximum HP.
     type: 8
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -624,6 +720,8 @@ MonoBehaviour:
     description: Reduces incoming damage.
     type: 8
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -638,6 +736,8 @@ MonoBehaviour:
     description: Increases movement speed.
     type: 8
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -652,6 +752,8 @@ MonoBehaviour:
     description: Increases HP regeneration rate.
     type: 8
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -666,6 +768,8 @@ MonoBehaviour:
     description: Increases pickup range.
     type: 8
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -680,6 +784,8 @@ MonoBehaviour:
     description: Decreases reuse delay of skills.
     type: 8
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -694,6 +800,8 @@ MonoBehaviour:
     description: The weapon shoots twice before having to reload.
     type: 9
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 0226e8169f971714090e1ca32a1d0ca9, type: 3}
     skill: {fileID: 0}
@@ -710,6 +818,8 @@ MonoBehaviour:
       speed.
     type: 9
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 922dc682e5e216848ae44c1f98593789, type: 3}
     skill: {fileID: 0}
@@ -725,6 +835,8 @@ MonoBehaviour:
       enemy.
     type: 9
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 45a901171fa6a504ea3458d8bd5cc5f5, type: 3}
     skill: {fileID: 0}
@@ -739,6 +851,8 @@ MonoBehaviour:
     description: Your arrows will put enemies on Fire.
     type: 9
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 58be8389162e3fd4ea34525ecd8a1ae6, type: 3}
     skill: {fileID: 0}
@@ -755,6 +869,8 @@ MonoBehaviour:
       degree.
     type: 9
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
     skill: {fileID: 0}
@@ -771,6 +887,8 @@ MonoBehaviour:
       360 degree.
     type: 9
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
     skill: {fileID: 0}
@@ -787,6 +905,8 @@ MonoBehaviour:
       pushback effect.
     type: 9
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
     skill: {fileID: 0}
@@ -803,6 +923,8 @@ MonoBehaviour:
       more damage.
     type: 10
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 46396cb41dd63794a8aa16cba7094c09, type: 3}
     skill: {fileID: 0}
@@ -817,6 +939,8 @@ MonoBehaviour:
     description: Right after jumping, receive no damage for 2 seconds.
     type: 10
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
     skill: {fileID: 0}
@@ -832,6 +956,8 @@ MonoBehaviour:
       10%.
     type: 10
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
     skill: {fileID: 0}
@@ -847,6 +973,8 @@ MonoBehaviour:
       body.
     type: 10
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
     skill: {fileID: 0}
@@ -861,6 +989,8 @@ MonoBehaviour:
     description: Right after jumping, receive no damage for 2 seconds.
     type: 10
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
     skill: {fileID: 0}
@@ -876,6 +1006,8 @@ MonoBehaviour:
       10%.
     type: 10
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
     skill: {fileID: 0}
@@ -891,6 +1023,8 @@ MonoBehaviour:
       cooldown will be -50%.
     type: 10
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
     skill: {fileID: 0}
@@ -905,6 +1039,8 @@ MonoBehaviour:
     description: In the landing zone after jump, push away nearby enemies.
     type: 10
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
     skill: {fileID: 0}
@@ -920,6 +1056,8 @@ MonoBehaviour:
       so it can push damage enemies.
     type: 4
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: a233808f68c59d541b62cf99caa36b75, type: 3}
     skill: {fileID: 11400000, guid: cc69fe99998b25a4d8a301159bd9f639, type: 2}
@@ -935,6 +1073,8 @@ MonoBehaviour:
       also damages the vehicle.
     type: 4
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 41f98db91a1f1ca42a7fed186d43fb43, type: 3}
     skill: {fileID: 11400000, guid: ad31f96bc529c89469eed49d1304685e, type: 2}
@@ -949,6 +1089,8 @@ MonoBehaviour:
     description: When activated, a shockwave pushes nearby enemies away.
     type: 4
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 7d23fef34052b4f4da59434a86fc7834, type: 3}
     skill: {fileID: 11400000, guid: 6a4d5195185ff524a802fb55de0fc5fa, type: 2}
@@ -964,6 +1106,8 @@ MonoBehaviour:
       you are able to create a build focused on Critical rate.
     type: 5
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: ac0052fb6806b3b4babc28e21b84380a, type: 3}
     skill: {fileID: 0}
@@ -978,6 +1122,8 @@ MonoBehaviour:
     description: You will be healed when you cast a skill.
     type: 5
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 6c062dfd13a3e498eb29fd75819f632f, type: 3}
     skill: {fileID: 0}
@@ -992,6 +1138,8 @@ MonoBehaviour:
     description: Vehicle has more HP, but is slower.
     type: 5
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 67cd6793657fe4d7a8cbea26fdb11233, type: 3}
     skill: {fileID: 0}
@@ -1006,6 +1154,8 @@ MonoBehaviour:
     description: 'Vehicle is faster, but has less HP. '
     type: 5
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 780785b901c184f3595b762be424b914, type: 3}
     skill: {fileID: 0}
@@ -1020,6 +1170,8 @@ MonoBehaviour:
     description: Vehicle has slightly increased HP.
     type: 5
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 96e697b9e72e44d639f26c7537f35e12, type: 3}
     skill: {fileID: 0}
@@ -1034,6 +1186,8 @@ MonoBehaviour:
     description: Increases the power of skills and decreases their reuse delay.
     type: 5
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 8e6bdfcbcea623040bc4a645e3fe7187, type: 3}
     skill: {fileID: 0}
@@ -1049,6 +1203,8 @@ MonoBehaviour:
       to all weapons. '
     type: 5
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 77aa7eceff9dd49718af591b6c71e712, type: 3}
     skill: {fileID: 0}
@@ -1063,6 +1219,8 @@ MonoBehaviour:
     description: After casting a skill, you will temporarily take less damage.
     type: 5
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 1bb3c56d297ae4a8ab7fc79aabae25b9, type: 3}
     skill: {fileID: 0}
@@ -1076,7 +1234,7 @@ MonoBehaviour:
     note: 
     prefabs:
     - prefabId: 2500
-      weight: 15
+      weight: 10
       price: 1
       priceMultiplyForEveryOwned: 0.2
     - prefabId: 2503
@@ -1097,15 +1255,15 @@ MonoBehaviour:
     note: 
     prefabs:
     - prefabId: 2600
-      weight: 1
+      weight: 10
       price: 1
       priceMultiplyForEveryOwned: 0.75
     - prefabId: 2602
-      weight: 1
+      weight: 10
       price: 1
       priceMultiplyForEveryOwned: 0.75
     - prefabId: 2604
-      weight: 1
+      weight: 10
       price: 1
       priceMultiplyForEveryOwned: 0.75
     minCountShownItems: 1

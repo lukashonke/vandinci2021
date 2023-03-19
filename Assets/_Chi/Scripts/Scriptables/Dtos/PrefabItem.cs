@@ -28,6 +28,9 @@ namespace _Chi.Scripts.Scriptables.Dtos
         [VerticalGroup("Type")]
         public PredefinedPrefabIds predefinedId;
 
+        [VerticalGroup("Type")] 
+        public WeightSettings weightSettings;
+
         [VerticalGroup("Prefab")]
         public GameObject prefab;
 
@@ -57,6 +60,21 @@ namespace _Chi.Scripts.Scriptables.Dtos
 
         [VerticalGroup("Text")]
         public List<string> additionalTexts;
+    }
+
+    [Serializable]
+    public class WeightSettings
+    {
+        public List<WeightSettingsItem> alteredWeights;
+    }
+
+    [Serializable]
+    public class WeightSettingsItem
+    {
+        public int prefabId;
+        public int addWeight;
+
+        public int additionalWeightWhenHavingLessThanAverage;
     }
 
     public enum PrefabItemType
