@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1232174764404154628}
-  - component: {fileID: 2526313433823586861}
+  - component: {fileID: -4492253215732444490}
   - component: {fileID: 6177911479989981830}
   - component: {fileID: -1977820923903768266}
+  - component: {fileID: 2526313433823586861}
   m_Layer: 0
   m_Name: CannonModule
   m_TagString: Untagged
@@ -32,10 +33,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2454567826526104123}
+  - {fileID: 8588205409141286281}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2526313433823586861
+--- !u!114 &-4492253215732444490
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,7 +46,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1232174764404154631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c62ae5e45ff4022893f2a2f1bff2fad, type: 3}
+  m_Script: {fileID: 11500000, guid: 0021365890684c96811d5270826f1e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
@@ -56,13 +58,18 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: visualItems
+      Entry: 6
+      Data: 
     - Name: additionalEffects
       Entry: 6
       Data: 
   parent: {fileID: 0}
   slot: {fileID: 0}
+  statusbar: {fileID: 0}
+  upgrades: []
   targetUpdateInterval: 0.2
-  rotationSpeed: 1500
+  rotationSpeed: 500
   instantRotation: 1
   muzzles: []
   stats:
@@ -73,17 +80,17 @@ MonoBehaviour:
       baseValue: 1
       value: 0
     projectileSpreadAngle:
-      baseValue: 8
+      baseValue: 7
       value: 0
     projectileSpeed:
-      baseValue: 12
+      baseValue: 16
       value: 0
     fireRate:
-      baseValue: 7
-      value: 7
+      baseValue: 6
+      value: 1
     projectileDamage:
-      baseValue: 40
-      value: 40
+      baseValue: 50
+      value: 50
     targetRange:
       baseValue: 6
       value: 0
@@ -93,14 +100,21 @@ MonoBehaviour:
     projectileLifetime:
       baseValue: 0
       value: 0
-    canProjectilePierce: 1
+    canProjectilePierce: 0
+    canProjectilePierceUsingDamage: 1
     projectilePierceCount:
-      baseValue: 10
+      baseValue: 0
       value: 0
     projectilePushForce:
-      baseValue: 150
+      baseValue: 60
       value: 0
-    projectilePierceChance: 100
+    projectileScale:
+      baseValue: 1
+      value: 0
+    shotsPerShot:
+      baseValue: 1
+      value: 0
+    projectilePierceChance: 0
     hasAreaEffect: 0
     hasProjectile: 1
     areaEffectDamage: 0
@@ -110,15 +124,14 @@ MonoBehaviour:
   effects:
   - {fileID: 11400000, guid: e9ee23c6ec6fda646a0ca63e5b6a0d15, type: 2}
   - {fileID: 11400000, guid: 55fb060b0aa775a4eb384d6f7a55d715, type: 2}
-  - {fileID: 11400000, guid: 9aa811b2f923cd44eaf30e125b46d650, type: 2}
   shootVfx: {fileID: 5898446814790275595}
+  shootEffectSelf: {fileID: 11400000, guid: 910c2c04cdcf7b245902b2ba7768d72f, type: 2}
   affectType: 0
   trailParameters:
     useTrail: 1
     material: {fileID: 2100000, guid: b3f956a472804ba40812d5f2b3bdbce3, type: 2}
     trailLengthTime: 0.1
   bulletBehavior: 0
-  targetType: 2
 --- !u!212 &6177911479989981830
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -192,6 +205,102 @@ MonoBehaviour:
   useDefaultGizmoColor: 1
   gizmoColor: {r: 0, g: 1, b: 0, a: 1}
   gizmoSize: 0.5
+--- !u!114 &2526313433823586861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232174764404154631}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c62ae5e45ff4022893f2a2f1bff2fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: visualItems
+      Entry: 6
+      Data: 
+    - Name: additionalEffects
+      Entry: 6
+      Data: 
+  parent: {fileID: 0}
+  slot: {fileID: 0}
+  statusbar: {fileID: 0}
+  upgrades: []
+  targetUpdateInterval: 0.2
+  rotationSpeed: 1500
+  instantRotation: 1
+  muzzles: []
+  stats:
+    projectileCount:
+      baseValue: 1
+      value: 1
+    projectileMultiplier:
+      baseValue: 1
+      value: 0
+    projectileSpreadAngle:
+      baseValue: 7
+      value: 0
+    projectileSpeed:
+      baseValue: 16
+      value: 0
+    fireRate:
+      baseValue: 6
+      value: 1
+    projectileDamage:
+      baseValue: 50
+      value: 50
+    targetRange:
+      baseValue: 6
+      value: 0
+    projectileRange:
+      baseValue: 8
+      value: 0
+    projectileLifetime:
+      baseValue: 0
+      value: 0
+    canProjectilePierce: 0
+    canProjectilePierceUsingDamage: 1
+    projectilePierceCount:
+      baseValue: 0
+      value: 0
+    projectilePushForce:
+      baseValue: 60
+      value: 0
+    projectileScale:
+      baseValue: 1
+      value: 0
+    shotsPerShot:
+      baseValue: 1
+      value: 0
+    projectilePierceChance: 0
+    hasAreaEffect: 0
+    hasProjectile: 1
+    areaEffectDamage: 0
+    accuracy: 1
+    pushForce: 0
+    effectDuration: 1
+  effects:
+  - {fileID: 11400000, guid: e9ee23c6ec6fda646a0ca63e5b6a0d15, type: 2}
+  - {fileID: 11400000, guid: 55fb060b0aa775a4eb384d6f7a55d715, type: 2}
+  shootVfx: {fileID: 5898446814790275595}
+  shootEffectSelf: {fileID: 11400000, guid: 910c2c04cdcf7b245902b2ba7768d72f, type: 2}
+  affectType: 0
+  trailParameters:
+    useTrail: 1
+    material: {fileID: 2100000, guid: b3f956a472804ba40812d5f2b3bdbce3, type: 2}
+    trailLengthTime: 0.1
+  bulletBehavior: 0
+  targetType: 0
 --- !u!1 &1978313152202453299
 GameObject:
   m_ObjectHideFlags: 0
@@ -5075,6 +5184,80 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1001 &5018323100905063579
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1232174764404154628}
+    m_Modifications:
+    - target: {fileID: -8259172263503992391, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1232174764404154628}
+    - target: {fileID: -8259172263503992391, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: offset.x
+      value: -0.559
+      objectReference: {fileID: 0}
+    - target: {fileID: -8259172263503992391, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: offset.y
+      value: -0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.559
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613974520338816212, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_Name
+      value: Statusbar
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+--- !u!4 &8588205409141286281 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+  m_PrefabInstance: {fileID: 5018323100905063579}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8323528132064683676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5108,19 +5291,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1353106325593054959, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.a
-      value: 1.12e-43
+      value: 2.07e-43
       objectReference: {fileID: 0}
     - target: {fileID: 1353106325593054959, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.b
-      value: -4.4925534e-35
+      value: -4.1391147e-29
       objectReference: {fileID: 0}
     - target: {fileID: 1353106325593054959, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.g
-      value: 1.12e-43
+      value: 2.07e-43
       objectReference: {fileID: 0}
     - target: {fileID: 1353106325593054959, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.r
-      value: -4.4926154e-35
+      value: -4.1391797e-29
       objectReference: {fileID: 0}
     - target: {fileID: 2096954885035021029, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: maxSize
@@ -5132,19 +5315,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2096954885035021029, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.a
-      value: 1.12e-43
+      value: 2.07e-43
       objectReference: {fileID: 0}
     - target: {fileID: 2096954885035021029, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.b
-      value: -4.4925534e-35
+      value: -4.1391147e-29
       objectReference: {fileID: 0}
     - target: {fileID: 2096954885035021029, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.g
-      value: 1.12e-43
+      value: 2.07e-43
       objectReference: {fileID: 0}
     - target: {fileID: 2096954885035021029, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.r
-      value: -4.4926154e-35
+      value: -4.1391797e-29
       objectReference: {fileID: 0}
     - target: {fileID: 3388953055440001522, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: InitialModule.startSize.scalar

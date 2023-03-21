@@ -22,17 +22,19 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
         public List<ImmediateEffect> effects;
 
         public TargetType targetType;
+
+        public bool excludeTargetEntity;
         
-        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength)
+        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
             if (target == null) return false;
             
-            Gamesystem.instance.StartCoroutine(Explode(target.GetPosition(), sourceEntity, sourceItem, sourceModule, strength));
+            Gamesystem.instance.StartCoroutine(Explode(target.GetPosition(), target, sourceEntity, sourceItem, sourceModule, strength));
 
             return true;
         }
 
-        private IEnumerator Explode(Vector3 position, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength)
+        private IEnumerator Explode(Vector3 position, Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength)
         {
             if (applyDelay > 0)
             {
@@ -47,12 +49,12 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
             {
                 var coll = buffer[i];
                 var entity = coll.gameObject.GetEntity();
-                if (entity != null)
+                if (entity != null && (!excludeTargetEntity || entity != target))
                 {
                     for (var index = 0; index < effects.Count; index++)
                     {
                         var effect = effects[index];
-                        effect.Apply(entity, sourceEntity, sourceItem, sourceModule, strength);
+                        effect.Apply(entity, sourceEntity, sourceItem, sourceModule, strength, new ImmediateEffectParams());
                     }
                 }
             }

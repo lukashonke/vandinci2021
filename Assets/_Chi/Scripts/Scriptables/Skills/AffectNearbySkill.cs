@@ -67,7 +67,7 @@ namespace _Chi.Scripts.Scriptables.Skills
                 
                 foreach (var effect in effects)
                 {
-                    effect.Apply(target, player, null, null, effectStrength * player.stats.skillPowerMul.GetValue());
+                    effect.Apply(target, player, null, null, effectStrength * player.stats.skillPowerMul.GetValue(), new ImmediateEffectParams());
                 }
             }
             

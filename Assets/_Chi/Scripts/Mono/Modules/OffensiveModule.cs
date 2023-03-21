@@ -11,6 +11,7 @@ using _Chi.Scripts.Utilities;
 using BulletPro;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Chi.Scripts.Mono.Modules
 {
@@ -25,10 +26,16 @@ namespace _Chi.Scripts.Mono.Modules
         public OffensiveModuleStats stats;
         
         public List<ImmediateEffect> effects;
+        
+        [FormerlySerializedAs("beforeBulletDestroyEffects")] public List<ImmediateEffect> onBulletDestroyEffects;
 
         [ReadOnly] public List<(object, ImmediateEffect)> additionalEffects;
+        
+        [ReadOnly] public List<(object, ImmediateEffect)> additionalOnBulletDestroyEffects;
 
         public ParticleSystem shootVfx;
+
+        public ImmediateEffect shootEffectSelf;
 
         public TargetType affectType;
 
@@ -43,6 +50,7 @@ namespace _Chi.Scripts.Mono.Modules
             base.Awake();
 
             additionalEffects = new();
+            additionalOnBulletDestroyEffects = new();
             emitter = GetComponent<BulletEmitter>();
             subEmitters = new();
             hasEmitter = emitter != null;
@@ -94,6 +102,11 @@ namespace _Chi.Scripts.Mono.Modules
                 }
                 
                 shootVfx.Play();
+            }
+
+            if (shootEffectSelf != null)
+            {
+                shootEffectSelf.Apply(parent, parent, null, this, 1f, new ImmediateEffectParams());
             }
         }
 

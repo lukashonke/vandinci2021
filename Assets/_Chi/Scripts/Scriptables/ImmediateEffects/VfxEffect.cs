@@ -14,7 +14,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
         public float vfxDespawn = 0.5f;
 
-        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength)
+        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
             var obj = Gamesystem.instance.poolSystem.SpawnGo(vfxPrefab, vfxPoolSize);
 

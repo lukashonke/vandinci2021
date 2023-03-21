@@ -287,7 +287,7 @@ namespace _Chi.Scripts.Mono.Entities
 
                         if (pushEffect != null)
                         {
-                            pushEffect.Apply(monster, this, null, null, velocity);
+                            pushEffect.Apply(monster, this, null, null, velocity, new ImmediateEffectParams());
                         }
                     }
                 }
@@ -365,7 +365,7 @@ namespace _Chi.Scripts.Mono.Entities
                 {
                     foreach (var effect in shieldEffects)
                     {
-                        effect.Apply(npc, this, null, null, stats.shieldEffectsStrength.GetValue());
+                        effect.Apply(npc, this, null, null, stats.shieldEffectsStrength.GetValue(), new ImmediateEffectParams());
                     }
                 }
             }

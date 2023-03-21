@@ -15,13 +15,26 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
         public Color? damageTextColor;
 
-        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength)
+        public float damageMul = 1.0f;
+
+        public ImmediateEffectFlags forcedFlags = ImmediateEffectFlags.None;
+
+        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float defaultStrength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
-            var sourceDamage = baseDamage * strength;
-            if (sourceModule is OffensiveModule offensiveModule && !effect.HasValue)
+            flags |= forcedFlags;
+            
+            var sourceDamage = baseDamage * defaultStrength;
+            if (!flags.HasFlag(ImmediateEffectFlags.FixedDamage) && sourceModule is OffensiveModule offensiveModule && !effect.HasValue)
             {
                 sourceDamage = offensiveModule.stats.projectileDamage.GetValue();
             }
+
+            /*if (flags.HasFlag(ImmediateEffectFlags.DamageFromModuleProjectileStrength))
+            {
+                sourceDamage = offensiveModule.stats.projectileDamage.GetValue();
+            }*/
+            
+            sourceDamage *= damageMul;
             
             var dmgWithFlags = DamageExtensions.CalculateEffectDamage(sourceDamage, target, sourceEntity);
             target.ReceiveDamage(dmgWithFlags.damage, sourceEntity, dmgWithFlags.flags, damageTextColor);

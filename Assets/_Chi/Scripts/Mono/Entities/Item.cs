@@ -49,7 +49,7 @@ namespace _Chi.Scripts.Mono.Entities
             for (var index = 0; index < effects.Count; index++)
             {
                 var effect = effects[index];
-                effect.Apply(entity, null, this, null, strength);
+                effect.Apply(entity, null, this, null, strength, new ImmediateEffectParams());
             }
 
             return true;

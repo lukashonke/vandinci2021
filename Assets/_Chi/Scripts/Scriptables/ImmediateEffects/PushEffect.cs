@@ -14,7 +14,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
         public float setCannotBePushedFor = 0.5f;
 
-        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength)
+        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
             var pushStrength = basePush;
             

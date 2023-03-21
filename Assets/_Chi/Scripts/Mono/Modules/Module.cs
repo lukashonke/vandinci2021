@@ -19,6 +19,8 @@ namespace _Chi.Scripts.Mono.Modules
         [ReadOnly] public Entity parent;
         [ReadOnly] public ModuleSlot slot;
 
+        public Statusbar statusbar;
+
         public List<ModuleUpgradeItem> upgrades;
         
         public float targetUpdateInterval = 0.2f;
@@ -46,7 +48,7 @@ namespace _Chi.Scripts.Mono.Modules
 
         public virtual void Start()
         {
-            
+            statusbar = GetComponentInChildren<Statusbar>();
         }
 
         public virtual void OnDestroy()

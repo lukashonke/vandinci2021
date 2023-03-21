@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
@@ -15,6 +13,7 @@ public class BulletBehavior : BaseBulletBehaviour
 	private Module ownerModule;
 	private TrailRenderer trail;
 
+	private float pierceRemainingDamage = 0;
 	private int piercedEnemies = 0;
 	[NonSerialized] public BulletReceiver[] collidedWith = new BulletReceiver[8];
 	[NonSerialized] public Entity lastAffectedEnemy;
@@ -42,8 +41,17 @@ public class BulletBehavior : BaseBulletBehaviour
 
 		piercedEnemies = 0;
 
-		if (CanPierce())
+		var canPierce = CanPierce();
+		if (canPierce != PierceType.NoPierce)
 		{
+			if (canPierce == PierceType.UsingDamage)
+			{
+				if (ownerModule is OffensiveModule offensiveModule)
+				{
+					pierceRemainingDamage = offensiveModule.stats.projectileDamage.GetValue();
+				}
+			}
+			
 			for (var index = 0; index < collidedWith.Length; index++)
 			{
 				collidedWith[index] = null;
@@ -68,26 +76,31 @@ public class BulletBehavior : BaseBulletBehaviour
 		}
 	}
 
-	private bool CanPierce()
+	private PierceType CanPierce()
 	{
 		if (ownerModule is OffensiveModule offensiveModule)
 		{
-			if (offensiveModule.stats.canProjectilePierce > 0)
-			{
-				return true;
-			}
+			if(offensiveModule.stats.canProjectilePierce > 0) return PierceType.FixedCount;
+			if(offensiveModule.stats.canProjectilePierceUsingDamage > 0) return PierceType.UsingDamage;
 		}
 
-		return false;
+		return PierceType.NoPierce;
+	}
+
+	enum PierceType
+	{
+		NoPierce,
+		FixedCount,
+		UsingDamage
 	}
 	
 	// Update is (still) called once per frame
-	public override void Update ()
+	/*public override void Update ()
 	{
 		base.Update();
 
 		// Your code here
-	}
+	}*/
 
 	// This gets called when the bullet dies
 	public override void OnBulletDeath()
@@ -125,8 +138,8 @@ public class BulletBehavior : BaseBulletBehaviour
 	{
 		base.OnBulletCollision(br, collisionPoint);
 
-		bool canPierce = CanPierce();
-		if (canPierce && !CanCollide(br))
+		var canPierce = CanPierce();
+		if (canPierce != PierceType.NoPierce && !CanCollide(br))
 		{
 			return;
 		}
@@ -151,7 +164,24 @@ public class BulletBehavior : BaseBulletBehaviour
 				for (var index = 0; index < effects.Count; index++)
 				{
 					var effect = effects[index];
-					effect.Apply(entity, ownerModule.parent, null, ownerModule, 1);
+					var prevHp = entity.GetHp();
+
+					var flags = ImmediateEffectFlags.None;
+
+					float strength = 1f;
+					/*if (canPierce == PierceType.UsingDamage)
+					{
+						strength = pierceRemainingDamage;
+					}*/
+					
+					effect.Apply(entity, ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
+					
+					var newHp = entity.GetHp();
+					
+					if (canPierce == PierceType.UsingDamage)
+					{
+						pierceRemainingDamage -= prevHp - newHp;
+					}
 				}
 				
 				var additionalEffects = offensiveModule.additionalEffects;
@@ -166,7 +196,7 @@ public class BulletBehavior : BaseBulletBehaviour
 
 						if (!list.Contains(effect))
 						{
-							effect.Apply(entity, ownerModule.parent, null, ownerModule, 1);
+							effect.Apply(entity, ownerModule.parent, null, ownerModule, 1, new ImmediateEffectParams());
 							list.Add(effect);
 						} 
 					}
@@ -179,11 +209,19 @@ public class BulletBehavior : BaseBulletBehaviour
 				
 				bool deactivate = false;
 
-				if (canPierce)
+				if (canPierce == PierceType.FixedCount)
 				{
 					piercedEnemies++;
 					collidedWith[piercedEnemies] = br;
 					if (piercedEnemies >= offensiveModule.stats.projectilePierceCount.GetValueInt())
+					{
+						deactivate = true;
+					}
+				}
+				else if(canPierce == PierceType.UsingDamage)
+				{
+					collidedWith[piercedEnemies] = br;
+					if (pierceRemainingDamage <= 0)
 					{
 						deactivate = true;
 					}
@@ -197,6 +235,34 @@ public class BulletBehavior : BaseBulletBehaviour
 
 				if (deactivate)
 				{
+					effects = offensiveModule.onBulletDestroyEffects;
+					if (effects != null)
+					{
+						for (var index = 0; index < effects.Count; index++)
+						{
+							var effect = effects[index];
+
+							var flags = ImmediateEffectFlags.None;
+							float strength = 1f;
+					
+							effect.Apply(entity, ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
+						}
+					}
+					
+					var effects2 = offensiveModule.additionalOnBulletDestroyEffects;
+					if (effects2 != null)
+					{
+						for (var index = 0; index < effects2.Count; index++)
+						{
+							var effect = effects2[index].Item2;
+
+							var flags = ImmediateEffectFlags.None;
+							float strength = 1f;
+					
+							effect.Apply(entity, ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
+						}
+					}
+					
 					bullet.Die();
 				}
 			}

@@ -9,6 +9,8 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
     public class ProjectileAddImmediateEffect : ModuleStatsEffect
     {
         public List<ImmediateEffect> effectsToAdd;
+        
+        public EffectType effectType;
 
         public override bool Apply(Module target, object source, int level)
         {
@@ -16,9 +18,19 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
             {
                 foreach (var effect in effectsToAdd)
                 {
-                    if (!offensiveModule.additionalEffects.Contains((source, effect)))
+                    if (effectType == EffectType.Default)
                     {
-                        offensiveModule.additionalEffects.Add((source, effect));
+                        if (!offensiveModule.additionalEffects.Contains((source, effect)))
+                        {
+                            offensiveModule.additionalEffects.Add((source, effect));
+                        }    
+                    }
+                    else if (effectType == EffectType.OnBulletDestroy)
+                    {
+                        if (!offensiveModule.additionalOnBulletDestroyEffects.Contains((source, effect)))
+                        {
+                            offensiveModule.additionalOnBulletDestroyEffects.Add((source, effect));
+                        }
                     }
                 }
                 
@@ -34,9 +46,19 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
             {
                 foreach (var effect in effectsToAdd)
                 {
-                    if (offensiveModule.additionalEffects.Contains((source, effect)))
+                    if (effectType == EffectType.Default)
                     {
-                        offensiveModule.additionalEffects.Remove((source, effect));
+                        if (offensiveModule.additionalEffects.Contains((source, effect)))
+                        {
+                            offensiveModule.additionalEffects.Remove((source, effect));
+                        } 
+                    }
+                    else if (effectType == EffectType.OnBulletDestroy)
+                    {
+                        if (offensiveModule.additionalOnBulletDestroyEffects.Contains((source, effect)))
+                        {
+                            offensiveModule.additionalOnBulletDestroyEffects.Remove((source, effect));
+                        }
                     }
                 }
                 return true;
@@ -56,5 +78,11 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
 
             return ret;
         }
+    }
+
+    public enum EffectType
+    {
+        Default,
+        OnBulletDestroy
     }
 }

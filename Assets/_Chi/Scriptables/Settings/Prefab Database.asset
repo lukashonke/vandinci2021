@@ -112,16 +112,7 @@ MonoBehaviour:
     type: 3
     predefinedId: 0
     weightSettings:
-      alteredWeights:
-      - prefabId: 2500
-        addWeight: 10
-        additionalWeightWhenHavingLessThanAverage: 5
-      - prefabId: 2503
-        addWeight: 5
-        additionalWeightWhenHavingLessThanAverage: 5
-      - prefabId: 2506
-        addWeight: 5
-        additionalWeightWhenHavingLessThanAverage: 5
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: 91a363bd1f1eb294daab200b77bba099, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 1a44fcc45acc5c1438750ee0dba35732, type: 3}
     skill: {fileID: 0}
@@ -228,7 +219,7 @@ MonoBehaviour:
     additionalTexts: []
   - id: 2007
     label: Cannon Module
-    enabled: 0
+    enabled: 1
     description: Shoots strong projectile in the fixed direction.
     type: 3
     predefinedId: 0
@@ -396,10 +387,7 @@ MonoBehaviour:
     type: 3
     predefinedId: 0
     weightSettings:
-      alteredWeights:
-      - prefabId: 2600
-        addWeight: 20
-        additionalWeightWhenHavingLessThanAverage: 0
+      alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: d705c7605dc9bb841a8b7ba32c05d922, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 5d082eacc5d146f46ae9abb61fb7b4c9, type: 3}
     skill: {fileID: 0}
@@ -916,6 +904,23 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 0}
     additionalTexts:
     - fire_effect_description
+  - id: 4210
+    label: 'Cannon: Explosion'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 20e6786d3a5da0f4cb6cbadb919db476, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
   - id: 4400
     label: 'Chaotic Leap: Enhance Power'
     enabled: 1
@@ -1234,7 +1239,7 @@ MonoBehaviour:
     note: 
     prefabs:
     - prefabId: 2500
-      weight: 10
+      weight: 15
       price: 1
       priceMultiplyForEveryOwned: 0.2
     - prefabId: 2503
@@ -1255,15 +1260,15 @@ MonoBehaviour:
     note: 
     prefabs:
     - prefabId: 2600
-      weight: 10
+      weight: 1
       price: 1
       priceMultiplyForEveryOwned: 0.75
     - prefabId: 2602
-      weight: 10
+      weight: 1
       price: 1
       priceMultiplyForEveryOwned: 0.75
     - prefabId: 2604
-      weight: 10
+      weight: 1
       price: 1
       priceMultiplyForEveryOwned: 0.75
     minCountShownItems: 1
@@ -1297,6 +1302,14 @@ MonoBehaviour:
     note: 
     prefabs:
     - prefabId: 2000
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 2007
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 2003
       weight: 1
       price: 0
       priceMultiplyForEveryOwned: 0

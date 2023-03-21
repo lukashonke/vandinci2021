@@ -22,7 +22,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
         {
             if (base.ActivateEffects())
             {
-                emitter.Play();
+                //emitter.Play();
                 return true;
             }
             return false;
@@ -32,7 +32,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
         {
             if (base.DeactivateEffects())
             {
-                emitter.Stop();
+                //emitter.Stop();
                 return true;
             }
             return false;
@@ -44,17 +44,27 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
             
             var waiter = new WaitForFixedUpdate();
 
-            float nextTargetUpdate = Time.time + targetUpdateInterval;
+            float lastFire = 0;
 
             while (activated && parent.CanShoot())
             {
                 yield return waiter;
 
-                if (nextTargetUpdate > Time.time)
+                if (statusbar != null)
                 {
-                    nextTargetUpdate = Time.time + targetUpdateInterval + Random.Range(0.1f, 0.2f);
+                    statusbar.value = (Math.Min(1, 1 - (lastFire + GetFireRate() - Time.time) / GetFireRate()));
+                    statusbar.maxValue = 1;
+                    statusbar.Recalculate();
+                }
 
-                    emitter.ApplyParams(stats, parent);
+                if (lastFire + GetFireRate() <= Time.time)
+                {
+                    lastFire = Time.time;
+                    emitter.applyBulletParamsAction = () =>
+                    {
+                        emitter.ApplyParams(stats, parent);
+                    };
+                    emitter.Play();
                 }
 
                 RotateTowards(Utils.GetMousePosition());

@@ -23,7 +23,7 @@ namespace _Chi.Scripts.Scriptables.Skills
             
             foreach (var effect in effects)
             {
-                effect.Apply(entity, entity, null, null, effectStrength);
+                effect.Apply(entity, entity, null, null, effectStrength, new ImmediateEffectParams());
             }
             
             if (entity is Player player)

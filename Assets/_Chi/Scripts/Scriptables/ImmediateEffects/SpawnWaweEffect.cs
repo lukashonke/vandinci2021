@@ -14,7 +14,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
         [NonSerialized] private bool initialised = false;
 
-        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength)
+        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
             if (!initialised)
             {

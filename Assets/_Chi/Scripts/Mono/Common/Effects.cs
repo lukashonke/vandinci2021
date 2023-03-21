@@ -3,6 +3,7 @@
     public enum Effects
     {
         Stun,
-        Fire
+        Fire,
+        FixedDamage
     }
 }

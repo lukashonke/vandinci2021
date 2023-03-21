@@ -174,7 +174,7 @@ namespace _Chi.Scripts.Scriptables.Skills
                     var entity = col.gameObject.GetEntity();
                     if (entity is Npc npc && npc.CanBePushed() && player.AreEnemies(npc))
                     {
-                        shockwaveEffect.Apply(npc, player, null, null, shockwaveStrength);
+                        shockwaveEffect.Apply(npc, player, null, null, shockwaveStrength, new ImmediateEffectParams());
                     }
                 }
             }

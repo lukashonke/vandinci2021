@@ -37,8 +37,6 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
         {
             yield return new WaitForSeconds(Random.Range(0.05f, 0.5f));
             
-            var waiter = new WaitForFixedUpdate();
-
             float nextTargetUpdate = Time.time + targetUpdateInterval;
 
             float lastFire = 0;
@@ -50,6 +48,13 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
             while (activated && parent.CanShoot())
             {
                 yield return null;
+                
+                if (statusbar != null)
+                {
+                    statusbar.value = (Math.Min(1, 1 - (lastFire + GetFireRate() - Time.time) / GetFireRate()));
+                    statusbar.maxValue = 1;
+                    statusbar.Recalculate();
+                }
 
                 if (nextTargetUpdate <= Time.time)
                 {
@@ -80,7 +85,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                 
                 if (currentTarget != null)
                 {
-                    if (lastFire + GetFireRate() <= Time.time)
+                     if (lastFire + GetFireRate() <= Time.time)
                     {
                         lastFire = Time.time;
                         emitter.applyBulletParamsAction = () =>
@@ -90,26 +95,6 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                         emitter.Play();
                     }
                     
-                    /*if (nextFireRate < Time.time && ProjectileExtensions.CanFire(currentTarget.position, transform.rotation, transform.position, 5f))
-                    {
-                        nextFireRate = Time.time + stats.fireRate;
-                    
-                        var projectile = prefabProjectile.SpawnProjectile(this);
-
-                        var hash = projectile.GetHashCode();
-                        
-                        //TODO zakomponovat pocet projektilů
-                    
-                        var tuple = projectile.RotateAndDirectTowards(currentTarget.position, 0);
-                        
-                        Debug.Log(this.stats.projectileCount.GetValueInt());
-
-                        projectile.rb.velocity = tuple.direction * stats.projectileSpeed;
-                        projectile.transform.rotation = tuple.rotation;
-                    
-                        projectile.ScheduleUnspawn(DamageExtensions.CalculateProjectileLifetime(stats.projectileLifetime, this));
-                    }*/
-
                     if (targetType != ShootNearestTargetType.NoRotation)
                     {
                         RotateTowards(currentTarget.position, instantRotation);

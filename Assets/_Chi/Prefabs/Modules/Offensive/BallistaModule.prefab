@@ -31,7 +31,8 @@ Transform:
   m_LocalPosition: {x: -0.9655329, y: -0.7786689, z: 0.09276754}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 822145747482751457}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56,11 +57,16 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: visualItems
+      Entry: 6
+      Data: 
     - Name: additionalEffects
       Entry: 6
       Data: 
   parent: {fileID: 0}
   slot: {fileID: 0}
+  statusbar: {fileID: 0}
+  upgrades: []
   targetUpdateInterval: 0.2
   rotationSpeed: 500
   instantRotation: 1
@@ -73,17 +79,17 @@ MonoBehaviour:
       baseValue: 1
       value: 0
     projectileSpreadAngle:
-      baseValue: 5
+      baseValue: 0.2
       value: 0
     projectileSpeed:
       baseValue: 12
       value: 0
     fireRate:
-      baseValue: 4
-      value: 3
+      baseValue: 3
+      value: 1
     projectileDamage:
       baseValue: 20
-      value: 30
+      value: 20
     targetRange:
       baseValue: 6
       value: 0
@@ -94,11 +100,18 @@ MonoBehaviour:
       baseValue: 0
       value: 0
     canProjectilePierce: 1
+    canProjectilePierceUsingDamage: 0
     projectilePierceCount:
       baseValue: 2
       value: 0
     projectilePushForce:
-      baseValue: 120
+      baseValue: 60
+      value: 0
+    projectileScale:
+      baseValue: 1
+      value: 0
+    shotsPerShot:
+      baseValue: 1
       value: 0
     projectilePierceChance: 0
     hasAreaEffect: 0
@@ -112,6 +125,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 55fb060b0aa775a4eb384d6f7a55d715, type: 2}
   - {fileID: 11400000, guid: 2888de4cdfdab9d49a4833d8ea420960, type: 2}
   shootVfx: {fileID: 0}
+  shootEffectSelf: {fileID: 0}
   affectType: 0
   trailParameters:
     useTrail: 1
@@ -139,11 +153,16 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: visualItems
+      Entry: 6
+      Data: 
     - Name: additionalEffects
       Entry: 6
       Data: 
   parent: {fileID: 0}
   slot: {fileID: 0}
+  statusbar: {fileID: 0}
+  upgrades: []
   targetUpdateInterval: 0.2
   rotationSpeed: 1000
   instantRotation: 0
@@ -177,11 +196,18 @@ MonoBehaviour:
       baseValue: 10
       value: 0
     canProjectilePierce: 1
+    canProjectilePierceUsingDamage: 0
     projectilePierceCount:
       baseValue: 2
       value: 0
     projectilePushForce:
       baseValue: 120
+      value: 0
+    projectileScale:
+      baseValue: 0
+      value: 0
+    shotsPerShot:
+      baseValue: 0
       value: 0
     projectilePierceChance: 0
     hasAreaEffect: 0
@@ -195,6 +221,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 55fb060b0aa775a4eb384d6f7a55d715, type: 2}
   - {fileID: 11400000, guid: 2888de4cdfdab9d49a4833d8ea420960, type: 2}
   shootVfx: {fileID: 0}
+  shootEffectSelf: {fileID: 0}
   affectType: 0
   trailParameters:
     useTrail: 0
@@ -275,3 +302,77 @@ MonoBehaviour:
   useDefaultGizmoColor: 1
   gizmoColor: {r: 0, g: 1, b: 0, a: 1}
   gizmoSize: 0.5
+--- !u!1001 &4171208633841848563
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1232174764404154628}
+    m_Modifications:
+    - target: {fileID: -8259172263503992391, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1232174764404154628}
+    - target: {fileID: -8259172263503992391, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: offset.x
+      value: 0.195
+      objectReference: {fileID: 0}
+    - target: {fileID: -8259172263503992391, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: offset.y
+      value: -0.726
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.195
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.726
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613974520338816212, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_Name
+      value: Statusbar
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+--- !u!4 &822145747482751457 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+  m_PrefabInstance: {fileID: 4171208633841848563}
+  m_PrefabAsset: {fileID: 0}
