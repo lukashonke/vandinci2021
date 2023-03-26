@@ -905,9 +905,10 @@ MonoBehaviour:
     additionalTexts:
     - fire_effect_description
   - id: 4210
-    label: 'Cannon: Explosion'
+    label: 'Cannon: Blast Barrage'
     enabled: 1
-    description: TODO
+    description: 'Projectiles will explode in the end, dealing 50% of projectile
+      damage to around enemies. '
     type: 9
     predefinedId: 0
     weightSettings:
@@ -917,6 +918,193 @@ MonoBehaviour:
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 20e6786d3a5da0f4cb6cbadb919db476, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 4211
+    label: 'Cannon: Static Blaze'
+    enabled: 1
+    description: When stationary, the cannon reloads much faster.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 30d3901b58d9a1e4788cd6d0767db16c, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 4212
+    label: 'Cannon: Tactical Trigger'
+    enabled: 1
+    description: Activating your skill triggers a cannon shot automatically aimed
+      at nearest enemy.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: cd2f6511b98b3fe478e022edb4585f64, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 4213
+    label: 'Cannon: Tidal Force'
+    enabled: 1
+    description: "Cannon fire pushes enemies away, creating distance and controlling
+      the battlefield.\r"
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 7770eecb18f36274f9814cc9c9bea4b3, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 4214
+    label: 'Cannon: Speedburst Salvo'
+    enabled: 1
+    description: "Firing the cannon grants a temporary speed boost, allowing quick
+      repositioning.\r"
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: b4621817118d655409c448952011035f, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 4215
+    label: 'Cannon: Singularity Surge'
+    enabled: 1
+    description: 'Cannonballs create a black hole upon vanishing. '
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 2003641d12e0f304e8da6e0ff811b8e1, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 4216
+    label: 'Cannon: More Rounds'
+    enabled: 1
+    description: Doubles number of projectiles, but decreases fire rate by 50%.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 9f6472377434d4a47bb44cebb09481f0, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 4217
+    label: 'Cannon: Panic Pulse'
+    enabled: 1
+    description: 'Firing the cannon instills fear in enemies, causing them to flee
+      from the terrifying blast.
+
+'
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 2ae57ff88d54d624ab20256f25963255, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 4218
+    label: 'Cannon: Triple Threat'
+    enabled: 1
+    description: 'Every 3rd shot, the cannon fires a wide-angle volley, hitting multiple
+      enemies with a single blast.
+
+
+
+
+
+
+
+'
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: c4e95d2f03c9f544881672d8cb4c0243, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 4220
+    label: 'Cannon: Soul Stealing'
+    enabled: 0
+    description: Every enemy you hit with the weapon will add progress towards recharging
+      your weapon to fire again.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 33805624ebfb29545b06b37e2c255b26, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 4219
+    label: 'Cannon: Gold Satisfaction'
+    enabled: 1
+    description: Every gold you pick up will add progress towards recharging your
+      weapon to fire again.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 003eab692ffe43f43b3ff1f8c6b2a373, type: 2}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts:
@@ -1296,6 +1484,59 @@ MonoBehaviour:
       weight: 1
       price: 2.5
       priceMultiplyForEveryOwned: 0
+    - prefabId: 4205
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4206
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+    minCountShownItems: 1
+    closeOnFirstPurchase: 0
+  - name: shop_chaos_upgrades_cannon
+    note: 
+    prefabs:
+    - prefabId: 4210
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4211
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4212
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4213
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4214
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4215
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4216
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4217
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4218
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 4219
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
     minCountShownItems: 1
     closeOnFirstPurchase: 0
   - name: free_start_weapon
@@ -1357,10 +1598,27 @@ MonoBehaviour:
     prefabs:
     - prefabId: 2000
       weight: 1
-      price: 2.25
-      priceMultiplyForEveryOwned: 0
+      price: 1.25
+      priceMultiplyForEveryOwned: 1
+    - prefabId: 2007
+      weight: 1
+      price: 1.25
+      priceMultiplyForEveryOwned: 1
     minCountShownItems: 1
     closeOnFirstPurchase: 0
+  - name: chest_weapons
+    note: 
+    prefabs:
+    - prefabId: 2000
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+    - prefabId: 2007
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+    minCountShownItems: 4
+    closeOnFirstPurchase: 1
   - name: shop_player_upgrades
     note: 
     prefabs:
@@ -1618,7 +1876,7 @@ MonoBehaviour:
       maxHpMul: 1
       hp: 60
     npcStats:
-      speed: 0.9
+      speed: 1.1
       rotationSpeed: 10
       contactDamage: 20
       contactDamageInterval: 0.5
@@ -1649,7 +1907,7 @@ MonoBehaviour:
       maxHpMul: 1
       hp: 45
     npcStats:
-      speed: 1.6
+      speed: 2
       rotationSpeed: 10
       contactDamage: 20
       contactDamageInterval: 0.5
@@ -1680,7 +1938,7 @@ MonoBehaviour:
       maxHpMul: 1
       hp: 90
     npcStats:
-      speed: 0.7
+      speed: 0.85
       rotationSpeed: 10
       contactDamage: 20
       contactDamageInterval: 0.5
@@ -1914,7 +2172,7 @@ MonoBehaviour:
       maxHpMul: 1
       hp: 300
     npcStats:
-      speed: 0.7
+      speed: 0.85
       rotationSpeed: 10
       contactDamage: 20
       contactDamageInterval: 0.5

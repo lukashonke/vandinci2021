@@ -64,6 +64,12 @@ MonoBehaviour:
     - Name: additionalEffects
       Entry: 6
       Data: 
+    - Name: additionalOnBulletDestroyEffects
+      Entry: 6
+      Data: 
+    - Name: additionalShootEffectsSelf
+      Entry: 6
+      Data: 
   parent: {fileID: 0}
   slot: {fileID: 0}
   statusbar: {fileID: 0}
@@ -71,6 +77,7 @@ MonoBehaviour:
   targetUpdateInterval: 0.2
   rotationSpeed: 500
   instantRotation: 1
+  reloadProgress: 0
   muzzles: []
   stats:
     projectileCount:
@@ -86,8 +93,14 @@ MonoBehaviour:
       baseValue: 16
       value: 0
     fireRate:
-      baseValue: 6
-      value: 1
+      baseValue: 5
+      value: 6
+    stationaryFireRateBoost:
+      baseValue: 1
+      value: 0
+    movingFireRateBoost:
+      baseValue: 1
+      value: 0
     projectileDamage:
       baseValue: 50
       value: 50
@@ -114,6 +127,9 @@ MonoBehaviour:
     shotsPerShot:
       baseValue: 1
       value: 0
+    shootOnSkillUse:
+      baseValue: 0
+      value: 0
     projectilePierceChance: 0
     hasAreaEffect: 0
     hasProjectile: 1
@@ -124,8 +140,9 @@ MonoBehaviour:
   effects:
   - {fileID: 11400000, guid: e9ee23c6ec6fda646a0ca63e5b6a0d15, type: 2}
   - {fileID: 11400000, guid: 55fb060b0aa775a4eb384d6f7a55d715, type: 2}
+  onBulletDestroyEffects: []
   shootVfx: {fileID: 5898446814790275595}
-  shootEffectSelf: {fileID: 11400000, guid: 910c2c04cdcf7b245902b2ba7768d72f, type: 2}
+  shootEffectsSelf: []
   affectType: 0
   trailParameters:
     useTrail: 1
@@ -232,6 +249,12 @@ MonoBehaviour:
     - Name: additionalEffects
       Entry: 6
       Data: 
+    - Name: additionalOnBulletDestroyEffects
+      Entry: 6
+      Data: 
+    - Name: additionalShootEffectsSelf
+      Entry: 6
+      Data: 
   parent: {fileID: 0}
   slot: {fileID: 0}
   statusbar: {fileID: 0}
@@ -239,6 +262,7 @@ MonoBehaviour:
   targetUpdateInterval: 0.2
   rotationSpeed: 1500
   instantRotation: 1
+  reloadProgress: 0
   muzzles: []
   stats:
     projectileCount:
@@ -256,6 +280,12 @@ MonoBehaviour:
     fireRate:
       baseValue: 6
       value: 1
+    stationaryFireRateBoost:
+      baseValue: 0
+      value: 0
+    movingFireRateBoost:
+      baseValue: 0
+      value: 0
     projectileDamage:
       baseValue: 50
       value: 50
@@ -282,6 +312,9 @@ MonoBehaviour:
     shotsPerShot:
       baseValue: 1
       value: 0
+    shootOnSkillUse:
+      baseValue: 0
+      value: 0
     projectilePierceChance: 0
     hasAreaEffect: 0
     hasProjectile: 1
@@ -292,8 +325,9 @@ MonoBehaviour:
   effects:
   - {fileID: 11400000, guid: e9ee23c6ec6fda646a0ca63e5b6a0d15, type: 2}
   - {fileID: 11400000, guid: 55fb060b0aa775a4eb384d6f7a55d715, type: 2}
+  onBulletDestroyEffects: []
   shootVfx: {fileID: 5898446814790275595}
-  shootEffectSelf: {fileID: 11400000, guid: 910c2c04cdcf7b245902b2ba7768d72f, type: 2}
+  shootEffectsSelf: []
   affectType: 0
   trailParameters:
     useTrail: 1

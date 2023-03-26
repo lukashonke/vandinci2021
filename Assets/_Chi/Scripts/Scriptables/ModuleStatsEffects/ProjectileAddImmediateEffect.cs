@@ -32,6 +32,20 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                             offensiveModule.additionalOnBulletDestroyEffects.Add((source, effect));
                         }
                     }
+                    else if (effectType == EffectType.SelfOnShoot)
+                    {
+                        if (!offensiveModule.additionalShootEffectsSelf.Contains((source, effect)))
+                        {
+                            offensiveModule.additionalShootEffectsSelf.Add((source, effect));
+                        }
+                    }
+                    else if (effectType == EffectType.OnPickupGold)
+                    {
+                        if (!offensiveModule.additionalOnPickupGoldEffects.Contains((source, effect)))
+                        {
+                            offensiveModule.additionalOnPickupGoldEffects.Add((source, effect));
+                        }
+                    }
                 }
                 
                 return true;
@@ -60,6 +74,20 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                             offensiveModule.additionalOnBulletDestroyEffects.Remove((source, effect));
                         }
                     }
+                    else if (effectType == EffectType.SelfOnShoot)
+                    {
+                        if (offensiveModule.additionalShootEffectsSelf.Contains((source, effect)))
+                        {
+                            offensiveModule.additionalShootEffectsSelf.Remove((source, effect));
+                        }
+                    }
+                    else if (effectType == EffectType.OnPickupGold)
+                    {
+                        if (offensiveModule.additionalOnPickupGoldEffects.Contains((source, effect)))
+                        {
+                            offensiveModule.additionalOnPickupGoldEffects.Remove((source, effect));
+                        }
+                    }
                 }
                 return true;
             }
@@ -83,6 +111,8 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
     public enum EffectType
     {
         Default,
-        OnBulletDestroy
+        OnBulletDestroy,
+        SelfOnShoot,
+        OnPickupGold
     }
 }

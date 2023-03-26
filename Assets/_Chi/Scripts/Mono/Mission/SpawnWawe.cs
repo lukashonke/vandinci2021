@@ -121,41 +121,62 @@ namespace _Chi.Scripts.Mono.Mission
                     theta = FormationsUtils.GetCircleTheta((int) spawnCount);
                     break;
                 case SpawnFormation.Line:
+                case SpawnFormation.RandomAroundPlayer:
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            int attempts;
             
             for (int i = 0; i < spawnCount; i++)
             {
-                var spread = Random.Range(settings.spawnGroupSpreadMin, settings.spawnGroupSpreadMax);
-                
-                Vector3 targetPosition;
-                switch (settings.formation)
+                attempts = 100;
+
+                Vector3 targetPosition = playerPosition;
+                while (--attempts > 0)
                 {
-                    case SpawnFormation.Grid:
-                        targetPosition = FormationsUtils.GetGridTargetPosition(spawnPosition, Quaternion.identity, i, settings.formationLookAhead, rows, new Vector2(spread, spread));
+                    var spread = Random.Range(settings.spawnGroupSpreadMin, settings.spawnGroupSpreadMax);
+
+                    switch (settings.formation)
+                    {
+                        case SpawnFormation.Grid:
+                            targetPosition = FormationsUtils.GetGridTargetPosition(spawnPosition, Quaternion.identity, i, settings.formationLookAhead, rows, new Vector2(spread, spread));
+                            break;
+                        case SpawnFormation.RandomAroundPlayer:
+                            targetPosition = Utils.GetRandomPositionAround(playerPosition, settings.distanceFromPlayerMin, settings.distanceFromPlayerMax);
+                            break;
+                        case SpawnFormation.ShightlyShiftedGrid:
+                            targetPosition = FormationsUtils.GetGridTargetPosition(spawnPosition, Quaternion.identity, i, settings.formationLookAhead, rows, new Vector2(spread, spread), 0.2f);
+                            break;
+                        case SpawnFormation.Horde:
+                            targetPosition = FormationsUtils.GetHordeTargetPosition(spawnPosition, Quaternion.identity, i, settings.formationLookAhead, rows, new Vector2(spread, spread), Random.Range(0, 1f), 0.1f);
+                            break;
+                        case SpawnFormation.RandomPack:
+                            targetPosition = FormationsUtils.GetHordeTargetPosition(spawnPosition, Quaternion.identity, i, settings.formationLookAhead, rows, new Vector2(spread, spread));
+                            break;
+                        case SpawnFormation.Arc:
+                            targetPosition = FormationsUtils.GetArcPosition(spawnPosition, Quaternion.identity, i, theta, spread, settings.formationLookAhead, true);
+                            break;
+                        case SpawnFormation.Circle:
+                            targetPosition = FormationsUtils.GetCirclePosition(spawnPosition, Quaternion.identity, i, theta, spread, settings.formationLookAhead);
+                            break;
+                        case SpawnFormation.Line:
+                            targetPosition = FormationsUtils.GetLinePosition(spawnPosition, Quaternion.identity, i, spread, settings.formationLookAhead, true);
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+
+                    if (!settings.onlyOnPlayerAccessibleArea || Gamesystem.instance.CanBeAccessed(targetPosition))
+                    {
                         break;
-                    case SpawnFormation.ShightlyShiftedGrid:
-                        targetPosition = FormationsUtils.GetGridTargetPosition(spawnPosition, Quaternion.identity, i, settings.formationLookAhead, rows, new Vector2(spread, spread), 0.2f);
-                        break;
-                    case SpawnFormation.Horde:
-                        targetPosition = FormationsUtils.GetHordeTargetPosition(spawnPosition, Quaternion.identity, i, settings.formationLookAhead, rows, new Vector2(spread, spread), Random.Range(0, 1f), 0.1f);
-                        break;
-                    case SpawnFormation.RandomPack:
-                        targetPosition = FormationsUtils.GetHordeTargetPosition(spawnPosition, Quaternion.identity, i, settings.formationLookAhead, rows, new Vector2(spread, spread));
-                        break;
-                    case SpawnFormation.Arc:
-                        targetPosition = FormationsUtils.GetArcPosition(spawnPosition, Quaternion.identity, i, theta, spread, settings.formationLookAhead, true);
-                        break;
-                    case SpawnFormation.Circle:
-                        targetPosition = FormationsUtils.GetCirclePosition(spawnPosition, Quaternion.identity, i, theta, spread, settings.formationLookAhead);
-                        break;
-                    case SpawnFormation.Line:
-                        targetPosition = FormationsUtils.GetLinePosition(spawnPosition, Quaternion.identity, i, spread, settings.formationLookAhead, true);
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
+                    }
+                }
+                
+                if(attempts == 0)
+                {
+                    Debug.LogError("Could not find a valid spawn position");
                 }
 
                 var spawnPrefab = settings.GetRandomPrefab();
@@ -281,6 +302,8 @@ namespace _Chi.Scripts.Mono.Mission
         public float distanceFromPlayerToDespawn = 100;
 
         public bool trackEntityForMission = false;
+        
+        public bool onlyOnPlayerAccessibleArea;
         
         // runtime
         [NonSerialized] public float nextSpawnTime;

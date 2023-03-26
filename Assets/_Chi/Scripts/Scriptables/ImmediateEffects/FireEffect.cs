@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Modules;
@@ -21,7 +20,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
         public ImmediateEffect applyEffectOnInterval;
         public float applyEffectOnIntervalStrength;
         
-        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
+        public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
             if (target != null && sourceEntity != null && target.AreEnemies(sourceEntity))
             {
@@ -79,7 +78,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
                     
                     fires[target] = data;
                     
-                    applyEffectOnInterval.Apply(target, source, sourceItem, sourceModule, data.strength, new ImmediateEffectParams());
+                    applyEffectOnInterval.Apply(target, target.GetPosition(), source, sourceItem, sourceModule, data.strength, new ImmediateEffectParams());
 
                     if (data.remainingIntervals > 0)
                     {

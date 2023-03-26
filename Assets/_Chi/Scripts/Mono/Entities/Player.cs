@@ -287,7 +287,7 @@ namespace _Chi.Scripts.Mono.Entities
 
                         if (pushEffect != null)
                         {
-                            pushEffect.Apply(monster, this, null, null, velocity, new ImmediateEffectParams());
+                            pushEffect.Apply(monster, monster.GetPosition(), this, null, null, velocity, new ImmediateEffectParams());
                         }
                     }
                 }
@@ -365,7 +365,7 @@ namespace _Chi.Scripts.Mono.Entities
                 {
                     foreach (var effect in shieldEffects)
                     {
-                        effect.Apply(npc, this, null, null, stats.shieldEffectsStrength.GetValue(), new ImmediateEffectParams());
+                        effect.Apply(npc, npc.GetPosition(), this, null, null, stats.shieldEffectsStrength.GetValue(), new ImmediateEffectParams());
                     }
                 }
             }
@@ -644,15 +644,9 @@ namespace _Chi.Scripts.Mono.Entities
             
             foreach (var slot in slots)
             {
-                if (slot.currentModule != null && slot.currentModule.subEmitters != null)
+                if (slot.currentModule != null)
                 {
-                    foreach (var kp in slot.currentModule.subEmitters)
-                    {
-                        foreach (var subEmitter in kp.Value)
-                        {
-                            subEmitter.OnAfterSkillUse(skill);
-                        }
-                    }
+                    slot.currentModule.OnAfterSkillUse(skill);
                 }
             }
         }
@@ -700,6 +694,17 @@ namespace _Chi.Scripts.Mono.Entities
         public void SetCanDealPushDamage(bool b)
         {
             canDealPushDamage = b;
+        }
+
+        public void OnPickupGold(int amount)
+        {
+            foreach (var slot in slots)
+            {
+                if(slot.currentModule != null)
+                {
+                    slot.currentModule.OnPickupGold(amount);
+                }
+            }
         }
     }
 }

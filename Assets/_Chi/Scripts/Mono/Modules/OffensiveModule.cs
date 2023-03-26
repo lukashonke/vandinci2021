@@ -19,6 +19,8 @@ namespace _Chi.Scripts.Mono.Modules
     {
         [NonSerialized] public BulletEmitter emitter;
         [NonSerialized] public bool hasEmitter;
+        
+        public float reloadProgress;
 
         public List<Transform> muzzles;
         private int lastMuzzle;
@@ -35,7 +37,9 @@ namespace _Chi.Scripts.Mono.Modules
 
         public ParticleSystem shootVfx;
 
-        public ImmediateEffect shootEffectSelf;
+        [FormerlySerializedAs("shootEffectSelfs")] public List<ImmediateEffect> shootEffectsSelf;
+        
+        [ReadOnly] public List<(object, ImmediateEffect)> additionalShootEffectsSelf;
 
         public TargetType affectType;
 
@@ -51,6 +55,7 @@ namespace _Chi.Scripts.Mono.Modules
 
             additionalEffects = new();
             additionalOnBulletDestroyEffects = new();
+            additionalShootEffectsSelf = new();
             emitter = GetComponent<BulletEmitter>();
             subEmitters = new();
             hasEmitter = emitter != null;
@@ -104,9 +109,20 @@ namespace _Chi.Scripts.Mono.Modules
                 shootVfx.Play();
             }
 
-            if (shootEffectSelf != null)
+            if (shootEffectsSelf != null)
             {
-                shootEffectSelf.Apply(parent, parent, null, this, 1f, new ImmediateEffectParams());
+                foreach (var eff in shootEffectsSelf)
+                {
+                    eff.Apply(parent, parent.GetPosition(), parent, null, this, 1f, new ImmediateEffectParams());
+                }
+            }
+            
+            if(additionalShootEffectsSelf != null)
+            {
+                foreach (var (source, eff) in additionalShootEffectsSelf)
+                {
+                    eff.Apply(parent, parent.GetPosition(), parent, null, this, 1f, new ImmediateEffectParams());
+                }
             }
         }
 
@@ -162,6 +178,57 @@ namespace _Chi.Scripts.Mono.Modules
             }
 
             return retValue;
+        }
+
+        public void AddRechargeFireProgressPercent(float percent)
+        {
+            reloadProgress = Mathf.Min(1, reloadProgress + percent);
+        }
+        
+        public void AddRechargeFireProgressTime(float time)
+        {
+            reloadProgress = Mathf.Min(1, reloadProgress + (time) / GetFireRate());
+        }
+
+        protected void RefreshStatusbarReload()
+        {
+            if (statusbar != null)
+            {
+                statusbar.value = reloadProgress;
+                statusbar.maxValue = 1;
+                statusbar.Recalculate();
+            }
+        }
+
+        public override void OnAfterSkillUse(Skill skill)
+        {
+            base.OnAfterSkillUse(skill);
+
+            if (stats.shootOnSkillUse.GetValueInt() > 0)
+            {
+                var shots = stats.shootOnSkillUse.GetValueInt();
+                for (int i = 0; i < shots; i++)
+                {
+                    emitter.applyBulletParamsAction = () =>
+                    {
+                        emitter.ApplyParams(stats, parent);
+                    };
+                    
+                    var nearest = ((Player) parent).GetNearestEnemy(GetPosition(), null);
+                    if (nearest != null)
+                    {
+                        RotateTowards(nearest.GetPosition(), instantRotation);
+                    }
+                    
+                    emitter.Play();
+                    //emitter.gameObject.transform.rotation = origRotation;
+                }
+            }
+        }
+        
+        private Quaternion RotateBackwards(Quaternion rotation)
+        {
+            return Quaternion.Euler(rotation.eulerAngles.x, rotation.eulerAngles.y, rotation.eulerAngles.z + 180);
         }
     }
 

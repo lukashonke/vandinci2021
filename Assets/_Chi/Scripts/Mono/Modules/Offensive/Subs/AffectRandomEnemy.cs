@@ -115,7 +115,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
                 
                 foreach (var effect in effects)
                 {
-                    effect.Apply(target, parentModule.parent, null, parentModule, 1, new ImmediateEffectParams());
+                    effect.Apply(target, target.GetPosition(), parentModule.parent, null, parentModule, 1, new ImmediateEffectParams());
                 }
                 
                 var additionalEffects = offensiveModule.additionalEffects;
@@ -130,7 +130,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
 
                         if (!list.Contains(effect))
                         {
-                            effect.Apply(target, parentModule.parent, null, parentModule, 1, new ImmediateEffectParams());
+                            effect.Apply(target, target.GetPosition(), parentModule.parent, null, parentModule, 1, new ImmediateEffectParams());
                             list.Add(effect);
                         } 
                     }

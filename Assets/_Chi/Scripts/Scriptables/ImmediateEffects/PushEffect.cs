@@ -1,5 +1,4 @@
 ﻿using _Chi.Scripts.Mono.Entities;
-using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Modules;
 using UnityEngine;
 
@@ -14,14 +13,20 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
         public float setCannotBePushedFor = 0.5f;
 
-        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
+        public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
-            var pushStrength = basePush;
+            if (target == null) return false;
             
+            var pushStrength = basePush;
+
             Vector3 source = target.GetPosition();
             if (sourceModule is OffensiveModule offensiveModule)
             {
-                pushStrength = offensiveModule.stats.projectilePushForce.GetValue();
+                if (!forcedFlags.HasFlag(ImmediateEffectFlags.FixedDamage))
+                {
+                    pushStrength = offensiveModule.stats.projectilePushForce.GetValue();
+                }
+
                 source = offensiveModule.GetPosition();
             }
             else if (sourceEntity != null)

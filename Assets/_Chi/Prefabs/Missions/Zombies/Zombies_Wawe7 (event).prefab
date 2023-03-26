@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: -3204359601985624663}
   - component: {fileID: 9000068432140191412}
   m_Layer: 0
-  m_Name: Zombies_Wawe5_BACKUP
+  m_Name: Zombies_Wawe7 (event)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,7 +216,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   attacksName: 
-  disable: 0
+  disable: 1
   spawns:
   - possiblePrefabs:
     - type: 0
@@ -225,50 +225,20 @@ MonoBehaviour:
       weight: 6
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: Zombie
-    - type: 0
-      prefab: {fileID: 0}
-      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 6
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieFast
-    - type: 0
-      prefab: {fileID: 0}
-      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 2
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieFat
-    - type: 0
-      prefab: {fileID: 0}
-      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 1
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieBloaterExploding
+      prefabVariant: ZombieIdleRunner
     relativePosition: 0
     countPerMinuteCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 120
-        inSlope: 0.6
-        outSlope: 0.6
+        value: 40
+        inSlope: 0
+        outSlope: 0
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 100
-        value: 180
-        inSlope: 0.6
-        outSlope: 0.6
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -330,7 +300,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -345,7 +315,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 2
+        value: 3
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -370,10 +340,11 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    spawnGroupSpreadMin: 0.5
-    spawnGroupSpreadMax: 0.5
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 2
     distanceFromPlayerToDespawn: 40
     despawnAfter: 0
+    trackEntityForMission: 0
     nextSpawnTime: 0
     startAtTime: 0
     lastSpawnTime: 0
@@ -446,6 +417,8 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1.5
     spawnGroupSpreadMax: 2.5
     distanceFromPlayerToDespawn: 100
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-3837949277647058563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,6 +488,8 @@ MonoBehaviour:
     spawnGroupSpreadMin: 3
     spawnGroupSpreadMax: 4
     distanceFromPlayerToDespawn: 100
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-50647473022081503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,6 +545,8 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &766136386234732296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -592,7 +569,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   waveName: Walkers
-  disable: 0
+  disable: 1
   spawns:
   - possiblePrefabs:
     - type: 0
@@ -617,14 +594,16 @@ MonoBehaviour:
     repeatSpawnIntervalMin: 6
     repeatSpawnIntervalMax: 10
     repeatCount: 100
-    spawnCountMin: 6
-    spawnCountMax: 12
+    spawnCountMin: 10
+    spawnCountMax: 15
     distanceFromPlayerMin: 5
     distanceFromPlayerMax: 5
     despawnAfter: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &8998190245610271498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,7 +637,7 @@ MonoBehaviour:
       noRotation: 0
       prefabVariant: ZombieIdleRunner
     relativePosition: 0
-    formation: 0
+    formation: 5
     formationLookAhead: 2
     formationRadius: 5
     behavior: 2
@@ -666,20 +645,88 @@ MonoBehaviour:
     roamRandomRadius: 3
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 10
-    spawnTimeMax: 12
+    spawnTimeMin: 1
+    spawnTimeMax: 2
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 20
-    repeatSpawnIntervalMax: 24
-    repeatCount: 100
-    spawnCountMin: 6
-    spawnCountMax: 12
-    distanceFromPlayerMin: 6
-    distanceFromPlayerMax: 6
+    repeatSpawnIntervalMin: 10
+    repeatSpawnIntervalMax: 11
+    repeatCount: 4
+    spawnCountMin: 20
+    spawnCountMax: 30
+    distanceFromPlayerMin: 7
+    distanceFromPlayerMax: 7.5
     despawnAfter: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
+  - possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieIdleRunner
+    relativePosition: 0
+    formation: 5
+    formationLookAhead: 2
+    formationRadius: 5
+    behavior: 2
+    roamDistance: 100
+    roamRandomRadius: 3
+    dieWhenReachFixedMoveTarget: 0
+    stopWhenReachFixedMoveTarget: 0
+    spawnTimeMin: 1
+    spawnTimeMax: 2
+    repeatSpawn: 1
+    repeatSpawnIntervalMin: 10
+    repeatSpawnIntervalMax: 11
+    repeatCount: 4
+    spawnCountMin: 20
+    spawnCountMax: 30
+    distanceFromPlayerMin: 7
+    distanceFromPlayerMax: 7.5
+    despawnAfter: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 15
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
+  - possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieIdleRunner
+    relativePosition: 0
+    formation: 5
+    formationLookAhead: 2
+    formationRadius: 5
+    behavior: 2
+    roamDistance: 100
+    roamRandomRadius: 3
+    dieWhenReachFixedMoveTarget: 0
+    stopWhenReachFixedMoveTarget: 0
+    spawnTimeMin: 1
+    spawnTimeMax: 2
+    repeatSpawn: 1
+    repeatSpawnIntervalMin: 10
+    repeatSpawnIntervalMax: 11
+    repeatCount: 4
+    spawnCountMin: 20
+    spawnCountMax: 30
+    distanceFromPlayerMin: 7
+    distanceFromPlayerMax: 7.5
+    despawnAfter: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 15
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-4000076046673859097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,7 +749,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   waveName: Spawners
-  disable: 0
+  disable: 1
   spawns:
   - possiblePrefabs:
     - type: 0
@@ -735,6 +782,8 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 100
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-6502435416312752660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,7 +806,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   waveName: Spawners Group
-  disable: 0
+  disable: 1
   spawns:
   - possiblePrefabs:
     - type: 0
@@ -790,6 +839,8 @@ MonoBehaviour:
     spawnGroupSpreadMin: 2
     spawnGroupSpreadMax: 3
     distanceFromPlayerToDespawn: 100
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &6469568978721038765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -852,6 +903,8 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-3204359601985624663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -907,6 +960,8 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 30
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &9000068432140191412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -962,6 +1017,8 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 1000
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!1 &3022428695798256735
 GameObject:
   m_ObjectHideFlags: 1

@@ -10,7 +10,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
     {
         public string preset;
 
-        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
+        public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
             ProCamera2DShake.Instance.Shake(preset);
             return true;

@@ -161,9 +161,8 @@ GameObject:
   - component: {fileID: 6469568978721038765}
   - component: {fileID: -3204359601985624663}
   - component: {fileID: 9000068432140191412}
-  - component: {fileID: -8490184538130329446}
   m_Layer: 0
-  m_Name: Zombies_Wawe6 (many)
+  m_Name: Zombies_Wawe10 (Bloody)_BACKUP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -192,7 +191,6 @@ Transform:
   - {fileID: 3750697999516981359}
   - {fileID: 5885289525060756674}
   - {fileID: 3781662074522254375}
-  - {fileID: 1965214561287318120}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -227,46 +225,46 @@ MonoBehaviour:
       weight: 6
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: Zombie
+      prefabVariant: ZombieBloody
     - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
       weight: 6
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: ZombieFast
-    - type: 0
-      prefab: {fileID: 0}
-      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 2
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieFat
+      prefabVariant: ZombieBloodyFast
     - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
       weight: 1
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: ZombieBloaterExploding
+      prefabVariant: ZombieBloodyBloaterExploding
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 2
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieBloodyFat
     relativePosition: 0
     countPerMinuteCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 180
-        inSlope: 0.2
-        outSlope: 0.2
+        value: 360
+        inSlope: 0.4
+        outSlope: 0.4
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 100
-        value: 200
-        inSlope: 0.2
-        outSlope: 0.2
+        value: 400
+        inSlope: 0.4
+        outSlope: 0.4
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -332,7 +330,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 2
+        value: 3
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -598,7 +596,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   waveName: Walkers
-  disable: 0
+  disable: 1
   spawns:
   - possiblePrefabs:
     - type: 0
@@ -623,8 +621,8 @@ MonoBehaviour:
     repeatSpawnIntervalMin: 6
     repeatSpawnIntervalMax: 10
     repeatCount: 100
-    spawnCountMin: 6
-    spawnCountMax: 12
+    spawnCountMin: 10
+    spawnCountMax: 15
     distanceFromPlayerMin: 5
     distanceFromPlayerMax: 5
     despawnAfter: 0
@@ -654,7 +652,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   waveName: Runners
-  disable: 0
+  disable: 1
   spawns:
   - possiblePrefabs:
     - type: 0
@@ -679,8 +677,8 @@ MonoBehaviour:
     repeatSpawnIntervalMin: 20
     repeatSpawnIntervalMax: 24
     repeatCount: 100
-    spawnCountMin: 6
-    spawnCountMax: 12
+    spawnCountMin: 10
+    spawnCountMax: 15
     distanceFromPlayerMin: 6
     distanceFromPlayerMax: 6
     despawnAfter: 0
@@ -710,7 +708,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   waveName: Spawners
-  disable: 0
+  disable: 1
   spawns:
   - possiblePrefabs:
     - type: 0
@@ -766,7 +764,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   waveName: Spawners Group
-  disable: 0
+  disable: 1
   spawns:
   - possiblePrefabs:
     - type: 0
@@ -775,7 +773,7 @@ MonoBehaviour:
       weight: 1
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: ZombieSpawner_Zombie
+      prefabVariant: ZombieSpawner_ZombieBloody
     relativePosition: 3
     formation: 0
     formationLookAhead: 2
@@ -963,9 +961,9 @@ MonoBehaviour:
     spawnTimeMin: 1
     spawnTimeMax: 30
     repeatSpawn: 0
-    repeatSpawnIntervalMin: 30
-    repeatSpawnIntervalMax: 30
-    repeatCount: 1
+    repeatSpawnIntervalMin: 10
+    repeatSpawnIntervalMax: 10
+    repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
     distanceFromPlayerMin: 8
@@ -974,62 +972,6 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 1000
-    trackEntityForMission: 0
---- !u!114 &-8490184538130329446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091413172466918211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  waveName: Spawners Group
-  disable: 0
-  spawns:
-  - possiblePrefabs:
-    - type: 0
-      prefab: {fileID: 0}
-      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 1
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieBloater_MiniBoss
-    relativePosition: 3
-    formation: 0
-    formationLookAhead: 2
-    formationRadius: 5
-    behavior: 0
-    roamDistance: 0
-    roamRandomRadius: 0
-    dieWhenReachFixedMoveTarget: 0
-    stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 10
-    spawnTimeMax: 10
-    repeatSpawn: 0
-    repeatSpawnIntervalMin: 10
-    repeatSpawnIntervalMax: 20
-    repeatCount: 100
-    spawnCountMin: 1
-    spawnCountMax: 1
-    distanceFromPlayerMin: 9
-    distanceFromPlayerMax: 9
-    despawnAfter: 0
-    spawnGroupSpreadMin: 2
-    spawnGroupSpreadMax: 3
-    distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
 --- !u!1 &3022428695798256735
 GameObject:
@@ -1360,53 +1302,6 @@ MonoBehaviour:
   nameOverride: Fire Rate Buff Zone
   tooltipOverride: 
   target: {fileID: -3204359601985624663}
---- !u!1 &8324543600194012247
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1965214561287318120}
-  - component: {fileID: 9148554541762654231}
-  m_Layer: 0
-  m_Name: NameContainer(EditorOnly)
-  m_TagString: EditorOnly
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1965214561287318120
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8324543600194012247}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2091413172466918208}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9148554541762654231
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8324543600194012247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameOverride: Spawn Mini Boss
-  tooltipOverride: 
-  target: {fileID: -8490184538130329446}
 --- !u!1 &8916042786223728663
 GameObject:
   m_ObjectHideFlags: 1

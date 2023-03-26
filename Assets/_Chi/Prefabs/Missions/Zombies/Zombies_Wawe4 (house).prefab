@@ -121,7 +121,7 @@ MonoBehaviour:
       noRotation: 1
       prefabVariant: MonsterHouseSmall
     relativePosition: 0
-    formation: 0
+    formation: 7
     formationLookAhead: 2
     formationRadius: 5
     behavior: 0
@@ -143,6 +143,8 @@ MonoBehaviour:
     spawnGroupSpreadMin: 0.5
     spawnGroupSpreadMax: 0.5
     distanceFromPlayerToDespawn: 40
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 1
 --- !u!114 &-2810012884392272434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +200,8 @@ MonoBehaviour:
     spawnGroupSpreadMin: 2
     spawnGroupSpreadMax: 3
     distanceFromPlayerToDespawn: 100
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &7680715313440162207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,6 +384,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 0.5
     distanceFromPlayerToDespawn: 40
     despawnAfter: 0
+    trackEntityForMission: 0
     nextSpawnTime: 0
     startAtTime: 0
     lastSpawnTime: 0
@@ -445,6 +450,8 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &1234158351053750136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,6 +507,8 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 1000
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!1 &3368940264975699084
 GameObject:
   m_ObjectHideFlags: 1

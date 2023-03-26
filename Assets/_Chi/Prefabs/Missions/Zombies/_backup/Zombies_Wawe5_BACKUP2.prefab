@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: -3204359601985624663}
   - component: {fileID: 9000068432140191412}
   m_Layer: 0
-  m_Name: Zombies_Wawe8 (Elites only)
+  m_Name: Zombies_Wawe5_BACKUP2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,46 +225,46 @@ MonoBehaviour:
       weight: 6
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: ZombieElite
+      prefabVariant: Zombie
     - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
       weight: 6
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: ZombieEliteFast
+      prefabVariant: ZombieFast
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 2
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieFat
     - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
       weight: 1
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: ZombieEliteBloaterExploding
-    - type: 0
-      prefab: {fileID: 0}
-      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 1
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieEliteFat
+      prefabVariant: ZombieBloaterExploding
     relativePosition: 0
     countPerMinuteCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 200
-        inSlope: 0.2
-        outSlope: 0.2
+        value: 120
+        inSlope: 0.6
+        outSlope: 0.6
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 100
-        value: 220
-        inSlope: 0.2
-        outSlope: 0.2
+        value: 180
+        inSlope: 0.6
+        outSlope: 0.6
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -330,7 +330,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -345,7 +345,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 4
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -370,8 +370,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    spawnGroupSpreadMin: 1
-    spawnGroupSpreadMax: 2
+    spawnGroupSpreadMin: 0.5
+    spawnGroupSpreadMax: 0.5
     distanceFromPlayerToDespawn: 40
     despawnAfter: 0
     nextSpawnTime: 0
@@ -617,8 +617,8 @@ MonoBehaviour:
     repeatSpawnIntervalMin: 6
     repeatSpawnIntervalMax: 10
     repeatCount: 100
-    spawnCountMin: 10
-    spawnCountMax: 15
+    spawnCountMin: 6
+    spawnCountMax: 12
     distanceFromPlayerMin: 5
     distanceFromPlayerMax: 5
     despawnAfter: 0
@@ -672,8 +672,8 @@ MonoBehaviour:
     repeatSpawnIntervalMin: 20
     repeatSpawnIntervalMax: 24
     repeatCount: 100
-    spawnCountMin: 10
-    spawnCountMax: 15
+    spawnCountMin: 6
+    spawnCountMax: 12
     distanceFromPlayerMin: 6
     distanceFromPlayerMax: 6
     despawnAfter: 0
@@ -702,7 +702,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   waveName: Spawners
-  disable: 1
+  disable: 0
   spawns:
   - possiblePrefabs:
     - type: 0
@@ -766,7 +766,7 @@ MonoBehaviour:
       weight: 1
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: ZombieSpawner_ZombieBloody
+      prefabVariant: ZombieSpawner_Zombie
     relativePosition: 3
     formation: 0
     formationLookAhead: 2

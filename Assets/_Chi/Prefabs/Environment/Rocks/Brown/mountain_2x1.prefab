@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7009694955172517946}
   - component: {fileID: 7009694955172517947}
   - component: {fileID: 7009694955172517948}
-  m_Layer: 21
+  m_Layer: 0
   m_Name: mountain_2x1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 399735035
-  m_SortingLayer: 9
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f46d4e78fc9229c4fbaed0f4f363dd0a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

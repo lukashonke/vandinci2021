@@ -16,6 +16,10 @@ namespace _Chi.Scripts.Statistics
 
         public Stat fireRate = new Stat();
 
+        public Stat stationaryFireRateBoost = new Stat();
+
+        public Stat movingFireRateBoost = new Stat();
+
         public Stat projectileDamage = new Stat();
         
         public Stat targetRange = new Stat();
@@ -35,6 +39,8 @@ namespace _Chi.Scripts.Statistics
         public Stat projectileScale = new Stat();
         
         public Stat shotsPerShot = new Stat();
+
+        public Stat shootOnSkillUse = new Stat();
         
         public float projectilePierceChance;
 

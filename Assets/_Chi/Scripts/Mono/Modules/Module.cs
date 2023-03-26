@@ -39,9 +39,13 @@ namespace _Chi.Scripts.Mono.Modules
         
         [NonSerialized] public Quaternion originalRotation;
 
+        [NonSerialized] public List<(object, ImmediateEffect)> additionalOnPickupGoldEffects;
+
         public virtual void Awake()
         {
             parent = GetComponentInParent<Entity>();
+
+            additionalOnPickupGoldEffects = new();
 
             originalRotation = transform.rotation;
         }
@@ -179,8 +183,33 @@ namespace _Chi.Scripts.Mono.Modules
                 SetRotation(EntityExtensions.RotateTowards(GetPosition(), rotationTarget, transform.rotation, rotationSpeed));
             }
         }
+        
+        public virtual void OnAfterSkillUse(Skill skill)
+        {
+            if (subEmitters != null)
+            {
+                foreach (var kp in subEmitters)
+                {
+                    foreach (var subEmitter in kp.Value)
+                    {
+                        subEmitter.OnAfterSkillUse(skill);
+                    }
+                }
+            }
+        }
 
         public virtual List<(string title, string value)> GetUiStats(int level) => null;
+
+        public virtual void OnPickupGold(int amount)
+        {
+            if (additionalOnPickupGoldEffects != null)
+            {
+                foreach (var effect in additionalOnPickupGoldEffects)
+                {
+                    effect.Item2.Apply(parent, parent.GetPosition(), parent, null, this, amount, new ImmediateEffectParams(), ImmediateEffectFlags.None);
+                }
+            }
+        }
     }
 
     public class SetVisualItemSlot

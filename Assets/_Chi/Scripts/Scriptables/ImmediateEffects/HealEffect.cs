@@ -10,8 +10,9 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
     {
         public float baseHeal;
 
-        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
+        public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
+            if(target == null) return false;
             target.Heal(baseHeal);
             return true;
         }    

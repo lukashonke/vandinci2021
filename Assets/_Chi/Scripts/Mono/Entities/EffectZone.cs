@@ -11,7 +11,7 @@ using Random = UnityEngine.Random;
 
 namespace _Chi.Scripts.Mono.Entities
 {
-    public class EffectZone : MonoBehaviour
+    public class EffectZone : MonoBehaviour, IPooledGameobject
     {
         public List<ImmediateEffect> effects;
         
@@ -61,21 +61,7 @@ namespace _Chi.Scripts.Mono.Entities
 
         public void OnDestroy()
         {
-            foreach (var kp in entitiesInside)
-            {
-                var entity = kp.Key;
-                if (entity != null)
-                {
-                    foreach (var effect in statsEffects)
-                    {
-                        if (statsEffectsApplied.Contains(entity))
-                        {
-                            effect.Remove(entity, this);
-                            statsEffectsApplied.Remove(entity);
-                        }
-                    }
-                }
-            }
+            ReleaseAttached();
         }
 
         private void UpdaterApply(Player player)
@@ -105,7 +91,7 @@ namespace _Chi.Scripts.Mono.Entities
                             Debug.Log("Applied to " + entity.name + "");
                             foreach (var effect in effects)
                             {
-                                effect.Apply(entity, null, null, null, effectStrength, new ImmediateEffectParams());
+                                effect.Apply(entity, entity.GetPosition(), null, null, null, effectStrength, new ImmediateEffectParams());
                             }
                             
                             foreach (var effect in statsEffects)
@@ -197,6 +183,34 @@ namespace _Chi.Scripts.Mono.Entities
                     UpdaterApply(Gamesystem.instance.objects.currentPlayer);
                 }
             }
+        }
+
+        private void ReleaseAttached()
+        {
+            foreach (var kp in entitiesInside)
+            {
+                var entity = kp.Key;
+                if (entity != null)
+                {
+                    foreach (var effect in statsEffects)
+                    {
+                        if (statsEffectsApplied.Contains(entity))
+                        {
+                            effect.Remove(entity, this);
+                            statsEffectsApplied.Remove(entity);
+                        }
+                    }
+                }
+            }
+        }
+
+        public void OnReturnedToPool()
+        {
+            ReleaseAttached();        
+        }
+
+        public void OnTakeFromPool()
+        {
         }
     }
 }

@@ -225,28 +225,28 @@ MonoBehaviour:
       weight: 6
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: ZombieBloody
+      prefabVariant: ZombieElite
     - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
       weight: 6
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: ZombieBloodyFast
+      prefabVariant: ZombieEliteFast
     - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
       weight: 1
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: ZombieBloodyBloaterExploding
+      prefabVariant: ZombieEliteBloaterExploding
     - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 2
+      weight: 1
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: ZombieBloodyFat
+      prefabVariant: ZombieEliteFat
     relativePosition: 0
     countPerMinuteCurve:
       serializedVersion: 2
@@ -448,6 +448,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 2.5
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-3837949277647058563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,6 +519,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 4
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-50647473022081503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,6 +576,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &766136386234732296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,6 +633,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &8998190245610271498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,6 +690,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-4000076046673859097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,6 +747,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-6502435416312752660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -798,6 +804,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 3
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &6469568978721038765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,6 +868,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-3204359601985624663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -917,6 +925,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 30
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &9000068432140191412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -973,6 +982,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 1000
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!1 &3022428695798256735
 GameObject:
   m_ObjectHideFlags: 1

@@ -24,7 +24,7 @@ namespace _Chi.Scripts.Mono.Entities
         [NonSerialized] public Animator animator;
         [NonSerialized] public bool hasBulletReceiver;
         [NonSerialized] public BulletReceiver bulletReceiver;
-
+        
         #endregion
 
         #region publics
@@ -38,6 +38,8 @@ namespace _Chi.Scripts.Mono.Entities
         [NonSerialized] public float immobilizedUntil = 0;
         [NonSerialized] public int immobilizedCounter = 0;
         [NonSerialized] public bool canReceiveDamage = true;
+        [NonSerialized] public bool isFearing;
+        [NonSerialized] public bool isInBlackHole;
 
         public EntityStats entityStats;
     
@@ -162,6 +164,18 @@ namespace _Chi.Scripts.Mono.Entities
             else
             {
                 transform.position = destination;
+            }
+        }
+        
+        public Quaternion GetRotation()
+        {
+            if (hasRb)
+            {
+                return Quaternion.Euler(0, 0, rb.rotation);
+            }
+            else
+            {
+                return transform.rotation;
             }
         }
 
@@ -292,6 +306,11 @@ namespace _Chi.Scripts.Mono.Entities
             canMove = b;
         }
 
+        public void SetIsInBlackHole(bool b)
+        {
+            isInBlackHole = b;
+        }
+
         public void SetCanReceiveDamage(bool b)
         {
             canReceiveDamage = b;
@@ -416,6 +435,11 @@ namespace _Chi.Scripts.Mono.Entities
             if (b) immobilizedCounter++;
             else immobilizedCounter--;
             UpdateImmobilized();
+        }
+
+        public void SetFearing(bool b)
+        {
+            isFearing = b;
         }
 
         public void SetImmobilizedUntil(float time)

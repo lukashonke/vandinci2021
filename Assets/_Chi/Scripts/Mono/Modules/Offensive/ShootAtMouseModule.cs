@@ -42,24 +42,39 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
         {
             yield return new WaitForSeconds(Random.Range(0.05f, 0.5f));
             
+            Vector3 lastPosition = transform.position;
+            
             var waiter = new WaitForFixedUpdate();
 
-            float lastFire = 0;
+            reloadProgress = 0f;
 
             while (activated && parent.CanShoot())
             {
                 yield return waiter;
+                
+                var currentPosition = transform.position;
 
-                if (statusbar != null)
+                float boost = 1.0f;
+                
+                var velocity = (currentPosition - lastPosition).magnitude / Time.deltaTime;
+                if (velocity > 1)
                 {
-                    statusbar.value = (Math.Min(1, 1 - (lastFire + GetFireRate() - Time.time) / GetFireRate()));
-                    statusbar.maxValue = 1;
-                    statusbar.Recalculate();
+                    boost = stats.movingFireRateBoost.GetValue();
                 }
-
-                if (lastFire + GetFireRate() <= Time.time)
+                else if (velocity < 0.05f)
                 {
-                    lastFire = Time.time;
+                    boost = stats.stationaryFireRateBoost.GetValue();
+                }
+                
+                reloadProgress = Mathf.Min(1, reloadProgress + (Time.deltaTime * boost) / GetFireRate());
+                
+                lastPosition = currentPosition;
+                
+                RefreshStatusbarReload();
+
+                if (reloadProgress >= 1)
+                {
+                    reloadProgress = 0;
                     emitter.applyBulletParamsAction = () =>
                     {
                         emitter.ApplyParams(stats, parent);

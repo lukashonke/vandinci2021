@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace _Chi.Scripts.Mono.Entities
 {
-    public class InvertedBlackHole : MonoBehaviour
+    public class InvertedBlackHole : MonoBehaviour, IPooledGameobject
     {
         private CircleCollider2D coll;
         public Teams team;
@@ -48,14 +48,7 @@ namespace _Chi.Scripts.Mono.Entities
 
         public void OnDestroy()
         {
-            foreach (var rb in attached)
-            {
-                if (rb != null)
-                {
-                    var entity = rb.gameObject.GetEntity();
-                    //entity.SetCanMove(true);
-                }
-            }
+            ReleaseAttached();
         }
 
         [NonSerialized] private List<Rigidbody2D> attached = new();
@@ -70,6 +63,20 @@ namespace _Chi.Scripts.Mono.Entities
                 //entity.SetCanMove(false);
                 attached.Add(entity.rb);
             }
+        }
+        
+        private void ReleaseAttached()
+        {
+            
+        }
+
+        public void OnReturnedToPool()
+        {
+            ReleaseAttached();        
+        }
+
+        public void OnTakeFromPool()
+        {
         }
     }
 }

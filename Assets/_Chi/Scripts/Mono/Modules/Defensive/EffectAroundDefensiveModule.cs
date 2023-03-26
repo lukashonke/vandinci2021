@@ -63,7 +63,7 @@ namespace _Chi.Scripts.Mono.Modules.Defensive
                 
                     foreach (var effect in immediateEffects)
                     {
-                        effect.Apply(target, player, null, this, effectStrength, new ImmediateEffectParams());
+                        effect.Apply(target, target.GetPosition(), player, null, this, effectStrength, new ImmediateEffectParams());
                     }
                 }
 

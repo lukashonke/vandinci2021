@@ -6,9 +6,11 @@ using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Mono.System;
+using _Chi.Scripts.Mono.Ui;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Scriptables.Dtos;
 using _Chi.Scripts.Utilities;
+using Pathfinding;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -35,6 +37,7 @@ public class Gamesystem : MonoBehaviour
     [Required] public Tilemap mapGenTilemap;
     [Required] public DropManager dropManager;
     [Required] public TextDatabase textDatabase;
+    [Required] public LocationManager locationManager;
 
     [Required]
     public SpawnAroundSettings spawnAroundSettings;
@@ -47,6 +50,7 @@ public class Gamesystem : MonoBehaviour
 
     private List<FloatWithAction> schedules;
     private List<int> toRemoveSchedules;
+    GraphNode centerNode;
 
     [NonSerialized] public float levelStartedTime;
 
@@ -77,7 +81,12 @@ public class Gamesystem : MonoBehaviour
     void Start()
     {
         RestartLevelClock();
+        
+        AstarPath.active.Scan();
+        
+        centerNode = AstarPath.active.GetNearest(transform.position, NNConstraint.Default).node;
     }
+    
 
     private List<FloatWithAction> schedulesCopy = new();
 
@@ -181,5 +190,11 @@ public class Gamesystem : MonoBehaviour
                 }
             }
         }
+    }
+
+    public bool CanBeAccessed(Vector3 position)
+    {
+        GraphNode node1 = AstarPath.active.GetNearest(position, NNConstraint.Default).node;
+        return PathUtilities.IsPathPossible(centerNode, node1);
     }
 }

@@ -1,18 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Utilities;
-using Pathfinding.Jobs;
-using Pathfinding.RVO;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
-using Unity.Profiling;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Networking;
 
 namespace _Chi.Scripts.Movement
 {
@@ -36,13 +30,15 @@ namespace _Chi.Scripts.Movement
             {
                 if (npc.fixedMoveTarget.HasValue)
                 {
-                    npc.pathData.SetDestination(npc.fixedMoveTarget.Value);
-                    npc.SetRotationTarget(npc.fixedMoveTarget.Value);
+                    var target = npc.TransformMoveDestination(npc.fixedMoveTarget.Value);
+                    npc.pathData.SetDestination(target);
+                    npc.SetRotationTarget(target);
                 }
                 else if (npc.goDirectlyToPlayer)
                 {
-                    npc.pathData.SetDestination(playerPosition);
-                    npc.SetRotationTarget(playerPosition);
+                    var target = npc.TransformMoveDestination(playerPosition);
+                    npc.pathData.SetDestination(target);
+                    npc.SetRotationTarget(target);
                 }
             }
             
@@ -103,10 +99,18 @@ namespace _Chi.Scripts.Movement
                     npc.pathData.job.maxSpeed = doPath ? npc.stats.speed : 0;
                     npc.pathData.job.reachedEndOfPath = false; //doPath ? npc.pathData.reachedEndOfPath : false;
 
-                    npc.pathData.job.rvoCalculatedSpeed = npc.pathData.job.hasRvo ? npc.rvoController.rvoAgent.CalculatedSpeed : 0;
-                    npc.pathData.job.rvoCalculatedTargetPoint = npc.pathData.job.hasRvo
-                        ? (float3) npc.rvoController.rvoAgent.CalculatedTargetPoint
-                        : float3.zero;
+                    try
+                    {
+                        npc.pathData.job.rvoCalculatedSpeed = npc.pathData.job.hasRvo ? npc.rvoController.rvoAgent.CalculatedSpeed : 0;
+                        npc.pathData.job.rvoCalculatedTargetPoint = npc.pathData.job.hasRvo
+                            ? (float3) npc.rvoController.rvoAgent.CalculatedTargetPoint
+                            : float3.zero;
+                    }
+                    catch (Exception)
+                    {
+                        npc.pathData.job.rvoCalculatedSpeed = 0;
+                        npc.pathData.job.rvoCalculatedTargetPoint = float3.zero;
+                    }
                     
                     movementJobs[index] = npc.pathData.job;
                     jobHandles[index] = npc.pathData.job.Schedule();

@@ -13,6 +13,7 @@ using Pathfinding.RVO;
 using Sirenix.OdinInspector;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
 namespace _Chi.Scripts.Mono.Entities
@@ -612,6 +613,15 @@ namespace _Chi.Scripts.Mono.Entities
             {
                 animator.SetFloat("MovementSpeed", canMove ? stats.speed : 0);
             }
+        }
+
+        public Vector3 TransformMoveDestination(Vector3 destination)
+        {
+            if (isFearing)
+            {
+                destination = GetPosition() + (GetPosition() - destination);
+            }
+            return destination;
         }
     }
 }

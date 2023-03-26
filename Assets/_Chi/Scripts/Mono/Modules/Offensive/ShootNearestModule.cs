@@ -39,7 +39,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
             
             float nextTargetUpdate = Time.time + targetUpdateInterval;
 
-            float lastFire = 0;
+            reloadProgress = 0f;
 
             //float nextFireRate = Time.time + stats.fireRate;
 
@@ -49,12 +49,9 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
             {
                 yield return null;
                 
-                if (statusbar != null)
-                {
-                    statusbar.value = (Math.Min(1, 1 - (lastFire + GetFireRate() - Time.time) / GetFireRate()));
-                    statusbar.maxValue = 1;
-                    statusbar.Recalculate();
-                }
+                reloadProgress = Mathf.Min(1, reloadProgress + Time.deltaTime / GetFireRate());
+
+                RefreshStatusbarReload();
 
                 if (nextTargetUpdate <= Time.time)
                 {
@@ -85,9 +82,9 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                 
                 if (currentTarget != null)
                 {
-                     if (lastFire + GetFireRate() <= Time.time)
+                    if (reloadProgress >= 1)
                     {
-                        lastFire = Time.time;
+                        reloadProgress = 0;
                         emitter.applyBulletParamsAction = () =>
                         {
                             emitter.ApplyParams(stats, parent);

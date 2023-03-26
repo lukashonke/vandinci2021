@@ -445,7 +445,7 @@ MonoBehaviour:
       Data: Wawe 6
     - Name: fixedDuration
       Entry: 4
-      Data: 100
+      Data: 125
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
@@ -488,7 +488,7 @@ MonoBehaviour:
       Data: Wawe 7
     - Name: fixedDuration
       Entry: 4
-      Data: 100
+      Data: 50
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
@@ -531,7 +531,7 @@ MonoBehaviour:
       Data: Wawe 8
     - Name: fixedDuration
       Entry: 4
-      Data: 100
+      Data: 125
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
@@ -713,6 +713,8 @@ MonoBehaviour:
         showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades_cannon
+        showOnlyPreviouslyLocked: 0
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 38
@@ -725,6 +727,8 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades_cannon
         showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
@@ -741,6 +745,8 @@ MonoBehaviour:
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades_cannon
+        showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_weapons
@@ -755,6 +761,8 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades_cannon
         showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
@@ -771,6 +779,8 @@ MonoBehaviour:
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades_cannon
+        showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_weapons
@@ -785,6 +795,8 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades_cannon
         showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
@@ -801,6 +813,8 @@ MonoBehaviour:
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades_cannon
+        showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_weapons
@@ -815,6 +829,8 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades_cannon
         showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
@@ -831,6 +847,8 @@ MonoBehaviour:
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades_cannon
+        showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_weapons
@@ -845,6 +863,8 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades_cannon
         showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
@@ -875,6 +895,8 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades_cannon
         showOnlyPreviouslyLocked: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0

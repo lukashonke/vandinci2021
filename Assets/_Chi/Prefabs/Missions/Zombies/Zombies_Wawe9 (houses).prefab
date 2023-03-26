@@ -150,6 +150,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 8
     distanceFromPlayerToDespawn: 40
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 1
 --- !u!114 &-2810012884392272434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +207,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 3
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &7680715313440162207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,6 +439,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &1234158351053750136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,6 +496,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 1000
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &4882735552207192144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,6 +553,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 10
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &4931192219621012411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,6 +610,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 11
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-244726589536057383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,6 +667,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 11
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!1 &2362855431715566986
 GameObject:
   m_ObjectHideFlags: 1

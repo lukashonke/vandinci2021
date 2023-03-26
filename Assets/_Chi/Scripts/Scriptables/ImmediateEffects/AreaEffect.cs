@@ -1,12 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Utilities;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 namespace _Chi.Scripts.Scriptables.ImmediateEffects
 {
@@ -22,14 +25,19 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
         public List<ImmediateEffect> effects;
 
         public TargetType targetType;
+        
+        public AreaType areaType;
+
+        [HideIf("targetType", AreaType.Circle)]
+        public float angle;
 
         public bool excludeTargetEntity;
+
+        [Range(0, 1)] public float chance = 1;
         
-        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
+        public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
-            if (target == null) return false;
-            
-            Gamesystem.instance.StartCoroutine(Explode(target.GetPosition(), target, sourceEntity, sourceItem, sourceModule, strength));
+            Gamesystem.instance.StartCoroutine(Explode(targetPosition, target, sourceEntity, sourceItem, sourceModule, strength));
 
             return true;
         }
@@ -44,6 +52,8 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
             if (sourceEntity == null) yield break;
             
             var targets = Utils.GetObjectsAtPosition(position, buffer, radius, sourceEntity.GetLayerMask(targetType));
+            
+            var sourcePosition = sourceEntity.GetPosition();
 
             for (int i = 0; i < targets; i++)
             {
@@ -51,13 +61,37 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
                 var entity = coll.gameObject.GetEntity();
                 if (entity != null && (!excludeTargetEntity || entity != target))
                 {
+                    bool allow = false;
+
+                    switch (areaType)
+                    {
+                        case AreaType.Circle:
+                            allow = true;
+                            break;
+                        case AreaType.Cone:
+                            var a = Math.Abs(Utils.AngleToTarget(sourceEntity.GetRotation(), sourcePosition, entity.GetPosition()));
+                            allow = a <= angle;
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+                    
+                    if(!allow) continue;
+                    if(chance < 1 && Random.value > chance) continue;
+                    
                     for (var index = 0; index < effects.Count; index++)
                     {
                         var effect = effects[index];
-                        effect.Apply(entity, sourceEntity, sourceItem, sourceModule, strength, new ImmediateEffectParams());
+                        effect.Apply(entity, entity.GetPosition(), sourceEntity, sourceItem, sourceModule, strength, new ImmediateEffectParams());
                     }
                 }
             }
         }
+    }
+
+    public enum AreaType
+    {
+        Circle,
+        Cone
     }
 }

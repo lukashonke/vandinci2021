@@ -227,23 +227,29 @@ namespace _Chi.Scripts.Mono.System
         {
             var type = GetDropType(go);
 
+            var amount = 0;
+
             switch (type)
             {
                 case DropType.Level1Gold:
-                    Gamesystem.instance.progress.AddGold(level1GoldAmount);
+                    amount = level1GoldAmount;
                     break;
                 case DropType.Level15Gold:
-                    Gamesystem.instance.progress.AddGold(level15GoldAmount);
+                    amount = level15GoldAmount;
                     break;
                 case DropType.Level2Gold:
-                    Gamesystem.instance.progress.AddGold(level2GoldAmount);
+                    amount = level2GoldAmount;
                     break;
                 case DropType.Level3Gold:
-                    Gamesystem.instance.progress.AddGold(level3GoldAmount);
+                    amount = level3GoldAmount;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+            
+            Gamesystem.instance.progress.AddGold(amount);
+            
+            Gamesystem.instance.objects.currentPlayer.OnPickupGold(amount);
             
             Gamesystem.instance.poolSystem.Despawn(type, go);
         }

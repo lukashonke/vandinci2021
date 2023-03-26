@@ -8,7 +8,7 @@ namespace _Chi.Scripts.Scriptables
     {
         public float duration;
         
-        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
+        public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
             if (!ApplyEffect(target, sourceEntity, sourceItem, sourceModule))
             {

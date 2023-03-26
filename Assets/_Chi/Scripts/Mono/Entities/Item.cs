@@ -16,8 +16,18 @@ namespace _Chi.Scripts.Mono.Entities
 
         public float strength = 1;
 
+        public bool addTargetToUi;
+
         private void Awake()
         {
+        }
+        
+        public void Start()
+        {
+            if (addTargetToUi)
+            {
+                Gamesystem.instance.locationManager.AddTarget(this.transform.position, this.gameObject);
+            }
         }
 
         public void OnTriggerEnter2D(Collider2D col)
@@ -42,6 +52,11 @@ namespace _Chi.Scripts.Mono.Entities
         public void DestroyMe()
         {
             Destroy(this.gameObject);
+            
+            if (addTargetToUi)
+            {
+                Gamesystem.instance.locationManager.RemoveTarget(this.gameObject);
+            }
         }
 
         public bool OnPickup(Entity entity)
@@ -49,7 +64,7 @@ namespace _Chi.Scripts.Mono.Entities
             for (var index = 0; index < effects.Count; index++)
             {
                 var effect = effects[index];
-                effect.Apply(entity, null, this, null, strength, new ImmediateEffectParams());
+                effect.Apply(entity, entity.GetPosition(), null, this, null, strength, new ImmediateEffectParams());
             }
 
             return true;

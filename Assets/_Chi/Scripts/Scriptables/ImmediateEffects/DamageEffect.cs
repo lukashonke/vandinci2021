@@ -17,10 +17,10 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
         public float damageMul = 1.0f;
 
-        public ImmediateEffectFlags forcedFlags = ImmediateEffectFlags.None;
-
-        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float defaultStrength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
+        public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float defaultStrength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
+            if (target == null) return false;
+            
             flags |= forcedFlags;
             
             var sourceDamage = baseDamage * defaultStrength;

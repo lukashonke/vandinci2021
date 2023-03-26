@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 6469568978721038765}
   - component: {fileID: -3204359601985624663}
   - component: {fileID: 9000068432140191412}
+  - component: {fileID: 6273148486831786448}
   m_Layer: 0
   m_Name: Zombies_Wawe5 (fats only)
   m_TagString: Untagged
@@ -191,6 +192,7 @@ Transform:
   - {fileID: 3750697999516981359}
   - {fileID: 5885289525060756674}
   - {fileID: 3781662074522254375}
+  - {fileID: 6620846203859678922}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -434,6 +436,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 2.5
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-3837949277647058563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,6 +507,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 4
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-50647473022081503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,6 +564,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &766136386234732296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,6 +621,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &8998190245610271498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,6 +678,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-4000076046673859097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -728,6 +735,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-6502435416312752660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -784,6 +792,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 3
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &6469568978721038765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,6 +856,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-3204359601985624663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -903,6 +913,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 30
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &9000068432140191412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -959,6 +970,64 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 1000
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
+--- !u!114 &6273148486831786448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091413172466918211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  waveName: Treasure Chest
+  disable: 0
+  spawns:
+  - possiblePrefabs:
+    - type: 3
+      prefab: {fileID: 2016706442665377444, guid: d021c38515289304a9b1ddd57c0eaaab, type: 3}
+      prefabNpc: {fileID: 6549855113248904363, guid: 95485f9b1a9973140bc1febcd04fe496, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 0
+      noRotation: 1
+      prefabVariant: '-'
+    relativePosition: 0
+    formation: 7
+    formationLookAhead: 1
+    formationRadius: 1
+    behavior: 3
+    roamDistance: 100
+    roamRandomRadius: 3
+    dieWhenReachFixedMoveTarget: 0
+    stopWhenReachFixedMoveTarget: 0
+    spawnTimeMin: 1
+    spawnTimeMax: 1
+    repeatSpawn: 0
+    repeatSpawnIntervalMin: 30
+    repeatSpawnIntervalMax: 30
+    repeatCount: 1
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayerMin: 8
+    distanceFromPlayerMax: 12
+    despawnAfter: 300
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 1000
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 1
 --- !u!1 &3022428695798256735
 GameObject:
   m_ObjectHideFlags: 1
@@ -1053,6 +1122,53 @@ MonoBehaviour:
   nameOverride: Exploding Decoys
   tooltipOverride: 
   target: {fileID: -50647473022081503}
+--- !u!1 &5098814106430123174
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6620846203859678922}
+  - component: {fileID: 9123873800631345160}
+  m_Layer: 0
+  m_Name: NameContainer(EditorOnly)
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6620846203859678922
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098814106430123174}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2091413172466918208}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9123873800631345160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098814106430123174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOverride: Treasure Chest
+  tooltipOverride: 
+  target: {fileID: 6273148486831786448}
 --- !u!1 &5200784002971579261
 GameObject:
   m_ObjectHideFlags: 1

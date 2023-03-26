@@ -60,7 +60,7 @@ namespace _Chi.Scripts.Scriptables.Skills
                     nextReceiveEffect = Time.time + receiveEffectsInterval;
                     foreach (var effect in receivedEffectsWhileActive)
                     {
-                        effect.Apply(player, null, null, null, receivedEffectsStrength, new ImmediateEffectParams());
+                        effect.Apply(player, player.GetPosition(), null, null, null, receivedEffectsStrength, new ImmediateEffectParams());
                     }
                 }
                 

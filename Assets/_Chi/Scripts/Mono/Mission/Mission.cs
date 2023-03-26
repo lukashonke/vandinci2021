@@ -183,9 +183,9 @@ namespace _Chi.Scripts.Mono.Mission
 
         [HideInEditorMode]
         [Button]
-        public void Show()
+        public void Show(string title = "Shop")
         {
-            Gamesystem.instance.uiManager.OpenRewardSetWindow(shopSet, "Shop", this);
+            Gamesystem.instance.uiManager.OpenRewardSetWindow(shopSet, title, this);
         }
     }
     

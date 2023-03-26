@@ -89,7 +89,7 @@ namespace _Chi.Scripts.Mono.Entities
             for (var index = 0; index < effects.Count; index++)
             {
                 var effect = effects[index];
-                effect.Apply(entity, owner, null, ownerModule, baseStrength, new ImmediateEffectParams());
+                effect.Apply(entity, entity.GetPosition(), owner, null, ownerModule, baseStrength, new ImmediateEffectParams());
 
                 if (!noDespawnAfterHit)
                 {

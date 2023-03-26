@@ -5,6 +5,7 @@ using System.Linq;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Modules;
+using _Chi.Scripts.Scriptables;
 using UnityEngine;
 
 public class ModuleSlot : MonoBehaviour

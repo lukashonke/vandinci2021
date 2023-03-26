@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Explosion
-  uiDescription: TODO
+  uiName: Blast Barrage
+  uiDescription: 'Projectiles will explode in the end, dealing 50% of projectile
+    damage to around enemies. '
   effects: []
   modulePrefabId: 2007
   moduleEffects:

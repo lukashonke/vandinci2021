@@ -1,6 +1,5 @@
 ﻿using System;
 using _Chi.Scripts.Mono.Entities;
-using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Mono.Modules;
 using UnityEngine;
@@ -14,7 +13,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
         [NonSerialized] private bool initialised = false;
 
-        public override bool Apply(Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
+        public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
             if (!initialised)
             {

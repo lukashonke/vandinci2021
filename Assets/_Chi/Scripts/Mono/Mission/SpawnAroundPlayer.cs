@@ -303,7 +303,8 @@ namespace _Chi.Scripts.Mono.Mission
         Line,
         Horde,
         ShightlyShiftedGrid,
-        RandomPack
+        RandomPack,
+        RandomAroundPlayer,
     }
 
     public enum SpawnBehavior

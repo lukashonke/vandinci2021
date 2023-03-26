@@ -18,6 +18,8 @@ public class BulletBehavior : BaseBulletBehaviour
 	[NonSerialized] public BulletReceiver[] collidedWith = new BulletReceiver[8];
 	[NonSerialized] public Entity lastAffectedEnemy;
 
+	private bool diedByCollision;
+
 	public override void Awake()
 	{
 		base.Awake();
@@ -40,6 +42,8 @@ public class BulletBehavior : BaseBulletBehaviour
 		ApplyTrailParameters();
 
 		piercedEnemies = 0;
+		
+		diedByCollision = false;
 
 		var canPierce = CanPierce();
 		if (canPierce != PierceType.NoPierce)
@@ -109,6 +113,37 @@ public class BulletBehavior : BaseBulletBehaviour
 		
 		trail.enabled = false;
 
+		if (!diedByCollision && ownerModule is OffensiveModule offensiveModule)
+		{
+			var effects = offensiveModule.onBulletDestroyEffects;
+			if (effects != null)
+			{
+				for (var index = 0; index < effects.Count; index++)
+				{
+					var effect = effects[index];
+
+					var flags = ImmediateEffectFlags.None;
+					float strength = 1f;
+					
+					effect.Apply(null, transform.position, ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
+				}
+			}
+					
+			var effects2 = offensiveModule.additionalOnBulletDestroyEffects;
+			if (effects2 != null)
+			{
+				for (var index = 0; index < effects2.Count; index++)
+				{
+					var effect = effects2[index].Item2;
+
+					var flags = ImmediateEffectFlags.None;
+					float strength = 1f;
+					
+					effect.Apply(null, transform.position, ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
+				}
+			}
+		}
+
 		// Your code here
 	}
 
@@ -174,7 +209,7 @@ public class BulletBehavior : BaseBulletBehaviour
 						strength = pierceRemainingDamage;
 					}*/
 					
-					effect.Apply(entity, ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
+					effect.Apply(entity, entity.GetPosition(), ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
 					
 					var newHp = entity.GetHp();
 					
@@ -196,7 +231,7 @@ public class BulletBehavior : BaseBulletBehaviour
 
 						if (!list.Contains(effect))
 						{
-							effect.Apply(entity, ownerModule.parent, null, ownerModule, 1, new ImmediateEffectParams());
+							effect.Apply(entity, entity.GetPosition(), ownerModule.parent, null, ownerModule, 1, new ImmediateEffectParams());
 							list.Add(effect);
 						} 
 					}
@@ -235,6 +270,8 @@ public class BulletBehavior : BaseBulletBehaviour
 
 				if (deactivate)
 				{
+					diedByCollision = true;
+					
 					effects = offensiveModule.onBulletDestroyEffects;
 					if (effects != null)
 					{
@@ -245,7 +282,7 @@ public class BulletBehavior : BaseBulletBehaviour
 							var flags = ImmediateEffectFlags.None;
 							float strength = 1f;
 					
-							effect.Apply(entity, ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
+							effect.Apply(entity, entity.GetPosition(), ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
 						}
 					}
 					
@@ -259,7 +296,7 @@ public class BulletBehavior : BaseBulletBehaviour
 							var flags = ImmediateEffectFlags.None;
 							float strength = 1f;
 					
-							effect.Apply(entity, ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
+							effect.Apply(entity, entity.GetPosition(), ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
 						}
 					}
 					

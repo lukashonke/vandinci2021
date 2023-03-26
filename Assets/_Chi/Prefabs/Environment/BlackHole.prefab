@@ -5151,4 +5151,8 @@ MonoBehaviour:
   team: 1
   attachedLimit: 10
   minDistance2: 2.5
+  holdInsideCircleRadius: 0.4
+  distToStopPullingThreshold: 0.04
   force: 4
+  rotationForce: 200
+  rotationSpeed: 0

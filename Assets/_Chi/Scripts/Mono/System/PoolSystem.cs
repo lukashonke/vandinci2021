@@ -282,11 +282,23 @@ namespace _Chi.Scripts.Mono.System
         void OnReturnedToPool(GameObject go)
         {
             go.SetActive(false);
+            
+            var poolable = go.GetComponent<IPooledGameobject>();
+            if (poolable != null)
+            {
+                poolable.OnReturnedToPool();
+            }
         }
 
         void OnTakeFromPool(GameObject go)
         {
             go.SetActive(true);
+            
+            var poolable = go.GetComponent<IPooledGameobject>();
+            if (poolable != null)
+            {
+                poolable.OnTakeFromPool();
+            }
         }
 
         void OnDestroyPoolObject(GameObject go)
