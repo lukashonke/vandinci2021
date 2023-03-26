@@ -33,6 +33,12 @@ public class Healthbar : MonoBehaviour
     {
         try
         {
+            if (!parent.activated)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            
             transform.position = parent.GetPosition() + parent.healthbarOffset;
         }
         catch (Exception e)

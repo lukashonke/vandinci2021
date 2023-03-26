@@ -267,7 +267,7 @@ MonoBehaviour:
     additionalTexts: []
   - id: 2501
     label: Add Stun Effect
-    enabled: 1
+    enabled: 0
     description: Adds a stun effect to the weapon.
     type: 3
     predefinedId: 0
@@ -1073,24 +1073,6 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 0}
     additionalTexts:
     - fire_effect_description
-  - id: 4220
-    label: 'Cannon: Soul Stealing'
-    enabled: 0
-    description: Every enemy you hit with the weapon will add progress towards recharging
-      your weapon to fire again.
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: 33805624ebfb29545b06b37e2c255b26, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts:
-    - fire_effect_description
   - id: 4219
     label: 'Cannon: Gold Satisfaction'
     enabled: 1
@@ -1105,6 +1087,24 @@ MonoBehaviour:
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 003eab692ffe43f43b3ff1f8c6b2a373, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 4220
+    label: 'Cannon: Soul Stealing'
+    enabled: 0
+    description: Every enemy you hit with the weapon will add progress towards recharging
+      your weapon to fire again.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 33805624ebfb29545b06b37e2c255b26, type: 2}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts:
@@ -1422,6 +1422,7 @@ MonoBehaviour:
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
+  hiddenPrefabs: []
   rewardSets:
   - name: shop_passives_basic
     note: 

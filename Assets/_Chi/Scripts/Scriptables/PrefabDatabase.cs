@@ -18,10 +18,54 @@ namespace _Chi.Scripts.Scriptables
     [CreateAssetMenu(fileName = "Prefab Database", menuName = "Gama/Configuration/Prefab Database")]
     public class PrefabDatabase : SerializedScriptableObject
     {
+        [TabGroup("Prefabs")]
+        [HorizontalGroup("Buttons")]
+        [Button]
+        public void ClearFilter()
+        {
+            if (hiddenPrefabs == null)
+            {
+                hiddenPrefabs = new();
+            }
+            
+            prefabs = prefabs.Union(hiddenPrefabs).GroupBy(g => g.id).Select(g => g.First()).ToList();
+            hiddenPrefabs.Clear();
+            Reorder();
+        }
+
+        [TabGroup("Prefabs")]
+        [HorizontalGroup("Buttons")]
+        [Button]
+        public void Filter(PrefabItemType type)
+        {
+            if (hiddenPrefabs == null)
+            {
+                hiddenPrefabs = new();
+            }
+            
+            prefabs = prefabs.Union(hiddenPrefabs).GroupBy(g => g.id).Select(g => g.First()).ToList();
+
+            hiddenPrefabs.Clear();
+            hiddenPrefabs.AddRange(prefabs);
+            
+            prefabs = prefabs.Where(p => p.type == type).ToList();
+            Reorder();
+        }
+        
+        [TabGroup("Prefabs")]
+        [HorizontalGroup("Buttons")]
+        [Button]
+        public void Reorder()
+        {
+            prefabs = prefabs.OrderBy(p => p.id).ToList();
+        }
+        
         [AssetsOnly]
         [TableList(AlwaysExpanded = true)]
         [TabGroup("Prefabs")]
         public List<PrefabItem> prefabs;
+
+        [HideInInspector] public List<PrefabItem> hiddenPrefabs;
 
         [TableList(AlwaysExpanded = true)]
         [TabGroup("RewardSets")]
@@ -32,16 +76,25 @@ namespace _Chi.Scripts.Scriptables
         public List<PrefabVariant> variants;
         [NonSerialized] public Dictionary<string, PrefabVariant> variantsLookup;
 
-        [TabGroup("Prefabs")]
+        [TabGroup("Misc")]
         [Required] public DamageNumber playerCriticalDealtDamage;
-        [TabGroup("Prefabs")]
+        [TabGroup("Misc")]
         [Required] public DamageNumber playerDealtDamage;
-        [TabGroup("Prefabs")]
+        [TabGroup("Misc")]
         [Required] public DamageNumber playerGoldReceived;
 
         public void Initialise()
         {
             variantsLookup = variants.ToDictionary(v => v.variant, v => v);
+
+            if (hiddenPrefabs == null)
+            {
+                hiddenPrefabs = new();
+            }
+
+            prefabs = prefabs.Union(hiddenPrefabs).GroupBy(g => g.id).Select(g => g.First()).ToList();
+            hiddenPrefabs.Clear();
+            Reorder();
         }
 
         public PrefabItem GetById(int id)
@@ -61,14 +114,7 @@ namespace _Chi.Scripts.Scriptables
 
             return null;
         }
-
-        [TabGroup("Prefabs")]
-        [Button]
-        public void Reorder()
-        {
-            prefabs = prefabs.OrderBy(p => p.id).ToList();
-        }
-
+        
         public void ApplyPrefabVariant(Npc npc, string variant)
         {
             npc.ApplyVariant(variant);
@@ -274,7 +320,7 @@ namespace _Chi.Scripts.Scriptables
                 for (var index1 = 0; index1 < allItemsWithWeights.Count; index1++)
                 {
                     var itemWithWeight = allItemsWithWeights[index1];
-                    if (lockedPrefabIds.ContainsKey(itemWithWeight.prefabId))
+                    if (lockedPrefabIds.TryGetValue(itemWithWeight.prefabId, out var isLocked) && isLocked)
                     {
                         index = index1;
                     }

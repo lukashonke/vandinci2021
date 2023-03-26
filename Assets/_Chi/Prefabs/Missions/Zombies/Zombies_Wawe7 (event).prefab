@@ -995,7 +995,7 @@ MonoBehaviour:
       noRotation: 1
       prefabVariant: '-'
     relativePosition: 0
-    formation: 0
+    formation: 7
     formationLookAhead: 1
     formationRadius: 1
     behavior: 3
@@ -1013,12 +1013,12 @@ MonoBehaviour:
     spawnCountMax: 1
     distanceFromPlayerMin: 8
     distanceFromPlayerMax: 12
-    despawnAfter: 300
+    despawnAfter: 1200
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 1000
     trackEntityForMission: 0
-    onlyOnPlayerAccessibleArea: 0
+    onlyOnPlayerAccessibleArea: 1
 --- !u!1 &3022428695798256735
 GameObject:
   m_ObjectHideFlags: 1

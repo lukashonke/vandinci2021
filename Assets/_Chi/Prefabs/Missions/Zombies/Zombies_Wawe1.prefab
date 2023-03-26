@@ -176,7 +176,7 @@ MonoBehaviour:
     - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 2
+      weight: 1
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: ZombieFast
@@ -406,6 +406,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 3
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-50647473022081503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,6 +463,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &766136386234732296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,6 +520,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &530404185182147840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,6 +591,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 2.5
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &8998190245610271498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,6 +648,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-4000076046673859097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,6 +705,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-6502435416312752660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -756,6 +762,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 3
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-4211533515045996565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,6 +819,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 1500
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-5390413756141119465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -868,6 +876,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 1500
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-4888117272967698136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,7 +910,7 @@ MonoBehaviour:
       noRotation: 0
       prefabVariant: ZombieBloaterExploding
     relativePosition: 0
-    formation: 0
+    formation: 7
     formationLookAhead: 2
     formationRadius: 5
     behavior: 0
@@ -924,6 +933,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 1500
     trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!1 &3022428695798256735
 GameObject:
   m_ObjectHideFlags: 1

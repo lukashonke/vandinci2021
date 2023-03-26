@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: -3204359601985624663}
   - component: {fileID: 9000068432140191412}
   m_Layer: 0
-  m_Name: Zombies_Wawe10 (Bloody)
+  m_Name: Zombies_Wawe8 (Fat and Elites)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,20 +220,6 @@ MonoBehaviour:
   spawns:
   - possiblePrefabs:
     - type: 0
-      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 6
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieElite
-    - type: 0
-      prefab: {fileID: 0}
-      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 6
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieEliteFast
-    - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
       weight: 1
@@ -246,25 +232,39 @@ MonoBehaviour:
       weight: 1
       rotateTowardsPlayer: 1
       noRotation: 0
+      prefabVariant: ZombieBloaterExploding
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 4
+      rotateTowardsPlayer: 1
+      noRotation: 0
       prefabVariant: ZombieEliteFat
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 4
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieFat
     relativePosition: 0
     countPerMinuteCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 360
-        inSlope: 0.4
-        outSlope: 0.4
+        value: 200
+        inSlope: 0.16
+        outSlope: 0.16
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 100
-        value: 400
-        inSlope: 0.4
-        outSlope: 0.4
+        time: 125
+        value: 220
+        inSlope: 0.16
+        outSlope: 0.16
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -330,7 +330,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -599,7 +599,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   waveName: Walkers
-  disable: 1
+  disable: 0
   spawns:
   - possiblePrefabs:
     - type: 0
@@ -656,7 +656,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   waveName: Runners
-  disable: 1
+  disable: 0
   spawns:
   - possiblePrefabs:
     - type: 0
@@ -959,7 +959,7 @@ MonoBehaviour:
       noRotation: 1
       prefabVariant: '-'
     relativePosition: 0
-    formation: 0
+    formation: 7
     formationLookAhead: 1
     formationRadius: 1
     behavior: 3
@@ -970,19 +970,19 @@ MonoBehaviour:
     spawnTimeMin: 1
     spawnTimeMax: 30
     repeatSpawn: 0
-    repeatSpawnIntervalMin: 10
-    repeatSpawnIntervalMax: 10
-    repeatCount: 100
+    repeatSpawnIntervalMin: 30
+    repeatSpawnIntervalMax: 30
+    repeatCount: 1
     spawnCountMin: 1
     spawnCountMax: 1
     distanceFromPlayerMin: 8
     distanceFromPlayerMax: 12
-    despawnAfter: 300
+    despawnAfter: 1200
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 1000
     trackEntityForMission: 0
-    onlyOnPlayerAccessibleArea: 0
+    onlyOnPlayerAccessibleArea: 1
 --- !u!1 &3022428695798256735
 GameObject:
   m_ObjectHideFlags: 1

@@ -47,7 +47,7 @@ namespace _Chi.Scripts.Mono.Entities
         
         [NonSerialized] public Dictionary<ImmediateEffect, float> currentEffects;
         [NonSerialized] public Dictionary<GameObject, GameObject> vfx;
-
+        
         #endregion
 
         #region configuration

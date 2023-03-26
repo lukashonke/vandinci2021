@@ -136,3 +136,4 @@ MonoBehaviour:
   effects:
   - {fileID: 11400000, guid: 764369465770a4c429888e4bf8907ed7, type: 2}
   strength: 1
+  addTargetToUi: 1
