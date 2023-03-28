@@ -22,6 +22,190 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   prefabs:
+  - id: 30000
+    label: 'Chaotic Leap: Enhance Power'
+    enabled: 1
+    description: Jumps has more force, making you jump for longer distances and deadling
+      more damage.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 46396cb41dd63794a8aa16cba7094c09, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 8c40a862ade93944b8c5d0e5bb618e13, type: 2}
+    additionalTexts: []
+  - id: 30001
+    label: 'Chaotic Leap: Enhance Power'
+    enabled: 1
+    description: Jumps has more force, making you jump for longer distances and deadling
+      more damage.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 46396cb41dd63794a8aa16cba7094c09, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 1c51ab157003d5b48a0810c15e305725, type: 2}
+    additionalTexts: []
+  - id: 30010
+    label: 'Chaotic Leap: Landing Protection'
+    enabled: 1
+    description: Right after jumping, receive no damage for short time.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 0633cec118387254e854be997b787ef6, type: 2}
+    additionalTexts: []
+  - id: 30011
+    label: 'Chaotic Leap: Landing Protection'
+    enabled: 0
+    description: Right after jumping, receive no damage for short time.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 2f4f757e2466ffd4fa9de079c3626813, type: 2}
+    additionalTexts: []
+  - id: 30020
+    label: 'Chaotic Leap: Redirect Power'
+    enabled: 1
+    description: Adds 1 extra jump use before having to reload. Slows you down by
+      10%.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 4c7e7fe52e6d3b2459c133b701c280e0, type: 2}
+    additionalTexts: []
+  - id: 30021
+    label: 'Chaotic Leap: Redirect Power'
+    enabled: 1
+    description: Adds 2 extra jump use before having to reload. Slows you down by
+      10%.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 38f4c16a2cb74f942ac94be34511a03f, type: 2}
+    additionalTexts: []
+  - id: 30030
+    label: 'Chaotic Leap: Deny Gravity'
+    enabled: 0
+    description: Jump now ignores weight of player. Large body jumps as fast as small
+      body.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 012a6d1be4511c84abed78b88e356167, type: 2}
+    additionalTexts: []
+  - id: 30060
+    label: 'Chaotic Leap: Ethereal Jump'
+    enabled: 1
+    description: You won't deal contact damage via jumping into enemies, but jump
+      cooldown will be reduced.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 71e6ccdce06074c408dcf912e0738ef6, type: 2}
+    additionalTexts: []
+  - id: 30061
+    label: 'Chaotic Leap: Ethereal Jump'
+    enabled: 1
+    description: You won't deal contact damage via jumping into enemies, but jump
+      cooldown will be reduced.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 1bd84627d84fd064e8809425037dab31, type: 2}
+    additionalTexts: []
+  - id: 30070
+    label: 'Chaotic Leap: Shockwave'
+    enabled: 1
+    description: In the landing zone after jump, push away nearby enemies.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: cc101f231a848a04082f7e6370dbb094, type: 2}
+    additionalTexts: []
+  - id: 30071
+    label: 'Chaotic Leap: Shockwave'
+    enabled: 1
+    description: In the landing zone after jump, push away and stun nearby enemies.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: c8aea7380dc90cb4f82d1b6a97c1f1eb, type: 2}
+    additionalTexts: []
+  hiddenPrefabs:
   - id: 100
     label: Zombie
     enabled: 0
@@ -686,562 +870,6 @@ MonoBehaviour:
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
-  - id: 4000
-    label: Max HP Upgrade
-    enabled: 1
-    description: Increases maximum HP.
-    type: 8
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 0}
-    playerUpgradeItem: {fileID: 11400000, guid: 168331709e0bebb4daefe12771c0dc4a, type: 2}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts: []
-  - id: 4001
-    label: Defence Upgrade
-    enabled: 1
-    description: Reduces incoming damage.
-    type: 8
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 0}
-    playerUpgradeItem: {fileID: 11400000, guid: 5bfc9c8de501d704dbc05f8a88c274e5, type: 2}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts: []
-  - id: 4002
-    label: Move Speed Upgrade
-    enabled: 1
-    description: Increases movement speed.
-    type: 8
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 0}
-    playerUpgradeItem: {fileID: 11400000, guid: 6e2047aad0e6ab24fbf5cb470c370cb3, type: 2}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts: []
-  - id: 4003
-    label: HP Regeneration Upgrade
-    enabled: 1
-    description: Increases HP regeneration rate.
-    type: 8
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 0}
-    playerUpgradeItem: {fileID: 11400000, guid: 4bb551b06fbe04044a777b96986d2c97, type: 2}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts: []
-  - id: 4004
-    label: Pickup Range Upgrade
-    enabled: 1
-    description: Increases pickup range.
-    type: 8
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 0}
-    playerUpgradeItem: {fileID: 11400000, guid: 72c40f0fd5f33fd46a3ef3bf8ca81939, type: 2}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts: []
-  - id: 4005
-    label: Skill Reuse Delay Upgrade
-    enabled: 1
-    description: Decreases reuse delay of skills.
-    type: 8
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 0}
-    playerUpgradeItem: {fileID: 11400000, guid: 5ee176dc6096a614caee84136f46a29b, type: 2}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts: []
-  - id: 4200
-    label: 'Crossbow: Dual-Load Destruction'
-    enabled: 1
-    description: The weapon shoots twice before having to reload.
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 0226e8169f971714090e1ca32a1d0ca9, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: 9889d599e604a2b489b0386002b92d51, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts: []
-  - id: 4201
-    label: 'Crossbow: Momentum Maelstrom'
-    enabled: 1
-    description: When you move, the weapon shoots arrows. The faster you move, faster
-      it shoots, speed increases exponentially. Fire Rate buffs also apply to firing
-      speed.
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 922dc682e5e216848ae44c1f98593789, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: 6d5c536845b02fd4f85d7b9636cef27e, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts: []
-  - id: 4202
-    label: 'Crossbow: Skyfall Strike'
-    enabled: 1
-    description: For every arrow you fire, you will also land an arrow to a nearby
-      enemy.
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 45a901171fa6a504ea3458d8bd5cc5f5, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: 3edb65365be1ca5469efc5a20e561968, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts: []
-  - id: 4203
-    label: 'Crossbow: Inferno Incursion'
-    enabled: 1
-    description: Your arrows will put enemies on Fire.
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 58be8389162e3fd4ea34525ecd8a1ae6, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: 6da5de15c00c57441b7f9239ecc19741, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts:
-    - fire_effect_description
-  - id: 4204
-    label: 'Crossbow: Skill Barrage'
-    enabled: 1
-    description: After skill use, shoots out current projectile count x 4, in 360
-      degree.
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: 43f0face60b13c5429bb97f81ec3620f, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts:
-    - fire_effect_description
-  - id: 4205
-    label: 'Crossbow: Scattershot'
-    enabled: 1
-    description: After every 3rd shot, shoots out current projectile count x2, in
-      360 degree.
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: 9dddab6eb4d61da488ada5dcf038cc16, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts:
-    - fire_effect_description
-  - id: 4206
-    label: 'Crossbow: Kinetic Kickback'
-    enabled: 1
-    description: Increases the speed of projectiles and gives your projectiles a
-      pushback effect.
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: 87db14706f5a5224fbf7b3e0713aa9c3, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts:
-    - fire_effect_description
-  - id: 4210
-    label: 'Cannon: Blast Barrage'
-    enabled: 1
-    description: 'Projectiles will explode in the end, dealing 50% of projectile
-      damage to around enemies. '
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: 20e6786d3a5da0f4cb6cbadb919db476, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts:
-    - fire_effect_description
-  - id: 4211
-    label: 'Cannon: Static Blaze'
-    enabled: 1
-    description: When stationary, the cannon reloads much faster.
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: 30d3901b58d9a1e4788cd6d0767db16c, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts:
-    - fire_effect_description
-  - id: 4212
-    label: 'Cannon: Tactical Trigger'
-    enabled: 1
-    description: Activating your skill triggers a cannon shot automatically aimed
-      at nearest enemy.
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: cd2f6511b98b3fe478e022edb4585f64, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts:
-    - fire_effect_description
-  - id: 4213
-    label: 'Cannon: Tidal Force'
-    enabled: 1
-    description: "Cannon fire pushes enemies away, creating distance and controlling
-      the battlefield.\r"
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: 7770eecb18f36274f9814cc9c9bea4b3, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts:
-    - fire_effect_description
-  - id: 4214
-    label: 'Cannon: Speedburst Salvo'
-    enabled: 1
-    description: "Firing the cannon grants a temporary speed boost, allowing quick
-      repositioning.\r"
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: b4621817118d655409c448952011035f, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts:
-    - fire_effect_description
-  - id: 4215
-    label: 'Cannon: Singularity Surge'
-    enabled: 1
-    description: 'Cannonballs create a black hole upon vanishing. '
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: 2003641d12e0f304e8da6e0ff811b8e1, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts:
-    - fire_effect_description
-  - id: 4216
-    label: 'Cannon: More Rounds'
-    enabled: 1
-    description: Doubles number of projectiles, but decreases fire rate by 50%.
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: 9f6472377434d4a47bb44cebb09481f0, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts:
-    - fire_effect_description
-  - id: 4217
-    label: 'Cannon: Panic Pulse'
-    enabled: 1
-    description: 'Firing the cannon instills fear in enemies, causing them to flee
-      from the terrifying blast.
-
-'
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: 2ae57ff88d54d624ab20256f25963255, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts:
-    - fire_effect_description
-  - id: 4218
-    label: 'Cannon: Triple Threat'
-    enabled: 1
-    description: 'Every 3rd shot, the cannon fires a wide-angle volley, hitting multiple
-      enemies with a single blast.
-
-
-
-
-
-
-
-'
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: c4e95d2f03c9f544881672d8cb4c0243, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts:
-    - fire_effect_description
-  - id: 4219
-    label: 'Cannon: Gold Satisfaction'
-    enabled: 1
-    description: Every gold you pick up will add progress towards recharging your
-      weapon to fire again.
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: 003eab692ffe43f43b3ff1f8c6b2a373, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts:
-    - fire_effect_description
-  - id: 4220
-    label: 'Cannon: Soul Stealing'
-    enabled: 0
-    description: Every enemy you hit with the weapon will add progress towards recharging
-      your weapon to fire again.
-    type: 9
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 11400000, guid: 33805624ebfb29545b06b37e2c255b26, type: 2}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 0}
-    additionalTexts:
-    - fire_effect_description
-  - id: 4400
-    label: 'Chaotic Leap: Enhance Power'
-    enabled: 1
-    description: Jumps has more force, making you jump for longer distances and deadling
-      more damage.
-    type: 10
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: 46396cb41dd63794a8aa16cba7094c09, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 0}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 11400000, guid: 8c40a862ade93944b8c5d0e5bb618e13, type: 2}
-    additionalTexts: []
-  - id: 4401
-    label: 'Chaotic Leap: Landing Protection'
-    enabled: 1
-    description: Right after jumping, receive no damage for 2 seconds.
-    type: 10
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 0}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 11400000, guid: 0633cec118387254e854be997b787ef6, type: 2}
-    additionalTexts: []
-  - id: 4402
-    label: 'Chaotic Leap: Redirect Power'
-    enabled: 1
-    description: Adds 1 extra jump use before having to reload. Slows you down by
-      10%.
-    type: 10
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 0}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 11400000, guid: 4c7e7fe52e6d3b2459c133b701c280e0, type: 2}
-    additionalTexts: []
-  - id: 4403
-    label: 'Chaotic Leap: Deny Gravity'
-    enabled: 1
-    description: Jump now ignores weight of player. Large body jumps as fast as small
-      body.
-    type: 10
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 0}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 11400000, guid: 012a6d1be4511c84abed78b88e356167, type: 2}
-    additionalTexts: []
-  - id: 4404
-    label: 'Chaotic Leap: Landing Protection'
-    enabled: 1
-    description: Right after jumping, receive no damage for 2 seconds.
-    type: 10
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 0}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 11400000, guid: 2f4f757e2466ffd4fa9de079c3626813, type: 2}
-    additionalTexts: []
-  - id: 4405
-    label: 'Chaotic Leap: Redirect Power'
-    enabled: 1
-    description: Adds 1 extra jump use before having to reload. Slows you down by
-      10%.
-    type: 10
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 0}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 11400000, guid: 38f4c16a2cb74f942ac94be34511a03f, type: 2}
-    additionalTexts: []
-  - id: 4406
-    label: 'Chaotic Leap: Ethereal Jump'
-    enabled: 1
-    description: You won't deal contact damage via jumping into enemies, but jump
-      cooldown will be -50%.
-    type: 10
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 0}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 11400000, guid: 71e6ccdce06074c408dcf912e0738ef6, type: 2}
-    additionalTexts: []
-  - id: 4407
-    label: 'Chaotic Leap: Shockwave'
-    enabled: 1
-    description: In the landing zone after jump, push away nearby enemies.
-    type: 10
-    predefinedId: 0
-    weightSettings:
-      alteredWeights: []
-    prefab: {fileID: 0}
-    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
-    skill: {fileID: 0}
-    mutator: {fileID: 0}
-    moduleUpgradeItem: {fileID: 0}
-    playerUpgradeItem: {fileID: 0}
-    skillUpgradeItem: {fileID: 11400000, guid: cc101f231a848a04082f7e6370dbb094, type: 2}
-    additionalTexts: []
   - id: 10000
     label: Chaotic Leap
     enabled: 1
@@ -1422,233 +1050,1440 @@ MonoBehaviour:
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
-  hiddenPrefabs: []
+  - id: 30000
+    label: 'Chaotic Leap: Enhance Power'
+    enabled: 1
+    description: Jumps has more force, making you jump for longer distances and deadling
+      more damage.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 46396cb41dd63794a8aa16cba7094c09, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 8c40a862ade93944b8c5d0e5bb618e13, type: 2}
+    additionalTexts: []
+  - id: 30001
+    label: 'Chaotic Leap: Enhance Power'
+    enabled: 1
+    description: Jumps has more force, making you jump for longer distances and deadling
+      more damage.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 46396cb41dd63794a8aa16cba7094c09, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 1c51ab157003d5b48a0810c15e305725, type: 2}
+    additionalTexts: []
+  - id: 30010
+    label: 'Chaotic Leap: Landing Protection'
+    enabled: 1
+    description: Right after jumping, receive no damage for short time.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 0633cec118387254e854be997b787ef6, type: 2}
+    additionalTexts: []
+  - id: 30011
+    label: 'Chaotic Leap: Landing Protection'
+    enabled: 0
+    description: Right after jumping, receive no damage for short time.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 2f4f757e2466ffd4fa9de079c3626813, type: 2}
+    additionalTexts: []
+  - id: 30020
+    label: 'Chaotic Leap: Redirect Power'
+    enabled: 1
+    description: Adds 1 extra jump use before having to reload. Slows you down by
+      10%.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 4c7e7fe52e6d3b2459c133b701c280e0, type: 2}
+    additionalTexts: []
+  - id: 30021
+    label: 'Chaotic Leap: Redirect Power'
+    enabled: 1
+    description: Adds 2 extra jump use before having to reload. Slows you down by
+      10%.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 38f4c16a2cb74f942ac94be34511a03f, type: 2}
+    additionalTexts: []
+  - id: 30030
+    label: 'Chaotic Leap: Deny Gravity'
+    enabled: 0
+    description: Jump now ignores weight of player. Large body jumps as fast as small
+      body.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 012a6d1be4511c84abed78b88e356167, type: 2}
+    additionalTexts: []
+  - id: 30060
+    label: 'Chaotic Leap: Ethereal Jump'
+    enabled: 1
+    description: You won't deal contact damage via jumping into enemies, but jump
+      cooldown will be reduced.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 71e6ccdce06074c408dcf912e0738ef6, type: 2}
+    additionalTexts: []
+  - id: 30061
+    label: 'Chaotic Leap: Ethereal Jump'
+    enabled: 1
+    description: You won't deal contact damage via jumping into enemies, but jump
+      cooldown will be reduced.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: 1bd84627d84fd064e8809425037dab31, type: 2}
+    additionalTexts: []
+  - id: 30070
+    label: 'Chaotic Leap: Shockwave'
+    enabled: 1
+    description: In the landing zone after jump, push away nearby enemies.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: cc101f231a848a04082f7e6370dbb094, type: 2}
+    additionalTexts: []
+  - id: 30071
+    label: 'Chaotic Leap: Shockwave'
+    enabled: 1
+    description: In the landing zone after jump, push away and stun nearby enemies.
+    type: 10
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 11400000, guid: c8aea7380dc90cb4f82d1b6a97c1f1eb, type: 2}
+    additionalTexts: []
+  - id: 42000
+    label: 'Crossbow: Dual-Load Destruction'
+    enabled: 1
+    description: The weapon shoots twice before having to reload.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 0226e8169f971714090e1ca32a1d0ca9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 9889d599e604a2b489b0386002b92d51, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 42010
+    label: 'Crossbow: Momentum Maelstrom'
+    enabled: 1
+    description: When you move, the weapon shoots arrows. The faster you move, faster
+      it shoots, speed increases exponentially. Fire Rate buffs also apply to firing
+      speed.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 922dc682e5e216848ae44c1f98593789, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 6d5c536845b02fd4f85d7b9636cef27e, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 42020
+    label: 'Crossbow: Skyfall Strike'
+    enabled: 1
+    description: For every arrow you fire, you will also land an arrow to a nearby
+      enemy.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 45a901171fa6a504ea3458d8bd5cc5f5, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 3edb65365be1ca5469efc5a20e561968, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 42030
+    label: 'Crossbow: Inferno Incursion'
+    enabled: 1
+    description: Your arrows will put enemies on Fire.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 58be8389162e3fd4ea34525ecd8a1ae6, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 6da5de15c00c57441b7f9239ecc19741, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 42031
+    label: 'Crossbow: Inferno Incursion'
+    enabled: 1
+    description: Your arrows will put enemies on Fire.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 58be8389162e3fd4ea34525ecd8a1ae6, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: d6c4651bfb3d1de4dbaba63a133c6444, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 42040
+    label: 'Crossbow: Skill Barrage'
+    enabled: 1
+    description: After skill use, shoots out current projectile count x 4, in 360
+      degree.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 43f0face60b13c5429bb97f81ec3620f, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 42050
+    label: 'Crossbow: Scattershot'
+    enabled: 1
+    description: After every 3rd shot, shoots out current projectile count x2, in
+      360 degree.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 9dddab6eb4d61da488ada5dcf038cc16, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 42060
+    label: 'Crossbow: Kinetic Kickback'
+    enabled: 1
+    description: Increases the speed of projectiles and gives your projectiles a
+      pushback effect.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 87db14706f5a5224fbf7b3e0713aa9c3, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43000
+    label: 'Cannon: Blast Barrage'
+    enabled: 1
+    description: 'Projectiles will explode in the end, dealing 50% of projectile
+      damage to around enemies. '
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 20e6786d3a5da0f4cb6cbadb919db476, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43010
+    label: 'Cannon: Static Blaze'
+    enabled: 1
+    description: When stationary, the cannon reloads much faster.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 30d3901b58d9a1e4788cd6d0767db16c, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43020
+    label: 'Cannon: Tactical Trigger'
+    enabled: 1
+    description: Activating your skill triggers a cannon shot automatically aimed
+      at nearest enemy.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: cd2f6511b98b3fe478e022edb4585f64, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43030
+    label: 'Cannon: Tidal Force'
+    enabled: 1
+    description: "Cannon fire pushes enemies away, creating distance and controlling
+      the battlefield.\r"
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 7770eecb18f36274f9814cc9c9bea4b3, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43040
+    label: 'Cannon: Speedburst Salvo'
+    enabled: 1
+    description: "Firing the cannon grants a temporary speed boost, allowing quick
+      repositioning.\r"
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: b4621817118d655409c448952011035f, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43050
+    label: 'Cannon: Singularity Surge'
+    enabled: 1
+    description: 'Cannonballs create a black hole upon vanishing. '
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 2003641d12e0f304e8da6e0ff811b8e1, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43060
+    label: 'Cannon: More Rounds'
+    enabled: 1
+    description: Doubles number of projectiles, but decreases fire rate by 50%.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 9f6472377434d4a47bb44cebb09481f0, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43070
+    label: 'Cannon: Panic Pulse'
+    enabled: 1
+    description: 'Firing the cannon instills fear in enemies, causing them to flee
+      from the terrifying blast.
+
+'
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 2ae57ff88d54d624ab20256f25963255, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43080
+    label: 'Cannon: Triple Threat'
+    enabled: 1
+    description: 'Every 3rd shot, the cannon fires a wide-angle volley, hitting multiple
+      enemies with a single blast.
+
+
+
+
+
+
+
+'
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: c4e95d2f03c9f544881672d8cb4c0243, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43090
+    label: 'Cannon: Gold Satisfaction'
+    enabled: 1
+    description: Every gold you pick up will add progress towards recharging your
+      weapon to fire again.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 003eab692ffe43f43b3ff1f8c6b2a373, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43099
+    label: 'Cannon: Soul Stealing'
+    enabled: 0
+    description: Every enemy you hit with the weapon will add progress towards recharging
+      your weapon to fire again.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 33805624ebfb29545b06b37e2c255b26, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 90000
+    label: Max HP Upgrade
+    enabled: 1
+    description: Increases maximum HP.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 168331709e0bebb4daefe12771c0dc4a, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90001
+    label: Max HP Upgrade
+    enabled: 1
+    description: Increases maximum HP.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 404d7602a815fef4ab9f9696f1b669b5, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90002
+    label: Max HP Upgrade
+    enabled: 1
+    description: Increases maximum HP.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: e24aaa44c21082f44b369a3fed727c2d, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90010
+    label: Defence Upgrade
+    enabled: 1
+    description: Reduces incoming damage.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 5bfc9c8de501d704dbc05f8a88c274e5, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90011
+    label: Defence Upgrade
+    enabled: 1
+    description: Reduces incoming damage.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 26cefdf08e1dc024c830c23a512b0ba9, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90012
+    label: Defence Upgrade
+    enabled: 1
+    description: Reduces incoming damage.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: cbba4e93b77fe4e428772edd9efb9beb, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90020
+    label: Move Speed Upgrade
+    enabled: 1
+    description: Increases movement speed.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 6e2047aad0e6ab24fbf5cb470c370cb3, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90021
+    label: Move Speed Upgrade
+    enabled: 1
+    description: Increases movement speed.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 901ac736b3ac618418399e29f74a1f72, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90022
+    label: Move Speed Upgrade
+    enabled: 1
+    description: Increases movement speed.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 1a5db0212dc9fd940889c49cb29c91d3, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90030
+    label: HP Regeneration Upgrade
+    enabled: 1
+    description: Increases HP regeneration rate.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 4bb551b06fbe04044a777b96986d2c97, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90031
+    label: HP Regeneration Upgrade
+    enabled: 1
+    description: Increases HP regeneration rate.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 9d35350d00261e040bf87e6c1d834a76, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90032
+    label: HP Regeneration Upgrade
+    enabled: 1
+    description: Increases HP regeneration rate.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: a6c001ca6d739e24e9e751b3caba34ff, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90040
+    label: Pickup Range Upgrade
+    enabled: 1
+    description: Increases pickup range.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 72c40f0fd5f33fd46a3ef3bf8ca81939, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90041
+    label: Pickup Range Upgrade
+    enabled: 1
+    description: Increases pickup range.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 65f795a9669ecdc4da7b6a0614f97dfd, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90042
+    label: Pickup Range Upgrade
+    enabled: 1
+    description: Increases pickup range.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: fefca5b1233fcd540adbb2ed66cf92d5, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90050
+    label: Skill Reuse Delay Upgrade
+    enabled: 1
+    description: Decreases reuse delay of skills.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 5ee176dc6096a614caee84136f46a29b, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90051
+    label: Skill Reuse Delay Upgrade
+    enabled: 1
+    description: Decreases reuse delay of skills.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 2f1bdb369a2fbff48836cd93ff1bd80b, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90052
+    label: Skill Reuse Delay Upgrade
+    enabled: 1
+    description: Decreases reuse delay of skills.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: b88d43028a12f6f4a9c5fbdc66a15ce5, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
   rewardSets:
   - name: shop_passives_basic
     note: 
+    minCountShownItems: 2
     prefabs:
-    - prefabId: 2500
+    - name: Add Projectile
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 2500
       weight: 15
       price: 1
       priceMultiplyForEveryOwned: 0.2
-    - prefabId: 2503
+      mustBeUnlocked: 0
+    - name: Increase Damage
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 2503
       weight: 10
       price: 1
       priceMultiplyForEveryOwned: 0.2
-    - prefabId: 2506
+      mustBeUnlocked: 0
+    - name: Fire Rate Module
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 2506
       weight: 10
       price: 1
       priceMultiplyForEveryOwned: 0.2
-    - prefabId: 2505
+      mustBeUnlocked: 0
+    - name: Increase Projectile Area
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 2505
       weight: 10
       price: 1
       priceMultiplyForEveryOwned: 0.2
-    minCountShownItems: 2
+      mustBeUnlocked: 0
     closeOnFirstPurchase: 0
+    nestedRewardSets: []
   - name: shop_defensive_basic
     note: 
-    prefabs:
-    - prefabId: 2600
-      weight: 1
-      price: 1
-      priceMultiplyForEveryOwned: 0.75
-    - prefabId: 2602
-      weight: 1
-      price: 1
-      priceMultiplyForEveryOwned: 0.75
-    - prefabId: 2604
-      weight: 1
-      price: 1
-      priceMultiplyForEveryOwned: 0.75
     minCountShownItems: 1
+    prefabs:
+    - name: Shield Module
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 2600
+      weight: 1
+      price: 1
+      priceMultiplyForEveryOwned: 0.75
+      mustBeUnlocked: 0
+    - name: Speed Module
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 2602
+      weight: 1
+      price: 1
+      priceMultiplyForEveryOwned: 0.75
+      mustBeUnlocked: 0
+    - name: Skill Improver
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 2604
+      weight: 1
+      price: 1
+      priceMultiplyForEveryOwned: 0.75
+      mustBeUnlocked: 0
     closeOnFirstPurchase: 0
+    nestedRewardSets: []
   - name: shop_chaos_upgrades
     note: 
-    prefabs:
-    - prefabId: 4200
-      weight: 1
-      price: 2.5
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4201
-      weight: 1
-      price: 2.5
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4202
-      weight: 1
-      price: 2.5
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4203
-      weight: 1
-      price: 2.5
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4204
-      weight: 1
-      price: 2.5
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4205
-      weight: 1
-      price: 2.5
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4206
-      weight: 1
-      price: 2.5
-      priceMultiplyForEveryOwned: 0
     minCountShownItems: 1
+    prefabs: []
     closeOnFirstPurchase: 0
+    nestedRewardSets:
+    - shop_chaos_upgrades_crossbow
+    - shop_chaos_upgrades_cannon
+  - name: shop_chaos_upgrades_crossbow
+    note: 
+    minCountShownItems: 1
+    prefabs:
+    - name: 'Crossbow: Dual-Load Destruction'
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 42000
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Crossbow: Momentum Maelstrom'
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 42010
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Crossbow: Skyfall Strike'
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 42020
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Crossbow: Inferno Incursion'
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 42030
+      weight: 100
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Crossbow: Inferno Incursion'
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 42031
+      weight: 100
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Crossbow: Skill Barrage'
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 42040
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Crossbow: Scattershot'
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 42050
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Crossbow: Kinetic Kickback'
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 42060
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    closeOnFirstPurchase: 0
+    nestedRewardSets: []
   - name: shop_chaos_upgrades_cannon
     note: 
-    prefabs:
-    - prefabId: 4210
-      weight: 1
-      price: 2.5
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4211
-      weight: 1
-      price: 2.5
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4212
-      weight: 1
-      price: 2.5
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4213
-      weight: 1
-      price: 2.5
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4214
-      weight: 1
-      price: 2.5
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4215
-      weight: 1
-      price: 2.5
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4216
-      weight: 1
-      price: 2.5
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4217
-      weight: 1
-      price: 2.5
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4218
-      weight: 1
-      price: 2.5
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4219
-      weight: 1
-      price: 2.5
-      priceMultiplyForEveryOwned: 0
     minCountShownItems: 1
+    prefabs:
+    - name: 'Cannon: Blast Barrage'
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 43000
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Cannon: Static Blaze'
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 43010
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Cannon: Tactical Trigger'
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 43020
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Cannon: Tidal Force'
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 43030
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Cannon: Speedburst Salvo'
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 43040
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Cannon: Singularity Surge'
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 43050
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Cannon: More Rounds'
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 43060
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Cannon: Panic Pulse'
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 43070
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Cannon: Triple Threat'
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 43080
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Cannon: Gold Satisfaction'
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 43090
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
     closeOnFirstPurchase: 0
+    nestedRewardSets: []
   - name: free_start_weapon
     note: 
-    prefabs:
-    - prefabId: 2000
-      weight: 1
-      price: 0
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 2007
-      weight: 1
-      price: 0
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 2003
-      weight: 1
-      price: 0
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 10000
-      weight: 1
-      price: 0
-      priceMultiplyForEveryOwned: 0
     minCountShownItems: 100
+    prefabs:
+    - name: Crossbow Module
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 2000
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Cannon Module
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 2007
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Ballista Module
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 2003
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Chaotic Leap
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 10000
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
     closeOnFirstPurchase: 0
+    nestedRewardSets: []
   - name: shop_skill_upgrades
     note: 
+    minCountShownItems: 1
+    prefabs: []
+    closeOnFirstPurchase: 0
+    nestedRewardSets:
+    - shop_skill_upgrades_jump
+  - name: shop_skill_upgrades_jump
+    note: 
+    minCountShownItems: 10
     prefabs:
-    - prefabId: 4400
-      weight: 2
+    - name: 'Common Chaotic Leap: Enhance Power'
+      isInGroup: 1
+      group: 30000
+      levelInGroup: 1
+      prefabId: 30000
+      weight: 4
       price: 1.25
       priceMultiplyForEveryOwned: 0
-    - prefabId: 4401
-      weight: 2
-      price: 1.25
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4402
+      mustBeUnlocked: 0
+    - name: 'Epic Chaotic Leap: Enhance Power'
+      isInGroup: 1
+      group: 30000
+      levelInGroup: 2
+      prefabId: 30001
       weight: 1
       price: 1.25
       priceMultiplyForEveryOwned: 0
-    - prefabId: 4404
-      weight: 2
+      mustBeUnlocked: 0
+    - name: 'Common Chaotic Leap: Landing Protection'
+      isInGroup: 1
+      group: 30010
+      levelInGroup: 1
+      prefabId: 30010
+      weight: 4
       price: 1.25
       priceMultiplyForEveryOwned: 0
-    - prefabId: 4405
-      weight: 2
+      mustBeUnlocked: 0
+    - name: 'Epic Chaotic Leap: Landing Protection'
+      isInGroup: 1
+      group: 30010
+      levelInGroup: 2
+      prefabId: 30011
+      weight: 1
       price: 1.25
       priceMultiplyForEveryOwned: 0
-    - prefabId: 4406
-      weight: 2
+      mustBeUnlocked: 0
+    - name: 'Chaotic Leap: Redirect Power'
+      isInGroup: 1
+      group: 30020
+      levelInGroup: 1
+      prefabId: 30020
+      weight: 4
       price: 1.25
       priceMultiplyForEveryOwned: 0
-    - prefabId: 4407
-      weight: 2
+      mustBeUnlocked: 0
+    - name: 'Epic Chaotic Leap: Redirect Power'
+      isInGroup: 1
+      group: 30020
+      levelInGroup: 2
+      prefabId: 30021
+      weight: 1
       price: 1.25
       priceMultiplyForEveryOwned: 0
-    minCountShownItems: 1
+      mustBeUnlocked: 0
+    - name: 'Common Chaotic Leap: Ethereal Jump'
+      isInGroup: 1
+      group: 30060
+      levelInGroup: 1
+      prefabId: 30060
+      weight: 4
+      price: 1.25
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Epic Chaotic Leap: Ethereal Jump'
+      isInGroup: 1
+      group: 30060
+      levelInGroup: 2
+      prefabId: 30061
+      weight: 1
+      price: 1.25
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Common Chaotic Leap: Shockwave'
+      isInGroup: 1
+      group: 30070
+      levelInGroup: 1
+      prefabId: 30070
+      weight: 4
+      price: 1.25
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: 'Epic Chaotic Leap: Shockwave'
+      isInGroup: 1
+      group: 30070
+      levelInGroup: 2
+      prefabId: 30071
+      weight: 1
+      price: 1.25
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
     closeOnFirstPurchase: 0
+    nestedRewardSets: []
   - name: shop_weapons
     note: 
-    prefabs:
-    - prefabId: 2000
-      weight: 1
-      price: 1.25
-      priceMultiplyForEveryOwned: 1
-    - prefabId: 2007
-      weight: 1
-      price: 1.25
-      priceMultiplyForEveryOwned: 1
     minCountShownItems: 1
+    prefabs:
+    - name: Crossbow Module
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 2000
+      weight: 1
+      price: 1
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Cannon Module
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 2007
+      weight: 1
+      price: 1
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
     closeOnFirstPurchase: 0
+    nestedRewardSets: []
   - name: chest_weapons
     note: 
-    prefabs:
-    - prefabId: 2000
-      weight: 1
-      price: 0
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 2007
-      weight: 1
-      price: 0
-      priceMultiplyForEveryOwned: 0
     minCountShownItems: 4
+    prefabs:
+    - name: Crossbow Module
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 2000
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Cannon Module
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 2007
+      weight: 1
+      price: 0
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
     closeOnFirstPurchase: 1
+    nestedRewardSets: []
   - name: shop_player_upgrades
     note: 
-    prefabs:
-    - prefabId: 4000
-      weight: 1
-      price: 0.75
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4001
-      weight: 1
-      price: 0.75
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4002
-      weight: 1
-      price: 0.75
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4003
-      weight: 1
-      price: 0.75
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4004
-      weight: 1
-      price: 0.75
-      priceMultiplyForEveryOwned: 0
-    - prefabId: 4005
-      weight: 1
-      price: 0.75
-      priceMultiplyForEveryOwned: 0
     minCountShownItems: 1
+    prefabs:
+    - name: Max HP Upgrade
+      isInGroup: 1
+      group: 90000
+      levelInGroup: 1
+      prefabId: 90000
+      weight: 9
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Max HP Upgrade
+      isInGroup: 1
+      group: 90000
+      levelInGroup: 2
+      prefabId: 90001
+      weight: 3
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Max HP Upgrade
+      isInGroup: 1
+      group: 90000
+      levelInGroup: 3
+      prefabId: 90002
+      weight: 1
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Defence Upgrade
+      isInGroup: 1
+      group: 90010
+      levelInGroup: 1
+      prefabId: 90010
+      weight: 9
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Defence Upgrade
+      isInGroup: 1
+      group: 90010
+      levelInGroup: 2
+      prefabId: 90011
+      weight: 3
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Defence Upgrade
+      isInGroup: 1
+      group: 90010
+      levelInGroup: 3
+      prefabId: 90012
+      weight: 1
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Move Speed Upgrade
+      isInGroup: 1
+      group: 90020
+      levelInGroup: 1
+      prefabId: 90020
+      weight: 9
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Move Speed Upgrade
+      isInGroup: 1
+      group: 90020
+      levelInGroup: 2
+      prefabId: 90021
+      weight: 3
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Move Speed Upgrade
+      isInGroup: 1
+      group: 90020
+      levelInGroup: 3
+      prefabId: 90022
+      weight: 1
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: HP Regeneration Upgrade
+      isInGroup: 1
+      group: 90030
+      levelInGroup: 1
+      prefabId: 90030
+      weight: 9
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: HP Regeneration Upgrade
+      isInGroup: 1
+      group: 90030
+      levelInGroup: 2
+      prefabId: 90031
+      weight: 3
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: HP Regeneration Upgrade
+      isInGroup: 1
+      group: 90030
+      levelInGroup: 3
+      prefabId: 90032
+      weight: 1
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Pickup Range Upgrade
+      isInGroup: 1
+      group: 90040
+      levelInGroup: 1
+      prefabId: 90040
+      weight: 9
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Rare Pickup Range Upgrade
+      isInGroup: 1
+      group: 90040
+      levelInGroup: 2
+      prefabId: 90041
+      weight: 3
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Epic Pickup Range Upgrade
+      isInGroup: 1
+      group: 90040
+      levelInGroup: 3
+      prefabId: 90042
+      weight: 1
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Skill Reuse Delay Upgrade
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 90050
+      weight: 1
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Skill Reuse Delay Upgrade
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 90050
+      weight: 1
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Skill Reuse Delay Upgrade
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 90050
+      weight: 1
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
     closeOnFirstPurchase: 0
+    nestedRewardSets: []
   variants:
   - variant: Zombie
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}

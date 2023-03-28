@@ -123,45 +123,60 @@ namespace _Chi.Scripts.Mono.Ui
                 ShowRandomRewardSetItems();
             }
         }
-
+        
         private void ShowRandomRewardSetItems()
         {
-            var db = Gamesystem.instance.prefabDatabase;
-
-            foreach (var rewardSet in rewardSets)
+            foreach (TriggeredShopSet rewardSet in rewardSets)
             {
-                bool showOnlyLocked = rewardSet.showOnlyPreviouslyLocked;
+                RewardSet setTemplate = Gamesystem.instance.prefabDatabase.GetRewardSet(rewardSet.name);
+                
+                ShowRewardSetItems(rewardSet, setTemplate);
 
-                var set = Gamesystem.instance.prefabDatabase.GetRewardSet(rewardSet.name);
-                    
-                currentRewardSets.Add(set);
-
-                var shownItems = set.CalculateShownItems(Gamesystem.instance.objects.currentPlayer, locks, showOnlyLocked).ToHashSet();
-                var shownItemsHash = shownItems.Select(s => s.prefabId).ToHashSet();
-
-                foreach (var rewardSetItemWithWeight in shownItems)
+                if (setTemplate.nestedRewardSets != null && setTemplate.nestedRewardSets.Any())
                 {
-                    var item = db.GetById(rewardSetItemWithWeight.prefabId);
-                    if (!item.enabled) continue;
-                    
-                    var newItem = Instantiate(itemInfoPrefab, transform.position, Quaternion.identity, transform);
-                    var option = new OptionData()
+                    foreach (var nested in setTemplate.nestedRewardSets)
                     {
-                        go = newItem,
-                        prefabItem = item,
-                        rewardSetItemWithWeight = rewardSetItemWithWeight,
-                        triggeredShop = triggeredShop
-                    };
-                    options.Add(item, option);
-                    var newItemItem = newItem.GetComponent<ModuleSelectorItem>();
+                        RewardSet nestedSetTemplate = Gamesystem.instance.prefabDatabase.GetRewardSet(nested);
 
-                    var price = GetPrice(option);
-
-                    newItemItem.Initialise(item, new List<ActionsPanelButton>()
-                    {
-                        new ActionsPanelButton("Buy", () => StartAddingItem(option))
-                    }, AbortAddingItem, price);
+                        ShowRewardSetItems(rewardSet, nestedSetTemplate);
+                    }
                 }
+            }
+        }
+
+        private void ShowRewardSetItems(TriggeredShopSet rewardSet, RewardSet set)
+        {
+            var db = Gamesystem.instance.prefabDatabase;
+            
+            bool showOnlyLocked = rewardSet.showOnlyPreviouslyLocked;
+
+            currentRewardSets.Add(set);
+
+            var shownItems = set.CalculateShownItems(Gamesystem.instance.objects.currentPlayer, locks, showOnlyLocked).ToHashSet();
+            var shownItemsHash = shownItems.Select(s => s.prefabId).ToHashSet();
+
+            foreach (var rewardSetItemWithWeight in shownItems)
+            {
+                var item = db.GetById(rewardSetItemWithWeight.prefabId);
+                if (!item.enabled) continue;
+                    
+                var newItem = Instantiate(itemInfoPrefab, transform.position, Quaternion.identity, transform);
+                var option = new OptionData()
+                {
+                    go = newItem,
+                    prefabItem = item,
+                    rewardSetItemWithWeight = rewardSetItemWithWeight,
+                    triggeredShop = triggeredShop
+                };
+                options.Add(item, option);
+                var newItemItem = newItem.GetComponent<ModuleSelectorItem>();
+
+                var price = GetPrice(option);
+
+                newItemItem.Initialise(item, new List<ActionsPanelButton>()
+                {
+                    new ActionsPanelButton("Buy", () => StartAddingItem(option))
+                }, AbortAddingItem, price);
             }
         }
 

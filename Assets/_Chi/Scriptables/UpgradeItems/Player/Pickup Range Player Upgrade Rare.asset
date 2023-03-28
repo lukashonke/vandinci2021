@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674034ae18394264b6cfe1fc91d58010, type: 3}
+  m_Name: Pickup Range Player Upgrade Rare
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  uiName: Pickup Range Upgrade
+  uiDescription: Increases pickup range.
+  effects:
+  - {fileID: 11400000, guid: 5e7d31020bb2a654cb7861dc0b5efbbc, type: 2}
+  rarity: 1
+  unlocksModulePrefabIds: 
+  disablesModulePrefabIds: 
+  replacesModulePrefabId: 0
+  canBeStacked: 1

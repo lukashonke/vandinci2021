@@ -1,4 +1,6 @@
-﻿using _Chi.Scripts.Mono.Entities;
+﻿using System;
+using System.Collections.Generic;
+using _Chi.Scripts.Mono.Entities;
 using Sirenix.OdinInspector;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -12,7 +14,7 @@ namespace _Chi.Scripts.Scriptables
         public GameObject vfx;
         [ShowIf("vfx")]
         public float vfxDespawnAfter;
-        
+
         public abstract bool Trigger(Entity entity, bool force = false);
         
         public T GetSkillData<T>(Entity entity) where T : SkillData
@@ -90,6 +92,22 @@ namespace _Chi.Scripts.Scriptables
             }
 
             return instance;
+        }
+        
+        public List<ImmediateEffect> GetAdditionalEffects(Player player)
+        {
+            List<ImmediateEffect> retValue = null;
+            foreach (var upgradeItem in player.skillUpgradeItems)
+            {
+                if (upgradeItem.additionalEffects != null)
+                {
+                    if (retValue == null)retValue = new();
+                    
+                    retValue.AddRange(upgradeItem.additionalEffects);
+                }
+            }
+
+            return retValue;
         }
 
         public abstract SkillData CreateDefaultSkillData();

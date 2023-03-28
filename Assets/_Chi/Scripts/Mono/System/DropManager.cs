@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Utilities;
@@ -46,6 +47,8 @@ namespace _Chi.Scripts.Mono.System
         private NativeArray<int> queryResults;
 
         public float globalDropChance = 100f;
+
+        private bool pickupCoroutineRunning = false;
 
         void Awake()
         {
@@ -112,21 +115,25 @@ namespace _Chi.Scripts.Mono.System
             var rebuild = new KnnRebuildJob(knnContainer);
             rebuildHandle = rebuild.Schedule();
             
-            
             queryResults = new NativeArray<int>(neighbours, Allocator.TempJob);
             
             var queryJob = new QueryKNearestJob(knnContainer, playerPosFloat3, queryResults);
             queryJobHandle = queryJob.Schedule(rebuildHandle);
             isQueryJobRunning = true;
+
+            if (Input.GetMouseButton(1))
+            {
+                Drop(DropType.Level1Gold, Utils.GetMousePosition(), true);
+            }
         }
         
         public void LateUpdate()
         {
-            const int neighbours = 1;
+            /*const int neighbours = 1;
 
             var player = Gamesystem.instance.objects.currentPlayer;
             var playerPos = player.GetPosition();
-            var playerPosFloat3 = new float3(playerPos.x, playerPos.y, 0);
+            var playerPosFloat3 = new float3(playerPos.x, playerPos.y, 0);*/
 
             /*if (isQueryJobRunning)
             {
@@ -169,6 +176,37 @@ namespace _Chi.Scripts.Mono.System
                 {
                     beingPickedUp.RemoveAt(index);
                     Pickup(go);
+                }
+            }
+        }
+
+        public void Pickup(float maxRange)
+        {
+            StartCoroutine(PickupCoroutine(maxRange));
+        }
+
+        private IEnumerator PickupCoroutine(float maxRange)
+        {
+            float maxRange2 = maxRange * maxRange;
+            var player = Gamesystem.instance.objects.currentPlayer;
+            var playerPos = player.GetPosition();
+
+            const int maxPicksUp = 50;
+
+            for (var index = gameObjects.Count - 1; index >= 0; index--)
+            {
+                while (beingPickedUp.Count >= maxPicksUp)
+                {
+                    yield return null;
+                }
+                
+                var go = gameObjects[index];
+                var dist = Utils.Dist2(playerPos, go.transform.position);
+
+                if (dist < maxRange2)
+                {
+                    beingPickedUp.Add(go);
+                    RemoveDrop(index);
                 }
             }
         }

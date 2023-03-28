@@ -59,19 +59,18 @@ public class PlayerControls : MonoBehaviour
     {
         PerformMovement();
 
-        PerformSkills();
-
         //UpdateCamera();
     }
 
     void Update()
     {
         //UpdateCamera();
+        PerformSkills();
         
         player.SetRotationTarget(Utils.GetMousePosition());
     }
 
-    private void UpdateCamera()
+    /*private void UpdateCamera()
     {
         Vector3 pos = gameObject.transform.position;
         pos.z = camera.transform.position.z;
@@ -94,12 +93,13 @@ public class PlayerControls : MonoBehaviour
                 camera.gameObject.transform.position = new Vector3(camera.gameObject.transform.position.x, camera.gameObject.transform.position.y, camera.gameObject.transform.position.z - cameraZPerZoomUnit);
             }
         }
-    }
+    }*/
 
     private void PerformSkills()
     {
-        if (_actionses.Skill1.IsPressed)
+        if (_actionses.Skill1.WasPressed)
         {
+            Debug.Log("pressed");
             player.TryActivateSkill(0);
         }
     }

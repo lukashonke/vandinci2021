@@ -225,20 +225,29 @@ namespace _Chi.Scripts.Scriptables
         [VerticalGroup("Name")]
         public string note;
 
+        [VerticalGroup("Name")]
+        [MinValue(1)] 
+        public int minCountShownItems = 1;
+        
         [Required]
         [VerticalGroup("Items")]
         public List<RewardSetItemWithWeight> prefabs;
 
-        [VerticalGroup("Name")]
-        [MinValue(1)] 
-        public int minCountShownItems = 1;
-
         [VerticalGroup("Items")]
         public bool closeOnFirstPurchase;
+        
+        [VerticalGroup("Items")]
+        public List<string> nestedRewardSets;
 
         public List<RewardSetItemWithWeight> CalculateShownItems(Player player, Dictionary<int, bool> lockedPrefabIds, bool showOnlyLocked)
         {
+            if (!prefabs.Any()) return new List<RewardSetItemWithWeight>();
+            
             List<PrefabItem> ownedItems = GetPlayerItems();
+            var disabled = GetDisabledItems(ownedItems);
+            var unlocked = GetUnlockedItems(ownedItems);
+            var replaced = GetReplacedItems(ownedItems);
+            Dictionary<string, RewardSetItemWithWeight> alreadySelectedGroups = new();
 
             Dictionary<int, WeightSettingsItem> weightAlters = new();
             foreach (var item in ownedItems)
@@ -327,11 +336,22 @@ namespace _Chi.Scripts.Scriptables
                 }
 
                 var prefab = allItemsWithWeights[index];
-                if (!CanApply(player, prefab))
+                if (!CanApply(player, prefab, replaced, disabled, unlocked, alreadySelectedGroups))
                 {
                     allItemsWithWeights.RemoveAt(index);
                     i--;
                     continue;
+                }
+
+                if (prefab.isInGroup)
+                {
+                    if (alreadySelectedGroups.TryGetValue(prefab.group, out var currentSelectedPrefab))
+                    {
+                        // replace the current item
+                        retValue.Remove(currentSelectedPrefab);
+                    }
+                    
+                    alreadySelectedGroups[prefab.group] = prefab;
                 }
                 
                 retValue.Add(prefab);
@@ -390,20 +410,103 @@ namespace _Chi.Scripts.Scriptables
             return retValue;
         }
 
-        private bool CanApply(Player player, RewardSetItemWithWeight item)
+        public HashSet<int> GetDisabledItems(List<PrefabItem> items)
+        {
+            List<int> disabled = new();
+            foreach (var item in items)
+            {
+                if (item.moduleUpgradeItem != null && item.moduleUpgradeItem.disablesModulePrefabIds != null)
+                {
+                    disabled.AddRange(item.moduleUpgradeItem.disablesModulePrefabIds);
+                }
+                if (item.playerUpgradeItem != null && item.playerUpgradeItem.disablesModulePrefabIds != null)
+                {
+                    disabled.AddRange(item.playerUpgradeItem.disablesModulePrefabIds);
+                }
+                if (item.skillUpgradeItem != null && item.skillUpgradeItem.disablesModulePrefabIds != null)
+                {
+                    disabled.AddRange(item.skillUpgradeItem.disablesModulePrefabIds);
+                }
+            }
+
+            return disabled.ToHashSet();
+        }
+        
+        public HashSet<int> GetUnlockedItems(List<PrefabItem> items)
+        {
+            List<int> unlocked = new();
+            foreach (var item in items)
+            {
+                if (item.moduleUpgradeItem != null && item.moduleUpgradeItem.unlocksModulePrefabIds != null)
+                {
+                    unlocked.AddRange(item.moduleUpgradeItem.unlocksModulePrefabIds);
+                }
+                if (item.playerUpgradeItem != null && item.playerUpgradeItem.unlocksModulePrefabIds != null)
+                {
+                    unlocked.AddRange(item.playerUpgradeItem.unlocksModulePrefabIds);
+                }
+                if (item.skillUpgradeItem != null && item.skillUpgradeItem.unlocksModulePrefabIds != null)
+                {
+                    unlocked.AddRange(item.skillUpgradeItem.unlocksModulePrefabIds);
+                }
+            }
+
+            return unlocked.ToHashSet();
+        }
+        
+        public HashSet<int> GetReplacedItems(List<PrefabItem> items)
+        {
+            List<int> unlocked = new();
+            foreach (var item in items)
+            {
+                if (item.moduleUpgradeItem != null && item.moduleUpgradeItem.replacesModulePrefabId > 0)
+                {
+                    unlocked.Add(item.moduleUpgradeItem.replacesModulePrefabId);
+                }
+                if (item.playerUpgradeItem != null && item.playerUpgradeItem.replacesModulePrefabId > 0)
+                {
+                    unlocked.Add(item.playerUpgradeItem.replacesModulePrefabId);
+                }
+                if (item.skillUpgradeItem != null && item.skillUpgradeItem.replacesModulePrefabId > 0)
+                {
+                    unlocked.Add(item.skillUpgradeItem.replacesModulePrefabId);
+                }
+            }
+
+            return unlocked.ToHashSet();
+        }
+
+        private bool CanApply(Player player, RewardSetItemWithWeight item, HashSet<int> replacedItems, HashSet<int> disabledItems, HashSet<int> unlockedItems, Dictionary<string, RewardSetItemWithWeight> alreadySelectedGroups)
         {
             var prefab = Gamesystem.instance.prefabDatabase.GetById(item.prefabId);
             var run = Gamesystem.instance.progress.progressData.run;
             
             if (prefab == null) return false;
+            
+            if(item.mustBeUnlocked && !unlockedItems.Contains(item.prefabId)) return false;
+            if(disabledItems.Contains(item.prefabId)) return false;
+            if(replacedItems.Contains(item.prefabId)) return false;
 
+            if (item.isInGroup)
+            {
+                // an item from the same group has already been selected
+                if (alreadySelectedGroups.TryGetValue(item.group, out var currentSelectedPrefab))
+                {
+                    // and the selected item is of higher or same level
+                    if (currentSelectedPrefab.levelInGroup >= item.levelInGroup) return false;
+                }
+            }
+            
             switch (prefab.type)
             {
                 case PrefabItemType.UpgradeItemPlayer:
                 {
-                    if (run.playerUpgradeItems != null && run.playerUpgradeItems.Any(i => i.prefabId == item.prefabId))
+                    if (!prefab.playerUpgradeItem.canBeStacked)
                     {
-                        return false;
+                        if (run.playerUpgradeItems != null && run.playerUpgradeItems.Any(i => i.prefabId == item.prefabId))
+                        {
+                            return false;
+                        }    
                     }
 
                     break;
@@ -447,14 +550,36 @@ namespace _Chi.Scripts.Scriptables
     [Serializable]
     public class RewardSetItemWithWeight
     {
-        [HorizontalGroup("Prefab")]
+        [HorizontalGroup("Name")][ReadOnly] public string name;
+
+        [HorizontalGroup("Name")] public bool isInGroup;
+
+        [HorizontalGroup("Group")] [ShowIf("isInGroup")]
+        public string group;
+
+        [HorizontalGroup("Group")] [ShowIf("isInGroup")]
+        public int levelInGroup;
+
+        [HorizontalGroup("Prefab")] [OnValueChanged("OnPrefabIdChanged")]
         public int prefabId;
-        [HorizontalGroup("Prefab")]
-        public int weight;
-        
-        [HorizontalGroup("Price")]
-        public float price;
-        [HorizontalGroup("Price")]
-        public float priceMultiplyForEveryOwned = 0f;
+
+        [HorizontalGroup("Prefab")] public int weight;
+
+        [HorizontalGroup("Price")] public float price;
+        [HorizontalGroup("Price")] public float priceMultiplyForEveryOwned = 0f;
+
+        [HorizontalGroup("Price")] public bool mustBeUnlocked;
+
+        private void OnPrefabIdChanged()
+        {
+            var item = Gamesystem.instance.prefabDatabase.GetById(prefabId);
+            if (item != null)
+            {
+                if (item.playerUpgradeItem != null) name = $"{item.playerUpgradeItem.rarity} {item.label}";
+                else if (item.skillUpgradeItem != null) name = $"{item.skillUpgradeItem.rarity} {item.label}";
+                else if (item.moduleUpgradeItem != null) name = $"{item.moduleUpgradeItem.rarity} {item.label}";
+                else name = item.label;
+            }
+        }
     }
 }

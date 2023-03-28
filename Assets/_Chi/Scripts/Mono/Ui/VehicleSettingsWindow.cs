@@ -197,6 +197,11 @@ namespace _Chi.Scripts.Mono.Ui
                     slot = 0,
                 });
 
+                if (item.skillUpgradeItem.replacesModulePrefabId > 0)
+                {
+                    run.skillUpgradeItems.RemoveAll(s => s.prefabId == item.skillUpgradeItem.replacesModulePrefabId);
+                }
+
                 return true;
             }
 
@@ -218,6 +223,11 @@ namespace _Chi.Scripts.Mono.Ui
                     prefabId = item.id,
                     slot = 0,
                 });
+                
+                if (item.playerUpgradeItem.replacesModulePrefabId > 0)
+                {
+                    run.playerUpgradeItems.RemoveAll(s => s.prefabId == item.playerUpgradeItem.replacesModulePrefabId);
+                }
 
                 return true;
             }

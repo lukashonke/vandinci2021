@@ -24,6 +24,9 @@ MonoBehaviour:
   uiName: Singularity Surge
   uiDescription: 'Cannonballs create a Black hole upon vanishing. '
   effects: []
+  rarity: 0
+  unlocksModulePrefabIds: 
+  disablesModulePrefabIds: 
   modulePrefabId: 2007
   moduleEffects:
   - {fileID: 11400000, guid: 51de721394a06f349acdee77a5385661, type: 2}

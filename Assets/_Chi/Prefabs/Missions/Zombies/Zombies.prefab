@@ -81,6 +81,8 @@ MonoBehaviour:
       priceMultiplier: 12
     - goldAcumulatedRequired: 54
       shopSet:
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
       - name: shop_defensive_basic
@@ -88,12 +90,14 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_weapons
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 15
     - goldAcumulatedRequired: 116
       shopSet:
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades
+        showOnlyPreviouslyLocked: 0
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
       - name: shop_defensive_basic
@@ -101,16 +105,14 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades_cannon
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_weapons
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 19
     - goldAcumulatedRequired: 262
       shopSet:
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades
+        showOnlyPreviouslyLocked: 0
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
       - name: shop_defensive_basic
@@ -118,16 +120,14 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades_cannon
-        showOnlyPreviouslyLocked: 0
-      - name: shop_weapons
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 38
     - goldAcumulatedRequired: 473
       shopSet:
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades
+        showOnlyPreviouslyLocked: 0
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
       - name: shop_defensive_basic
@@ -135,16 +135,14 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades_cannon
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_weapons
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 55
     - goldAcumulatedRequired: 749
       shopSet:
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades
+        showOnlyPreviouslyLocked: 0
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
       - name: shop_defensive_basic
@@ -152,16 +150,14 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades_cannon
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_weapons
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 72
     - goldAcumulatedRequired: 1089
       shopSet:
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades
+        showOnlyPreviouslyLocked: 0
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
       - name: shop_defensive_basic
@@ -169,16 +165,14 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades_cannon
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_weapons
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 89
     - goldAcumulatedRequired: 1495
       shopSet:
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades
+        showOnlyPreviouslyLocked: 0
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
       - name: shop_defensive_basic
@@ -186,16 +180,14 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades_cannon
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_weapons
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 105
     - goldAcumulatedRequired: 1965
       shopSet:
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades
+        showOnlyPreviouslyLocked: 0
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
       - name: shop_defensive_basic
@@ -203,16 +195,14 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades_cannon
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_weapons
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 122
     - goldAcumulatedRequired: 2500
       shopSet:
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades
+        showOnlyPreviouslyLocked: 0
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
       - name: shop_defensive_basic
@@ -220,16 +210,14 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades_cannon
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_weapons
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 138
     - goldAcumulatedRequired: 3100
       shopSet:
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades
+        showOnlyPreviouslyLocked: 0
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
       - name: shop_defensive_basic
@@ -237,16 +225,14 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades_cannon
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_weapons
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 155
     - goldAcumulatedRequired: 3764
       shopSet:
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades
+        showOnlyPreviouslyLocked: 0
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
       - name: shop_defensive_basic
@@ -254,16 +240,14 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades_cannon
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_weapons
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 172
     - goldAcumulatedRequired: 4494
       shopSet:
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades
+        showOnlyPreviouslyLocked: 0
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
       - name: shop_defensive_basic
@@ -271,16 +255,14 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades_cannon
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_weapons
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 189
     - goldAcumulatedRequired: 5288
       shopSet:
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades
+        showOnlyPreviouslyLocked: 0
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
       - name: shop_defensive_basic
@@ -288,14 +270,14 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_weapons
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 206
     - goldAcumulatedRequired: 6147
       shopSet:
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+      - name: shop_chaos_upgrades
+        showOnlyPreviouslyLocked: 0
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
       - name: shop_defensive_basic
@@ -303,12 +285,6 @@ MonoBehaviour:
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades_cannon
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_weapons
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 222
     - goldAcumulatedRequired: 7070

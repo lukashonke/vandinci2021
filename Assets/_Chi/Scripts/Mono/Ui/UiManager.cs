@@ -288,8 +288,6 @@ public class UiManager : MonoBehaviour
 
     public void OnClickToPanel()
     {
-        Debug.Log("on click to panel");
-
         RemoveActionsPanel();
 
         if (addingUiItem != null)

@@ -264,6 +264,14 @@ namespace _Chi.Scripts.Mono.Entities
             }
         }
 
+        public void StopRb()
+        {
+            if (hasRb)
+            {
+                rb.velocity = Vector2.zero;
+            }
+        }
+
         public virtual void OnDie(DieCause cause)
         {
             try

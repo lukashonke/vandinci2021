@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace _Chi.Scripts.Scriptables
@@ -14,5 +13,7 @@ namespace _Chi.Scripts.Scriptables
 
         public string upgradeId;
         public Dictionary<string, float> parameters;
+
+        public List<ImmediateEffect> additionalEffects;
     }
 }

@@ -24,6 +24,9 @@ MonoBehaviour:
   uiName: Panic Pulse
   uiDescription: TODO
   effects: []
+  rarity: 0
+  unlocksModulePrefabIds: 
+  disablesModulePrefabIds: 
   modulePrefabId: 2007
   moduleEffects:
   - {fileID: 11400000, guid: a641b462af16e93419f80ccf83d088b3, type: 2}

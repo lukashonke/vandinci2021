@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b13c71adf44f5fbd158d848135e788, type: 3}
+  m_Name: Jump Extra Charge Epic
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: parameters
+      Entry: 6
+      Data: 
+  uiName: Redirect Power
+  uiDescription: Adds 2 extra jump use before having to reload. Slows you down by
+    10%.
+  effects:
+  - {fileID: 11400000, guid: c4c0fffd720061f40af66ce13aafb34f, type: 2}
+  - {fileID: 11400000, guid: a08effd50a172f64d9f3a19a05fdbd6b, type: 2}
+  rarity: 2
+  unlocksModulePrefabIds: 
+  disablesModulePrefabIds: 
+  replacesModulePrefabId: 30020
+  target: {fileID: 11400000, guid: cc69fe99998b25a4d8a301159bd9f639, type: 2}
+  upgradeId: jump_extra_charge_2
+  additionalEffects: []

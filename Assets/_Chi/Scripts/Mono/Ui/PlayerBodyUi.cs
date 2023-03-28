@@ -137,9 +137,15 @@ namespace _Chi.Scripts.Mono.Ui
                         slot = 0
                     });
                     
+                    if (item.prefab.moduleUpgradeItem.replacesModulePrefabId > 0)
+                    {
+                        existing.upgradeItems.RemoveAll(s => s.prefabId == item.prefab.moduleUpgradeItem.replacesModulePrefabId);
+                    }
+                    
                     item.finishCallback?.Invoke();
                 
                     Gamesystem.instance.uiManager.SetAddingUiItem(null);
+                    
 
                     return true;
                 }

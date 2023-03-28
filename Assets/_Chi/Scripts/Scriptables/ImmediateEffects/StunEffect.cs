@@ -25,7 +25,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
                     target.SetImmobilized(true);
                 }
 
-                if (slowDownBy > 0 && target is Npc npc)
+                if (Mathf.Abs(slowDownBy) > 0 && target is Npc npc)
                 {
                     npc.AddToSpeed(-slowDownBy);
                 }
@@ -71,7 +71,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
                         target.RemoveVfx(vfxPrefab);
                     }
                     
-                    if (slowDownBy > 0 && target is Npc npc)
+                    if (Mathf.Abs(slowDownBy) > 0 && target is Npc npc)
                     {
                         npc.AddToSpeed(slowDownBy);
                     }

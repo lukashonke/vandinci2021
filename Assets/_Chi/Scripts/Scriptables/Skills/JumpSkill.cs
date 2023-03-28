@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
@@ -172,9 +173,21 @@ namespace _Chi.Scripts.Scriptables.Skills
                 {
                     var col = buffer[i];
                     var entity = col.gameObject.GetEntity();
-                    if (entity is Npc npc && npc.CanBePushed() && player.AreEnemies(npc))
+                    if (entity is Npc npc && player.AreEnemies(npc))
                     {
-                        shockwaveEffect.Apply(npc, npc.GetPosition(), player, null, null, shockwaveStrength, new ImmediateEffectParams());
+                        if (npc.CanBePushed())
+                        {
+                            shockwaveEffect.Apply(npc, npc.GetPosition(), player, null, null, shockwaveStrength, new ImmediateEffectParams());
+                        }
+
+                        var additionalEffects = GetAdditionalEffects(player);
+                        if (additionalEffects != null)
+                        {
+                            foreach (var effect in additionalEffects)
+                            {
+                                effect.Apply(npc, npc.GetPosition(), player, null, null, 1, new ImmediateEffectParams());
+                            }
+                        }
                     }
                 }
             }

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674034ae18394264b6cfe1fc91d58010, type: 3}
+  m_Name: Run Speed Player Upgrade Epic
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  uiName: Move Speed Upgrade
+  uiDescription: Increases movement speed.
+  effects:
+  - {fileID: 11400000, guid: cb91dd6469e6d9c49a8e71bde08c15c3, type: 2}
+  rarity: 2
+  unlocksModulePrefabIds: 
+  disablesModulePrefabIds: 
+  replacesModulePrefabId: 0
+  canBeStacked: 1

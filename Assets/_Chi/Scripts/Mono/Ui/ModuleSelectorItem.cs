@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Modules;
+using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Scriptables.Dtos;
 using TMPro;
 using UnityEngine;
@@ -38,7 +40,7 @@ namespace _Chi.Scripts.Mono.Ui
         {
             this.item = item;
 
-            InitialiseUi(item.label, item.prefabUi.GetComponent<Image>(), item.description, buttons, abort, price);
+            InitialiseUi(GetTitle(item), item.prefabUi.GetComponent<Image>(), item.description, buttons, abort, price);
             
             /*if(item.playerUpgradeItem != null || item.moduleUpgradeItem != null || item.skillUpgradeItem != null)
             {
@@ -68,6 +70,26 @@ namespace _Chi.Scripts.Mono.Ui
             var locked = Gamesystem.instance.uiManager.vehicleSettingsWindow.moduleSelector.IsLocked(item);
             
             SetLocked(locked);
+        }
+
+        private string GetTitle(PrefabItem item)
+        {
+            string text = item.label;
+            
+            if (item.moduleUpgradeItem != null)
+            {
+                text += $" <size=80%><color={item.moduleUpgradeItem.rarity.GetColor()}>[{item.moduleUpgradeItem.rarity}]</color></size>";
+            }
+            if (item.skillUpgradeItem != null)
+            {
+                text += $" <size=80%><color={item.skillUpgradeItem.rarity.GetColor()}>[{item.skillUpgradeItem.rarity}]</color></size>";
+            }
+            if (item.playerUpgradeItem != null)
+            {
+                text += $" <size=80%><color={item.playerUpgradeItem.rarity.GetColor()}>[{item.playerUpgradeItem.rarity}]</color></size>";
+            }
+
+            return text;
         }
 
         public void SetPrice(int? price)

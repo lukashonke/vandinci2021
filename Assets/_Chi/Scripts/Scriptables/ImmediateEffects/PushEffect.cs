@@ -36,6 +36,12 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
             
             var sourcePush = pushStrength * strength;
             target.ReceivePush((target.GetPosition() - source).normalized * sourcePush, pushDuration);
+
+            Gamesystem.instance.Schedule(Time.time + pushDuration, () =>
+            {
+                target.StopRb();
+            });
+            
             if (setCannotBePushedFor > 0)
             {
                 target.SetCannotBePushed(setCannotBePushedFor);

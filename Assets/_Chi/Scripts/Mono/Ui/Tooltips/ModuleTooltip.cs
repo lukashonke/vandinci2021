@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Scriptables.Dtos;
@@ -97,10 +98,10 @@ namespace _Chi.Scripts.Mono.Ui.Tooltips
             
             if (upgradeItems != null && upgradeItems.Any())
             {
-                foreach (var item in upgradeItems)
+                foreach (UpgradeItem item in upgradeItems)
                 {
                     var go = Instantiate(upgradesItem, upgradesContainer.transform);
-                    go.transform.Find("Title").GetComponent<TextMeshProUGUI>().text = item.uiName;
+                    go.transform.Find("Title").GetComponent<TextMeshProUGUI>().text = GetUpgradeName(item);
                     go.transform.Find("Description").GetComponent<TextMeshProUGUI>().text = item.uiDescription;
                     go.SetActive(true);
                 }
@@ -109,6 +110,15 @@ namespace _Chi.Scripts.Mono.Ui.Tooltips
             }
 
             return false;
+        }
+
+        private string GetUpgradeName(UpgradeItem item)
+        {
+            if (item.rarity == Rarity.Common)
+            {
+                return item.uiName;
+            }
+            return $"<color={item.rarity.GetColor()}>[{item.rarity}]</color> {item.uiName}";
         }
 
         private bool InitialiseStats(PrefabItem modulePrefabItem, int level)

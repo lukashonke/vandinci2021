@@ -25,6 +25,9 @@ MonoBehaviour:
   uiDescription: 'Projectiles will explode in the end, dealing 50% of projectile
     damage to around enemies. '
   effects: []
+  rarity: 0
+  unlocksModulePrefabIds: 
+  disablesModulePrefabIds: 
   modulePrefabId: 2007
   moduleEffects:
   - {fileID: 11400000, guid: a2cceb5a4591f32449e4eda263457d3c, type: 2}

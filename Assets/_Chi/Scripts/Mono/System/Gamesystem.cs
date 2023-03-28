@@ -20,6 +20,13 @@ using Random = UnityEngine.Random;
 public class Gamesystem : MonoBehaviour
 {
     public static Gamesystem instance;
+
+    [HideInPlayMode]
+    [Button]
+    public void InitInEditor()
+    {
+        instance = this;
+    }
     
     [NonSerialized] public MissionManager missionManager;
     
@@ -57,8 +64,6 @@ public class Gamesystem : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        
-        
         
         prefabDatabase.Initialise();
         spawnAroundSettings.Initialise();

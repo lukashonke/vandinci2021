@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using Sirenix.OdinInspector;
 
@@ -10,7 +11,15 @@ namespace _Chi.Scripts.Scriptables
         public string uiDescription;
         
         public List<EntityStatsEffect> effects;
+
+        public Rarity rarity;
+
+        public List<int> unlocksModulePrefabIds;
         
+        public List<int> disablesModulePrefabIds;
+
+        public int replacesModulePrefabId;
+
         public List<(string title, string value)> GetUiStats(int level)
         {
             List<(string title, string value)> retValue = new();
