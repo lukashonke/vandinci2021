@@ -21,6 +21,7 @@ namespace _Chi.Scripts.Mono.Modules
         [NonSerialized] public bool hasEmitter;
         
         public float reloadProgress;
+        [NonSerialized] public float startReloadAtTime;
 
         public List<Transform> muzzles;
         private int lastMuzzle;
@@ -48,6 +49,8 @@ namespace _Chi.Scripts.Mono.Modules
         public BulletBehaviorType bulletBehavior = BulletBehaviorType.Default;
 
         protected bool activated;
+        
+        public int temporaryProjectilesUntilNextShot = 0;
 
         public override void Awake()
         {
@@ -140,6 +143,8 @@ namespace _Chi.Scripts.Mono.Modules
                     su.OnParentShoot(source);
                 }
             }
+
+            temporaryProjectilesUntilNextShot = 0;
         }
 
         public virtual void OnBulletEffectGiven(Bullet bullet, BulletBehavior behavior, bool bulletWillDie)
@@ -190,6 +195,11 @@ namespace _Chi.Scripts.Mono.Modules
             reloadProgress = Mathf.Min(1, reloadProgress + (time) / GetFireRate());
         }
 
+        public void AddTemporaryProjectileUntilNextShot(int projectiles)
+        {
+            temporaryProjectilesUntilNextShot += projectiles;
+        }
+
         protected void RefreshStatusbarReload()
         {
             if (statusbar != null)
@@ -211,7 +221,7 @@ namespace _Chi.Scripts.Mono.Modules
                 {
                     emitter.applyBulletParamsAction = () =>
                     {
-                        emitter.ApplyParams(stats, parent);
+                        emitter.ApplyParams(stats, parent, this);
                     };
                     
                     var nearest = ((Player) parent).GetNearestEnemy(GetPosition(), null);

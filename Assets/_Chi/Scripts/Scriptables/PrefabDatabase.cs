@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
+using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Persistence;
 using _Chi.Scripts.Scriptables.Dtos;
@@ -239,9 +240,9 @@ namespace _Chi.Scripts.Scriptables
         [VerticalGroup("Items")]
         public List<string> nestedRewardSets;
 
-        public List<RewardSetItemWithWeight> CalculateShownItems(Player player, Dictionary<int, bool> lockedPrefabIds, bool showOnlyLocked)
+        public List<(RewardSetItemWithWeight item, float priceMul)> CalculateShownItems(Player player, Dictionary<int, bool> lockedPrefabIds, bool showOnlyLocked)
         {
-            if (!prefabs.Any()) return new List<RewardSetItemWithWeight>();
+            if (!prefabs.Any()) return new List<(RewardSetItemWithWeight item, float priceMul)>();
             
             List<PrefabItem> ownedItems = GetPlayerItems();
             var disabled = GetDisabledItems(ownedItems);
@@ -280,7 +281,7 @@ namespace _Chi.Scripts.Scriptables
                 averageCount /= totalCount;
             }
 
-            var retValue = new List<RewardSetItemWithWeight>();
+            var retValue = new List<(RewardSetItemWithWeight item, float priceMul)>();
             
             if (showOnlyLocked)
             {
@@ -288,7 +289,7 @@ namespace _Chi.Scripts.Scriptables
                 {
                     if (lockedPrefabIds.TryGetValue(prefab.prefabId, out var val) && val)
                     {
-                        retValue.Add(prefab);                        
+                        retValue.Add((prefab, GetPriceMul(prefab, ownedItems)));                        
                     }
                 }
 
@@ -348,17 +349,35 @@ namespace _Chi.Scripts.Scriptables
                     if (alreadySelectedGroups.TryGetValue(prefab.group, out var currentSelectedPrefab))
                     {
                         // replace the current item
-                        retValue.Remove(currentSelectedPrefab);
+                        retValue.RemoveAll(i => i.item == currentSelectedPrefab);
                     }
                     
                     alreadySelectedGroups[prefab.group] = prefab;
                 }
-                
-                retValue.Add(prefab);
+
+                retValue.Add((prefab, GetPriceMul(prefab, ownedItems)));
                 allItemsWithWeights.RemoveAll(i => i == prefab);
             }
 
             return retValue;
+        }
+
+        private float GetPriceMul(RewardSetItemWithWeight item, List<PrefabItem> ownedItems)
+        {
+            var prefab = Gamesystem.instance.prefabDatabase.GetById(item.prefabId);
+
+            List<int> replaces = new();
+            if (prefab.playerUpgradeItem != null && prefab.playerUpgradeItem.replacesModulePrefabIds.HasValues()) replaces.AddRange(prefab.playerUpgradeItem.replacesModulePrefabIds);
+            else if(prefab.moduleUpgradeItem != null && prefab.moduleUpgradeItem.replacesModulePrefabIds.HasValues()) replaces.AddRange(prefab.moduleUpgradeItem.replacesModulePrefabIds);
+            else if(prefab.skillUpgradeItem != null && prefab.skillUpgradeItem.replacesModulePrefabIds.HasValues()) replaces.AddRange(prefab.skillUpgradeItem.replacesModulePrefabIds);
+
+            if (replaces.HasValues() && ownedItems.Any(i => replaces.Contains(i.id)))
+            {
+                // player owns an item which this new item replaces - so this new item has a discount
+                return 0.5f;
+            }
+
+            return 1f;
         }
 
         public List<PrefabItem> GetPlayerItems()
@@ -456,24 +475,24 @@ namespace _Chi.Scripts.Scriptables
         
         public HashSet<int> GetReplacedItems(List<PrefabItem> items)
         {
-            List<int> unlocked = new();
+            List<int> replaced = new();
             foreach (var item in items)
             {
-                if (item.moduleUpgradeItem != null && item.moduleUpgradeItem.replacesModulePrefabId > 0)
+                if (item.moduleUpgradeItem != null && item.moduleUpgradeItem.replacesModulePrefabIds.HasValues())
                 {
-                    unlocked.Add(item.moduleUpgradeItem.replacesModulePrefabId);
+                    replaced.AddRange(item.moduleUpgradeItem.replacesModulePrefabIds);
                 }
-                if (item.playerUpgradeItem != null && item.playerUpgradeItem.replacesModulePrefabId > 0)
+                if (item.playerUpgradeItem != null && item.playerUpgradeItem.replacesModulePrefabIds.HasValues())
                 {
-                    unlocked.Add(item.playerUpgradeItem.replacesModulePrefabId);
+                    replaced.AddRange(item.playerUpgradeItem.replacesModulePrefabIds);
                 }
-                if (item.skillUpgradeItem != null && item.skillUpgradeItem.replacesModulePrefabId > 0)
+                if (item.skillUpgradeItem != null && item.skillUpgradeItem.replacesModulePrefabIds.HasValues())
                 {
-                    unlocked.Add(item.skillUpgradeItem.replacesModulePrefabId);
+                    replaced.AddRange(item.skillUpgradeItem.replacesModulePrefabIds);
                 }
             }
 
-            return unlocked.ToHashSet();
+            return replaced.ToHashSet();
         }
 
         private bool CanApply(Player player, RewardSetItemWithWeight item, HashSet<int> replacedItems, HashSet<int> disabledItems, HashSet<int> unlockedItems, Dictionary<string, RewardSetItemWithWeight> alreadySelectedGroups)
@@ -552,7 +571,7 @@ namespace _Chi.Scripts.Scriptables
     {
         [HorizontalGroup("Name")][ReadOnly] public string name;
 
-        [HorizontalGroup("Name")] public bool isInGroup;
+        [HorizontalGroup("Group")] public bool isInGroup;
 
         [HorizontalGroup("Group")] [ShowIf("isInGroup")]
         public string group;

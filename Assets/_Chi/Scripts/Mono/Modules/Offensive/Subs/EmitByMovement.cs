@@ -13,6 +13,8 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
         public bool scaleWithModuleFireRate;
 
         public float baselineModuleFireRate;
+
+        public float fireRateMultiplier = 1f;
         
         public AnimationCurve projectilesPerSecondBySpeedCurve;
 
@@ -69,7 +71,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
                 rate *= mul;
             }
 
-            return rate;
+            return rate * fireRateMultiplier;
         }
     }
 }

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679fb96d917f459886fbab0a11f0407a, type: 3}
+  m_Name: Cannon Nth Fire Epic
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  uiName: Triple Threat
+  uiDescription: 'Every 2nd shot, the cannon fires a wide-angle volley, hitting multiple
+    enemies with a single blast.       '
+  effects: []
+  rarity: 2
+  unlocksModulePrefabIds: 
+  disablesModulePrefabIds: 
+  replacesModulePrefabIds: 48a80000
+  modulePrefabId: 2007
+  moduleEffects: []
+  addSubEmitters:
+  - {fileID: 1687548640031416139, guid: 43a10577701037d4aba83b00866853d6, type: 3}
+  effectsLevel: 1

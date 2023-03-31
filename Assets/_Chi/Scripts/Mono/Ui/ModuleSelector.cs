@@ -33,6 +33,7 @@ namespace _Chi.Scripts.Mono.Ui
             public RewardSetItemWithWeight rewardSetItemWithWeight;
             public PrefabItem prefabItem;
             public TriggeredShop triggeredShop;
+            public float priceMul;
         }
 
         public void Start()
@@ -153,11 +154,11 @@ namespace _Chi.Scripts.Mono.Ui
             currentRewardSets.Add(set);
 
             var shownItems = set.CalculateShownItems(Gamesystem.instance.objects.currentPlayer, locks, showOnlyLocked).ToHashSet();
-            var shownItemsHash = shownItems.Select(s => s.prefabId).ToHashSet();
+            var shownItemsHash = shownItems.Select(s => s.item.prefabId).ToHashSet();
 
             foreach (var rewardSetItemWithWeight in shownItems)
             {
-                var item = db.GetById(rewardSetItemWithWeight.prefabId);
+                var item = db.GetById(rewardSetItemWithWeight.item.prefabId);
                 if (!item.enabled) continue;
                     
                 var newItem = Instantiate(itemInfoPrefab, transform.position, Quaternion.identity, transform);
@@ -165,7 +166,8 @@ namespace _Chi.Scripts.Mono.Ui
                 {
                     go = newItem,
                     prefabItem = item,
-                    rewardSetItemWithWeight = rewardSetItemWithWeight,
+                    rewardSetItemWithWeight = rewardSetItemWithWeight.item,
+                    priceMul = rewardSetItemWithWeight.priceMul,
                     triggeredShop = triggeredShop
                 };
                 options.Add(item, option);
@@ -229,7 +231,7 @@ namespace _Chi.Scripts.Mono.Ui
                         
             price += priceToAdd;
 
-            return price;
+            return (int?) (price * option.priceMul);
         }
 
         public void StartAddingItem(OptionData option)
@@ -285,7 +287,7 @@ namespace _Chi.Scripts.Mono.Ui
             if (options.TryGetValue(addingUiItem.prefab, out var option))
             {
                 if (addingUiItem.prefab.playerUpgradeItem != null || addingUiItem.prefab.skillUpgradeItem != null ||
-                    addingUiItem.prefab.moduleUpgradeItem != null)
+                    addingUiItem.prefab.moduleUpgradeItem != null || addingUiItem.prefabModule is OffensiveModule)
                 {
                     Destroy(option.go);
                     options.Remove(addingUiItem.prefab);

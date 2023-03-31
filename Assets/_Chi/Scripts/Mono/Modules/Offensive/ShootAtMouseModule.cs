@@ -66,7 +66,10 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                     boost = stats.stationaryFireRateBoost.GetValue();
                 }
                 
-                reloadProgress = Mathf.Min(1, reloadProgress + (Time.deltaTime * boost) / GetFireRate());
+                if (startReloadAtTime < Time.time)
+                {
+                    reloadProgress = Mathf.Min(1, reloadProgress + (Time.deltaTime * boost) / GetFireRate());
+                }
                 
                 lastPosition = currentPosition;
                 
@@ -77,9 +80,11 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                     reloadProgress = 0;
                     emitter.applyBulletParamsAction = () =>
                     {
-                        emitter.ApplyParams(stats, parent);
+                        emitter.ApplyParams(stats, parent, this);
                     };
                     emitter.Play();
+                    
+                    startReloadAtTime = Time.time + Math.Max(0, stats.shotsPerShot.GetValue()) * stats.projectileDelayBetweenConsecutiveShots.GetValue();
                 }
 
                 RotateTowards(Utils.GetMousePosition());

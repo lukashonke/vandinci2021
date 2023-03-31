@@ -12,5 +12,7 @@
         public const string ProjectileSpread = "_ProjectileSpread";
         
         public const string ProjectileShotsPerShot = "_ProjectileShotsPerShot";
+
+        public const string ProjectileDelayBetweenConsecutiveShots = "_ProjectileDelayBetweenConsecutiveShots";
     }
 }

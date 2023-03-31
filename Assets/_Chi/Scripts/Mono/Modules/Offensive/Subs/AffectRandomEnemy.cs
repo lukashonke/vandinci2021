@@ -27,6 +27,8 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
 
         private List<Entity> potentialTargets;
 
+        [Range(0, 1)] public float triggerChance = 1f;
+
         public override void Awake()
         {
             base.Awake();
@@ -65,7 +67,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
         {
             base.OnParentShoot(source);
             
-            if (triggerType == AffectRandomEnemyTriggerType.OnShoot)
+            if (triggerType == AffectRandomEnemyTriggerType.OnShoot && Random.Range(0f, 1f) < triggerChance)
             {
                 if (parentModule.parent is Player player && potentialTargets.Count > 0 && parentModule is OffensiveModule offensiveModule)
                 {

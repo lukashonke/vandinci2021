@@ -66,14 +66,18 @@ namespace _Chi.Scripts.Mono.Extensions
             return true;
         }
         
-        public static void ApplyParams(this BulletEmitter emitter, OffensiveModuleStats stats, Entity entity)
+        public static void ApplyParams(this BulletEmitter emitter, OffensiveModuleStats stats, Entity entity, OffensiveModule module)
         {
             if (emitter.rootBullet != null)
             {
-                emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileCount, stats.projectileCount.GetValueInt() * stats.projectileMultiplier.GetValueInt());
+                int projectiles = stats.projectileCount.GetValueInt() * stats.projectileMultiplier.GetValueInt() + module.temporaryProjectilesUntilNextShot;
+                
+                emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileCount, projectiles);
                 emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpeed, stats.projectileSpeed.GetValue());
                 emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.WaitDuration, GetFireRate(entity, stats));
                 emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpread, stats.projectileSpreadAngle.GetValue());
+                
+                emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileDelayBetweenConsecutiveShots, stats.projectileDelayBetweenConsecutiveShots.GetValue());
 
                 emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileShotsPerShot, stats.shotsPerShot.GetValueInt());
 

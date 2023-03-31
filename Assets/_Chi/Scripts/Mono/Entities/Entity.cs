@@ -445,9 +445,16 @@ namespace _Chi.Scripts.Mono.Entities
             UpdateImmobilized();
         }
 
+        public float fearEscapeAngle = 0;
+
         public void SetFearing(bool b)
         {
             isFearing = b;
+        }
+
+        public void SetFearEscapeAngle(float angle)
+        {
+            fearEscapeAngle = angle;
         }
 
         public void SetImmobilizedUntil(float time)

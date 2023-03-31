@@ -32,6 +32,7 @@ MonoBehaviour:
   rarity: 2
   unlocksModulePrefabIds: 
   disablesModulePrefabIds: 
+  replacesModulePrefabIds: 3a750000
   replacesModulePrefabId: 30010
   target: {fileID: 11400000, guid: cc69fe99998b25a4d8a301159bd9f639, type: 2}
   upgradeId: protective_jump_2

@@ -33,6 +33,7 @@ MonoBehaviour:
   rarity: 2
   unlocksModulePrefabIds: 
   disablesModulePrefabIds: 
+  replacesModulePrefabIds: 44750000
   replacesModulePrefabId: 30020
   target: {fileID: 11400000, guid: cc69fe99998b25a4d8a301159bd9f639, type: 2}
   upgradeId: jump_extra_charge_2

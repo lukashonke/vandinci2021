@@ -24,4 +24,5 @@ MonoBehaviour:
   order: 20
   forcedFlags: 0
   prefab: {fileID: 5543541136632558941, guid: fbb0abf0f716c184d9122ec7741a3386, type: 3}
-  despawnAfter: 10
+  despawnAfter: 7
+  spawnChance: 0.33

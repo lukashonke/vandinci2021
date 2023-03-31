@@ -619,7 +619,12 @@ namespace _Chi.Scripts.Mono.Entities
         {
             if (isFearing)
             {
-                destination = GetPosition() + (GetPosition() - destination);
+                var angle = fearEscapeAngle;
+                var dir = (GetPosition() - destination).normalized;
+                var rot = Quaternion.AngleAxis(angle, Vector3.forward);
+                Debug.DrawLine(destination, destination + rot * dir, Color.red, 1);
+                destination = GetPosition() + rot * dir;
+                //destination = GetPosition() + (GetPosition() - destination);
             }
             return destination;
         }

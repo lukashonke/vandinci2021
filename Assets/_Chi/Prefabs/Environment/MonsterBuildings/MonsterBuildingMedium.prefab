@@ -31,7 +31,8 @@ Transform:
   m_LocalPosition: {x: 4.39, y: 1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1633441592597173745}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -173,7 +174,8 @@ MonoBehaviour:
     maxHpMul: 1
     hp: 2000
   team: 2
-  healthbarOffset: {x: 0, y: 0, z: 0}
+  healthbarOffset: {x: -0.42, y: 2.52, z: 0}
+  fearEscapeAngle: 0
   seeker: {fileID: 0}
   rvoController: {fileID: 0}
   stats:
@@ -212,7 +214,7 @@ MonoBehaviour:
   despawnAfterTime: 0
   damageBasedSpawns:
   - spawnAtHpPercentIsRepeated: 1
-    spawnAtHpPercent: 0.25
+    spawnAtHpPercent: 0.05
     prefabsToSpawn:
     - type: 0
       prefab: {fileID: 0}
@@ -220,28 +222,82 @@ MonoBehaviour:
       weight: 6
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: Zombie
+      prefabVariant: ZombieElite
     - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
       weight: 2
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: ZombieFast
+      prefabVariant: ZombieEliteFast
     - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
       weight: 2
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: ZombieFat
+      prefabVariant: ZombieEliteFat
     - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
       weight: 1
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: ZombieBloaterExploding
-    spawnCountMin: 20
-    spawnCountMax: 30
-    spawnSpread: 3
+      prefabVariant: ZombieEliteBloaterExploding
+    spawnCountMin: 18
+    spawnCountMax: 20
+    spawnSpread: 2.5
+--- !u!1001 &2603330646079927523
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6774502595031631422}
+    m_Modifications:
+    - target: {fileID: 1101485356869148441, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: scalePer1Hp
+      value: 0.00015
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613974520338816212, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: m_Name
+      value: Healthbar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157438153637878850, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+--- !u!4 &1633441592597173745 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3642221415905698066, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
+  m_PrefabInstance: {fileID: 2603330646079927523}
+  m_PrefabAsset: {fileID: 0}

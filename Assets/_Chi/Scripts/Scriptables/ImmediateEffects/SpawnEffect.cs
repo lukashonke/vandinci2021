@@ -11,8 +11,15 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
         public float despawnAfter;
 
+        [Range(0, 1)] public float spawnChance = 1f;
+
         public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float defaultStrength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
+            if (Random.value > spawnChance)
+            {
+                return true;
+            }
+            
             DoSpawn(targetPosition);
             return true;
         }   

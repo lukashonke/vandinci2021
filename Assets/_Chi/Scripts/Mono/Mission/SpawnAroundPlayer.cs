@@ -104,6 +104,10 @@ namespace _Chi.Scripts.Mono.Mission
                             var dir1 = (Vector3) Random.insideUnitCircle.normalized * distance;
                             spawnPosition = playerPosition + dir1;
                             break;
+                        case SpawnRelativePosition.AroundMapCenter:
+                            var dir4 = (Vector3) Random.insideUnitCircle.normalized * distance;
+                            spawnPosition = Gamesystem.instance.missionManager.currentMission.center + dir4;
+                            break;
                         case SpawnRelativePosition.FrontOfPlayer:
                             var dir2 = player.GetForwardVector().normalized * distance;
                             spawnPosition = playerPosition + dir2;
@@ -292,7 +296,8 @@ namespace _Chi.Scripts.Mono.Mission
         AroundPlayer,
         FrontOfPlayer,
         BehindPlayer,
-        FrontOrBehindPlayer
+        FrontOrBehindPlayer,
+        AroundMapCenter
     }
 
     public enum SpawnFormation

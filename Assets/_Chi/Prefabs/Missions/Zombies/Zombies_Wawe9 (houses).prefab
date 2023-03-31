@@ -123,12 +123,12 @@ MonoBehaviour:
   - possiblePrefabs:
     - type: 0
       prefab: {fileID: 183058340125116620, guid: 53c3ec728c7d7424bba79414dc812cd2, type: 3}
-      prefabNpc: {fileID: 4644276642516627949, guid: 53c3ec728c7d7424bba79414dc812cd2, type: 3}
+      prefabNpc: {fileID: 6711422001240846970, guid: 39a7e2a07935c4a49a09e0fa0303b80b, type: 3}
       weight: 10
       rotateTowardsPlayer: 0
       noRotation: 1
       prefabVariant: MonsterHouseMedium
-    relativePosition: 0
+    relativePosition: 4
     formation: 3
     formationLookAhead: 1
     formationRadius: 10
@@ -143,8 +143,8 @@ MonoBehaviour:
     repeatSpawnIntervalMin: 0
     repeatSpawnIntervalMax: 0
     repeatCount: 6
-    spawnCountMin: 2
-    spawnCountMax: 2
+    spawnCountMin: 3
+    spawnCountMax: 3
     distanceFromPlayerMin: 6
     distanceFromPlayerMax: 8
     despawnAfter: 100

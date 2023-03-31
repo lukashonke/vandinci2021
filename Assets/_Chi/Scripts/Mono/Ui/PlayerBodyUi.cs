@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Persistence;
 using UnityEngine;
 
@@ -137,9 +138,9 @@ namespace _Chi.Scripts.Mono.Ui
                         slot = 0
                     });
                     
-                    if (item.prefab.moduleUpgradeItem.replacesModulePrefabId > 0)
+                    if (item.prefab.moduleUpgradeItem.replacesModulePrefabIds.HasValues())
                     {
-                        existing.upgradeItems.RemoveAll(s => s.prefabId == item.prefab.moduleUpgradeItem.replacesModulePrefabId);
+                        existing.upgradeItems.RemoveAll(s => item.prefab.moduleUpgradeItem.replacesModulePrefabIds.Contains(s.prefabId));
                     }
                     
                     item.finishCallback?.Invoke();

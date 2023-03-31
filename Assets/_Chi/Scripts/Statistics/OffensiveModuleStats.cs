@@ -11,6 +11,8 @@ namespace _Chi.Scripts.Statistics
         public Stat projectileMultiplier = new Stat();
         
         public Stat projectileSpreadAngle = new Stat();
+
+        public Stat projectileDelayBetweenConsecutiveShots = new Stat();
         
         public Stat projectileSpeed = new Stat();
 

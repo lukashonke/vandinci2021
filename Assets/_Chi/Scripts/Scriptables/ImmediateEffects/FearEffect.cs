@@ -4,6 +4,7 @@ using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Modules;
 using UnityEngine;
+using Random = System.Random;
 
 namespace _Chi.Scripts.Scriptables.ImmediateEffects
 {
@@ -21,6 +22,8 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
         public int intervalsCount;
         public ImmediateEffect applyEffectOnInterval;
         public float applyEffectOnIntervalStrength;
+
+        public float randomAngleMax;
         
         public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
@@ -29,6 +32,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
                 if(fears == null) fears = new Dictionary<Entity, FearData>();
                 
                 target.SetFearing(true);
+                target.SetFearEscapeAngle(UnityEngine.Random.Range(-randomAngleMax, randomAngleMax));
                 
                 if (fears.ContainsKey(target))
                 {

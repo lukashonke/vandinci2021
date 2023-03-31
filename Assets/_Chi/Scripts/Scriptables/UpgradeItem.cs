@@ -17,8 +17,8 @@ namespace _Chi.Scripts.Scriptables
         public List<int> unlocksModulePrefabIds;
         
         public List<int> disablesModulePrefabIds;
-
-        public int replacesModulePrefabId;
+        
+        public List<int> replacesModulePrefabIds;
 
         public List<(string title, string value)> GetUiStats(int level)
         {

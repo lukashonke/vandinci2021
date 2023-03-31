@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Persistence;
 using _Chi.Scripts.Scriptables.Dtos;
@@ -197,9 +198,9 @@ namespace _Chi.Scripts.Mono.Ui
                     slot = 0,
                 });
 
-                if (item.skillUpgradeItem.replacesModulePrefabId > 0)
+                if (item.skillUpgradeItem.replacesModulePrefabIds.HasValues())
                 {
-                    run.skillUpgradeItems.RemoveAll(s => s.prefabId == item.skillUpgradeItem.replacesModulePrefabId);
+                    run.skillUpgradeItems.RemoveAll(s => item.skillUpgradeItem.replacesModulePrefabIds.Contains(s.prefabId));
                 }
 
                 return true;
@@ -224,9 +225,9 @@ namespace _Chi.Scripts.Mono.Ui
                     slot = 0,
                 });
                 
-                if (item.playerUpgradeItem.replacesModulePrefabId > 0)
+                if (item.playerUpgradeItem.replacesModulePrefabIds.HasValues())
                 {
-                    run.playerUpgradeItems.RemoveAll(s => s.prefabId == item.playerUpgradeItem.replacesModulePrefabId);
+                    run.playerUpgradeItems.RemoveAll(s => item.playerUpgradeItem.replacesModulePrefabIds.Contains(s.prefabId));
                 }
 
                 return true;

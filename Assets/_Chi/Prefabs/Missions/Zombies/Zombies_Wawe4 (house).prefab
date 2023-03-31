@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 7680715313440162207}
   - component: {fileID: -7275269253206702177}
   - component: {fileID: 1234158351053750136}
+  - component: {fileID: -565453096013670619}
   m_Layer: 0
   m_Name: Zombies_Wawe4 (house)
   m_TagString: Untagged
@@ -120,7 +121,7 @@ MonoBehaviour:
       rotateTowardsPlayer: 0
       noRotation: 1
       prefabVariant: MonsterHouseSmall
-    relativePosition: 0
+    relativePosition: 4
     formation: 7
     formationLookAhead: 2
     formationRadius: 5
@@ -504,6 +505,63 @@ MonoBehaviour:
     distanceFromPlayerMin: 8
     distanceFromPlayerMax: 12
     despawnAfter: 1200
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 1000
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 1
+--- !u!114 &-565453096013670619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091413172466918211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  waveName: Treasure Chest
+  disable: 0
+  spawns:
+  - possiblePrefabs:
+    - type: 3
+      prefab: {fileID: 2016706442665377444, guid: d021c38515289304a9b1ddd57c0eaaab, type: 3}
+      prefabNpc: {fileID: 6549855113248904363, guid: 95485f9b1a9973140bc1febcd04fe496, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 0
+      noRotation: 1
+      prefabVariant: '-'
+    relativePosition: 0
+    formation: 7
+    formationLookAhead: 1
+    formationRadius: 1
+    behavior: 3
+    roamDistance: 100
+    roamRandomRadius: 3
+    dieWhenReachFixedMoveTarget: 0
+    stopWhenReachFixedMoveTarget: 0
+    spawnTimeMin: 1
+    spawnTimeMax: 1
+    repeatSpawn: 0
+    repeatSpawnIntervalMin: 30
+    repeatSpawnIntervalMax: 30
+    repeatCount: 1
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayerMin: 8
+    distanceFromPlayerMax: 12
+    despawnAfter: 300
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 1000

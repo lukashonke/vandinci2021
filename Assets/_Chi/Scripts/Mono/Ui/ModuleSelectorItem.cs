@@ -78,14 +78,29 @@ namespace _Chi.Scripts.Mono.Ui
             
             if (item.moduleUpgradeItem != null)
             {
+                if (item.moduleUpgradeItem.rarity == Rarity.Common)
+                {
+                    return text;
+                }
+                
                 text += $" <size=80%><color={item.moduleUpgradeItem.rarity.GetColor()}>[{item.moduleUpgradeItem.rarity}]</color></size>";
             }
             if (item.skillUpgradeItem != null)
             {
+                if (item.skillUpgradeItem.rarity == Rarity.Common)
+                {
+                    return text;
+                }
+                
                 text += $" <size=80%><color={item.skillUpgradeItem.rarity.GetColor()}>[{item.skillUpgradeItem.rarity}]</color></size>";
             }
             if (item.playerUpgradeItem != null)
             {
+                if (item.playerUpgradeItem.rarity == Rarity.Common)
+                {
+                    return text;
+                }
+                
                 text += $" <size=80%><color={item.playerUpgradeItem.rarity.GetColor()}>[{item.playerUpgradeItem.rarity}]</color></size>";
             }
 

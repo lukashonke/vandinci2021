@@ -14,6 +14,8 @@ namespace _Chi.Scripts.Mono.Mission
         [TableList(ShowIndexLabels = true)]
         public List<MissionEvent> events;
 
+        public Vector3 center;
+
         public int startIndex = 0;
 
         public bool forceStartAtIndex;
