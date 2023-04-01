@@ -191,7 +191,7 @@ namespace _Chi.Scripts.Mono.System
             var player = Gamesystem.instance.objects.currentPlayer;
             var playerPos = player.GetPosition();
 
-            const int maxPicksUp = 50;
+            const int maxPicksUp = 300;
 
             for (var index = gameObjects.Count - 1; index >= 0; index--)
             {

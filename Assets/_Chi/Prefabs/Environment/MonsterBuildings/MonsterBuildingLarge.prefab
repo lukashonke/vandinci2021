@@ -190,6 +190,8 @@ MonoBehaviour:
   dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
   poolId: 62464
+  addTargetToUi: 1
+  addTargetToUiType: 1
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
   emitter: {fileID: 0}

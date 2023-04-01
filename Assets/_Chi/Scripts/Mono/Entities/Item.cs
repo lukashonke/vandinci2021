@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using _Chi.Scripts.Mono.Extensions;
+using _Chi.Scripts.Mono.Ui;
 using _Chi.Scripts.Persistence;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
@@ -26,7 +27,7 @@ namespace _Chi.Scripts.Mono.Entities
         {
             if (addTargetToUi)
             {
-                Gamesystem.instance.locationManager.AddTarget(this.transform.position, this.gameObject);
+                Gamesystem.instance.locationManager.AddTarget(this.transform.position, this.gameObject, LocationTargetType.Item);
             }
         }
 

@@ -574,7 +574,7 @@ MonoBehaviour:
       Data: Wawe 9 (houses)
     - Name: fixedDuration
       Entry: 4
-      Data: 100
+      Data: 125
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
@@ -794,7 +794,7 @@ MonoBehaviour:
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
       priceMultiplier: 192
-    - goldAcumulatedRequired: 3100
+    - goldAcumulatedRequired: 3500
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
@@ -808,8 +808,8 @@ MonoBehaviour:
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
-      priceMultiplier: 238
-    - goldAcumulatedRequired: 4100
+      priceMultiplier: 348
+    - goldAcumulatedRequired: 4800
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
@@ -823,8 +823,8 @@ MonoBehaviour:
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
-      priceMultiplier: 285
-    - goldAcumulatedRequired: 5164
+      priceMultiplier: 365
+    - goldAcumulatedRequired: 6164
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
@@ -838,22 +838,7 @@ MonoBehaviour:
         showOnlyPreviouslyLocked: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
-      priceMultiplier: 302
-    - goldAcumulatedRequired: 6294
-      shopSet:
-      - name: shop_weapons
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_passives_basic
-        showOnlyPreviouslyLocked: 0
-      - name: shop_defensive_basic
-        showOnlyPreviouslyLocked: 0
-      - name: shop_player_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_skill_upgrades
-        showOnlyPreviouslyLocked: 0
-      priceMultiplier: 319
+      priceMultiplier: 382
     - goldAcumulatedRequired: 999999
       shopSet:
       - name: shop_passives_basic

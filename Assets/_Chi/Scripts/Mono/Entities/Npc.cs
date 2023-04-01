@@ -4,6 +4,7 @@ using System.Linq;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Mission;
+using _Chi.Scripts.Mono.Ui;
 using _Chi.Scripts.Movement;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
@@ -49,6 +50,10 @@ namespace _Chi.Scripts.Mono.Entities
         public float dissolveSpeed = 2f;
         [NonSerialized] public float currentDissolveProcess;
         public int poolId;
+        
+        public bool addTargetToUi;
+        [ShowIf("addTargetToUi")]
+        public LocationTargetType addTargetToUiType;
 
         [Button]
         [HideInPlayMode]
@@ -99,7 +104,7 @@ namespace _Chi.Scripts.Mono.Entities
             SetPhysicsActivated(false);
 
             pathData = new PathData(this);
-
+            
             despawnTime = null;
             despawned = false;
         }
@@ -183,6 +188,11 @@ namespace _Chi.Scripts.Mono.Entities
                     spawnEffect.Play();
                 }
             
+                if (addTargetToUi)
+                {
+                    Gamesystem.instance.locationManager.AddTarget(position, this.gameObject, addTargetToUiType);
+                }
+                
                 despawned = false;
             }
             catch (Exception e)
@@ -247,6 +257,11 @@ namespace _Chi.Scripts.Mono.Entities
             }
 
             despawnTime = null;
+            
+            if (addTargetToUi)
+            {
+                Gamesystem.instance.locationManager.RemoveTarget(this.gameObject);
+            }
             
             despawned = true;
         }
