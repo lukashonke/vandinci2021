@@ -153,7 +153,7 @@ MonoBehaviour:
     despawnWhenOutsideScreen: 0
     relativePosition: 4
     despawnWhenOutsideScreenDist2: 2
-    spawnBoxAroundPlayerThickness: 0
+    spawnBoxAroundPlayerWidth: 1.5
     distanceFromPlayerToDespawn: 40
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 1
@@ -214,7 +214,7 @@ MonoBehaviour:
     despawnWhenOutsideScreen: 1
     relativePosition: 3
     despawnWhenOutsideScreenDist2: 2
-    spawnBoxAroundPlayerThickness: 0
+    spawnBoxAroundPlayerWidth: 1.5
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -454,7 +454,7 @@ MonoBehaviour:
     despawnWhenOutsideScreen: 1
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
-    spawnBoxAroundPlayerThickness: 0
+    spawnBoxAroundPlayerWidth: 1.5
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -506,7 +506,7 @@ MonoBehaviour:
     repeatCount: 1
     spawnCountMin: 1
     spawnCountMax: 1
-    distanceFromPlayerMin: 8
+    distanceFromPlayerMin: 5
     distanceFromPlayerMax: 12
     despawnAfter: 1200
     spawnGroupSpreadMin: 1
@@ -515,7 +515,7 @@ MonoBehaviour:
     despawnWhenOutsideScreen: 0
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
-    spawnBoxAroundPlayerThickness: 0
+    spawnBoxAroundPlayerWidth: 1.5
     distanceFromPlayerToDespawn: 1000
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 1
@@ -576,7 +576,7 @@ MonoBehaviour:
     despawnWhenOutsideScreen: 1
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
-    spawnBoxAroundPlayerThickness: 0
+    spawnBoxAroundPlayerWidth: 1.5
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -637,7 +637,7 @@ MonoBehaviour:
     despawnWhenOutsideScreen: 1
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
-    spawnBoxAroundPlayerThickness: 0
+    spawnBoxAroundPlayerWidth: 1.5
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -698,7 +698,7 @@ MonoBehaviour:
     despawnWhenOutsideScreen: 1
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
-    spawnBoxAroundPlayerThickness: 0
+    spawnBoxAroundPlayerWidth: 1.5
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -750,7 +750,7 @@ MonoBehaviour:
     repeatCount: 1
     spawnCountMin: 1
     spawnCountMax: 1
-    distanceFromPlayerMin: 8
+    distanceFromPlayerMin: 5
     distanceFromPlayerMax: 8
     despawnAfter: 1200
     spawnGroupSpreadMin: 1
@@ -759,7 +759,7 @@ MonoBehaviour:
     despawnWhenOutsideScreen: 0
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
-    spawnBoxAroundPlayerThickness: 0
+    spawnBoxAroundPlayerWidth: 1.5
     distanceFromPlayerToDespawn: 1000
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 1

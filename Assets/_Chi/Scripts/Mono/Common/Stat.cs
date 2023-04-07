@@ -174,6 +174,7 @@ namespace _Chi.Scripts.Mono.Common
     {
         Base = 1,
         Upgrade = 10,
-        ImmediateEffect = 20
+        ImmediateEffect = 20,
+        EnvironmentEffect = 30
     }
 }

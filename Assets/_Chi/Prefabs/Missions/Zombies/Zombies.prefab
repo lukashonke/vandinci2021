@@ -62,6 +62,8 @@ MonoBehaviour:
     - {fileID: 2091413172466918211, guid: 292773acb84f9b3429737f93189f3ac0, type: 3}
     - {fileID: 2091413172466918211, guid: 15e1d84e9c9f5dd4f94f49d915824668, type: 3}
     - {fileID: 2091413172466918211, guid: 6e278c4a43ebadd41b5d2315bad52cef, type: 3}
+    - {fileID: 2091413172466918211, guid: 8d2c4b231e5b0cd4ba641b1b68ed530d, type: 3}
+    - {fileID: 2091413172466918211, guid: 10caf1f2c24bf174482cc66b471029b6, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -73,7 +75,7 @@ MonoBehaviour:
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 17
+      Data: 19
     - Name: 
       Entry: 7
       Data: 1|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
@@ -138,6 +140,9 @@ MonoBehaviour:
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
+    - Name: waitTillAllTrackedAreDead
+      Entry: 5
+      Data: false
     - Name: waitTillAllWawesSpawn
       Entry: 5
       Data: false
@@ -179,6 +184,9 @@ MonoBehaviour:
       Entry: 4
       Data: 60
     - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllTrackedAreDead
       Entry: 5
       Data: false
     - Name: waitTillAllWawesSpawn
@@ -224,6 +232,9 @@ MonoBehaviour:
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
+    - Name: waitTillAllTrackedAreDead
+      Entry: 5
+      Data: false
     - Name: waitTillAllWawesSpawn
       Entry: 5
       Data: false
@@ -265,6 +276,9 @@ MonoBehaviour:
       Entry: 4
       Data: 75
     - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllTrackedAreDead
       Entry: 5
       Data: false
     - Name: waitTillAllWawesSpawn
@@ -310,6 +324,9 @@ MonoBehaviour:
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
+    - Name: waitTillAllTrackedAreDead
+      Entry: 5
+      Data: false
     - Name: waitTillAllWawesSpawn
       Entry: 5
       Data: false
@@ -318,7 +335,7 @@ MonoBehaviour:
       Data: true
     - Name: globalDropChance
       Entry: 4
-      Data: 50
+      Data: 40
     - Name: handlers
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
@@ -351,6 +368,9 @@ MonoBehaviour:
       Entry: 4
       Data: 60
     - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllTrackedAreDead
       Entry: 5
       Data: false
     - Name: waitTillAllWawesSpawn
@@ -392,8 +412,11 @@ MonoBehaviour:
       Data: Wawe 5.9 Mini Boss
     - Name: fixedDuration
       Entry: 4
-      Data: 10
+      Data: 22
     - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllTrackedAreDead
       Entry: 5
       Data: false
     - Name: waitTillAllWawesSpawn
@@ -454,6 +477,9 @@ MonoBehaviour:
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
+    - Name: waitTillAllTrackedAreDead
+      Entry: 5
+      Data: false
     - Name: waitTillAllWawesSpawn
       Entry: 5
       Data: false
@@ -495,6 +521,9 @@ MonoBehaviour:
       Entry: 4
       Data: 50
     - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllTrackedAreDead
       Entry: 5
       Data: false
     - Name: waitTillAllWawesSpawn
@@ -540,6 +569,9 @@ MonoBehaviour:
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
+    - Name: waitTillAllTrackedAreDead
+      Entry: 5
+      Data: false
     - Name: waitTillAllWawesSpawn
       Entry: 5
       Data: false
@@ -581,6 +613,9 @@ MonoBehaviour:
       Entry: 4
       Data: 125
     - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllTrackedAreDead
       Entry: 5
       Data: false
     - Name: waitTillAllWawesSpawn
@@ -626,6 +661,9 @@ MonoBehaviour:
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
+    - Name: waitTillAllTrackedAreDead
+      Entry: 5
+      Data: false
     - Name: waitTillAllWawesSpawn
       Entry: 5
       Data: false
@@ -667,6 +705,9 @@ MonoBehaviour:
       Entry: 4
       Data: 125
     - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllTrackedAreDead
       Entry: 5
       Data: false
     - Name: waitTillAllWawesSpawn
@@ -712,6 +753,9 @@ MonoBehaviour:
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
+    - Name: waitTillAllTrackedAreDead
+      Entry: 5
+      Data: false
     - Name: waitTillAllWawesSpawn
       Entry: 5
       Data: false
@@ -740,6 +784,98 @@ MonoBehaviour:
     - Name: endAfterFixedDuration
       Entry: 5
       Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 34|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: eventName
+      Entry: 1
+      Data: Wawe 13
+    - Name: fixedDuration
+      Entry: 4
+      Data: 150
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllTrackedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: false
+    - Name: setGlobalDropChance
+      Entry: 5
+      Data: false
+    - Name: globalDropChance
+      Entry: 4
+      Data: 0
+    - Name: handlers
+      Entry: 7
+      Data: 35|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 14
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: endAfterFixedDuration
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 36|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: eventName
+      Entry: 1
+      Data: Wawe 14 Boss
+    - Name: fixedDuration
+      Entry: 4
+      Data: 200
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: true
+    - Name: waitTillAllTrackedAreDead
+      Entry: 5
+      Data: true
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: false
+    - Name: setGlobalDropChance
+      Entry: 5
+      Data: false
+    - Name: globalDropChance
+      Entry: 4
+      Data: 0
+    - Name: handlers
+      Entry: 7
+      Data: 37|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 15
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: endAfterFixedDuration
+      Entry: 5
+      Data: false
     - Name: 
       Entry: 8
       Data: 

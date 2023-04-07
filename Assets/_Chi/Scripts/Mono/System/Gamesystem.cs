@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using _Chi.Scripts.Mono.Common;
@@ -15,7 +14,6 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
-using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 public class Gamesystem : MonoBehaviour
@@ -46,7 +44,7 @@ public class Gamesystem : MonoBehaviour
     [Required] public DropManager dropManager;
     [Required] public TextDatabase textDatabase;
     [Required] public LocationManager locationManager;
-
+    
     [Required]
     public SpawnAroundSettings spawnAroundSettings;
 
@@ -64,6 +62,12 @@ public class Gamesystem : MonoBehaviour
 
     public float HorizontalToBorderDistance;
     [FormerlySerializedAs("VerticalToborderDistance")] public float VerticalToBorderDistance;
+    
+    [FoldoutGroup("Difficulty")]
+    public float monsterCountMul = 1;
+
+    [FoldoutGroup("Difficulty")] 
+    public float goldMul = 1f;
 
     private void Awake()
     {
@@ -101,6 +105,8 @@ public class Gamesystem : MonoBehaviour
     public void Update()
     {
         DebugDistances();
+
+        Debug.Log(CanBeAccessed(Utils.GetMousePosition()));
         
         var time = Time.time;
         int index = 0;
@@ -204,7 +210,7 @@ public class Gamesystem : MonoBehaviour
 
     public bool CanBeAccessed(Vector3 position)
     {
-        GraphNode node1 = AstarPath.active.GetNearest(position, NNConstraint.Default).node;
+        GraphNode node1 = AstarPath.active.GetNearest(position, NNConstraint.None).node;
         return PathUtilities.IsPathPossible(centerNode, node1);
     }
     

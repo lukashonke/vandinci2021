@@ -252,18 +252,18 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 160
-        inSlope: 0.32
-        outSlope: 0.32
+        value: 200
+        inSlope: 0.16
+        outSlope: 0.16
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 125
-        value: 200
-        inSlope: 0.32
-        outSlope: 0.32
+        value: 220
+        inSlope: 0.16
+        outSlope: 0.16
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -686,8 +686,8 @@ MonoBehaviour:
     repeatSpawnIntervalMin: 20
     repeatSpawnIntervalMax: 25
     repeatCount: 100
-    spawnCountMin: 2
-    spawnCountMax: 4
+    spawnCountMin: 5
+    spawnCountMax: 7
     distanceFromPlayerMin: 2.5
     distanceFromPlayerMax: 2.5
     despawnAfter: 0
@@ -747,8 +747,8 @@ MonoBehaviour:
     repeatSpawnIntervalMin: 10
     repeatSpawnIntervalMax: 20
     repeatCount: 100
-    spawnCountMin: 3
-    spawnCountMax: 7
+    spawnCountMin: 7
+    spawnCountMax: 10
     distanceFromPlayerMin: 0
     distanceFromPlayerMax: 0
     despawnAfter: 0
@@ -939,7 +939,7 @@ MonoBehaviour:
     repeatCount: 1
     spawnCountMin: 1
     spawnCountMax: 1
-    distanceFromPlayerMin: 8
+    distanceFromPlayerMin: 5
     distanceFromPlayerMax: 12
     despawnAfter: 1200
     spawnGroupSpreadMin: 1

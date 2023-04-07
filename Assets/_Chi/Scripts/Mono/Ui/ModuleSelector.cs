@@ -240,7 +240,7 @@ namespace _Chi.Scripts.Mono.Ui
                         
             price += priceToAdd;
 
-            return (int?) (price * option.priceMul);
+            return (int?) (price * option.priceMul * Gamesystem.instance.goldMul);
         }
 
         public void StartAddingItem(OptionData option)

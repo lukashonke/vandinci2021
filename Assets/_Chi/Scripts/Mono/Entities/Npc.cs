@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Extensions;
-using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Mono.Ui;
 using _Chi.Scripts.Movement;
 using _Chi.Scripts.Scriptables;
@@ -12,10 +11,7 @@ using BulletPro;
 using Pathfinding;
 using Pathfinding.RVO;
 using Sirenix.OdinInspector;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
-using Random = UnityEngine.Random;
 
 namespace _Chi.Scripts.Mono.Entities
 {
@@ -183,6 +179,8 @@ namespace _Chi.Scripts.Mono.Entities
                 currentDissolveProcess = 1f;
             
                 gameObject.SetActive(true);
+                
+                SetFearing(false);
 
                 if (spawnEffect != null)
                 {
@@ -251,6 +249,8 @@ namespace _Chi.Scripts.Mono.Entities
             stopWhenReachFixedMoveTarget = false;
             dieWhenReachFixedMoveTarget = false;
             hasRvoController = rvoController != null;
+            
+            SetFearing(false);
             
             if (hasRvoController)
             {

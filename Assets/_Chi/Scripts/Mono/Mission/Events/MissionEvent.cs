@@ -154,6 +154,9 @@ namespace _Chi.Scripts.Mono.Mission.Events
 
         [FoldoutGroup("Additional")]
         public bool waitTillAllSpawnedAreDead;
+        
+        [FoldoutGroup("Additional")]
+        public bool waitTillAllTrackedAreDead;
 
         [FoldoutGroup("Additional")]
         public bool waitTillAllWawesSpawn = true;
@@ -214,6 +217,11 @@ namespace _Chi.Scripts.Mono.Mission.Events
 
         public override bool CanEnd(float currentTime)
         {
+            if (waitTillAllTrackedAreDead)
+            {
+                return Gamesystem.instance.missionManager.AreTrackedEntitiesDead();
+            }
+            
             if (waitTillAllWawesSpawn && handlerInstances.Any(h => !h.IsFinished()))
             {
                 return false;

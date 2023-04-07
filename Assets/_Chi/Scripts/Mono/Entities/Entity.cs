@@ -47,6 +47,8 @@ namespace _Chi.Scripts.Mono.Entities
         
         [NonSerialized] public Dictionary<ImmediateEffect, float> currentEffects;
         [NonSerialized] public Dictionary<GameObject, GameObject> vfx;
+
+        public bool isBoss;
         
         #endregion
 
@@ -487,6 +489,16 @@ namespace _Chi.Scripts.Mono.Entities
         public virtual SkillData GetSkillData(Skill skill)
         {
             return null;
+        }
+
+        public bool CanReceiveEffect(ImmediateEffect eff)
+        {
+            return !isBoss;
+        }
+
+        public bool CanGoToBlackHole()
+        {
+            return !isBoss;
         }
     }
 }

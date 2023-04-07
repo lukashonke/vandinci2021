@@ -18,7 +18,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
         
         public override bool ApplyEffect(Entity target, Entity source, Item sourceItem, Module sourceModule)
         {
-            if (target != null && source != null && target.AreEnemies(source) && target.AddImmediateEffect(this, duration, stackDuration))
+            if (target != null && source != null && target.AreEnemies(source) && target.CanReceiveEffect(this) && target.AddImmediateEffect(this, duration, stackDuration))
             {
                 if (setStunned)
                 {

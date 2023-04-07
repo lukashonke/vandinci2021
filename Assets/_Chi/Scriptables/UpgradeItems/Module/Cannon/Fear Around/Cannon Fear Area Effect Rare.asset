@@ -26,7 +26,7 @@ MonoBehaviour:
   radius: 5
   applyDelay: 0
   effects:
-  - {fileID: 11400000, guid: 2dd631e4576eccd4aa6b82b33c69f5a4, type: 2}
+  - {fileID: 11400000, guid: 16600bd4cadb4364abc43a1f0fdb1530, type: 2}
   targetType: 0
   areaType: 1
   angle: 140

@@ -44,7 +44,7 @@ namespace _Chi.Scripts.Mono.Mission
             {
                 var initialShop = progressSettings.shops[0];
             
-                Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(initialShop.goldAcumulatedRequired);
+                Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(initialShop.GetGoldAcumulatedRequired());
                 Gamesystem.instance.uiManager.goldProgressBar.ResetValue();
                 progressSettings.lastGoldTriggeredShopLevelIndex = -1;
             }
@@ -62,7 +62,7 @@ namespace _Chi.Scripts.Mono.Mission
             {
                 var nextShop = progressSettings.shops[shopIndex + 1];
 
-                if (gold >= nextShop.goldAcumulatedRequired)
+                if (gold >= nextShop.GetGoldAcumulatedRequired())
                 {
                     shopIndex++;
                         
@@ -74,11 +74,11 @@ namespace _Chi.Scripts.Mono.Mission
                     if (shopIndex >= 0)
                     {
                         var prevShop = progressSettings.shops[shopIndex];
-                        Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(nextShop.goldAcumulatedRequired - prevShop.goldAcumulatedRequired);
+                        Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(nextShop.GetGoldAcumulatedRequired() - prevShop.GetGoldAcumulatedRequired());
                     }
                     else
                     {
-                        Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(nextShop.goldAcumulatedRequired);
+                        Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(nextShop.GetGoldAcumulatedRequired());
                     }
                         
                     Gamesystem.instance.uiManager.goldProgressBar.ResetValue();
@@ -189,6 +189,11 @@ namespace _Chi.Scripts.Mono.Mission
         public void Show(string title = "Shop")
         {
             Gamesystem.instance.uiManager.OpenRewardSetWindow(shopSet, title, this);
+        }
+        
+        public int GetGoldAcumulatedRequired()
+        {
+            return (int) (goldAcumulatedRequired * Gamesystem.instance.goldMul);
         }
     }
     

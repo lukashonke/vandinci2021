@@ -119,7 +119,7 @@ namespace _Chi.Scripts.Mono.Entities
             if(attached.Count >= attachedLimit) return;
             
             var entity = other.gameObject.GetEntity();
-            if (entity != null && entity.team != team && entity.hasRb && !entity.isInBlackHole)
+            if (entity != null && entity.team != team && entity.hasRb && !entity.isInBlackHole && entity.CanGoToBlackHole())
             {
                 entity.SetCanMove(false);
                 entity.SetIsInBlackHole(true);

@@ -110,7 +110,9 @@ MonoBehaviour:
     maxHpMul: 1
     hp: 20
   team: 2
+  isBoss: 1
   healthbarOffset: {x: -0.5, y: -1, z: 0}
+  fearEscapeAngle: 0
   seeker: {fileID: 0}
   rvoController: {fileID: 0}
   stats:
@@ -125,6 +127,8 @@ MonoBehaviour:
   dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
   poolId: 39680
+  addTargetToUi: 0
+  addTargetToUiType: 0
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
 --- !u!114 &5954188515519120313

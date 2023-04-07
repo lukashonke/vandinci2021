@@ -261,11 +261,11 @@ namespace _Chi.Scripts.Mono.Mission
         {
             //if(randomizeCount) return countPerMinute * CalcRandomMul(time) + (time) * randomizeIncreasePerSecond;
 
-            return baseCountPerMinute
+            return (baseCountPerMinute
                    * countPerMinuteRandomMulCurve.Evaluate(time)
                    * Random.Range(countPerMinuteRandomMulFrom, countPerMinuteRandomMulTo)
                    + Random.Range(countPerMinuteRandomAddFrom, countPerMinuteRandomAddTo)
-                   + countPerMinuteRandomAddCurve.Evaluate(time);
+                   + countPerMinuteRandomAddCurve.Evaluate(time)) * Gamesystem.instance.monsterCountMul;
         }
 
         public SpawnPrefab GetRandomPrefab()

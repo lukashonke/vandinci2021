@@ -27,7 +27,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
         
         public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
-            if (target != null && sourceEntity != null && target.AreEnemies(sourceEntity))
+            if (target != null && sourceEntity != null && target.AreEnemies(sourceEntity) && target.CanReceiveEffect(this))
             {
                 if(fears == null) fears = new Dictionary<Entity, FearData>();
                 

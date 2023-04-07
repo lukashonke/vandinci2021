@@ -148,7 +148,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 250
+        value: 300
         inSlope: 0.4
         outSlope: 0.4
         tangentMode: 34
@@ -157,7 +157,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 125
-        value: 300
+        value: 350
         inSlope: 0.4
         outSlope: 0.4
         tangentMode: 34
@@ -349,7 +349,7 @@ MonoBehaviour:
     despawnWhenOutsideScreen: 0
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
-    spawnBoxAroundPlayerThickness: 0
+    spawnBoxAroundPlayerWidth: 1.5
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -410,7 +410,7 @@ MonoBehaviour:
     despawnWhenOutsideScreen: 0
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
-    spawnBoxAroundPlayerThickness: 0
+    spawnBoxAroundPlayerWidth: 1.5
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -478,7 +478,7 @@ MonoBehaviour:
     despawnWhenOutsideScreen: 1
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
-    spawnBoxAroundPlayerThickness: 0
+    spawnBoxAroundPlayerWidth: 1.5
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -539,7 +539,7 @@ MonoBehaviour:
     despawnWhenOutsideScreen: 1
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
-    spawnBoxAroundPlayerThickness: 0
+    spawnBoxAroundPlayerWidth: 1.5
     distanceFromPlayerToDespawn: 30
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -591,7 +591,7 @@ MonoBehaviour:
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
-    distanceFromPlayerMin: 8
+    distanceFromPlayerMin: 5
     distanceFromPlayerMax: 12
     despawnAfter: 1200
     spawnGroupSpreadMin: 1
@@ -600,7 +600,7 @@ MonoBehaviour:
     despawnWhenOutsideScreen: 0
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
-    spawnBoxAroundPlayerThickness: 0
+    spawnBoxAroundPlayerWidth: 1.5
     distanceFromPlayerToDespawn: 1000
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 1
