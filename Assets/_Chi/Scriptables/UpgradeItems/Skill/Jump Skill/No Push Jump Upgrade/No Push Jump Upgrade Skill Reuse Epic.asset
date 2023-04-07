@@ -22,7 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   modifier: 2
-  order: 10
+  order: 20
   hasLevelScaledValue: 0
   levelScaledValue: []
   value: -0.75

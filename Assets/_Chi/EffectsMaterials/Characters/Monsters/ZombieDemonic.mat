@@ -293,7 +293,7 @@ Material:
     - _PoisonDensity: 3
     - _PoisonFade: 0.8
     - _PoisonNoiseBrightness: 1
-    - _PoisonRecolorFactor: 0
+    - _PoisonRecolorFactor: 0.12
     - _PoisonShiftSpeed: 0.2
     - _RainbowBrightness: 2
     - _RainbowContrast: 1
@@ -454,7 +454,7 @@ Material:
     - _OuterOutlineDistortionIntensity: {r: 0.01, g: 0.01, b: 0, a: 0}
     - _OuterOutlineNoiseScale: {r: 4, g: 4, b: 0, a: 0}
     - _OuterOutlineNoiseSpeed: {r: 0, g: 0.1, b: 0, a: 0}
-    - _PoisonColor: {r: 1.6420014, g: 0.15891154, b: 4.8127465, a: 0}
+    - _PoisonColor: {r: 3.3260865, g: 0.35276672, b: 9.625492, a: 0}
     - _PoisonNoiseScale: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _PoisonNoiseSpeed: {r: 0, g: -0.2, b: 0, a: 0}
     - _RainbowCenter: {r: 0, g: 0, b: 0, a: 0}

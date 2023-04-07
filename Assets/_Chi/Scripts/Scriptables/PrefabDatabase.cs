@@ -240,8 +240,27 @@ namespace _Chi.Scripts.Scriptables
         [VerticalGroup("Items")]
         public List<string> nestedRewardSets;
 
-        public List<(RewardSetItemWithWeight item, float priceMul)> CalculateShownItems(Player player, Dictionary<int, bool> lockedPrefabIds, bool showOnlyLocked)
+        [VerticalGroup("Items")] 
+        public List<float> priceMultiplierPerCountOwned;
+
+        [NonSerialized] public int dontShowTimes;
+        [NonSerialized] private bool hiddenInCurrentRoll;
+
+        public List<(RewardSetItemWithWeight item, float priceMul)> CalculateShownItems(Player player, Dictionary<int, bool> lockedPrefabIds, bool showOnlyLocked, bool isReroll)
         {
+            if(dontShowTimes > 0 || (isReroll && hiddenInCurrentRoll))
+            {
+                if (!isReroll)
+                {
+                    dontShowTimes--;
+                }
+
+                hiddenInCurrentRoll = true;
+                return new List<(RewardSetItemWithWeight item, float priceMul)>();
+            }
+
+            hiddenInCurrentRoll = false;
+            
             if (!prefabs.Any()) return new List<(RewardSetItemWithWeight item, float priceMul)>();
             
             List<PrefabItem> ownedItems = GetPlayerItems();
@@ -371,13 +390,28 @@ namespace _Chi.Scripts.Scriptables
             else if(prefab.moduleUpgradeItem != null && prefab.moduleUpgradeItem.replacesModulePrefabIds.HasValues()) replaces.AddRange(prefab.moduleUpgradeItem.replacesModulePrefabIds);
             else if(prefab.skillUpgradeItem != null && prefab.skillUpgradeItem.replacesModulePrefabIds.HasValues()) replaces.AddRange(prefab.skillUpgradeItem.replacesModulePrefabIds);
 
+            var ownedItemsCount = prefabs.Count(c => ownedItems.Any(oi => oi.id == c.prefabId));
+
+            var multiplier = 1f;
+            if (priceMultiplierPerCountOwned.HasValues())
+            {
+                if(priceMultiplierPerCountOwned.Count > ownedItemsCount)
+                {
+                    multiplier = priceMultiplierPerCountOwned[ownedItemsCount];
+                }
+                else
+                {
+                    multiplier = priceMultiplierPerCountOwned.Last();
+                }
+            }
+            
             if (replaces.HasValues() && ownedItems.Any(i => replaces.Contains(i.id)))
             {
                 // player owns an item which this new item replaces - so this new item has a discount
-                return 0.5f;
+                return multiplier * 0.5f;
             }
 
-            return 1f;
+            return multiplier;
         }
 
         public List<PrefabItem> GetPlayerItems()

@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2091413172466918208}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3723093661133715203
 MonoBehaviour:
@@ -47,100 +47,6 @@ MonoBehaviour:
   nameOverride: Damaging Lake
   tooltipOverride: 
   target: {fileID: -3837949277647058563}
---- !u!1 &822344260833740054
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5885289525060756674}
-  - component: {fileID: 8273556419156415427}
-  m_Layer: 0
-  m_Name: NameContainer(EditorOnly)
-  m_TagString: EditorOnly
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5885289525060756674
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 822344260833740054}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2091413172466918208}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8273556419156415427
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 822344260833740054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameOverride: Spawner Groups
-  tooltipOverride: 
-  target: {fileID: -6502435416312752660}
---- !u!1 &1558673939304336037
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8402064086459977770}
-  - component: {fileID: 6635509998598834666}
-  m_Layer: 0
-  m_Name: NameContainer(EditorOnly)
-  m_TagString: EditorOnly
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8402064086459977770
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558673939304336037}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2091413172466918208}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6635509998598834666
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558673939304336037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameOverride: Walkers Randomly
-  tooltipOverride: 
-  target: {fileID: 766136386234732296}
 --- !u!1 &2091413172466918211
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,13 +57,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2091413172466918208}
   - component: {fileID: -2275858408632581110}
-  - component: {fileID: 530404185182147840}
   - component: {fileID: -3837949277647058563}
   - component: {fileID: -50647473022081503}
-  - component: {fileID: 766136386234732296}
-  - component: {fileID: 8998190245610271498}
-  - component: {fileID: -4000076046673859097}
-  - component: {fileID: -6502435416312752660}
   - component: {fileID: 6469568978721038765}
   - component: {fileID: -3204359601985624663}
   - component: {fileID: 9000068432140191412}
@@ -181,15 +82,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1705948514094642084}
-  - {fileID: 4367574329516000590}
   - {fileID: 8807107732509143040}
   - {fileID: 3355180346132351446}
-  - {fileID: 8402064086459977770}
-  - {fileID: 7699282402536441300}
-  - {fileID: 4883164893612876581}
   - {fileID: 3699230580347241388}
   - {fileID: 3750697999516981359}
-  - {fileID: 5885289525060756674}
   - {fileID: 3781662074522254375}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -233,7 +129,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: ZombieBloaterExploding
-    relativePosition: 0
     countPerMinuteCurve:
       serializedVersion: 2
       m_Curve:
@@ -341,6 +236,12 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    spawnOutsideScreen: 1
+    despawnWhenOutsideScreen: 1
+    despawnWhenOutsideScreenDist2: 2
+    relativePosition: 0
+    spawnBoxAroundPlayerWidth: 1.5
+    distanceFromPlayerToDespawn: 40
     distanceFromPlayerCurve:
       serializedVersion: 2
       m_Curve:
@@ -358,83 +259,11 @@ MonoBehaviour:
       m_RotationOrder: 4
     spawnGroupSpreadMin: 0.5
     spawnGroupSpreadMax: 0.5
-    distanceFromPlayerToDespawn: 40
     despawnAfter: 0
     trackEntityForMission: 0
     nextSpawnTime: 0
     startAtTime: 0
     lastSpawnTime: 0
---- !u!114 &530404185182147840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091413172466918211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  waveName: Slow Lake
-  disable: 1
-  spawns:
-  - possiblePrefabs:
-    - type: 3
-      prefab: {fileID: 8889423923064880148, guid: d3617f619fd4acd448c4208ccd4a0636, type: 3}
-      prefabNpc: {fileID: 0}
-      weight: 1
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: none
-    - type: 3
-      prefab: {fileID: 8889423923064880148, guid: 37811b00deeaa0946a57dcf7086e0c52, type: 3}
-      prefabNpc: {fileID: 0}
-      weight: 2
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: none
-    - type: 3
-      prefab: {fileID: 8889423923064880148, guid: 8d353cb7fe9f01644ba136404f12f15b, type: 3}
-      prefabNpc: {fileID: 0}
-      weight: 1
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: none
-    relativePosition: 0
-    formation: 0
-    formationLookAhead: 2
-    formationRadius: 5
-    behavior: 0
-    roamDistance: 0
-    roamRandomRadius: 0
-    dieWhenReachFixedMoveTarget: 0
-    stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 30
-    spawnTimeMax: 35
-    repeatSpawn: 1
-    repeatSpawnIntervalMin: 30
-    repeatSpawnIntervalMax: 35
-    repeatCount: 100
-    spawnCountMin: 1
-    spawnCountMax: 4
-    distanceFromPlayerMin: 5
-    distanceFromPlayerMax: 5
-    despawnAfter: 60
-    spawnGroupSpreadMin: 1.5
-    spawnGroupSpreadMax: 2.5
-    distanceFromPlayerToDespawn: 100
-    trackEntityForMission: 0
-    onlyOnPlayerAccessibleArea: 0
 --- !u!114 &-3837949277647058563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,7 +310,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: none
-    relativePosition: 0
     formation: 0
     formationLookAhead: 2
     formationRadius: 5
@@ -503,6 +331,11 @@ MonoBehaviour:
     despawnAfter: 45
     spawnGroupSpreadMin: 3
     spawnGroupSpreadMax: 4
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 0
+    relativePosition: 0
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerThickness: 0
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -538,7 +371,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 0
       noRotation: 1
       prefabVariant: ExplodingDecoy
-    relativePosition: 0
     formation: 0
     formationLookAhead: 2
     formationRadius: 5
@@ -560,235 +392,12 @@ MonoBehaviour:
     despawnAfter: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
-    distanceFromPlayerToDespawn: 15
-    trackEntityForMission: 0
-    onlyOnPlayerAccessibleArea: 0
---- !u!114 &766136386234732296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091413172466918211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  waveName: Walkers
-  disable: 1
-  spawns:
-  - possiblePrefabs:
-    - type: 0
-      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 1
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieIdleWalker
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 0
     relativePosition: 0
-    formation: 0
-    formationLookAhead: 2
-    formationRadius: 5
-    behavior: 1
-    roamDistance: 100
-    roamRandomRadius: 3
-    dieWhenReachFixedMoveTarget: 0
-    stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 6
-    spawnTimeMax: 10
-    repeatSpawn: 1
-    repeatSpawnIntervalMin: 6
-    repeatSpawnIntervalMax: 10
-    repeatCount: 100
-    spawnCountMin: 6
-    spawnCountMax: 12
-    distanceFromPlayerMin: 5
-    distanceFromPlayerMax: 5
-    despawnAfter: 0
-    spawnGroupSpreadMin: 1
-    spawnGroupSpreadMax: 1
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerThickness: 0
     distanceFromPlayerToDespawn: 15
-    trackEntityForMission: 0
-    onlyOnPlayerAccessibleArea: 0
---- !u!114 &8998190245610271498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091413172466918211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  waveName: Runners
-  disable: 1
-  spawns:
-  - possiblePrefabs:
-    - type: 0
-      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 1
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieIdleRunner
-    relativePosition: 0
-    formation: 0
-    formationLookAhead: 2
-    formationRadius: 5
-    behavior: 2
-    roamDistance: 100
-    roamRandomRadius: 3
-    dieWhenReachFixedMoveTarget: 0
-    stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 10
-    spawnTimeMax: 12
-    repeatSpawn: 1
-    repeatSpawnIntervalMin: 20
-    repeatSpawnIntervalMax: 24
-    repeatCount: 100
-    spawnCountMin: 6
-    spawnCountMax: 12
-    distanceFromPlayerMin: 6
-    distanceFromPlayerMax: 6
-    despawnAfter: 0
-    spawnGroupSpreadMin: 1
-    spawnGroupSpreadMax: 1
-    distanceFromPlayerToDespawn: 15
-    trackEntityForMission: 0
-    onlyOnPlayerAccessibleArea: 0
---- !u!114 &-4000076046673859097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091413172466918211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  waveName: Spawners
-  disable: 1
-  spawns:
-  - possiblePrefabs:
-    - type: 0
-      prefab: {fileID: 0}
-      prefabNpc: {fileID: 8399383809299790540, guid: 79f3b2b44854d1645804e36864c7bea1, type: 3}
-      weight: 1
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieSpawner_ZombieSneaky
-    relativePosition: 3
-    formation: 0
-    formationLookAhead: 2
-    formationRadius: 5
-    behavior: 0
-    roamDistance: 0
-    roamRandomRadius: 0
-    dieWhenReachFixedMoveTarget: 0
-    stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 20
-    spawnTimeMax: 25
-    repeatSpawn: 1
-    repeatSpawnIntervalMin: 20
-    repeatSpawnIntervalMax: 25
-    repeatCount: 100
-    spawnCountMin: 2
-    spawnCountMax: 4
-    distanceFromPlayerMin: 2.5
-    distanceFromPlayerMax: 2.5
-    despawnAfter: 0
-    spawnGroupSpreadMin: 1
-    spawnGroupSpreadMax: 1
-    distanceFromPlayerToDespawn: 100
-    trackEntityForMission: 0
-    onlyOnPlayerAccessibleArea: 0
---- !u!114 &-6502435416312752660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091413172466918211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  waveName: Spawners Group
-  disable: 1
-  spawns:
-  - possiblePrefabs:
-    - type: 0
-      prefab: {fileID: 0}
-      prefabNpc: {fileID: 8399383809299790540, guid: 79f3b2b44854d1645804e36864c7bea1, type: 3}
-      weight: 1
-      rotateTowardsPlayer: 1
-      noRotation: 0
-      prefabVariant: ZombieSpawner_Zombie
-    relativePosition: 3
-    formation: 0
-    formationLookAhead: 2
-    formationRadius: 5
-    behavior: 0
-    roamDistance: 0
-    roamRandomRadius: 0
-    dieWhenReachFixedMoveTarget: 0
-    stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 10
-    spawnTimeMax: 20
-    repeatSpawn: 1
-    repeatSpawnIntervalMin: 10
-    repeatSpawnIntervalMax: 20
-    repeatCount: 100
-    spawnCountMin: 3
-    spawnCountMax: 7
-    distanceFromPlayerMin: 0
-    distanceFromPlayerMax: 0
-    despawnAfter: 0
-    spawnGroupSpreadMin: 2
-    spawnGroupSpreadMax: 3
-    distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
 --- !u!114 &6469568978721038765
@@ -830,7 +439,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 0
       noRotation: 1
       prefabVariant: '-'
-    relativePosition: 0
     formation: 0
     formationLookAhead: 2
     formationRadius: 5
@@ -852,6 +460,11 @@ MonoBehaviour:
     despawnAfter: 30
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 1
+    relativePosition: 0
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerThickness: 0
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -887,7 +500,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 0
       noRotation: 1
       prefabVariant: '-'
-    relativePosition: 0
     formation: 0
     formationLookAhead: 2
     formationRadius: 5
@@ -909,6 +521,11 @@ MonoBehaviour:
     despawnAfter: 15
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 1
+    relativePosition: 0
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerThickness: 0
     distanceFromPlayerToDespawn: 30
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -944,7 +561,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 0
       noRotation: 1
       prefabVariant: '-'
-    relativePosition: 0
     formation: 7
     formationLookAhead: 1
     formationRadius: 1
@@ -966,6 +582,11 @@ MonoBehaviour:
     despawnAfter: 1200
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 0
+    relativePosition: 0
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerThickness: 0
     distanceFromPlayerToDespawn: 1000
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 1
@@ -1046,7 +667,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2091413172466918208}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4893780517313715286
 MonoBehaviour:
@@ -1063,100 +684,6 @@ MonoBehaviour:
   nameOverride: Exploding Decoys
   tooltipOverride: 
   target: {fileID: -50647473022081503}
---- !u!1 &5200784002971579261
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4367574329516000590}
-  - component: {fileID: 8593602803856434678}
-  m_Layer: 0
-  m_Name: NameContainer(EditorOnly)
-  m_TagString: EditorOnly
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4367574329516000590
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5200784002971579261}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2091413172466918208}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8593602803856434678
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5200784002971579261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameOverride: Slowing Lake
-  tooltipOverride: 
-  target: {fileID: 530404185182147840}
---- !u!1 &6394772597837521872
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4883164893612876581}
-  - component: {fileID: 1277429737074174231}
-  m_Layer: 0
-  m_Name: NameContainer(EditorOnly)
-  m_TagString: EditorOnly
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4883164893612876581
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6394772597837521872}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2091413172466918208}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1277429737074174231
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6394772597837521872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameOverride: Sneaky Fast Zombie
-  tooltipOverride: 
-  target: {fileID: -4000076046673859097}
 --- !u!1 &6741572360861018279
 GameObject:
   m_ObjectHideFlags: 1
@@ -1187,7 +714,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2091413172466918208}
-  m_RootOrder: 7
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2412432619573479799
 MonoBehaviour:
@@ -1234,7 +761,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2091413172466918208}
-  m_RootOrder: 10
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6265690262645441050
 MonoBehaviour:
@@ -1281,7 +808,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2091413172466918208}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8107706627475202604
 MonoBehaviour:
@@ -1298,50 +825,3 @@ MonoBehaviour:
   nameOverride: Fire Rate Buff Zone
   tooltipOverride: 
   target: {fileID: -3204359601985624663}
---- !u!1 &8916042786223728663
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7699282402536441300}
-  - component: {fileID: 7931436729309351531}
-  m_Layer: 0
-  m_Name: NameContainer(EditorOnly)
-  m_TagString: EditorOnly
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7699282402536441300
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8916042786223728663}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2091413172466918208}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7931436729309351531
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8916042786223728663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameOverride: Runners Towards Player
-  tooltipOverride: 
-  target: {fileID: 8998190245610271498}

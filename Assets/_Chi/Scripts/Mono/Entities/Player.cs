@@ -64,6 +64,8 @@ namespace _Chi.Scripts.Mono.Entities
         [NonSerialized] public Dictionary<Skill, float> extraSkillChargesLoadProgress;
         [NonSerialized] public VisualItemSlot[] visualItemSlots;
 
+        public Vector3 position;
+
         public override void Awake()
         {
             base.Awake();
@@ -253,12 +255,16 @@ namespace _Chi.Scripts.Mono.Entities
 
         public void Update()
         {
+            position = GetPosition();
+            
             Debug.DrawLine(GetPosition(), GetPosition() + Vector3.down, Color.cyan);
         }
 
         public override void FixedUpdate()
         {
             base.FixedUpdate();
+            
+            Gamesystem.instance.TrackPlayerPosition(this);
             
             if (CanMove() && rotationTarget.HasValue)
             {

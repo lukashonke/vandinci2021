@@ -63,6 +63,7 @@ namespace _Chi.Scripts.Mono.Entities
         }
         
         [NonSerialized] public float? maxDistanceFromPlayerBeforeDespawn = null;
+        [NonSerialized] public DespawnCondition despawnCondition;
         [NonSerialized] public float? despawnTime = 0;
 
         public float activateWhenCloseToPlayerDist2 = 0;
@@ -218,6 +219,7 @@ namespace _Chi.Scripts.Mono.Entities
             isDissolving = false;
             SetCanMove(false);
             maxDistanceFromPlayerBeforeDespawn = null;
+            despawnCondition = DespawnCondition.DistanceFromPlayer;
             
             SetImmobilizedUntil(0);
             
@@ -530,14 +532,41 @@ namespace _Chi.Scripts.Mono.Entities
 
             if (maxDistanceFromPlayerBeforeDespawn.HasValue)
             {
-                if (dist2ToPlayer > maxDistanceFromPlayerBeforeDespawn.Value)
+                var doDespawn = false;
+                
+                if (despawnCondition == DespawnCondition.DistanceFromScreenBorder)
+                {
+                    //TODO optimise
+                    var position = GetPosition();
+                    
+                    var distX = Math.Abs(player.position.x - position.x) - Gamesystem.instance.HorizontalToBorderDistance;
+                    if (distX > maxDistanceFromPlayerBeforeDespawn.Value)
+                    {
+                        doDespawn = true;
+                    }
+                    
+                    var distY = Math.Abs(player.position.y - position.y) - Gamesystem.instance.VerticalToBorderDistance;
+                    if (distY > maxDistanceFromPlayerBeforeDespawn.Value)
+                    {
+                        doDespawn = true;
+                    }
+                }
+                else
+                {
+                    if (dist2ToPlayer > maxDistanceFromPlayerBeforeDespawn.Value)
+                    {
+                        doDespawn = true;
+                    }
+                }
+
+                if (doDespawn)
                 {
                     if(physicsActivated)
                     {
                         player.RemoveNearbyEnemy(this);
                         SetPhysicsActivated(false);
                     }
-                    
+                
                     OnDie(DieCause.Despawned);
                     return;
                 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using Sirenix.OdinInspector;
+using UnityEngine;
 
 namespace _Chi.Scripts.Mono.Common
 {
@@ -51,21 +52,45 @@ namespace _Chi.Scripts.Mono.Common
             
             if (modifiers != null)
             {
-                foreach (var statModifier in modifiers)
+                foreach (var groupModifiers in modifiers.GroupBy(m => m.order).OrderBy(m => m.Key))
                 {
-                    switch (statModifier.type)
+                    float addValue = 0f;
+                    
+                    foreach (var statModifier in groupModifiers)
                     {
-                        case StatModifierType.Set:
-                            value = statModifier.value;
-                            break;
-                        case StatModifierType.Add:
-                            value += statModifier.value;
-                            break;
-                        case StatModifierType.Mul:
-                            value *= statModifier.value;
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException();
+                        switch (statModifier.type)
+                        {
+                            case StatModifierType.Add:
+                                addValue += statModifier.value;
+                                break;
+                        }
+                    }
+
+                    float mulValue = 1f;
+                    
+                    foreach (var statModifier in groupModifiers)
+                    {
+                        switch (statModifier.type)
+                        {
+                            case StatModifierType.Mul:
+                                mulValue += statModifier.value;
+                                break;
+                        }
+                    }
+
+                    mulValue = Mathf.Max(mulValue, 0f);
+                    
+                    value += addValue;
+                    value *= mulValue;
+
+                    foreach (var statModifier in groupModifiers)
+                    {
+                        switch (statModifier.type)
+                        {
+                            case StatModifierType.Set:
+                                value = statModifier.value;
+                                break;
+                        }
                     }
                 }
             }
@@ -77,7 +102,7 @@ namespace _Chi.Scripts.Mono.Common
         {
             if (modifiers == null) modifiers = new();
             modifiers.Add(modifier);
-            modifier.orderIndex = modifiers.IndexOf(modifier);
+            //modifier.orderIndex = modifiers.IndexOf(modifier);
             isDirty = true;
             SortModifiers();
         }
@@ -104,10 +129,10 @@ namespace _Chi.Scripts.Mono.Common
 
         private void SortModifiers()
         {
-            modifiers = modifiers
+            /*modifiers = modifiers
                 .OrderBy(m => m.order)
                 .ThenBy(m => m.orderIndex)
-                .ToList();
+                .ToList();*/
         }
 
         public void SetBaseValue(float val)
@@ -148,7 +173,7 @@ namespace _Chi.Scripts.Mono.Common
     public enum StatOrders
     {
         Base = 1,
-        PassiveModule = 10,
+        Upgrade = 10,
         ImmediateEffect = 20
     }
 }

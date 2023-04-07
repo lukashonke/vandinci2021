@@ -6,6 +6,7 @@ using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Mission.Events;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Chi.Scripts.Mono.Mission
 {
@@ -197,5 +198,7 @@ namespace _Chi.Scripts.Mono.Mission
         public string name;
 
         public bool showOnlyPreviouslyLocked;
+
+        [FormerlySerializedAs("hideForNextShopOccurences")] public int ifBoughtHideForNextShopOccurences;
     }
 }

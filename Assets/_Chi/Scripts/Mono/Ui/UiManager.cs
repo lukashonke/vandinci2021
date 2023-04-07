@@ -321,7 +321,7 @@ public class UiManager : MonoBehaviour
         }
     }
 
-    public void ShowItemTooltip(RectTransform targetTransform, PrefabItem prefab, int level, TooltipAlign align = TooltipAlign.TopRight, TooltipType type = TooltipType.Default, List<UpgradeItem> upgrades = null)
+    public void ShowItemTooltip(RectTransform targetTransform, PrefabItem prefab, int level, TooltipAlign align = TooltipAlign.TopRight, TooltipType type = TooltipType.Default, List<UpgradeItem> upgrades = null, int? maxLevel = null)
     {
         var pos = targetTransform.position;
 
@@ -337,7 +337,7 @@ public class UiManager : MonoBehaviour
         currentTooltip = Instantiate(moduleTooltipPrefab, pos, Quaternion.identity, targetTransform);
         currentTooltip.transform.SetParent(this.transform, true);
         var dialog = currentTooltip.GetComponent<ModuleTooltip>();
-        dialog.Initialise(prefab, level, type, upgrades);
+        dialog.Initialise(prefab, level, type, upgrades, maxLevel);
     }
 
     public void OnMissionSelectorChange(int index)

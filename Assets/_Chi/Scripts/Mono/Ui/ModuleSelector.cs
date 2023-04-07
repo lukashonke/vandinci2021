@@ -34,6 +34,7 @@ namespace _Chi.Scripts.Mono.Ui
             public PrefabItem prefabItem;
             public TriggeredShop triggeredShop;
             public float priceMul;
+            public Action onBuy;
         }
 
         public void Start()
@@ -51,7 +52,7 @@ namespace _Chi.Scripts.Mono.Ui
             this.triggeredShop = triggeredShop;
             this.currentMode = mode;
             
-            ShowItems();
+            ShowItems(false);
             
             UpdateRerollPrice();
         }
@@ -60,7 +61,7 @@ namespace _Chi.Scripts.Mono.Ui
         private TriggeredShop triggeredShop;
         private string title;
 
-        private void ShowItems()
+        private void ShowItems(bool isReroll)
         {
             var db = Gamesystem.instance.prefabDatabase;
             var run = Gamesystem.instance.progress.progressData.run;
@@ -121,17 +122,17 @@ namespace _Chi.Scripts.Mono.Ui
             }
             else if (currentMode == ModuleSelectorMode.ShopSet || currentMode == ModuleSelectorMode.SingleRewardSet)
             {
-                ShowRandomRewardSetItems();
+                ShowRandomRewardSetItems(isReroll);
             }
         }
         
-        private void ShowRandomRewardSetItems()
+        private void ShowRandomRewardSetItems(bool isReroll)
         {
             foreach (TriggeredShopSet rewardSet in rewardSets)
             {
                 RewardSet setTemplate = Gamesystem.instance.prefabDatabase.GetRewardSet(rewardSet.name);
                 
-                ShowRewardSetItems(rewardSet, setTemplate);
+                ShowRewardSetItems(rewardSet, setTemplate, isReroll);
 
                 if (setTemplate.nestedRewardSets != null && setTemplate.nestedRewardSets.Any())
                 {
@@ -139,13 +140,13 @@ namespace _Chi.Scripts.Mono.Ui
                     {
                         RewardSet nestedSetTemplate = Gamesystem.instance.prefabDatabase.GetRewardSet(nested);
 
-                        ShowRewardSetItems(rewardSet, nestedSetTemplate);
+                        ShowRewardSetItems(rewardSet, nestedSetTemplate, isReroll);
                     }
                 }
             }
         }
 
-        private void ShowRewardSetItems(TriggeredShopSet rewardSet, RewardSet set)
+        private void ShowRewardSetItems(TriggeredShopSet rewardSet, RewardSet set, bool isReroll)
         {
             var db = Gamesystem.instance.prefabDatabase;
             
@@ -153,8 +154,9 @@ namespace _Chi.Scripts.Mono.Ui
 
             currentRewardSets.Add(set);
 
-            var shownItems = set.CalculateShownItems(Gamesystem.instance.objects.currentPlayer, locks, showOnlyLocked).ToHashSet();
-            var shownItemsHash = shownItems.Select(s => s.item.prefabId).ToHashSet();
+            var shownItems = set.CalculateShownItems(Gamesystem.instance.objects.currentPlayer, locks, showOnlyLocked, isReroll).ToHashSet();
+            
+            //var shownItemsHash = shownItems.Select(s => s.item.prefabId).ToHashSet();
 
             foreach (var rewardSetItemWithWeight in shownItems)
             {
@@ -168,7 +170,14 @@ namespace _Chi.Scripts.Mono.Ui
                     prefabItem = item,
                     rewardSetItemWithWeight = rewardSetItemWithWeight.item,
                     priceMul = rewardSetItemWithWeight.priceMul,
-                    triggeredShop = triggeredShop
+                    triggeredShop = triggeredShop,
+                    onBuy = () =>
+                    {
+                        if (rewardSet.ifBoughtHideForNextShopOccurences > 0)
+                        {
+                            set.dontShowTimes = rewardSet.ifBoughtHideForNextShopOccurences;    
+                        }
+                    }
                 };
                 options.Add(item, option);
                 var newItemItem = newItem.GetComponent<ModuleSelectorItem>();
@@ -213,7 +222,7 @@ namespace _Chi.Scripts.Mono.Ui
                 Gamesystem.instance.uiManager.vehicleSettingsWindow.UpdateCurrentMoney();
                 run.rerolls++;
                 
-                ShowItems();
+                ShowItems(true);
                 UpdateRerollPrice();
             }
         }
@@ -286,6 +295,8 @@ namespace _Chi.Scripts.Mono.Ui
             
             if (options.TryGetValue(addingUiItem.prefab, out var option))
             {
+                option.onBuy?.Invoke();
+
                 if (addingUiItem.prefab.playerUpgradeItem != null || addingUiItem.prefab.skillUpgradeItem != null ||
                     addingUiItem.prefab.moduleUpgradeItem != null || addingUiItem.prefabModule is OffensiveModule)
                 {

@@ -1998,6 +1998,7 @@ MonoBehaviour:
       mustBeUnlocked: 0
     closeOnFirstPurchase: 0
     nestedRewardSets: []
+    priceMultiplierPerCountOwned: []
   - name: shop_defensive_basic
     note: 
     minCountShownItems: 1
@@ -2031,6 +2032,7 @@ MonoBehaviour:
       mustBeUnlocked: 0
     closeOnFirstPurchase: 0
     nestedRewardSets: []
+    priceMultiplierPerCountOwned: []
   - name: shop_chaos_upgrades
     note: 
     minCountShownItems: 1
@@ -2039,6 +2041,7 @@ MonoBehaviour:
     nestedRewardSets:
     - shop_chaos_upgrades_crossbow
     - shop_chaos_upgrades_cannon
+    priceMultiplierPerCountOwned: []
   - name: shop_chaos_upgrades_crossbow
     note: 
     minCountShownItems: 1
@@ -2198,6 +2201,12 @@ MonoBehaviour:
       mustBeUnlocked: 0
     closeOnFirstPurchase: 0
     nestedRewardSets: []
+    priceMultiplierPerCountOwned:
+    - 0.8
+    - 0.9
+    - 1
+    - 1.15
+    - 1.3
   - name: shop_chaos_upgrades_cannon
     note: 
     minCountShownItems: 1
@@ -2339,6 +2348,12 @@ MonoBehaviour:
       mustBeUnlocked: 0
     closeOnFirstPurchase: 0
     nestedRewardSets: []
+    priceMultiplierPerCountOwned:
+    - 0.8
+    - 0.9
+    - 1
+    - 1.15
+    - 1.3
   - name: free_start_weapon
     note: 
     minCountShownItems: 100
@@ -2381,6 +2396,7 @@ MonoBehaviour:
       mustBeUnlocked: 0
     closeOnFirstPurchase: 0
     nestedRewardSets: []
+    priceMultiplierPerCountOwned: []
   - name: shop_skill_upgrades
     note: 
     minCountShownItems: 1
@@ -2388,6 +2404,7 @@ MonoBehaviour:
     closeOnFirstPurchase: 0
     nestedRewardSets:
     - shop_skill_upgrades_jump
+    priceMultiplierPerCountOwned: []
   - name: shop_skill_upgrades_jump
     note: 
     minCountShownItems: 1
@@ -2484,6 +2501,12 @@ MonoBehaviour:
       mustBeUnlocked: 0
     closeOnFirstPurchase: 0
     nestedRewardSets: []
+    priceMultiplierPerCountOwned:
+    - 0.8
+    - 0.9
+    - 1
+    - 1.15
+    - 1.3
   - name: shop_weapons
     note: 
     minCountShownItems: 1
@@ -2508,6 +2531,7 @@ MonoBehaviour:
       mustBeUnlocked: 0
     closeOnFirstPurchase: 0
     nestedRewardSets: []
+    priceMultiplierPerCountOwned: []
   - name: chest_weapons
     note: 
     minCountShownItems: 4
@@ -2532,6 +2556,7 @@ MonoBehaviour:
       mustBeUnlocked: 0
     closeOnFirstPurchase: 1
     nestedRewardSets: []
+    priceMultiplierPerCountOwned: []
   - name: shop_player_upgrades
     note: 
     minCountShownItems: 1
@@ -2542,7 +2567,7 @@ MonoBehaviour:
       levelInGroup: 1
       prefabId: 90000
       weight: 9
-      price: 0.75
+      price: 0.5
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0
     - name: Max HP Upgrade
@@ -2551,7 +2576,7 @@ MonoBehaviour:
       levelInGroup: 2
       prefabId: 90001
       weight: 3
-      price: 0.75
+      price: 0.5
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0
     - name: Max HP Upgrade
@@ -2560,7 +2585,7 @@ MonoBehaviour:
       levelInGroup: 3
       prefabId: 90002
       weight: 1
-      price: 0.75
+      price: 0.5
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0
     - name: Defence Upgrade
@@ -2569,7 +2594,7 @@ MonoBehaviour:
       levelInGroup: 1
       prefabId: 90010
       weight: 9
-      price: 0.75
+      price: 0.5
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0
     - name: Defence Upgrade
@@ -2578,7 +2603,7 @@ MonoBehaviour:
       levelInGroup: 2
       prefabId: 90011
       weight: 3
-      price: 0.75
+      price: 0.5
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0
     - name: Defence Upgrade
@@ -2587,7 +2612,7 @@ MonoBehaviour:
       levelInGroup: 3
       prefabId: 90012
       weight: 1
-      price: 0.75
+      price: 0.5
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0
     - name: Move Speed Upgrade
@@ -2596,7 +2621,7 @@ MonoBehaviour:
       levelInGroup: 1
       prefabId: 90020
       weight: 9
-      price: 0.75
+      price: 0.5
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0
     - name: Move Speed Upgrade
@@ -2605,7 +2630,7 @@ MonoBehaviour:
       levelInGroup: 2
       prefabId: 90021
       weight: 3
-      price: 0.75
+      price: 0.5
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0
     - name: Move Speed Upgrade
@@ -2614,7 +2639,7 @@ MonoBehaviour:
       levelInGroup: 3
       prefabId: 90022
       weight: 1
-      price: 0.75
+      price: 0.5
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0
     - name: HP Regeneration Upgrade
@@ -2623,7 +2648,7 @@ MonoBehaviour:
       levelInGroup: 1
       prefabId: 90030
       weight: 9
-      price: 0.75
+      price: 0.5
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0
     - name: HP Regeneration Upgrade
@@ -2632,7 +2657,7 @@ MonoBehaviour:
       levelInGroup: 2
       prefabId: 90031
       weight: 3
-      price: 0.75
+      price: 0.5
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0
     - name: HP Regeneration Upgrade
@@ -2641,7 +2666,7 @@ MonoBehaviour:
       levelInGroup: 3
       prefabId: 90032
       weight: 1
-      price: 0.75
+      price: 0.5
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0
     - name: Pickup Range Upgrade
@@ -2650,7 +2675,7 @@ MonoBehaviour:
       levelInGroup: 1
       prefabId: 90040
       weight: 9
-      price: 0.75
+      price: 0.5
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0
     - name: Rare Pickup Range Upgrade
@@ -2659,7 +2684,7 @@ MonoBehaviour:
       levelInGroup: 2
       prefabId: 90041
       weight: 3
-      price: 0.75
+      price: 0.5
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0
     - name: Epic Pickup Range Upgrade
@@ -2668,7 +2693,7 @@ MonoBehaviour:
       levelInGroup: 3
       prefabId: 90042
       weight: 1
-      price: 0.75
+      price: 0.5
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0
     - name: Skill Reuse Delay Upgrade
@@ -2700,6 +2725,7 @@ MonoBehaviour:
       mustBeUnlocked: 0
     closeOnFirstPurchase: 0
     nestedRewardSets: []
+    priceMultiplierPerCountOwned: []
   variants:
   - variant: Zombie
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}

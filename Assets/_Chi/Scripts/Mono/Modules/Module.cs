@@ -28,6 +28,10 @@ namespace _Chi.Scripts.Mono.Modules
         public float rotationSpeed = 500;
 
         public bool instantRotation = true;
+        
+        public int maxLevel = 5;
+
+        public int maxUpgrades = 5;
 
         public List<SetVisualItemSlot> visualItems;
 
@@ -40,6 +44,7 @@ namespace _Chi.Scripts.Mono.Modules
         [NonSerialized] public Quaternion originalRotation;
 
         [NonSerialized] public List<(object, ImmediateEffect)> additionalOnPickupGoldEffects;
+
 
         public virtual void Awake()
         {

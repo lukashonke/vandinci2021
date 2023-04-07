@@ -86,6 +86,7 @@ Transform:
   - {fileID: 2720522799266994171}
   - {fileID: 3824419903904105238}
   - {fileID: 4614709903028242220}
+  - {fileID: 488120514571627685}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -121,7 +122,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 0
       noRotation: 1
       prefabVariant: MonsterHouseSmall
-    relativePosition: 4
     formation: 7
     formationLookAhead: 2
     formationRadius: 5
@@ -143,7 +143,12 @@ MonoBehaviour:
     despawnAfter: 90
     spawnGroupSpreadMin: 0.5
     spawnGroupSpreadMax: 0.5
-    distanceFromPlayerToDespawn: 40
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 0
+    relativePosition: 4
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerThickness: 0
+    distanceFromPlayerToDespawn: 99
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 1
 --- !u!114 &-2810012884392272434
@@ -178,7 +183,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: ZombieSpawner_Zombie
-    relativePosition: 3
     formation: 1
     formationLookAhead: 2
     formationRadius: 5
@@ -200,6 +204,11 @@ MonoBehaviour:
     despawnAfter: 0
     spawnGroupSpreadMin: 2
     spawnGroupSpreadMax: 3
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 1
+    relativePosition: 3
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerThickness: 0
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -249,7 +258,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: ZombieFast
-    relativePosition: 0
     countPerMinuteCurve:
       serializedVersion: 2
       m_Curve:
@@ -366,6 +374,12 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    spawnOutsideScreen: 1
+    despawnWhenOutsideScreen: 1
+    despawnWhenOutsideScreenDist2: 2
+    relativePosition: 0
+    spawnBoxAroundPlayerWidth: 1.5
+    distanceFromPlayerToDespawn: 40
     distanceFromPlayerCurve:
       serializedVersion: 2
       m_Curve:
@@ -383,7 +397,6 @@ MonoBehaviour:
       m_RotationOrder: 4
     spawnGroupSpreadMin: 0.5
     spawnGroupSpreadMax: 0.5
-    distanceFromPlayerToDespawn: 40
     despawnAfter: 0
     trackEntityForMission: 0
     nextSpawnTime: 0
@@ -428,7 +441,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 0
       noRotation: 1
       prefabVariant: '-'
-    relativePosition: 0
     formation: 0
     formationLookAhead: 2
     formationRadius: 5
@@ -450,6 +462,11 @@ MonoBehaviour:
     despawnAfter: 30
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 1
+    relativePosition: 0
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerThickness: 0
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -485,7 +502,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 0
       noRotation: 1
       prefabVariant: '-'
-    relativePosition: 0
     formation: 7
     formationLookAhead: 1
     formationRadius: 1
@@ -507,6 +523,11 @@ MonoBehaviour:
     despawnAfter: 1200
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 0
+    relativePosition: 0
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerThickness: 0
     distanceFromPlayerToDespawn: 1000
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 1
@@ -542,7 +563,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 0
       noRotation: 1
       prefabVariant: '-'
-    relativePosition: 0
     formation: 7
     formationLookAhead: 1
     formationRadius: 1
@@ -564,6 +584,11 @@ MonoBehaviour:
     despawnAfter: 300
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 1
+    relativePosition: 0
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerThickness: 0
     distanceFromPlayerToDespawn: 1000
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 1
@@ -614,6 +639,53 @@ MonoBehaviour:
   nameOverride: Spawn House
   tooltipOverride: 
   target: {fileID: 7055376836833957700}
+--- !u!1 &4429345294740453613
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 488120514571627685}
+  - component: {fileID: 7641268054430219123}
+  m_Layer: 0
+  m_Name: NameContainer(EditorOnly)
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &488120514571627685
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4429345294740453613}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2091413172466918208}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7641268054430219123
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4429345294740453613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOverride: Treasure Chest
+  tooltipOverride: 
+  target: {fileID: -565453096013670619}
 --- !u!1 &4917076164696937129
 GameObject:
   m_ObjectHideFlags: 1

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Mission.Events;
@@ -64,34 +65,42 @@ namespace _Chi.Scripts.Mono.Mission
             var spawnCount = settings.GetCountToSpawn(time);
 
             int squareSize = (int) Math.Ceiling(Math.Sqrt(spawnCount));
-
-            var distance = settings.GetDistanceFromPlayer(time);
-            
-            var relativePos = settings.relativePosition;
-            if (relativePos == SpawnRelativePosition.FrontOrBehindPlayer)
-            {
-                relativePos = Random.Range(0, 2) == 0 ? SpawnRelativePosition.FrontOfPlayer : SpawnRelativePosition.BehindPlayer;
-            }
-
             Vector3 spawnPosition = Vector3.zero;
-            switch (relativePos)
+            
+            
+            if (settings.spawnOutsideScreen)
             {
-                case SpawnRelativePosition.AroundPlayer:
-                    var dir1 = (Vector3) Random.insideUnitCircle.normalized * distance;
-                    spawnPosition = playerPosition + dir1;
-                    break;
-                case SpawnRelativePosition.AroundMapCenter:
-                    var dir4 = (Vector3) Random.insideUnitCircle.normalized * distance;
-                    spawnPosition = Gamesystem.instance.missionManager.currentMission.center + dir4;
-                    break;
-                case SpawnRelativePosition.FrontOfPlayer:
-                    var dir2 = relativeTo.GetForwardVector().normalized * distance;
-                    spawnPosition = playerPosition + dir2;
-                    break;
-                case SpawnRelativePosition.BehindPlayer:
-                    var dir3 = -relativeTo.GetForwardVector().normalized * distance;
-                    spawnPosition = playerPosition + dir3;
-                    break;
+                spawnPosition = settings.GetSpawnPosition();
+            }
+            else
+            {
+                var distance = settings.GetDistanceFromPlayer(time);
+            
+                var relativePos = settings.relativePosition;
+                if (relativePos == SpawnRelativePosition.FrontOrBehindPlayer)
+                {
+                    relativePos = Random.Range(0, 2) == 0 ? SpawnRelativePosition.FrontOfPlayer : SpawnRelativePosition.BehindPlayer;
+                }
+
+                switch (relativePos)
+                {
+                    case SpawnRelativePosition.AroundPlayer:
+                        var dir1 = (Vector3) Random.insideUnitCircle.normalized * distance;
+                        spawnPosition = playerPosition + dir1;
+                        break;
+                    case SpawnRelativePosition.AroundMapCenter:
+                        var dir4 = (Vector3) Random.insideUnitCircle.normalized * distance;
+                        spawnPosition = Gamesystem.instance.missionManager.currentMission.center + dir4;
+                        break;
+                    case SpawnRelativePosition.FrontOfPlayer:
+                        var dir2 = relativeTo.GetForwardVector().normalized * distance;
+                        spawnPosition = playerPosition + dir2;
+                        break;
+                    case SpawnRelativePosition.BehindPlayer:
+                        var dir3 = -relativeTo.GetForwardVector().normalized * distance;
+                        spawnPosition = playerPosition + dir3;
+                        break;
+                }    
             }
 
             Vector3? goToDirection = null;
@@ -184,8 +193,11 @@ namespace _Chi.Scripts.Mono.Mission
                 }
 
                 var spawnPrefab = settings.GetRandomPrefab();
+                
+                var dist = settings.despawnWhenOutsideScreen ? settings.despawnWhenOutsideScreenDist2 : settings.distanceFromPlayerToDespawn;
+                var condition = settings.despawnWhenOutsideScreen ? DespawnCondition.DistanceFromScreenBorder : DespawnCondition.DistanceFromPlayer;
 
-                var spawned = spawnPrefab.SpawnOnPosition(targetPosition, playerPosition, settings.distanceFromPlayerToDespawn, settings.despawnAfter);
+                var spawned = spawnPrefab.SpawnOnPosition(targetPosition, playerPosition, dist, settings.despawnAfter, condition);
                 if (spawned != null)
                 {
                     if (settings.trackEntityForMission)
@@ -261,8 +273,6 @@ namespace _Chi.Scripts.Mono.Mission
     {
         public List<SpawnPrefab> possiblePrefabs;
 
-        public SpawnRelativePosition relativePosition;
-
         public SpawnFormation formation;
 
         public float formationLookAhead = 2f;
@@ -296,13 +306,27 @@ namespace _Chi.Scripts.Mono.Mission
         public int spawnCountMin;
         public int spawnCountMax;
 
-        [FormerlySerializedAs("distanceFromPlayer")] public float distanceFromPlayerMin;
-        [FormerlySerializedAs("distanceFromPlayer")] public float distanceFromPlayerMax;
+        [HideIf("spawnOutsideScreen")] public float distanceFromPlayerMin;
+        [HideIf("spawnOutsideScreen")] public float distanceFromPlayerMax;
+        
         public float despawnAfter;
 
         public float spawnGroupSpreadMin = 1;
         public float spawnGroupSpreadMax = 1;
         
+        public bool spawnOutsideScreen = false;
+        public bool despawnWhenOutsideScreen = true;
+        
+        [HideIf("spawnOutsideScreen")]
+        public SpawnRelativePosition relativePosition;
+        
+        [ShowIf("despawnWhenOutsideScreen")]
+        public float despawnWhenOutsideScreenDist2 = 2;
+
+        [ShowIf("spawnOutsideScreen")] 
+        public float spawnBoxAroundPlayerWidth = 1.5f;
+        
+        [HideIf("despawnWhenOutsideScreen")]
         public float distanceFromPlayerToDespawn = 100;
 
         public bool trackEntityForMission = false;
@@ -342,6 +366,32 @@ namespace _Chi.Scripts.Mono.Mission
         public float GetDistanceFromPlayer(float time)
         {
             return Random.Range(distanceFromPlayerMin, distanceFromPlayerMax);
+        }
+        
+        public Vector3 GetSpawnPosition()
+        {
+            if (spawnOutsideScreen)
+            {
+                var position = new Vector3();
+                
+                float f = Random.value > 0.5f ? 1 : -1;
+                if (Random.value > 0.5f)
+                {
+                    position.x = f * Random.Range(Gamesystem.instance.HorizontalToBorderDistance, Gamesystem.instance.HorizontalToBorderDistance + spawnBoxAroundPlayerWidth);
+                    position.y = Random.Range(-Gamesystem.instance.VerticalToBorderDistance, Gamesystem.instance.VerticalToBorderDistance);
+                }
+                else
+                {
+                    position.y = f * Random.Range(Gamesystem.instance.VerticalToBorderDistance, Gamesystem.instance.VerticalToBorderDistance + spawnBoxAroundPlayerWidth);
+                    position.x = Random.Range(-Gamesystem.instance.HorizontalToBorderDistance, Gamesystem.instance.HorizontalToBorderDistance);
+                }
+
+                position += Gamesystem.instance.objects.currentPlayer.GetPosition();
+
+                return position;
+            }
+            
+            return Vector3.zero;
         }
     }
 }

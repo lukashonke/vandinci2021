@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Mission;
@@ -51,7 +52,8 @@ namespace _Chi.Scripts.Scriptables
                     var targetPosition = spawnPosition + (new Vector3(i*spread, 0, 0));
                     
                     var spawnPrefab = settings.GetRandomPrefab();
-                    var spawned = spawnPrefab.SpawnOnPosition(targetPosition, position, settings.distanceFromPlayerToDespawn);
+                    var despawnType = settings.despawnWhenOutsideScreen ? DespawnCondition.DistanceFromScreenBorder : DespawnCondition.DistanceFromPlayer;
+                    var spawned = spawnPrefab.SpawnOnPosition(targetPosition, position, settings.distanceFromPlayerToDespawn, 0f, despawnType);
             
                     if (spawned != null)
                     {
@@ -72,7 +74,8 @@ namespace _Chi.Scripts.Scriptables
                         var targetPosition = spawnPosition + (new Vector3(column * spread, row * spread, 0));
 
                         var spawnPrefab = settings.GetRandomPrefab();
-                        var spawned = spawnPrefab.SpawnOnPosition(targetPosition, position, settings.distanceFromPlayerToDespawn);
+                        var despawnType = settings.despawnWhenOutsideScreen ? DespawnCondition.DistanceFromScreenBorder : DespawnCondition.DistanceFromPlayer;
+                        var spawned = spawnPrefab.SpawnOnPosition(targetPosition, position, settings.distanceFromPlayerToDespawn, 0f, despawnType);
                         
                         Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
 
@@ -102,6 +105,8 @@ namespace _Chi.Scripts.Scriptables
         public float spawnGroupSpreadMax = 1;
         
         public float distanceFromPlayerToDespawn = 100;
+        
+        public bool despawnWhenOutsideScreen = true;
         
         // runtime
         [NonSerialized] private Dictionary<int, SpawnPrefab> prefabsByWeightValues;

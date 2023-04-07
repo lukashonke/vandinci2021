@@ -10,7 +10,7 @@ namespace _Chi.Scripts.Scriptables
     {
         public StatModifierType modifier;
 
-        public StatOrders order = StatOrders.PassiveModule;
+        public StatOrders order = StatOrders.Upgrade;
         
         public bool hasLevelScaledValue;
         
@@ -43,9 +43,9 @@ namespace _Chi.Scripts.Scriptables
                 case StatModifierType.Mul:
                     if (hasLevelScaledValue)
                     {
-                        return 1 + GetLevelScaledValue(level);
+                        return GetLevelScaledValue(level);
                     }
-                    return 1 + (value * level);
+                    return (value * level);
                 default:
                     throw new ArgumentOutOfRangeException();
             }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Mission;
 using UnityEngine;
@@ -10,7 +11,7 @@ namespace _Chi.Scripts.Mono.Extensions
 {
     public static class SpawnExtensions
     {
-        public static Entity SpawnOnPosition(this SpawnPrefab prefab, Vector3 position, Vector3 attackTarget, float distanceFromPlayerToDespawn, float despawnAfter = 0)
+        public static Entity SpawnOnPosition(this SpawnPrefab prefab, Vector3 position, Vector3 attackTarget, float distanceFromPlayerToDespawn, float despawnAfter = 0, DespawnCondition despawnCondition = DespawnCondition.DistanceFromPlayer)
         {
             Quaternion rotation;
 
@@ -38,6 +39,7 @@ namespace _Chi.Scripts.Mono.Extensions
                     var npc = prefab.prefabNpc.SpawnPooledNpc(position, rotation);
                     Gamesystem.instance.prefabDatabase.ApplyPrefabVariant(npc, prefab.prefabVariant);
                     npc.maxDistanceFromPlayerBeforeDespawn = distanceFromPlayerToDespawn * distanceFromPlayerToDespawn;
+                    npc.despawnCondition = despawnCondition;
                     if (despawnAfter > 0)
                     {
                         npc.despawnTime = Time.time + despawnAfter;
@@ -49,6 +51,7 @@ namespace _Chi.Scripts.Mono.Extensions
                     var npc2 = go.GetComponent<Npc>();
                     Gamesystem.instance.prefabDatabase.ApplyPrefabVariant(npc2, prefab.prefabVariant);
                     npc2.maxDistanceFromPlayerBeforeDespawn = distanceFromPlayerToDespawn * distanceFromPlayerToDespawn;
+                    npc2.despawnCondition = despawnCondition;
                     if (despawnAfter > 0)
                     {
                         npc2.despawnTime = Time.time + despawnAfter;

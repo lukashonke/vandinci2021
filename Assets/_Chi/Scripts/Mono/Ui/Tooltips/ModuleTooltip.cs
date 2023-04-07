@@ -31,7 +31,7 @@ namespace _Chi.Scripts.Mono.Ui.Tooltips
         [Required] public GameObject additionalTextsContainer; 
         [Required] public GameObject additionalTextsItem;
         
-        public void Initialise(PrefabItem modulePrefabItem, int level, UiManager.TooltipType tooltipType, List<UpgradeItem> upgradeItems)
+        public void Initialise(PrefabItem modulePrefabItem, int level, UiManager.TooltipType tooltipType, List<UpgradeItem> upgradeItems, int? maxLevel)
         {
             if (tooltipType == UiManager.TooltipType.ExcludeTitleLogoDescription)
             {
@@ -46,7 +46,14 @@ namespace _Chi.Scripts.Mono.Ui.Tooltips
             
                 if (level > 0)
                 {
-                    this.level.text = $"Lv {level}";
+                    if (maxLevel.HasValue)
+                    {
+                        this.level.text = $"Lv {level} <size=70%>/{maxLevel}</size>";
+                    }
+                    else
+                    {
+                        this.level.text = $"Lv {level}";
+                    }
                 }
                 else
                 {

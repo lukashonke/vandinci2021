@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using _Chi.Scripts.Mono.Common;
+using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Scriptables.Dtos;
@@ -182,9 +183,16 @@ namespace _Chi.Scripts.Mono.Ui
                         upgrades.Add(upgradeItemPrefab.moduleUpgradeItem);
                     }
                 }
+
+                var tooltipLevel = moduleLevel;
+
+                if (modulePrefabItem.prefab.GetComponent<Module>() is OffensiveModule o)
+                {
+                    tooltipLevel = GetUpgradeItems();
+                }
                 
                 //TODO use actual module instance if available to show level
-                Gamesystem.instance.uiManager.ShowItemTooltip((RectTransform) this.transform, modulePrefabItem, moduleLevel, UiManager.TooltipAlign.TopRight, UiManager.TooltipType.Default, upgrades);
+                Gamesystem.instance.uiManager.ShowItemTooltip((RectTransform) this.transform, modulePrefabItem, tooltipLevel, UiManager.TooltipAlign.TopRight, UiManager.TooltipType.Default, upgrades, modulePrefabItem.prefab.GetComponent<Module>().maxLevel);
             }
             
             if (onHoverGo != null)
@@ -200,6 +208,24 @@ namespace _Chi.Scripts.Mono.Ui
             var slot = run.modulesInSlots?.FirstOrDefault(x => x.slotId == slotId);
             if (slot != null)
             {
+                var db = Gamesystem.instance.prefabDatabase;
+                var module = db.GetById(slot.moduleId).prefab.GetComponent<Module>();
+                
+                if (slot.upgradeItems.Count >= module.maxUpgrades)
+                {
+                    if (item.prefab.moduleUpgradeItem.replacesModulePrefabIds.HasValues())
+                    {
+                        if (!slot.upgradeItems.Any(s => item.prefab.moduleUpgradeItem.replacesModulePrefabIds.Contains(s.prefabId)))
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                
                 if (slot.upgradeItems.Any(si => si.prefabId == item.prefab.id))
                 {
                     return false;
@@ -207,6 +233,19 @@ namespace _Chi.Scripts.Mono.Ui
             }
 
             return true;
+        }
+
+        private int GetUpgradeItems()
+        {
+            var run = Gamesystem.instance.progress.progressData.run;
+
+            var slot = run.modulesInSlots?.FirstOrDefault(x => x.slotId == slotId);
+            if (slot != null)
+            {
+                return slot.upgradeItems.Count;
+            }
+
+            return 0;
         }
 
         public void OnHoverExit()
@@ -313,6 +352,13 @@ namespace _Chi.Scripts.Mono.Ui
 
         public bool CanMergeModule(AddingUiItem info)
         {
+            if (info != null && info.prefabModule != null)
+            {
+                int newLevel = moduleLevel + info.level;
+                
+                if(newLevel > info.prefabModule.maxLevel) return false;
+            }
+            
             if (moduleGo != null && modulePrefabItem != null && info != null)
             {
                 return modulePrefabItem.id == info.prefab.id;

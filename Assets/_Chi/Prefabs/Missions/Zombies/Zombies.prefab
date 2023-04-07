@@ -60,6 +60,8 @@ MonoBehaviour:
     - {fileID: 2091413172466918211, guid: 7bde508cc31740e4aa94ea86f4ccc83b, type: 3}
     - {fileID: 2091413172466918211, guid: 6f74e7c2ffc219944a4ab48d7aac2012, type: 3}
     - {fileID: 2091413172466918211, guid: 292773acb84f9b3429737f93189f3ac0, type: 3}
+    - {fileID: 2091413172466918211, guid: 15e1d84e9c9f5dd4f94f49d915824668, type: 3}
+    - {fileID: 2091413172466918211, guid: 6e278c4a43ebadd41b5d2315bad52cef, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -71,7 +73,7 @@ MonoBehaviour:
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 15
+      Data: 17
     - Name: 
       Entry: 7
       Data: 1|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
@@ -94,6 +96,9 @@ MonoBehaviour:
     - Name: showOnlyPreviouslyLocked
       Entry: 5
       Data: false
+    - Name: ifBoughtHideForNextShopOccurences
+      Entry: 3
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -653,6 +658,92 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 30|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: eventName
+      Entry: 1
+      Data: Wawe 11
+    - Name: fixedDuration
+      Entry: 4
+      Data: 125
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: false
+    - Name: setGlobalDropChance
+      Entry: 5
+      Data: false
+    - Name: globalDropChance
+      Entry: 4
+      Data: 0
+    - Name: handlers
+      Entry: 7
+      Data: 31|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 12
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: endAfterFixedDuration
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 32|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: eventName
+      Entry: 1
+      Data: Wawe 12
+    - Name: fixedDuration
+      Entry: 4
+      Data: 125
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: false
+    - Name: setGlobalDropChance
+      Entry: 5
+      Data: false
+    - Name: globalDropChance
+      Entry: 4
+      Data: 0
+    - Name: handlers
+      Entry: 7
+      Data: 33|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 13
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: endAfterFixedDuration
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -671,187 +762,261 @@ MonoBehaviour:
       shopSet:
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 12
     - goldAcumulatedRequired: 54
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 15
     - goldAcumulatedRequired: 116
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 19
     - goldAcumulatedRequired: 262
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 38
     - goldAcumulatedRequired: 473
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 55
     - goldAcumulatedRequired: 749
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 72
     - goldAcumulatedRequired: 1089
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 89
     - goldAcumulatedRequired: 1595
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 145
     - goldAcumulatedRequired: 2265
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 192
     - goldAcumulatedRequired: 3500
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 348
     - goldAcumulatedRequired: 4800
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 365
     - goldAcumulatedRequired: 6164
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 382
     - goldAcumulatedRequired: 999999
       shopSet:
-      - name: shop_passives_basic
-        showOnlyPreviouslyLocked: 0
-      - name: shop_defensive_basic
-        showOnlyPreviouslyLocked: 0
-      - name: shop_player_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_skill_upgrades
-        showOnlyPreviouslyLocked: 0
-      - name: shop_chaos_upgrades
-        showOnlyPreviouslyLocked: 0
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_chaos_upgrades
+        showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 1
+      - name: shop_passives_basic
+        showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_defensive_basic
+        showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_player_upgrades
+        showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_skill_upgrades
+        showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 999
     rerollPrices: 01000000050000000a000000140000001e00000028000000320000003c00000046000000500000005a00000064000000a0860100

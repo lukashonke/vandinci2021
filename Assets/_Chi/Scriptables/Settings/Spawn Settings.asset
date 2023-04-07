@@ -37,7 +37,8 @@ MonoBehaviour:
     distanceFromPlayerMax: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
-    distanceFromPlayerToDespawn: 100
+    distanceFromPlayerToDespawn: 2.5
+    despawnWhenOutsideScreen: 1
   - name: Zombie_Group
     possiblePrefabs:
     - type: 0
@@ -60,7 +61,8 @@ MonoBehaviour:
     distanceFromPlayerMax: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
-    distanceFromPlayerToDespawn: 100
+    distanceFromPlayerToDespawn: 2.5
+    despawnWhenOutsideScreen: 1
   - name: Zombie
     possiblePrefabs:
     - type: 0
@@ -90,7 +92,8 @@ MonoBehaviour:
     distanceFromPlayerMax: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
-    distanceFromPlayerToDespawn: 100
+    distanceFromPlayerToDespawn: 2.5
+    despawnWhenOutsideScreen: 1
   - name: ZombieElite
     possiblePrefabs:
     - type: 0
@@ -120,7 +123,8 @@ MonoBehaviour:
     distanceFromPlayerMax: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
-    distanceFromPlayerToDespawn: 100
+    distanceFromPlayerToDespawn: 2.5
+    despawnWhenOutsideScreen: 1
   - name: ZombieBloody
     possiblePrefabs:
     - type: 0
@@ -150,7 +154,8 @@ MonoBehaviour:
     distanceFromPlayerMax: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
-    distanceFromPlayerToDespawn: 100
+    distanceFromPlayerToDespawn: 2.5
+    despawnWhenOutsideScreen: 1
   - name: ZombieDemonic
     possiblePrefabs:
     - type: 0
@@ -180,4 +185,5 @@ MonoBehaviour:
     distanceFromPlayerMax: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
-    distanceFromPlayerToDespawn: 100
+    distanceFromPlayerToDespawn: 2.5
+    despawnWhenOutsideScreen: 1

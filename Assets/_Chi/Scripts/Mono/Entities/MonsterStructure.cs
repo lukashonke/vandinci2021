@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Mission;
 using UnityEngine;
@@ -85,7 +86,7 @@ namespace _Chi.Scripts.Mono.Entities
                         
                 var targetPosition = pos + (new Vector3(Random.Range(-group.spawnSpread, group.spawnSpread), Random.Range(-group.spawnSpread, group.spawnSpread), 0));
                         
-                prefab.SpawnOnPosition(targetPosition, playerPos, distanceBeforeDespawn);
+                prefab.SpawnOnPosition(targetPosition, playerPos, distanceBeforeDespawn, 0f, DespawnCondition.DistanceFromScreenBorder);
             }
         }
     }

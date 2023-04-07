@@ -10,7 +10,8 @@ Material:
   m_Name: ZombieBloody
   m_Shader: {fileID: 4800000, guid: 0803c241834332942abfcbd27c498b46, type: 3}
   m_ValidKeywords:
-  - _ENABLEFROZEN_ON
+  - _ENABLEHUE_ON
+  - _ENABLESATURATION_ON
   - _SHADERSPACE_UV
   - _TIMESETTINGS_LINEAR_DEFAULT
   - _UBERFADING_NONE
@@ -193,14 +194,14 @@ Material:
     - _EnableDirectionalDistortion: 0
     - _EnableDirectionalGlowFade: 0
     - _EnableFlame: 0
-    - _EnableFrozen: 1
+    - _EnableFrozen: 0
     - _EnableFullAlphaDissolve: 0
     - _EnableFullDistortion: 0
     - _EnableFullGlowDissolve: 0
     - _EnableGlitch: 0
     - _EnableHalftone: 0
     - _EnableHologram: 0
-    - _EnableHue: 0
+    - _EnableHue: 1
     - _EnableInkSpread: 0
     - _EnableInnerOutline: 0
     - _EnableMetal: 0
@@ -209,7 +210,7 @@ Material:
     - _EnablePoison: 0
     - _EnableRainbow: 0
     - _EnableRecolor: 0
-    - _EnableSaturation: 0
+    - _EnableSaturation: 1
     - _EnableShiftHue: 0
     - _EnableShine: 0
     - _EnableSineGlow: 0
@@ -266,7 +267,7 @@ Material:
     - _HologramLineGap: 3
     - _HologramLineSpeed: 0.01
     - _HologramMinAlpha: 0.2
-    - _Hue: -0.161
+    - _Hue: -0.214
     - _InkSpreadContrast: 2
     - _InkSpreadDistance: 3
     - _InkSpreadFade: 1
@@ -304,7 +305,7 @@ Material:
     - _RecolorFade: 1
     - _RectHeight: 100
     - _RectWidth: 100
-    - _Saturation: 0
+    - _Saturation: 1.4
     - _ScreenWidthUnits: 10
     - _ShaderSpace: 0
     - _ShiftHueFade: 1
@@ -460,7 +461,7 @@ Material:
     - _RainbowNoiseScale: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _RecolorBlueTint: {r: 1, g: 1, b: 1, a: 0.5019608}
     - _RecolorCyanTint: {r: 1, g: 1, b: 1, a: 0.5019608}
-    - _RecolorGreenTint: {r: 1, g: 1, b: 1, a: 0.5019608}
+    - _RecolorGreenTint: {r: 1, g: 0, b: 0, a: 0.5019608}
     - _RecolorPurpleTint: {r: 1, g: 1, b: 1, a: 0.5019608}
     - _RecolorRedTint: {r: 1, g: 1, b: 1, a: 0.5019608}
     - _RecolorYellowTint: {r: 1, g: 1, b: 1, a: 0.5019608}

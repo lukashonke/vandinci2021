@@ -13,6 +13,7 @@ using _Chi.Scripts.Utilities;
 using Pathfinding;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
@@ -61,6 +62,9 @@ public class Gamesystem : MonoBehaviour
 
     [NonSerialized] public float levelStartedTime;
 
+    public float HorizontalToBorderDistance;
+    [FormerlySerializedAs("VerticalToborderDistance")] public float VerticalToBorderDistance;
+
     private void Awake()
     {
         instance = this;
@@ -91,12 +95,13 @@ public class Gamesystem : MonoBehaviour
         
         centerNode = AstarPath.active.GetNearest(transform.position, NNConstraint.Default).node;
     }
-    
 
     private List<FloatWithAction> schedulesCopy = new();
 
     public void Update()
     {
+        DebugDistances();
+        
         var time = Time.time;
         int index = 0;
         /*for (int i = 0; i < schedules.Count; i++)
@@ -201,5 +206,46 @@ public class Gamesystem : MonoBehaviour
     {
         GraphNode node1 = AstarPath.active.GetNearest(position, NNConstraint.Default).node;
         return PathUtilities.IsPathPossible(centerNode, node1);
+    }
+    
+    private void DebugDistances()
+    {
+#if UNITY_EDITOR
+        Debug.DrawLine(objects.currentPlayer.GetPosition(), objects.currentPlayer.GetPosition() + new Vector3(HorizontalToBorderDistance, 0, 0), Color.red);
+        
+        Debug.DrawLine(objects.currentPlayer.GetPosition(), objects.currentPlayer.GetPosition() + new Vector3(0, VerticalToBorderDistance, 0), Color.blue);
+#endif
+    }
+
+    public Vector3 playerMoveDirection;
+    private Vector3 previousPlayerPosition;
+    private Vector3 currentPlayerPosition;
+
+    public void TrackPlayerPosition(Player player)
+    {
+        currentPlayerPosition = player.GetPosition();
+        playerMoveDirection = currentPlayerPosition - previousPlayerPosition;
+        
+        previousPlayerPosition = currentPlayerPosition;
+    }
+
+    public PlayerMoveDirection GetPlayerMoveDirection()
+    {
+        var result = PlayerMoveDirection.Idle;
+        if(playerMoveDirection.x > 0) result |= PlayerMoveDirection.Right;
+        if(playerMoveDirection.x < 0) result |= PlayerMoveDirection.Left;
+        if(playerMoveDirection.y > 0) result |= PlayerMoveDirection.Up;
+        if(playerMoveDirection.y < 0) result |= PlayerMoveDirection.Down;
+        return result;
+    }
+
+    [Flags]
+    public enum PlayerMoveDirection
+    {
+        Idle = 0,
+        Up = 1,
+        Down = 2,
+        Left = 4,
+        Right = 8
     }
 }

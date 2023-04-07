@@ -78,6 +78,10 @@ namespace _Chi.Scripts.Mono.Ui
 
         public bool MergeModuleInSlot(ModuleSlotUi slot, AddingUiItem module)
         {
+            int newLevel = slot.moduleLevel + module.level;
+            
+            if(newLevel > module.prefabModule.maxLevel) return false;
+            
             return AddModuleToSlot(slot, module, slot.moduleLevel + module.level);
         }
 
@@ -131,7 +135,7 @@ namespace _Chi.Scripts.Mono.Ui
                     {
                         return false;
                     }
-                    
+
                     existing.upgradeItems.Add(new SlotItem()
                     {
                         prefabId = item.prefab.id,

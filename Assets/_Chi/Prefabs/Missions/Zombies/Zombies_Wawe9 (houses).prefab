@@ -128,7 +128,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 0
       noRotation: 1
       prefabVariant: MonsterHouseMedium
-    relativePosition: 4
     formation: 3
     formationLookAhead: 1
     formationRadius: 10
@@ -150,6 +149,11 @@ MonoBehaviour:
     despawnAfter: 100
     spawnGroupSpreadMin: 8
     spawnGroupSpreadMax: 8
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 0
+    relativePosition: 4
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerThickness: 0
     distanceFromPlayerToDespawn: 40
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 1
@@ -185,7 +189,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: ZombieSpawner_ZombieBloody
-    relativePosition: 3
     formation: 1
     formationLookAhead: 2
     formationRadius: 5
@@ -207,6 +210,11 @@ MonoBehaviour:
     despawnAfter: 0
     spawnGroupSpreadMin: 2
     spawnGroupSpreadMax: 3
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 1
+    relativePosition: 3
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerThickness: 0
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -256,7 +264,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: ZombieEliteFast
-    relativePosition: 0
     countPerMinuteCurve:
       serializedVersion: 2
       m_Curve:
@@ -355,6 +362,12 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    spawnOutsideScreen: 1
+    despawnWhenOutsideScreen: 1
+    despawnWhenOutsideScreenDist2: 2
+    relativePosition: 0
+    spawnBoxAroundPlayerWidth: 1.5
+    distanceFromPlayerToDespawn: 40
     distanceFromPlayerCurve:
       serializedVersion: 2
       m_Curve:
@@ -372,7 +385,6 @@ MonoBehaviour:
       m_RotationOrder: 4
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 2
-    distanceFromPlayerToDespawn: 40
     despawnAfter: 0
     trackEntityForMission: 0
     nextSpawnTime: 0
@@ -417,7 +429,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 0
       noRotation: 1
       prefabVariant: '-'
-    relativePosition: 0
     formation: 0
     formationLookAhead: 2
     formationRadius: 5
@@ -439,6 +450,11 @@ MonoBehaviour:
     despawnAfter: 30
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 1
+    relativePosition: 0
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerThickness: 0
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -474,7 +490,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 0
       noRotation: 1
       prefabVariant: '-'
-    relativePosition: 0
     formation: 7
     formationLookAhead: 1
     formationRadius: 1
@@ -496,6 +511,11 @@ MonoBehaviour:
     despawnAfter: 1200
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 0
+    relativePosition: 0
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerThickness: 0
     distanceFromPlayerToDespawn: 1000
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 1
@@ -531,7 +551,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: ZombieBloodyFat
-    relativePosition: 0
     formation: 1
     formationLookAhead: 10
     formationRadius: 10
@@ -553,6 +572,11 @@ MonoBehaviour:
     despawnAfter: 0
     spawnGroupSpreadMin: 10
     spawnGroupSpreadMax: 10
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 1
+    relativePosition: 0
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerThickness: 0
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -588,7 +612,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: ZombieBloodyFat
-    relativePosition: 0
     formation: 1
     formationLookAhead: 16
     formationRadius: 16
@@ -610,6 +633,11 @@ MonoBehaviour:
     despawnAfter: 0
     spawnGroupSpreadMin: 11
     spawnGroupSpreadMax: 11
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 1
+    relativePosition: 0
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerThickness: 0
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -645,7 +673,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: ZombieBloodyFat
-    relativePosition: 0
     formation: 1
     formationLookAhead: 17
     formationRadius: 17
@@ -667,6 +694,11 @@ MonoBehaviour:
     despawnAfter: 0
     spawnGroupSpreadMin: 11
     spawnGroupSpreadMax: 11
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 1
+    relativePosition: 0
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerThickness: 0
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -702,7 +734,6 @@ MonoBehaviour:
       rotateTowardsPlayer: 0
       noRotation: 1
       prefabVariant: '-'
-    relativePosition: 0
     formation: 7
     formationLookAhead: 1
     formationRadius: 1
@@ -724,6 +755,11 @@ MonoBehaviour:
     despawnAfter: 1200
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 0
+    relativePosition: 0
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerThickness: 0
     distanceFromPlayerToDespawn: 1000
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 1

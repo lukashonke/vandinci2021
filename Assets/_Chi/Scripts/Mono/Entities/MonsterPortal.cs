@@ -22,6 +22,8 @@ namespace _Chi.Scripts.Mono.Entities
         public int continuousSpawnAtOnceCount = 1;
         public float continuousSpawnSpread = 1.5f;
         public float distanceBeforeDespawn = 100f;
+        
+        public bool despawnWhenOutsideScreen = true;
 
         public float despawnAfterTime = 0;
 
@@ -67,7 +69,7 @@ namespace _Chi.Scripts.Mono.Entities
                         
                         var targetPosition = pos + (new Vector3(Random.Range(-continuousSpawnSpread, continuousSpawnSpread), Random.Range(-continuousSpawnSpread, continuousSpawnSpread), 0));
                         
-                        prefab.SpawnOnPosition(targetPosition, playerPos, distanceBeforeDespawn);
+                        prefab.SpawnOnPosition(targetPosition, playerPos, distanceBeforeDespawn, 0f, DespawnCondition.DistanceFromScreenBorder);
                     }
                 }
                 
