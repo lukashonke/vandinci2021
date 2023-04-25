@@ -49,6 +49,9 @@ namespace _Chi.Scripts.Mono.Modules
         public BulletBehaviorType bulletBehavior = BulletBehaviorType.Default;
 
         protected bool activated;
+
+        [ReadOnly] public int currentMagazine;
+        [ReadOnly] public bool isReloading;
         
         public int temporaryProjectilesUntilNextShot = 0;
 
@@ -176,7 +179,7 @@ namespace _Chi.Scripts.Mono.Modules
 
         public float GetFireRate()
         {
-            var retValue = stats.fireRate.GetValue();
+            var retValue = stats.reloadDuration.GetValue();
             if (parent is Player player)
             {
                 retValue *= player.stats.moduleFireRateMul.GetValue();

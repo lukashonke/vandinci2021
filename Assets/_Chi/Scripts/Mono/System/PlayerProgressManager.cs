@@ -51,7 +51,7 @@ namespace _Chi.Scripts.Mono.System
         public void ResetRun()
         {
             progressData.run = new PlayerRun();
-            progressData.run.bodyId = 1000;
+            progressData.run.bodyId = 1002;
             
             progressData.run.modulesInSlots = new ();
             progressData.run.moduleUpgradeItems = new();
@@ -69,6 +69,8 @@ namespace _Chi.Scripts.Mono.System
             var body = db.GetById(run.bodyId);
             
             player.SetBody(body.prefab);
+            player.RemoveSkills();
+            player.ToggleModuleUpgradesForPlayer(false);
 
             if (run.modulesInSlots != null)
             {
@@ -94,7 +96,7 @@ namespace _Chi.Scripts.Mono.System
                 }
             }
             
-            player.RemoveSkills();
+            player.ToggleModuleUpgradesForPlayer(true);
 
             if (run.skillPrefabIds != null)
             {

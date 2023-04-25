@@ -14,7 +14,7 @@ public class ModuleSlot : MonoBehaviour
     
     [NonSerialized] public Entity parent;
     [NonSerialized] public Module currentModule;
-    
+
     public ModuleSlotType slotType;
 
     public List<ModuleSlot> connectedTo;

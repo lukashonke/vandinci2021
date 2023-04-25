@@ -133,7 +133,7 @@ MonoBehaviour:
   - id: 2001
     label: Gun Module
     enabled: 0
-    description: Shoots bullets at nearby enemies in the direction of the gun.
+    description: --
     type: 3
     predefinedId: 0
     weightSettings:
@@ -147,9 +147,9 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
   - id: 2002
-    label: Large Gun Module
-    enabled: 0
-    description: Shoots enemies in the direction of the vehicle.
+    label: Gun Module
+    enabled: 1
+    description: Shoots nearest enemies. Has a 5 bullet magazine.
     type: 3
     predefinedId: 0
     weightSettings:
@@ -164,7 +164,7 @@ MonoBehaviour:
     additionalTexts: []
   - id: 2003
     label: Ballista Module
-    enabled: 0
+    enabled: 1
     description: Shoots large penetrating arrows in the direction of the vehicle.
     type: 3
     predefinedId: 0
@@ -212,7 +212,7 @@ MonoBehaviour:
     additionalTexts: []
   - id: 2006
     label: Shotgun Module
-    enabled: 0
+    enabled: 1
     description: Short-range high-spread low-fire rate gun.
     type: 3
     predefinedId: 0
@@ -261,6 +261,22 @@ MonoBehaviour:
       alteredWeights: []
     prefab: {fileID: 1232174764404154631, guid: 25d0ca9f407a6de42898ebe5341a2b7e, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 263c03c040e2fc04296f1942616d1050, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 2009
+    label: Machinegun Module
+    enabled: 1
+    description: TODO
+    type: 3
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 1232174764404154631, guid: 437ad5fbb856a944eaa343d3702eab34, type: 3}
+    prefabUi: {fileID: 3314847274656908133, guid: 83071f9a5db77c74393fb8ea33d322ca, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -749,6 +765,22 @@ MonoBehaviour:
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 7d23fef34052b4f4da59434a86fc7834, type: 3}
     skill: {fileID: 11400000, guid: 6a4d5195185ff524a802fb55de0fc5fa, type: 2}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 10020
+    label: Arrow Barrage
+    enabled: 0
+    description: TODO
+    type: 4
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 3314847274656908133, guid: 7d23fef34052b4f4da59434a86fc7834, type: 3}
+    skill: {fileID: 11400000, guid: 19efa62420a1aa04882ce7fb0b4f4a5e, type: 2}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
     playerUpgradeItem: {fileID: 0}
@@ -1362,6 +1394,24 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 0}
     additionalTexts:
     - fire_effect_description
+  - id: 42080
+    label: 'Crossbow: Arrowstorm Invocation'
+    enabled: 1
+    description: Gives you a skill which can be activated to rain down arrows on
+      enemies from behind you into your direction of aiming.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: ef1beb95743ee434cbfd5aad84e2987f, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
   - id: 43000
     label: 'Cannon: Blast Barrage'
     enabled: 1
@@ -1954,6 +2004,54 @@ MonoBehaviour:
     playerUpgradeItem: {fileID: 11400000, guid: b88d43028a12f6f4a9c5fbdc66a15ce5, type: 2}
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
+  - id: 90060
+    label: Damage Upgrade
+    enabled: 1
+    description: Increases overall player's damage.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: bc7069425d42b3d4e96f1e0ae160639e, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90061
+    label: Damage Upgrade
+    enabled: 1
+    description: Increases overall player's damage.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 4cc0a3839ae400245b42546d9aa73362, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 90062
+    label: Damage Upgrade
+    enabled: 1
+    description: Increases overall player's damage.
+    type: 8
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 11400000, guid: 35a8689165c7b0944a79ad61bf407ce3, type: 2}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
   hiddenPrefabs: []
   rewardSets:
   - name: shop_passives_basic
@@ -2199,6 +2297,15 @@ MonoBehaviour:
       price: 2.5
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0
+    - name: 'Rare Crossbow: Arrow Barrage'
+      isInGroup: 1
+      group: 42080
+      levelInGroup: 2
+      prefabId: 42080
+      weight: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
     closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned:
@@ -2372,15 +2479,6 @@ MonoBehaviour:
       group: 
       levelInGroup: 0
       prefabId: 2007
-      weight: 1
-      price: 0
-      priceMultiplyForEveryOwned: 0
-      mustBeUnlocked: 0
-    - name: Ballista Module
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
-      prefabId: 2003
       weight: 1
       price: 0
       priceMultiplyForEveryOwned: 0
@@ -2701,25 +2799,52 @@ MonoBehaviour:
       group: 
       levelInGroup: 0
       prefabId: 90050
+      weight: 9
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Rare Skill Reuse Delay Upgrade
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 90051
+      weight: 3
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Common Damage Upgrade
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 90060
       weight: 1
       price: 0.75
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0
-    - name: Skill Reuse Delay Upgrade
+    - name: Rare Damage Upgrade
       isInGroup: 0
       group: 
       levelInGroup: 0
-      prefabId: 90050
-      weight: 1
+      prefabId: 90061
+      weight: 90000
       price: 0.75
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0
-    - name: Skill Reuse Delay Upgrade
+    - name: Epic Damage Upgrade
       isInGroup: 0
       group: 
       levelInGroup: 0
-      prefabId: 90050
-      weight: 1
+      prefabId: 90062
+      weight: 30000
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      mustBeUnlocked: 0
+    - name: Epic Skill Reuse Delay Upgrade
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      prefabId: 90052
+      weight: 10000
       price: 0.75
       priceMultiplyForEveryOwned: 0
       mustBeUnlocked: 0

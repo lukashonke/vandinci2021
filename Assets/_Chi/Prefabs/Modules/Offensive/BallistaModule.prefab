@@ -63,6 +63,12 @@ MonoBehaviour:
     - Name: additionalEffects
       Entry: 6
       Data: 
+    - Name: additionalOnBulletDestroyEffects
+      Entry: 6
+      Data: 
+    - Name: additionalShootEffectsSelf
+      Entry: 6
+      Data: 
   parent: {fileID: 0}
   slot: {fileID: 0}
   statusbar: {fileID: 0}
@@ -70,6 +76,9 @@ MonoBehaviour:
   targetUpdateInterval: 0.2
   rotationSpeed: 500
   instantRotation: 1
+  maxLevel: 5
+  maxUpgrades: 5
+  reloadProgress: 0
   muzzles: []
   stats:
     projectileCount:
@@ -81,12 +90,21 @@ MonoBehaviour:
     projectileSpreadAngle:
       baseValue: 0.2
       value: 0
+    projectileDelayBetweenConsecutiveShots:
+      baseValue: 0
+      value: 0
     projectileSpeed:
       baseValue: 12
       value: 0
-    fireRate:
+    reloadDuration:
       baseValue: 3
-      value: 1
+      value: 0
+    stationaryFireRateBoost:
+      baseValue: 1
+      value: 0
+    movingFireRateBoost:
+      baseValue: 1
+      value: 0
     projectileDamage:
       baseValue: 20
       value: 20
@@ -113,6 +131,15 @@ MonoBehaviour:
     shotsPerShot:
       baseValue: 1
       value: 0
+    shootOnSkillUse:
+      baseValue: 0
+      value: 0
+    magazineSize:
+      baseValue: 0
+      value: 0
+    fireRate:
+      baseValue: 0
+      value: 1
     projectilePierceChance: 0
     hasAreaEffect: 0
     hasProjectile: 1
@@ -124,14 +151,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e9ee23c6ec6fda646a0ca63e5b6a0d15, type: 2}
   - {fileID: 11400000, guid: 55fb060b0aa775a4eb384d6f7a55d715, type: 2}
   - {fileID: 11400000, guid: 2888de4cdfdab9d49a4833d8ea420960, type: 2}
+  onBulletDestroyEffects: []
   shootVfx: {fileID: 0}
-  shootEffectSelf: {fileID: 0}
+  shootEffectsSelf: []
   affectType: 0
   trailParameters:
     useTrail: 1
     material: {fileID: 2100000, guid: 4694e4e3c9249ba4084dcc1980931f5d, type: 2}
     trailLengthTime: 0.125
   bulletBehavior: 0
+  currentMagazine: 0
+  isReloading: 0
+  temporaryProjectilesUntilNextShot: 0
 --- !u!114 &2526313433823586861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +190,12 @@ MonoBehaviour:
     - Name: additionalEffects
       Entry: 6
       Data: 
+    - Name: additionalOnBulletDestroyEffects
+      Entry: 6
+      Data: 
+    - Name: additionalShootEffectsSelf
+      Entry: 6
+      Data: 
   parent: {fileID: 0}
   slot: {fileID: 0}
   statusbar: {fileID: 0}
@@ -166,6 +203,9 @@ MonoBehaviour:
   targetUpdateInterval: 0.2
   rotationSpeed: 1000
   instantRotation: 0
+  maxLevel: 5
+  maxUpgrades: 5
+  reloadProgress: 0
   muzzles: []
   stats:
     projectileCount:
@@ -177,12 +217,21 @@ MonoBehaviour:
     projectileSpreadAngle:
       baseValue: 5
       value: 0
+    projectileDelayBetweenConsecutiveShots:
+      baseValue: 0
+      value: 0
     projectileSpeed:
       baseValue: 12
       value: 0
-    fireRate:
-      baseValue: 4
-      value: 3
+    reloadDuration:
+      baseValue: 0
+      value: 0
+    stationaryFireRateBoost:
+      baseValue: 0
+      value: 0
+    movingFireRateBoost:
+      baseValue: 0
+      value: 0
     projectileDamage:
       baseValue: 20
       value: 30
@@ -209,6 +258,15 @@ MonoBehaviour:
     shotsPerShot:
       baseValue: 0
       value: 0
+    shootOnSkillUse:
+      baseValue: 0
+      value: 0
+    magazineSize:
+      baseValue: 0
+      value: 0
+    fireRate:
+      baseValue: 4
+      value: 3
     projectilePierceChance: 0
     hasAreaEffect: 0
     hasProjectile: 1
@@ -220,14 +278,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e9ee23c6ec6fda646a0ca63e5b6a0d15, type: 2}
   - {fileID: 11400000, guid: 55fb060b0aa775a4eb384d6f7a55d715, type: 2}
   - {fileID: 11400000, guid: 2888de4cdfdab9d49a4833d8ea420960, type: 2}
+  onBulletDestroyEffects: []
   shootVfx: {fileID: 0}
-  shootEffectSelf: {fileID: 0}
+  shootEffectsSelf: []
   affectType: 0
   trailParameters:
     useTrail: 0
     material: {fileID: 0}
     trailLengthTime: 0
   bulletBehavior: 0
+  currentMagazine: 0
+  isReloading: 0
+  temporaryProjectilesUntilNextShot: 0
   targetType: 0
 --- !u!212 &6177911479989981830
 SpriteRenderer:

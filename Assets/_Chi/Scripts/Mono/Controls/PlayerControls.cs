@@ -46,11 +46,11 @@ public class PlayerControls : MonoBehaviour
         
         _actionses.Skill1.AddDefaultBinding(Key.Space);
         _actionses.Skill1.AddDefaultBinding(InputControlType.Action1);
-        _actionses.Skill2.AddDefaultBinding(Key.Q);
+        _actionses.Skill2.AddDefaultBinding(Key.Key1);
         _actionses.Skill2.AddDefaultBinding(InputControlType.Action2);
-        _actionses.Skill3.AddDefaultBinding(Key.E);
+        _actionses.Skill3.AddDefaultBinding(Key.Key2);
         _actionses.Skill3.AddDefaultBinding(InputControlType.Action3);
-        _actionses.Skill4.AddDefaultBinding(Key.R);
+        _actionses.Skill4.AddDefaultBinding(Key.Key3);
         _actionses.Skill4.AddDefaultBinding(InputControlType.Action4);
     }
     
@@ -99,8 +99,22 @@ public class PlayerControls : MonoBehaviour
     {
         if (_actionses.Skill1.WasPressed)
         {
-            Debug.Log("pressed");
             player.TryActivateSkill(0);
+        }
+        
+        if (_actionses.Skill2.WasPressed)
+        {
+            player.TryActivateSkill(1);
+        }
+        
+        if (_actionses.Skill3.WasPressed)
+        {
+            player.TryActivateSkill(2);
+        }
+        
+        if (_actionses.Skill4.WasPressed)
+        {
+            player.TryActivateSkill(3);
         }
     }
 

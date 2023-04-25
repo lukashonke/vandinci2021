@@ -57,6 +57,8 @@ namespace _Chi.Scripts.Statistics
         
         public Stat receiveDamageAdd = new Stat();
 
+        [FormerlySerializedAs("overallDamageMul")] [FormerlySerializedAs("weaponDamageMul")] public Stat dealtDamageMul = new Stat();
+
         public Stat moduleFireRateMul = new Stat();
 
         public Stat visibilityRange = new Stat();

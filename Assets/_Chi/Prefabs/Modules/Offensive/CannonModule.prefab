@@ -77,6 +77,8 @@ MonoBehaviour:
   targetUpdateInterval: 0.2
   rotationSpeed: 500
   instantRotation: 1
+  maxLevel: 5
+  maxUpgrades: 5
   reloadProgress: 0
   muzzles: []
   stats:
@@ -98,6 +100,9 @@ MonoBehaviour:
     fireRate:
       baseValue: 5.5
       value: 5
+    reloadDuration:
+      baseValue: 5.5
+      value: 0
     stationaryFireRateBoost:
       baseValue: 1
       value: 0
@@ -133,6 +138,12 @@ MonoBehaviour:
     shootOnSkillUse:
       baseValue: 0
       value: 0
+    magazineSize:
+      baseValue: 0
+      value: 0
+    fireRatex:
+      baseValue: 0
+      value: 0
     projectilePierceChance: 0
     hasAreaEffect: 0
     hasProjectile: 1
@@ -152,6 +163,7 @@ MonoBehaviour:
     material: {fileID: 2100000, guid: b3f956a472804ba40812d5f2b3bdbce3, type: 2}
     trailLengthTime: 0.1
   bulletBehavior: 0
+  currentMagazine: 0
   temporaryProjectilesUntilNextShot: 0
 --- !u!212 &6177911479989981830
 SpriteRenderer:
@@ -266,6 +278,8 @@ MonoBehaviour:
   targetUpdateInterval: 0.2
   rotationSpeed: 1500
   instantRotation: 1
+  maxLevel: 5
+  maxUpgrades: 5
   reloadProgress: 0
   muzzles: []
   stats:
@@ -287,6 +301,9 @@ MonoBehaviour:
     fireRate:
       baseValue: 6
       value: 1
+    reloadDuration:
+      baseValue: 0
+      value: 0
     stationaryFireRateBoost:
       baseValue: 0
       value: 0
@@ -322,6 +339,12 @@ MonoBehaviour:
     shootOnSkillUse:
       baseValue: 0
       value: 0
+    magazineSize:
+      baseValue: 0
+      value: 0
+    fireRatex:
+      baseValue: 0
+      value: 0
     projectilePierceChance: 0
     hasAreaEffect: 0
     hasProjectile: 1
@@ -341,6 +364,7 @@ MonoBehaviour:
     material: {fileID: 2100000, guid: b3f956a472804ba40812d5f2b3bdbce3, type: 2}
     trailLengthTime: 0.1
   bulletBehavior: 0
+  currentMagazine: 0
   temporaryProjectilesUntilNextShot: 0
   targetType: 0
 --- !u!1 &1978313152202453299

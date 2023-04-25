@@ -454,6 +454,27 @@ namespace _Chi.Scripts.Mono.Entities
         {
             return slots.FirstOrDefault(s => s.slotId == slotId);
         }
+        
+        public void ToggleModuleUpgradesForPlayer(bool activate)
+        {
+            foreach (var slot in slots)
+            {
+                if (slot.currentModule != null && slot.currentModule.upgrades != null)
+                {
+                    foreach (var upgrade in slot.currentModule.upgrades)
+                    {
+                        if (activate)
+                        {
+                            upgrade.ApplyToPlayer(this);   
+                        }
+                        else
+                        {
+                            upgrade.RemoveFromPlayer(this);
+                        }
+                    }
+                }
+            }
+        }
 
         public void SetModuleInSlot(ModuleSlot slot, GameObject modulePrefab, int level, int rotation, List<ModuleUpgradeItem> moduleUpgradeItems)
         {

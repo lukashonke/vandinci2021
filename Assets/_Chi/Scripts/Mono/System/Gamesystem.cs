@@ -106,7 +106,7 @@ public class Gamesystem : MonoBehaviour
     {
         DebugDistances();
 
-        Debug.Log(CanBeAccessed(Utils.GetMousePosition()));
+        //Debug.Log(CanBeAccessed(Utils.GetMousePosition()));
         
         var time = Time.time;
         int index = 0;

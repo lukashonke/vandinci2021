@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1232174764404154628}
+  - component: {fileID: 5194012141828879709}
   - component: {fileID: -7208284825118671533}
   - component: {fileID: 6177911479989981830}
   - component: {fileID: -1977820923903768266}
   m_Layer: 0
-  m_Name: LargeGunModule
+  m_Name: GunModule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,10 +35,11 @@ Transform:
   - {fileID: 2454567826526104123}
   - {fileID: 2159031452631065957}
   - {fileID: 1780069285429707366}
+  - {fileID: 4344004429154088129}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-7208284825118671533
+--- !u!114 &5194012141828879709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,7 +48,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1232174764404154631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0021365890684c96811d5270826f1e81, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c62ae5e45ff4022893f2a2f1bff2fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
@@ -58,14 +60,28 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: visualItems
+      Entry: 6
+      Data: 
     - Name: additionalEffects
+      Entry: 6
+      Data: 
+    - Name: additionalOnBulletDestroyEffects
+      Entry: 6
+      Data: 
+    - Name: additionalShootEffectsSelf
       Entry: 6
       Data: 
   parent: {fileID: 0}
   slot: {fileID: 0}
+  statusbar: {fileID: 0}
+  upgrades: []
   targetUpdateInterval: 0.2
-  rotationSpeed: 500
+  rotationSpeed: 1500
   instantRotation: 1
+  maxLevel: 5
+  maxUpgrades: 5
+  reloadProgress: 0
   muzzles:
   - {fileID: 1780069285429707366}
   - {fileID: 2159031452631065957}
@@ -79,12 +95,150 @@ MonoBehaviour:
     projectileSpreadAngle:
       baseValue: 5
       value: 0
+    projectileDelayBetweenConsecutiveShots:
+      baseValue: 0.1
+      value: 0
+    projectileSpeed:
+      baseValue: 12
+      value: 0
+    reloadDuration:
+      baseValue: 3.5
+      value: 3
+    stationaryFireRateBoost:
+      baseValue: 1
+      value: 0
+    movingFireRateBoost:
+      baseValue: 1
+      value: 0
+    projectileDamage:
+      baseValue: 7.5
+      value: 20
+    targetRange:
+      baseValue: 6
+      value: 0
+    projectileRange:
+      baseValue: 8
+      value: 0
+    projectileLifetime:
+      baseValue: 0
+      value: 0
+    canProjectilePierce: 0
+    canProjectilePierceUsingDamage: 0
+    projectilePierceCount:
+      baseValue: 1
+      value: 0
+    projectilePushForce:
+      baseValue: 60
+      value: 0
+    projectileScale:
+      baseValue: 0
+      value: 0
+    shotsPerShot:
+      baseValue: 1
+      value: 0
+    shootOnSkillUse:
+      baseValue: 0
+      value: 0
+    magazineSize:
+      baseValue: 5
+      value: 0
+    fireRate:
+      baseValue: 0.3
+      value: 1.6
+    projectilePierceChance: 100
+    hasAreaEffect: 0
+    hasProjectile: 1
+    areaEffectDamage: 0
+    accuracy: 1
+    pushForce: 0
+    effectDuration: 1
+  effects:
+  - {fileID: 11400000, guid: e9ee23c6ec6fda646a0ca63e5b6a0d15, type: 2}
+  - {fileID: 11400000, guid: 55fb060b0aa775a4eb384d6f7a55d715, type: 2}
+  onBulletDestroyEffects: []
+  shootVfx: {fileID: 0}
+  shootEffectsSelf: []
+  affectType: 0
+  trailParameters:
+    useTrail: 1
+    material: {fileID: 2100000, guid: 512009d3278ba8446919ba0d6cf3370f, type: 2}
+    trailLengthTime: 0.1
+  bulletBehavior: 0
+  currentMagazine: 0
+  isReloading: 0
+  temporaryProjectilesUntilNextShot: 0
+  targetType: 0
+--- !u!114 &-7208284825118671533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232174764404154631}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0021365890684c96811d5270826f1e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: visualItems
+      Entry: 6
+      Data: 
+    - Name: additionalEffects
+      Entry: 6
+      Data: 
+    - Name: additionalOnBulletDestroyEffects
+      Entry: 6
+      Data: 
+    - Name: additionalShootEffectsSelf
+      Entry: 6
+      Data: 
+  parent: {fileID: 0}
+  slot: {fileID: 0}
+  statusbar: {fileID: 0}
+  upgrades: []
+  targetUpdateInterval: 0.2
+  rotationSpeed: 500
+  instantRotation: 1
+  maxLevel: 5
+  maxUpgrades: 5
+  reloadProgress: 0
+  muzzles:
+  - {fileID: 1780069285429707366}
+  - {fileID: 2159031452631065957}
+  stats:
+    projectileCount:
+      baseValue: 1
+      value: 1
+    projectileMultiplier:
+      baseValue: 1
+      value: 0
+    projectileSpreadAngle:
+      baseValue: 5
+      value: 0
+    projectileDelayBetweenConsecutiveShots:
+      baseValue: 0.1
+      value: 0
     projectileSpeed:
       baseValue: 8
       value: 0
-    fireRate:
-      baseValue: 1.7
-      value: 1.6
+    reloadDuration:
+      baseValue: 3
+      value: 3
+    stationaryFireRateBoost:
+      baseValue: 1
+      value: 0
+    movingFireRateBoost:
+      baseValue: 1
+      value: 0
     projectileDamage:
       baseValue: 20
       value: 20
@@ -98,12 +252,28 @@ MonoBehaviour:
       baseValue: 0
       value: 0
     canProjectilePierce: 0
+    canProjectilePierceUsingDamage: 0
     projectilePierceCount:
       baseValue: 1
       value: 0
     projectilePushForce:
       baseValue: 60
       value: 0
+    projectileScale:
+      baseValue: 0
+      value: 0
+    shotsPerShot:
+      baseValue: 1
+      value: 0
+    shootOnSkillUse:
+      baseValue: 0
+      value: 0
+    magazineSize:
+      baseValue: 3
+      value: 0
+    fireRate:
+      baseValue: 0.33
+      value: 1.6
     projectilePierceChance: 100
     hasAreaEffect: 0
     hasProjectile: 1
@@ -114,13 +284,18 @@ MonoBehaviour:
   effects:
   - {fileID: 11400000, guid: e9ee23c6ec6fda646a0ca63e5b6a0d15, type: 2}
   - {fileID: 11400000, guid: 55fb060b0aa775a4eb384d6f7a55d715, type: 2}
+  onBulletDestroyEffects: []
   shootVfx: {fileID: 5898446814790275595}
+  shootEffectsSelf: []
   affectType: 0
   trailParameters:
     useTrail: 1
     material: {fileID: 2100000, guid: 512009d3278ba8446919ba0d6cf3370f, type: 2}
     trailLengthTime: 0.1
   bulletBehavior: 0
+  currentMagazine: 0
+  isReloading: 0
+  temporaryProjectilesUntilNextShot: 0
 --- !u!212 &6177911479989981830
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -256,6 +431,80 @@ Transform:
   m_Father: {fileID: 1232174764404154628}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1063628068801926611
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1232174764404154628}
+    m_Modifications:
+    - target: {fileID: -8259172263503992391, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1232174764404154628}
+    - target: {fileID: -8259172263503992391, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: offset.x
+      value: -0.559
+      objectReference: {fileID: 0}
+    - target: {fileID: -8259172263503992391, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: offset.y
+      value: -0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.559
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613974520338816212, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+      propertyPath: m_Name
+      value: Statusbar
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+--- !u!4 &4344004429154088129 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3642221415905698066, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
+  m_PrefabInstance: {fileID: 1063628068801926611}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8323528132064683676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -273,35 +522,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1353106325593054959, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.a
-      value: 1.7e-43
+      value: 1.49e-43
       objectReference: {fileID: 0}
     - target: {fileID: 1353106325593054959, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.b
-      value: 599174660
+      value: 1.0495856e-37
       objectReference: {fileID: 0}
     - target: {fileID: 1353106325593054959, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.g
-      value: 1.7e-43
+      value: 1.49e-43
       objectReference: {fileID: 0}
     - target: {fileID: 1353106325593054959, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.r
-      value: 599188500
+      value: 1.0496098e-37
       objectReference: {fileID: 0}
     - target: {fileID: 2096954885035021029, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.a
-      value: 1.7e-43
+      value: 1.49e-43
       objectReference: {fileID: 0}
     - target: {fileID: 2096954885035021029, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.b
-      value: 599174660
+      value: 1.0495856e-37
       objectReference: {fileID: 0}
     - target: {fileID: 2096954885035021029, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.g
-      value: 1.7e-43
+      value: 1.49e-43
       objectReference: {fileID: 0}
     - target: {fileID: 2096954885035021029, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.r
-      value: 599188500
+      value: 1.0496098e-37
       objectReference: {fileID: 0}
     - target: {fileID: 5878179182258637991, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: m_RootOrder

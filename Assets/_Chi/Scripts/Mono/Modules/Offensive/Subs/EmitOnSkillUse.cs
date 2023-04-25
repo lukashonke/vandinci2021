@@ -16,11 +16,13 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
         public bool fireBeforeSkill;
         public bool fireAfterSkill;
 
+        public Skill skillToUse;
+
         public override void OnSkillUse(Skill skill)
         {
             base.OnSkillUse(skill);
 
-            if (fireBeforeSkill)
+            if (fireBeforeSkill && (skillToUse == null || skillToUse == skill))
             {
                 Emit();
             }
@@ -30,7 +32,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
         {
             base.OnAfterSkillUse(skill);
 
-            if (fireAfterSkill)
+            if (fireAfterSkill && (skillToUse == null || skillToUse == skill))
             {
                 Emit();
             }

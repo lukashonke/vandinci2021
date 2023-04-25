@@ -32,7 +32,7 @@ namespace _Chi.Scripts.Mono.Modules
         public int maxLevel = 5;
 
         public int maxUpgrades = 5;
-
+        
         public List<SetVisualItemSlot> visualItems;
 
         [NonSerialized] public bool effectsActivated;
@@ -44,7 +44,8 @@ namespace _Chi.Scripts.Mono.Modules
         [NonSerialized] public Quaternion originalRotation;
 
         [NonSerialized] public List<(object, ImmediateEffect)> additionalOnPickupGoldEffects;
-
+        
+        //[NonSerialized] public bool destroyed;
 
         public virtual void Awake()
         {

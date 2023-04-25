@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.1132, y: 0.1132}
-  m_SizeDelta: {x: 64.7737, y: 64.7737}
+  m_AnchoredPosition: {x: 0, y: 2.6}
+  m_SizeDelta: {x: 89, y: 89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7188559011349862636
 CanvasRenderer:
@@ -131,7 +131,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -502.2534, y: 25.9745}
-  m_SizeDelta: {x: 65, y: 65}
+  m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6323020762805232199
 CanvasRenderer:
@@ -252,6 +252,8 @@ MonoBehaviour:
     description: 
     type: 0
     predefinedId: 0
+    weightSettings:
+      alteredWeights: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -259,6 +261,7 @@ MonoBehaviour:
     moduleUpgradeItem: {fileID: 0}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
   moduleLevel: 0
 --- !u!114 &8592688767477459362
 MonoBehaviour:

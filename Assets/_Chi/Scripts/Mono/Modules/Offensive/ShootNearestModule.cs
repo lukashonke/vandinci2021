@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
-using _Chi.Scripts.Mono.Ui;
 using _Chi.Scripts.Utilities;
-using BulletPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -37,7 +34,11 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
         {
             yield return new WaitForSeconds(Random.Range(0.05f, 0.5f));
             
+            Vector3 lastPosition = transform.position;
+
             float nextTargetUpdate = Time.time + targetUpdateInterval;
+            
+            float lastFire = 0;
 
             reloadProgress = 0f;
 
@@ -48,21 +49,78 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
             while (activated && parent.CanShoot())
             {
                 yield return null;
+                
+                var currentPosition = transform.position;
 
-                if (startReloadAtTime < Time.time)
+                float boost = 1.0f;
+                
+                var velocity = (currentPosition - lastPosition).magnitude / Time.deltaTime;
+                if (velocity > 1)
                 {
-                    reloadProgress = Mathf.Min(1, reloadProgress + Time.deltaTime / GetFireRate());
+                    boost = stats.movingFireRateBoost.GetValue();
+                }
+                else if (velocity < 0.05f)
+                {
+                    boost = stats.stationaryFireRateBoost.GetValue();
                 }
 
-                RefreshStatusbarReload();
+                if (startReloadAtTime < Time.time && isReloading)
+                {
+                    reloadProgress = Mathf.Min(1, reloadProgress + (Time.deltaTime * boost) / GetFireRate());
+                }
+                
+                lastPosition = currentPosition;
 
+                RefreshStatusbarReload();
+                
+                bool canFire = false;
+                bool startReload = false;
+
+                var magazineSize = stats.magazineSize.GetValueInt();
+                
+                if (reloadProgress >= 1)
+                {
+                    reloadProgress = 0;
+                    
+                    if (magazineSize > 0)
+                    {
+                        currentMagazine = magazineSize;
+                    }
+
+                    canFire = true;
+
+                    if (magazineSize == 0)
+                    {
+                        startReload = true;
+                    }
+
+                    isReloading = false;
+                }
+
+                if (magazineSize > 0 && !isReloading)
+                {
+                    if (currentMagazine > 0)
+                    {
+                        canFire = lastFire + stats.fireRate.GetValue() < Time.time;
+                    }
+
+                    if (currentMagazine <= 0)
+                    {
+                        startReload = true;
+                    }
+                }
+                
+                if(magazineSize == 0 && !isReloading)
+                {
+                    canFire = lastFire + stats.fireRate.GetValue() < Time.time;
+                }
+                
                 if (nextTargetUpdate <= Time.time)
                 {
                     nextTargetUpdate = Time.time + targetUpdateInterval + Random.Range(0.1f, 0.2f);
                     
                     if (targetType == ShootNearestTargetType.NoRotation)
                     {
-                        //emitter.Play();
                     }
                     else
                     {
@@ -71,12 +129,10 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                         if (nearest != null && Utils.Dist2(nearest.GetPosition(), GetPosition()) < Mathf.Pow(stats.targetRange.GetValue(), 2))
                         {
                             currentTarget = nearest.transform;
-                            //emitter.Play();
                         }
                         else
                         {
                             currentTarget = null;
-                            //emitter.Pause();
                         }
                     }
                 }
@@ -85,16 +141,26 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                 
                 if (currentTarget != null)
                 {
-                    if (reloadProgress >= 1)
+                    if (canFire)
                     {
-                        reloadProgress = 0;
+                        lastFire = Time.time;
                         emitter.applyBulletParamsAction = () =>
                         {
                             emitter.ApplyParams(stats, parent, this);
                         };
                         emitter.Play();
                         
-                        startReloadAtTime = Time.time + Math.Max(0, stats.shotsPerShot.GetValue()) * stats.projectileDelayBetweenConsecutiveShots.GetValue();
+                        currentMagazine--;
+                        
+                        if (currentMagazine <= 0)
+                        {
+                            startReload = true;
+                        }
+
+                        if (magazineSize == 0)
+                        {
+                            startReload = true;
+                        }
                     }
                     
                     if (targetType != ShootNearestTargetType.NoRotation)
@@ -105,6 +171,13 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                 else
                 {
                     this.transform.localRotation = originalRotation;
+                }
+                
+                if (startReload)
+                {
+                    reloadProgress = 0;
+                    startReloadAtTime = Time.time + Math.Max(0, stats.shotsPerShot.GetValue()) * stats.projectileDelayBetweenConsecutiveShots.GetValue();
+                    isReloading = true;
                 }
             }
         }
@@ -121,7 +194,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
             return new List<(string title, string value)>()
             {
                 ("Damage", $"{stats.projectileDamage.GetValue()}"),
-                ("Shoot Interval", $"{stats.fireRate.GetValue()}"),
+                ("Shoot Interval", $"{stats.reloadDuration.GetValue()}"),
                 ("Projectiles", $"{stats.projectileCount.GetValue()}"),
             };
         }

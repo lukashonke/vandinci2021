@@ -26,6 +26,8 @@ namespace _Chi.Scripts.Mono.Extensions
             bool isCrit = false;
             if (source is Player player)
             {
+                damage *= player.stats.dealtDamageMul.GetValue();
+                
                 isCrit = IsPlayerDamageCritical(player, damage);
                 if (isCrit)
                 {

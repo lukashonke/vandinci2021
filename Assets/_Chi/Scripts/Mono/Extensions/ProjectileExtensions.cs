@@ -95,7 +95,7 @@ namespace _Chi.Scripts.Mono.Extensions
         
         public static float GetFireRate(Entity entity, OffensiveModuleStats stats)
         {
-            var retValue = stats.fireRate.GetValue();
+            var retValue = stats.reloadDuration.GetValue();
             if (entity is Player player)
             {
                 retValue *= player.stats.moduleFireRateMul.GetValue();

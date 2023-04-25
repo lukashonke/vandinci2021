@@ -127,34 +127,51 @@ public class UiManager : MonoBehaviour
     {
         var player = Gamesystem.instance.objects.currentPlayer;
 
-        for (var index = 0; index < player.skills.Count; index++)
+        for (int index = 0; index < skillIndicators.Length; index++)
         {
-            var skill = player.skills[index];
-            var data = player.GetSkillData(skill);
+            var skillIndicator = skillIndicators[index];
 
-            if (skill.GetReuseDelay(player) > 0)
+            if (player.skills.Count <= index)
             {
-                float reloadPercentage;
-                reloadPercentage = (Time.time - data.lastUse) / skill.GetReuseDelay(player);
-                if (reloadPercentage > 1) reloadPercentage = 1;
-                
-                var wasReloaded = skillIndicators[index].IsReloaded();
-
-                skillIndicators[index].SetReloadPercentage(reloadPercentage);
-                
-                var nowReloaded = skillIndicators[index].IsReloaded();
-
-                if (!wasReloaded && nowReloaded)
+                if (skillIndicator.gameObject.activeSelf)
                 {
-                    player.ResetExtraSkillCharges(skill);
+                    skillIndicator.gameObject.SetActive(false);
                 }
             }
             else
             {
-                skillIndicators[index].SetReloadPercentage(1);
-            }
+                if (!skillIndicator.gameObject.activeSelf)
+                {
+                    skillIndicator.gameObject.SetActive(true);
+                }
+                
+                var skill = player.skills[index];
+                var data = player.GetSkillData(skill);
+
+                if (skill.GetReuseDelay(player) > 0)
+                {
+                    float reloadPercentage;
+                    reloadPercentage = (Time.time - data.lastUse) / skill.GetReuseDelay(player);
+                    if (reloadPercentage > 1) reloadPercentage = 1;
+                
+                    var wasReloaded = skillIndicators[index].IsReloaded();
+
+                    skillIndicators[index].SetReloadPercentage(reloadPercentage);
+                
+                    var nowReloaded = skillIndicators[index].IsReloaded();
+
+                    if (!wasReloaded && nowReloaded)
+                    {
+                        player.ResetExtraSkillCharges(skill);
+                    }
+                }
+                else
+                {
+                    skillIndicators[index].SetReloadPercentage(1);
+                }
             
-            skillIndicators[index].SetSkill(skill);
+                skillIndicators[index].SetSkill(skill);
+            }
         }
     }
 

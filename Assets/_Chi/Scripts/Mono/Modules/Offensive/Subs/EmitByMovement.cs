@@ -67,7 +67,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
 
             if (scaleWithModuleFireRate && parentModule is OffensiveModule offensiveModule)
             {
-                var mul = offensiveModule.stats.fireRate.GetValue() / baselineModuleFireRate;
+                var mul = offensiveModule.stats.reloadDuration.GetValue() / baselineModuleFireRate;
                 rate *= mul;
             }
 

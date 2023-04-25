@@ -12,7 +12,7 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
         {
             if (target is OffensiveModule offensiveModule)
             {
-                offensiveModule.stats.fireRate.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
+                offensiveModule.stats.reloadDuration.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
                 return true;
             }
             
@@ -23,7 +23,7 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
         {
             if (target is OffensiveModule offensiveModule)
             {
-                offensiveModule.stats.fireRate.RemoveModifiersBySource(source);
+                offensiveModule.stats.reloadDuration.RemoveModifiersBySource(source);
                 return true;
             }
 

@@ -2,6 +2,7 @@
 using System.Linq;
 using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Mono.Modules.Offensive.Subs;
+using BulletPro;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -18,7 +19,7 @@ namespace _Chi.Scripts.Scriptables
         public List<ModuleStatsEffect> moduleEffects;
 
         public List<GameObject> addSubEmitters;
-
+        
         public int effectsLevel = 1;
         
         public bool ApplyEffects(Module module)

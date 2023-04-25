@@ -12,6 +12,8 @@ namespace _Chi.Scripts.Scriptables
         
         public List<EntityStatsEffect> effects;
 
+        public List<Skill> addSkills;
+
         public Rarity rarity;
 
         public List<int> unlocksModulePrefabIds;
@@ -44,6 +46,14 @@ namespace _Chi.Scripts.Scriptables
                 {
                     effect.Apply(player, this, 1);
                 }
+
+                if (addSkills != null)
+                {
+                    foreach (var skill in addSkills)
+                    {
+                        player.AddSkill(skill);
+                    }
+                }
             }
         }
 
@@ -54,6 +64,14 @@ namespace _Chi.Scripts.Scriptables
                 foreach (var effect in effects)
                 {
                     effect.Remove(player, this);
+                }
+                
+                if(addSkills != null)
+                {
+                    foreach (var skill in addSkills)
+                    {
+                        player.RemoveSkill(skill);
+                    }
                 }
             }
         }

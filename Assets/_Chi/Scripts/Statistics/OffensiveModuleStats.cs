@@ -1,5 +1,6 @@
 ﻿using System;
 using _Chi.Scripts.Mono.Common;
+using UnityEngine.Serialization;
 
 namespace _Chi.Scripts.Statistics
 {
@@ -16,8 +17,8 @@ namespace _Chi.Scripts.Statistics
         
         public Stat projectileSpeed = new Stat();
 
-        public Stat fireRate = new Stat();
-
+        public Stat reloadDuration = new Stat();
+        
         public Stat stationaryFireRateBoost = new Stat();
 
         public Stat movingFireRateBoost = new Stat();
@@ -44,6 +45,10 @@ namespace _Chi.Scripts.Statistics
 
         public Stat shootOnSkillUse = new Stat();
         
+        public Stat magazineSize = new Stat();
+
+        public Stat fireRate = new Stat();
+        
         public float projectilePierceChance;
 
         public bool hasAreaEffect = false;
@@ -56,6 +61,5 @@ namespace _Chi.Scripts.Statistics
         public float pushForce = 0;
 
         public float effectDuration = 1f;
-
     }
 }
