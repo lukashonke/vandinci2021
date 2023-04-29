@@ -83,10 +83,10 @@ MonoBehaviour:
   muzzles: []
   stats:
     projectileCount:
-      baseValue: 3
+      baseValue: 1
       value: 3
     projectileMultiplier:
-      baseValue: 3
+      baseValue: 5
       value: 0
     projectileSpreadAngle:
       baseValue: 5

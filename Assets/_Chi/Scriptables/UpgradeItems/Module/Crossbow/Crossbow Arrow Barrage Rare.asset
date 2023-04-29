@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 679fb96d917f459886fbab0a11f0407a, type: 3}
-  m_Name: Crossbow Arrow Barrage
+  m_Name: Crossbow Arrow Barrage Rare
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2

@@ -53,12 +53,19 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: visualItems
+      Entry: 6
+      Data: 
   parent: {fileID: 0}
   slot: {fileID: 0}
+  statusbar: {fileID: 0}
+  upgrades: []
   targetUpdateInterval: 0.2
   rotationSpeed: 500
   instantRotation: 1
+  maxLevel: 3
+  maxUpgrades: 3
   effects:
   - {fileID: 11400000, guid: a4d73f2d1b896d64eacc092cba6bfc2b, type: 2}
 --- !u!212 &6177911479989981830

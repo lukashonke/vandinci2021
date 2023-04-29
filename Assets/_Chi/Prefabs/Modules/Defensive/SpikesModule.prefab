@@ -82,9 +82,13 @@ MonoBehaviour:
       Data: 
   parent: {fileID: 0}
   slot: {fileID: 0}
+  statusbar: {fileID: 0}
+  upgrades: []
   targetUpdateInterval: 0.2
   rotationSpeed: 500
   instantRotation: 1
+  maxLevel: 3
+  maxUpgrades: 3
   effects:
   - {fileID: 11400000, guid: 9379f6d88783fea40be6d806ed8cb052, type: 2}
 --- !u!212 &6177911479989981830

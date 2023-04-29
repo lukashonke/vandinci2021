@@ -140,7 +140,7 @@ MonoBehaviour:
       baseValue: 10
       value: 0
     reloadDuration:
-      baseValue: 2.5
+      baseValue: 6
       value: 2.5
     stationaryFireRateBoost:
       baseValue: 1

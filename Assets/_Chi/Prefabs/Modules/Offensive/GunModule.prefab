@@ -103,7 +103,7 @@ MonoBehaviour:
       value: 0
     reloadDuration:
       baseValue: 3.5
-      value: 3
+      value: 3.5
     stationaryFireRateBoost:
       baseValue: 1
       value: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
       value: 0
     projectileDamage:
       baseValue: 7.5
-      value: 20
+      value: 7.5
     targetRange:
       baseValue: 6
       value: 0
