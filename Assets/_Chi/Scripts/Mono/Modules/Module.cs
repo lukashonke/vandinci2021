@@ -45,6 +45,10 @@ namespace _Chi.Scripts.Mono.Modules
 
         [NonSerialized] public List<(object, ImmediateEffect)> additionalOnPickupGoldEffects;
         
+        [NonSerialized] public List<(object, ImmediateEffect)> additionalOnMagazineReloadEffects;
+        
+        [NonSerialized] public List<(object, ImmediateEffect)> additionalOnSkillUseEffects;
+        
         //[NonSerialized] public bool destroyed;
 
         public virtual void Awake()
@@ -52,6 +56,8 @@ namespace _Chi.Scripts.Mono.Modules
             parent = GetComponentInParent<Entity>();
 
             additionalOnPickupGoldEffects = new();
+            additionalOnMagazineReloadEffects = new();
+            additionalOnSkillUseEffects = new();
 
             originalRotation = transform.rotation;
         }
@@ -202,6 +208,14 @@ namespace _Chi.Scripts.Mono.Modules
                     }
                 }
             }
+            
+            if (additionalOnSkillUseEffects != null)
+            {
+                foreach (var effect in additionalOnSkillUseEffects)
+                {
+                    effect.Item2.ApplyWithChanceCheck(parent, parent.GetPosition(), parent, null, this, 1f, new ImmediateEffectParams(), ImmediateEffectFlags.None);
+                }
+            }
         }
 
         public virtual List<(string title, string value)> GetUiStats(int level) => null;
@@ -212,7 +226,18 @@ namespace _Chi.Scripts.Mono.Modules
             {
                 foreach (var effect in additionalOnPickupGoldEffects)
                 {
-                    effect.Item2.Apply(parent, parent.GetPosition(), parent, null, this, amount, new ImmediateEffectParams(), ImmediateEffectFlags.None);
+                    effect.Item2.ApplyWithChanceCheck(parent, parent.GetPosition(), parent, null, this, amount, new ImmediateEffectParams(), ImmediateEffectFlags.None);
+                }
+            }
+        }
+
+        public virtual void OnMagazineReload()
+        {
+            if (additionalOnMagazineReloadEffects != null)
+            {
+                foreach (var effect in additionalOnMagazineReloadEffects)
+                {
+                    effect.Item2.ApplyWithChanceCheck(parent, parent.GetPosition(), parent, null, this, 1f, new ImmediateEffectParams(), ImmediateEffectFlags.None);
                 }
             }
         }

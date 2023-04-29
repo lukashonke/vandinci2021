@@ -46,6 +46,20 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                             offensiveModule.additionalOnPickupGoldEffects.Add((source, effect));
                         }
                     }
+                    else if (effectType == EffectType.OnMagazineReload)
+                    {
+                        if (!offensiveModule.additionalOnMagazineReloadEffects.Contains((source, effect)))
+                        {
+                            offensiveModule.additionalOnMagazineReloadEffects.Add((source, effect));
+                        }
+                    }
+                    else if (effectType == EffectType.OnSkillUse)
+                    {
+                        if (!offensiveModule.additionalOnSkillUseEffects.Contains((source, effect)))
+                        {
+                            offensiveModule.additionalOnSkillUseEffects.Add((source, effect));
+                        }
+                    }
                 }
                 
                 return true;
@@ -88,6 +102,20 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                             offensiveModule.additionalOnPickupGoldEffects.Remove((source, effect));
                         }
                     }
+                    else if (effectType == EffectType.OnMagazineReload)
+                    {
+                        if (offensiveModule.additionalOnMagazineReloadEffects.Contains((source, effect)))
+                        {
+                            offensiveModule.additionalOnMagazineReloadEffects.Remove((source, effect));
+                        }
+                    }
+                    else if (effectType == EffectType.OnSkillUse)
+                    {
+                        if (offensiveModule.additionalOnSkillUseEffects.Contains((source, effect)))
+                        {
+                            offensiveModule.additionalOnSkillUseEffects.Remove((source, effect));
+                        }
+                    }
                 }
                 return true;
             }
@@ -113,6 +141,8 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
         Default,
         OnBulletDestroy,
         SelfOnShoot,
-        OnPickupGold
+        OnPickupGold,
+        OnMagazineReload,
+        OnSkillUse,
     }
 }

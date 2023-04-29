@@ -54,6 +54,7 @@ namespace _Chi.Scripts.Mono.Modules
         [ReadOnly] public bool isReloading;
         
         public int temporaryProjectilesUntilNextShot = 0;
+        [FormerlySerializedAs("temporaryProjectilesForCurrentOrNextMagazine")] public int temporaryProjectilesForNextMagazine = 0;
 
         public override void Awake()
         {
@@ -119,7 +120,7 @@ namespace _Chi.Scripts.Mono.Modules
             {
                 foreach (var eff in shootEffectsSelf)
                 {
-                    eff.Apply(parent, parent.GetPosition(), parent, null, this, 1f, new ImmediateEffectParams());
+                    eff.ApplyWithChanceCheck(parent, parent.GetPosition(), parent, null, this, 1f, new ImmediateEffectParams());
                 }
             }
             
@@ -127,7 +128,7 @@ namespace _Chi.Scripts.Mono.Modules
             {
                 foreach (var (source, eff) in additionalShootEffectsSelf)
                 {
-                    eff.Apply(parent, parent.GetPosition(), parent, null, this, 1f, new ImmediateEffectParams());
+                    eff.ApplyWithChanceCheck(parent, parent.GetPosition(), parent, null, this, 1f, new ImmediateEffectParams());
                 }
             }
         }
@@ -177,12 +178,39 @@ namespace _Chi.Scripts.Mono.Modules
             }
         }
 
-        public float GetFireRate()
+        public float GetReloadDuration()
         {
             var retValue = stats.reloadDuration.GetValue();
             if (parent is Player player)
             {
-                retValue *= player.stats.moduleFireRateMul.GetValue();
+                retValue *= player.stats.moduleReloadDurationMul.GetValue();
+
+                /*if (player.IsMoving())
+                {
+                    retValue *= stats.movingReloadDurationBoost.GetValue();
+                }
+                else
+                {
+                    retValue *= stats.stationaryReloadDurationBoost.GetValue();
+                }*/
+            }
+
+            return retValue;
+        }
+        
+        public float GetFireRate()
+        {
+            var retValue = stats.fireRate.GetValue();
+            if (parent is Player player)
+            {
+                if (player.IsMoving())
+                {
+                    retValue *= stats.movingFireRateBoost.GetValue();
+                }
+                else
+                {
+                    retValue *= stats.stationaryFireRateBoost.GetValue();
+                }
             }
 
             return retValue;
@@ -192,15 +220,32 @@ namespace _Chi.Scripts.Mono.Modules
         {
             reloadProgress = Mathf.Min(1, reloadProgress + percent);
         }
+
+        public void ReplenishMagazine()
+        {
+            currentMagazine = stats.magazineSize.GetValueInt();
+        }
         
         public void AddRechargeFireProgressTime(float time)
         {
-            reloadProgress = Mathf.Min(1, reloadProgress + (time) / GetFireRate());
+            reloadProgress = Mathf.Min(1, reloadProgress + (time) / GetReloadDuration());
         }
-
+        
         public void AddTemporaryProjectileUntilNextShot(int projectiles)
         {
             temporaryProjectilesUntilNextShot += projectiles;
+        }
+
+        public void AddTemporaryProjectileForCurrentOrNextMagazine(int projectiles)
+        {
+            if (isReloading)
+            {
+                temporaryProjectilesForNextMagazine += projectiles;   
+            }
+            else
+            {
+                currentMagazine += projectiles;
+            }        
         }
 
         protected void RefreshStatusbarReload()

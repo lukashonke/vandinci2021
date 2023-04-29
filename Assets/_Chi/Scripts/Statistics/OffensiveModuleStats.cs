@@ -1,6 +1,5 @@
 ﻿using System;
 using _Chi.Scripts.Mono.Common;
-using UnityEngine.Serialization;
 
 namespace _Chi.Scripts.Statistics
 {
@@ -19,9 +18,9 @@ namespace _Chi.Scripts.Statistics
 
         public Stat reloadDuration = new Stat();
         
-        public Stat stationaryFireRateBoost = new Stat();
+        public Stat stationaryReloadDurationBoost = new Stat();
 
-        public Stat movingFireRateBoost = new Stat();
+        public Stat movingReloadDurationBoost = new Stat();
 
         public Stat projectileDamage = new Stat();
         
@@ -36,7 +35,9 @@ namespace _Chi.Scripts.Statistics
         public int canProjectilePierceUsingDamage = 0;
         
         public Stat projectilePierceCount = new Stat();
-
+        
+        public Stat projectilePierceChance = new Stat();
+        
         public Stat projectilePushForce = new Stat();
 
         public Stat projectileScale = new Stat();
@@ -49,8 +50,18 @@ namespace _Chi.Scripts.Statistics
 
         public Stat fireRate = new Stat();
         
-        public float projectilePierceChance;
+        public Stat stationaryFireRateBoost = new Stat();
 
+        public Stat movingFireRateBoost = new Stat();
+        
+        public Stat projectileCriticalRate = new Stat();
+        
+        public Stat projectileCriticalDamage = new Stat();
+
+        public Stat armorPiercing = new Stat();
+        
+        public Stat instantReloadChance = new Stat();
+        
         public bool hasAreaEffect = false;
         public bool hasProjectile = true;
 

@@ -25,6 +25,7 @@ MonoBehaviour:
   uiDescription: After skill use, shoots out current projectile count x 6, in 360
     degree.
   effects: []
+  addSkills: []
   rarity: 1
   unlocksModulePrefabIds: 
   disablesModulePrefabIds: 

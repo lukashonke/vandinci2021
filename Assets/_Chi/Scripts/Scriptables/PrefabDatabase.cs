@@ -62,7 +62,7 @@ namespace _Chi.Scripts.Scriptables
         }
         
         [AssetsOnly]
-        [TableList(AlwaysExpanded = true)]
+        [TableList()]
         [TabGroup("Prefabs")]
         public List<PrefabItem> prefabs;
 
@@ -83,6 +83,8 @@ namespace _Chi.Scripts.Scriptables
         [Required] public DamageNumber playerDealtDamage;
         [TabGroup("Misc")]
         [Required] public DamageNumber playerGoldReceived;
+        [TabGroup("Misc")]
+        [Required] public DamageNumber selfEffect;
 
         public void Initialise()
         {

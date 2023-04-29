@@ -177,7 +177,7 @@ namespace _Chi.Scripts.Scriptables.Skills
                     {
                         if (npc.CanBePushed())
                         {
-                            shockwaveEffect.Apply(npc, npc.GetPosition(), player, null, null, shockwaveStrength, new ImmediateEffectParams());
+                            shockwaveEffect.ApplyWithChanceCheck(npc, npc.GetPosition(), player, null, null, shockwaveStrength, new ImmediateEffectParams());
                         }
 
                         var additionalEffects = GetAdditionalEffects(player);
@@ -185,7 +185,7 @@ namespace _Chi.Scripts.Scriptables.Skills
                         {
                             foreach (var effect in additionalEffects)
                             {
-                                effect.Apply(npc, npc.GetPosition(), player, null, null, 1, new ImmediateEffectParams());
+                                effect.ApplyWithChanceCheck(npc, npc.GetPosition(), player, null, null, 1, new ImmediateEffectParams());
                             }
                         }
                     }

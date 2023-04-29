@@ -104,10 +104,10 @@ MonoBehaviour:
     reloadDuration:
       baseValue: 3.5
       value: 3.5
-    stationaryFireRateBoost:
+    stationaryReloadDurationBoost:
       baseValue: 1
       value: 0
-    movingFireRateBoost:
+    movingReloadDurationBoost:
       baseValue: 1
       value: 0
     projectileDamage:
@@ -127,6 +127,9 @@ MonoBehaviour:
     projectilePierceCount:
       baseValue: 1
       value: 0
+    projectilePierceChance:
+      baseValue: 0
+      value: 0
     projectilePushForce:
       baseValue: 60
       value: 0
@@ -145,7 +148,24 @@ MonoBehaviour:
     fireRate:
       baseValue: 0.3
       value: 1.6
-    projectilePierceChance: 100
+    stationaryFireRateBoost:
+      baseValue: 1
+      value: 0
+    movingFireRateBoost:
+      baseValue: 1
+      value: 0
+    projectileCriticalRate:
+      baseValue: 0
+      value: 0
+    projectileCriticalDamage:
+      baseValue: 2
+      value: 0
+    armorPiercing:
+      baseValue: 0
+      value: 0
+    instantReloadChance:
+      baseValue: 0
+      value: 0
     hasAreaEffect: 0
     hasProjectile: 1
     areaEffectDamage: 0
@@ -167,6 +187,7 @@ MonoBehaviour:
   currentMagazine: 0
   isReloading: 0
   temporaryProjectilesUntilNextShot: 0
+  temporaryProjectilesForNextMagazine: 0
   targetType: 0
 --- !u!114 &-7208284825118671533
 MonoBehaviour:
@@ -233,11 +254,11 @@ MonoBehaviour:
     reloadDuration:
       baseValue: 3
       value: 3
-    stationaryFireRateBoost:
-      baseValue: 1
+    stationaryReloadDurationBoost:
+      baseValue: 0
       value: 0
-    movingFireRateBoost:
-      baseValue: 1
+    movingReloadDurationBoost:
+      baseValue: 0
       value: 0
     projectileDamage:
       baseValue: 20
@@ -255,6 +276,9 @@ MonoBehaviour:
     canProjectilePierceUsingDamage: 0
     projectilePierceCount:
       baseValue: 1
+      value: 0
+    projectilePierceChance:
+      baseValue: 0
       value: 0
     projectilePushForce:
       baseValue: 60
@@ -274,7 +298,24 @@ MonoBehaviour:
     fireRate:
       baseValue: 0.33
       value: 1.6
-    projectilePierceChance: 100
+    stationaryFireRateBoost:
+      baseValue: 1
+      value: 0
+    movingFireRateBoost:
+      baseValue: 1
+      value: 0
+    projectileCriticalRate:
+      baseValue: 0
+      value: 0
+    projectileCriticalDamage:
+      baseValue: 0
+      value: 0
+    armorPiercing:
+      baseValue: 0
+      value: 0
+    instantReloadChance:
+      baseValue: 0
+      value: 0
     hasAreaEffect: 0
     hasProjectile: 1
     areaEffectDamage: 0
@@ -296,6 +337,7 @@ MonoBehaviour:
   currentMagazine: 0
   isReloading: 0
   temporaryProjectilesUntilNextShot: 0
+  temporaryProjectilesForNextMagazine: 0
 --- !u!212 &6177911479989981830
 SpriteRenderer:
   m_ObjectHideFlags: 0

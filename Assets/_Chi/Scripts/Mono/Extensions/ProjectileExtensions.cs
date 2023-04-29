@@ -98,7 +98,16 @@ namespace _Chi.Scripts.Mono.Extensions
             var retValue = stats.reloadDuration.GetValue();
             if (entity is Player player)
             {
-                retValue *= player.stats.moduleFireRateMul.GetValue();
+                retValue *= player.stats.moduleReloadDurationMul.GetValue();
+                
+                if (player.IsMoving())
+                {
+                    retValue *= stats.movingReloadDurationBoost.GetValue();
+                }
+                else
+                {
+                    retValue *= stats.stationaryReloadDurationBoost.GetValue();
+                }
             }
 
             return retValue;

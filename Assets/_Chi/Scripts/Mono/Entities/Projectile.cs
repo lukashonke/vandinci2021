@@ -9,6 +9,7 @@ using _Chi.Scripts.Statistics;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Object = System.Object;
+using Random = UnityEngine.Random;
 
 namespace _Chi.Scripts.Mono.Entities
 {
@@ -89,14 +90,14 @@ namespace _Chi.Scripts.Mono.Entities
             for (var index = 0; index < effects.Count; index++)
             {
                 var effect = effects[index];
-                effect.Apply(entity, entity.GetPosition(), owner, null, ownerModule, baseStrength, new ImmediateEffectParams());
+                effect.ApplyWithChanceCheck(entity, entity.GetPosition(), owner, null, ownerModule, baseStrength, new ImmediateEffectParams());
 
                 if (!noDespawnAfterHit)
                 {
                     bool deactivate = false;
                     if (hasOwnerModule && ownerModule is OffensiveModule offensiveModule)
                     {
-                        if (offensiveModule.stats.canProjectilePierce > 0)
+                        if (offensiveModule.stats.canProjectilePierce > 0 && Random.value < offensiveModule.stats.projectilePierceChance.GetValue())
                         {
                             stats.piercedEnemies++;
                             if (stats.piercedEnemies >= offensiveModule.stats.projectilePierceCount.GetValueInt())

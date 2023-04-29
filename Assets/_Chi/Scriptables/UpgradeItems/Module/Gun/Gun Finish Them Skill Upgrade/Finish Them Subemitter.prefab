@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1687548640031416139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7548371126169717171}
+  - component: {fileID: 1444033952973772471}
+  - component: {fileID: -4768253317328698135}
+  m_Layer: 0
+  m_Name: Finish Them Subemitter
+  m_TagString: LookAtParent
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7548371126169717171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687548640031416139}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.9655329, y: -0.7786689, z: 0.09276754}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1444033952973772471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687548640031416139}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a676b285f069c3c4884c27e78d0fc696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emitterProfile: {fileID: 11400000, guid: 691bedf900fe8af428feb21bed87ab11, type: 2}
+  patternOrigin: {fileID: 7548371126169717171}
+  playAtStart: 0
+  shootInstruction:
+    m_PersistentCalls:
+      m_Calls: []
+  useDefaultGizmoColor: 1
+  gizmoColor: {r: 0, g: 1, b: 0, a: 1}
+  gizmoSize: 0.5
+--- !u!114 &-4768253317328698135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687548640031416139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e4f676b85014fd1b99fc6fc8dfd2e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropProjectile: {fileID: 8251612291115825949, guid: 3b373b8a5ec3b284a95e80ce03f7cd53, type: 3}
+  dropProjectileLifetime: 0.33
+  dropProjectileRadius: 0.1
+  triggerType: 1
+  targetType: 1
+  targetCountType: 1
+  maxDistance2ToTarget: 64
+  triggerChance: 1
+  trigeringSkill: {fileID: 11400000, guid: 6ef8088a4fd79dd4eaf03eebf2b50410, type: 2}
+  hitTargets: 50
+  effectFlags: 4

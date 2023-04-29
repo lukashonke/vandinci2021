@@ -24,11 +24,15 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
             flags |= forcedFlags;
             
             var sourceDamage = baseDamage * defaultStrength;
-            if (!flags.HasFlag(ImmediateEffectFlags.FixedDamage) && sourceModule is OffensiveModule offensiveModule && !effect.HasValue)
-            {
-                sourceDamage = offensiveModule.stats.projectileDamage.GetValue();
-            }
 
+            if (sourceModule is OffensiveModule offensiveModule)
+            {
+                if (!flags.HasFlag(ImmediateEffectFlags.FixedDamage) && !effect.HasValue)
+                {
+                    sourceDamage = offensiveModule.stats.projectileDamage.GetValue();
+                }
+            }
+            
             /*if (flags.HasFlag(ImmediateEffectFlags.DamageFromModuleProjectileStrength))
             {
                 sourceDamage = offensiveModule.stats.projectileDamage.GetValue();
@@ -36,7 +40,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
             
             sourceDamage *= damageMul;
             
-            var dmgWithFlags = DamageExtensions.CalculateEffectDamage(sourceDamage, target, sourceEntity);
+            var dmgWithFlags = DamageExtensions.CalculateEffectDamage(sourceDamage, target, sourceEntity, sourceModule, flags);
             target.ReceiveDamage(dmgWithFlags.damage, sourceEntity, dmgWithFlags.flags, damageTextColor);
             return true;
         }    

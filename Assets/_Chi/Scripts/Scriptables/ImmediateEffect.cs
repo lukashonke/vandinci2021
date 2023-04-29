@@ -12,6 +12,19 @@ namespace _Chi.Scripts.Scriptables
         public StatOrders order = StatOrders.ImmediateEffect;
         
         public ImmediateEffectFlags forcedFlags = ImmediateEffectFlags.None;
+
+        [Range(0,1)]
+        public float chance = 1.0f;
+
+        public bool ApplyWithChanceCheck(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
+        {
+            if(chance < 1.0f && UnityEngine.Random.value > chance)
+            {
+                return false;
+            }
+            
+            return Apply(target, targetPosition, sourceEntity, sourceItem, sourceModule, strength, parameters, flags);
+        }
         
         public abstract bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None);
     }
@@ -22,6 +35,7 @@ namespace _Chi.Scripts.Scriptables
         None = 0,
         FixedDamage = 1 << 0,
         DamageFromModuleProjectileStrength = 1 << 1,
+        ForceModuleCritical = 1 << 2,
     }
 
     public struct ImmediateEffectParams

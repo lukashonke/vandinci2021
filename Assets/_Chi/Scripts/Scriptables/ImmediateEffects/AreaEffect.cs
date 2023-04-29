@@ -82,7 +82,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
                     for (var index = 0; index < effects.Count; index++)
                     {
                         var effect = effects[index];
-                        effect.Apply(entity, entity.GetPosition(), sourceEntity, sourceItem, sourceModule, strength, new ImmediateEffectParams());
+                        effect.ApplyWithChanceCheck(entity, entity.GetPosition(), sourceEntity, sourceItem, sourceModule, strength, new ImmediateEffectParams());
                     }
                 }
             }

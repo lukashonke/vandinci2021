@@ -142,10 +142,10 @@ MonoBehaviour:
     reloadDuration:
       baseValue: 6
       value: 2.5
-    stationaryFireRateBoost:
+    stationaryReloadDurationBoost:
       baseValue: 1
       value: 0
-    movingFireRateBoost:
+    movingReloadDurationBoost:
       baseValue: 1
       value: 0
     projectileDamage:
@@ -183,6 +183,12 @@ MonoBehaviour:
     fireRate:
       baseValue: 0.12
       value: 2.2
+    stationaryFireRateBoost:
+      baseValue: 1
+      value: 0
+    movingFireRateBoost:
+      baseValue: 1
+      value: 0
     projectilePierceChance: 0
     hasAreaEffect: 0
     hasProjectile: 1
@@ -205,6 +211,7 @@ MonoBehaviour:
   currentMagazine: 0
   isReloading: 0
   temporaryProjectilesUntilNextShot: 0
+  temporaryProjectilesForNextMagazine: 0
   targetType: 0
 --- !u!212 &6177911479989981830
 SpriteRenderer:

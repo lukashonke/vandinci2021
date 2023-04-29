@@ -174,7 +174,9 @@ namespace _Chi.Scripts.Mono.Common
     {
         Base = 1,
         Upgrade = 10,
+        PostUpgrade = 15,
         ImmediateEffect = 20,
+        PostImmediateEffect = 25,
         EnvironmentEffect = 30
     }
 }

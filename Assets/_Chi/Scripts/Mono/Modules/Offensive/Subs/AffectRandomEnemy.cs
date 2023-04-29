@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
@@ -6,8 +7,11 @@ using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Misc;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Utilities;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Pool;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
 {
@@ -20,6 +24,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
 
         public AffectRandomEnemyTriggerType triggerType;
         public AffectRandomEnemyTargetType targetType;
+        public AffectCountType targetCountType;
 
         public float maxDistance2ToTarget;
         
@@ -29,6 +34,16 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
 
         [Range(0, 1)] public float triggerChance = 1f;
 
+        [ShowIf("triggerType", AffectRandomEnemyTriggerType.OnSkillUse)]
+        public Skill trigeringSkill;
+
+        [ShowIf("targetCountType", AffectCountType.Fixed)]
+        public int hitTargets = 1;
+
+        public ImmediateEffectFlags effectFlags;
+        
+        //TODO hp condition
+        
         public override void Awake()
         {
             base.Awake();
@@ -44,16 +59,22 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
             {
                 yield return new WaitForSeconds(0.5f);
 
-                if (targetType == AffectRandomEnemyTargetType.RandomEnemy)
+                if (parentModule.parent is Player player)
                 {
-                    if (parentModule.parent is Player player)
+                    potentialTargets.Clear();
+                    var playerPos = player.GetPosition();
+                    
+                    if (targetType == AffectRandomEnemyTargetType.RandomEnemy || targetType == AffectRandomEnemyTargetType.RandomEnemyWithHpLessThanDamage);
                     {
-                        potentialTargets.Clear();
-                        var playerPos = player.GetPosition();
-
+                        var maxHp = targetType == AffectRandomEnemyTargetType.RandomEnemyWithHpLessThanDamage 
+                            ? DamageExtensions.CalculateModuleDamage(parentModule, player, true, false) 
+                            : int.MaxValue;
+                        
                         foreach (var entity in player.targetableEnemies)
                         {
-                            if (CanTarget(entity, player) && Utils.Dist2(entity.GetPosition(), playerPos) < maxDistance2ToTarget)
+                            if (CanTarget(entity, player) 
+                                && Utils.Dist2(entity.GetPosition(), playerPos) < maxDistance2ToTarget 
+                                && entity.entityStats.hp <= maxHp)
                             {
                                 potentialTargets.Add(entity);
                             }
@@ -69,18 +90,60 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
             
             if (triggerType == AffectRandomEnemyTriggerType.OnShoot && Random.Range(0f, 1f) < triggerChance)
             {
-                if (parentModule.parent is Player player && potentialTargets.Count > 0 && parentModule is OffensiveModule offensiveModule)
-                {
-                    for (int i = 0; i < offensiveModule.stats.projectileCount.GetValueInt(); i++)
-                    {
-                        var randomTarget = potentialTargets[Random.Range(0, potentialTargets.Count)];
+                Shoot();
+            }
+        }
+        
+        public override void OnSkillUse(Skill skill)
+        {
+            base.OnSkillUse(skill);
 
-                        if (CanTarget(randomTarget, player))
-                        {
-                            Fire(randomTarget);
-                        }
+            if (triggerType == AffectRandomEnemyTriggerType.OnSkillUse && (trigeringSkill == null || trigeringSkill == skill) && Random.Range(0f, 1f) < triggerChance)
+            {
+                Shoot();
+            }
+        }
+        
+        private void Shoot()
+        {
+            if (parentModule.parent is Player player && potentialTargets.Count > 0 && parentModule is OffensiveModule offensiveModule)
+            {
+                var count = 0;
+
+                switch (targetCountType)
+                {
+                    case AffectCountType.ProjectilesShot:
+                        count = offensiveModule.stats.projectileCount.GetValueInt();
+                        break;
+                    case AffectCountType.Fixed:
+                        count = hitTargets;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+                
+                List<Entity> hits = ListPool<Entity>.Get();
+                
+                hits.AddRange(potentialTargets);
+
+                for (int i = 0; i < count; i++)
+                {
+                    if (hits.Count == 0)
+                    {
+                        break;
+                    }
+                    
+                    var randomTarget = hits[Random.Range(0, hits.Count)];
+                    
+                    hits.Remove(randomTarget);
+                    
+                    if (CanTarget(randomTarget, player))
+                    {
+                        Fire(randomTarget);
                     }
                 }
+                
+                ListPool<Entity>.Release(hits);
             }
         }
 
@@ -117,7 +180,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
                 
                 foreach (var effect in effects)
                 {
-                    effect.Apply(target, target.GetPosition(), parentModule.parent, null, parentModule, 1, new ImmediateEffectParams());
+                    effect.ApplyWithChanceCheck(target, target.GetPosition(), parentModule.parent, null, parentModule, 1, new ImmediateEffectParams(), effectFlags);
                 }
                 
                 var additionalEffects = offensiveModule.additionalEffects;
@@ -132,7 +195,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
 
                         if (!list.Contains(effect))
                         {
-                            effect.Apply(target, target.GetPosition(), parentModule.parent, null, parentModule, 1, new ImmediateEffectParams());
+                            effect.ApplyWithChanceCheck(target, target.GetPosition(), parentModule.parent, null, parentModule, 1, new ImmediateEffectParams(), effectFlags);
                             list.Add(effect);
                         } 
                     }
@@ -149,10 +212,18 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
     public enum AffectRandomEnemyTriggerType
     {
         OnShoot,
+        OnSkillUse
     }
     
     public enum AffectRandomEnemyTargetType
     {
         RandomEnemy,
+        RandomEnemyWithHpLessThanDamage
+    }
+
+    public enum AffectCountType
+    {
+        ProjectilesShot,
+        Fixed
     }
 }

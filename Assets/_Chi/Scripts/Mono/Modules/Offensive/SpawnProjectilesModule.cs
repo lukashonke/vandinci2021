@@ -107,7 +107,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
 
             float nextTargetUpdate = Time.time + targetUpdateInterval;
 
-            float nextFire = Time.time + GetFireRate();
+            float nextFire = Time.time + GetReloadDuration();
 
             //var prefabProjectile = prefab.GetComponent<Projectile>();
             
@@ -137,7 +137,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                 
                 if (nextFire < Time.time/* && ProjectileExtensions.CanFire(currentTarget.position, transform.rotation, transform.position, 5f)*/)
                 {
-                    nextFire = Time.time + GetFireRate();
+                    nextFire = Time.time + GetReloadDuration();
 
                     for (int i = 0; i < stats.projectileCount.GetValueInt(); i++)
                     {
@@ -164,7 +164,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
             {
                 emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileCount, stats.projectileCount.GetValueInt() * stats.projectileMultiplier.GetValueInt());
                 emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpeed, stats.projectileSpeed.GetValue());
-                emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.WaitDuration, GetFireRate());
+                emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.WaitDuration, GetReloadDuration());
                 emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpread, stats.projectileSpreadAngle.GetValue());
                 
                 emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileShotsPerShot, stats.shotsPerShot.GetValueInt());

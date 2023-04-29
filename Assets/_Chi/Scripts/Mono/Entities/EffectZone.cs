@@ -91,7 +91,7 @@ namespace _Chi.Scripts.Mono.Entities
                             Debug.Log("Applied to " + entity.name + "");
                             foreach (var effect in effects)
                             {
-                                effect.Apply(entity, entity.GetPosition(), null, null, null, effectStrength, new ImmediateEffectParams());
+                                effect.ApplyWithChanceCheck(entity, entity.GetPosition(), null, null, null, effectStrength, new ImmediateEffectParams());
                             }
                             
                             foreach (var effect in statsEffects)

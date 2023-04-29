@@ -89,7 +89,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
                     if (applyEffectOnInterval != null)
                     {
-                        applyEffectOnInterval.Apply(target, target.GetPosition(), source, sourceItem, sourceModule, data.strength, new ImmediateEffectParams());
+                        applyEffectOnInterval.ApplyWithChanceCheck(target, target.GetPosition(), source, sourceItem, sourceModule, data.strength, new ImmediateEffectParams());
                     }
 
                     if (data.remainingIntervals > 0)

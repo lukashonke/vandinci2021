@@ -97,16 +97,13 @@ MonoBehaviour:
     projectileSpeed:
       baseValue: 16
       value: 0
-    fireRate:
-      baseValue: 5.5
-      value: 5
     reloadDuration:
       baseValue: 5.5
       value: 0
-    stationaryFireRateBoost:
+    stationaryReloadDurationBoost:
       baseValue: 1
       value: 0
-    movingFireRateBoost:
+    movingReloadDurationBoost:
       baseValue: 1
       value: 0
     projectileDamage:
@@ -126,6 +123,9 @@ MonoBehaviour:
     projectilePierceCount:
       baseValue: 0
       value: 0
+    projectilePierceChance:
+      baseValue: 1
+      value: 0
     projectilePushForce:
       baseValue: 60
       value: 0
@@ -141,10 +141,15 @@ MonoBehaviour:
     magazineSize:
       baseValue: 0
       value: 0
-    fireRatex:
-      baseValue: 0
+    fireRate:
+      baseValue: 5.5
+      value: 5
+    stationaryFireRateBoost:
+      baseValue: 1
       value: 0
-    projectilePierceChance: 0
+    movingFireRateBoost:
+      baseValue: 1
+      value: 0
     hasAreaEffect: 0
     hasProjectile: 1
     areaEffectDamage: 0
@@ -164,7 +169,9 @@ MonoBehaviour:
     trailLengthTime: 0.1
   bulletBehavior: 0
   currentMagazine: 0
+  isReloading: 0
   temporaryProjectilesUntilNextShot: 0
+  temporaryProjectilesForNextMagazine: 0
 --- !u!212 &6177911479989981830
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -298,16 +305,13 @@ MonoBehaviour:
     projectileSpeed:
       baseValue: 16
       value: 0
-    fireRate:
-      baseValue: 6
-      value: 1
     reloadDuration:
       baseValue: 0
       value: 0
-    stationaryFireRateBoost:
+    stationaryReloadDurationBoost:
       baseValue: 0
       value: 0
-    movingFireRateBoost:
+    movingReloadDurationBoost:
       baseValue: 0
       value: 0
     projectileDamage:
@@ -327,6 +331,9 @@ MonoBehaviour:
     projectilePierceCount:
       baseValue: 0
       value: 0
+    projectilePierceChance:
+      baseValue: 0
+      value: 0
     projectilePushForce:
       baseValue: 60
       value: 0
@@ -342,10 +349,15 @@ MonoBehaviour:
     magazineSize:
       baseValue: 0
       value: 0
-    fireRatex:
+    fireRate:
+      baseValue: 6
+      value: 1
+    stationaryFireRateBoost:
       baseValue: 0
       value: 0
-    projectilePierceChance: 0
+    movingFireRateBoost:
+      baseValue: 0
+      value: 0
     hasAreaEffect: 0
     hasProjectile: 1
     areaEffectDamage: 0
@@ -365,7 +377,9 @@ MonoBehaviour:
     trailLengthTime: 0.1
   bulletBehavior: 0
   currentMagazine: 0
+  isReloading: 0
   temporaryProjectilesUntilNextShot: 0
+  temporaryProjectilesForNextMagazine: 0
   targetType: 0
 --- !u!1 &1978313152202453299
 GameObject:

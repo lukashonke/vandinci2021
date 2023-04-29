@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Utilities;
 using UnityEngine;
@@ -55,19 +56,21 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
 
                 float boost = 1.0f;
                 
-                var velocity = (currentPosition - lastPosition).magnitude / Time.deltaTime;
-                if (velocity > 1)
+                if (parent is Player player)
                 {
-                    boost = stats.movingFireRateBoost.GetValue();
-                }
-                else if (velocity < 0.05f)
-                {
-                    boost = stats.stationaryFireRateBoost.GetValue();
+                    if (player.IsMoving())
+                    {
+                        boost = stats.movingReloadDurationBoost.GetValue();    
+                    }
+                    else
+                    {
+                        boost = stats.stationaryReloadDurationBoost.GetValue();
+                    }
                 }
                 
                 if (startReloadAtTime < Time.time && isReloading)
                 {
-                    reloadProgress = Mathf.Min(1, reloadProgress + (Time.deltaTime * boost) / GetFireRate());
+                    reloadProgress = Mathf.Min(1, reloadProgress + (Time.deltaTime * boost) / GetReloadDuration());
                 }
                 
                 lastPosition = currentPosition;
@@ -85,7 +88,8 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                     
                     if (magazineSize > 0)
                     {
-                        currentMagazine = magazineSize;
+                        currentMagazine = magazineSize + temporaryProjectilesForNextMagazine;
+                        temporaryProjectilesForNextMagazine = 0;
                     }
 
                     doFire = true;
@@ -96,13 +100,15 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                     }
 
                     isReloading = false;
+                    
+                    OnMagazineReload();
                 }
 
                 if (magazineSize > 0 && !isReloading)
                 {
                     if (currentMagazine > 0)
                     {
-                        doFire = lastFire + stats.fireRate.GetValue() < Time.time;
+                        doFire = lastFire + GetFireRate() < Time.time;
 
                         if (doFire)
                         {
@@ -118,7 +124,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                 
                 if(magazineSize == 0 && !isReloading)
                 {
-                    doFire = lastFire + stats.fireRate.GetValue() < Time.time;
+                    doFire = lastFire + GetFireRate() < Time.time;
                 }
 
                 if (doFire)

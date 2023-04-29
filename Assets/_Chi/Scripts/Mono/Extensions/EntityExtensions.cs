@@ -5,6 +5,7 @@ using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Utilities;
 using UnityEngine;
+using UnityEngine.Pool;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
@@ -142,6 +143,37 @@ namespace _Chi.Scripts.Mono.Extensions
             }
 
             return nearest;
+        }
+        
+        public static Entity GetRandomEnemy(this Player player, Vector3 from, Func<Entity, bool> condition, float maxDist2)
+        {
+            var possibleEnemies = ListPool<Entity>.Get();
+
+            try
+            {
+                foreach (var entity in player.targetableEnemies)
+                {
+                    if (entity is Npc npc && npc != null && npc.activated && npc.AreEnemies(player))
+                    {
+                        var dist = Utils.Dist2(npc.GetPosition(), from);
+                        if (dist < maxDist2 && (condition == null || condition(npc)))
+                        {
+                            possibleEnemies.Add(entity);
+                        }
+                    }
+                }
+            
+                if (possibleEnemies.Count == 0)
+                {
+                    return null;
+                }
+                
+                return possibleEnemies[Random.Range(0, possibleEnemies.Count)];
+            }
+            finally
+            {
+                ListPool<Entity>.Release(possibleEnemies);
+            }
         }
         
         public static int GetLayerMask(this Entity source, TargetType type)

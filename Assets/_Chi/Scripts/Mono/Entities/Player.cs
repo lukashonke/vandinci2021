@@ -6,14 +6,10 @@ using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Misc;
 using _Chi.Scripts.Mono.Modules;
-using _Chi.Scripts.Mono.System;
-using _Chi.Scripts.Mono.Ui;
-using _Chi.Scripts.Persistence;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
 using BulletPro;
 using Com.LuisPedroFonseca.ProCamera2D;
-using DamageNumbersPro;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -54,6 +50,9 @@ namespace _Chi.Scripts.Mono.Entities
         [NonSerialized] private float nextRestoreShield = 1;
 
         [NonSerialized] public float lastSkillUseTime;
+
+        private float velocity;
+        private Vector3 previousPosition;
 
         public ImmediateEffect pushEffect;
         public GameObject damageEffect;
@@ -256,8 +255,6 @@ namespace _Chi.Scripts.Mono.Entities
         public void Update()
         {
             position = GetPosition();
-            
-            Debug.DrawLine(GetPosition(), GetPosition() + Vector3.down, Color.cyan);
         }
 
         public override void FixedUpdate()
@@ -270,6 +267,10 @@ namespace _Chi.Scripts.Mono.Entities
             {
                 SetRotation(EntityExtensions.RotateTowards(GetPosition(), rotationTarget.Value, rb.transform.rotation, stats.rotationSpeed.GetValue()));
             }
+            
+            velocity = (position - previousPosition).magnitude / Time.deltaTime;
+            
+            previousPosition = position;
         }
 
         public override void OnTriggerEnter2D(Collider2D other)
@@ -288,7 +289,7 @@ namespace _Chi.Scripts.Mono.Entities
 
                     if (damage > 0 && monster.CanBePushed())
                     {
-                        var dmgWithFlags = DamageExtensions.CalculateEffectDamage(damage, monster, this);
+                        var dmgWithFlags = DamageExtensions.CalculateEffectDamage(damage, monster, this, null, ImmediateEffectFlags.None);
                         monster.ReceiveDamage(dmgWithFlags.damage, this, dmgWithFlags.flags);
 
                         if (pushEffect != null)
@@ -732,6 +733,16 @@ namespace _Chi.Scripts.Mono.Entities
                     slot.currentModule.OnPickupGold(amount);
                 }
             }
+        }
+        
+        public bool IsMoving()
+        {
+            if (velocity > 0.5f)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

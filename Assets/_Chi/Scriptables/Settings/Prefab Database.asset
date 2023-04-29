@@ -179,8 +179,8 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
   - id: 2004
-    label: Catapult Module
-    enabled: 0
+    label: Slingshot Module
+    enabled: 1
     description: Shoots small spread projecties.
     type: 3
     predefinedId: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
     additionalTexts: []
   - id: 2005
     label: Shuriken Module
-    enabled: 0
+    enabled: 1
     description: Shoots shurikens which choose next target after they hit one.
     type: 3
     predefinedId: 0
@@ -781,6 +781,22 @@ MonoBehaviour:
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 7d23fef34052b4f4da59434a86fc7834, type: 3}
     skill: {fileID: 11400000, guid: 19efa62420a1aa04882ce7fb0b4f4a5e, type: 2}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+  - id: 10021
+    label: Finish 'Em
+    enabled: 0
+    description: TODO
+    type: 4
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 3314847274656908133, guid: 7d23fef34052b4f4da59434a86fc7834, type: 3}
+    skill: {fileID: 11400000, guid: 6ef8088a4fd79dd4eaf03eebf2b50410, type: 2}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
     playerUpgradeItem: {fileID: 0}
@@ -1712,6 +1728,346 @@ MonoBehaviour:
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 33805624ebfb29545b06b37e2c255b26, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43100
+    label: 'Gun: Magazine Upgrade'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: a3d1de2497e625f43bcba91efba21579, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43101
+    label: 'Gun: Magazine Upgrade'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 045a8a9f627735242bd9f4748b995d95, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43102
+    label: 'Gun: Magazine Upgrade'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 79ce0cbdc8d62bd4dbfa29f5a2ae2632, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43105
+    label: 'Gun: Reload Upgrade'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 9e1367acacc9ceb409dcea8a428f9797, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43106
+    label: 'Gun: Reload Upgrade'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: b76c2666f58cc5b4eba5b022968a1947, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43110
+    label: 'Gun: Smaller Magazine'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 39ea5642e4f8eff4e81acbb417c0544a, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43115
+    label: 'Gun: Gold to Magazine'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: e2f6ee198ea79da42bba0dec1ab94599, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43120
+    label: 'Gun: Stationary Boosts'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 25fa33f8e5590744daa9bce85643a313, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43121
+    label: 'Gun: Moving Boosts'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 3efe737164dde404894321124b5f9155, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43125
+    label: 'Gun: On Reload Move Boost'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: c8b7d93819e96a54db93f6539905d880, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43130
+    label: 'Gun: Pierce Chance'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: ca6867d7fb672b3429e2c9360485ff4d, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43131
+    label: 'Gun: Pierce Chance'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 655833feaa246bd48864bff714dde131, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43135
+    label: 'Gun: Focused Aiming'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: d578e553bc53ef24ab23812102498804, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43140
+    label: 'Gun: Fire on Skill'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 1d0a4573849635d43aa6c558d73b889e, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43141
+    label: 'Gun: Fire on Skill'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 09b1b563a75d1904a9348b0d92a5d273, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43145
+    label: 'Gun: Reload on Skill'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: f33e62474e3ed324d869dcdf05efbbb1, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43150
+    label: 'Gun: Instant Reload'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 61d60b32b7be16c48858610f6a9415e3, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43151
+    label: 'Gun: Instant Reload'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 545afb84cecb2fe4a899cec5783de04d, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43155
+    label: 'Gun: Armor Piercing'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: bb6338c5e9e28b240a23ac2169d54468, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts:
+    - fire_effect_description
+  - id: 43160
+    label: 'Gun: Finish ''Em'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 164c5b8c30f68f24785ed95748a0c767, type: 2}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts:
@@ -4150,3 +4506,4 @@ MonoBehaviour:
   playerCriticalDealtDamage: {fileID: 4974115115264481549, guid: 0beaac1fcb69845319cc168500b1bc84, type: 3}
   playerDealtDamage: {fileID: 184639617188728617, guid: 314716765f8ab6548bd010be7ce6a255, type: 3}
   playerGoldReceived: {fileID: 184639617188728617, guid: 017fd53f536748c4db0118c707017b48, type: 3}
+  selfEffect: {fileID: 184639617188728617, guid: 91e5f8665cf2ae449927eea4e659e238, type: 3}

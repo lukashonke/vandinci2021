@@ -7,11 +7,14 @@ using _Chi.Scripts.Scriptables;
 using UnityEngine;
 using BulletPro;
 using UnityEngine.Pool;
+using Random = UnityEngine.Random;
 
 public class BulletBehavior : BaseBulletBehaviour
 {
 	private Module ownerModule;
 	private TrailRenderer trail;
+
+	private float canPierceRoll;
 
 	private float pierceRemainingDamage = 0;
 	private int piercedEnemies = 0;
@@ -44,6 +47,8 @@ public class BulletBehavior : BaseBulletBehaviour
 		piercedEnemies = 0;
 		
 		diedByCollision = false;
+
+		canPierceRoll = Random.value;
 
 		var canPierce = CanPierce();
 		if (canPierce != PierceType.NoPierce)
@@ -84,8 +89,11 @@ public class BulletBehavior : BaseBulletBehaviour
 	{
 		if (ownerModule is OffensiveModule offensiveModule)
 		{
-			if(offensiveModule.stats.canProjectilePierce > 0) return PierceType.FixedCount;
-			if(offensiveModule.stats.canProjectilePierceUsingDamage > 0) return PierceType.UsingDamage;
+			if (canPierceRoll < offensiveModule.stats.projectilePierceChance.GetValue())
+			{
+				if(offensiveModule.stats.canProjectilePierce > 0) return PierceType.FixedCount;
+				if(offensiveModule.stats.canProjectilePierceUsingDamage > 0) return PierceType.UsingDamage;
+			}
 		}
 
 		return PierceType.NoPierce;
@@ -125,7 +133,7 @@ public class BulletBehavior : BaseBulletBehaviour
 					var flags = ImmediateEffectFlags.None;
 					float strength = 1f;
 					
-					effect.Apply(null, transform.position, ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
+					effect.ApplyWithChanceCheck(null, transform.position, ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
 				}
 			}
 					
@@ -139,7 +147,7 @@ public class BulletBehavior : BaseBulletBehaviour
 					var flags = ImmediateEffectFlags.None;
 					float strength = 1f;
 					
-					effect.Apply(null, transform.position, ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
+					effect.ApplyWithChanceCheck(null, transform.position, ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
 				}
 			}
 		}
@@ -209,7 +217,7 @@ public class BulletBehavior : BaseBulletBehaviour
 						strength = pierceRemainingDamage;
 					}*/
 					
-					effect.Apply(entity, entity.GetPosition(), ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
+					effect.ApplyWithChanceCheck(entity, entity.GetPosition(), ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
 					
 					var newHp = entity.GetHp();
 					
@@ -231,7 +239,7 @@ public class BulletBehavior : BaseBulletBehaviour
 
 						if (!list.Contains(effect))
 						{
-							effect.Apply(entity, entity.GetPosition(), ownerModule.parent, null, ownerModule, 1, new ImmediateEffectParams());
+							effect.ApplyWithChanceCheck(entity, entity.GetPosition(), ownerModule.parent, null, ownerModule, 1, new ImmediateEffectParams());
 							list.Add(effect);
 						} 
 					}
@@ -282,7 +290,7 @@ public class BulletBehavior : BaseBulletBehaviour
 							var flags = ImmediateEffectFlags.None;
 							float strength = 1f;
 					
-							effect.Apply(entity, entity.GetPosition(), ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
+							effect.ApplyWithChanceCheck(entity, entity.GetPosition(), ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
 						}
 					}
 					
@@ -296,7 +304,7 @@ public class BulletBehavior : BaseBulletBehaviour
 							var flags = ImmediateEffectFlags.None;
 							float strength = 1f;
 					
-							effect.Apply(entity, entity.GetPosition(), ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
+							effect.ApplyWithChanceCheck(entity, entity.GetPosition(), ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
 						}
 					}
 					

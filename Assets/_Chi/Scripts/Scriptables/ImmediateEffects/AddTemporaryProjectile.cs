@@ -21,6 +21,10 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
                 {
                     module.AddTemporaryProjectileUntilNextShot(staticCount ? countBase : (int) (countBase * strength));
                 }
+                else if (addType == AddType.ForCurrentOrNextMagazine)
+                {
+                    module.AddTemporaryProjectileForCurrentOrNextMagazine(staticCount ? countBase : (int) (countBase * strength));
+                }
             }
 
             return true;
@@ -30,6 +34,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
     public enum AddType
     {
-        ForNextShot
+        ForNextShot,
+        ForCurrentOrNextMagazine
     }
 }

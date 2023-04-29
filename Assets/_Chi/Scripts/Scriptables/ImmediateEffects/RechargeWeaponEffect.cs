@@ -10,6 +10,8 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
         public float addSeconds;
         public float addPercent;
 
+        public bool replenishMagazine;
+
         public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float defaultStrength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
             if (sourceModule is OffensiveModule module)
@@ -21,6 +23,11 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
                 if(addPercent > 0)
                 {
                     module.AddRechargeFireProgressPercent(addPercent * defaultStrength);
+                }
+
+                if (replenishMagazine)
+                {
+                    module.ReplenishMagazine();
                 }
             }
             return true;

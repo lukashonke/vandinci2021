@@ -78,7 +78,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
                     
                     fires[target] = data;
                     
-                    applyEffectOnInterval.Apply(target, target.GetPosition(), source, sourceItem, sourceModule, data.strength, new ImmediateEffectParams());
+                    applyEffectOnInterval.ApplyWithChanceCheck(target, target.GetPosition(), source, sourceItem, sourceModule, data.strength, new ImmediateEffectParams());
 
                     if (data.remainingIntervals > 0)
                     {

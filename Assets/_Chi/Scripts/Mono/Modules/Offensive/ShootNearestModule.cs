@@ -53,20 +53,22 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                 var currentPosition = transform.position;
 
                 float boost = 1.0f;
-                
-                var velocity = (currentPosition - lastPosition).magnitude / Time.deltaTime;
-                if (velocity > 1)
-                {
-                    boost = stats.movingFireRateBoost.GetValue();
-                }
-                else if (velocity < 0.05f)
-                {
-                    boost = stats.stationaryFireRateBoost.GetValue();
-                }
 
+                if (parent is Player player)
+                {
+                    if (player.IsMoving())
+                    {
+                        boost = stats.movingReloadDurationBoost.GetValue();    
+                    }
+                    else
+                    {
+                        boost = stats.stationaryReloadDurationBoost.GetValue();
+                    }
+                }
+                
                 if (startReloadAtTime < Time.time && isReloading)
                 {
-                    reloadProgress = Mathf.Min(1, reloadProgress + (Time.deltaTime * boost) / GetFireRate());
+                    reloadProgress = Mathf.Min(1, reloadProgress + ((Time.deltaTime * boost) / GetReloadDuration()));
                 }
                 
                 lastPosition = currentPosition;
@@ -84,7 +86,8 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                     
                     if (magazineSize > 0)
                     {
-                        currentMagazine = magazineSize;
+                        currentMagazine = magazineSize + temporaryProjectilesForNextMagazine;
+                        temporaryProjectilesForNextMagazine = 0;
                     }
 
                     canFire = true;
@@ -95,13 +98,15 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                     }
 
                     isReloading = false;
+                    
+                    OnMagazineReload();
                 }
 
                 if (magazineSize > 0 && !isReloading)
                 {
                     if (currentMagazine > 0)
                     {
-                        canFire = lastFire + stats.fireRate.GetValue() < Time.time;
+                        canFire = lastFire + GetFireRate() < Time.time;
                     }
 
                     if (currentMagazine <= 0)
@@ -112,7 +117,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                 
                 if(magazineSize == 0 && !isReloading)
                 {
-                    canFire = lastFire + stats.fireRate.GetValue() < Time.time;
+                    canFire = lastFire + GetFireRate() < Time.time;
                 }
                 
                 if (nextTargetUpdate <= Time.time)
@@ -121,6 +126,20 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                     
                     if (targetType == ShootNearestTargetType.NoRotation)
                     {
+                        
+                    }
+                    else if (targetType == ShootNearestTargetType.RandomEnemy)
+                    {
+                        var nearest = ((Player) parent).GetRandomEnemy(GetPosition(), nearestTargetFilterFunc, Mathf.Pow(stats.targetRange.GetValue(), 2));
+
+                        if (nearest != null)
+                        {
+                            currentTarget = nearest.transform;
+                        }
+                        else
+                        {
+                            currentTarget = null;
+                        }
                     }
                     else
                     {
@@ -175,9 +194,20 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                 
                 if (startReload)
                 {
-                    reloadProgress = 0;
-                    startReloadAtTime = Time.time + Math.Max(0, stats.shotsPerShot.GetValue()) * stats.projectileDelayBetweenConsecutiveShots.GetValue();
-                    isReloading = true;
+                    if (Random.value < stats.instantReloadChance.GetValue())
+                    {
+                        Gamesystem.instance.prefabDatabase.selfEffect.Spawn(transform.position, "Reloaded!");
+                        
+                        reloadProgress = 1;
+                        startReloadAtTime = Time.time;
+                        isReloading = true;
+                    }
+                    else
+                    {
+                        reloadProgress = 0;
+                        startReloadAtTime = Time.time + Math.Max(0, stats.shotsPerShot.GetValue()) * stats.projectileDelayBetweenConsecutiveShots.GetValue();
+                        isReloading = true;
+                    }
                 }
             }
         }
@@ -204,6 +234,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
     {
         Any,
         InFront,
-        NoRotation
+        NoRotation,
+        RandomEnemy
     }
 }

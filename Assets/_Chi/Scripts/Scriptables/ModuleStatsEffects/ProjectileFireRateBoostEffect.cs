@@ -18,10 +18,10 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                 switch (boostType)
                 {
                     case ProjectileFireRateBoostType.Stationary:
-                        offensiveModule.stats.stationaryFireRateBoost.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
+                        offensiveModule.stats.stationaryReloadDurationBoost.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
                         break;
                     case ProjectileFireRateBoostType.Moving:
-                        offensiveModule.stats.movingFireRateBoost.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
+                        offensiveModule.stats.movingReloadDurationBoost.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -39,10 +39,10 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                 switch (boostType)
                 {
                     case ProjectileFireRateBoostType.Stationary:
-                        offensiveModule.stats.stationaryFireRateBoost.RemoveModifiersBySource(source);
+                        offensiveModule.stats.stationaryReloadDurationBoost.RemoveModifiersBySource(source);
                         break;
                     case ProjectileFireRateBoostType.Moving:
-                        offensiveModule.stats.movingFireRateBoost.RemoveModifiersBySource(source);
+                        offensiveModule.stats.movingReloadDurationBoost.RemoveModifiersBySource(source);
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
