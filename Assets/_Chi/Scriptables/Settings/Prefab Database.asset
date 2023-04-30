@@ -779,7 +779,7 @@ MonoBehaviour:
     weightSettings:
       alteredWeights: []
     prefab: {fileID: 0}
-    prefabUi: {fileID: 3314847274656908133, guid: 7d23fef34052b4f4da59434a86fc7834, type: 3}
+    prefabUi: {fileID: 3314847274656908133, guid: 598f0a75dcbb9884d8b92d17e6645a82, type: 3}
     skill: {fileID: 11400000, guid: 19efa62420a1aa04882ce7fb0b4f4a5e, type: 2}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -795,7 +795,7 @@ MonoBehaviour:
     weightSettings:
       alteredWeights: []
     prefab: {fileID: 0}
-    prefabUi: {fileID: 3314847274656908133, guid: 7d23fef34052b4f4da59434a86fc7834, type: 3}
+    prefabUi: {fileID: 3314847274656908133, guid: f3edf99dc58f4ee4eb96b5d367a04f6b, type: 3}
     skill: {fileID: 11400000, guid: 6ef8088a4fd79dd4eaf03eebf2b50410, type: 2}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}

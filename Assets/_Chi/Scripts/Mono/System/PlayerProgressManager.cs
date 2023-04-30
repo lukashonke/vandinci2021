@@ -71,6 +71,21 @@ namespace _Chi.Scripts.Mono.System
             player.SetBody(body.prefab);
             player.RemoveSkills();
             player.ToggleModuleUpgradesForPlayer(false);
+            
+            if (run.skillPrefabIds != null)
+            {
+                foreach (var skill in run.skillPrefabIds)
+                {
+                    var skillPrefab = db.GetById(skill.prefabId);
+                    if (skillPrefab == null)
+                    {
+                        Debug.LogError($"Prefab {skill} does not exist.");
+                        continue;
+                    }
+                    
+                    player.AddSkill(skillPrefab.skill);
+                }
+            }
 
             if (run.modulesInSlots != null)
             {
@@ -97,21 +112,6 @@ namespace _Chi.Scripts.Mono.System
             }
             
             player.ToggleModuleUpgradesForPlayer(true);
-
-            if (run.skillPrefabIds != null)
-            {
-                foreach (var skill in run.skillPrefabIds)
-                {
-                    var skillPrefab = db.GetById(skill.prefabId);
-                    if (skillPrefab == null)
-                    {
-                        Debug.LogError($"Prefab {skill} does not exist.");
-                        continue;
-                    }
-                    
-                    player.AddSkill(skillPrefab.skill);
-                }
-            }
             
             player.RemoveMutators();
             
