@@ -41,7 +41,14 @@ namespace _Chi.Scripts.Mono.Ui.Tooltips
             else
             {
                 this.title.text = modulePrefabItem.label;
-                this.text.text = modulePrefabItem.description;
+
+                string text = modulePrefabItem.description;
+                /*if (!string.IsNullOrWhiteSpace(modulePrefabItem.story))
+                {
+                    text += $"\n\n<i><alpha=#CC>{modulePrefabItem.story}</i>";
+                }*/
+
+                this.text.text = text;
                 this.logo.sprite = modulePrefabItem.prefabUi.GetComponent<Image>().sprite;
             
                 if (level > 0)

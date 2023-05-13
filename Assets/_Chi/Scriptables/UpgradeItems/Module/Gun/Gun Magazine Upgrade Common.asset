@@ -22,7 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Magazine Upgrade
-  uiDescription: TODO
+  uiDescription: Increases magazine size by 5.
   effects: []
   addSkills: []
   rarity: 0

@@ -22,7 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Reload Speed Upgrade
-  uiDescription: TODO
+  uiDescription: Increases reload speed by 25%.
   effects: []
   addSkills: []
   rarity: 0

@@ -290,7 +290,7 @@ namespace _Chi.Scripts.Mono.Entities
                     if (damage > 0 && monster.CanBePushed())
                     {
                         var dmgWithFlags = DamageExtensions.CalculateEffectDamage(damage, monster, this, null, ImmediateEffectFlags.None);
-                        monster.ReceiveDamage(dmgWithFlags.damage, this, dmgWithFlags.flags);
+                        monster.ReceiveDamage(dmgWithFlags.damage, this, dmgWithFlags.flags, null);
 
                         if (pushEffect != null)
                         {
@@ -329,9 +329,9 @@ namespace _Chi.Scripts.Mono.Entities
             }
         }
 
-        public override bool ReceiveDamage(float damage, Entity damager, DamageFlags damageFlags = DamageFlags.None, Color? damageTextColor = null)
+        public override bool ReceiveDamage(float damage, Entity damager, DamageFlags damageFlags = DamageFlags.None, Color? damageTextColor = null, EffectSourceData sourceData = null)
         {
-            var ret = base.ReceiveDamage(damage, damager, damageFlags);
+            var ret = base.ReceiveDamage(damage, damager, damageFlags, damageTextColor, sourceData);
 
             if (ret && damage > 0)
             {
@@ -666,6 +666,11 @@ namespace _Chi.Scripts.Mono.Entities
             }
         }
 
+        public override void OnMagazineReload(Module module)
+        {
+            base.OnMagazineReload(module);
+        }
+
         public override void OnAfterSkillUse(Skill skill)
         {
             base.OnAfterSkillUse(skill);
@@ -735,6 +740,17 @@ namespace _Chi.Scripts.Mono.Entities
             }
         }
         
+        public override void OnHitTarget(EffectSourceData data)
+        {
+            foreach (var slot in slots)
+            {
+                if(slot.currentModule != null)
+                {
+                    slot.currentModule.OnHitTarget(data);
+                }
+            }
+        }
+        
         public bool IsMoving()
         {
             if (velocity > 0.5f)
@@ -743,6 +759,11 @@ namespace _Chi.Scripts.Mono.Entities
             }
 
             return false;
+        }
+
+        public bool IsFireRequested(Module m)
+        {
+            return Input.GetMouseButton(0);
         }
     }
 }

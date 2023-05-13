@@ -234,6 +234,7 @@ namespace _Chi.Scripts.Mono.Entities
             }
 
             immobilizedCounter = 0;
+            stunnedCounter = 0;
             stats.speed = originalSpeed;
             
             gameObject.SetActive(false);
@@ -301,7 +302,7 @@ namespace _Chi.Scripts.Mono.Entities
                     animator.enabled = true;
                     animatorSetup = true;
                     animator.runtimeAnimatorController = variantInstance.animatorController;
-                    animator.SetFloat("MovementSpeed", canMove ? stats.speed : 0);
+                    animator.SetFloat("MovementSpeed", canMove ? GetMoveSpeed() : 0);
                 }
                 else
                 {
@@ -642,6 +643,30 @@ namespace _Chi.Scripts.Mono.Entities
             }
         }
         
+        public override void UpdateStunned()
+        {
+            /*if (!hasRvoController) return;
+            
+            if (stunnedCounter > 0)
+            {
+                rvoController.enabled = false;
+            }
+            else
+            {
+                rvoController.enabled = true;
+            }*/
+        }
+
+        public override float GetMoveSpeed()
+        {
+            if (stunnedCounter > 0)
+            {
+                return Math.Min(stats.speed, Gamesystem.instance.miscSettings.maxStunnedSpeed);
+            }
+            
+            return stats.speed;
+        }
+
         public override SkillData GetSkillData(Skill skill)
         {
             if (skillDatas == null) return null;
@@ -655,7 +680,7 @@ namespace _Chi.Scripts.Mono.Entities
 
             if (hasAnimator && animator.gameObject.activeSelf && animator.runtimeAnimatorController != null)
             {
-                animator.SetFloat("MovementSpeed", canMove ? stats.speed : 0);
+                animator.SetFloat("MovementSpeed", canMove ? GetMoveSpeed() : 0);
             }
         }
 

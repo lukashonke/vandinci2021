@@ -16,7 +16,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
         {
             if (target is Player player)
             {
-                player.stats.moduleReloadDurationMul.AddModifier(new StatModifier(source, value, modifier, (short) order));
+                player.stats.moduleFireRateMul.AddModifier(new StatModifier(source, value, modifier, (short) order));
                 return true;
             }
             
@@ -27,7 +27,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
         {
             if (target is Player player)
             {
-                player.stats.moduleReloadDurationMul.RemoveModifiersBySource(source);
+                player.stats.moduleFireRateMul.RemoveModifiersBySource(source);
             }
         }
     }

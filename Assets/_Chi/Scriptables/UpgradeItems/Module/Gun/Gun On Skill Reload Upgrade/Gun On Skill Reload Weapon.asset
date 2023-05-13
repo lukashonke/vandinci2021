@@ -26,3 +26,4 @@ MonoBehaviour:
   chance: 1
   addSeconds: 0
   addPercent: 1
+  replenishMagazine: 1

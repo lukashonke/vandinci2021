@@ -72,7 +72,7 @@ MonoBehaviour:
   triggerType: 1
   targetType: 1
   targetCountType: 1
-  maxDistance2ToTarget: 64
+  maxDistance2ToTarget: 100
   triggerChance: 1
   trigeringSkill: {fileID: 11400000, guid: 6ef8088a4fd79dd4eaf03eebf2b50410, type: 2}
   hitTargets: 50

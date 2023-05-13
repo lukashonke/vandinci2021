@@ -67,7 +67,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
                     if (targetType == AffectRandomEnemyTargetType.RandomEnemy || targetType == AffectRandomEnemyTargetType.RandomEnemyWithHpLessThanDamage);
                     {
                         var maxHp = targetType == AffectRandomEnemyTargetType.RandomEnemyWithHpLessThanDamage 
-                            ? DamageExtensions.CalculateModuleDamage(parentModule, player, true, false) 
+                            ? DamageExtensions.CalculatePotentialModuleDamage(parentModule, player, true, false) 
                             : int.MaxValue;
                         
                         foreach (var entity in player.targetableEnemies)

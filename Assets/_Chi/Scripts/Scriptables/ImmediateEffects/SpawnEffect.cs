@@ -19,15 +19,28 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
             {
                 return true;
             }
+
+            if (target != null)
+            {
+                DoSpawn(targetPosition, target.transform.rotation);
+            }
+            else
+            {
+                DoSpawn(targetPosition, null);
+            }
             
-            DoSpawn(targetPosition);
             return true;
         }   
         
-        private void DoSpawn(Vector3 position)
+        private void DoSpawn(Vector3 position, Quaternion? rotation)
         {
             var instance = Gamesystem.instance.poolSystem.SpawnGo(prefab);
             instance.transform.position = position;
+
+            if (rotation.HasValue)
+            {
+                instance.transform.rotation = rotation.Value;
+            }
             
             if (despawnAfter > 0)
             {

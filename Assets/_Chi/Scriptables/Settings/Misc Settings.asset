@@ -23,3 +23,4 @@ MonoBehaviour:
     SerializationNodes: []
   minSeekPathPeriod: 0.3
   maxSeekPathPeriod: 1.5
+  maxStunnedSpeed: 0.4

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
+using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
 using _Chi.Scripts.Utilities;
@@ -37,6 +38,7 @@ namespace _Chi.Scripts.Mono.Entities
         [NonSerialized] public bool isAlive = true;
         [NonSerialized] public float immobilizedUntil = 0;
         [NonSerialized] public int immobilizedCounter = 0;
+        [NonSerialized] public int stunnedCounter = 0;
         [NonSerialized] public bool canReceiveDamage = true;
         [NonSerialized] public bool isFearing;
         [NonSerialized] public bool isInBlackHole;
@@ -203,11 +205,13 @@ namespace _Chi.Scripts.Mono.Entities
             return true;
         }
 
-        public virtual bool ReceiveDamage(float damage, Entity damager, DamageFlags damageFlags = DamageFlags.None, Color? damageTextColor = null)
+        public virtual bool ReceiveDamage(float damage, Entity damager, DamageFlags damageFlags = DamageFlags.None, Color? damageTextColor = null, EffectSourceData sourceData = null)
         {
             if (damage <= 0 || !canReceiveDamage) return false;
 
             if (!CanReceiveDamage(damage, damager)) return false;
+
+            bool wasAlive = isAlive;
             
             entityStats.hp -= damage;
             
@@ -229,6 +233,13 @@ namespace _Chi.Scripts.Mono.Entities
             if (entityStats.hp > 0 && !isAlive)
             {
                 isAlive = true;
+            }
+
+            if (damager != null && sourceData != null)
+            {
+                sourceData.hasKilledTarget = !wasAlive && isAlive;
+                
+                damager.OnHitTarget(sourceData);
             }
 
             if (damageFlags.HasFlag(DamageFlags.Critical))
@@ -264,6 +275,11 @@ namespace _Chi.Scripts.Mono.Entities
                 rb.AddForce(force);
                 SetImmobilizedUntil(Time.time + pushDuration);
             }
+        }
+
+        public virtual void OnHitTarget(EffectSourceData data)
+        {
+            
         }
 
         public void StopRb()
@@ -447,6 +463,13 @@ namespace _Chi.Scripts.Mono.Entities
             UpdateImmobilized();
         }
 
+        public void SetStunned(bool b)
+        {
+            if (b) stunnedCounter++;
+            else stunnedCounter--;
+            UpdateStunned();
+        }
+
         public float fearEscapeAngle = 0;
 
         public void SetFearing(bool b)
@@ -468,6 +491,16 @@ namespace _Chi.Scripts.Mono.Entities
         {
             
         }
+        
+        public virtual void UpdateStunned()
+        {
+            
+        }
+
+        public virtual float GetMoveSpeed()
+        {
+            return 0;
+        }
 
         public void SetMoving(float speed)
         {
@@ -483,6 +516,10 @@ namespace _Chi.Scripts.Mono.Entities
         }
 
         public virtual void OnAfterSkillUse(Skill skill)
+        {
+        }
+
+        public virtual void OnMagazineReload(Module module)
         {
         }
         

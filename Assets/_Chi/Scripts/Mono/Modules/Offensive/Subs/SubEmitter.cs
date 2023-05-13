@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections;
+using _Chi.Scripts.Mono.Common;
+using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Scriptables;
 using BulletPro;
@@ -77,7 +79,17 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
             
         }
         
+        public virtual void OnMagazineReload(Module module)
+        {
+            
+        }
+        
         public virtual void OnAfterSkillUse(Skill skill)
+        {
+            
+        }
+
+        public virtual void OnHitTarget(EffectSourceData data)
         {
             
         }

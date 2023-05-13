@@ -58,6 +58,12 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                     case ModuleStatsEffectType.PiercedCount:
                         offensiveModule.stats.projectilePierceCount.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
                         break;
+                    case ModuleStatsEffectType.PierceDeadChance:
+                        offensiveModule.stats.projectilePierceDeadChance.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
+                        break;
+                    case ModuleStatsEffectType.PierceDeadCount:
+                        offensiveModule.stats.projectilePierceDeadCount.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
+                        break;
                     case ModuleStatsEffectType.CriticalDamage:
                         offensiveModule.stats.projectileCriticalDamage.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
                         break;
@@ -66,6 +72,12 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                         break;
                     case ModuleStatsEffectType.ArmorPiercing:
                         offensiveModule.stats.armorPiercing.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
+                        break;
+                    case ModuleStatsEffectType.ArmoredDamageMul:
+                        offensiveModule.stats.armoredDamageMul.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
+                        break;
+                    case ModuleStatsEffectType.NonArmoredDamageMul:
+                        offensiveModule.stats.nonArmorDamageMul.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
                         break;
                     case ModuleStatsEffectType.InstantReloadChance:
                         offensiveModule.stats.instantReloadChance.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
@@ -127,6 +139,12 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                     case ModuleStatsEffectType.PiercedCount:
                         offensiveModule.stats.projectilePierceCount.RemoveModifiersBySource(source);
                         break;
+                    case ModuleStatsEffectType.PierceDeadChance:
+                        offensiveModule.stats.projectilePierceDeadChance.RemoveModifiersBySource(source);
+                        break;
+                    case ModuleStatsEffectType.PierceDeadCount:
+                        offensiveModule.stats.projectilePierceDeadCount.RemoveModifiersBySource(source);
+                        break;
                     case ModuleStatsEffectType.CriticalDamage:
                         offensiveModule.stats.projectileCriticalDamage.RemoveModifiersBySource(source);
                         break;
@@ -135,6 +153,12 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                         break;
                     case ModuleStatsEffectType.ArmorPiercing:
                         offensiveModule.stats.armorPiercing.RemoveModifiersBySource(source);
+                        break;
+                    case ModuleStatsEffectType.ArmoredDamageMul:
+                        offensiveModule.stats.armoredDamageMul.RemoveModifiersBySource(source);
+                        break;
+                    case ModuleStatsEffectType.NonArmoredDamageMul:
+                        offensiveModule.stats.nonArmorDamageMul.RemoveModifiersBySource(source);
                         break;
                     case ModuleStatsEffectType.InstantReloadChance:
                         offensiveModule.stats.instantReloadChance.RemoveModifiersBySource(source);
@@ -195,6 +219,12 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                 case ModuleStatsEffectType.PiercedCount:
                     tuple = ("Pierced Enemies", $"{AddLevelValueUI(value, level)}");
                     break;
+                case ModuleStatsEffectType.PierceDeadChance:
+                    tuple = ("Dead Pierce Chance", $"{AddLevelValueUI(value, level)}");
+                    break;
+                case ModuleStatsEffectType.PierceDeadCount:
+                    tuple = ("Dead Pierced Enemies", $"{AddLevelValueUI(value, level)}");
+                    break;
                 case ModuleStatsEffectType.CriticalDamage:
                     tuple = ("Critical Damage", $"{AddLevelValueUI(value, level)}");
                     break;
@@ -203,6 +233,12 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                     break;
                 case ModuleStatsEffectType.ArmorPiercing:
                     tuple = ("Armor Piercing", $"{AddLevelValueUI(value, level)}");
+                    break;
+                case ModuleStatsEffectType.ArmoredDamageMul:
+                    tuple = ("Damage against armored", $"{AddLevelValueUI(value, level)}");
+                    break;
+                case ModuleStatsEffectType.NonArmoredDamageMul:
+                    tuple = ("Damage against non-armored", $"{AddLevelValueUI(value, level)}");
                     break;
                 case ModuleStatsEffectType.InstantReloadChance:
                     tuple = ("Instant Reload", $"{AddLevelValueUI(value, level)}");
@@ -239,6 +275,10 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
         CriticalRate,
         CriticalDamage,
         ArmorPiercing,
-        InstantReloadChance
+        InstantReloadChance,
+        PierceDeadChance,
+        PierceDeadCount,
+        ArmoredDamageMul,
+        NonArmoredDamageMul
     }
 }

@@ -16,17 +16,27 @@ namespace _Chi.Scripts.Mono.Misc
 
         private Vector3 direction;
 
+        public bool goForward;
+
         public void Start()
         {
             if (chooseOneDirection)
             {
-                if (chanceToGoAgainstPlayer > 0 && Random.Range(0, 100) < chanceToGoAgainstPlayer)
+                if (goForward)
                 {
-                    direction = (Gamesystem.instance.objects.currentPlayer.GetPosition() - transform.position).normalized * Random.Range(speedMin, speedMax);
+                    // 2D go forward
+                    direction = transform.up * Random.Range(speedMin, speedMax);   
                 }
                 else
                 {
-                    direction = Random.insideUnitCircle.normalized * Random.Range(speedMin, speedMax);
+                    if (chanceToGoAgainstPlayer > 0 && Random.Range(0, 100) < chanceToGoAgainstPlayer)
+                    {
+                        direction = (Gamesystem.instance.objects.currentPlayer.GetPosition() - transform.position).normalized * Random.Range(speedMin, speedMax);
+                    }
+                    else
+                    {
+                        direction = Random.insideUnitCircle.normalized * Random.Range(speedMin, speedMax);
+                    }
                 }
             }
         }

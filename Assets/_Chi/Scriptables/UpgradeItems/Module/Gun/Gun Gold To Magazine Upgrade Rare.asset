@@ -22,7 +22,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Gold To Magazine
-  uiDescription: TODO
+  uiDescription: Every picked up gold adds one bullet to the current magazine and
+    increases fire rate by 50% for 1 second. Effect does not stack.
   effects: []
   addSkills: []
   rarity: 1

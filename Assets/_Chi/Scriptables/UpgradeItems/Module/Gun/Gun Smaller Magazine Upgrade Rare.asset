@@ -22,7 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Smaller Magazine Upgrade
-  uiDescription: TODO
+  uiDescription: Increases reload speed by 50%, but decreases magazine by 50%.
   effects: []
   addSkills: []
   rarity: 1

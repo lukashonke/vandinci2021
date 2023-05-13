@@ -28,6 +28,8 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
                 if (replenishMagazine)
                 {
                     module.ReplenishMagazine();
+                    
+                    Gamesystem.instance.prefabDatabase.selfEffect.Spawn(targetPosition, "Reloaded!");
                 }
             }
             return true;

@@ -22,7 +22,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Projectile Pierce
-  uiDescription: TODO
+  uiDescription: Gives your gun 33% chance that the bullet will continue after hitting
+    the first enemy.
   effects: []
   addSkills: []
   rarity: 1

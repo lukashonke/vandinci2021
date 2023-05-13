@@ -20,6 +20,8 @@ namespace _Chi.Scripts.Mono.System
         
         [NonSerialized] public Dictionary<DropType, ObjectPool<GameObject>> dropPool;
 
+        private ObjectPool<EffectSourceData> effectSourcePool;
+
         public bool collectionChecks = true;
 
         public void Awake()
@@ -29,6 +31,24 @@ namespace _Chi.Scripts.Mono.System
             goPool = new();
             poolablePool = new();
             dropPool = new();
+
+            effectSourcePool = new ObjectPool<EffectSourceData>(() => new EffectSourceData(), data =>
+            {
+
+            }, src => src.Cleanup(), src =>
+            {
+                
+            });
+        }
+        
+        public EffectSourceData GetSourceData()
+        {
+            return effectSourcePool.Get();
+        }
+        
+        public void ReleaseSourceData(EffectSourceData effectSourceData)
+        {
+            effectSourcePool.Release(effectSourceData);
         }
         
         public GameObject Spawn(DropType drop, GameObject prefab, int maxPoolSize = 100)

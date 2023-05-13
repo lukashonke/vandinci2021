@@ -22,16 +22,15 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Stationary Boosts
-  uiDescription: TODO
+  uiDescription: When not moving, increases fire rate and reload speed.
   effects: []
   addSkills: []
-  rarity: 1
+  rarity: 0
   unlocksModulePrefabIds: 
   disablesModulePrefabIds: 
   replacesModulePrefabIds: 
   modulePrefabId: 2002
   moduleEffects:
   - {fileID: 11400000, guid: 93d8266de62adc14e888902647b0a47e, type: 2}
-  - {fileID: 11400000, guid: bd7535db05dcf9543a8f91f3d3914320, type: 2}
   addSubEmitters: []
   effectsLevel: 1

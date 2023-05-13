@@ -28,4 +28,5 @@ MonoBehaviour:
   value: 0
   effectsToAdd:
   - {fileID: 11400000, guid: e0e2e6f3a8531c048a42d0dd47f6169b, type: 2}
+  - {fileID: 11400000, guid: 57bb436a6b96fb343ba666ba8c34dd8f, type: 2}
   effectType: 5

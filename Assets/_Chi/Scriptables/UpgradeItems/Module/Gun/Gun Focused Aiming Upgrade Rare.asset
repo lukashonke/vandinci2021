@@ -21,11 +21,11 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Stationary Boosts
+  uiName: Focused Aiming
   uiDescription: TODO
   effects: []
   addSkills: []
-  rarity: 1
+  rarity: 0
   unlocksModulePrefabIds: 
   disablesModulePrefabIds: 
   replacesModulePrefabIds: 

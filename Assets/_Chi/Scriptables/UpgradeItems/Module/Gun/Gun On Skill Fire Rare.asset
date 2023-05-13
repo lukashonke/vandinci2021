@@ -22,7 +22,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Skill Barrage
-  uiDescription: TODO
+  uiDescription: The weapon fires x6 projectiles in front of the player when you
+    use a skill.
   effects: []
   addSkills: []
   rarity: 1

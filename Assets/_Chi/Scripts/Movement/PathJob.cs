@@ -96,7 +96,7 @@ namespace _Chi.Scripts.Movement
                     npc.pathData.job.playerPosition = playerPosition;
 
                     npc.pathData.job.movePath = doPath;
-                    npc.pathData.job.maxSpeed = doPath ? npc.stats.speed : 0;
+                    npc.pathData.job.maxSpeed = doPath ? npc.GetMoveSpeed() : 0;
                     npc.pathData.job.reachedEndOfPath = false; //doPath ? npc.pathData.reachedEndOfPath : false;
 
                     try
@@ -146,7 +146,7 @@ namespace _Chi.Scripts.Movement
                         if(doMove)
                         {
                             npc.MoveTo((Vector3)data.outputPositions[0]);
-                            npc.SetMoving(npc.stats.speed);
+                            npc.SetMoving(npc.GetMoveSpeed());
                         }
                         else
                         {
@@ -182,13 +182,15 @@ namespace _Chi.Scripts.Movement
                         {
                             if (npc.hasRvoController)
                             {
+                                var moveSpeed = npc.GetMoveSpeed();
+                                
                                 if (doMove)
                                 {
-                                    npc.rvoController.SetTarget(data.outputPositions[2], npc.stats.speed, npc.stats.speed * 1.2f, npc.pathData.destination);
+                                    npc.rvoController.SetTarget(data.outputPositions[2], moveSpeed, moveSpeed * 1.2f, npc.pathData.destination);
                                 }
                                 else
                                 {
-                                    npc.rvoController.SetTarget(data.outputPositions[2], npc.stats.speed, npc.stats.speed * 1.2f, playerPosition);
+                                    npc.rvoController.SetTarget(data.outputPositions[2], moveSpeed, moveSpeed * 1.2f, playerPosition);
                                 }
                             }
                         }

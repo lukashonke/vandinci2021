@@ -22,7 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: On Reload Move Speed Boost
-  uiDescription: TODO
+  uiDescription: After reload, briefly boosts your movement speed.
   effects: []
   addSkills: []
   rarity: 0

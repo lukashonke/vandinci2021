@@ -9,6 +9,7 @@ using Random = UnityEngine.Random;
 
 namespace _Chi.Scripts.Mono.Modules.Offensive  
 {
+    [Obsolete]
     public class ShootAtMouseModule : OffensiveModule
     {
         public override void Awake()

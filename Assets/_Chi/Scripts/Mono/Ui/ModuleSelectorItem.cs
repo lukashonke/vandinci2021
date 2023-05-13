@@ -40,7 +40,13 @@ namespace _Chi.Scripts.Mono.Ui
         {
             this.item = item;
 
-            InitialiseUi(GetTitle(item), item.prefabUi.GetComponent<Image>(), item.description, buttons, abort, price);
+            string text = item.description;
+            if (!string.IsNullOrWhiteSpace(item.story))
+            {
+                text += $"\n\n<i><alpha=#BB>{item.story}</i>";
+            }
+
+            InitialiseUi(GetTitle(item), item.prefabUi.GetComponent<Image>(), text, buttons, abort, price);
             
             /*if(item.playerUpgradeItem != null || item.moduleUpgradeItem != null || item.skillUpgradeItem != null)
             {

@@ -15,10 +15,12 @@ public class BulletBehavior : BaseBulletBehaviour
 	private TrailRenderer trail;
 
 	private float canPierceRoll;
+	private float canPierceDeadRoll;
 
 	private float pierceRemainingDamage = 0;
 	private int piercedEnemies = 0;
-	[NonSerialized] public BulletReceiver[] collidedWith = new BulletReceiver[8];
+	private int piercedDeadEnemies = 0;
+	[NonSerialized] public BulletReceiver[] collidedWith = new BulletReceiver[64];
 	[NonSerialized] public Entity lastAffectedEnemy;
 
 	private bool diedByCollision;
@@ -49,9 +51,11 @@ public class BulletBehavior : BaseBulletBehaviour
 		diedByCollision = false;
 
 		canPierceRoll = Random.value;
+		canPierceDeadRoll = Random.value;
 
 		var canPierce = CanPierce();
-		if (canPierce != PierceType.NoPierce)
+		var canPierceDead = CanPierceDead();
+		if (canPierce != PierceType.NoPierce || canPierceDead != PierceDeadType.NoPierce)
 		{
 			if (canPierce == PierceType.UsingDamage)
 			{
@@ -98,12 +102,31 @@ public class BulletBehavior : BaseBulletBehaviour
 
 		return PierceType.NoPierce;
 	}
+	
+	private PierceDeadType CanPierceDead()
+	{
+		if (ownerModule is OffensiveModule offensiveModule)
+		{
+			if (canPierceRoll < offensiveModule.stats.projectilePierceDeadChance.GetValue())
+			{
+				return PierceDeadType.FixedCount;
+			}
+		}
+
+		return PierceDeadType.NoPierce;
+	}
 
 	enum PierceType
 	{
 		NoPierce,
 		FixedCount,
-		UsingDamage
+		UsingDamage,
+	}
+
+	enum PierceDeadType
+	{
+		NoPierce,
+		FixedCount
 	}
 	
 	// Update is (still) called once per frame
@@ -182,9 +205,21 @@ public class BulletBehavior : BaseBulletBehaviour
 		base.OnBulletCollision(br, collisionPoint);
 
 		var canPierce = CanPierce();
-		if (canPierce != PierceType.NoPierce && !CanCollide(br))
+		if (canPierce != PierceType.NoPierce)
 		{
-			return;
+			if (!CanCollide(br))
+			{
+				return;
+			}
+		}
+		
+		var canPierceDead = CanPierceDead();
+		if (canPierceDead != PierceDeadType.NoPierce)
+		{
+			if (!CanCollide(br))
+			{
+				return;
+			}
 		}
 		
 		var entity = br.gameObject.GetEntity();
@@ -272,6 +307,20 @@ public class BulletBehavior : BaseBulletBehaviour
 				else
 				{
 					deactivate = true;
+				}
+
+				if (!entity.isAlive && canPierceDead == PierceDeadType.FixedCount)
+				{
+					piercedDeadEnemies++;
+					collidedWith[piercedDeadEnemies] = br;
+					if (piercedDeadEnemies >= offensiveModule.stats.projectilePierceDeadCount.GetValueInt())
+					{
+						deactivate = true;
+					}
+					else
+					{
+						deactivate = false;
+					}
 				}
 				
 				offensiveModule.OnBulletEffectGiven(bullet, this, bulletWillDie: deactivate);

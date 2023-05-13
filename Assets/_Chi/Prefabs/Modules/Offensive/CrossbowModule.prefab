@@ -120,6 +120,15 @@ MonoBehaviour:
     projectilePierceCount:
       baseValue: 0
       value: 0
+    projectilePierceChance:
+      baseValue: 0
+      value: 0
+    projectilePierceDeadChance:
+      baseValue: 0
+      value: 0
+    projectilePierceDeadCount:
+      baseValue: 0
+      value: 0
     projectilePushForce:
       baseValue: 60
       value: 0
@@ -144,7 +153,24 @@ MonoBehaviour:
     movingFireRateBoost:
       baseValue: 1
       value: 0
-    projectilePierceChance: 0
+    projectileCriticalRate:
+      baseValue: 0
+      value: 0
+    projectileCriticalDamage:
+      baseValue: 0
+      value: 0
+    armorPiercing:
+      baseValue: 0
+      value: 0
+    armoredDamageMul:
+      baseValue: 1
+      value: 0
+    nonArmorDamageMul:
+      baseValue: 1
+      value: 0
+    instantReloadChance:
+      baseValue: 0
+      value: 0
     hasAreaEffect: 0
     hasProjectile: 1
     areaEffectDamage: 0

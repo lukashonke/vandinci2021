@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Misc;
@@ -38,6 +39,7 @@ namespace _Chi.Scripts.Mono.Modules
         [NonSerialized] public bool effectsActivated;
 
         [NonSerialized] public Transform currentTarget;
+        [NonSerialized] public Entity currentTargetEntity;
 
         [NonSerialized] public int level = 1;
         
@@ -238,6 +240,36 @@ namespace _Chi.Scripts.Mono.Modules
                 foreach (var effect in additionalOnMagazineReloadEffects)
                 {
                     effect.Item2.ApplyWithChanceCheck(parent, parent.GetPosition(), parent, null, this, 1f, new ImmediateEffectParams(), ImmediateEffectFlags.None);
+                }
+            }
+
+            if (parent is Player player)
+            {
+                player.OnMagazineReload(this);
+            }
+            
+            if (subEmitters != null)
+            {
+                foreach (var kp in slot.currentModule.subEmitters)
+                {
+                    foreach (var subEmitter in kp.Value)
+                    {
+                        subEmitter.OnMagazineReload(this);
+                    }
+                }
+            }
+        }
+
+        public virtual void OnHitTarget(EffectSourceData data)
+        {
+            if (subEmitters != null)
+            {
+                foreach (var kp in slot.currentModule.subEmitters)
+                {
+                    foreach (var subEmitter in kp.Value)
+                    {
+                        subEmitter.OnHitTarget(data);
+                    }
                 }
             }
         }

@@ -96,14 +96,14 @@ MonoBehaviour:
       baseValue: 5
       value: 0
     projectileDelayBetweenConsecutiveShots:
-      baseValue: 0.1
+      baseValue: 0.001
       value: 0
     projectileSpeed:
-      baseValue: 12
+      baseValue: 16
       value: 0
     reloadDuration:
-      baseValue: 3.5
-      value: 3.5
+      baseValue: 2.75
+      value: 2.75
     stationaryReloadDurationBoost:
       baseValue: 1
       value: 0
@@ -130,6 +130,12 @@ MonoBehaviour:
     projectilePierceChance:
       baseValue: 0
       value: 0
+    projectilePierceDeadChance:
+      baseValue: 0
+      value: 0
+    projectilePierceDeadCount:
+      baseValue: 0
+      value: 0
     projectilePushForce:
       baseValue: 60
       value: 0
@@ -146,7 +152,7 @@ MonoBehaviour:
       baseValue: 5
       value: 0
     fireRate:
-      baseValue: 0.3
+      baseValue: 0.45
       value: 1.6
     stationaryFireRateBoost:
       baseValue: 1
@@ -158,10 +164,16 @@ MonoBehaviour:
       baseValue: 0
       value: 0
     projectileCriticalDamage:
-      baseValue: 2
+      baseValue: 3
       value: 0
     armorPiercing:
       baseValue: 0
+      value: 0
+    armoredDamageMul:
+      baseValue: 1
+      value: 0
+    nonArmorDamageMul:
+      baseValue: 1
       value: 0
     instantReloadChance:
       baseValue: 0
@@ -176,13 +188,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e9ee23c6ec6fda646a0ca63e5b6a0d15, type: 2}
   - {fileID: 11400000, guid: 55fb060b0aa775a4eb384d6f7a55d715, type: 2}
   onBulletDestroyEffects: []
-  shootVfx: {fileID: 0}
+  shootVfx: {fileID: 5898446814790275595}
   shootEffectsSelf: []
   affectType: 0
   trailParameters:
     useTrail: 1
     material: {fileID: 2100000, guid: 512009d3278ba8446919ba0d6cf3370f, type: 2}
-    trailLengthTime: 0.1
+    trailLengthTime: 0.05
   bulletBehavior: 0
   currentMagazine: 0
   isReloading: 0
@@ -280,6 +292,12 @@ MonoBehaviour:
     projectilePierceChance:
       baseValue: 0
       value: 0
+    projectilePierceDeadChance:
+      baseValue: 0
+      value: 0
+    projectilePierceDeadCount:
+      baseValue: 0
+      value: 0
     projectilePushForce:
       baseValue: 60
       value: 0
@@ -311,6 +329,12 @@ MonoBehaviour:
       baseValue: 0
       value: 0
     armorPiercing:
+      baseValue: 0
+      value: 0
+    armoredDamageMul:
+      baseValue: 0
+      value: 0
+    nonArmorDamageMul:
       baseValue: 0
       value: 0
     instantReloadChance:
@@ -564,35 +588,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1353106325593054959, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.a
-      value: 1.49e-43
+      value: 3.42e-43
       objectReference: {fileID: 0}
     - target: {fileID: 1353106325593054959, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.b
-      value: 1.0495856e-37
+      value: 1.6556265e-16
       objectReference: {fileID: 0}
     - target: {fileID: 1353106325593054959, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.g
-      value: 1.49e-43
+      value: 3.42e-43
       objectReference: {fileID: 0}
     - target: {fileID: 1353106325593054959, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.r
-      value: 1.0496098e-37
+      value: 1.6556508e-16
       objectReference: {fileID: 0}
     - target: {fileID: 2096954885035021029, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.a
-      value: 1.49e-43
+      value: 3.42e-43
       objectReference: {fileID: 0}
     - target: {fileID: 2096954885035021029, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.b
-      value: 1.0495856e-37
+      value: 1.6556265e-16
       objectReference: {fileID: 0}
     - target: {fileID: 2096954885035021029, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.g
-      value: 1.49e-43
+      value: 3.42e-43
       objectReference: {fileID: 0}
     - target: {fileID: 2096954885035021029, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: startColor.m_ColorMin.r
-      value: 1.0496098e-37
+      value: 1.6556508e-16
       objectReference: {fileID: 0}
     - target: {fileID: 5878179182258637991, guid: 267a0fbde2eed1049ae1aff3c9a64651, type: 3}
       propertyPath: m_RootOrder

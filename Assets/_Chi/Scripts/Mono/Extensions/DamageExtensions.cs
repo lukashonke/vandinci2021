@@ -20,7 +20,8 @@ namespace _Chi.Scripts.Mono.Extensions
             return dmg;
         }
 
-        public static float CalculateModuleDamage(Module module, Player player, bool isModuleCritical, bool isPlayerCritical)
+        // used for pre-calculations and checks, not actual damage computation
+        public static float CalculatePotentialModuleDamage(Module module, Player player, bool isModuleCritical, bool isPlayerCritical)
         {
             float damage = 0;
             
@@ -50,6 +51,23 @@ namespace _Chi.Scripts.Mono.Extensions
             if (source is Player player)
             {
                 damage *= player.stats.dealtDamageMul.GetValue();
+
+                if (target is Npc npc && module is OffensiveModule offs)
+                {
+                    var targetArmor = npc.stats.armor;
+                    var targetArmorAfterNegation = Mathf.Min(0, targetArmor - offs.stats.armorPiercing.GetValue());
+                    
+                    //TODO mul damage when armored
+                    
+                    if (targetArmorAfterNegation > 0.99f)
+                    {
+                        damage *= offs.stats.armoredDamageMul.GetValue();
+                    }
+                    else
+                    {
+                        damage *= offs.stats.nonArmorDamageMul.GetValue();
+                    }
+                }
 
                 bool forcedModuleCritical = immediateEffectFlags.HasFlag(ImmediateEffectFlags.ForceModuleCritical);
                 bool moduleCritical = module is OffensiveModule offensiveModule && IsModuleDamageCritical(offensiveModule);

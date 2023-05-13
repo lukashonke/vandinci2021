@@ -22,16 +22,15 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Moving Boosts
-  uiDescription: TODO
+  uiDescription: When moving, increases fire rate and reload speed.
   effects: []
   addSkills: []
-  rarity: 1
+  rarity: 0
   unlocksModulePrefabIds: 
   disablesModulePrefabIds: 
   replacesModulePrefabIds: 
   modulePrefabId: 2002
   moduleEffects:
   - {fileID: 11400000, guid: 81594ce08f920824e830d3f838dd2510, type: 2}
-  - {fileID: 11400000, guid: 165626b80e00d5c4a808babf098e9c80, type: 2}
   addSubEmitters: []
   effectsLevel: 1

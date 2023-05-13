@@ -203,6 +203,8 @@ namespace _Chi.Scripts.Mono.Modules
             var retValue = stats.fireRate.GetValue();
             if (parent is Player player)
             {
+                retValue *= player.stats.moduleFireRateMul.GetValue();
+
                 if (player.IsMoving())
                 {
                     retValue *= stats.movingFireRateBoost.GetValue();

@@ -59,7 +59,13 @@ namespace _Chi.Scripts.Scriptables.Dtos
         public SkillUpgradeItem skillUpgradeItem;
 
         [VerticalGroup("Text")]
+        [FoldoutGroup("Text/Additional")]
         public List<string> additionalTexts;
+
+        [VerticalGroup("Text")]
+        [FoldoutGroup("Text/Additional")]
+        [Multiline(2)]
+        public string story;
     }
 
     [Serializable]

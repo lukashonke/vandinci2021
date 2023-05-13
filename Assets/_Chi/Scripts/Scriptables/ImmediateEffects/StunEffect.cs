@@ -9,6 +9,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
     public class StunEffect : ImmediateEffectWithDuration
     {
         public bool setStunned;
+        public bool setImmobilized;
         public float slowDownBy;
         public bool stackDuration;
         
@@ -21,6 +22,11 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
             if (target != null && source != null && target.AreEnemies(source) && target.CanReceiveEffect(this) && target.AddImmediateEffect(this, duration, stackDuration))
             {
                 if (setStunned)
+                {
+                    target.SetStunned(true);
+                }
+                
+                if (setImmobilized)
                 {
                     target.SetImmobilized(true);
                 }
@@ -57,6 +63,11 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
                 else if(rescheduledUntil > -1)
                 {
                     if (setStunned)
+                    {
+                        target.SetStunned(false);
+                    }
+                    
+                    if (setImmobilized)
                     {
                         target.SetImmobilized(false);
                     }

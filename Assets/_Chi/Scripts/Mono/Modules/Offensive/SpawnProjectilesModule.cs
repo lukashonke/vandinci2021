@@ -125,10 +125,12 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                         if (nearest != null)
                         {
                             currentTarget = nearest.transform;
+                            currentTargetEntity = nearest;
                         }
                         else
                         {
                             currentTarget = null;
+                            currentTargetEntity = null;
                         }
                     }
 

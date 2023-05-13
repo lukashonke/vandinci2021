@@ -22,7 +22,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Armor Piercing
-  uiDescription: TODO
+  uiDescription: The bullets become armor piercing, they will ignore a portion of
+    targets armor.
   effects: []
   addSkills: []
   rarity: 0

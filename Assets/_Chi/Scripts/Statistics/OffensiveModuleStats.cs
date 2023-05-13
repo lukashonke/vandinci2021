@@ -37,6 +37,10 @@ namespace _Chi.Scripts.Statistics
         public Stat projectilePierceCount = new Stat();
         
         public Stat projectilePierceChance = new Stat();
+
+        public Stat projectilePierceDeadChance = new Stat();
+        
+        public Stat projectilePierceDeadCount = new Stat();
         
         public Stat projectilePushForce = new Stat();
 
@@ -58,7 +62,14 @@ namespace _Chi.Scripts.Statistics
         
         public Stat projectileCriticalDamage = new Stat();
 
+        // bypass % of armor 
         public Stat armorPiercing = new Stat();
+        
+        // mul of damage against armored enemies
+        public Stat armoredDamageMul = new Stat();
+        
+        // mul of damage against non armored enemies
+        public Stat nonArmorDamageMul = new Stat();
         
         public Stat instantReloadChance = new Stat();
         

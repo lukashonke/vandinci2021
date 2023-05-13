@@ -28,6 +28,8 @@ namespace BulletPro
 
 		public UnityEvent shootInstruction;
 
+		public bool isSubEmitter;
+
 		// Bullet Emitter is considered "playing" if at least one sub-emitter is still playing.
 		public bool isPlaying
 		{
