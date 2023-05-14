@@ -9,7 +9,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
     {
         private Vector3 lastPos;
 
-        public int projectileMul = 1;
+        public float projectileMul = 1;
 
         public int everyNth;
 
@@ -34,7 +34,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
         {
             if (parentModule is OffensiveModule offensiveModule)
             {
-                var projectiles = projectileMul * offensiveModule.stats.projectileCount.GetValueInt() * offensiveModule.stats.projectileMultiplier.GetValueInt();
+                int projectiles = (int) Math.Ceiling(projectileMul * offensiveModule.stats.projectileCount.GetValueInt() * offensiveModule.stats.projectileMultiplier.GetValueInt());
                 
                 emitter.applyBulletParamsAction = () =>
                 {

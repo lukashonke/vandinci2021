@@ -25,8 +25,10 @@ MonoBehaviour:
   forcedFlags: 0
   chance: 0.5
   duration: 1
-  setStunned: 1
-  slowDownBy: 0
+  ignoreDuplicateEffects: 1
   stackDuration: 0
+  setStunned: 1
+  setImmobilized: 0
+  slowDownBy: 0
   stunMaterial: {fileID: 0}
   vfxPrefab: {fileID: 7938201365818296753, guid: da5f2d49a4f111d4997787e85f13df1e, type: 3}

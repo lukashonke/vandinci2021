@@ -37,6 +37,8 @@ namespace _Chi.Scripts.Statistics
         public Stat projectilePierceCount = new Stat();
         
         public Stat projectilePierceChance = new Stat();
+        
+        public Stat projectilePierceCountIgnoreKilled = new Stat();
 
         public Stat projectilePierceDeadChance = new Stat();
         
@@ -72,6 +74,12 @@ namespace _Chi.Scripts.Statistics
         public Stat nonArmorDamageMul = new Stat();
         
         public Stat instantReloadChance = new Stat();
+        
+        public Stat consumeNoAmmoChance = new Stat();
+        public Stat standingConsumeNoAmmoChance = new Stat();
+        public Stat movingConsumeNoAmmoChance = new Stat();
+        
+        public Stat projectileRandomRotation = new Stat();
         
         public bool hasAreaEffect = false;
         public bool hasProjectile = true;

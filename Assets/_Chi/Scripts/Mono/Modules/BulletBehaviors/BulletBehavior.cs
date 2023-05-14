@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
@@ -18,10 +19,12 @@ public class BulletBehavior : BaseBulletBehaviour
 	private float canPierceDeadRoll;
 
 	private float pierceRemainingDamage = 0;
-	private int piercedEnemies = 0;
-	private int piercedDeadEnemies = 0;
-	[NonSerialized] public BulletReceiver[] collidedWith = new BulletReceiver[64];
+	[NonSerialized] public int piercedEnemies = 0;
+	[NonSerialized] public int piercedDeadEnemies = 0;
+	[NonSerialized] public BulletReceiver[] collidedWith = new BulletReceiver[16];
 	[NonSerialized] public Entity lastAffectedEnemy;
+
+	private object ignoreTarget;
 
 	private bool diedByCollision;
 
@@ -41,6 +44,13 @@ public class BulletBehavior : BaseBulletBehaviour
 		base.OnBulletBirth();
 
 		ownerModule = bullet.emitter.gameObject.GetModule();
+		
+		var ignoreTarget1 = this.bullet.moduleParameters.GetObjectReferenceSilent(BulletVariables.IgnoreTarget1);
+		var ignoreTarget2 = this.bullet.subEmitter.moduleParameters.GetObjectReferenceSilent(BulletVariables.IgnoreTarget1);
+
+		this.ignoreTarget = ignoreTarget1 ? ignoreTarget1 : ignoreTarget2;
+		
+		//var ignoreTarget2 = bullet.dynamicSolver.SolveDynamicObjectReference(BulletVariables.IgnoreTarget1, 1561651, ParameterOwner.Bullet);
 		
 		trail.Clear();
 		
@@ -156,7 +166,17 @@ public class BulletBehavior : BaseBulletBehaviour
 					var flags = ImmediateEffectFlags.None;
 					float strength = 1f;
 					
-					effect.ApplyWithChanceCheck(null, transform.position, ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
+					var effectData = Gamesystem.instance.poolSystem.GetEffectData();
+					effectData.target = null;
+					effectData.targetPosition = transform.position;
+					effectData.sourceEntity = ownerModule.parent;
+					effectData.sourceModule = ownerModule;
+					effectData.sourceBullet = this;
+					effectData.sourceEmitter = bullet.emitter;
+					
+					effect.ApplyWithChanceCheck(effectData, strength, new ImmediateEffectParams(), flags);
+					
+					Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
 				}
 			}
 					
@@ -170,7 +190,17 @@ public class BulletBehavior : BaseBulletBehaviour
 					var flags = ImmediateEffectFlags.None;
 					float strength = 1f;
 					
-					effect.ApplyWithChanceCheck(null, transform.position, ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
+					var effectData = Gamesystem.instance.poolSystem.GetEffectData();
+					effectData.target = null;
+					effectData.targetPosition = transform.position;
+					effectData.sourceEntity = ownerModule.parent;
+					effectData.sourceModule = ownerModule;
+					effectData.sourceBullet = this;
+					effectData.sourceEmitter = bullet.emitter;
+					
+					effect.ApplyWithChanceCheck(effectData, strength, new ImmediateEffectParams(), flags);
+					
+					Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
 				}
 			}
 		}
@@ -203,7 +233,7 @@ public class BulletBehavior : BaseBulletBehaviour
 	public override void OnBulletCollision(BulletReceiver br, Vector3 collisionPoint)
 	{
 		base.OnBulletCollision(br, collisionPoint);
-
+		
 		var canPierce = CanPierce();
 		if (canPierce != PierceType.NoPierce)
 		{
@@ -223,7 +253,7 @@ public class BulletBehavior : BaseBulletBehaviour
 		}
 		
 		var entity = br.gameObject.GetEntity();
-		if (entity != null && entity.isAlive)
+		if (entity != null && entity.isAlive && entity != ignoreTarget)
 		{
 			if (ownerModule is OffensiveModule offensiveModule)
 			{
@@ -237,11 +267,29 @@ public class BulletBehavior : BaseBulletBehaviour
 					return;
 				}
 
+				if (!offensiveModule.CanTarget(entity))
+				{
+					return;
+				}
+
 				var effects = offensiveModule.effects;
 				
 				for (var index = 0; index < effects.Count; index++)
 				{
 					var effect = effects[index];
+
+					bool effectDisabled = false;
+					foreach (var e in offensiveModule.disabledEffects)
+					{
+						if (e.Item2 == effect)
+						{
+							effectDisabled = true;
+							break;
+						}
+					}
+
+					if (effectDisabled) continue;
+					
 					var prevHp = entity.GetHp();
 
 					var flags = ImmediateEffectFlags.None;
@@ -252,7 +300,17 @@ public class BulletBehavior : BaseBulletBehaviour
 						strength = pierceRemainingDamage;
 					}*/
 					
-					effect.ApplyWithChanceCheck(entity, entity.GetPosition(), ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
+					var effectData = Gamesystem.instance.poolSystem.GetEffectData();
+					effectData.target = entity;
+					effectData.targetPosition = entity.GetPosition();
+					effectData.sourceEntity = ownerModule.parent;
+					effectData.sourceModule = ownerModule;
+					effectData.sourceBullet = this;
+					effectData.sourceEmitter = bullet.emitter;
+					
+					effect.ApplyWithChanceCheck(effectData, strength, new ImmediateEffectParams(), flags);
+					
+					Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
 					
 					var newHp = entity.GetHp();
 					
@@ -274,7 +332,18 @@ public class BulletBehavior : BaseBulletBehaviour
 
 						if (!list.Contains(effect))
 						{
-							effect.ApplyWithChanceCheck(entity, entity.GetPosition(), ownerModule.parent, null, ownerModule, 1, new ImmediateEffectParams());
+							var effectData = Gamesystem.instance.poolSystem.GetEffectData();
+							effectData.target = entity;
+							effectData.targetPosition = entity.GetPosition();
+							effectData.sourceEntity = ownerModule.parent;
+							effectData.sourceModule = ownerModule;
+							effectData.sourceBullet = this;
+							effectData.sourceEmitter = bullet.emitter;
+							
+							effect.ApplyWithChanceCheck(effectData, 1, new ImmediateEffectParams());
+							
+							Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
+							
 							list.Add(effect);
 						} 
 					}
@@ -287,21 +356,34 @@ public class BulletBehavior : BaseBulletBehaviour
 				
 				bool deactivate = false;
 
+				bool increasePiercedCount = true;
+
+				if (offensiveModule.stats.projectilePierceCountIgnoreKilled.GetValueInt() > 0)
+				{
+					increasePiercedCount = entity.isAlive;
+				}
+
 				if (canPierce == PierceType.FixedCount)
 				{
-					piercedEnemies++;
-					collidedWith[piercedEnemies] = br;
-					if (piercedEnemies >= offensiveModule.stats.projectilePierceCount.GetValueInt())
+					if (increasePiercedCount)
 					{
-						deactivate = true;
+						piercedEnemies++;
+						collidedWith[piercedEnemies] = br;
+						if (piercedEnemies >= offensiveModule.stats.projectilePierceCount.GetValueInt())
+						{
+							deactivate = true;
+						}
 					}
 				}
 				else if(canPierce == PierceType.UsingDamage)
 				{
-					collidedWith[piercedEnemies] = br;
-					if (pierceRemainingDamage <= 0)
+					if (increasePiercedCount)
 					{
-						deactivate = true;
+						collidedWith[piercedEnemies] = br;
+						if (pierceRemainingDamage <= 0)
+						{
+							deactivate = true;
+						}
 					}
 				}
 				else
@@ -328,6 +410,11 @@ public class BulletBehavior : BaseBulletBehaviour
 				if (deactivate)
 				{
 					diedByCollision = true;
+
+					if (!offensiveModule.OnBulletBeforeDeactivated(bullet, this))
+					{
+						return;
+					}
 					
 					effects = offensiveModule.onBulletDestroyEffects;
 					if (effects != null)
@@ -338,8 +425,18 @@ public class BulletBehavior : BaseBulletBehaviour
 
 							var flags = ImmediateEffectFlags.None;
 							float strength = 1f;
+							
+							var effectData = Gamesystem.instance.poolSystem.GetEffectData();
+							effectData.target = entity;
+							effectData.targetPosition = entity.GetPosition();
+							effectData.sourceEntity = ownerModule.parent;
+							effectData.sourceModule = ownerModule;
+							effectData.sourceBullet = this;
+							effectData.sourceEmitter = bullet.emitter;
 					
-							effect.ApplyWithChanceCheck(entity, entity.GetPosition(), ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
+							effect.ApplyWithChanceCheck(effectData, strength, new ImmediateEffectParams(), flags);
+							
+							Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
 						}
 					}
 					
@@ -352,8 +449,18 @@ public class BulletBehavior : BaseBulletBehaviour
 
 							var flags = ImmediateEffectFlags.None;
 							float strength = 1f;
+							
+							var effectData = Gamesystem.instance.poolSystem.GetEffectData();
+							effectData.target = entity;
+							effectData.targetPosition = entity.GetPosition();
+							effectData.sourceEntity = ownerModule.parent;
+							effectData.sourceModule = ownerModule;
+							effectData.sourceBullet = this;
+							effectData.sourceEmitter = bullet.emitter;
 					
-							effect.ApplyWithChanceCheck(entity, entity.GetPosition(), ownerModule.parent, null, ownerModule, strength, new ImmediateEffectParams(), flags);
+							effect.ApplyWithChanceCheck(effectData, strength, new ImmediateEffectParams(), flags);
+							
+							Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
 						}
 					}
 					

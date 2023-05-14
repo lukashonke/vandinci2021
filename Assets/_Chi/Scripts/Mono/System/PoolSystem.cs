@@ -41,12 +41,12 @@ namespace _Chi.Scripts.Mono.System
             });
         }
         
-        public EffectSourceData GetSourceData()
+        public EffectSourceData GetEffectData()
         {
             return effectSourcePool.Get();
         }
         
-        public void ReleaseSourceData(EffectSourceData effectSourceData)
+        public void ReturnEffectData(EffectSourceData effectSourceData)
         {
             effectSourcePool.Release(effectSourceData);
         }

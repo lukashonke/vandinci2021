@@ -9,7 +9,9 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
     public class ProjectileAddImmediateEffect : ModuleStatsEffect
     {
         public List<ImmediateEffect> effectsToAdd;
-        
+
+        public List<ImmediateEffect> effectsToRemove;
+
         public EffectType effectType;
 
         public override bool Apply(Module target, object source, int level)
@@ -53,12 +55,27 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                             offensiveModule.additionalOnMagazineReloadEffects.Add((source, effect));
                         }
                     }
+                    else if (effectType == EffectType.OnReloadStart)
+                    {
+                        if (!offensiveModule.additionalOnReloadStartEffects.Contains((source, effect)))
+                        {
+                            offensiveModule.additionalOnReloadStartEffects.Add((source, effect));
+                        }
+                    }
                     else if (effectType == EffectType.OnSkillUse)
                     {
                         if (!offensiveModule.additionalOnSkillUseEffects.Contains((source, effect)))
                         {
                             offensiveModule.additionalOnSkillUseEffects.Add((source, effect));
                         }
+                    }
+                }
+
+                foreach (var effect in effectsToRemove)
+                {
+                    if (!offensiveModule.disabledEffects.Contains((source, effect)))
+                    {
+                        offensiveModule.disabledEffects.Add((source, effect));
                     }
                 }
                 
@@ -109,6 +126,13 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                             offensiveModule.additionalOnMagazineReloadEffects.Remove((source, effect));
                         }
                     }
+                    else if (effectType == EffectType.OnReloadStart)
+                    {
+                        if (offensiveModule.additionalOnReloadStartEffects.Contains((source, effect)))
+                        {
+                            offensiveModule.additionalOnReloadStartEffects.Remove((source, effect));
+                        }
+                    }
                     else if (effectType == EffectType.OnSkillUse)
                     {
                         if (offensiveModule.additionalOnSkillUseEffects.Contains((source, effect)))
@@ -117,6 +141,15 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                         }
                     }
                 }
+                
+                foreach (var effect in effectsToRemove)
+                {
+                    if (offensiveModule.disabledEffects.Contains((source, effect)))
+                    {
+                        offensiveModule.disabledEffects.Remove((source, effect));
+                    }
+                }
+                
                 return true;
             }
 
@@ -144,5 +177,6 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
         OnPickupGold,
         OnMagazineReload,
         OnSkillUse,
+        OnReloadStart
     }
 }

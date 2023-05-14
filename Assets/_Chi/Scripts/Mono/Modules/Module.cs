@@ -49,6 +49,8 @@ namespace _Chi.Scripts.Mono.Modules
         
         [NonSerialized] public List<(object, ImmediateEffect)> additionalOnMagazineReloadEffects;
         
+        [NonSerialized] public List<(object, ImmediateEffect)> additionalOnReloadStartEffects;
+        
         [NonSerialized] public List<(object, ImmediateEffect)> additionalOnSkillUseEffects;
         
         //[NonSerialized] public bool destroyed;
@@ -59,6 +61,7 @@ namespace _Chi.Scripts.Mono.Modules
 
             additionalOnPickupGoldEffects = new();
             additionalOnMagazineReloadEffects = new();
+            additionalOnReloadStartEffects = new();
             additionalOnSkillUseEffects = new();
 
             originalRotation = transform.rotation;
@@ -215,7 +218,15 @@ namespace _Chi.Scripts.Mono.Modules
             {
                 foreach (var effect in additionalOnSkillUseEffects)
                 {
-                    effect.Item2.ApplyWithChanceCheck(parent, parent.GetPosition(), parent, null, this, 1f, new ImmediateEffectParams(), ImmediateEffectFlags.None);
+                    var data = Gamesystem.instance.poolSystem.GetEffectData();
+                    data.target = parent;
+                    data.targetPosition = parent.GetPosition();
+                    data.sourceEntity = parent;
+                    data.sourceModule = this;
+                    
+                    effect.Item2.ApplyWithChanceCheck(data, 1f, new ImmediateEffectParams(), ImmediateEffectFlags.None);
+                    
+                    Gamesystem.instance.poolSystem.ReturnEffectData(data);
                 }
             }
         }
@@ -228,9 +239,52 @@ namespace _Chi.Scripts.Mono.Modules
             {
                 foreach (var effect in additionalOnPickupGoldEffects)
                 {
-                    effect.Item2.ApplyWithChanceCheck(parent, parent.GetPosition(), parent, null, this, amount, new ImmediateEffectParams(), ImmediateEffectFlags.None);
+                    var data = Gamesystem.instance.poolSystem.GetEffectData();
+                    data.target = parent;
+                    data.targetPosition = parent.GetPosition();
+                    data.sourceEntity = parent;
+                    data.sourceModule = this;
+                    
+                    effect.Item2.ApplyWithChanceCheck(data, amount, new ImmediateEffectParams(), ImmediateEffectFlags.None);
+                    
+                    Gamesystem.instance.poolSystem.ReturnEffectData(data);
                 }
             }
+        }
+        
+        public virtual void OnMagazineStartReload()
+        {
+            if (additionalOnReloadStartEffects != null)
+            {
+                foreach (var effect in additionalOnReloadStartEffects)
+                {
+                    var data = Gamesystem.instance.poolSystem.GetEffectData();
+                    data.target = parent;
+                    data.targetPosition = parent.GetPosition();
+                    data.sourceEntity = parent;
+                    data.sourceModule = this;
+                    
+                    effect.Item2.ApplyWithChanceCheck(data, 1f, new ImmediateEffectParams(), ImmediateEffectFlags.None);
+                    
+                    Gamesystem.instance.poolSystem.ReturnEffectData(data);
+                }
+            }
+
+            /*if (parent is Player player)
+            {
+                player.OnMagazineReload(this);
+            }
+            
+            if (subEmitters != null)
+            {
+                foreach (var kp in slot.currentModule.subEmitters)
+                {
+                    foreach (var subEmitter in kp.Value)
+                    {
+                        subEmitter.OnMagazineReload(this);
+                    }
+                }
+            }*/
         }
 
         public virtual void OnMagazineReload()
@@ -239,7 +293,15 @@ namespace _Chi.Scripts.Mono.Modules
             {
                 foreach (var effect in additionalOnMagazineReloadEffects)
                 {
-                    effect.Item2.ApplyWithChanceCheck(parent, parent.GetPosition(), parent, null, this, 1f, new ImmediateEffectParams(), ImmediateEffectFlags.None);
+                    var data = Gamesystem.instance.poolSystem.GetEffectData();
+                    data.target = parent;
+                    data.targetPosition = parent.GetPosition();
+                    data.sourceEntity = parent;
+                    data.sourceModule = this;
+                    
+                    effect.Item2.ApplyWithChanceCheck(data, 1f, new ImmediateEffectParams(), ImmediateEffectFlags.None);
+                    
+                    Gamesystem.instance.poolSystem.ReturnEffectData(data);
                 }
             }
 

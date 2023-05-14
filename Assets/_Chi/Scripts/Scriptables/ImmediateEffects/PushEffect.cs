@@ -1,4 +1,5 @@
-﻿using _Chi.Scripts.Mono.Entities;
+﻿using _Chi.Scripts.Mono.Common;
+using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Modules;
 using UnityEngine;
 
@@ -13,14 +14,14 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
         public float setCannotBePushedFor = 0.5f;
 
-        public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
+        public override bool Apply(EffectSourceData data, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
-            if (target == null) return false;
+            if (data.target == null) return false;
             
             var pushStrength = basePush;
 
-            Vector3 source = target.GetPosition();
-            if (sourceModule is OffensiveModule offensiveModule)
+            Vector3 source = data.target.GetPosition();
+            if (data.sourceModule is OffensiveModule offensiveModule)
             {
                 if (!forcedFlags.HasFlag(ImmediateEffectFlags.FixedDamage))
                 {
@@ -29,13 +30,15 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
                 source = offensiveModule.GetPosition();
             }
-            else if (sourceEntity != null)
+            else if (data.sourceEntity != null)
             {
-                source = sourceEntity.GetPosition();
+                source = data.sourceEntity.GetPosition();
             }
             
             var sourcePush = pushStrength * strength;
-            target.ReceivePush((target.GetPosition() - source).normalized * sourcePush, pushDuration);
+            data.target.ReceivePush((data.target.GetPosition() - source).normalized * sourcePush, pushDuration);
+
+            var target = data.target;
 
             Gamesystem.instance.Schedule(Time.time + pushDuration, () =>
             {
@@ -44,7 +47,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
             
             if (setCannotBePushedFor > 0)
             {
-                target.SetCannotBePushed(setCannotBePushedFor);
+                data.target.SetCannotBePushed(setCannotBePushedFor);
             }
             
             return true;

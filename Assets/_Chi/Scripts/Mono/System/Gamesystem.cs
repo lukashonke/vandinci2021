@@ -104,7 +104,7 @@ public class Gamesystem : MonoBehaviour
 
     public void Update()
     {
-        DebugDistances();
+        //DebugDistances();
 
         //Debug.Log(CanBeAccessed(Utils.GetMousePosition()));
         
@@ -142,7 +142,6 @@ public class Gamesystem : MonoBehaviour
     
     public void Schedule(float time, Action action)
     {
-        //TODO same time = error
         schedules.Add(new FloatWithAction()
         {
             action = action,

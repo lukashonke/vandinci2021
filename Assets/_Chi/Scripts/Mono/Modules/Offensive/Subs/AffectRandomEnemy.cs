@@ -180,7 +180,15 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
                 
                 foreach (var effect in effects)
                 {
-                    effect.ApplyWithChanceCheck(target, target.GetPosition(), parentModule.parent, null, parentModule, 1, new ImmediateEffectParams(), effectFlags);
+                    var data = Gamesystem.instance.poolSystem.GetEffectData();
+                    data.target = target;
+                    data.targetPosition = target.GetPosition();
+                    data.sourceEntity = parentModule.parent;
+                    data.sourceModule = parentModule;
+                    
+                    effect.ApplyWithChanceCheck(data, 1, new ImmediateEffectParams(), effectFlags);
+                    
+                    Gamesystem.instance.poolSystem.ReturnEffectData(data);
                 }
                 
                 var additionalEffects = offensiveModule.additionalEffects;
@@ -195,7 +203,16 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
 
                         if (!list.Contains(effect))
                         {
-                            effect.ApplyWithChanceCheck(target, target.GetPosition(), parentModule.parent, null, parentModule, 1, new ImmediateEffectParams(), effectFlags);
+                            var data = Gamesystem.instance.poolSystem.GetEffectData();
+                            data.target = target;
+                            data.targetPosition = target.GetPosition();
+                            data.sourceEntity = parentModule.parent;
+                            data.sourceModule = parentModule;
+                            
+                            effect.ApplyWithChanceCheck(data, 1, new ImmediateEffectParams(), effectFlags);
+                            
+                            Gamesystem.instance.poolSystem.ReturnEffectData(data);
+
                             list.Add(effect);
                         } 
                     }

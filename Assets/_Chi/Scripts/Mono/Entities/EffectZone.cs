@@ -75,7 +75,7 @@ namespace _Chi.Scripts.Mono.Entities
             foreach (var kp in entitiesInside)
             {
                 var entity = kp.Key;
-                if (entity == null)
+                if (entity == null || !entity.isAlive)
                 {
                     toRemove.Add(entity);
                     continue;
@@ -88,10 +88,15 @@ namespace _Chi.Scripts.Mono.Entities
                     {
                         if (IsInsideEffectArea(entity))
                         {
-                            Debug.Log("Applied to " + entity.name + "");
                             foreach (var effect in effects)
                             {
-                                effect.ApplyWithChanceCheck(entity, entity.GetPosition(), null, null, null, effectStrength, new ImmediateEffectParams());
+                                var data = Gamesystem.instance.poolSystem.GetEffectData();
+                                data.target = entity;
+                                data.targetPosition = entity.GetPosition();
+                                
+                                effect.ApplyWithChanceCheck(data, effectStrength, new ImmediateEffectParams());
+                                
+                                Gamesystem.instance.poolSystem.ReturnEffectData(data);
                             }
                             
                             foreach (var effect in statsEffects)

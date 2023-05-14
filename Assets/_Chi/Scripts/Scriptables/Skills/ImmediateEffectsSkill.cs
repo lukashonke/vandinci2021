@@ -23,7 +23,14 @@ namespace _Chi.Scripts.Scriptables.Skills
             
             foreach (var effect in effects)
             {
-                effect.ApplyWithChanceCheck(entity, entity.GetPosition(), entity, null, null, effectStrength, new ImmediateEffectParams());
+                var effectData = Gamesystem.instance.poolSystem.GetEffectData();
+                effectData.target = entity;
+                effectData.targetPosition = entity.GetPosition();
+                effectData.sourceEntity = entity;
+                
+                effect.ApplyWithChanceCheck(effectData, effectStrength, new ImmediateEffectParams());
+                
+                Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
             }
             
             if (entity is Player player)

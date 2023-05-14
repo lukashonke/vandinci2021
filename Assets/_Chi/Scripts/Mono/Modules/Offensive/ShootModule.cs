@@ -53,7 +53,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                 var currentPosition = transform.position;
 
                 float boost = 1.0f;
-
+                
                 if (parent is Player player)
                 {
                     if (player.IsMoving())
@@ -174,8 +174,29 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                             emitter.ApplyParams(stats, parent, this);
                         };
                         emitter.Play();
+
+                        bool consumeNoAmmo = false;
                         
-                        currentMagazine--;
+                        if (parent is Player player2)
+                        {
+                            if (Random.value < stats.consumeNoAmmoChance.GetValue())
+                            {
+                                consumeNoAmmo = true;
+                            }
+                            else if (player2.IsMoving() && Random.value < stats.movingConsumeNoAmmoChance.GetValue())
+                            {
+                                consumeNoAmmo = true;
+                            }
+                            else if(!player2.IsMoving() && Random.value < stats.standingConsumeNoAmmoChance.GetValue())
+                            {
+                                consumeNoAmmo = true;
+                            }
+                        }
+
+                        if (!consumeNoAmmo)
+                        {
+                            currentMagazine--;
+                        }
                         
                         if (currentMagazine <= 0)
                         {
@@ -221,6 +242,8 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                         startReloadAtTime = Time.time + Math.Max(0, stats.shotsPerShot.GetValue()) * stats.projectileDelayBetweenConsecutiveShots.GetValue();
                         isReloading = true;
                     }
+                    
+                    OnMagazineStartReload();
                 }
             }
         }

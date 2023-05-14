@@ -35,7 +35,11 @@ namespace _Chi.Scripts.Mono.Modules
         [ReadOnly] public List<(object, ImmediateEffect)> additionalEffects;
         
         [ReadOnly] public List<(object, ImmediateEffect)> additionalOnBulletDestroyEffects;
+        
+        [ReadOnly] public List<(object, ImmediateEffect)> disabledEffects;
 
+        [ReadOnly] public List<(object, Func<Entity, bool>)> targetAffectConditions;
+        
         public ParticleSystem shootVfx;
 
         [FormerlySerializedAs("shootEffectSelfs")] public List<ImmediateEffect> shootEffectsSelf;
@@ -56,6 +60,7 @@ namespace _Chi.Scripts.Mono.Modules
         public int temporaryProjectilesUntilNextShot = 0;
         [FormerlySerializedAs("temporaryProjectilesForCurrentOrNextMagazine")] public int temporaryProjectilesForNextMagazine = 0;
 
+
         public override void Awake()
         {
             base.Awake();
@@ -63,6 +68,8 @@ namespace _Chi.Scripts.Mono.Modules
             additionalEffects = new();
             additionalOnBulletDestroyEffects = new();
             additionalShootEffectsSelf = new();
+            targetAffectConditions = new();
+            disabledEffects = new();
             emitter = GetComponent<BulletEmitter>();
             subEmitters = new();
             hasEmitter = emitter != null;
@@ -120,7 +127,15 @@ namespace _Chi.Scripts.Mono.Modules
             {
                 foreach (var eff in shootEffectsSelf)
                 {
-                    eff.ApplyWithChanceCheck(parent, parent.GetPosition(), parent, null, this, 1f, new ImmediateEffectParams());
+                    var data = Gamesystem.instance.poolSystem.GetEffectData();
+                    data.target = parent;
+                    data.targetPosition = parent.GetPosition();
+                    data.sourceEntity = parent;
+                    data.sourceModule = this;
+                    
+                    eff.ApplyWithChanceCheck(data, 1f, new ImmediateEffectParams());
+                    
+                    Gamesystem.instance.poolSystem.ReturnEffectData(data);
                 }
             }
             
@@ -128,7 +143,15 @@ namespace _Chi.Scripts.Mono.Modules
             {
                 foreach (var (source, eff) in additionalShootEffectsSelf)
                 {
-                    eff.ApplyWithChanceCheck(parent, parent.GetPosition(), parent, null, this, 1f, new ImmediateEffectParams());
+                    var data = Gamesystem.instance.poolSystem.GetEffectData();
+                    data.target = parent;
+                    data.targetPosition = parent.GetPosition();
+                    data.sourceEntity = parent;
+                    data.sourceModule = this;
+                    
+                    eff.ApplyWithChanceCheck(data, 1f, new ImmediateEffectParams());
+                    
+                    Gamesystem.instance.poolSystem.ReturnEffectData(data);
                 }
             }
         }
@@ -147,13 +170,31 @@ namespace _Chi.Scripts.Mono.Modules
                     su.OnParentShoot(source);
                 }
             }
+        }
 
-            temporaryProjectilesUntilNextShot = 0;
+        public virtual bool OnBulletBeforeDeactivated(Bullet bullet, BulletBehavior behavior)
+        {
+            if (bulletBehavior.HasFlag(BulletBehaviorType.OnDieGoToPlayer))
+            {
+                for (int i = 0; i < behavior.collidedWith.Length; i++)
+                {
+                    behavior.collidedWith[i] = null;
+                }
+                
+                behavior.piercedEnemies = 0;
+                behavior.piercedDeadEnemies = 0;
+                
+                bullet.moduleMovement.Rotate(bullet.moduleMovement.GetAngleTo(this.transform));
+                return false;
+            }
+            return true;
         }
 
         public virtual void OnBulletEffectGiven(Bullet bullet, BulletBehavior behavior, bool bulletWillDie)
         {
-            if (!bulletWillDie && bulletBehavior.HasFlag(BulletBehaviorType.RetargetOnCollision))
+            var retargetForward = bulletBehavior.HasFlag(BulletBehaviorType.RetargetOnCollisionForward);
+            var retargetNoRestriction = bulletBehavior.HasFlag(BulletBehaviorType.RetargetWithoutRestrictions);
+            if (!bulletWillDie && (retargetForward || retargetNoRestriction))
             {
                 var nearest = ((Player) parent).GetNearestEnemy(bullet.self.position, (e) =>
                 {
@@ -162,13 +203,25 @@ namespace _Chi.Scripts.Mono.Modules
                     for (var index = 0; index < behavior.collidedWith.Length; index++)
                     {
                         var bulletReceiver = behavior.collidedWith[index];
-                        if (bulletReceiver == null) break;
-                        if(e.hasBulletReceiver && e.bulletReceiver == bulletReceiver) return false;
+                        if (bulletReceiver == null) continue;
+                        if (e.hasBulletReceiver && e.bulletReceiver == bulletReceiver)
+                        {
+                            if (retargetNoRestriction && Utils.Dist2(e.transform.position, bullet.self.position) > 0.81f)
+                            {
+                                behavior.collidedWith[index] = null;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        }
                     }
                     
                     var angle = bullet.moduleMovement.GetAngleTo(e.transform);
+
+                    if (!retargetNoRestriction && Math.Abs(angle) > 75) return false;
                     
-                    return Math.Abs(angle) < 75 && Utils.Dist2(e.GetPosition(), bullet.self.position) < Math.Pow(stats.projectileRange.GetValue(), 2);
+                    return Utils.Dist2(e.GetPosition(), bullet.self.position) < Math.Pow(stats.projectileRange.GetValue(), 2);
                 });
 
                 if (nearest != null)
@@ -220,6 +273,7 @@ namespace _Chi.Scripts.Mono.Modules
 
         public void AddRechargeFireProgressPercent(float percent)
         {
+            if (!isReloading) return;
             reloadProgress = Mathf.Min(1, reloadProgress + percent);
         }
 
@@ -230,6 +284,7 @@ namespace _Chi.Scripts.Mono.Modules
         
         public void AddRechargeFireProgressTime(float time)
         {
+            if (!isReloading) return;
             reloadProgress = Mathf.Min(1, reloadProgress + (time) / GetReloadDuration());
         }
         
@@ -306,6 +361,8 @@ namespace _Chi.Scripts.Mono.Modules
     public enum BulletBehaviorType
     {
         Default = 0,
-        RetargetOnCollision = 1
+        RetargetOnCollisionForward = 1 << 0,
+        RetargetWithoutRestrictions = 1 << 1,
+        OnDieGoToPlayer = 1 << 2,
     }
 }

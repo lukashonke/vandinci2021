@@ -12,22 +12,22 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
         public float value;
         public StatModifierType modifier;
         
-        public override bool ApplyEffect(Entity target, Entity source, Item sourceItem, Module sourceModule)
+        public override bool ApplyEffect(EffectSourceData data)
         {
-            if (target is Player player)
+            if (data.target is Player player)
             {
-                player.stats.moduleFireRateMul.AddModifier(new StatModifier(source, value, modifier, (short) order));
+                player.stats.moduleFireRateMul.AddModifier(new StatModifier(data.sourceEntity, value, modifier, (short) order));
                 return true;
             }
             
             return false;
         }
 
-        public override void RemoveEffect(Entity target, Entity source, Item sourceItem, Module sourceModule)
+        public override void RemoveEffect(EffectSourceData data)
         {
-            if (target is Player player)
+            if (data.target is Player player)
             {
-                player.stats.moduleFireRateMul.RemoveModifiersBySource(source);
+                player.stats.moduleFireRateMul.RemoveModifiersBySource(data.sourceEntity);
             }
         }
     }

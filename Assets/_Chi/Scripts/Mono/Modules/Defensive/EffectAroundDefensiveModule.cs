@@ -63,7 +63,15 @@ namespace _Chi.Scripts.Mono.Modules.Defensive
                 
                     foreach (var effect in immediateEffects)
                     {
-                        effect.ApplyWithChanceCheck(target, target.GetPosition(), player, null, this, effectStrength, new ImmediateEffectParams());
+                        var data = Gamesystem.instance.poolSystem.GetEffectData();
+                        data.target = target;
+                        data.targetPosition = target.GetPosition();
+                        data.sourceEntity = player;
+                        data.sourceModule = this;
+                        
+                        effect.ApplyWithChanceCheck(data, effectStrength, new ImmediateEffectParams());
+                        
+                        Gamesystem.instance.poolSystem.ReturnEffectData(data);
                     }
                 }
 

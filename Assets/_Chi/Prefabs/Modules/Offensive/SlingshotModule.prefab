@@ -65,6 +65,12 @@ MonoBehaviour:
     - Name: additionalOnBulletDestroyEffects
       Entry: 6
       Data: 
+    - Name: disabledEffects
+      Entry: 6
+      Data: 
+    - Name: targetAffectConditions
+      Entry: 6
+      Data: 
     - Name: additionalShootEffectsSelf
       Entry: 6
       Data: 
@@ -87,17 +93,17 @@ MonoBehaviour:
       baseValue: 3
       value: 0
     projectileSpreadAngle:
-      baseValue: 20
+      baseValue: 80
       value: 0
     projectileDelayBetweenConsecutiveShots:
-      baseValue: 0.1
+      baseValue: 0.01
       value: 0
     projectileSpeed:
-      baseValue: 6
+      baseValue: 8
       value: 0
     reloadDuration:
-      baseValue: 1
-      value: 1
+      baseValue: 1.75
+      value: 1.75
     stationaryReloadDurationBoost:
       baseValue: 1
       value: 0
@@ -170,6 +176,18 @@ MonoBehaviour:
       baseValue: 1
       value: 0
     instantReloadChance:
+      baseValue: 0
+      value: 0
+    consumeNoAmmoChance:
+      baseValue: 0
+      value: 0
+    standingConsumeNoAmmoChance:
+      baseValue: 0
+      value: 0
+    movingConsumeNoAmmoChance:
+      baseValue: 0
+      value: 0
+    projectileRandomRotation:
       baseValue: 0
       value: 0
     hasAreaEffect: 0

@@ -16,17 +16,17 @@ namespace _Chi.Scripts.Scriptables
         [Range(0,1)]
         public float chance = 1.0f;
 
-        public bool ApplyWithChanceCheck(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
+        public bool ApplyWithChanceCheck(EffectSourceData data, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
             if(chance < 1.0f && UnityEngine.Random.value > chance)
             {
                 return false;
             }
             
-            return Apply(target, targetPosition, sourceEntity, sourceItem, sourceModule, strength, parameters, flags);
+            return Apply(data, strength, parameters, flags);
         }
         
-        public abstract bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None);
+        public abstract bool Apply(EffectSourceData data, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None);
     }
 
     [Flags]

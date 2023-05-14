@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d18a4ba50f0449b8a209bcbfeebe56c, type: 3}
+  m_Name: Slingshot Spawn Acid Lake
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  reuseDelay: 60
+  vfx: {fileID: 0}
+  vfxDespawnAfter: 0
+  prefab: {fileID: 8889423923064880148, guid: 4fcd392b0a09d7f4ea9ddb9903c4dcc2, type: 3}
+  despawnAfter: 25

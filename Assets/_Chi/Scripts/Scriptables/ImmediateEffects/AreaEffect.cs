@@ -35,31 +35,31 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
         [Range(0, 1)] public float chance = 1;
         
-        public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
+        public override bool Apply(EffectSourceData data, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
-            Gamesystem.instance.StartCoroutine(Explode(targetPosition, target, sourceEntity, sourceItem, sourceModule, strength));
+            Gamesystem.instance.StartCoroutine(Explode(data, strength));
 
             return true;
         }
 
-        private IEnumerator Explode(Vector3 position, Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength)
+        private IEnumerator Explode(EffectSourceData data, float strength)
         {
             if (applyDelay > 0)
             {
                 yield return new WaitForSeconds(applyDelay);
             }
 
-            if (sourceEntity == null) yield break;
+            if (data.sourceEntity == null) yield break;
             
-            var targets = Utils.GetObjectsAtPosition(position, buffer, radius, sourceEntity.GetLayerMask(targetType));
+            var targets = Utils.GetObjectsAtPosition(data.targetPosition, buffer, radius, data.sourceEntity.GetLayerMask(targetType));
             
-            var sourcePosition = sourceEntity.GetPosition();
+            var sourcePosition = data.sourceEntity.GetPosition();
 
             for (int i = 0; i < targets; i++)
             {
                 var coll = buffer[i];
                 var entity = coll.gameObject.GetEntity();
-                if (entity != null && (!excludeTargetEntity || entity != target))
+                if (entity != null && (!excludeTargetEntity || entity != data.target))
                 {
                     bool allow = false;
 
@@ -69,7 +69,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
                             allow = true;
                             break;
                         case AreaType.Cone:
-                            var a = Math.Abs(Utils.AngleToTarget(sourceEntity.GetRotation(), sourcePosition, entity.GetPosition()));
+                            var a = Math.Abs(Utils.AngleToTarget(data.sourceEntity.GetRotation(), sourcePosition, entity.GetPosition()));
                             allow = a <= angle;
                             break;
                         default:
@@ -82,7 +82,17 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
                     for (var index = 0; index < effects.Count; index++)
                     {
                         var effect = effects[index];
-                        effect.ApplyWithChanceCheck(entity, entity.GetPosition(), sourceEntity, sourceItem, sourceModule, strength, new ImmediateEffectParams());
+                        
+                        var effectData = Gamesystem.instance.poolSystem.GetEffectData();
+                        effectData.target = entity;
+                        effectData.targetPosition = entity.GetPosition();
+                        effectData.sourceEntity = data.sourceEntity;
+                        effectData.sourceItem = data.sourceItem;
+                        effectData.sourceModule = data.sourceModule;
+                        
+                        effect.ApplyWithChanceCheck(effectData, strength, new ImmediateEffectParams());
+                        
+                        Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
                     }
                 }
             }

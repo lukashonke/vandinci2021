@@ -65,7 +65,15 @@ namespace _Chi.Scripts.Mono.Entities
             for (var index = 0; index < effects.Count; index++)
             {
                 var effect = effects[index];
-                effect.Apply(entity, entity.GetPosition(), null, this, null, strength, new ImmediateEffectParams());
+                
+                var effectData = Gamesystem.instance.poolSystem.GetEffectData();
+                effectData.target = entity;
+                effectData.targetPosition = entity.GetPosition();
+                effectData.sourceItem = this;
+                
+                effect.Apply(effectData, strength, new ImmediateEffectParams());
+                
+                Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
             }
 
             return true;

@@ -237,7 +237,7 @@ namespace _Chi.Scripts.Mono.Entities
 
             if (damager != null && sourceData != null)
             {
-                sourceData.hasKilledTarget = !wasAlive && isAlive;
+                sourceData.hasKilledTarget = wasAlive && !isAlive;
                 
                 damager.OnHitTarget(sourceData);
             }
@@ -469,6 +469,9 @@ namespace _Chi.Scripts.Mono.Entities
             else stunnedCounter--;
             UpdateStunned();
         }
+        
+        public bool IsStunned() => stunnedCounter > 0;
+        public bool IsImmobilized() => immobilizedCounter > 0;
 
         public float fearEscapeAngle = 0;
 

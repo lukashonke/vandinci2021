@@ -28,8 +28,6 @@ namespace BulletPro
 
 		public UnityEvent shootInstruction;
 
-		public bool isSubEmitter;
-
 		// Bullet Emitter is considered "playing" if at least one sub-emitter is still playing.
 		public bool isPlaying
 		{
@@ -406,6 +404,8 @@ namespace BulletPro
 					StartCoroutine(DelayedPlay(range));
 				return;
 			}
+			
+			applyBulletParamsAction?.Invoke();
 
 			if (emitterProfile == null) return;
 			if (emitterProfile.rootBullet != firstBulletParams)

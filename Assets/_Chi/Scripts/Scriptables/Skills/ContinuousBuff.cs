@@ -60,7 +60,13 @@ namespace _Chi.Scripts.Scriptables.Skills
                     nextReceiveEffect = Time.time + receiveEffectsInterval;
                     foreach (var effect in receivedEffectsWhileActive)
                     {
-                        effect.ApplyWithChanceCheck(player, player.GetPosition(), null, null, null, receivedEffectsStrength, new ImmediateEffectParams());
+                        var effectData = Gamesystem.instance.poolSystem.GetEffectData();
+                        effectData.target = player;
+                        effectData.targetPosition = player.GetPosition();
+                        
+                        effect.ApplyWithChanceCheck(effectData, receivedEffectsStrength, new ImmediateEffectParams());
+                        
+                        Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
                     }
                 }
                 

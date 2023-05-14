@@ -90,7 +90,17 @@ namespace _Chi.Scripts.Mono.Entities
             for (var index = 0; index < effects.Count; index++)
             {
                 var effect = effects[index];
-                effect.ApplyWithChanceCheck(entity, entity.GetPosition(), owner, null, ownerModule, baseStrength, new ImmediateEffectParams());
+                
+                var data = Gamesystem.instance.poolSystem.GetEffectData();
+                data.target = entity;
+                data.targetPosition = entity.GetPosition();
+                data.sourceEntity = owner;
+                data.sourceModule = ownerModule;
+                
+                effect.ApplyWithChanceCheck(data, baseStrength, new ImmediateEffectParams());
+                
+                Gamesystem.instance.poolSystem.ReturnEffectData(data);
+
 
                 if (!noDespawnAfterHit)
                 {

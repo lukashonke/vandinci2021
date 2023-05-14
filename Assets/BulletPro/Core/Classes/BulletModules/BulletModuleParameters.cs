@@ -38,6 +38,17 @@ namespace BulletPro
             Debug.LogWarning("BulletPro Error: trying to fetch Custom Bullet Parameter \""+paramName+"\" but it does not exist.");
             return new CustomParameter(ParameterType.None, paramName);
         }
+        
+        CustomParameter GetParamSilent(string paramName)
+        {
+            if (parameters != null)
+                if (parameters.Count > 0)
+                    for (int i = 0; i < parameters.Count; i++)
+                        if (parameters[i].name == paramName)
+                            return parameters[i];
+
+            return new CustomParameter(ParameterType.None, paramName);
+        }
 
         public void AddParameter(ParameterType paramType, string paramName)
         {
@@ -97,6 +108,8 @@ namespace BulletPro
         public Rect GetRect(string paramName) { return GetParam(paramName).rectValue; }
         public Bounds GetBounds(string paramName) { return GetParam(paramName).boundsValue; }
         public Object GetObjectReference(string paramName) { return GetParam(paramName).objectReferenceValue; }
+        
+        public Object GetObjectReferenceSilent(string paramName) { return GetParamSilent(paramName).objectReferenceValue; }
 
         #endregion
 

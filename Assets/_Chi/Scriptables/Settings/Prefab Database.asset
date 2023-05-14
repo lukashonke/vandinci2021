@@ -918,6 +918,57 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
     story: 
+  - id: 10022
+    label: Wall Shot
+    enabled: 0
+    description: TODO
+    type: 4
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 3314847274656908133, guid: a77317013581b7a45bbc2c9db8e74908, type: 3}
+    skill: {fileID: 11400000, guid: 9ce7d48a23de5284d887d8e3faa8d296, type: 2}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 10023
+    label: Bullet Tornado
+    enabled: 0
+    description: TODO
+    type: 4
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 3314847274656908133, guid: 72b089f9dcfae7f458d6bdaee92f2f8e, type: 3}
+    skill: {fileID: 11400000, guid: 0f26c30961d7dd148a06e40dcc6140ff, type: 2}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 10024
+    label: Spawn Acid Lake
+    enabled: 0
+    description: TODO
+    type: 4
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 3314847274656908133, guid: a35a048fa15634048a4ecbc112400007, type: 3}
+    skill: {fileID: 11400000, guid: 970b9a77b47a2eb4b9864354d9ae6734, type: 2}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
   - id: 11000
     label: Critical Damage
     enabled: 0
@@ -2548,6 +2599,1094 @@ MonoBehaviour:
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: de1a56c8e2d7d8b438bd6b023512b22c, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43255
+    label: 'Shotgun: Serrated Shells'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: e8fa229ae06df354cb113a87b21f0edf, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43256
+    label: 'Shotgun: Serrated Shells'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: e5269588e3b3b7343808059071f421f0, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43260
+    label: 'Shotgun: Wall Shot'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: afbd3325b6b354d4787b8077d6feab1a, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43300
+    label: 'Machinegun: Magazine Upgrade'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 8e374b047e6410942926663952f2ba76, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43301
+    label: 'Machinegun: Magazine Upgrade'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 310dcdc8a7ae42e4c96f3085daa8f82e, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43302
+    label: 'Machinegun: Magazine Upgrade'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 286653e545b5f034f99faa2f4bdaaad9, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43305
+    label: 'Machinegun: Def Boost After Reload'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: e330da42d37d5c349b3822036c26a57a, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43310
+    label: 'Machinegun: Standing % Consume No Ammo'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: c1b649382e6c03c4a804b73939fb8434, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43311
+    label: 'Machinegun: Standing % Consume No Ammo'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 085378a25009ac5488f38ddb8ffc9667, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43312
+    label: 'Machinegun: Standing % Consume No Ammo'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 7e33e0d578d89cb4fa3faf2213ae9df2, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43315
+    label: 'Machinegun: Double Magazine'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: a7554938cfe6c3e44962fc6cfc8636a7, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43320
+    label: 'Machinegun: Stabilize'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 8f32b1062e1a25e4693065b79b61920a, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43325
+    label: 'Machinegun: Critical Rate'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 42e599e6360096940b3fb90a7e139adb, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43326
+    label: 'Machinegun: Critical Rate'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: f11cb4f8261f7e14893f80aa4a41c910, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43330
+    label: 'Machinegun: Gold Recharges'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 422b621e22372874ca37d75671a63184, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43335
+    label: 'Machinegun: Fire Rate Boost'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: df96a6e08b030254591f1222eb834dfb, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43340
+    label: 'Machinegun: Incendiary Rounds'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 164537137adce8b499e463bfb3afa8c1, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43341
+    label: 'Machinegun: Incendiary Rounds'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 6febdc0830fcec9478353d0a8d4fb9c1, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43345
+    label: 'Machinegun: Suppressive Fire'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 42088ed947c16644f9b7ea24dfdb7e58, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43346
+    label: 'Machinegun: Suppressive Fire'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: f58b8dfcd0f7c404385bbe29e37134f0, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43350
+    label: 'Machinegun: Spread Fire'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 64f0b147ec21654458e9d59d2597a278, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43351
+    label: 'Machinegun: Spread Fire'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 2e28bc15f41d11e49b07e71876f368cc, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43355
+    label: 'Machinegun: Bullet Tornado'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 739e22d6cb1e40243b1187baf2771d71, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43400
+    label: 'Slingshot: Stun Upgrade'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 169908240f81563419a8db3c6e41ed5b, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43401
+    label: 'Slingshot: Stun Upgrade'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 52bfc665e2f2b624dbe7406fa209a796, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43402
+    label: 'Slingshot: Stun Upgrade'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 03877c1995512324db4ea00916f6e501, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43405
+    label: 'Slingshot: Armor Sundering'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: aa9119c73c1df58478361c1cc26a18d7, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43410
+    label: 'Slingshot: Gold to Magazine'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: d5e8dc142f1cc974496efcdb484a40cb, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43415
+    label: 'Slingshot: Push Enemies'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 4ac78af78d698734398088b0025e2022, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43416
+    label: 'Slingshot: Push Enemies'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: c59ef8e89e83764408683b0222a74940, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43420
+    label: 'Slingshot: Acid Projectiles'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: d643e33758355944cbe50bdd5d1742be, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43421
+    label: 'Slingshot: Acid Projectiles'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 46696d609aec388498f8b936d0d8cb1a, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43425
+    label: 'Slingshot: Ignore Stunned'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 0c37f77740390504caa7d3331d7c9b37, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43430
+    label: 'Slingshot: Moving Boosts'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 7603cda624838894298b5f77ea2b1014, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43431
+    label: 'Slingshot: Stationary Boosts'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: abe8928a0adc7b24692dd55d17fedfb0, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43435
+    label: 'Slingshot: Double Projectiles'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 7745119b45b2a6a4db722eb19a721689, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43436
+    label: 'Slingshot: Double Projectiles'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: cc62137c50dd92940a343f557d8c382d, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43440
+    label: 'Slingshot: Double Shot'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: d945162f9b30d2746901bf3883b82406, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43441
+    label: 'Slingshot: Double Shot'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 9f510c61098aa8e46a794496ce2a1a7a, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43445
+    label: 'Slingshot: Acid Lakes'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 17b5b425de696aa4bbd2fe4794b10ec6, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43446
+    label: 'Slingshot: Acid Lakes'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 90875e8d693ebaa41b6d6d4ae60cee05, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43450
+    label: 'Slingshot: Spread Boost'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 4b7653d9321117d409f6fc8afa383cce, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43455
+    label: 'Slingshot: Spawn Acid'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 98fc55250d9fe03469a7715efe5cfe04, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43500
+    label: 'Shuriken: Penetrations Upgrade'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: af18fc5f18ef2494cb390980f8a1a07c, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43501
+    label: 'Shuriken: Penetrations Upgrade'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 40fc21793f151b04a83388f95e9b18ec, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43502
+    label: 'Shuriken: Penetrations Upgrade'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 7d8bbc482d303f341a56271524041546, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43505
+    label: 'Shuriken: Poisoned Projectiles'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 554d4bcd84a8a134ba689faad31f11ac, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43506
+    label: 'Shuriken: Poisoned Projectiles'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 787fc3e90644cd646b3e83373138c5da, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43510
+    label: 'Shuriken: Shoot Also Backwards'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 7077dad8fcaa0ad4ab4f33447a65e4bd, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43511
+    label: 'Shuriken: Shoot Also Backwards'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: d07b83def4c23a44e897ba6ad06e93af, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43515
+    label: 'Shuriken: Speed & Range'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 83f6ea1f20ac0b542ba00f8d2f7c8c55, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43520
+    label: 'Shuriken: Always Pierce Killed'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: d542ed4906f64b34c8dda46a9aea7426, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43525
+    label: 'Shuriken: Movement Projectiles'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 199ef4be60594ad46bac3153d66d38e5, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43526
+    label: 'Shuriken: Movement Projectiles'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 96784fc258d85da47800ea49c7448ffa, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43530
+    label: 'Shuriken: On Skill Fire'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 8af485c7487ae5c498069a9fb8fbe832, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43531
+    label: 'Shuriken: On Skill Fire'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: c2e505ba64896d84dba457645a4cbae9, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43535
+    label: 'Shuriken: Critical Attacks'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: ce40357472a392844a767c851a2ee162, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43536
+    label: 'Shuriken: Critical Attacks'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 434c573dfe869304c8f96b463d7279bc, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43540
+    label: 'Shuriken: Armor Piercing'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: cd95660d3f7114d4d9266201b9d77e14, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43545
+    label: 'Shuriken: Nth Shot Fire Around'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 6eea243ef517f5847886b9f500dfc4d3, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43546
+    label: 'Shuriken: Nth Shot Fire Around'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 536da86301aaaad4b98612febcd78730, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43547
+    label: 'Shuriken: Nth Shot Fire Around'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: a6c8135b1e9b21d48b08a6e561f169bc, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43550
+    label: 'Shuriken: Homing Upgrade'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 59f3140c3e3341a4e83cbbe6704d29c0, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43555
+    label: 'Shuriken: Return On Die'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: f9368e58b3833c240bd4512e804c180d, type: 2}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []

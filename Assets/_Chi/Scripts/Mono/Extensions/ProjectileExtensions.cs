@@ -72,6 +72,8 @@ namespace _Chi.Scripts.Mono.Extensions
             {
                 int projectiles = stats.projectileCount.GetValueInt() * stats.projectileMultiplier.GetValueInt() + module.temporaryProjectilesUntilNextShot;
                 
+                module.temporaryProjectilesUntilNextShot = 0;
+                
                 emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileCount, projectiles);
                 emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpeed, stats.projectileSpeed.GetValue());
                 emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.WaitDuration, GetFireRate(entity, stats));
@@ -89,6 +91,12 @@ namespace _Chi.Scripts.Mono.Extensions
                 if (stats.projectileRange.GetValue() > 0)
                 {
                     emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileRange, stats.projectileRange.GetValue());
+                }
+
+                if (stats.projectileRandomRotation.GetValue() > 0)
+                {
+                    emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileRandomRotationFrom, stats.projectileRandomRotation.GetValue());
+                    emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileRandomRotationTo, -stats.projectileRandomRotation.GetValue());
                 }
             }
         }

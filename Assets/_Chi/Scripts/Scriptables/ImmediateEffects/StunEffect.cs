@@ -1,4 +1,5 @@
-﻿using _Chi.Scripts.Mono.Entities;
+﻿using _Chi.Scripts.Mono.Common;
+using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Modules;
 using UnityEngine;
@@ -11,39 +12,39 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
         public bool setStunned;
         public bool setImmobilized;
         public float slowDownBy;
-        public bool stackDuration;
+        //public bool stackDuration;
         
         public Material stunMaterial;
 
         public GameObject vfxPrefab;
         
-        public override bool ApplyEffect(Entity target, Entity source, Item sourceItem, Module sourceModule)
+        public override bool ApplyEffect(EffectSourceData data)
         {
-            if (target != null && source != null && target.AreEnemies(source) && target.CanReceiveEffect(this) && target.AddImmediateEffect(this, duration, stackDuration))
+            if (data.target != null && data.sourceEntity != null && data.target.AreEnemies(data.sourceEntity) && data.target.CanReceiveEffect(this))
             {
                 if (setStunned)
                 {
-                    target.SetStunned(true);
+                    data.target.SetStunned(true);
                 }
                 
                 if (setImmobilized)
                 {
-                    target.SetImmobilized(true);
+                    data.target.SetImmobilized(true);
                 }
 
-                if (Mathf.Abs(slowDownBy) > 0 && target is Npc npc)
+                if (Mathf.Abs(slowDownBy) > 0 && data.target is Npc npc)
                 {
                     npc.AddToSpeed(-slowDownBy);
                 }
             
                 if (stunMaterial != null)
                 {
-                    target.SetTemporaryMaterial(stunMaterial);
+                    data.target.SetTemporaryMaterial(stunMaterial);
                 }
 
                 if (vfxPrefab != null)
                 {
-                    target.AddVfx(vfxPrefab);
+                    data.target.AddVfx(vfxPrefab);
                 }
                 return true;
             }
@@ -51,41 +52,33 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
             return false;
         }
 
-        public override void RemoveEffect(Entity target, Entity source, Item sourceItem, Module sourceModule)
+        public override void RemoveEffect(EffectSourceData data)
         {
-            if (target != null)
+            if (data.target != null)
             {
-                var rescheduledUntil = target.TryRemoveImmediateEffect(this);
-                if (rescheduledUntil > 0)
+                if (setStunned)
                 {
-                    ScheduleRemove(rescheduledUntil, target, source, sourceItem, sourceModule);
+                    data.target.SetStunned(false);
                 }
-                else if(rescheduledUntil > -1)
+                    
+                if (setImmobilized)
                 {
-                    if (setStunned)
-                    {
-                        target.SetStunned(false);
-                    }
+                    data.target.SetImmobilized(false);
+                }
                     
-                    if (setImmobilized)
-                    {
-                        target.SetImmobilized(false);
-                    }
+                if (stunMaterial != null)
+                {
+                    data.target.ResetTemporaryMaterial(stunMaterial);
+                }
                     
-                    if (stunMaterial != null)
-                    {
-                        target.ResetTemporaryMaterial(stunMaterial);
-                    }
+                if (vfxPrefab != null)
+                {
+                    data.target.RemoveVfx(vfxPrefab);
+                }
                     
-                    if (vfxPrefab != null)
-                    {
-                        target.RemoveVfx(vfxPrefab);
-                    }
-                    
-                    if (Mathf.Abs(slowDownBy) > 0 && target is Npc npc)
-                    {
-                        npc.AddToSpeed(slowDownBy);
-                    }
+                if (Mathf.Abs(slowDownBy) > 0 && data.target is Npc npc)
+                {
+                    npc.AddToSpeed(slowDownBy);
                 }
             }
         }

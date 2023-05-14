@@ -68,6 +68,12 @@ MonoBehaviour:
     - Name: additionalOnBulletDestroyEffects
       Entry: 6
       Data: 
+    - Name: disabledEffects
+      Entry: 6
+      Data: 
+    - Name: targetAffectConditions
+      Entry: 6
+      Data: 
     - Name: additionalShootEffectsSelf
       Entry: 6
       Data: 
@@ -99,8 +105,8 @@ MonoBehaviour:
       baseValue: 5
       value: 0
     reloadDuration:
-      baseValue: 1
-      value: 1
+      baseValue: 1.5
+      value: 1.5
     stationaryReloadDurationBoost:
       baseValue: 1
       value: 0
@@ -126,6 +132,9 @@ MonoBehaviour:
       value: 0
     projectilePierceChance:
       baseValue: 1
+      value: 0
+    projectilePierceCountIgnoreKilled:
+      baseValue: 0
       value: 0
     projectilePierceDeadChance:
       baseValue: 0
@@ -161,7 +170,7 @@ MonoBehaviour:
       baseValue: 0
       value: 0
     projectileCriticalDamage:
-      baseValue: 0
+      baseValue: 3
       value: 0
     armorPiercing:
       baseValue: 0
@@ -173,6 +182,18 @@ MonoBehaviour:
       baseValue: 1
       value: 0
     instantReloadChance:
+      baseValue: 0
+      value: 0
+    consumeNoAmmoChance:
+      baseValue: 0
+      value: 0
+    standingConsumeNoAmmoChance:
+      baseValue: 0
+      value: 0
+    movingConsumeNoAmmoChance:
+      baseValue: 0
+      value: 0
+    projectileRandomRotation:
       baseValue: 0
       value: 0
     hasAreaEffect: 0
@@ -533,7 +554,7 @@ PrefabInstance:
     - target: {fileID: -8259172263503992391, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
       propertyPath: parent
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1232174764404154628}
     - target: {fileID: -8259172263503992391, guid: 090483eafaa3de542bf6972e40e76618, type: 3}
       propertyPath: offset.x
       value: -0.559

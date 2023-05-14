@@ -1,4 +1,5 @@
 ﻿using System;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Mission;
 using _Chi.Scripts.Mono.Modules;
@@ -13,7 +14,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
         [NonSerialized] private bool initialised = false;
 
-        public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
+        public override bool Apply(EffectSourceData data, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
             if (!initialised)
             {
@@ -21,7 +22,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
                 initialised = true;
             }
             
-            SpawnWawe.Spawn(spawnData, target.GetPosition(), Time.time, target, null);
+            SpawnWawe.Spawn(spawnData, data.target.GetPosition(), Time.time, data.target, null);
             return true;
         }    
     }

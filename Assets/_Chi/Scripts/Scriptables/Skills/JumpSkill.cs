@@ -177,7 +177,14 @@ namespace _Chi.Scripts.Scriptables.Skills
                     {
                         if (npc.CanBePushed())
                         {
-                            shockwaveEffect.ApplyWithChanceCheck(npc, npc.GetPosition(), player, null, null, shockwaveStrength, new ImmediateEffectParams());
+                            var effectData = Gamesystem.instance.poolSystem.GetEffectData();
+                            effectData.target = npc;
+                            effectData.targetPosition = npc.GetPosition();
+                            effectData.sourceEntity = player;
+                            
+                            shockwaveEffect.ApplyWithChanceCheck(effectData, shockwaveStrength, new ImmediateEffectParams());
+                            
+                            Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
                         }
 
                         var additionalEffects = GetAdditionalEffects(player);
@@ -185,7 +192,14 @@ namespace _Chi.Scripts.Scriptables.Skills
                         {
                             foreach (var effect in additionalEffects)
                             {
-                                effect.ApplyWithChanceCheck(npc, npc.GetPosition(), player, null, null, 1, new ImmediateEffectParams());
+                                var effectData = Gamesystem.instance.poolSystem.GetEffectData();
+                                effectData.target = npc;
+                                effectData.targetPosition = npc.GetPosition();
+                                effectData.sourceEntity = player;
+                                
+                                effect.ApplyWithChanceCheck(effectData, 1, new ImmediateEffectParams());
+                                
+                                Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
                             }
                         }
                     }

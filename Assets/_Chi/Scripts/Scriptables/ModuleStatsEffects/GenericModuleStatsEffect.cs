@@ -23,6 +23,7 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                     case ModuleStatsEffectType.AddPiercedEnemies:
                         break;
                     case ModuleStatsEffectType.ProjectileCount:
+                        offensiveModule.stats.projectileCount.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
                         break;
                     case ModuleStatsEffectType.ProjectileEnablePierce:
                         break;
@@ -37,7 +38,8 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                         break;
                     case ModuleStatsEffectType.Damage:
                         break;
-                    case ModuleStatsEffectType.Range:
+                    case ModuleStatsEffectType.ProjectileRange:
+                        offensiveModule.stats.projectileRange.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
                         break;
                     case ModuleStatsEffectType.ShotsPerShot:
                         break;
@@ -82,6 +84,27 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                     case ModuleStatsEffectType.InstantReloadChance:
                         offensiveModule.stats.instantReloadChance.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
                         break;
+                    case ModuleStatsEffectType.ConsumeNoAmmoChance:
+                        offensiveModule.stats.consumeNoAmmoChance.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
+                        break;
+                    case ModuleStatsEffectType.StandingConsumeNoAmmoChance:
+                        offensiveModule.stats.standingConsumeNoAmmoChance.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
+                        break;
+                    case ModuleStatsEffectType.MovingConsumeNoAmmoChance:
+                        offensiveModule.stats.movingConsumeNoAmmoChance.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
+                        break;
+                    case ModuleStatsEffectType.ProjectileRandomRotation:
+                        offensiveModule.stats.projectileRandomRotation.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
+                        break;
+                    case ModuleStatsEffectType.ProjectileSpread:
+                        offensiveModule.stats.projectileSpreadAngle.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
+                        break;
+                    case ModuleStatsEffectType.ProjectileSpeed:
+                        offensiveModule.stats.projectileSpeed.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
+                        break;
+                    case ModuleStatsEffectType.ProjectileKilledDoNotCountPierced:
+                        offensiveModule.stats.projectilePierceCountIgnoreKilled.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
+                        break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
@@ -104,6 +127,7 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                     case ModuleStatsEffectType.AddPiercedEnemies:
                         break;
                     case ModuleStatsEffectType.ProjectileCount:
+                        offensiveModule.stats.projectileCount.RemoveModifiersBySource(source);
                         break;
                     case ModuleStatsEffectType.ProjectileEnablePierce:
                         break;
@@ -118,7 +142,8 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                         break;
                     case ModuleStatsEffectType.Damage:
                         break;
-                    case ModuleStatsEffectType.Range:
+                    case ModuleStatsEffectType.ProjectileRange:
+                        offensiveModule.stats.projectileRange.RemoveModifiersBySource(source);
                         break;
                     case ModuleStatsEffectType.ShotsPerShot:
                         break;
@@ -163,6 +188,27 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                     case ModuleStatsEffectType.InstantReloadChance:
                         offensiveModule.stats.instantReloadChance.RemoveModifiersBySource(source);
                         break;
+                    case ModuleStatsEffectType.ConsumeNoAmmoChance:
+                        offensiveModule.stats.consumeNoAmmoChance.RemoveModifiersBySource(source);
+                        break;
+                    case ModuleStatsEffectType.StandingConsumeNoAmmoChance:
+                        offensiveModule.stats.standingConsumeNoAmmoChance.RemoveModifiersBySource(source);
+                        break;
+                    case ModuleStatsEffectType.MovingConsumeNoAmmoChance:
+                        offensiveModule.stats.movingConsumeNoAmmoChance.RemoveModifiersBySource(source);
+                        break;
+                    case ModuleStatsEffectType.ProjectileRandomRotation:
+                        offensiveModule.stats.projectileRandomRotation.RemoveModifiersBySource(source);
+                        break;
+                    case ModuleStatsEffectType.ProjectileSpread:
+                        offensiveModule.stats.projectileSpreadAngle.RemoveModifiersBySource(source);
+                        break;
+                    case ModuleStatsEffectType.ProjectileSpeed:
+                        offensiveModule.stats.projectileSpeed.RemoveModifiersBySource(source);
+                        break;
+                    case ModuleStatsEffectType.ProjectileKilledDoNotCountPierced:
+                        offensiveModule.stats.projectilePierceCountIgnoreKilled.RemoveModifiersBySource(source);
+                        break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
@@ -184,6 +230,7 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                 case ModuleStatsEffectType.AddPiercedEnemies:
                     break;
                 case ModuleStatsEffectType.ProjectileCount:
+                    tuple = ("Shot Projectiles", $"{AddLevelValueUI(value, level)}");
                     break;
                 case ModuleStatsEffectType.ProjectileEnablePierce:
                     break;
@@ -198,7 +245,8 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                     break;
                 case ModuleStatsEffectType.Damage:
                     break;
-                case ModuleStatsEffectType.Range:
+                case ModuleStatsEffectType.ProjectileRange:
+                    tuple = ("Range", $"{AddLevelValueUI(value, level)}");
                     break;
                 case ModuleStatsEffectType.ShotsPerShot:
                     break;
@@ -243,6 +291,27 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                 case ModuleStatsEffectType.InstantReloadChance:
                     tuple = ("Instant Reload", $"{AddLevelValueUI(value, level)}");
                     break;
+                case ModuleStatsEffectType.ConsumeNoAmmoChance:
+                    tuple = ("Consume No Ammo Chance", $"{AddLevelValueUI(value, level)}");
+                    break;
+                case ModuleStatsEffectType.StandingConsumeNoAmmoChance:
+                    tuple = ("Standing Consume No Ammo Chance", $"{AddLevelValueUI(value, level)}");
+                    break;
+                case ModuleStatsEffectType.MovingConsumeNoAmmoChance:
+                    tuple = ("Moving Consume No Ammo Chance", $"{AddLevelValueUI(value, level)}");
+                    break;
+                case ModuleStatsEffectType.ProjectileRandomRotation:
+                    tuple = ("Accuracy", $"{AddLevelValueUI(value, level)}");
+                    break;
+                case ModuleStatsEffectType.ProjectileSpread:
+                    tuple = ("Spread", $"{AddLevelValueUI(value, level)}");
+                    break;
+                case ModuleStatsEffectType.ProjectileSpeed:
+                    tuple = ("Projectile Speed", $"{AddLevelValueUI(value, level)}");
+                    break;
+                case ModuleStatsEffectType.ProjectileKilledDoNotCountPierced:
+                    tuple = ("Auto Pierce Killed", $"{AddLevelValueUI(value, level)}");
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -264,7 +333,7 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
         StationaryFireRateBoost,
         MovingFireRateBoost,
         Damage,
-        Range,
+        ProjectileRange,
         ShotsPerShot,
         Speed,
         ReloadDuration,
@@ -279,6 +348,13 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
         PierceDeadChance,
         PierceDeadCount,
         ArmoredDamageMul,
-        NonArmoredDamageMul
+        NonArmoredDamageMul,
+        ConsumeNoAmmoChance,
+        StandingConsumeNoAmmoChance,
+        MovingConsumeNoAmmoChance,
+        ProjectileRandomRotation,
+        ProjectileSpread,
+        ProjectileSpeed,
+        ProjectileKilledDoNotCountPierced,
     }
 }

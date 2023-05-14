@@ -149,6 +149,23 @@ namespace _Chi.Scripts.Mono.Extensions
 
             return damage;
         }
+
+        public static bool CanTarget(this OffensiveModule module, Entity target)
+        {
+            if (module.targetAffectConditions.Count > 0)
+            {
+                foreach (var condition in module.targetAffectConditions)
+                {
+                    var canTarget = condition.Item2(target);
+                    if (!canTarget)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
     }
 
     //TODO use

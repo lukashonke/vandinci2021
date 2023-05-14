@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Modules;
@@ -25,36 +26,36 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
         public float randomAngleMax;
         
-        public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
+        public override bool Apply(EffectSourceData data, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
-            if (target != null && sourceEntity != null && target.AreEnemies(sourceEntity) && target.CanReceiveEffect(this))
+            if (data.target != null && data.sourceEntity != null && data.target.AreEnemies(data.sourceEntity) && data.target.CanReceiveEffect(this))
             {
                 if(fears == null) fears = new Dictionary<Entity, FearData>();
                 
-                target.SetFearing(true);
-                target.SetFearEscapeAngle(UnityEngine.Random.Range(-randomAngleMax, randomAngleMax));
+                data.target.SetFearing(true);
+                data.target.SetFearEscapeAngle(UnityEngine.Random.Range(-randomAngleMax, randomAngleMax));
                 
-                if (fears.ContainsKey(target))
+                if (fears.ContainsKey(data.target))
                 {
-                    var fireData = fears[target];
+                    var fireData = fears[data.target];
                     fireData.strength += applyEffectOnIntervalStrength;
                     fireData.remainingIntervals = intervalsCount;
-                    fears[target] = fireData;
+                    fears[data.target] = fireData;
                 }
                 else
                 {
-                    fears.Add(target, new FearData()
+                    fears.Add(data.target, new FearData()
                     {
                         remainingIntervals = intervalsCount,
                         strength = applyEffectOnIntervalStrength
                     });
 
-                    Schedule(target, sourceEntity, sourceItem, sourceModule);
+                    Schedule(data.target, data.sourceEntity, data.sourceItem, data.sourceModule);
                 }
                 
                 if (vfxPrefab != null)
                 {
-                    target.AddVfx(vfxPrefab);
+                    data.target.AddVfx(vfxPrefab);
                 }
                 return true;
             }
@@ -89,7 +90,16 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
                     if (applyEffectOnInterval != null)
                     {
-                        applyEffectOnInterval.ApplyWithChanceCheck(target, target.GetPosition(), source, sourceItem, sourceModule, data.strength, new ImmediateEffectParams());
+                        var effectData = Gamesystem.instance.poolSystem.GetEffectData();
+                        effectData.sourceEntity = source;
+                        effectData.sourceItem = sourceItem;
+                        effectData.sourceModule = sourceModule;
+                        effectData.target = target;
+                        effectData.targetPosition = target.GetPosition();
+                        
+                        applyEffectOnInterval.ApplyWithChanceCheck(effectData, data.strength, new ImmediateEffectParams());
+                        
+                        Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
                     }
 
                     if (data.remainingIntervals > 0)

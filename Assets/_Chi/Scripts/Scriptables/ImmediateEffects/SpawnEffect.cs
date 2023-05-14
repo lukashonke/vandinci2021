@@ -1,4 +1,5 @@
-﻿using _Chi.Scripts.Mono.Entities;
+﻿using _Chi.Scripts.Mono.Common;
+using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Modules;
 using UnityEngine;
 
@@ -13,20 +14,20 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
         [Range(0, 1)] public float spawnChance = 1f;
 
-        public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float defaultStrength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
+        public override bool Apply(EffectSourceData data, float defaultStrength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
             if (Random.value > spawnChance)
             {
                 return true;
             }
 
-            if (target != null)
+            if (data.target != null)
             {
-                DoSpawn(targetPosition, target.transform.rotation);
+                DoSpawn(data.targetPosition, data.target.transform.rotation);
             }
             else
             {
-                DoSpawn(targetPosition, null);
+                DoSpawn(data.targetPosition, null);
             }
             
             return true;

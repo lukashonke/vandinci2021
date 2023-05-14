@@ -294,7 +294,14 @@ namespace _Chi.Scripts.Mono.Entities
 
                         if (pushEffect != null)
                         {
-                            pushEffect.Apply(monster, monster.GetPosition(), this, null, null, velocity, new ImmediateEffectParams());
+                            var effectData = Gamesystem.instance.poolSystem.GetEffectData();
+                            effectData.target = monster;
+                            effectData.targetPosition = monster.GetPosition();
+                            effectData.sourceEntity = this;
+                            
+                            pushEffect.Apply(effectData, velocity, new ImmediateEffectParams());
+                            
+                            Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
                         }
                     }
                 }
@@ -372,7 +379,14 @@ namespace _Chi.Scripts.Mono.Entities
                 {
                     foreach (var effect in shieldEffects)
                     {
-                        effect.Apply(npc, npc.GetPosition(), this, null, null, stats.shieldEffectsStrength.GetValue(), new ImmediateEffectParams());
+                        var effectData = Gamesystem.instance.poolSystem.GetEffectData();
+                        effectData.target = npc;
+                        effectData.targetPosition = npc.GetPosition();
+                        effectData.sourceEntity = this;
+                        
+                        effect.Apply(effectData, stats.shieldEffectsStrength.GetValue(), new ImmediateEffectParams());
+                        
+                        Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
                     }
                 }
             }

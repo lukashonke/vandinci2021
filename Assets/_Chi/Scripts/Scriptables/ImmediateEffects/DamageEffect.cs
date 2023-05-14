@@ -16,16 +16,18 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
         public Color? damageTextColor;
 
         public float damageMul = 1.0f;
+        
+        public DamageType damageType;
 
-        public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float defaultStrength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
+        public override bool Apply(EffectSourceData data, float defaultStrength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
-            if (target == null) return false;
+            if (data.target == null) return false;
             
             flags |= forcedFlags;
             
             var sourceDamage = baseDamage * defaultStrength;
 
-            if (sourceModule is OffensiveModule offensiveModule)
+            if (data.sourceModule is OffensiveModule offensiveModule)
             {
                 if (!flags.HasFlag(ImmediateEffectFlags.FixedDamage) && !effect.HasValue)
                 {
@@ -39,10 +41,21 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
             }*/
             
             sourceDamage *= damageMul;
+
+            if (damageType == DamageType.PercentOfMaxHp)
+            {
+                sourceDamage = data.target.entityStats.maxHp * sourceDamage;
+            }
             
-            var dmgWithFlags = DamageExtensions.CalculateEffectDamage(sourceDamage, target, sourceEntity, sourceModule, flags);
-            target.ReceiveDamage(dmgWithFlags.damage, sourceEntity, dmgWithFlags.flags, damageTextColor);
+            var dmgWithFlags = DamageExtensions.CalculateEffectDamage(sourceDamage, data.target, data.sourceEntity, data.sourceModule, flags);
+            data.target.ReceiveDamage(dmgWithFlags.damage, data.sourceEntity, dmgWithFlags.flags, damageTextColor, data);
             return true;
         }    
+    }
+
+    public enum DamageType
+    {
+        Fixed,
+        PercentOfMaxHp
     }
 }

@@ -11,8 +11,13 @@
         
         public const string ProjectileSpread = "_ProjectileSpread";
         
+        public const string ProjectileRandomRotationFrom = "_ProjectileRotationFrom";
+        public const string ProjectileRandomRotationTo = "_ProjectileRotationTo";
+        
         public const string ProjectileShotsPerShot = "_ProjectileShotsPerShot";
 
         public const string ProjectileDelayBetweenConsecutiveShots = "_ProjectileDelayBetweenConsecutiveShots";
+        
+        public const string IgnoreTarget1 = "_IgnoreTarget1";
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Modules;
@@ -8,6 +9,7 @@ using UnityEngine;
 namespace _Chi.Scripts.Scriptables.ImmediateEffects
 {
     [CreateAssetMenu(fileName = "Fire", menuName = "Gama/Immediate Effects/Fire")]
+    [Obsolete("Use DOTEffect instead")]
     public class FireEffect : ImmediateEffect
     {
         //public bool stackDuration;
@@ -20,33 +22,33 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
         public ImmediateEffect applyEffectOnInterval;
         public float applyEffectOnIntervalStrength;
         
-        public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
+        public override bool Apply(EffectSourceData data, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
-            if (target != null && sourceEntity != null && target.AreEnemies(sourceEntity))
+            if (data.target != null && data.sourceEntity != null && data.target.AreEnemies(data.sourceEntity))
             {
                 if(fires == null) fires = new Dictionary<Entity, FireData>();
                 
-                if (fires.ContainsKey(target))
+                if (fires.ContainsKey(data.target))
                 {
-                    var fireData = fires[target];
+                    var fireData = fires[data.target];
                     fireData.strength += applyEffectOnIntervalStrength;
                     fireData.remainingIntervals = intervalsCount;
-                    fires[target] = fireData;
+                    fires[data.target] = fireData;
                 }
                 else
                 {
-                    fires.Add(target, new FireData()
+                    fires.Add(data.target, new FireData()
                     {
                         remainingIntervals = intervalsCount,
                         strength = applyEffectOnIntervalStrength
                     });
 
-                    Schedule(target, sourceEntity, sourceItem, sourceModule);
+                    Schedule(data.target, data.sourceEntity, data.sourceItem, data.sourceModule);
                 }
                 
                 if (vfxPrefab != null)
                 {
-                    target.AddVfx(vfxPrefab);
+                    data.target.AddVfx(vfxPrefab);
                 }
                 return true;
             }
@@ -78,7 +80,16 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
                     
                     fires[target] = data;
                     
-                    applyEffectOnInterval.ApplyWithChanceCheck(target, target.GetPosition(), source, sourceItem, sourceModule, data.strength, new ImmediateEffectParams());
+                    var effectData = Gamesystem.instance.poolSystem.GetEffectData();
+                    effectData.sourceEntity = source;
+                    effectData.sourceItem = sourceItem;
+                    effectData.sourceModule = sourceModule;
+                    effectData.target = target;
+                    effectData.targetPosition = target.GetPosition();
+                    
+                    applyEffectOnInterval.ApplyWithChanceCheck(effectData, data.strength, new ImmediateEffectParams());
+                    
+                    Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
 
                     if (data.remainingIntervals > 0)
                     {

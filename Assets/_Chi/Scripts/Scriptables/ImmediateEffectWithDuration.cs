@@ -1,4 +1,5 @@
-﻿using _Chi.Scripts.Mono.Entities;
+﻿using _Chi.Scripts.Mono.Common;
+using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Modules;
 using UnityEngine;
 
@@ -12,38 +13,41 @@ namespace _Chi.Scripts.Scriptables
 
         public bool stackDuration;
         
-        public override bool Apply(Entity target, Vector3 targetPosition, Entity sourceEntity, Item sourceItem, Module sourceModule, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
+        public override bool Apply(EffectSourceData data, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
-            if ((ignoreDuplicateEffects || stackDuration) && !target.AddImmediateEffect(this, duration, stackDuration))
-            {
-                return false;
-            }
-            
-            if (!ApplyEffect(target, sourceEntity, sourceItem, sourceModule))
+            if ((ignoreDuplicateEffects || stackDuration) && !data.target.AddImmediateEffect(this, duration, stackDuration))
             {
                 return false;
             }
 
-            ScheduleRemove(Time.time + duration, target, sourceEntity, sourceItem, sourceModule);
+            var dataCopy = Gamesystem.instance.poolSystem.GetEffectData();
+            dataCopy.Copy(data);
+            
+            if (!ApplyEffect(dataCopy))
+            {
+                return false;
+            }
+
+            ScheduleRemove(Time.time + duration, dataCopy);
 
             return true;
         }
 
-        protected void ScheduleRemove(float time, Entity target, Entity sourceEntity, Item sourceItem, Module sourceModule)
+        protected void ScheduleRemove(float time, EffectSourceData data)
         {
-            Gamesystem.instance.Schedule(time, () => DoRemoveEffect(target, sourceEntity, sourceItem, sourceModule));
+            Gamesystem.instance.Schedule(time, () => DoRemoveEffect(data));
         }
         
-        protected void DoRemoveEffect(Entity target, Entity source, Item sourceItem, Module sourceModule)
+        protected void DoRemoveEffect(EffectSourceData data)
         {
             bool canRemove = false;
 
             if (ignoreDuplicateEffects || stackDuration)
             {
-                var rescheduledUntil = target.TryRemoveImmediateEffect(this);
+                var rescheduledUntil = data.target.TryRemoveImmediateEffect(this);
                 if (rescheduledUntil > 0)
                 {
-                    ScheduleRemove(rescheduledUntil, target, source, sourceItem, sourceModule);
+                    ScheduleRemove(rescheduledUntil, data);
                 }
                 else if (rescheduledUntil > -1)
                 {
@@ -57,12 +61,15 @@ namespace _Chi.Scripts.Scriptables
 
             if (canRemove)
             {
-                RemoveEffect(target, source, sourceItem, sourceModule);   
+                RemoveEffect(data);
+                Gamesystem.instance.poolSystem.ReturnEffectData(data);
             }
+            
+            //TODO cannot release this data as its over multiple frames
         }
 
-        public abstract bool ApplyEffect(Entity target, Entity source, Item sourceItem, Module sourceModule);
+        public abstract bool ApplyEffect(EffectSourceData data);
         
-        public abstract void RemoveEffect(Entity target, Entity source, Item sourceItem, Module sourceModule);
+        public abstract void RemoveEffect(EffectSourceData data);
     }
 }
