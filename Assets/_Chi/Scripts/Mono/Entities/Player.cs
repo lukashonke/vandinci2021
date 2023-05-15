@@ -700,12 +700,29 @@ namespace _Chi.Scripts.Mono.Entities
 
         public void ResetExtraSkillCharges(Skill skill)
         {
-            extraSkillCharges[skill] = stats.skillExtraChargeCount.GetValueInt();
+            if (stats.skillExtraChargeCounts.TryGetValue(skill, out var stat))
+            {
+                extraSkillCharges[skill] = stat.GetValueInt();
+            }
+            else
+            {
+                extraSkillCharges[skill] = 0;
+            }
         }
 
         public void AddExtraSkillCharges(Skill skill, int count)
         {
             extraSkillCharges[skill] += count;
+        }
+
+        public int GetExtraSkillCharges(Skill skill)
+        {
+            if (extraSkillCharges.TryGetValue(skill, out var charges))
+            {
+                return charges;
+            }
+
+            return 0;
         }
         
         public void RemoveExtraSkillCharges(Skill skill, int count)

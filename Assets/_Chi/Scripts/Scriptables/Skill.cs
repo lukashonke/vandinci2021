@@ -15,6 +15,8 @@ namespace _Chi.Scripts.Scriptables
         [ShowIf("vfx")]
         public float vfxDespawnAfter;
 
+        public ExtraChargesRechargeType rechargeSingleCharges;
+
         public abstract bool Trigger(Entity entity, bool force = false);
         
         public T GetSkillData<T>(Entity entity) where T : SkillData
@@ -60,6 +62,15 @@ namespace _Chi.Scripts.Scriptables
 
             skillData.nextPossibleUse = Time.time + delay;
             skillData.lastUse = Time.time;
+        }
+
+        public virtual void OnUseExtraCharge(Entity entity, float delay)
+        {
+            SkillData skillData = GetSkillData<SkillData>(entity);
+
+            if (skillData == null) return;
+
+            skillData.lastExtraChargeUse = Time.time;
         }
 
         private float GetReuseDelay(Player player)
@@ -120,5 +131,13 @@ namespace _Chi.Scripts.Scriptables
         public float nextPossibleUse;
 
         public float lastUse = -100f;
+
+        public float lastExtraChargeUse = -100f;
+    }
+
+    public enum ExtraChargesRechargeType
+    {
+        AllAtOnce,
+        SingleCharges
     }
 }

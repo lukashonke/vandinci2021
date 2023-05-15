@@ -8,11 +8,18 @@ namespace _Chi.Scripts.Scriptables.EntityStatsEffects
     [CreateAssetMenu(fileName = "Skill Extra Charge", menuName = "Gama/Stats Effect/Skill Extra Charge")]
     public class SkillExtraChargeStatsEffect : EntityStatsEffect
     {
+        public Skill skill;
+        
         public override bool Apply(Entity target, object source, int level)
         {
             if (target is Player player)
             {
-                player.stats.skillExtraChargeCount.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
+                if (!player.stats.skillExtraChargeCounts.ContainsKey(skill))
+                {
+                    player.stats.skillExtraChargeCounts.Add(skill, new Stat());
+                }
+                
+                player.stats.skillExtraChargeCounts[skill].AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
                 return true;
             }
             
@@ -23,7 +30,12 @@ namespace _Chi.Scripts.Scriptables.EntityStatsEffects
         {
             if (target is Player player)
             {
-                player.stats.skillExtraChargeCount.RemoveModifiersBySource(source);
+                if (!player.stats.skillExtraChargeCounts.ContainsKey(skill))
+                {
+                    player.stats.skillExtraChargeCounts.Add(skill, new Stat());
+                }
+                
+                player.stats.skillExtraChargeCounts[skill].RemoveModifiersBySource(source);
                 return true;
             }
 
@@ -34,7 +46,7 @@ namespace _Chi.Scripts.Scriptables.EntityStatsEffects
         {
             return new List<(string title, string value)>()
             {
-                ("Skill Extra Charges", $"{AddLevelValueUI(value, level)}"),
+                (skill.name + " Extra Charges", $"{AddLevelValueUI(value, level)}"),
             };
         }
     }

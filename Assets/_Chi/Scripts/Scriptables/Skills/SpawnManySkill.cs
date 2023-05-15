@@ -38,6 +38,10 @@ namespace _Chi.Scripts.Scriptables.Skills
             {
                 SetNextSkillUse(entity, GetReuseDelay(entity));
             }
+            else
+            {
+                OnUseExtraCharge(entity, GetReuseDelay(entity));
+            }
             
             entity.OnAfterSkillUse(this);
             

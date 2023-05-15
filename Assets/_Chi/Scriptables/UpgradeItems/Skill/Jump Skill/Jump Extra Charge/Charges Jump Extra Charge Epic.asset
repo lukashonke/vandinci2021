@@ -26,3 +26,4 @@ MonoBehaviour:
   hasLevelScaledValue: 0
   levelScaledValue: []
   value: 2
+  skill: {fileID: 11400000, guid: cc69fe99998b25a4d8a301159bd9f639, type: 2}

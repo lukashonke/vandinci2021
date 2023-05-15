@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
+using _Chi.Scripts.Scriptables;
 using UnityEngine.Serialization;
 
 namespace _Chi.Scripts.Statistics
@@ -35,7 +37,7 @@ namespace _Chi.Scripts.Statistics
         
         public Stat weightMul = new Stat();
         
-        public Stat skillExtraChargeCount = new Stat();
+        public Dictionary<Skill, Stat> skillExtraChargeCounts = new ();
         
         public Stat skillExtraChargeLoadMul = new Stat();
 

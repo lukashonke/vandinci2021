@@ -1069,6 +1069,25 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
     story: 
+  - id: 10025
+    label: Charged Shot
+    enabled: 0
+    description: TODO
+    type: 4
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 3314847274656908133, guid: 64979db1528617545af6bb515f698668, type: 3}
+    skill: {fileID: 11400000, guid: 39ef664d3de0fb54e80fb437d03237a5, type: 2}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
   - id: 11000
     label: Critical Damage
     enabled: 0
@@ -4384,6 +4403,25 @@ MonoBehaviour:
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 2b90fb6b2fbeb774ca8d2457a35db649, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43655
+    label: 'Ballista: Charged Shot'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: fa904dcf771b97440bef625a5afc83e9, type: 2}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []

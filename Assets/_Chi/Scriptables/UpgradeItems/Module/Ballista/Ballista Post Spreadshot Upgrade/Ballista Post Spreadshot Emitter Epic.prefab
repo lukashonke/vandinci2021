@@ -70,5 +70,6 @@ MonoBehaviour:
   whiteListEmitters:
   - {fileID: 11400000, guid: 46e29ba8216df7f47a848be8a37b7540, type: 2}
   - {fileID: 11400000, guid: e6d39f84fd7505645a533774ffca29fc, type: 2}
+  - {fileID: 11400000, guid: 6369babfd6800d449a27885f0b4bc974, type: 2}
   type: 0
   delay: 0

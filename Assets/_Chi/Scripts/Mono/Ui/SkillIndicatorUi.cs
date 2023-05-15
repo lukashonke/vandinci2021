@@ -1,5 +1,6 @@
 using System;
 using _Chi.Scripts.Scriptables;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,8 +11,28 @@ namespace _Chi.Scripts.Mono.Ui
         public Image skillIcon;
 
         public RectTransform progressMask;
+
+        public TextMeshProUGUI chargesCount;
         
         private Skill currentSkill;
+
+        public void Start()
+        {
+            chargesCount.gameObject.SetActive(false);
+        }
+
+        public void SetChargesCount(int count)
+        {
+            if (count == 0)
+            {
+                chargesCount.gameObject.SetActive(false);
+            }
+            else
+            {
+                chargesCount.gameObject.SetActive(true);
+                chargesCount.text = "+" + count.ToString();
+            }
+        }
 
         public void SetSkill(Skill skill)
         {

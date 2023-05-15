@@ -148,21 +148,52 @@ public class UiManager : MonoBehaviour
                 var skill = player.skills[index];
                 var data = player.GetSkillData(skill);
 
-                if (skill.GetReuseDelay(player) > 0)
+                var reuseDelay = skill.GetReuseDelay(player);
+                if (reuseDelay > 0)
                 {
+                    int maxExtraCharges = 0;
+                    if (player.stats.skillExtraChargeCounts.TryGetValue(skill, out var stat))
+                    {
+                        maxExtraCharges = stat.GetValueInt();
+                    }
+
+                    
                     float reloadPercentage;
-                    reloadPercentage = (Time.time - data.lastUse) / skill.GetReuseDelay(player);
+                    reloadPercentage = (Time.time - data.lastUse) / reuseDelay;
                     if (reloadPercentage > 1) reloadPercentage = 1;
-                
+                    
                     var wasReloaded = skillIndicators[index].IsReloaded();
 
                     skillIndicators[index].SetReloadPercentage(reloadPercentage);
                 
                     var nowReloaded = skillIndicators[index].IsReloaded();
+                    
+                    if (nowReloaded && maxExtraCharges > 0 && skill.rechargeSingleCharges == ExtraChargesRechargeType.SingleCharges)
+                    {
+                        var currentCharges = player.GetExtraSkillCharges(skill);
+                        
+                        if (currentCharges < maxExtraCharges)
+                        {
+                            if (!wasReloaded)
+                            {
+                                data.lastExtraChargeUse = Time.time;
+                            }
+                            
+                            if (data.lastExtraChargeUse + reuseDelay < Time.time)
+                            {
+                                player.AddExtraSkillCharges(skill, 1);
+                                data.lastExtraChargeUse = Time.time;
+                            }
+                        }
+                    }
 
                     if (!wasReloaded && nowReloaded)
                     {
-                        player.ResetExtraSkillCharges(skill);
+                        if (skill.rechargeSingleCharges == ExtraChargesRechargeType.AllAtOnce)
+                        {
+                            player.ResetExtraSkillCharges(skill);
+                        }
+                        
                     }
                 }
                 else
@@ -171,6 +202,7 @@ public class UiManager : MonoBehaviour
                 }
             
                 skillIndicators[index].SetSkill(skill);
+                skillIndicators[index].SetChargesCount(player.GetExtraSkillCharges(skill));
             }
         }
     }
