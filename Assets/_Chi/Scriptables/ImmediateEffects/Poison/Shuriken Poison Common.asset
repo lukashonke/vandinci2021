@@ -22,6 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   order: 20
+  effect: 7
   forcedFlags: 0
   chance: 1
   vfxPrefab: {fileID: 610610226938605263, guid: 27715cfc52d37ad42941d4bd5bd7780d, type: 3}
@@ -29,4 +30,3 @@ MonoBehaviour:
   intervalsCount: 5
   applyEffectOnInterval: {fileID: 11400000, guid: 13782acadae570b4d92dd2540e0a5a3e, type: 2}
   applyEffectOnIntervalStrength: 1
-  dotType: 0

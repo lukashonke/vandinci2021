@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1232174764404154628}
-  - component: {fileID: 6115072542935622935}
   - component: {fileID: 2526313433823586861}
   - component: {fileID: 6177911479989981830}
   - component: {fileID: -1977820923903768266}
@@ -36,7 +35,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6115072542935622935
+--- !u!114 &2526313433823586861
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,7 +44,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1232174764404154631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0021365890684c96811d5270826f1e81, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c62ae5e45ff4022893f2a2f1bff2fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
@@ -66,6 +65,12 @@ MonoBehaviour:
     - Name: additionalOnBulletDestroyEffects
       Entry: 6
       Data: 
+    - Name: disabledEffects
+      Entry: 6
+      Data: 
+    - Name: targetAffectConditions
+      Entry: 6
+      Data: 
     - Name: additionalShootEffectsSelf
       Entry: 6
       Data: 
@@ -74,8 +79,8 @@ MonoBehaviour:
   statusbar: {fileID: 0}
   upgrades: []
   targetUpdateInterval: 0.2
-  rotationSpeed: 500
-  instantRotation: 1
+  rotationSpeed: 1000
+  instantRotation: 0
   maxLevel: 5
   maxUpgrades: 5
   reloadProgress: 0
@@ -125,6 +130,12 @@ MonoBehaviour:
     projectilePierceChance:
       baseValue: 1
       value: 0
+    projectilePierceCountIgnoreKilled:
+      baseValue: 0
+      value: 0
+    projectilePierceCountIgnoreIfLessThanHp:
+      baseValue: 0
+      value: 0
     projectilePierceDeadChance:
       baseValue: 0
       value: 0
@@ -173,6 +184,18 @@ MonoBehaviour:
     instantReloadChance:
       baseValue: 0
       value: 0
+    consumeNoAmmoChance:
+      baseValue: 0
+      value: 0
+    standingConsumeNoAmmoChance:
+      baseValue: 0
+      value: 0
+    movingConsumeNoAmmoChance:
+      baseValue: 0
+      value: 0
+    projectileRandomRotation:
+      baseValue: 0
+      value: 0
     hasAreaEffect: 0
     hasProjectile: 1
     areaEffectDamage: 0
@@ -191,172 +214,19 @@ MonoBehaviour:
     useTrail: 1
     material: {fileID: 2100000, guid: 4694e4e3c9249ba4084dcc1980931f5d, type: 2}
     trailLengthTime: 0.125
+  spriteEffectParameters:
+    enabled: 0
+    material: {fileID: 2100000, guid: e9e1e1baae87b614cbf2cb1f16a34ba9, type: 2}
+    sprite: {fileID: 21300000, guid: 79e29a8bc8eae7641bda53699cd18424, type: 3}
+    rotation: 90
+    scale: {x: 0.73, y: 0.67, z: 1}
+    offset: {x: 0, y: 0.561, z: 0}
   bulletBehavior: 0
   currentMagazine: 0
   isReloading: 0
   temporaryProjectilesUntilNextShot: 0
   temporaryProjectilesForNextMagazine: 0
---- !u!114 &2526313433823586861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232174764404154631}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c62ae5e45ff4022893f2a2f1bff2fad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: visualItems
-      Entry: 6
-      Data: 
-    - Name: additionalEffects
-      Entry: 6
-      Data: 
-    - Name: additionalOnBulletDestroyEffects
-      Entry: 6
-      Data: 
-    - Name: additionalShootEffectsSelf
-      Entry: 6
-      Data: 
-  parent: {fileID: 0}
-  slot: {fileID: 0}
-  statusbar: {fileID: 0}
-  upgrades: []
-  targetUpdateInterval: 0.2
-  rotationSpeed: 1000
-  instantRotation: 0
-  maxLevel: 5
-  maxUpgrades: 5
-  reloadProgress: 0
-  muzzles: []
-  stats:
-    projectileCount:
-      baseValue: 1
-      value: 1
-    projectileMultiplier:
-      baseValue: 0
-      value: 0
-    projectileSpreadAngle:
-      baseValue: 5
-      value: 0
-    projectileDelayBetweenConsecutiveShots:
-      baseValue: 0
-      value: 0
-    projectileSpeed:
-      baseValue: 12
-      value: 0
-    reloadDuration:
-      baseValue: 0
-      value: 0
-    stationaryReloadDurationBoost:
-      baseValue: 0
-      value: 0
-    movingReloadDurationBoost:
-      baseValue: 0
-      value: 0
-    projectileDamage:
-      baseValue: 20
-      value: 30
-    targetRange:
-      baseValue: 6
-      value: 0
-    projectileRange:
-      baseValue: 10
-      value: 0
-    projectileLifetime:
-      baseValue: 10
-      value: 0
-    canProjectilePierce: 1
-    canProjectilePierceUsingDamage: 0
-    projectilePierceCount:
-      baseValue: 2
-      value: 0
-    projectilePierceChance:
-      baseValue: 1
-      value: 0
-    projectilePierceDeadChance:
-      baseValue: 0
-      value: 0
-    projectilePierceDeadCount:
-      baseValue: 0
-      value: 0
-    projectilePushForce:
-      baseValue: 120
-      value: 0
-    projectileScale:
-      baseValue: 0
-      value: 0
-    shotsPerShot:
-      baseValue: 0
-      value: 0
-    shootOnSkillUse:
-      baseValue: 0
-      value: 0
-    magazineSize:
-      baseValue: 0
-      value: 0
-    fireRate:
-      baseValue: 4
-      value: 3
-    stationaryFireRateBoost:
-      baseValue: 0
-      value: 0
-    movingFireRateBoost:
-      baseValue: 0
-      value: 0
-    projectileCriticalRate:
-      baseValue: 0
-      value: 0
-    projectileCriticalDamage:
-      baseValue: 0
-      value: 0
-    armorPiercing:
-      baseValue: 0
-      value: 0
-    armoredDamageMul:
-      baseValue: 0
-      value: 0
-    nonArmorDamageMul:
-      baseValue: 0
-      value: 0
-    instantReloadChance:
-      baseValue: 0
-      value: 0
-    hasAreaEffect: 0
-    hasProjectile: 1
-    areaEffectDamage: 0
-    accuracy: 1
-    pushForce: 0
-    effectDuration: 1
-  effects:
-  - {fileID: 11400000, guid: e9ee23c6ec6fda646a0ca63e5b6a0d15, type: 2}
-  - {fileID: 11400000, guid: 55fb060b0aa775a4eb384d6f7a55d715, type: 2}
-  - {fileID: 11400000, guid: 2888de4cdfdab9d49a4833d8ea420960, type: 2}
-  onBulletDestroyEffects: []
-  shootVfx: {fileID: 0}
-  shootEffectsSelf: []
-  affectType: 0
-  trailParameters:
-    useTrail: 0
-    material: {fileID: 0}
-    trailLengthTime: 0
-  bulletBehavior: 0
-  currentMagazine: 0
-  isReloading: 0
-  temporaryProjectilesUntilNextShot: 0
-  temporaryProjectilesForNextMagazine: 0
-  targetType: 0
+  targetType: 5
 --- !u!212 &6177911479989981830
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -421,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a676b285f069c3c4884c27e78d0fc696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emitterProfile: {fileID: 11400000, guid: 9d30418ad3d2ae34da61c5b46fd81768, type: 2}
+  emitterProfile: {fileID: 11400000, guid: 46e29ba8216df7f47a848be8a37b7540, type: 2}
   patternOrigin: {fileID: 1232174764404154628}
   playAtStart: 0
   shootInstruction:

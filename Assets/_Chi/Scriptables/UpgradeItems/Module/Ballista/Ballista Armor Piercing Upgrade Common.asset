@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 679fb96d917f459886fbab0a11f0407a, type: 3}
-  m_Name: Ballista Post Projectile Common
+  m_Name: Ballista Armor Piercing Upgrade Common
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -30,6 +30,7 @@ MonoBehaviour:
   disablesModulePrefabIds: 
   replacesModulePrefabIds: 
   modulePrefabId: 2003
-  moduleEffects: []
+  moduleEffects:
+  - {fileID: 11400000, guid: 5854cdcd8195a6541bbd201605ce9787, type: 2}
   addSubEmitters: []
   effectsLevel: 1

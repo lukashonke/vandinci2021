@@ -105,6 +105,9 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                     case ModuleStatsEffectType.ProjectileKilledDoNotCountPierced:
                         offensiveModule.stats.projectilePierceCountIgnoreKilled.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
                         break;
+                    case ModuleStatsEffectType.ProjectileKilledDoNotCountIfLessThanHp:
+                        offensiveModule.stats.projectilePierceCountIgnoreIfLessThanHp.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
+                        break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
@@ -209,6 +212,9 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                     case ModuleStatsEffectType.ProjectileKilledDoNotCountPierced:
                         offensiveModule.stats.projectilePierceCountIgnoreKilled.RemoveModifiersBySource(source);
                         break;
+                    case ModuleStatsEffectType.ProjectileKilledDoNotCountIfLessThanHp:
+                        offensiveModule.stats.projectilePierceCountIgnoreIfLessThanHp.RemoveModifiersBySource(source);
+                        break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
@@ -312,6 +318,9 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                 case ModuleStatsEffectType.ProjectileKilledDoNotCountPierced:
                     tuple = ("Auto Pierce Killed", $"{AddLevelValueUI(value, level)}");
                     break;
+                case ModuleStatsEffectType.ProjectileKilledDoNotCountIfLessThanHp:
+                    tuple = ("Ignore Low HP", $"{AddLevelValueUI(value, level)}");
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -356,5 +365,6 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
         ProjectileSpread,
         ProjectileSpeed,
         ProjectileKilledDoNotCountPierced,
+        ProjectileKilledDoNotCountIfLessThanHp,
     }
 }

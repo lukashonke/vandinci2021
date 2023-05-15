@@ -30,6 +30,9 @@ namespace _Chi.Scripts.Scriptables.Dtos
 
         [VerticalGroup("Type")] 
         public WeightSettings weightSettings;
+        
+        [VerticalGroup("Type")] 
+        public UnlockSettings unlockSettings;
 
         [VerticalGroup("Prefab")]
         public GameObject prefab;
@@ -72,6 +75,12 @@ namespace _Chi.Scripts.Scriptables.Dtos
     public class WeightSettings
     {
         public List<WeightSettingsItem> alteredWeights;
+    }
+
+    [Serializable]
+    public class UnlockSettings
+    {
+        public List<string> unlockedIds;
     }
 
     [Serializable]

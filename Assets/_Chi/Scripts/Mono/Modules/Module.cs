@@ -312,7 +312,7 @@ namespace _Chi.Scripts.Mono.Modules
             
             if (subEmitters != null)
             {
-                foreach (var kp in slot.currentModule.subEmitters)
+                foreach (var kp in subEmitters)
                 {
                     foreach (var subEmitter in kp.Value)
                     {
@@ -326,7 +326,7 @@ namespace _Chi.Scripts.Mono.Modules
         {
             if (subEmitters != null)
             {
-                foreach (var kp in slot.currentModule.subEmitters)
+                foreach (var kp in subEmitters)
                 {
                     foreach (var subEmitter in kp.Value)
                     {

@@ -21,16 +21,6 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: effect
-      Entry: 7
-      Data: System.Nullable`1[[_Chi.Scripts.Mono.Common.Effects, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: damageTextColor
       Entry: 7
       Data: System.Nullable`1[[UnityEngine.Color, UnityEngine.CoreModule]], mscorlib
@@ -56,4 +46,9 @@ MonoBehaviour:
       Entry: 8
       Data: 
   order: 20
+  effect: 4
+  forcedFlags: 0
+  chance: 1
   baseDamage: 1
+  damageMul: 1
+  damageType: 0

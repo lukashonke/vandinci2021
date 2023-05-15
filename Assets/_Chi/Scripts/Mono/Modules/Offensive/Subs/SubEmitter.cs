@@ -93,5 +93,10 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
         {
             
         }
+
+        public virtual void OnBulletDeath(OffensiveModule offensiveModule, Bullet bullet, BulletBehavior behavior)
+        {
+            
+        }
     }
 }

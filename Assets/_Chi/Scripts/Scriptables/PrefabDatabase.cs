@@ -248,6 +248,9 @@ namespace _Chi.Scripts.Scriptables
         [NonSerialized] public int dontShowTimes;
         [NonSerialized] private bool hiddenInCurrentRoll;
 
+        [VerticalGroup("Name")]
+        public string lockId;
+
         public List<(RewardSetItemWithWeight item, float priceMul)> CalculateShownItems(Player player, Dictionary<int, bool> lockedPrefabIds, bool showOnlyLocked, bool isReroll)
         {
             if(dontShowTimes > 0 || (isReroll && hiddenInCurrentRoll))
@@ -266,10 +269,20 @@ namespace _Chi.Scripts.Scriptables
             if (!prefabs.Any()) return new List<(RewardSetItemWithWeight item, float priceMul)>();
             
             List<PrefabItem> ownedItems = GetPlayerItems();
-            var disabled = GetDisabledItems(ownedItems);
-            var unlocked = GetUnlockedItems(ownedItems);
-            var replaced = GetReplacedItems(ownedItems);
+            var disabledPrefabIds = GetDisabledItems(ownedItems);
+            var unlockedPrefabIds = GetUnlockedItems(ownedItems);
+            var unlockedIds = GetUnlockedIds(ownedItems);
+            var replacedPrefabIds = GetReplacedItems(ownedItems);
             Dictionary<string, RewardSetItemWithWeight> alreadySelectedGroups = new();
+
+            // set is locked, check if another item unlocked it
+            if (!string.IsNullOrWhiteSpace(lockId))
+            {
+                if(!unlockedIds.Contains(lockId))
+                {
+                    return new List<(RewardSetItemWithWeight item, float priceMul)>();
+                }
+            }
 
             Dictionary<int, WeightSettingsItem> weightAlters = new();
             foreach (var item in ownedItems)
@@ -358,7 +371,7 @@ namespace _Chi.Scripts.Scriptables
                 }
 
                 var prefab = allItemsWithWeights[index];
-                if (!CanApply(player, prefab, replaced, disabled, unlocked, alreadySelectedGroups))
+                if (!CanApply(player, prefab, replacedPrefabIds, disabledPrefabIds, unlockedPrefabIds, alreadySelectedGroups, unlockedIds))
                 {
                     allItemsWithWeights.RemoveAt(index);
                     i--;
@@ -509,6 +522,17 @@ namespace _Chi.Scripts.Scriptables
             return unlocked.ToHashSet();
         }
         
+        public HashSet<string> GetUnlockedIds(List<PrefabItem> items)
+        {
+            List<string> unlocked = new();
+            foreach (var item in items)
+            {
+                unlocked.AddRange(item.unlockSettings?.unlockedIds ?? Enumerable.Empty<string>());
+            }
+
+            return unlocked.ToHashSet();
+        }
+        
         public HashSet<int> GetReplacedItems(List<PrefabItem> items)
         {
             List<int> replaced = new();
@@ -531,7 +555,7 @@ namespace _Chi.Scripts.Scriptables
             return replaced.ToHashSet();
         }
 
-        private bool CanApply(Player player, RewardSetItemWithWeight item, HashSet<int> replacedItems, HashSet<int> disabledItems, HashSet<int> unlockedItems, Dictionary<string, RewardSetItemWithWeight> alreadySelectedGroups)
+        private bool CanApply(Player player, RewardSetItemWithWeight item, HashSet<int> replacedItems, HashSet<int> disabledItems, HashSet<int> unlockedItems, Dictionary<string, RewardSetItemWithWeight> alreadySelectedGroups, HashSet<string> unlockedIds)
         {
             var prefab = Gamesystem.instance.prefabDatabase.GetById(item.prefabId);
             var run = Gamesystem.instance.progress.progressData.run;
@@ -541,6 +565,13 @@ namespace _Chi.Scripts.Scriptables
             if(item.mustBeUnlocked && !unlockedItems.Contains(item.prefabId)) return false;
             if(disabledItems.Contains(item.prefabId)) return false;
             if(replacedItems.Contains(item.prefabId)) return false;
+            if (!string.IsNullOrWhiteSpace(item.lockId))
+            {
+                if (!unlockedIds.Contains(item.lockId))
+                {
+                    return false;
+                }
+            }
 
             if (item.isInGroup)
             {
@@ -606,24 +637,29 @@ namespace _Chi.Scripts.Scriptables
     public class RewardSetItemWithWeight
     {
         [HorizontalGroup("Name")][ReadOnly] public string name;
-
-        [HorizontalGroup("Group")] public bool isInGroup;
-
-        [HorizontalGroup("Group")] [ShowIf("isInGroup")]
-        public string group;
-
-        [HorizontalGroup("Group")] [ShowIf("isInGroup")]
-        public int levelInGroup;
-
-        [HorizontalGroup("Prefab")] [OnValueChanged("OnPrefabIdChanged")]
+        
+        [HorizontalGroup("Prefab")] [OnValueChanged("OnPrefabIdChanged")][LabelWidth(100)]
         public int prefabId;
 
-        [HorizontalGroup("Prefab")] public int weight;
+        [HorizontalGroup("Prefab")][LabelWidth(100)]
+        public int weight;
+        
+        [HorizontalGroup("Group")] public bool isInGroup;
 
-        [HorizontalGroup("Price")] public float price;
-        [HorizontalGroup("Price")] public float priceMultiplyForEveryOwned = 0f;
+        [FoldoutGroup("GroupSettings")] [ShowIf("isInGroup")]
+        public string group;
 
-        [HorizontalGroup("Price")] public bool mustBeUnlocked;
+        [FoldoutGroup("GroupSettings")] [ShowIf("isInGroup")]
+        public int levelInGroup;
+
+
+        [FoldoutGroup("Price")] public float price;
+        [FoldoutGroup("Price")] public float priceMultiplyForEveryOwned = 0f;
+
+        [FoldoutGroup("Lock")]
+        public string lockId;
+        [FoldoutGroup("Price")][InfoBox("Use lockId instead")]
+        public bool mustBeUnlocked;
 
         private void OnPrefabIdChanged()
         {

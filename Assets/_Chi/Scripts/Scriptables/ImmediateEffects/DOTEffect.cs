@@ -21,8 +21,6 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
         public ImmediateEffect applyEffectOnInterval;
         public float applyEffectOnIntervalStrength;
 
-        public DOTType dotType;
-        
         [NonSerialized] private Dictionary<Entity, DOTData> dots;
         
         public override bool Apply(EffectSourceData data, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
@@ -116,13 +114,5 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
             public float strength;
         }
-    }
-
-    public enum DOTType
-    {
-        Poison,
-        Acid,
-        Plague,
-        Fire
     }
 }

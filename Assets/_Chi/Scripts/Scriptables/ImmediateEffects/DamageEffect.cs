@@ -1,5 +1,4 @@
 ﻿using _Chi.Scripts.Mono.Common;
-using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Modules;
 using UnityEngine;
@@ -10,8 +9,6 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
     public class DamageEffect : ImmediateEffect
     {
         public float baseDamage;
-
-        public Effects? effect;
 
         public Color? damageTextColor;
 
@@ -29,7 +26,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
             if (data.sourceModule is OffensiveModule offensiveModule)
             {
-                if (!flags.HasFlag(ImmediateEffectFlags.FixedDamage) && !effect.HasValue)
+                if (!flags.HasFlag(ImmediateEffectFlags.FixedDamage) && effect == ImmediateEffectType.Damage)
                 {
                     sourceDamage = offensiveModule.stats.projectileDamage.GetValue();
                 }

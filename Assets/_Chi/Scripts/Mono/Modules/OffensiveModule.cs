@@ -12,6 +12,7 @@ using BulletPro;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace _Chi.Scripts.Mono.Modules
 {
@@ -49,6 +50,8 @@ namespace _Chi.Scripts.Mono.Modules
         public TargetType affectType;
 
         public TrailParameters trailParameters;
+        
+        public SpriteEffectParameters spriteEffectParameters;
 
         public BulletBehaviorType bulletBehavior = BulletBehaviorType.Default;
 
@@ -168,6 +171,20 @@ namespace _Chi.Scripts.Mono.Modules
                 foreach (var su in subEmitter)
                 {
                     su.OnParentShoot(source);
+                }
+            }
+        }
+
+        public virtual void OnBulletDeath(Bullet bullet, BulletBehavior behavior)
+        {
+            if (subEmitters != null)
+            {
+                foreach (var kp in subEmitters)
+                {
+                    foreach (var subEmitter in kp.Value)
+                    {
+                        subEmitter.OnBulletDeath(this, bullet, behavior);
+                    }
                 }
             }
         }
@@ -355,6 +372,20 @@ namespace _Chi.Scripts.Mono.Modules
         public Material material;
 
         public float trailLengthTime;
+    }
+
+    [Serializable]
+    public class SpriteEffectParameters
+    {
+        public bool enabled;
+        
+        public Material material;
+        public Sprite sprite;
+
+        public float rotation;
+
+        public Vector3 scale = Vector3.one;
+        [FormerlySerializedAs("position")] public Vector3 offset = Vector3.zero;
     }
 
     [Flags]

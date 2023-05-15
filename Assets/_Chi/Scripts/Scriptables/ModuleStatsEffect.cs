@@ -96,5 +96,10 @@ namespace _Chi.Scripts.Scriptables
         }
         
         public virtual List<(string title, string value)> GetUiStats(int level) => null;
+
+        public virtual float AlterEffectDamage(float damage, Entity target, Entity source, Module module, ImmediateEffectFlags immediateEffectFlags)
+        {
+            return damage;
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
 
 namespace _Chi.Scripts.Statistics
@@ -39,6 +40,8 @@ namespace _Chi.Scripts.Statistics
         public Stat projectilePierceChance = new Stat();
         
         public Stat projectilePierceCountIgnoreKilled = new Stat();
+        
+        public Stat projectilePierceCountIgnoreIfLessThanHp = new Stat();
 
         public Stat projectilePierceDeadChance = new Stat();
         
@@ -80,7 +83,12 @@ namespace _Chi.Scripts.Statistics
         public Stat movingConsumeNoAmmoChance = new Stat();
         
         public Stat projectileRandomRotation = new Stat();
-        
+
+        //TODO
+        public Dictionary<ImmediateEffectType, Stat> effectDurationMuls;
+        public Dictionary<ImmediateEffectType, Stat> effectStrengthMuls;
+        public Dictionary<ImmediateEffectType, Stat> effectChanceMuls;
+
         public bool hasAreaEffect = false;
         public bool hasProjectile = true;
 

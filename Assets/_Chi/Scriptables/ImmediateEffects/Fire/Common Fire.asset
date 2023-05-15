@@ -22,6 +22,9 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   order: 20
+  effect: 4
+  forcedFlags: 0
+  chance: 1
   vfxPrefab: {fileID: 610610226938605263, guid: eb54da683565c704f8ab30d0f31de424, type: 3}
   interval: 1
   intervalsCount: 10

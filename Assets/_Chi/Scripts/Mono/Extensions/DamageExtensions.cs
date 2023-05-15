@@ -52,25 +52,45 @@ namespace _Chi.Scripts.Mono.Extensions
             {
                 damage *= player.stats.dealtDamageMul.GetValue();
 
-                if (target is Npc npc && module is OffensiveModule offs)
+                bool moduleCritical = false;
+                
+                if (module is OffensiveModule offensiveModule)
                 {
-                    var targetArmor = npc.stats.armor;
-                    var targetArmorAfterNegation = Mathf.Min(0, targetArmor - offs.stats.armorPiercing.GetValue());
-                    
-                    //TODO mul damage when armored
-                    
-                    if (targetArmorAfterNegation > 0.99f)
+                    if (target is Npc npc)
                     {
-                        damage *= offs.stats.armoredDamageMul.GetValue();
+                        var targetArmor = npc.stats.armor;
+                        var targetArmorAfterNegation = Mathf.Min(0, targetArmor - offensiveModule.stats.armorPiercing.GetValue());
+                        
+                        //TODO mul damage when armored
+                        
+                        if (targetArmorAfterNegation > 0.99f)
+                        {
+                            damage *= offensiveModule.stats.armoredDamageMul.GetValue();
+                        }
+                        else
+                        {
+                            damage *= offensiveModule.stats.nonArmorDamageMul.GetValue();
+                        }
                     }
-                    else
+
+                    if (offensiveModule.upgrades != null)
                     {
-                        damage *= offs.stats.nonArmorDamageMul.GetValue();
+                        foreach (var moduleUpgradeItem in offensiveModule.upgrades)
+                        {
+                            if (moduleUpgradeItem.moduleEffects != null)
+                            {
+                                foreach (var statsEffect in moduleUpgradeItem.moduleEffects)
+                                {
+                                    damage = statsEffect.AlterEffectDamage(damage, player, target, module, immediateEffectFlags);
+                                }
+                            }
+                        }
                     }
+                    
+                    moduleCritical = IsModuleDamageCritical(offensiveModule);
                 }
 
                 bool forcedModuleCritical = immediateEffectFlags.HasFlag(ImmediateEffectFlags.ForceModuleCritical);
-                bool moduleCritical = module is OffensiveModule offensiveModule && IsModuleDamageCritical(offensiveModule);
                 bool playerCritical = IsPlayerDamageCritical(player, damage);
                 
                 if (moduleCritical || playerCritical || forcedModuleCritical)

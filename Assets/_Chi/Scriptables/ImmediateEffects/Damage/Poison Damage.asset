@@ -20,6 +20,20 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: damageTextColor
+      Entry: 7
+      Data: System.Nullable`1[[UnityEngine.Color, UnityEngine.CoreModule]], mscorlib
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   order: 20
+  effect: 7
+  forcedFlags: 0
+  chance: 1
   baseDamage: 1
+  damageMul: 1
+  damageType: 0

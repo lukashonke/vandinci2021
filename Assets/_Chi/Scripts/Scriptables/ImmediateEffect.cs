@@ -11,6 +11,8 @@ namespace _Chi.Scripts.Scriptables
     {
         public StatOrders order = StatOrders.ImmediateEffect;
         
+        public ImmediateEffectType effect;
+        
         public ImmediateEffectFlags forcedFlags = ImmediateEffectFlags.None;
 
         [Range(0,1)]

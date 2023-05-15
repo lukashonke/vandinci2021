@@ -19,7 +19,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
         {
             base.OnParentShoot(source);
 
-            if (source == this || source is EmitByMovement em) return;
+            if (source == this || source is EmitByMovement em || source is EmitOnTarget || source is EmitOnProjectile || source is EmitOnNthShot) return;
 
             currentShot++;
             

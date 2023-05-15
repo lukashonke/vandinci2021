@@ -22,4 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   order: 20
+  effect: 2
+  forcedFlags: 0
+  chance: 1
   baseHeal: 30

@@ -14,6 +14,7 @@ public class BulletBehavior : BaseBulletBehaviour
 {
 	private Module ownerModule;
 	private TrailRenderer trail;
+	private SpriteRenderer effectRenderer;
 
 	private float canPierceRoll;
 	private float canPierceDeadRoll;
@@ -33,6 +34,7 @@ public class BulletBehavior : BaseBulletBehaviour
 		base.Awake();
 		
 		trail = transform.GetChild(0).gameObject.GetComponent<TrailRenderer>();
+		effectRenderer = transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>();
 	}
 
 	// You can access this.bullet to get the parent bullet script.
@@ -55,6 +57,7 @@ public class BulletBehavior : BaseBulletBehaviour
 		trail.Clear();
 		
 		ApplyTrailParameters();
+		ApplySpriteEffectParameters();
 
 		piercedEnemies = 0;
 		
@@ -95,6 +98,27 @@ public class BulletBehavior : BaseBulletBehaviour
 			else
 			{
 				trail.enabled = false;
+			}
+		}
+	}
+
+	private void ApplySpriteEffectParameters()
+	{
+		if (ownerModule is OffensiveModule offensiveModule)
+		{
+			if (offensiveModule.spriteEffectParameters != null && offensiveModule.spriteEffectParameters.enabled)
+			{
+				effectRenderer.enabled = true;
+				effectRenderer.material = offensiveModule.spriteEffectParameters.material;
+				effectRenderer.sprite = offensiveModule.spriteEffectParameters.sprite;
+				Transform transform1;
+				(transform1 = effectRenderer.transform).localRotation = Quaternion.Euler(0, 0, offensiveModule.spriteEffectParameters.rotation);
+				transform1.localScale = offensiveModule.spriteEffectParameters.scale;
+				transform1.localPosition = offensiveModule.spriteEffectParameters.offset;
+			}
+			else
+			{
+				effectRenderer.enabled = false;
 			}
 		}
 	}
@@ -154,58 +178,61 @@ public class BulletBehavior : BaseBulletBehaviour
 		
 		trail.enabled = false;
 
-		if (!diedByCollision && ownerModule is OffensiveModule offensiveModule)
+		if (ownerModule is OffensiveModule offensiveModule)
 		{
-			var effects = offensiveModule.onBulletDestroyEffects;
-			if (effects != null)
+			offensiveModule.OnBulletDeath(bullet, this);
+			
+			if (!diedByCollision)
 			{
-				for (var index = 0; index < effects.Count; index++)
+				var effects = offensiveModule.onBulletDestroyEffects;
+				if (effects != null)
 				{
-					var effect = effects[index];
+					for (var index = 0; index < effects.Count; index++)
+					{
+						var effect = effects[index];
 
-					var flags = ImmediateEffectFlags.None;
-					float strength = 1f;
+						var flags = ImmediateEffectFlags.None;
+						float strength = 1f;
 					
-					var effectData = Gamesystem.instance.poolSystem.GetEffectData();
-					effectData.target = null;
-					effectData.targetPosition = transform.position;
-					effectData.sourceEntity = ownerModule.parent;
-					effectData.sourceModule = ownerModule;
-					effectData.sourceBullet = this;
-					effectData.sourceEmitter = bullet.emitter;
+						var effectData = Gamesystem.instance.poolSystem.GetEffectData();
+						effectData.target = null;
+						effectData.targetPosition = transform.position;
+						effectData.sourceEntity = ownerModule.parent;
+						effectData.sourceModule = ownerModule;
+						effectData.sourceBullet = this;
+						effectData.sourceEmitter = bullet.emitter;
 					
-					effect.ApplyWithChanceCheck(effectData, strength, new ImmediateEffectParams(), flags);
+						effect.ApplyWithChanceCheck(effectData, strength, new ImmediateEffectParams(), flags);
 					
-					Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
+						Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
+					}
 				}
-			}
 					
-			var effects2 = offensiveModule.additionalOnBulletDestroyEffects;
-			if (effects2 != null)
-			{
-				for (var index = 0; index < effects2.Count; index++)
+				var effects2 = offensiveModule.additionalOnBulletDestroyEffects;
+				if (effects2 != null)
 				{
-					var effect = effects2[index].Item2;
+					for (var index = 0; index < effects2.Count; index++)
+					{
+						var effect = effects2[index].Item2;
 
-					var flags = ImmediateEffectFlags.None;
-					float strength = 1f;
+						var flags = ImmediateEffectFlags.None;
+						float strength = 1f;
 					
-					var effectData = Gamesystem.instance.poolSystem.GetEffectData();
-					effectData.target = null;
-					effectData.targetPosition = transform.position;
-					effectData.sourceEntity = ownerModule.parent;
-					effectData.sourceModule = ownerModule;
-					effectData.sourceBullet = this;
-					effectData.sourceEmitter = bullet.emitter;
+						var effectData = Gamesystem.instance.poolSystem.GetEffectData();
+						effectData.target = null;
+						effectData.targetPosition = transform.position;
+						effectData.sourceEntity = ownerModule.parent;
+						effectData.sourceModule = ownerModule;
+						effectData.sourceBullet = this;
+						effectData.sourceEmitter = bullet.emitter;
 					
-					effect.ApplyWithChanceCheck(effectData, strength, new ImmediateEffectParams(), flags);
+						effect.ApplyWithChanceCheck(effectData, strength, new ImmediateEffectParams(), flags);
 					
-					Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
+						Gamesystem.instance.poolSystem.ReturnEffectData(effectData);
+					}
 				}
 			}
 		}
-
-		// Your code here
 	}
 
 	// This gets called after the bullet has died, it can be delayed.
@@ -271,6 +298,8 @@ public class BulletBehavior : BaseBulletBehaviour
 				{
 					return;
 				}
+
+				var entityHp = entity.entityStats.hp;
 
 				var effects = offensiveModule.effects;
 				
@@ -361,6 +390,11 @@ public class BulletBehavior : BaseBulletBehaviour
 				if (offensiveModule.stats.projectilePierceCountIgnoreKilled.GetValueInt() > 0)
 				{
 					increasePiercedCount = entity.isAlive;
+				}
+
+				if (offensiveModule.stats.projectilePierceCountIgnoreIfLessThanHp.GetValue() > entityHp)
+				{
+					increasePiercedCount = false;
 				}
 
 				if (canPierce == PierceType.FixedCount)

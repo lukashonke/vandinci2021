@@ -22,6 +22,9 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   order: 20
+  effect: 5
+  forcedFlags: 0
+  chance: 1
   basePush: 20
   pushDuration: 0.5
   setCannotBePushedFor: 0.1

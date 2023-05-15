@@ -30,6 +30,8 @@ MonoBehaviour:
     predefinedId: 1
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -47,6 +49,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 5954188515519120314, guid: fc2659e7534bf4828a7c867aa17bf6b2, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -65,6 +69,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 5863446121643124079, guid: 17100200d27d78347bf006864161e432, type: 3}
     prefabUi: {fileID: 1669959372494101077, guid: 0ca96be5bd0b8be478a294c2e8be1148, type: 3}
     skill: {fileID: 0}
@@ -83,6 +89,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 5863446121643124079, guid: d63e8bef7a4007443b0625ab5cb40e75, type: 3}
     prefabUi: {fileID: 1669959372494101077, guid: 20790d890819e0f4fa0b626cf94d16aa, type: 3}
     skill: {fileID: 0}
@@ -101,6 +109,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 5863446121643124079, guid: 7d03e4fbda3224f438c91f80ad9ea733, type: 3}
     prefabUi: {fileID: 1669959372494101077, guid: 2790b69c088dc33479f601dd97ae7075, type: 3}
     skill: {fileID: 0}
@@ -128,6 +138,8 @@ MonoBehaviour:
       - prefabId: 2506
         addWeight: 10
         additionalWeightWhenHavingLessThanAverage: 10
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 91a363bd1f1eb294daab200b77bba099, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 1a44fcc45acc5c1438750ee0dba35732, type: 3}
     skill: {fileID: 0}
@@ -149,6 +161,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 90060e3a449a7e04bbc0cf7080ff75cd, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: e3ea5d3bb551aa34c8f61fe3e92fd823, type: 3}
     skill: {fileID: 0}
@@ -176,6 +190,8 @@ MonoBehaviour:
       - prefabId: 2506
         addWeight: 10
         additionalWeightWhenHavingLessThanAverage: 10
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: cdc938b384d12174ea3ca334b8fde5f1, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 62b510b84d407454092694e465192d93, type: 3}
     skill: {fileID: 0}
@@ -206,6 +222,8 @@ MonoBehaviour:
       - prefabId: 2506
         addWeight: 10
         additionalWeightWhenHavingLessThanAverage: 10
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 00d24dfa39d483648a081dd6a914af83, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 81fe0c54ccbfba34794ab41cabdfd085, type: 3}
     skill: {fileID: 0}
@@ -232,6 +250,8 @@ MonoBehaviour:
       - prefabId: 2506
         addWeight: 10
         additionalWeightWhenHavingLessThanAverage: 10
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 3b85c6c6878286b4986962d6bb1c7c91, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 71486843aebbd8346a9701479eb3e484, type: 3}
     skill: {fileID: 0}
@@ -258,6 +278,8 @@ MonoBehaviour:
       - prefabId: 2506
         addWeight: 10
         additionalWeightWhenHavingLessThanAverage: 10
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 304751909030c5e45bb25e28c62d5e90, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 12fa71c4605378b4b833306d9b6ecfc1, type: 3}
     skill: {fileID: 0}
@@ -284,6 +306,8 @@ MonoBehaviour:
       - prefabId: 2506
         addWeight: 10
         additionalWeightWhenHavingLessThanAverage: 10
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 2252c8f8b885d5e4fa56e1cb5498c6a7, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 771548b76fc8815498deec6f50b2b621, type: 3}
     skill: {fileID: 0}
@@ -311,6 +335,8 @@ MonoBehaviour:
       - prefabId: 2506
         addWeight: 10
         additionalWeightWhenHavingLessThanAverage: 10
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 31452cde8923a6e49987cbef5066b863, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 3c6803d6c55da61478cebcebaae83172, type: 3}
     skill: {fileID: 0}
@@ -332,6 +358,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 25d0ca9f407a6de42898ebe5341a2b7e, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 263c03c040e2fc04296f1942616d1050, type: 3}
     skill: {fileID: 0}
@@ -358,6 +386,8 @@ MonoBehaviour:
       - prefabId: 2506
         addWeight: 10
         additionalWeightWhenHavingLessThanAverage: 10
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 437ad5fbb856a944eaa343d3702eab34, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 83071f9a5db77c74393fb8ea33d322ca, type: 3}
     skill: {fileID: 0}
@@ -375,6 +405,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 583f45b9fcab5ce4a904a3843655576b, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 4f7c9cf6fe61edd47a81937e10ffbef4, type: 3}
     skill: {fileID: 0}
@@ -392,6 +424,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: b10d1850c23e344c98a3612afb16da0e, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 85287e5b2153c4a3b92497f24e09e0a6, type: 3}
     skill: {fileID: 0}
@@ -410,6 +444,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 6a4aed355462d4bac9c88ce9beeadd41, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: dfe0bb5f4a5dc446a8c7dd1d1bc7fa3f, type: 3}
     skill: {fileID: 0}
@@ -427,6 +463,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 8ed30a3973a3248428d31f25f4e9673a, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: aa1d2220c65d144a9a5e686510f53193, type: 3}
     skill: {fileID: 0}
@@ -445,6 +483,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: d8ee08b861083488dbb0f4bb9f894186, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 87ba2637bd53e4165a8fb327efa7a4e6, type: 3}
     skill: {fileID: 0}
@@ -462,6 +502,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: ea8604a9caf97e74a8d482fb6e350684, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 00d499bca0117394da209828403d8daa, type: 3}
     skill: {fileID: 0}
@@ -479,6 +521,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 5b88700f3dcfb4622b5a4cb64a7e16a9, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 846012403b0174a9f94a34a5c6a80847, type: 3}
     skill: {fileID: 0}
@@ -496,6 +540,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 37156396185f5a348abec7c9b6e5a56f, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: c27d9d519644590438d3a8f76019e2a8, type: 3}
     skill: {fileID: 0}
@@ -514,6 +560,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: d705c7605dc9bb841a8b7ba32c05d922, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 5d082eacc5d146f46ae9abb61fb7b4c9, type: 3}
     skill: {fileID: 0}
@@ -531,6 +579,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: c501ca09a721c9c4a9fde387dacda408, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 0e5be0f3c47fe704cbf39de32cc8b6be, type: 3}
     skill: {fileID: 0}
@@ -548,6 +598,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: a5a08309ec1ef8f4880982838a622fb3, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 21189be4bde0a3849998b1f24149801f, type: 3}
     skill: {fileID: 0}
@@ -565,6 +617,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: c01e49c1dc2312e42a7fe7acaf17945a, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 6f9dd26c7a2c9aa4c88d151d62ea11a0, type: 3}
     skill: {fileID: 0}
@@ -582,6 +636,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: dedb45b7396885f4c8b39364564bafc2, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 7190df77de7efa2419ef50c8e7bd8d59, type: 3}
     skill: {fileID: 0}
@@ -600,6 +656,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 7d6b599b03c836a40b9a7ff2c6f2c6b4, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 3b74172898b63154d9464367b10ee2f5, type: 3}
     skill: {fileID: 0}
@@ -618,6 +676,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: a3abedfce3572ff4aaf086051b86b2d2, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 45ed084f93ccfa844bbe011c72bbce99, type: 3}
     skill: {fileID: 0}
@@ -635,6 +695,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 888702218433590844, guid: e2cab7bf9867aeb4d90808cd6df0bee7, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -652,6 +714,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 888702218433590844, guid: 1c2f06e4437162c4d8beaa950bdaa649, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -669,6 +733,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 888702218433590844, guid: 3a64e6681888e934f8d2bbf8a42d7af6, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -686,6 +752,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 888702218433590844, guid: a4bf972126b426241a9baf6066e7b086, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -703,6 +771,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 888702218433590844, guid: 67fa6a350eb211943a0948ee1d4c15a8, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -720,6 +790,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 888702218433590844, guid: f3e4ccd5eacb1ab42b352e557c931594, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -737,6 +809,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 3668401319161006958, guid: f00a5983cf859534787a124135e4f08b, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -754,6 +828,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 3668401319161006958, guid: 61ec5d2b2f1b4ef4da70fe75aed31fa3, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -771,6 +847,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 3668401319161006958, guid: aca31db6dd86940498b8cbb456cc08ad, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -788,6 +866,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 3020955417211395267, guid: 64723082099b5494c9573f968c41ec65, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -805,6 +885,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 6463370211903710501, guid: 5c73a5a502acb0b48a6f0b8ee04d09c5, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -822,6 +904,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 7564076516500285006, guid: af613e0bde311224ba9fd97c8838f95d, type: 3}
     prefabUi: {fileID: 0}
     skill: {fileID: 0}
@@ -840,6 +924,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: a233808f68c59d541b62cf99caa36b75, type: 3}
     skill: {fileID: 11400000, guid: cc69fe99998b25a4d8a301159bd9f639, type: 2}
@@ -858,6 +944,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 41f98db91a1f1ca42a7fed186d43fb43, type: 3}
     skill: {fileID: 11400000, guid: ad31f96bc529c89469eed49d1304685e, type: 2}
@@ -875,6 +963,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 7d23fef34052b4f4da59434a86fc7834, type: 3}
     skill: {fileID: 11400000, guid: 6a4d5195185ff524a802fb55de0fc5fa, type: 2}
@@ -892,6 +982,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 598f0a75dcbb9884d8b92d17e6645a82, type: 3}
     skill: {fileID: 11400000, guid: 19efa62420a1aa04882ce7fb0b4f4a5e, type: 2}
@@ -909,6 +1001,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: f3edf99dc58f4ee4eb96b5d367a04f6b, type: 3}
     skill: {fileID: 11400000, guid: 6ef8088a4fd79dd4eaf03eebf2b50410, type: 2}
@@ -926,6 +1020,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: a77317013581b7a45bbc2c9db8e74908, type: 3}
     skill: {fileID: 11400000, guid: 9ce7d48a23de5284d887d8e3faa8d296, type: 2}
@@ -943,6 +1039,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 72b089f9dcfae7f458d6bdaee92f2f8e, type: 3}
     skill: {fileID: 11400000, guid: 0f26c30961d7dd148a06e40dcc6140ff, type: 2}
@@ -960,6 +1058,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: a35a048fa15634048a4ecbc112400007, type: 3}
     skill: {fileID: 11400000, guid: 970b9a77b47a2eb4b9864354d9ae6734, type: 2}
@@ -978,6 +1078,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: ac0052fb6806b3b4babc28e21b84380a, type: 3}
     skill: {fileID: 0}
@@ -995,6 +1097,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 6c062dfd13a3e498eb29fd75819f632f, type: 3}
     skill: {fileID: 0}
@@ -1012,6 +1116,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 67cd6793657fe4d7a8cbea26fdb11233, type: 3}
     skill: {fileID: 0}
@@ -1029,6 +1135,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 780785b901c184f3595b762be424b914, type: 3}
     skill: {fileID: 0}
@@ -1046,6 +1154,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 96e697b9e72e44d639f26c7537f35e12, type: 3}
     skill: {fileID: 0}
@@ -1063,6 +1173,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 8e6bdfcbcea623040bc4a645e3fe7187, type: 3}
     skill: {fileID: 0}
@@ -1081,6 +1193,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 77aa7eceff9dd49718af591b6c71e712, type: 3}
     skill: {fileID: 0}
@@ -1098,6 +1212,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 1bb3c56d297ae4a8ab7fc79aabae25b9, type: 3}
     skill: {fileID: 0}
@@ -1116,6 +1232,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 46396cb41dd63794a8aa16cba7094c09, type: 3}
     skill: {fileID: 0}
@@ -1134,6 +1252,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 46396cb41dd63794a8aa16cba7094c09, type: 3}
     skill: {fileID: 0}
@@ -1151,6 +1271,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
     skill: {fileID: 0}
@@ -1168,6 +1290,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
     skill: {fileID: 0}
@@ -1186,6 +1310,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
     skill: {fileID: 0}
@@ -1204,6 +1330,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
     skill: {fileID: 0}
@@ -1222,6 +1350,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
     skill: {fileID: 0}
@@ -1240,6 +1370,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
     skill: {fileID: 0}
@@ -1258,6 +1390,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
     skill: {fileID: 0}
@@ -1275,6 +1409,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
     skill: {fileID: 0}
@@ -1292,6 +1428,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
     skill: {fileID: 0}
@@ -1309,6 +1447,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 0226e8169f971714090e1ca32a1d0ca9, type: 3}
     skill: {fileID: 0}
@@ -1326,6 +1466,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 0226e8169f971714090e1ca32a1d0ca9, type: 3}
     skill: {fileID: 0}
@@ -1343,6 +1485,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 0226e8169f971714090e1ca32a1d0ca9, type: 3}
     skill: {fileID: 0}
@@ -1362,6 +1506,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 922dc682e5e216848ae44c1f98593789, type: 3}
     skill: {fileID: 0}
@@ -1381,6 +1527,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 922dc682e5e216848ae44c1f98593789, type: 3}
     skill: {fileID: 0}
@@ -1399,6 +1547,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 45a901171fa6a504ea3458d8bd5cc5f5, type: 3}
     skill: {fileID: 0}
@@ -1417,6 +1567,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 45a901171fa6a504ea3458d8bd5cc5f5, type: 3}
     skill: {fileID: 0}
@@ -1435,6 +1587,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 45a901171fa6a504ea3458d8bd5cc5f5, type: 3}
     skill: {fileID: 0}
@@ -1452,6 +1606,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 58be8389162e3fd4ea34525ecd8a1ae6, type: 3}
     skill: {fileID: 0}
@@ -1470,6 +1626,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 58be8389162e3fd4ea34525ecd8a1ae6, type: 3}
     skill: {fileID: 0}
@@ -1489,6 +1647,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
     skill: {fileID: 0}
@@ -1507,6 +1667,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
     skill: {fileID: 0}
@@ -1525,6 +1687,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
     skill: {fileID: 0}
@@ -1543,6 +1707,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
     skill: {fileID: 0}
@@ -1561,6 +1727,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
     skill: {fileID: 0}
@@ -1579,6 +1747,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
     skill: {fileID: 0}
@@ -1597,6 +1767,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
     skill: {fileID: 0}
@@ -1615,6 +1787,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
     skill: {fileID: 0}
@@ -1633,6 +1807,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
     skill: {fileID: 0}
@@ -1651,6 +1827,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
     skill: {fileID: 0}
@@ -1668,6 +1846,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
     skill: {fileID: 0}
@@ -1686,6 +1866,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
     skill: {fileID: 0}
@@ -1704,6 +1886,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
     skill: {fileID: 0}
@@ -1722,6 +1906,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
     skill: {fileID: 0}
@@ -1740,6 +1926,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
     skill: {fileID: 0}
@@ -1757,6 +1945,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
     skill: {fileID: 0}
@@ -1774,6 +1964,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
     skill: {fileID: 0}
@@ -1791,6 +1983,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
     skill: {fileID: 0}
@@ -1811,6 +2005,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
     skill: {fileID: 0}
@@ -1831,6 +2027,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
     skill: {fileID: 0}
@@ -1857,6 +2055,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
     skill: {fileID: 0}
@@ -1883,6 +2083,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
     skill: {fileID: 0}
@@ -1901,6 +2103,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
     skill: {fileID: 0}
@@ -1919,6 +2123,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
     skill: {fileID: 0}
@@ -1936,6 +2142,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -1953,6 +2161,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -1970,6 +2180,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -1987,6 +2199,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2004,6 +2218,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2021,6 +2237,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2039,6 +2257,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2056,6 +2276,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2073,6 +2295,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2090,6 +2314,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2108,6 +2334,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2126,6 +2354,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2144,6 +2374,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2162,6 +2394,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2180,6 +2414,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2198,6 +2434,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2215,6 +2453,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2232,6 +2472,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2250,6 +2492,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2269,6 +2513,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2287,6 +2533,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2305,6 +2553,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
     skill: {fileID: 0}
@@ -2322,6 +2572,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2339,6 +2591,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2356,6 +2610,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2373,6 +2629,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2390,6 +2648,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2407,6 +2667,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2424,6 +2686,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2441,6 +2705,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2458,6 +2724,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2475,6 +2743,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2492,6 +2762,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2509,6 +2781,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2526,6 +2800,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2543,6 +2819,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2560,6 +2838,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2577,6 +2857,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2594,6 +2876,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2611,6 +2895,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2628,6 +2914,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2645,6 +2933,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
     skill: {fileID: 0}
@@ -2662,6 +2952,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2679,6 +2971,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2696,6 +2990,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2713,6 +3009,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2730,6 +3028,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2747,6 +3047,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2764,6 +3066,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2781,6 +3085,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2798,6 +3104,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2815,6 +3123,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2832,6 +3142,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2849,6 +3161,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2866,6 +3180,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2883,6 +3199,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2900,6 +3218,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2917,6 +3237,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2934,6 +3256,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2951,6 +3275,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2968,6 +3294,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -2985,6 +3313,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
     skill: {fileID: 0}
@@ -3002,6 +3332,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3019,6 +3351,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3036,6 +3370,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3053,6 +3389,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3070,6 +3408,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3087,6 +3427,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3104,6 +3446,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3121,6 +3465,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3138,6 +3484,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3155,6 +3503,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3172,6 +3522,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3189,6 +3541,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3206,6 +3560,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3223,6 +3579,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3240,6 +3598,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3257,6 +3617,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3274,6 +3636,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3291,6 +3655,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3308,6 +3674,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3325,6 +3693,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
     skill: {fileID: 0}
@@ -3342,6 +3712,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3359,6 +3731,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3376,6 +3750,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3393,6 +3769,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3410,6 +3788,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3427,6 +3807,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3444,6 +3826,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3461,6 +3845,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3478,6 +3864,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3495,6 +3883,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3512,6 +3902,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3529,6 +3921,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3546,6 +3940,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3563,6 +3959,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3580,6 +3978,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3597,6 +3997,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3614,6 +4016,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3631,6 +4035,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3648,6 +4054,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3665,6 +4073,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
@@ -3682,11 +4092,298 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: f9368e58b3833c240bd4512e804c180d, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43600
+    label: 'Ballista: Return Projectile Delayed'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 526977a9fa1dad44496958cffa518d68, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43605
+    label: 'Ballista: Return Projectile'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 7137765b08b499147875476447cade50, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43610
+    label: 'Ballista: Shoot Also Backwards'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 8f1dc7aa3381c1740992358be777065e, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43611
+    label: 'Ballista: Shoot Also Backwards'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: da0582d61545c4c409aea0ba2f048b81, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43615
+    label: 'Ballista: Post Spreadshot'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 4b613db9508a623419d03c4fffaf5cf1, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43616
+    label: 'Ballista: Post Spreadshot'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: fb69db399c68e7348bbdb7d5e18080f2, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43620
+    label: 'Ballista: Auto Pierce Low HP'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 11b38b78d0191ba44b3b800903f431fc, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43621
+    label: 'Ballista: Auto Pierce Low HP'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: e0c0a33cb844dff4e8d15f0206897c77, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43625
+    label: 'Ballista: Improved Penetration'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: e5bd4fc79240bca45b1f1c048c26995a, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43630
+    label: 'Ballista: Gold Recharges'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 8e07a5ece6b1bc840a8bb6fa90984b0b, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43635
+    label: 'Ballista: Range and Speed Upgrade'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 501d74708be42b24284c431493e94cb9, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43640
+    label: 'Ballista: Additional Random Shot'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 401163db3c3962a4f830aa1855a1dadc, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43645
+    label: 'Ballista: Extra Damage To Distant Foes'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 04119f0c935d33347a872623da6e2235, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43646
+    label: 'Ballista: Extra Damage To Distant Foes'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 1a7fbf0aeafdf374cba5a8aad100e76d, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43650
+    label: 'Ballista: Armor Piercing'
+    enabled: 1
+    description: TODO
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 2b90fb6b2fbeb774ca8d2457a35db649, type: 2}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
@@ -3699,6 +4396,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -3716,6 +4415,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -3733,6 +4434,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -3750,6 +4453,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -3767,6 +4472,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -3784,6 +4491,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -3801,6 +4510,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -3818,6 +4529,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -3835,6 +4548,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -3852,6 +4567,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -3869,6 +4586,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -3886,6 +4605,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -3903,6 +4624,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -3920,6 +4643,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -3937,6 +4662,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -3954,6 +4681,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -3971,6 +4700,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -3988,6 +4719,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -4005,6 +4738,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -4022,6 +4757,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -4039,6 +4776,8 @@ MonoBehaviour:
     predefinedId: 0
     weightSettings:
       alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
     skill: {fileID: 0}
@@ -4055,78 +4794,87 @@ MonoBehaviour:
     minCountShownItems: 2
     prefabs:
     - name: Add Projectile
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 2500
       weight: 10
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
       price: 1
       priceMultiplyForEveryOwned: 0.2
+      lockId: 
       mustBeUnlocked: 0
     - name: Increase Damage
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 2503
       weight: 10
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
       price: 1
       priceMultiplyForEveryOwned: 0.2
+      lockId: 
       mustBeUnlocked: 0
     - name: Fire Rate Module
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 2506
       weight: 10
-      price: 1
-      priceMultiplyForEveryOwned: 0.2
-      mustBeUnlocked: 0
-    - name: Increase Projectile Area
       isInGroup: 0
       group: 
       levelInGroup: 0
-      prefabId: 2505
-      weight: 10
       price: 1
       priceMultiplyForEveryOwned: 0.2
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Increase Projectile Area
+      prefabId: 2505
+      weight: 10
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      price: 1
+      priceMultiplyForEveryOwned: 0.2
+      lockId: 
       mustBeUnlocked: 0
     closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned: []
+    lockId: 
   - name: shop_defensive_basic
     note: 
     minCountShownItems: 1
     prefabs:
     - name: Shield Module
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 2600
       weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
       price: 1
       priceMultiplyForEveryOwned: 0.75
+      lockId: 
       mustBeUnlocked: 0
     - name: Speed Module
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 2602
       weight: 1
-      price: 1
-      priceMultiplyForEveryOwned: 0.75
-      mustBeUnlocked: 0
-    - name: Skill Improver
       isInGroup: 0
       group: 
       levelInGroup: 0
-      prefabId: 2604
-      weight: 1
       price: 1
       priceMultiplyForEveryOwned: 0.75
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Skill Improver
+      prefabId: 2604
+      weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      price: 1
+      priceMultiplyForEveryOwned: 0.75
+      lockId: 
       mustBeUnlocked: 0
     closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned: []
+    lockId: 
   - name: shop_chaos_upgrades
     note: 
     minCountShownItems: 1
@@ -4137,171 +4885,190 @@ MonoBehaviour:
     - shop_chaos_upgrades_cannon
     - shop_chaos_upgrades_gun
     priceMultiplierPerCountOwned: []
+    lockId: 
   - name: shop_chaos_upgrades_crossbow
     note: 
     minCountShownItems: 1
     prefabs:
     - name: 'Crossbow: Dual-Load Destruction'
-      isInGroup: 1
-      group: 42000
-      levelInGroup: 1
       prefabId: 42000
       weight: 8
+      isInGroup: 1
+      group: 42000
+      levelInGroup: 1
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Crossbow: Dual-Load Destruction'
-      isInGroup: 1
-      group: 42000
-      levelInGroup: 2
       prefabId: 42001
       weight: 3
+      isInGroup: 1
+      group: 42000
+      levelInGroup: 2
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Epic Crossbow: Dual-Load Destruction'
+      prefabId: 42002
+      weight: 1
       isInGroup: 1
       group: 42000
       levelInGroup: 3
-      prefabId: 42002
-      weight: 1
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Crossbow: Momentum Maelstrom'
-      isInGroup: 1
-      group: 42010
-      levelInGroup: 1
       prefabId: 42010
       weight: 8
+      isInGroup: 1
+      group: 42010
+      levelInGroup: 1
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Crossbow: Momentum Maelstrom'
+      prefabId: 42011
+      weight: 3
       isInGroup: 1
       group: 42010
       levelInGroup: 2
-      prefabId: 42011
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Crossbow: Skyfall Strike'
+      prefabId: 42020
+      weight: 8
       isInGroup: 1
       group: 42020
       levelInGroup: 1
-      prefabId: 42020
-      weight: 8
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Crossbow: Skyfall Strike'
+      prefabId: 42021
+      weight: 3
       isInGroup: 1
       group: 42020
       levelInGroup: 2
-      prefabId: 42021
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 42050
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Epic Crossbow: Skyfall Strike'
+      prefabId: 42022
+      weight: 1
       isInGroup: 1
       group: 42020
       levelInGroup: 3
-      prefabId: 42022
-      weight: 1
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Crossbow: Inferno Incursion'
-      isInGroup: 1
-      group: 42030
-      levelInGroup: 1
       prefabId: 42030
       weight: 8
+      isInGroup: 1
+      group: 42030
+      levelInGroup: 1
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Crossbow: Inferno Incursion'
+      prefabId: 42031
+      weight: 3
       isInGroup: 1
       group: 42030
       levelInGroup: 2
-      prefabId: 42031
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Crossbow: Skill Barrage'
-      isInGroup: 1
-      group: 42040
-      levelInGroup: 1
       prefabId: 42040
       weight: 8
+      isInGroup: 1
+      group: 42040
+      levelInGroup: 1
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Crossbow: Skill Barrage'
+      prefabId: 42041
+      weight: 3
       isInGroup: 1
       group: 42040
       levelInGroup: 2
-      prefabId: 42041
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Crossbow: Scattershot'
+      prefabId: 42050
+      weight: 8
       isInGroup: 1
       group: 42050
       levelInGroup: 1
-      prefabId: 42050
-      weight: 8
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Crossbow: Scattershot'
+      prefabId: 42051
+      weight: 3
       isInGroup: 1
       group: 42050
       levelInGroup: 2
-      prefabId: 42051
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Epic Crossbow: Scattershot'
+      prefabId: 42052
+      weight: 1
       isInGroup: 1
       group: 42052
       levelInGroup: 3
-      prefabId: 42052
-      weight: 1
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Crossbow: Kinetic Kickback'
+      prefabId: 42060
+      weight: 1
       isInGroup: 1
       group: 42060
       levelInGroup: 1
-      prefabId: 42060
-      weight: 1
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Crossbow: Gold Rush'
+      prefabId: 42070
+      weight: 1
       isInGroup: 1
       group: 42070
       levelInGroup: 2
-      prefabId: 42070
-      weight: 1
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Crossbow: Arrow Barrage'
+      prefabId: 42080
+      weight: 1
       isInGroup: 1
       group: 42080
       levelInGroup: 2
-      prefabId: 42080
-      weight: 1
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     closeOnFirstPurchase: 0
     nestedRewardSets: []
@@ -4311,144 +5078,160 @@ MonoBehaviour:
     - 1
     - 1.15
     - 1.3
+    lockId: 
   - name: shop_chaos_upgrades_cannon
     note: 
     minCountShownItems: 1
     prefabs:
     - name: 'Common Cannon: Blast Barrage'
+      prefabId: 43000
+      weight: 8
       isInGroup: 1
       group: 43000
       levelInGroup: 1
-      prefabId: 43000
-      weight: 8
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Cannon: Blast Barrage'
+      prefabId: 43001
+      weight: 3
       isInGroup: 1
       group: 43000
       levelInGroup: 2
-      prefabId: 43001
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Cannon: Static Blaze'
+      prefabId: 43010
+      weight: 8
       isInGroup: 1
       group: 43010
       levelInGroup: 1
-      prefabId: 43010
-      weight: 8
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Cannon: Tactical Trigger'
+      prefabId: 43020
+      weight: 8
       isInGroup: 1
       group: 43020
       levelInGroup: 1
-      prefabId: 43020
-      weight: 8
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Cannon: Tidal Force'
+      prefabId: 43030
+      weight: 8
       isInGroup: 1
       group: 43030
       levelInGroup: 1
-      prefabId: 43030
-      weight: 8
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Cannon: Speedburst Salvo'
+      prefabId: 43040
+      weight: 8
       isInGroup: 1
       group: 43040
       levelInGroup: 1
-      prefabId: 43040
-      weight: 8
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Cannon: Speedburst Salvo'
+      prefabId: 43041
+      weight: 3
       isInGroup: 1
       group: 43040
       levelInGroup: 2
-      prefabId: 43041
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Cannon: Singularity Surge'
+      prefabId: 43050
+      weight: 3
       isInGroup: 1
       group: 43050
       levelInGroup: 2
-      prefabId: 43050
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Cannon: More Rounds'
-      isInGroup: 1
-      group: 43060
-      levelInGroup: 2
       prefabId: 43060
       weight: 3
+      isInGroup: 1
+      group: 43060
+      levelInGroup: 2
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Epic Cannon: More Rounds'
+      prefabId: 43061
+      weight: 1
       isInGroup: 1
       group: 43060
       levelInGroup: 3
-      prefabId: 43061
-      weight: 1
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Cannon: Panic Pulse'
+      prefabId: 43070
+      weight: 8
       isInGroup: 1
       group: 43070
       levelInGroup: 1
-      prefabId: 43070
-      weight: 8
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Cannon: Panic Pulse'
+      prefabId: 43071
+      weight: 3
       isInGroup: 1
       group: 43070
       levelInGroup: 2
-      prefabId: 43071
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Cannon: Triple Threat'
+      prefabId: 43080
+      weight: 8
       isInGroup: 1
       group: 43080
       levelInGroup: 1
-      prefabId: 43080
-      weight: 8
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Epic Cannon: Triple Threat'
+      prefabId: 43081
+      weight: 1
       isInGroup: 1
       group: 43080
       levelInGroup: 3
-      prefabId: 43081
-      weight: 1
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Cannon: Gold Satisfaction'
+      prefabId: 43090
+      weight: 3
       isInGroup: 1
       group: 43090
       levelInGroup: 2
-      prefabId: 43090
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     closeOnFirstPurchase: 0
     nestedRewardSets: []
@@ -4458,207 +5241,230 @@ MonoBehaviour:
     - 1
     - 1.15
     - 1.3
+    lockId: 
   - name: shop_chaos_upgrades_gun
     note: 
     minCountShownItems: 1
     prefabs:
     - name: 'Common Gun: Magazine Upgrade'
+      prefabId: 43100
+      weight: 8
       isInGroup: 1
       group: 43100
       levelInGroup: 1
-      prefabId: 43100
-      weight: 8
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Gun: Magazine Upgrade'
+      prefabId: 43101
+      weight: 3
       isInGroup: 1
       group: 43100
       levelInGroup: 2
-      prefabId: 43101
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Epic Gun: Magazine Upgrade'
+      prefabId: 43102
+      weight: 1
       isInGroup: 1
       group: 43100
       levelInGroup: 3
-      prefabId: 43102
-      weight: 1
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Gun: Reload Upgrade'
+      prefabId: 43105
+      weight: 8
       isInGroup: 1
       group: 43105
       levelInGroup: 1
-      prefabId: 43105
-      weight: 8
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Gun: Reload Upgrade'
+      prefabId: 43106
+      weight: 3
       isInGroup: 1
       group: 43105
       levelInGroup: 2
-      prefabId: 43106
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Gun: Smaller Magazine'
+      prefabId: 43110
+      weight: 3
       isInGroup: 1
       group: 43110
       levelInGroup: 2
-      prefabId: 43110
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Gun: Gold to Magazine'
+      prefabId: 43115
+      weight: 3
       isInGroup: 1
       group: 43115
       levelInGroup: 2
-      prefabId: 43115
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Gun: Stationary Boosts'
+      prefabId: 43120
+      weight: 8
       isInGroup: 1
       group: 43120
       levelInGroup: 1
-      prefabId: 43120
-      weight: 8
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Gun: Moving Boosts'
+      prefabId: 43121
+      weight: 8
       isInGroup: 1
       group: 43121
       levelInGroup: 1
-      prefabId: 43121
-      weight: 8
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Gun: On Reload Move Boost'
+      prefabId: 43125
+      weight: 8
       isInGroup: 1
       group: 43125
       levelInGroup: 1
-      prefabId: 43125
-      weight: 8
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Gun: Pierce Chance'
+      prefabId: 43130
+      weight: 3
       isInGroup: 1
       group: 43130
       levelInGroup: 2
-      prefabId: 43130
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Epic Gun: Pierce Chance'
+      prefabId: 43131
+      weight: 1
       isInGroup: 1
       group: 43130
       levelInGroup: 3
-      prefabId: 43131
-      weight: 1
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Gun: Focused Aiming'
+      prefabId: 43135
+      weight: 3
       isInGroup: 1
       group: 43135
       levelInGroup: 2
-      prefabId: 43135
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Gun: Fire on Skill'
+      prefabId: 43140
+      weight: 8
       isInGroup: 1
       group: 43140
       levelInGroup: 1
-      prefabId: 43140
-      weight: 8
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Gun: Fire on Skill'
+      prefabId: 43141
+      weight: 3
       isInGroup: 1
       group: 43140
       levelInGroup: 2
-      prefabId: 43141
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Gun: Reload on Skill'
+      prefabId: 43145
+      weight: 3
       isInGroup: 1
       group: 43145
       levelInGroup: 2
-      prefabId: 43145
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Gun: Instant Reload'
+      prefabId: 43150
+      weight: 3
       isInGroup: 1
       group: 43150
       levelInGroup: 2
-      prefabId: 43150
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Epic Gun: Instant Reload'
+      prefabId: 43151
+      weight: 1
       isInGroup: 1
       group: 43150
       levelInGroup: 3
-      prefabId: 43151
-      weight: 1
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Gun: Armor Piercing'
+      prefabId: 43155
+      weight: 8
       isInGroup: 1
       group: 43155
       levelInGroup: 1
-      prefabId: 43155
-      weight: 8
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Gun: Finish ''Em'
+      prefabId: 43160
+      weight: 3
       isInGroup: 1
       group: 43160
       levelInGroup: 2
-      prefabId: 43160
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Gun: Fire on Reload'
+      prefabId: 43165
+      weight: 8
       isInGroup: 1
       group: 43165
       levelInGroup: 1
-      prefabId: 43165
-      weight: 8
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Rare Gun: Fire on Reload'
+      prefabId: 43166
+      weight: 3
       isInGroup: 1
       group: 43165
       levelInGroup: 2
-      prefabId: 43166
-      weight: 3
       price: 2.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     closeOnFirstPurchase: 0
     nestedRewardSets: []
@@ -4668,85 +5474,95 @@ MonoBehaviour:
     - 1
     - 1.15
     - 1.3
+    lockId: 
   - name: free_start_weapon
     note: 
     minCountShownItems: 100
     prefabs:
     - name: Crossbow Module
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 2000
       weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
       price: 0
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Cannon Module
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 2007
       weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
       price: 0
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Gun
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 2002
       weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
       price: 0
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Slingshot
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 2004
       weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
       price: 0
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Shuriken
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 2005
       weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
       price: 0
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Shotgun
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 2006
       weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
       price: 0
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Machinegun
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 2009
       weight: 1
-      price: 0
-      priceMultiplyForEveryOwned: 0
-      mustBeUnlocked: 0
-    - name: Chaotic Leap
       isInGroup: 0
       group: 
       levelInGroup: 0
-      prefabId: 10000
-      weight: 1
       price: 0
       priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Chaotic Leap
+      prefabId: 10000
+      weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      price: 0
+      priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned: []
+    lockId: 
   - name: shop_skill_upgrades
     note: 
     minCountShownItems: 1
@@ -4755,99 +5571,110 @@ MonoBehaviour:
     nestedRewardSets:
     - shop_skill_upgrades_jump
     priceMultiplierPerCountOwned: []
+    lockId: 
   - name: shop_skill_upgrades_jump
     note: 
     minCountShownItems: 1
     prefabs:
     - name: 'Common Chaotic Leap: Enhance Power'
-      isInGroup: 1
-      group: 30000
-      levelInGroup: 1
       prefabId: 30000
       weight: 4
+      isInGroup: 1
+      group: 30000
+      levelInGroup: 1
       price: 1.25
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Epic Chaotic Leap: Enhance Power'
+      prefabId: 30001
+      weight: 1
       isInGroup: 1
       group: 30000
       levelInGroup: 2
-      prefabId: 30001
-      weight: 1
       price: 1.25
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Chaotic Leap: Landing Protection'
-      isInGroup: 1
-      group: 30010
-      levelInGroup: 1
       prefabId: 30010
       weight: 4
+      isInGroup: 1
+      group: 30010
+      levelInGroup: 1
       price: 1.25
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Epic Chaotic Leap: Landing Protection'
+      prefabId: 30011
+      weight: 1
       isInGroup: 1
       group: 30010
       levelInGroup: 2
-      prefabId: 30011
-      weight: 1
       price: 1.25
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Chaotic Leap: Redirect Power'
-      isInGroup: 1
-      group: 30020
-      levelInGroup: 1
       prefabId: 30020
       weight: 4
+      isInGroup: 1
+      group: 30020
+      levelInGroup: 1
       price: 1.25
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Epic Chaotic Leap: Redirect Power'
+      prefabId: 30021
+      weight: 1
       isInGroup: 1
       group: 30020
       levelInGroup: 2
-      prefabId: 30021
-      weight: 1
       price: 1.25
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Chaotic Leap: Ethereal Jump'
-      isInGroup: 1
-      group: 30060
-      levelInGroup: 1
       prefabId: 30060
       weight: 4
+      isInGroup: 1
+      group: 30060
+      levelInGroup: 1
       price: 1.25
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Epic Chaotic Leap: Ethereal Jump'
+      prefabId: 30061
+      weight: 1
       isInGroup: 1
       group: 30060
       levelInGroup: 2
-      prefabId: 30061
-      weight: 1
       price: 1.25
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Common Chaotic Leap: Shockwave'
+      prefabId: 30070
+      weight: 4
       isInGroup: 1
       group: 30070
       levelInGroup: 1
-      prefabId: 30070
-      weight: 4
       price: 1.25
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: 'Epic Chaotic Leap: Shockwave'
+      prefabId: 30071
+      weight: 1
       isInGroup: 1
       group: 30070
       levelInGroup: 2
-      prefabId: 30071
-      weight: 1
       price: 1.25
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     closeOnFirstPurchase: 0
     nestedRewardSets: []
@@ -4857,252 +5684,281 @@ MonoBehaviour:
     - 1
     - 1.15
     - 1.3
+    lockId: 
   - name: shop_weapons
     note: 
     minCountShownItems: 1
     prefabs:
     - name: Crossbow Module
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 2000
       weight: 1
-      price: 1
-      priceMultiplyForEveryOwned: 0.2
-      mustBeUnlocked: 0
-    - name: Cannon Module
       isInGroup: 0
       group: 
       levelInGroup: 0
-      prefabId: 2007
-      weight: 1
       price: 1
       priceMultiplyForEveryOwned: 0.2
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Cannon Module
+      prefabId: 2007
+      weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      price: 1
+      priceMultiplyForEveryOwned: 0.2
+      lockId: 
       mustBeUnlocked: 0
     closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned: []
+    lockId: 
   - name: chest_weapons
     note: 
     minCountShownItems: 4
     prefabs:
     - name: Crossbow Module
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 2000
       weight: 1
-      price: 0
-      priceMultiplyForEveryOwned: 0
-      mustBeUnlocked: 0
-    - name: Cannon Module
       isInGroup: 0
       group: 
       levelInGroup: 0
-      prefabId: 2007
-      weight: 1
       price: 0
       priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Cannon Module
+      prefabId: 2007
+      weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      price: 0
+      priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     closeOnFirstPurchase: 1
     nestedRewardSets: []
     priceMultiplierPerCountOwned: []
+    lockId: 
   - name: shop_player_upgrades
     note: 
     minCountShownItems: 1
     prefabs:
     - name: Max HP Upgrade
-      isInGroup: 1
-      group: 90000
-      levelInGroup: 1
       prefabId: 90000
       weight: 9
-      price: 0.5
-      priceMultiplyForEveryOwned: 0
-      mustBeUnlocked: 0
-    - name: Max HP Upgrade
       isInGroup: 1
       group: 90000
-      levelInGroup: 2
+      levelInGroup: 1
+      price: 0.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Max HP Upgrade
       prefabId: 90001
       weight: 3
+      isInGroup: 1
+      group: 90000
+      levelInGroup: 2
       price: 0.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Max HP Upgrade
+      prefabId: 90002
+      weight: 1
       isInGroup: 1
       group: 90000
       levelInGroup: 3
-      prefabId: 90002
-      weight: 1
       price: 0.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Defence Upgrade
-      isInGroup: 1
-      group: 90010
-      levelInGroup: 1
       prefabId: 90010
       weight: 9
-      price: 0.5
-      priceMultiplyForEveryOwned: 0
-      mustBeUnlocked: 0
-    - name: Defence Upgrade
       isInGroup: 1
       group: 90010
-      levelInGroup: 2
+      levelInGroup: 1
+      price: 0.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Defence Upgrade
       prefabId: 90011
       weight: 3
+      isInGroup: 1
+      group: 90010
+      levelInGroup: 2
       price: 0.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Defence Upgrade
+      prefabId: 90012
+      weight: 1
       isInGroup: 1
       group: 90010
       levelInGroup: 3
-      prefabId: 90012
-      weight: 1
       price: 0.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Move Speed Upgrade
-      isInGroup: 1
-      group: 90020
-      levelInGroup: 1
       prefabId: 90020
       weight: 9
-      price: 0.5
-      priceMultiplyForEveryOwned: 0
-      mustBeUnlocked: 0
-    - name: Move Speed Upgrade
       isInGroup: 1
       group: 90020
-      levelInGroup: 2
+      levelInGroup: 1
+      price: 0.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Move Speed Upgrade
       prefabId: 90021
       weight: 3
+      isInGroup: 1
+      group: 90020
+      levelInGroup: 2
       price: 0.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Move Speed Upgrade
+      prefabId: 90022
+      weight: 1
       isInGroup: 1
       group: 90020
       levelInGroup: 3
-      prefabId: 90022
-      weight: 1
       price: 0.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: HP Regeneration Upgrade
-      isInGroup: 1
-      group: 90030
-      levelInGroup: 1
       prefabId: 90030
       weight: 9
+      isInGroup: 1
+      group: 90030
+      levelInGroup: 1
       price: 0.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: HP Regeneration Upgrade
+      prefabId: 90031
+      weight: 3
       isInGroup: 1
       group: 90030
       levelInGroup: 2
-      prefabId: 90031
-      weight: 3
       price: 0.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: HP Regeneration Upgrade
+      prefabId: 90032
+      weight: 1
       isInGroup: 1
       group: 90030
       levelInGroup: 3
-      prefabId: 90032
-      weight: 1
       price: 0.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Pickup Range Upgrade
+      prefabId: 90040
+      weight: 9
       isInGroup: 1
       group: 90040
       levelInGroup: 1
-      prefabId: 90040
-      weight: 9
       price: 0.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Rare Pickup Range Upgrade
+      prefabId: 90041
+      weight: 3
       isInGroup: 1
       group: 90040
       levelInGroup: 2
-      prefabId: 90041
-      weight: 3
       price: 0.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Epic Pickup Range Upgrade
+      prefabId: 90042
+      weight: 1
       isInGroup: 1
       group: 90040
       levelInGroup: 3
-      prefabId: 90042
-      weight: 1
       price: 0.5
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Skill Reuse Delay Upgrade
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 90050
       weight: 9
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
       price: 0.75
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Rare Skill Reuse Delay Upgrade
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 90051
       weight: 3
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
       price: 0.75
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Common Damage Upgrade
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 90060
       weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
       price: 0.75
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Rare Damage Upgrade
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 90061
       weight: 90000
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
       price: 0.75
       priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     - name: Epic Damage Upgrade
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
       prefabId: 90062
       weight: 30000
-      price: 0.75
-      priceMultiplyForEveryOwned: 0
-      mustBeUnlocked: 0
-    - name: Epic Skill Reuse Delay Upgrade
       isInGroup: 0
       group: 
       levelInGroup: 0
-      prefabId: 90052
-      weight: 10000
       price: 0.75
       priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Epic Skill Reuse Delay Upgrade
+      prefabId: 90052
+      weight: 10000
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      lockId: 
       mustBeUnlocked: 0
     closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned: []
+    lockId: 
   variants:
   - variant: Zombie
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}

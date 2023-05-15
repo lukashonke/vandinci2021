@@ -24,8 +24,14 @@ MonoBehaviour:
   uiName: Inferno Incursion
   uiDescription: Your arrows will put enemies on Fire.
   effects: []
+  addSkills: []
+  rarity: 0
+  unlocksModulePrefabIds: 
+  disablesModulePrefabIds: 
+  replacesModulePrefabIds: 
   modulePrefabId: 2000
   moduleEffects:
   - {fileID: 11400000, guid: 68ff08afa5649d14abf7f28e33aa963f, type: 2}
+  - {fileID: 11400000, guid: 67a66b16bb9baf049915da3d62e3d351, type: 2}
   addSubEmitters: []
   effectsLevel: 1

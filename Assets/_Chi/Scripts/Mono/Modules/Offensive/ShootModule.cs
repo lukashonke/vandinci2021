@@ -33,19 +33,19 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
         public override IEnumerator UpdateLoop()
         {
             yield return new WaitForSeconds(Random.Range(0.05f, 0.5f));
-            
-            Vector3 lastPosition = transform.position;
 
             float nextTargetUpdate = Time.time + targetUpdateInterval;
             
             float lastFire = 0;
-
-            reloadProgress = 0f;
-
-            //float nextFireRate = Time.time + stats.fireRate;
-
-            //var prefabProjectile = prefab.GetComponent<Projectile>();
             
+            if (stats.magazineSize.GetValueInt() > 0)
+            {
+                currentMagazine = stats.magazineSize.GetValueInt();
+                temporaryProjectilesForNextMagazine = 0;
+            }
+
+            reloadProgress = 1f;
+
             while (activated && parent.CanShoot())
             {
                 yield return null;
@@ -70,8 +70,6 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                 {
                     reloadProgress = Mathf.Min(1, reloadProgress + ((Time.deltaTime * boost) / GetReloadDuration()));
                 }
-                
-                lastPosition = currentPosition;
 
                 RefreshStatusbarReload();
                 
@@ -80,10 +78,8 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
 
                 var magazineSize = stats.magazineSize.GetValueInt();
                 
-                if (reloadProgress >= 1)
+                if (reloadProgress >= 1 && isReloading)
                 {
-                    reloadProgress = 0;
-                    
                     if (magazineSize > 0)
                     {
                         currentMagazine = magazineSize + temporaryProjectilesForNextMagazine;
@@ -162,12 +158,18 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                 
                 //emitter.ApplyParams(stats, parent);
                 
-                if (currentTarget != null 
-                    || targetType == ShootTargetType.AtMouse 
-                    || (targetType == ShootTargetType.AtMouseWhenMouseDown && parent is Player && ((Player) parent).IsFireRequested(this)))
+                var isFireRequested = currentTarget != null 
+                                      || targetType == ShootTargetType.AtMouse 
+                                      || targetType == ShootTargetType.AtMouseWhenMouseDown && parent is Player && ((Player) parent).IsFireRequested(this);
+
+                bool hasFired = false;
+                
+                if (isFireRequested)
                 {
                     if (canFire)
                     {
+                        hasFired = true;
+                        
                         lastFire = Time.time;
                         emitter.applyBulletParamsAction = () =>
                         {
@@ -226,7 +228,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                     this.transform.localRotation = originalRotation;
                 }
                 
-                if (startReload)
+                if (startReload && hasFired)
                 {
                     if (Random.value < stats.instantReloadChance.GetValue())
                     {

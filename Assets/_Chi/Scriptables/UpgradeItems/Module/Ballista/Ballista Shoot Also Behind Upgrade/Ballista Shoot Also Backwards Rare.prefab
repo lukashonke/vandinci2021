@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7548371126169717171}
   - component: {fileID: 1444033952973772471}
-  - component: {fileID: 2493740656221967057}
+  - component: {fileID: 5720792093626045842}
   m_Layer: 0
-  m_Name: Ballista Subemitter
+  m_Name: Ballista Shoot Also Backwards Rare
   m_TagString: LookAtParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a676b285f069c3c4884c27e78d0fc696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emitterProfile: {fileID: 11400000, guid: 978d830fbca324e4da46e7642c2bf770, type: 2}
+  emitterProfile: {fileID: 11400000, guid: e6d39f84fd7505645a533774ffca29fc, type: 2}
   patternOrigin: {fileID: 7548371126169717171}
   playAtStart: 0
   shootInstruction:
@@ -54,7 +54,7 @@ MonoBehaviour:
   useDefaultGizmoColor: 1
   gizmoColor: {r: 0, g: 1, b: 0, a: 1}
   gizmoSize: 0.5
---- !u!114 &2493740656221967057
+--- !u!114 &5720792093626045842
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,10 +63,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1687548640031416139}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ec5f28216784a6183b983f18af89569, type: 3}
+  m_Script: {fileID: 11500000, guid: d5be43f74b35409ba66028b9418a017f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileMul: 4
-  fireBeforeSkill: 0
-  fireAfterSkill: 1
-  skillToUse: {fileID: 0}
+  projectileMul: 1
+  everyNth: 0

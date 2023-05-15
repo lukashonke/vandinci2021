@@ -24823,7 +24823,7 @@ MonoBehaviour:
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children: []
-  isInRecycleBin: 0
+  isInRecycleBin: 1
   index: 3
   foldout: 1
   hasBeenSerializedOnce: 1
@@ -32420,12 +32420,12 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 2080403
+  uniqueIndex: 7619133
   profile: {fileID: 11400000}
-  parent: {fileID: 114917193883442684}
+  parent: {fileID: 0}
   children:
   - {fileID: 114027673760526898}
-  isInRecycleBin: 0
+  isInRecycleBin: 1
   index: 2
   foldout: 1
   bulletParams:
@@ -34838,7 +34838,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 8427542
+  uniqueIndex: 9052337
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -46581,8 +46581,7 @@ MonoBehaviour:
   uniqueIndex: 14566323
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
-  children:
-  - {fileID: 114201774248674550}
+  children: []
   isInRecycleBin: 0
   index: 1
   foldout: 1
