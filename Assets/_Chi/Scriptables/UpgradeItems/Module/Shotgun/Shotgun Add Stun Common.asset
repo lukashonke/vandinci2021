@@ -22,7 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Add Stun
-  uiDescription: TODO
+  uiDescription: Shotgun shots have a chance to stun enemies.
   effects: []
   addSkills: []
   rarity: 0

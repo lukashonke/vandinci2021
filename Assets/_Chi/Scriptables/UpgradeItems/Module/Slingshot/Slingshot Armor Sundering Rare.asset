@@ -22,7 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Armor Sundering
-  uiDescription: TODO
+  uiDescription: Permanently reduces enemy armor with each hit.
   effects: []
   addSkills: []
   rarity: 1

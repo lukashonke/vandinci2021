@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Spawn Solid Orb
-  uiDescription: 
+  uiName: Materialize Mass
+  uiDescription: Firing the shotgun has a chance to spawn a forward-traveling solid
+    orb that pushes enemies away.
   effects: []
   addSkills: []
   rarity: 0

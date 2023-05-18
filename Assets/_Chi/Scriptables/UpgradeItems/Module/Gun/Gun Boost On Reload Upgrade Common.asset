@@ -21,7 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: On Reload Move Speed Boost
+  uiName: Reload Runner
   uiDescription: After reload, briefly boosts your movement speed.
   effects: []
   addSkills: []

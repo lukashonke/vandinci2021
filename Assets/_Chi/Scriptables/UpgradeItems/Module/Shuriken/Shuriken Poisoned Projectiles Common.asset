@@ -22,7 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Poisoned Projectiles
-  uiDescription: 
+  uiDescription: Shurikens apply a damage-over-time poison effect to enemies.
   effects: []
   addSkills: []
   rarity: 0

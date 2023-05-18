@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Shoot Also Backwards
-  uiDescription: 
+  uiName: Backblast
+  uiDescription: The shotgun also fires a portion of its rounds backwards.
   effects: []
   addSkills: []
   rarity: 1

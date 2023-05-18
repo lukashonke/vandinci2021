@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Shoot Also Backwards
-  uiDescription: 
+  uiName: Backfire
+  uiDescription: All shurikens are also shot backwards.
   effects: []
   addSkills: []
   rarity: 1

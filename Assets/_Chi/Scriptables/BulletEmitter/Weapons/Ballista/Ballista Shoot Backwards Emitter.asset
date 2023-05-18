@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Continuous Bullets
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 16761432
+  uniqueIndex: 9928843
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children: []
@@ -24819,7 +24819,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 12438665
+  uniqueIndex: 13525009
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children: []
@@ -32555,7 +32555,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 12017659
+  uniqueIndex: 4129867
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -37359,7 +37359,7 @@ MonoBehaviour:
       bulletOrigin: {x: -0.234375, y: 0, z: 0}
       useDifferentBullet: 0
       bulletParams: {fileID: 0}
-    enabled: 1
+    enabled: 0
   - modifierType: 13
     globalMovement:
       valueTree:
@@ -42167,7 +42167,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 6834152
+  uniqueIndex: 12292107
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -53907,7 +53907,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 11877945
+  uniqueIndex: 11554345
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:

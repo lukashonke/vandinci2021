@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Stationary Boosts
-  uiDescription: TODO
+  uiName: Stand & Deliver
+  uiDescription: Boosts fire rate when not moving.
   effects: []
   addSkills: []
   rarity: 1

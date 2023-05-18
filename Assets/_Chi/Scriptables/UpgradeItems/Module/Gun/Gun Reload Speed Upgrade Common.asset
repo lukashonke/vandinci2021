@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Reload Speed Upgrade
-  uiDescription: Increases reload speed by 25%.
+  uiName: Rapid Reload
+  uiDescription: Increases reload speed.
   effects: []
   addSkills: []
   rarity: 0

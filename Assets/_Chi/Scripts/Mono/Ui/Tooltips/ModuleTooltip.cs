@@ -49,7 +49,7 @@ namespace _Chi.Scripts.Mono.Ui.Tooltips
                 }*/
 
                 this.text.text = text;
-                this.logo.sprite = modulePrefabItem.prefabUi.GetComponent<Image>().sprite;
+                this.logo.sprite = modulePrefabItem.prefabUiImage != null ? modulePrefabItem.prefabUiImage : modulePrefabItem.prefabUi.GetComponent<Image>().sprite;
             
                 if (level > 0)
                 {

@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Push Away on Reload
-  uiDescription: 
+  uiName: Forceful Ejection
+  uiDescription: Upon reloading, the shotgun pushes away nearby enemies.
   effects: []
   addSkills: []
   rarity: 0

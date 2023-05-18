@@ -114,7 +114,7 @@ MonoBehaviour:
       baseValue: 1
       value: 0
     projectileDamage:
-      baseValue: 6
+      baseValue: 7.5
       value: 6
     targetRange:
       baseValue: 6
@@ -134,6 +134,9 @@ MonoBehaviour:
       baseValue: 1
       value: 0
     projectilePierceCountIgnoreKilled:
+      baseValue: 0
+      value: 0
+    projectilePierceCountIgnoreIfLessThanHp:
       baseValue: 0
       value: 0
     projectilePierceDeadChance:
@@ -212,12 +215,20 @@ MonoBehaviour:
   trailParameters:
     useTrail: 1
     material: {fileID: 2100000, guid: 55808a30032a7a0489d7dce3861c51ed, type: 2}
-    trailLengthTime: 0.1
+    trailLengthTime: 0.05
+  spriteEffectParameters:
+    enabled: 0
+    material: {fileID: 0}
+    sprite: {fileID: 0}
+    rotation: 0
+    scale: {x: 1, y: 1, z: 1}
+    offset: {x: 0, y: 0, z: 0}
   bulletBehavior: 1
   currentMagazine: 0
   isReloading: 0
   temporaryProjectilesUntilNextShot: 0
   temporaryProjectilesForNextMagazine: 0
+  fireCameraShake: {fileID: 0}
   targetType: 0
 --- !u!212 &6177911479989981830
 SpriteRenderer:

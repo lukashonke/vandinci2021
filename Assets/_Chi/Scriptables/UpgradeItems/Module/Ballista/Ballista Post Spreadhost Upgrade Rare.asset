@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Spreadshot
-  uiDescription: 
+  uiName: Scatter Shell
+  uiDescription: When a projectile is to be destroyed, it releases multiple projectiles
+    in all directions.
   effects: []
   addSkills: []
   rarity: 1

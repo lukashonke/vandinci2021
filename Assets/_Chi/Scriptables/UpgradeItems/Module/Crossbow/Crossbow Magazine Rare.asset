@@ -21,9 +21,10 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: 'Crossbow: Triple-Load Destruction'
+  uiName: Triple-Load Destruction
   uiDescription: The weapon shoots three times before having to reload.
   effects: []
+  addSkills: []
   rarity: 1
   unlocksModulePrefabIds: 
   disablesModulePrefabIds: 

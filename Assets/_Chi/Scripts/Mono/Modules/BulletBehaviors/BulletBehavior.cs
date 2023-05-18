@@ -21,7 +21,9 @@ public class BulletBehavior : BaseBulletBehaviour
 
 	private float pierceRemainingDamage = 0;
 	[NonSerialized] public int piercedEnemies = 0;
+	[NonSerialized] public int maxPiercedEnemies = 0;
 	[NonSerialized] public int piercedDeadEnemies = 0;
+	[NonSerialized] public int maxPiercedDeadEnemies = 0;
 	[NonSerialized] public BulletReceiver[] collidedWith = new BulletReceiver[16];
 	[NonSerialized] public Entity lastAffectedEnemy;
 
@@ -46,6 +48,25 @@ public class BulletBehavior : BaseBulletBehaviour
 		base.OnBulletBirth();
 
 		ownerModule = bullet.emitter.gameObject.GetModule();
+
+		if (ownerModule is OffensiveModule offensiveModule2)
+		{
+			maxPiercedEnemies = offensiveModule2.stats.projectilePierceCount.GetValueInt();
+			maxPiercedDeadEnemies = offensiveModule2.stats.projectilePierceDeadCount.GetValueInt();
+
+			foreach (var parameter in bullet.moduleParameters.parameters)
+			{
+				switch (parameter.name)
+				{
+					case "Override_Penetrations":
+						maxPiercedEnemies = parameter.intValue;
+						break;
+					case "Override_DeadPenetrations":
+						maxPiercedDeadEnemies = parameter.intValue;
+						break;
+				}
+			}
+		}
 		
 		var ignoreTarget1 = this.bullet.moduleParameters.GetObjectReferenceSilent(BulletVariables.IgnoreTarget1);
 		var ignoreTarget2 = this.bullet.subEmitter.moduleParameters.GetObjectReferenceSilent(BulletVariables.IgnoreTarget1);
@@ -403,7 +424,7 @@ public class BulletBehavior : BaseBulletBehaviour
 					{
 						piercedEnemies++;
 						collidedWith[piercedEnemies] = br;
-						if (piercedEnemies >= offensiveModule.stats.projectilePierceCount.GetValueInt())
+						if (piercedEnemies >= maxPiercedEnemies)
 						{
 							deactivate = true;
 						}
@@ -429,7 +450,7 @@ public class BulletBehavior : BaseBulletBehaviour
 				{
 					piercedDeadEnemies++;
 					collidedWith[piercedDeadEnemies] = br;
-					if (piercedDeadEnemies >= offensiveModule.stats.projectilePierceDeadCount.GetValueInt())
+					if (piercedDeadEnemies >= maxPiercedDeadEnemies)
 					{
 						deactivate = true;
 					}

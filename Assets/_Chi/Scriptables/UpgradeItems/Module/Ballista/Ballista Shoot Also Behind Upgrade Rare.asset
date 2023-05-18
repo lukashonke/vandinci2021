@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: TODO
-  uiDescription: 
+  uiName: Backfire
+  uiDescription: Every shot is also fired backwards.
   effects: []
   addSkills: []
   rarity: 1

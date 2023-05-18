@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Spread Fire
-  uiDescription: 
+  uiName: Bullet Barrage
+  uiDescription: Every few bullets, the machinegun releases a spread shot around
+    the player. The spread increases with higher levels of this upgrade
   effects: []
   addSkills: []
   rarity: 0

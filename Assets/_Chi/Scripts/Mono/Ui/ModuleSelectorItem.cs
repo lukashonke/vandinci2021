@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Scriptables;
@@ -20,6 +22,8 @@ namespace _Chi.Scripts.Mono.Ui
 
         public Button lockButton;
 
+        public Button expandButton;
+
         public Color weaponSubtitleColor;
         public Color defensiveModuleSubtitleColor;
         public Color passiveModuleSubtitleColor;
@@ -35,18 +39,15 @@ namespace _Chi.Scripts.Mono.Ui
 
         private PrefabItem item;
         private int? priceValue;
+
+        private bool expanded = false;
         
         public void Initialise(PrefabItem item, List<ActionsPanelButton> buttons, Action abort, int? price)
         {
             this.item = item;
 
-            string text = item.description;
-            if (!string.IsNullOrWhiteSpace(item.story))
-            {
-                text += $"\n\n<i><alpha=#BB>{item.story}</i>";
-            }
-
-            InitialiseUi(GetTitle(item), item.prefabUi.GetComponent<Image>(), text, buttons, abort, price);
+            var component = item.prefabUi.GetComponent<Image>();
+            InitialiseUi(GetTitle(item), item.prefabUiImage != null ? item.prefabUiImage : component.sprite, component.material, GetText(item), buttons, abort, price);
             
             /*if(item.playerUpgradeItem != null || item.moduleUpgradeItem != null || item.skillUpgradeItem != null)
             {
@@ -57,16 +58,52 @@ namespace _Chi.Scripts.Mono.Ui
                 lockButton.gameObject.SetActive(false);
             }*/
         }
+
+        private string GetText(PrefabItem item)
+        {
+            string text = item.description;
+            if (!string.IsNullOrWhiteSpace(item.story))
+            {
+                text += $"\n\n<i><alpha=#BB>{item.story}</i>";
+            }
+
+            List<ModuleUpgradeItem> potentialUpgrades = new List<ModuleUpgradeItem>();
+            
+            var db = Gamesystem.instance.prefabDatabase;
+            foreach (var upgrade in db.prefabs.Where(p => p.moduleUpgradeItem != null && p.moduleUpgradeItem.modulePrefabId == item.id))
+            {
+                potentialUpgrades.Add(upgrade.moduleUpgradeItem);
+            }
+
+            if (potentialUpgrades.Any())
+            {
+                expandButton.gameObject.SetActive(true);
+            }
+            else
+            {
+                expandButton.gameObject.SetActive(false);
+            }
+            
+            if (expanded)
+            {
+                if (potentialUpgrades.Any())
+                {
+                    text += $"\n\n<alpha=#FF>Available upgrades: \n<alpha=#BB>{string.Join("\n", potentialUpgrades.GroupBy(p => p.uiName).Select(p => p.First()).Select(p => $"<alpha=#FF>{p.uiName}: <alpha=#BB>{p.uiDescription}"))}";
+                }
+            }
+            
+            return text;
+        }
         
-        private void InitialiseUi(string title, Image icon, string description, List<ActionsPanelButton> buttons, Action abort, int? price)
+        private void InitialiseUi(string title, Sprite icon, Material material, string description, List<ActionsPanelButton> buttons, Action abort, int? price)
         {
             this.title.text = title;
             var subtitleColor = GetSubtitle();
             this.subTitle.text = subtitleColor.Item1;
             if(subtitleColor.Item2.HasValue) this.subTitle.color = subtitleColor.Item2.Value;
             this.description.text = description ?? "";
-            this.icon.sprite = icon.sprite;
-            this.icon.material = icon.material;
+            this.icon.sprite = icon;
+            this.icon.material = material;
 
             this.buttons = buttons;
             this.abort = abort;
@@ -222,6 +259,18 @@ namespace _Chi.Scripts.Mono.Ui
         public void SetLocked(bool b)
         {
             lockButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = b ? "Unlock" : "Lock";
+        }
+
+        public void OnExpandItem()
+        {
+            expanded = !expanded;
+            
+            this.description.text = GetText(item) ?? "";
+            
+            // fucking unity - this is how to refresh the layout
+            description.gameObject.transform.parent.GetComponent<HorizontalLayoutGroup>().enabled = false;
+            Canvas.ForceUpdateCanvases();
+            description.gameObject.transform.parent.GetComponent<HorizontalLayoutGroup>().enabled = true;
         }
         
         public void OnHoverEnter()

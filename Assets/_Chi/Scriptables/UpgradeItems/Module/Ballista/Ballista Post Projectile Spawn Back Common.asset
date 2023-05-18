@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: TODO
-  uiDescription: 
+  uiName: Immediate Rebound
+  uiDescription: When a projectile disappears, it immediately spawns another projectile
+    in its place which is shot towards the player.
   effects: []
   addSkills: []
   rarity: 0

@@ -36,7 +36,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
 
             float nextTargetUpdate = Time.time + targetUpdateInterval;
             
-            float lastFire = 0;
+            float lastFire = -100;
             
             if (stats.magazineSize.GetValueInt() > 0)
             {

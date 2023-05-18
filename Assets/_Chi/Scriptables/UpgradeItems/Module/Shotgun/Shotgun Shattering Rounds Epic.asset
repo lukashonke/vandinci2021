@@ -22,7 +22,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Shattering Rounds
-  uiDescription: 
+  uiDescription: ' Increases damage against armored enemies but decreases damage
+    against non-armored enemies.'
   effects: []
   addSkills: []
   rarity: 2

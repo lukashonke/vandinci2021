@@ -4830,12 +4830,14 @@ MonoBehaviour:
   effects: []
   statsEffects:
   - {fileID: 11400000, guid: b075e486503f6084da6704cd70327df4, type: 2}
+  - {fileID: 11400000, guid: c8ed4e40ce6e89e47b7e1ad729cbae21, type: 2}
   statsEffectLevel: 1
   effectInterval: 0.25
   team: 2
   effectStrength: 1
   loseInterestAfterDist2: 16
   despawnDelay: 15
+  firstEffectAfterSpawnDelay: 0
 --- !u!58 &1604446926220672689
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4868,3 +4870,4 @@ MonoBehaviour:
   chanceToGoAgainstPlayer: 0
   speedMin: 0.5
   speedMax: 1
+  goForward: 0

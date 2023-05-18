@@ -21,7 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Projectile Pierce
+  uiName: Pierce Potential
   uiDescription: Gives your gun 66% chance that the bullet will continue after hitting
     the first enemy.
   effects: []

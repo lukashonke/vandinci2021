@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Projectile Count
-  uiDescription: TODO
+  uiName: Dual Delivery
+  uiDescription: Doubles the number of projectiles without reducing the fire rate.
   effects: []
   addSkills: []
   rarity: 2

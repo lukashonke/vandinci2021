@@ -21,7 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Smaller Magazine Upgrade
+  uiName: Compact Clip
   uiDescription: Increases reload speed by 50%, but decreases magazine by 50%.
   effects: []
   addSkills: []

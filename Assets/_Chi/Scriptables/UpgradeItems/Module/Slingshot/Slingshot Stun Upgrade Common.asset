@@ -22,7 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Stun Upgrade
-  uiDescription: TODO
+  uiDescription: Guarantees a stun on hit with increase in stun duration.
   effects: []
   addSkills: []
   rarity: 0

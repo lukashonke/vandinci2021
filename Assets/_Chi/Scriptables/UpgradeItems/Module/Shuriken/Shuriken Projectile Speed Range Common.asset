@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Projectile Speed
-  uiDescription: 
+  uiName: Rapid Reach
+  uiDescription: Increases the range and speed of shurikens.
   effects: []
   addSkills: []
   rarity: 0

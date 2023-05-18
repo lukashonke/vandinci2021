@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Spawn Acid Lake
-  uiDescription: TODO
+  uiName: Acidic Splatter
+  uiDescription: Projectiles have a chance to spawn small acid lakes damaging nearby
+    enemies.
   effects: []
   addSkills: []
   rarity: 1

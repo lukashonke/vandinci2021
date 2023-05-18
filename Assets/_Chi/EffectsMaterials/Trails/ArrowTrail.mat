@@ -199,7 +199,7 @@ Material:
     - _ShapeDistortYSpeed: 0.1
     - _ShapeRotationOffset: 0
     - _ShapeRotationSpeed: 0
-    - _ShapeXSpeed: -5
+    - _ShapeXSpeed: -1
     - _ShapeYSpeed: 0
     - _SoftFactor: 0.5
     - _SrcMode: 1

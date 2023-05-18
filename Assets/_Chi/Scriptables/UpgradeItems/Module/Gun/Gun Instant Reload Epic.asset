@@ -22,7 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Instant Reload
-  uiDescription: The weapon reloads instantly.
+  uiDescription: Flash Fill
   effects: []
   addSkills: []
   rarity: 2

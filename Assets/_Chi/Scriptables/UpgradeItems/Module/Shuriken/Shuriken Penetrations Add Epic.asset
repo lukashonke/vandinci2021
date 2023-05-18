@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Boost Penetrations
-  uiDescription: 
+  uiName: Pierce Upgrade
+  uiDescription: Increases the number of enemies each shuriken can penetrate.
   effects: []
   addSkills: []
   rarity: 2

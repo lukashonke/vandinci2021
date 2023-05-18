@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Double Magazine
-  uiDescription: 
+  uiName: Twin Drums
+  uiDescription: Doubles magazine size but decreases accuracy due to the heavier
+    load.
   effects: []
   addSkills: []
   rarity: 1

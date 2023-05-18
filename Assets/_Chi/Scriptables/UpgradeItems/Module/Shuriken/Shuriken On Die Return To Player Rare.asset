@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Return On Die
-  uiDescription: 
+  uiName: Boomerang Blades
+  uiDescription: When a shuriken is about to be destroyed, it instead returns to
+    the player, potentially hitting more enemies.
   effects: []
   addSkills: []
   rarity: 1

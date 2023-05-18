@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Always Pierce Killed
-  uiDescription: 
+  uiName: Ceaseless Cuts
+  uiDescription: If a shuriken kills an enemy, the penetration does not count towards
+    the limit.
   effects: []
   addSkills: []
   rarity: 1

@@ -34,6 +34,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
     prefabUi: {fileID: 0}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -53,6 +54,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 5954188515519120314, guid: fc2659e7534bf4828a7c867aa17bf6b2, type: 3}
     prefabUi: {fileID: 0}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -73,6 +75,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 5863446121643124079, guid: 17100200d27d78347bf006864161e432, type: 3}
     prefabUi: {fileID: 1669959372494101077, guid: 0ca96be5bd0b8be478a294c2e8be1148, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -93,6 +96,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 5863446121643124079, guid: d63e8bef7a4007443b0625ab5cb40e75, type: 3}
     prefabUi: {fileID: 1669959372494101077, guid: 20790d890819e0f4fa0b626cf94d16aa, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -113,6 +117,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 5863446121643124079, guid: 7d03e4fbda3224f438c91f80ad9ea733, type: 3}
     prefabUi: {fileID: 1669959372494101077, guid: 2790b69c088dc33479f601dd97ae7075, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -123,8 +128,8 @@ MonoBehaviour:
   - id: 2000
     label: Crossbow
     enabled: 1
-    description: Precision weapon scaling with movement and arrows, capable of devastating
-      arrow storms with upgrades.
+    description: Fast-reloading, accurate and targets the nearest enemy. With increased
+      projectile count, it can strike a wide angle of enemies.
     type: 3
     predefinedId: 0
     weightSettings:
@@ -142,17 +147,22 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 91a363bd1f1eb294daab200b77bba099, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 1a44fcc45acc5c1438750ee0dba35732, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
-    story: Crafted in the forgotten era of alchemists and inventors, the Crossbow
-      served as the secret weapon of the shadowy Order of the Alchemical Rose. Known
-      for its precise design and adaptability, it turned the tide of many battles
-      against the dark forces. Today, its legacy of precision and versatility continues
-      in your hands, transforming into a storm of arrows with each step and upgrade.
+    story: 'Ever eccentric, Van Dinci''s Crossbow is inspired by the whimsical chaos
+      of a wind-up toy mouse he''d once observed in a dingy antique shop. He watched,
+      fascinated, as the tiny creature zipped unpredictably across the shop floor,
+      causing both delight and mayhem. It was a spark of inspiration for the mad
+      scientist. Adapting the spring-loaded principles of the toy, he birthed the
+      Crossbow: a fast-reloading, accurate weapon capable of targeting and hitting
+      a wide angle of enemies. Now, Van Dinci stands alone against a world teeming
+      with both good and evil, the Crossbow his twisted interpretation of the whimsical
+      mouse, his only ''friend'' in this chaotic dance of destruction.'
   - id: 2001
     label: Gun Module
     enabled: 0
@@ -165,6 +175,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 90060e3a449a7e04bbc0cf7080ff75cd, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: e3ea5d3bb551aa34c8f61fe3e92fd823, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -175,8 +186,8 @@ MonoBehaviour:
   - id: 2002
     label: Gun
     enabled: 1
-    description: A swift, five-round magazine weapon delivering rapid, high-impact
-      damage.
+    description: Fast-firing, accurate weapon with a finite magazine. It targets
+      the nearest enemy and requires regular reloading.
     type: 3
     predefinedId: 0
     weightSettings:
@@ -194,21 +205,28 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: cdc938b384d12174ea3ca334b8fde5f1, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 62b510b84d407454092694e465192d93, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
-    story: Forged in the secret labs of an exiled engineer, the Gun was the culmination
-      of a lifetime's pursuit of perfecting ballistic technology. Its sleek design
-      and rapid-fire capabilities swiftly gained notoriety among rogue scientists
-      and outlaws alike. Now, in your hands, this legendary weapon continues to lay
-      waste to legions of darkness.
+    story: At the heart of Van Dinci's laboratory, a deranged symphony was brewing.
+      In a corner, a thrumming metronome ticked its relentless rhythm. Its mechanical
+      heartbeat ignited a spark in the mind of the genius-turned-madman. A gun! A
+      rhythm of chaos and order, the harmony of destruction. He toiled day and night,
+      crafting a fast-firing, accurate firearm, its rhythm dictated by the need for
+      reloading. Now, it targets the nearest enemy with the relentless precision
+      of a metronome, echoing the chaotic rhythm that birthed it. In a world gone
+      mad, Van Dinci's Gun is his conductor's baton, orchestrating a symphony of
+      destruction, one bullet at a time.
   - id: 2003
     label: Ballista
     enabled: 1
-    description: Shoots large penetrating arrows in the direction of the vehicle.
+    description: Slow-firing, high-damage weapon that pierces two enemies, aiming
+      at the player's mouse. Always shoots in a narrow arc, with more projectiles
+      enhancing piercing capabilities.
     type: 3
     predefinedId: 0
     weightSettings:
@@ -226,17 +244,28 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 00d24dfa39d483648a081dd6a914af83, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 81fe0c54ccbfba34794ab41cabdfd085, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
-    story: 
+    story: Van Dinci's 'Siege Shredder', as he affectionately named it, was inspired
+      by the ancient war machines he read about in dusty tomes. He didn't have a
+      castle to storm, but why let that stop him? He meticulously designed it with
+      powerful kinetic force capable of penetrating multiple foes. The only snag?
+      Its narrow firing arc. But, as Van Dinci would say, 'Why bother with the ones
+      who can't stand in front of you?' Its raw power and formidable penetration
+      turned it into a favorite for taking down large, fearsome enemies. A single
+      well-aimed shot from this was enough to make the monsters think twice about
+      their life choices.
   - id: 2004
     label: Slingshot
     enabled: 1
-    description: Shoots small spread projecties.
+    description: Shoots a wide spread of low-damage stones towards the nearest enemy,
+      each with a 50% chance to Stun and thus significantly slow the target for a
+      brief period.
     type: 3
     predefinedId: 0
     weightSettings:
@@ -254,17 +283,26 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 3b85c6c6878286b4986962d6bb1c7c91, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 71486843aebbd8346a9701479eb3e484, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
-    story: 
+    story: Van Dinci's 'Rocky Rain' is an unlikely instrument of chaos. Made from
+      little more than a piece of twine and a pouch, it flings out a barrage of pebbles
+      with surprising force. Van Dinci always had a knack for reimagining the mundane
+      into something extraordinary. Laughing in the face of danger, he'd often quip,
+      'Who said you can't bring a slingshot to a demon fight?'. Each pebble, though
+      small, carried the potential to disrupt, to stun, to bring hulking beasts to
+      a crawl. It was his way of reminding his foes that it's the small things that
+      can make a big difference.
   - id: 2005
     label: Shuriken
     enabled: 1
-    description: Shoots shurikens which choose next target after they hit one.
+    description: Generates rotating blade-shurikens that are shot out randomly, piercing
+      up to three enemies and redirecting towards the next nearby enemy upon hit.
     type: 3
     predefinedId: 0
     weightSettings:
@@ -282,17 +320,26 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 304751909030c5e45bb25e28c62d5e90, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 12fa71c4605378b4b833306d9b6ecfc1, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
-    story: 
+    story: The 'Slicer Cyclone', one of Van Dinci's most ingenious creations, turned
+      the art of the shuriken into a force of nature. This device spits out whirling
+      blades of death, each one seeking out enemies like a bloodthirsty hawk. 'Why
+      bother aiming when you can just hit everything?' Van Dinci would say with a
+      manic gleam in his eye. Each blade would slice through one foe only to hungrily
+      seek out the next, leaving a trail of chaos and devastation in its wake. In
+      the heat of battle, the whirlwind of blades became a dancing storm of destruction,
+      a testament to Van Dinci's madness-fueled genius.
   - id: 2006
     label: Shotgun
     enabled: 1
-    description: Short-range high-spread low-fire rate gun.
+    description: Short-ranged, two-barrel shotgun with a medium reload rate. High
+      spread and many projectiles ensure a wide angle of attack.
     type: 3
     predefinedId: 0
     weightSettings:
@@ -310,18 +357,26 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 2252c8f8b885d5e4fa56e1cb5498c6a7, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 771548b76fc8815498deec6f50b2b621, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
-    story: 
+    story: 'Van Dinci''s ''Boomstick'' was forged out of a need for something up
+      close and personal. Its thunderous roar and the spray of lead it vomits are
+      a clear statement: ''Back off!''. He designed it with just two barrels, but
+      those were enough to send even the most monstrous nightmares back into their
+      dark crevices. ''You only need two bullets if they are the right bullets,''
+      he would say. Just the thought of the devastating ''Boomstick'' forced enemies
+      to reconsider their approach.'
   - id: 2007
     label: Cannon
     enabled: 1
-    description: Slow-firing, high-penetration weapon that pierces through multiple
-      enemies based on damage.
+    description: High-damage, deliberate-firing weapon that follows the player's
+      mouse direction. Bullets penetrate enemies, with piercing capacity proportional
+      to weapon damage. Additional projectiles broaden the weapon's firing arc.
     type: 3
     predefinedId: 0
     weightSettings:
@@ -339,17 +394,23 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 31452cde8923a6e49987cbef5066b863, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 3c6803d6c55da61478cebcebaae83172, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
-    story: The Cannon was born from the brilliant mind of a war-torn inventor seeking
-      to change the tides of battle. Combining raw power and precise engineering,
-      it emerged as an unstoppable force, tearing through enemy lines with ease.
-      As you wield this mighty weapon, its legacy of destruction and victory resonates
-      with every thunderous shot.
+    story: Van Dinci was never one to shy away from grandeur, a trait manifested
+      in his most audacious creation - the Cannon. A nod to the shipborne weapons
+      of the Renaissance, Van Dinci's Cannon is a testament to his love for destruction
+      and theatrics. It fires slowly, savoring each moment before delivering a devastating
+      blow, and its aim is dictated by the player's intent, not chance. Each projectile
+      blasts through enemies in a way proportional to the weapon's damage, transforming
+      his foes into a ragged tapestry of defeat. And as the projectiles multiply,
+      so does the area of impact, turning a precise cannonade into a sweeping arc
+      of obliteration. It's Van Dinci's theatrical masterpiece, a grand, explosive
+      performance of destruction that leaves no corner of the stage untouched.
   - id: 2008
     label: Bombarder
     enabled: 0
@@ -362,6 +423,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 25d0ca9f407a6de42898ebe5341a2b7e, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 263c03c040e2fc04296f1942616d1050, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -372,7 +434,9 @@ MonoBehaviour:
   - id: 2009
     label: Machinegun
     enabled: 1
-    description: TODO
+    description: Long-ranged machinegun with a large 20-round magazine and a lengthy
+      reload time. High rate of fire and low accuracy, fires towards the player's
+      mouse direction.
     type: 3
     predefinedId: 0
     weightSettings:
@@ -390,13 +454,20 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 437ad5fbb856a944eaa343d3702eab34, type: 3}
     prefabUi: {fileID: 3314847274656908133, guid: 83071f9a5db77c74393fb8ea33d322ca, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
-    story: 
+    story: The 'Bullet Barrage', as Van Dinci named it, is a monster of relentless
+      firepower. It was born from the madness of the doctor when he decided he needed
+      something that could spit out bullets faster than a demon could blink. Its
+      long reach and hasty fire rate, coupled with a bit of wild aim, was Van Dinci's
+      answer to overwhelming odds. He often laughed, 'Accuracy? When you fire this
+      many bullets, accuracy is overrated.' It became a terror on the battlefield,
+      its hail of bullets becoming a herald of doom to those standing in its path.
   - id: 2500
     label: Add Projectile
     enabled: 1
@@ -409,6 +480,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 583f45b9fcab5ce4a904a3843655576b, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 4f7c9cf6fe61edd47a81937e10ffbef4, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 3b8e350fb40d85849b779d1f6bea3d46, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -428,6 +500,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: b10d1850c23e344c98a3612afb16da0e, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 85287e5b2153c4a3b92497f24e09e0a6, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -448,6 +521,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 6a4aed355462d4bac9c88ce9beeadd41, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: dfe0bb5f4a5dc446a8c7dd1d1bc7fa3f, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -467,6 +541,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 8ed30a3973a3248428d31f25f4e9673a, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: aa1d2220c65d144a9a5e686510f53193, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 3fdc9c2d8139ce644aacb2ba8cac8dd2, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -487,6 +562,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: d8ee08b861083488dbb0f4bb9f894186, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 87ba2637bd53e4165a8fb327efa7a4e6, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -506,6 +582,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: ea8604a9caf97e74a8d482fb6e350684, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 00d499bca0117394da209828403d8daa, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 0bcadd46e8495364da43093c6e5339b3, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -525,6 +602,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 5b88700f3dcfb4622b5a4cb64a7e16a9, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 846012403b0174a9f94a34a5c6a80847, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 4673efd42f4f7924c99183c63001e915, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -544,6 +622,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 37156396185f5a348abec7c9b6e5a56f, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: c27d9d519644590438d3a8f76019e2a8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -564,6 +643,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: d705c7605dc9bb841a8b7ba32c05d922, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 5d082eacc5d146f46ae9abb61fb7b4c9, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: d0d50cc7c4ddab84c8fcb1b5370fc264, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -583,6 +663,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: c501ca09a721c9c4a9fde387dacda408, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 0e5be0f3c47fe704cbf39de32cc8b6be, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -602,6 +683,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: a5a08309ec1ef8f4880982838a622fb3, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 21189be4bde0a3849998b1f24149801f, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 834cafaeb88a93d45ac9167eda1f5d9d, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -621,6 +703,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: c01e49c1dc2312e42a7fe7acaf17945a, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 6f9dd26c7a2c9aa4c88d151d62ea11a0, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -640,6 +723,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: dedb45b7396885f4c8b39364564bafc2, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 7190df77de7efa2419ef50c8e7bd8d59, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 035043522006a3644acb367835d8aafb, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -660,6 +744,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: 7d6b599b03c836a40b9a7ff2c6f2c6b4, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 3b74172898b63154d9464367b10ee2f5, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -680,6 +765,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 1232174764404154631, guid: a3abedfce3572ff4aaf086051b86b2d2, type: 3}
     prefabUi: {fileID: 8309321105186295158, guid: 45ed084f93ccfa844bbe011c72bbce99, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -699,6 +785,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 888702218433590844, guid: e2cab7bf9867aeb4d90808cd6df0bee7, type: 3}
     prefabUi: {fileID: 0}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -718,6 +805,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 888702218433590844, guid: 1c2f06e4437162c4d8beaa950bdaa649, type: 3}
     prefabUi: {fileID: 0}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -737,6 +825,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 888702218433590844, guid: 3a64e6681888e934f8d2bbf8a42d7af6, type: 3}
     prefabUi: {fileID: 0}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -756,6 +845,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 888702218433590844, guid: a4bf972126b426241a9baf6066e7b086, type: 3}
     prefabUi: {fileID: 0}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -775,6 +865,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 888702218433590844, guid: 67fa6a350eb211943a0948ee1d4c15a8, type: 3}
     prefabUi: {fileID: 0}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -794,6 +885,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 888702218433590844, guid: f3e4ccd5eacb1ab42b352e557c931594, type: 3}
     prefabUi: {fileID: 0}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -813,6 +905,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 3668401319161006958, guid: f00a5983cf859534787a124135e4f08b, type: 3}
     prefabUi: {fileID: 0}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -832,6 +925,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 3668401319161006958, guid: 61ec5d2b2f1b4ef4da70fe75aed31fa3, type: 3}
     prefabUi: {fileID: 0}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -851,6 +945,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 3668401319161006958, guid: aca31db6dd86940498b8cbb456cc08ad, type: 3}
     prefabUi: {fileID: 0}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -870,6 +965,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 3020955417211395267, guid: 64723082099b5494c9573f968c41ec65, type: 3}
     prefabUi: {fileID: 0}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -889,6 +985,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 6463370211903710501, guid: 5c73a5a502acb0b48a6f0b8ee04d09c5, type: 3}
     prefabUi: {fileID: 0}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -908,6 +1005,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 7564076516500285006, guid: af613e0bde311224ba9fd97c8838f95d, type: 3}
     prefabUi: {fileID: 0}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -928,6 +1026,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: a233808f68c59d541b62cf99caa36b75, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 84ea3a3835186cf44abd08b7db7d7f43, type: 3}
     skill: {fileID: 11400000, guid: cc69fe99998b25a4d8a301159bd9f639, type: 2}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -948,6 +1047,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 41f98db91a1f1ca42a7fed186d43fb43, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 11400000, guid: ad31f96bc529c89469eed49d1304685e, type: 2}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -967,6 +1067,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 7d23fef34052b4f4da59434a86fc7834, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 11400000, guid: 6a4d5195185ff524a802fb55de0fc5fa, type: 2}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -986,6 +1087,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 598f0a75dcbb9884d8b92d17e6645a82, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 0995641e3fc44ea4180e8f6d7dbc719f, type: 3}
     skill: {fileID: 11400000, guid: 19efa62420a1aa04882ce7fb0b4f4a5e, type: 2}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -1005,6 +1107,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: f3edf99dc58f4ee4eb96b5d367a04f6b, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 3e1fa8c75eb03354c91de64feeecc268, type: 3}
     skill: {fileID: 11400000, guid: 6ef8088a4fd79dd4eaf03eebf2b50410, type: 2}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -1013,7 +1116,7 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 10022
-    label: Wall Shot
+    label: Guarding Scatter
     enabled: 0
     description: TODO
     type: 4
@@ -1024,6 +1127,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: a77317013581b7a45bbc2c9db8e74908, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: d176b866539e72f4b8c8cd81f350ab6e, type: 3}
     skill: {fileID: 11400000, guid: 9ce7d48a23de5284d887d8e3faa8d296, type: 2}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -1043,6 +1147,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 72b089f9dcfae7f458d6bdaee92f2f8e, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 16a082efc49ea93459b655fc01e2c468, type: 3}
     skill: {fileID: 11400000, guid: 0f26c30961d7dd148a06e40dcc6140ff, type: 2}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -1051,7 +1156,7 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 10024
-    label: Spawn Acid Lake
+    label: Poisonous Oasis
     enabled: 0
     description: TODO
     type: 4
@@ -1062,6 +1167,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: a35a048fa15634048a4ecbc112400007, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: c99b628e07ba7784dbc7787660f9b345, type: 3}
     skill: {fileID: 11400000, guid: 970b9a77b47a2eb4b9864354d9ae6734, type: 2}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -1070,7 +1176,7 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 10025
-    label: Charged Shot
+    label: Quickfire Reserves
     enabled: 0
     description: TODO
     type: 4
@@ -1081,7 +1187,48 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 64979db1528617545af6bb515f698668, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: f039b31d1f15f26478c6ca06309d8ecb, type: 3}
     skill: {fileID: 11400000, guid: 39ef664d3de0fb54e80fb437d03237a5, type: 2}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 10026
+    label: Spinning Fury
+    enabled: 0
+    description: TODO
+    type: 4
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 3314847274656908133, guid: 85bb6336970da334eac2a80c8ffd1905, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 82c6221e1240e77479820a59d9420837, type: 3}
+    skill: {fileID: 11400000, guid: 18467e36961263741b534d7c4153fae2, type: 2}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 0}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 10027
+    label: Quickfire Reserves
+    enabled: 0
+    description: TODO
+    type: 4
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 3314847274656908133, guid: c9bf924bb9a321e47b4fdd6ca1b92855, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 66b73bcd4f6940441bdbe854375df026, type: 3}
+    skill: {fileID: 11400000, guid: 5ff7eb6e35bac764aa3f37c533ad4aea, type: 2}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
     playerUpgradeItem: {fileID: 0}
@@ -1101,6 +1248,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: ac0052fb6806b3b4babc28e21b84380a, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: 2aa1b31b8ba3742f4857873588186ba4, type: 2}
     moduleUpgradeItem: {fileID: 0}
@@ -1120,6 +1268,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 6c062dfd13a3e498eb29fd75819f632f, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: 6c7d1b91a21b742a598c261330139c6e, type: 2}
     moduleUpgradeItem: {fileID: 0}
@@ -1139,6 +1288,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 67cd6793657fe4d7a8cbea26fdb11233, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: 13905431c11b64e1c849f9cbacb658bd, type: 2}
     moduleUpgradeItem: {fileID: 0}
@@ -1158,6 +1308,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 780785b901c184f3595b762be424b914, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: f69b0788b4a264eeea4db1c8ca74d20f, type: 2}
     moduleUpgradeItem: {fileID: 0}
@@ -1177,6 +1328,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 96e697b9e72e44d639f26c7537f35e12, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: a6ec005a1ae9145879d304e52c88afc8, type: 2}
     moduleUpgradeItem: {fileID: 0}
@@ -1196,6 +1348,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 8e6bdfcbcea623040bc4a645e3fe7187, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: 8c9917fef272d459ea7caeaf57052994, type: 2}
     moduleUpgradeItem: {fileID: 0}
@@ -1216,6 +1369,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 77aa7eceff9dd49718af591b6c71e712, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: 5b864471844b04a5ca359898a116cdf5, type: 2}
     moduleUpgradeItem: {fileID: 0}
@@ -1235,6 +1389,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 3314847274656908133, guid: 1bb3c56d297ae4a8ab7fc79aabae25b9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 11400000, guid: 58d69053369904376be7a9adeaa41350, type: 2}
     moduleUpgradeItem: {fileID: 0}
@@ -1255,6 +1410,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 46396cb41dd63794a8aa16cba7094c09, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -1275,6 +1431,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 46396cb41dd63794a8aa16cba7094c09, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -1294,6 +1451,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -1313,6 +1471,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -1333,6 +1492,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -1353,6 +1513,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -1373,6 +1534,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -1393,6 +1555,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -1413,6 +1576,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -1432,6 +1596,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -1451,6 +1616,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: a707fabffe6087a479cdf95b7fb2b7f1, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -1470,6 +1636,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 0226e8169f971714090e1ca32a1d0ca9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 9889d599e604a2b489b0386002b92d51, type: 2}
@@ -1489,6 +1656,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 0226e8169f971714090e1ca32a1d0ca9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 07ef52c01ab6eb24ca883ced2316ecd8, type: 2}
@@ -1508,6 +1676,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 0226e8169f971714090e1ca32a1d0ca9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: cd4341aa7a5706a4a839fca8026e50ae, type: 2}
@@ -1529,6 +1698,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 922dc682e5e216848ae44c1f98593789, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 6d5c536845b02fd4f85d7b9636cef27e, type: 2}
@@ -1550,6 +1720,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 922dc682e5e216848ae44c1f98593789, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 424f232aa6d22fa44805d6c344ec389d, type: 2}
@@ -1570,6 +1741,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 45a901171fa6a504ea3458d8bd5cc5f5, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 3edb65365be1ca5469efc5a20e561968, type: 2}
@@ -1590,6 +1762,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 45a901171fa6a504ea3458d8bd5cc5f5, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 7b240e890a32f5c4285ff6b32b9572fc, type: 2}
@@ -1610,6 +1783,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 45a901171fa6a504ea3458d8bd5cc5f5, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 8533309918fbd5147985bbe7fab37657, type: 2}
@@ -1629,6 +1803,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 58be8389162e3fd4ea34525ecd8a1ae6, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 6da5de15c00c57441b7f9239ecc19741, type: 2}
@@ -1649,6 +1824,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 58be8389162e3fd4ea34525ecd8a1ae6, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: d6c4651bfb3d1de4dbaba63a133c6444, type: 2}
@@ -1670,6 +1846,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 43f0face60b13c5429bb97f81ec3620f, type: 2}
@@ -1690,6 +1867,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: be8d342c1fcffa84496adffd85db2b92, type: 2}
@@ -1710,6 +1888,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 9dddab6eb4d61da488ada5dcf038cc16, type: 2}
@@ -1730,6 +1909,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 518bfc288364b8a46a6615cdcccd8aed, type: 2}
@@ -1750,6 +1930,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: bdabcaf22c9cc3349abdba22ffa1665c, type: 2}
@@ -1770,6 +1951,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 87db14706f5a5224fbf7b3e0713aa9c3, type: 2}
@@ -1790,6 +1972,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 9a7835f30f51a8348ac2cbbd5f4d6b49, type: 2}
@@ -1810,6 +1993,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 1dc63d228a9a36e4cbb4da0874c6a047, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: ef1beb95743ee434cbfd5aad84e2987f, type: 2}
@@ -1830,6 +2014,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 20e6786d3a5da0f4cb6cbadb919db476, type: 2}
@@ -1850,6 +2035,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 8daf0b39f7f39d94da8682c683c52e6a, type: 2}
@@ -1869,6 +2055,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 30d3901b58d9a1e4788cd6d0767db16c, type: 2}
@@ -1889,6 +2076,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: cd2f6511b98b3fe478e022edb4585f64, type: 2}
@@ -1909,6 +2097,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 7770eecb18f36274f9814cc9c9bea4b3, type: 2}
@@ -1929,6 +2118,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: b4621817118d655409c448952011035f, type: 2}
@@ -1949,6 +2139,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 496097877cb0b0845970b556f8013519, type: 2}
@@ -1968,6 +2159,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 2003641d12e0f304e8da6e0ff811b8e1, type: 2}
@@ -1987,6 +2179,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 9f6472377434d4a47bb44cebb09481f0, type: 2}
@@ -2006,6 +2199,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 1ff770147b27f1544a9b066be3a924e0, type: 2}
@@ -2028,6 +2222,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 2ae57ff88d54d624ab20256f25963255, type: 2}
@@ -2050,6 +2245,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 6a52132edcfa80a4ba894ae70ded54fa, type: 2}
@@ -2078,6 +2274,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: c4e95d2f03c9f544881672d8cb4c0243, type: 2}
@@ -2106,6 +2303,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: a8d780c052864a148b6d394a5bd681f9, type: 2}
@@ -2126,9 +2324,30 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 003eab692ffe43f43b3ff1f8c6b2a373, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43095
+    label: 'Cannon: Quickfire Reserves'
+    enabled: 1
+    description: TODO gives you three charges of shooting
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    prefabUiImage: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: f9b105b8e26756349a70a63d14c8c5cb, type: 2}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
@@ -2146,6 +2365,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 221b0aff17aff904f921570dabbffb2b, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 33805624ebfb29545b06b37e2c255b26, type: 2}
@@ -2156,7 +2376,7 @@ MonoBehaviour:
   - id: 43100
     label: 'Gun: Magazine Upgrade'
     enabled: 1
-    description: Increases magazine size by 5.
+    description: Increases magazine size.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2165,6 +2385,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: a3d1de2497e625f43bcba91efba21579, type: 2}
@@ -2175,7 +2396,7 @@ MonoBehaviour:
   - id: 43101
     label: 'Gun: Magazine Upgrade'
     enabled: 1
-    description: Increases magazine size by 10.
+    description: Increases magazine size.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2184,6 +2405,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 045a8a9f627735242bd9f4748b995d95, type: 2}
@@ -2194,7 +2416,7 @@ MonoBehaviour:
   - id: 43102
     label: 'Gun: Magazine Upgrade'
     enabled: 1
-    description: Increases magazine size by 15.
+    description: Increases magazine size.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2203,6 +2425,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 79ce0cbdc8d62bd4dbfa29f5a2ae2632, type: 2}
@@ -2211,9 +2434,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43105
-    label: 'Gun: Reload Upgrade'
+    label: 'Gun: Rapid Reload'
     enabled: 1
-    description: Increases reload speed by 25%.
+    description: Increases reload speed.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2222,6 +2445,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 9e1367acacc9ceb409dcea8a428f9797, type: 2}
@@ -2232,7 +2456,7 @@ MonoBehaviour:
   - id: 43106
     label: 'Gun: Reload Upgrade'
     enabled: 1
-    description: Increases reload speed by 45%.
+    description: Increases reload speed.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2241,6 +2465,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: b76c2666f58cc5b4eba5b022968a1947, type: 2}
@@ -2249,7 +2474,7 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43110
-    label: 'Gun: Smaller Magazine'
+    label: 'Gun: Compact Clip'
     enabled: 1
     description: Increases reload speed by 50%, but decreases magazine by 50%.
     type: 9
@@ -2260,6 +2485,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 39ea5642e4f8eff4e81acbb417c0544a, type: 2}
@@ -2268,7 +2494,7 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43115
-    label: 'Gun: Gold to Magazine'
+    label: 'Gun: Treasure Trigger'
     enabled: 1
     description: Every picked up gold adds one bullet to the current magazine and
       increases fire rate by 50% for 1 second. Effect does not stack.
@@ -2280,6 +2506,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: e2f6ee198ea79da42bba0dec1ab94599, type: 2}
@@ -2288,7 +2515,7 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43120
-    label: 'Gun: Stationary Boosts'
+    label: 'Gun: Stride & Strike'
     enabled: 1
     description: When not moving, increases fire rate.
     type: 9
@@ -2299,6 +2526,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 25fa33f8e5590744daa9bce85643a313, type: 2}
@@ -2307,7 +2535,7 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43121
-    label: 'Gun: Moving Boosts'
+    label: 'Gun: Stand & Deliver'
     enabled: 1
     description: When moving, increases fire rate.
     type: 9
@@ -2318,6 +2546,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 3efe737164dde404894321124b5f9155, type: 2}
@@ -2326,7 +2555,7 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43125
-    label: 'Gun: On Reload Move Boost'
+    label: 'Gun: Reload Runner'
     enabled: 1
     description: After reload, briefly boosts your movement speed.
     type: 9
@@ -2337,6 +2566,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: c8b7d93819e96a54db93f6539905d880, type: 2}
@@ -2345,7 +2575,7 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43130
-    label: 'Gun: Pierce Chance'
+    label: 'Gun: Pierce Potential'
     enabled: 1
     description: Gives your gun 33% chance that the bullet will continue after hitting
       the first enemy.
@@ -2357,6 +2587,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: ca6867d7fb672b3429e2c9360485ff4d, type: 2}
@@ -2365,7 +2596,7 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43131
-    label: 'Gun: Pierce Chance'
+    label: 'Gun: Pierce Potential'
     enabled: 1
     description: Gives your gun 66% chance that the bullet will continue after hitting
       the first enemy.
@@ -2377,6 +2608,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 655833feaa246bd48864bff714dde131, type: 2}
@@ -2397,6 +2629,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: d578e553bc53ef24ab23812102498804, type: 2}
@@ -2405,7 +2638,7 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43140
-    label: 'Gun: Fire on Skill'
+    label: 'Gun: Skillfire'
     enabled: 1
     description: The weapon fires x4 projectiles in front of the player when you
       use a skill.
@@ -2417,6 +2650,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 1d0a4573849635d43aa6c558d73b889e, type: 2}
@@ -2425,7 +2659,7 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43141
-    label: 'Gun: Fire on Skill'
+    label: 'Gun: Skillfire'
     enabled: 1
     description: The weapon fires x6 projectiles in front of the player when you
       use a skill.
@@ -2437,6 +2671,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 09b1b563a75d1904a9348b0d92a5d273, type: 2}
@@ -2445,7 +2680,7 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43145
-    label: 'Gun: Reload on Skill'
+    label: 'Gun: Tactical Reload'
     enabled: 1
     description: Using a skill instantly reloads the weapon and boosts your fire
       rate for 1 second.
@@ -2457,6 +2692,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: f33e62474e3ed324d869dcdf05efbbb1, type: 2}
@@ -2476,6 +2712,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 61d60b32b7be16c48858610f6a9415e3, type: 2}
@@ -2484,7 +2721,7 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43151
-    label: 'Gun: Instant Reload'
+    label: 'Gun: Flash Fill'
     enabled: 1
     description: The weapon reloads instantly.
     type: 9
@@ -2495,6 +2732,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 545afb84cecb2fe4a899cec5783de04d, type: 2}
@@ -2515,6 +2753,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: bb6338c5e9e28b240a23ac2169d54468, type: 2}
@@ -2536,6 +2775,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 164c5b8c30f68f24785ed95748a0c767, type: 2}
@@ -2544,7 +2784,7 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43165
-    label: 'Gun: Fire on Reload'
+    label: 'Gun: Reload Riposte'
     enabled: 1
     description: When you reload, the weapon also fires one shot with x2 projectiles
       backwards.
@@ -2556,6 +2796,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: d6b770b616cf9ef498550811eb8b6a23, type: 2}
@@ -2564,7 +2805,7 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43166
-    label: 'Gun: Fire on Reload'
+    label: 'Gun: Reload Riposte'
     enabled: 1
     description: When you reload, the weapon also fires one shot with x4 projectiles
       backwards.
@@ -2576,6 +2817,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 016a91709996fa04d93840d416e611d9, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 2072ba9c57041224a867ec5bf6d34993, type: 2}
@@ -2586,7 +2828,7 @@ MonoBehaviour:
   - id: 43200
     label: 'Shotgun: Magazine Upgrade'
     enabled: 1
-    description: TODO
+    description: Increases magazine size.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2595,6 +2837,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 090b7617dc5289447b3e243931b7238d, type: 2}
@@ -2605,7 +2848,7 @@ MonoBehaviour:
   - id: 43201
     label: 'Shotgun: Magazine Upgrade'
     enabled: 1
-    description: TODO
+    description: Increases magazine size.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2614,6 +2857,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: bb36cddb835948c4b971f8b11cfdbd66, type: 2}
@@ -2624,7 +2868,7 @@ MonoBehaviour:
   - id: 43202
     label: 'Shotgun: Magazine Upgrade'
     enabled: 1
-    description: TODO
+    description: Increases magazine size.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2633,6 +2877,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: c3d8fbac7c6dbba4aadf7dbf76e4d78d, type: 2}
@@ -2641,9 +2886,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43205
-    label: 'Shotgun: Small Magazine'
+    label: 'Shotgun: Compact Cartridge'
     enabled: 1
-    description: TODO
+    description: Decreases magazine size by half, but increases reload speed.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2652,6 +2897,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 62d974361ed1a1841b072f975eebe4db, type: 2}
@@ -2660,9 +2906,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43210
-    label: 'Shotgun: Skill Reloads'
+    label: 'Shotgun: Ability Ammo Refill'
     enabled: 1
-    description: TODO
+    description: Using your active skill automatically reloads the shotgun.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2671,6 +2917,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: f1aa57b1933da9c44baa61e8e96564a3, type: 2}
@@ -2681,7 +2928,7 @@ MonoBehaviour:
   - id: 43215
     label: 'Shotgun: Armor Sundering'
     enabled: 1
-    description: TODO
+    description: Shotgun blasts decrease enemy armor permanently.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2690,6 +2937,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: d96d21ee6eb75dc42bef1b0f446dfa7d, type: 2}
@@ -2700,7 +2948,7 @@ MonoBehaviour:
   - id: 43220
     label: 'Shotgun: Add Stun'
     enabled: 1
-    description: TODO
+    description: Shotgun shots have a chance to stun enemies.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2709,6 +2957,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: d409567878c6bd043ba8f79eb861fab6, type: 2}
@@ -2719,7 +2968,7 @@ MonoBehaviour:
   - id: 43221
     label: 'Shotgun: Add Stun'
     enabled: 1
-    description: TODO
+    description: Shotgun shots stun enemies.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2728,6 +2977,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 4970c1681040cfb4ea7f0525083c254b, type: 2}
@@ -2736,9 +2986,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43225
-    label: 'Shotgun: Push Away on Reload'
+    label: 'Shotgun: Forceful Ejection'
     enabled: 1
-    description: TODO
+    description: Upon reloading, the shotgun pushes away nearby enemies.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2747,6 +2997,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 33a76882ce296944987d554b4ab9917f, type: 2}
@@ -2755,9 +3006,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43230
-    label: 'Shotgun: Spawn Solid Orb'
+    label: 'Shotgun: Materialize Mass'
     enabled: 1
-    description: TODO
+    description: Firing the shotgun has a chance to spawn a forward-traveling solid
+      orb that pushes enemies away.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2766,6 +3018,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: d58ee387b8655f343a74da21cb078812, type: 2}
@@ -2774,9 +3027,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43231
-    label: 'Shotgun: Spawn Solid Orb'
+    label: 'Shotgun: Materialize Mass'
     enabled: 1
-    description: TODO
+    description: Firing the shotgun has a chance to spawn a forward-traveling solid
+      orb that pushes enemies away.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2785,6 +3039,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 4b1fa927fa1fbe246b39debd640f008b, type: 2}
@@ -2793,9 +3048,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43235
-    label: 'Shotgun: Penetrate Dead'
+    label: 'Shotgun: Ghostly Passage'
     enabled: 1
-    description: TODO
+    description: 50% chance that enemies killed by this weapon will not count towards
+      the number of penetrations.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2804,6 +3060,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: d6b0739218744d345a5a22021fdc5d45, type: 2}
@@ -2812,9 +3069,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43236
-    label: 'Shotgun: Penetrate Dead'
+    label: 'Shotgun: Ghostly Passage'
     enabled: 1
-    description: TODO
+    description: 100% chance that enemies killed by this weapon will not count towards
+      the number of penetrations.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2823,6 +3081,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: a7694b5b4c544a1478f9f669534e5450, type: 2}
@@ -2833,7 +3092,8 @@ MonoBehaviour:
   - id: 43240
     label: 'Shotgun: Shattering Rounds'
     enabled: 1
-    description: TODO
+    description: Increases damage against non-armored enemies but decreases damage
+      against armored enemies.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2842,6 +3102,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 74cc859bbb55ec143b991d4c7ec4496c, type: 2}
@@ -2850,9 +3111,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43245
-    label: 'Shotgun: Shoot Also Backwards'
+    label: 'Shotgun: Backblast'
     enabled: 1
-    description: TODO
+    description: The shotgun also fires a portion of its rounds backwards.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2861,6 +3122,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: a66380c79c3b8604e99db3eae11c622f, type: 2}
@@ -2869,9 +3131,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43250
-    label: 'Shotgun: Shrapnels'
+    label: 'Shotgun: Fragmentation Blast'
     enabled: 1
-    description: TODO
+    description: Enemies killed by the shotgun explode into damaging shrapnel.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2880,6 +3142,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: c127d3d3fb11a514bb9266ee40aec018, type: 2}
@@ -2888,9 +3151,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43251
-    label: 'Shotgun: Shrapnels'
+    label: 'Shotgun: Fragmentation Blast'
     enabled: 1
-    description: TODO
+    description: Enemies killed by the shotgun explode into damaging shrapnel.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2899,6 +3162,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: de1a56c8e2d7d8b438bd6b023512b22c, type: 2}
@@ -2909,7 +3173,8 @@ MonoBehaviour:
   - id: 43255
     label: 'Shotgun: Serrated Shells'
     enabled: 1
-    description: TODO
+    description: Shotgun shells leave a trail of damaging particles in their wake,
+      dealing damage over time to enemies that pass through it.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2918,6 +3183,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: e8fa229ae06df354cb113a87b21f0edf, type: 2}
@@ -2928,7 +3194,8 @@ MonoBehaviour:
   - id: 43256
     label: 'Shotgun: Serrated Shells'
     enabled: 1
-    description: TODO
+    description: Shotgun shells leave a trail of damaging particles in their wake,
+      dealing damage over time to enemies that pass through it.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2937,6 +3204,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: e5269588e3b3b7343808059071f421f0, type: 2}
@@ -2945,9 +3213,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43260
-    label: 'Shotgun: Wall Shot'
+    label: 'Shotgun: Guarding Scatter'
     enabled: 1
-    description: TODO
+    description: Active skill
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2956,6 +3224,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 96489c3259f33e14ba48817ac48da8f8, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: afbd3325b6b354d4787b8077d6feab1a, type: 2}
@@ -2966,7 +3235,7 @@ MonoBehaviour:
   - id: 43300
     label: 'Machinegun: Magazine Upgrade'
     enabled: 1
-    description: TODO
+    description: Increases the machinegun's magazine size.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2975,6 +3244,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 8e374b047e6410942926663952f2ba76, type: 2}
@@ -2985,7 +3255,7 @@ MonoBehaviour:
   - id: 43301
     label: 'Machinegun: Magazine Upgrade'
     enabled: 1
-    description: TODO
+    description: Increases the machinegun's magazine size.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2994,6 +3264,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 310dcdc8a7ae42e4c96f3085daa8f82e, type: 2}
@@ -3004,7 +3275,7 @@ MonoBehaviour:
   - id: 43302
     label: 'Machinegun: Magazine Upgrade'
     enabled: 1
-    description: TODO
+    description: Increases the machinegun's magazine size.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3013,6 +3284,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 286653e545b5f034f99faa2f4bdaaad9, type: 2}
@@ -3021,9 +3293,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43305
-    label: 'Machinegun: Def Boost After Reload'
+    label: 'Machinegun: Armor Reload'
     enabled: 1
-    description: TODO
+    description: Temporarily reduces incoming damage to the player after reloading.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3032,6 +3304,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: e330da42d37d5c349b3822036c26a57a, type: 2}
@@ -3040,9 +3313,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43310
-    label: 'Machinegun: Standing % Consume No Ammo'
+    label: 'Machinegun: Stand Your Ground'
     enabled: 1
-    description: TODO
+    description: 'When firing and not moving, there''s a chance that ammo will not
+      be consumed. '
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3051,6 +3325,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: c1b649382e6c03c4a804b73939fb8434, type: 2}
@@ -3059,9 +3334,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43311
-    label: 'Machinegun: Standing % Consume No Ammo'
+    label: 'Machinegun: Stand Your Ground'
     enabled: 1
-    description: TODO
+    description: 'When firing and not moving, there''s a chance that ammo will not
+      be consumed. '
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3070,6 +3346,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 085378a25009ac5488f38ddb8ffc9667, type: 2}
@@ -3078,9 +3355,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43312
-    label: 'Machinegun: Standing % Consume No Ammo'
+    label: 'Machinegun: Stand Your Ground'
     enabled: 1
-    description: TODO
+    description: 'When firing and not moving, there''s a chance that ammo will not
+      be consumed. '
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3089,6 +3367,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 7e33e0d578d89cb4fa3faf2213ae9df2, type: 2}
@@ -3097,9 +3376,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43315
-    label: 'Machinegun: Double Magazine'
+    label: 'Machinegun: Twin Drums'
     enabled: 1
-    description: TODO
+    description: Doubles magazine size but decreases accuracy due to the heavier
+      load.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3108,6 +3388,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: a7554938cfe6c3e44962fc6cfc8636a7, type: 2}
@@ -3116,9 +3397,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43320
-    label: 'Machinegun: Stabilize'
+    label: 'Machinegun: Precision Grip'
     enabled: 1
-    description: TODO
+    description: Significantly reduces weapon spread, increasing overall accuracy.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3127,6 +3408,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 8f32b1062e1a25e4693065b79b61920a, type: 2}
@@ -3135,9 +3417,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43325
-    label: 'Machinegun: Critical Rate'
+    label: 'Machinegun: Critical Strike'
     enabled: 1
-    description: TODO
+    description: Gives the weapon base chance to hit critical strike, dealing x3
+      damage.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3146,6 +3429,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 42e599e6360096940b3fb90a7e139adb, type: 2}
@@ -3154,9 +3438,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43326
-    label: 'Machinegun: Critical Rate'
+    label: 'Machinegun: Critical Strike'
     enabled: 1
-    description: TODO
+    description: Gives the weapon base chance to hit critical strike, dealing x3
+      damage.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3165,6 +3450,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: f11cb4f8261f7e14893f80aa4a41c910, type: 2}
@@ -3173,9 +3459,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43330
-    label: 'Machinegun: Gold Recharges'
+    label: 'Machinegun: Gold Reload'
     enabled: 1
-    description: TODO
+    description: Picking up gold recharges the machinegun's magazine.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3184,6 +3470,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 422b621e22372874ca37d75671a63184, type: 2}
@@ -3192,9 +3479,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43335
-    label: 'Machinegun: Fire Rate Boost'
+    label: 'Machinegun: Cadence Boost'
     enabled: 1
-    description: TODO
+    description: Significantly increases the machinegun's firing rate.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3203,6 +3490,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: df96a6e08b030254591f1222eb834dfb, type: 2}
@@ -3213,7 +3501,7 @@ MonoBehaviour:
   - id: 43340
     label: 'Machinegun: Incendiary Rounds'
     enabled: 1
-    description: TODO
+    description: Hit enemies are put on fire.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3222,17 +3510,19 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 164537137adce8b499e463bfb3afa8c1, type: 2}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
-    additionalTexts: []
+    additionalTexts:
+    - fire_effect_description
     story: 
   - id: 43341
     label: 'Machinegun: Incendiary Rounds'
     enabled: 1
-    description: TODO
+    description: Hit enemies are put on fire.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3241,17 +3531,19 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 6febdc0830fcec9478353d0a8d4fb9c1, type: 2}
     playerUpgradeItem: {fileID: 0}
     skillUpgradeItem: {fileID: 0}
-    additionalTexts: []
+    additionalTexts:
+    - fire_effect_description
     story: 
   - id: 43345
     label: 'Machinegun: Suppressive Fire'
     enabled: 1
-    description: TODO
+    description: Hit enemies are slowed down.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3260,6 +3552,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 42088ed947c16644f9b7ea24dfdb7e58, type: 2}
@@ -3270,7 +3563,7 @@ MonoBehaviour:
   - id: 43346
     label: 'Machinegun: Suppressive Fire'
     enabled: 1
-    description: TODO
+    description: Hit enemies are slowed down.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3279,6 +3572,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: f58b8dfcd0f7c404385bbe29e37134f0, type: 2}
@@ -3287,9 +3581,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43350
-    label: 'Machinegun: Spread Fire'
+    label: 'Machinegun: Bullet Barrage'
     enabled: 1
-    description: TODO
+    description: Every few bullets, the machinegun releases a spread shot around
+      the player.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3298,6 +3593,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 64f0b147ec21654458e9d59d2597a278, type: 2}
@@ -3306,9 +3602,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43351
-    label: 'Machinegun: Spread Fire'
+    label: 'Machinegun: Bullet Barrage'
     enabled: 1
-    description: TODO
+    description: Every few bullets, the machinegun releases a spread shot around
+      the player.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3317,6 +3614,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 2e28bc15f41d11e49b07e71876f368cc, type: 2}
@@ -3327,7 +3625,7 @@ MonoBehaviour:
   - id: 43355
     label: 'Machinegun: Bullet Tornado'
     enabled: 1
-    description: TODO
+    description: Gives active skill
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3336,6 +3634,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 3011873a58587da4c9ee12d3e80fb048, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 739e22d6cb1e40243b1187baf2771d71, type: 2}
@@ -3346,7 +3645,7 @@ MonoBehaviour:
   - id: 43400
     label: 'Slingshot: Stun Upgrade'
     enabled: 1
-    description: TODO
+    description: Guarantees a stun on hit with increase in stun duration.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3355,6 +3654,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 169908240f81563419a8db3c6e41ed5b, type: 2}
@@ -3365,7 +3665,7 @@ MonoBehaviour:
   - id: 43401
     label: 'Slingshot: Stun Upgrade'
     enabled: 1
-    description: TODO
+    description: Guarantees a stun on hit with increase in stun duration.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3374,6 +3674,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 52bfc665e2f2b624dbe7406fa209a796, type: 2}
@@ -3384,7 +3685,7 @@ MonoBehaviour:
   - id: 43402
     label: 'Slingshot: Stun Upgrade'
     enabled: 1
-    description: TODO
+    description: Guarantees a stun on hit with increase in stun duration.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3393,6 +3694,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 03877c1995512324db4ea00916f6e501, type: 2}
@@ -3403,7 +3705,7 @@ MonoBehaviour:
   - id: 43405
     label: 'Slingshot: Armor Sundering'
     enabled: 1
-    description: TODO
+    description: Permanently reduces enemy armor with each hit.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3412,6 +3714,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: aa9119c73c1df58478361c1cc26a18d7, type: 2}
@@ -3420,9 +3723,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43410
-    label: 'Slingshot: Gold to Magazine'
+    label: 'Slingshot: Treasure Trigger'
     enabled: 1
-    description: TODO
+    description: Each picked up gold counts as a projectile for the next shot.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3431,6 +3734,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: d5e8dc142f1cc974496efcdb484a40cb, type: 2}
@@ -3439,9 +3743,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43415
-    label: 'Slingshot: Push Enemies'
+    label: 'Slingshot: Gale Force'
     enabled: 1
-    description: TODO
+    description: TODO projectiles push hit enemies away
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3450,6 +3754,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 4ac78af78d698734398088b0025e2022, type: 2}
@@ -3458,9 +3763,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43416
-    label: 'Slingshot: Push Enemies'
+    label: 'Slingshot: Gale Force'
     enabled: 1
-    description: TODO
+    description: Projectiles push hit enemies away.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3469,6 +3774,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: c59ef8e89e83764408683b0222a74940, type: 2}
@@ -3477,9 +3783,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43420
-    label: 'Slingshot: Acid Projectiles'
+    label: 'Slingshot: Acid Coating'
     enabled: 1
-    description: TODO
+    description: Projectiles gain an Acid effect, dealing strong damage over a short
+      time.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3488,6 +3795,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: d643e33758355944cbe50bdd5d1742be, type: 2}
@@ -3496,9 +3804,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43421
-    label: 'Slingshot: Acid Projectiles'
+    label: 'Slingshot: Acid Coating'
     enabled: 1
-    description: TODO
+    description: Projectiles gain an Acid effect, dealing strong damage over a short
+      time.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3507,6 +3816,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 46696d609aec388498f8b936d0d8cb1a, type: 2}
@@ -3515,9 +3825,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43425
-    label: 'Slingshot: Ignore Stunned'
+    label: 'Slingshot: Selective Impact'
     enabled: 1
-    description: TODO
+    description: Projectiles ignore stunned enemies, allowing you to stun more enemies.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3526,6 +3836,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 0c37f77740390504caa7d3331d7c9b37, type: 2}
@@ -3534,9 +3845,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43430
-    label: 'Slingshot: Moving Boosts'
+    label: 'Slingshot: Stride & Strike'
     enabled: 1
-    description: TODO
+    description: Boosts fire rate when moving.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3545,6 +3856,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 7603cda624838894298b5f77ea2b1014, type: 2}
@@ -3553,9 +3865,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43431
-    label: 'Slingshot: Stationary Boosts'
+    label: 'Slingshot: Stand & Deliver'
     enabled: 1
-    description: TODO
+    description: Boosts fire rate when not moving.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3564,6 +3876,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: abe8928a0adc7b24692dd55d17fedfb0, type: 2}
@@ -3572,9 +3885,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43435
-    label: 'Slingshot: Double Projectiles'
+    label: 'Slingshot: Dual Delivery'
     enabled: 1
-    description: TODO
+    description: Doubles the number of projectiles but reduces fire rate.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3583,6 +3896,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 7745119b45b2a6a4db722eb19a721689, type: 2}
@@ -3591,9 +3905,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43436
-    label: 'Slingshot: Double Projectiles'
+    label: 'Slingshot: Dual Delivery'
     enabled: 1
-    description: TODO
+    description: Doubles the number of projectiles without reducing the fire rate.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3602,6 +3916,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: cc62137c50dd92940a343f557d8c382d, type: 2}
@@ -3612,7 +3927,7 @@ MonoBehaviour:
   - id: 43440
     label: 'Slingshot: Double Shot'
     enabled: 1
-    description: TODO
+    description: Every shot is fired twice consecutively.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3621,6 +3936,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: d945162f9b30d2746901bf3883b82406, type: 2}
@@ -3629,9 +3945,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43441
-    label: 'Slingshot: Double Shot'
+    label: 'Slingshot: Triple Shot'
     enabled: 1
-    description: TODO
+    description: Every shot is fired three times consecutively.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3640,6 +3956,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 9f510c61098aa8e46a794496ce2a1a7a, type: 2}
@@ -3648,9 +3965,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43445
-    label: 'Slingshot: Acid Lakes'
+    label: 'Slingshot: Acidic Splatter'
     enabled: 1
-    description: TODO
+    description: Projectiles have a chance to spawn small acid lakes damaging nearby
+      enemies.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3659,6 +3977,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 17b5b425de696aa4bbd2fe4794b10ec6, type: 2}
@@ -3667,9 +3986,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43446
-    label: 'Slingshot: Acid Lakes'
+    label: 'Slingshot: Acidic Splatter'
     enabled: 1
-    description: TODO
+    description: Projectiles have a chance to spawn small acid lakes damaging nearby
+      enemies.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3678,6 +3998,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 90875e8d693ebaa41b6d6d4ae60cee05, type: 2}
@@ -3686,9 +4007,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43450
-    label: 'Slingshot: Spread Boost'
+    label: 'Slingshot: Wide Wave'
     enabled: 1
-    description: TODO
+    description: Doubles projectile spread, allowing you to hit a wider angle of
+      enemies.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3697,6 +4019,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 4b7653d9321117d409f6fc8afa383cce, type: 2}
@@ -3705,9 +4028,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43455
-    label: 'Slingshot: Spawn Acid'
+    label: 'Slingshot: Corrosive Pool'
     enabled: 1
-    description: TODO
+    description: Gives active skill that creates a large pool of corrosive acid,
+      damaging any enemies that enter it.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3716,6 +4040,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4648988354ee36846bf9f0c56b5086ce, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 98fc55250d9fe03469a7715efe5cfe04, type: 2}
@@ -3724,9 +4049,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43500
-    label: 'Shuriken: Penetrations Upgrade'
+    label: 'Shuriken: Pierce Upgrade'
     enabled: 1
-    description: TODO
+    description: Increases the number of enemies each shuriken can penetrate.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3735,6 +4060,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: af18fc5f18ef2494cb390980f8a1a07c, type: 2}
@@ -3743,9 +4069,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43501
-    label: 'Shuriken: Penetrations Upgrade'
+    label: 'Shuriken: Pierce Upgrade'
     enabled: 1
-    description: TODO
+    description: Increases the number of enemies each shuriken can penetrate.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3754,6 +4080,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 40fc21793f151b04a83388f95e9b18ec, type: 2}
@@ -3762,9 +4089,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43502
-    label: 'Shuriken: Penetrations Upgrade'
+    label: 'Shuriken: Pierce Upgrade'
     enabled: 1
-    description: TODO
+    description: Increases the number of enemies each shuriken can penetrate.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3773,6 +4100,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 7d8bbc482d303f341a56271524041546, type: 2}
@@ -3783,7 +4111,7 @@ MonoBehaviour:
   - id: 43505
     label: 'Shuriken: Poisoned Projectiles'
     enabled: 1
-    description: TODO
+    description: Shurikens apply a damage-over-time poison effect to enemies.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3792,6 +4120,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 554d4bcd84a8a134ba689faad31f11ac, type: 2}
@@ -3802,7 +4131,7 @@ MonoBehaviour:
   - id: 43506
     label: 'Shuriken: Poisoned Projectiles'
     enabled: 1
-    description: TODO
+    description: Shurikens apply a damage-over-time poison effect to enemies.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3811,6 +4140,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 787fc3e90644cd646b3e83373138c5da, type: 2}
@@ -3819,9 +4149,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43510
-    label: 'Shuriken: Shoot Also Backwards'
+    label: 'Shuriken: Backfire '
     enabled: 1
-    description: TODO
+    description: Half of the shurikens are also shot backwards.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3830,6 +4160,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 7077dad8fcaa0ad4ab4f33447a65e4bd, type: 2}
@@ -3838,9 +4169,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43511
-    label: 'Shuriken: Shoot Also Backwards'
+    label: 'Shuriken: Backfire '
     enabled: 1
-    description: TODO
+    description: All shurikens are also shot backwards.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3849,6 +4180,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: d07b83def4c23a44e897ba6ad06e93af, type: 2}
@@ -3857,9 +4189,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43515
-    label: 'Shuriken: Speed & Range'
+    label: 'Shuriken: Rapid Reach'
     enabled: 1
-    description: TODO
+    description: Increases the range and speed of shurikens.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3868,6 +4200,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 83f6ea1f20ac0b542ba00f8d2f7c8c55, type: 2}
@@ -3876,9 +4209,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43520
-    label: 'Shuriken: Always Pierce Killed'
+    label: 'Shuriken: Ceaseless Cuts'
     enabled: 1
-    description: TODO
+    description: If a shuriken kills an enemy, the penetration does not count towards
+      the limit.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3887,6 +4221,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: d542ed4906f64b34c8dda46a9aea7426, type: 2}
@@ -3895,9 +4230,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43525
-    label: 'Shuriken: Movement Projectiles'
+    label: 'Shuriken: Motion Missiles'
     enabled: 1
-    description: TODO
+    description: When moving, shurikens are continuously shot out. The faster you
+      move, the faster they shoot.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3906,6 +4242,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 199ef4be60594ad46bac3153d66d38e5, type: 2}
@@ -3914,9 +4251,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43526
-    label: 'Shuriken: Movement Projectiles'
+    label: 'Shuriken: Motion Missiles'
     enabled: 1
-    description: TODO
+    description: When moving, shurikens are continuously shot out. The faster you
+      move, the faster they shoot.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3925,6 +4263,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 96784fc258d85da47800ea49c7448ffa, type: 2}
@@ -3933,9 +4272,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43530
-    label: 'Shuriken: On Skill Fire'
+    label: 'Shuriken: Skillstorm Shurikens'
     enabled: 1
-    description: TODO
+    description: Releases shurikens around the player when a skill is used.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3944,6 +4283,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 8af485c7487ae5c498069a9fb8fbe832, type: 2}
@@ -3952,9 +4292,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43531
-    label: 'Shuriken: On Skill Fire'
+    label: 'Shuriken: Skillstorm Shurikens'
     enabled: 1
-    description: TODO
+    description: Releases shurikens around the player when a skill is used.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3963,6 +4303,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: c2e505ba64896d84dba457645a4cbae9, type: 2}
@@ -3971,9 +4312,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43535
-    label: 'Shuriken: Critical Attacks'
+    label: 'Shuriken: Critical Strike'
     enabled: 1
-    description: TODO
+    description: Adds a base critical chance dealing triple damage.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3982,6 +4323,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: ce40357472a392844a767c851a2ee162, type: 2}
@@ -3990,9 +4332,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43536
-    label: 'Shuriken: Critical Attacks'
+    label: 'Shuriken: Critical Strike'
     enabled: 1
-    description: TODO
+    description: Adds a base critical chance dealing triple damage.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4001,6 +4343,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 434c573dfe869304c8f96b463d7279bc, type: 2}
@@ -4011,7 +4354,7 @@ MonoBehaviour:
   - id: 43540
     label: 'Shuriken: Armor Piercing'
     enabled: 1
-    description: TODO
+    description: Gives shurikens an armor-piercing effect.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4020,6 +4363,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: cd95660d3f7114d4d9266201b9d77e14, type: 2}
@@ -4028,9 +4372,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43545
-    label: 'Shuriken: Nth Shot Fire Around'
+    label: 'Shuriken: Surrounding Storm'
     enabled: 1
-    description: TODO
+    description: Every 3rd shot releases multiple shurikens around the player.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4039,6 +4383,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 6eea243ef517f5847886b9f500dfc4d3, type: 2}
@@ -4047,9 +4392,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43546
-    label: 'Shuriken: Nth Shot Fire Around'
+    label: 'Shuriken: Surrounding Storm'
     enabled: 1
-    description: TODO
+    description: Every 2nd shot releases multiple shurikens around the player.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4058,6 +4403,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 536da86301aaaad4b98612febcd78730, type: 2}
@@ -4066,9 +4412,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43547
-    label: 'Shuriken: Nth Shot Fire Around'
+    label: 'Shuriken: Surrounding Storm'
     enabled: 1
-    description: TODO
+    description: Every shot releases multiple shurikens around the player.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4077,6 +4423,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: a6c8135b1e9b21d48b08a6e561f169bc, type: 2}
@@ -4085,9 +4432,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43550
-    label: 'Shuriken: Homing Upgrade'
+    label: 'Shuriken: Guided Gust'
     enabled: 1
-    description: TODO
+    description: ' Improves homing abilities of shurikens, allowing them to hit the
+      same enemies multiple times and steer in wide angles.'
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4096,6 +4444,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 59f3140c3e3341a4e83cbbe6704d29c0, type: 2}
@@ -4104,9 +4453,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43555
-    label: 'Shuriken: Return On Die'
+    label: 'Shuriken: Boomerang Blades'
     enabled: 1
-    description: TODO
+    description: When a shuriken is about to be destroyed, it instead returns to
+      the player, potentially hitting more enemies.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4115,6 +4465,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: f9368e58b3833c240bd4512e804c180d, type: 2}
@@ -4122,10 +4473,32 @@ MonoBehaviour:
     skillUpgradeItem: {fileID: 0}
     additionalTexts: []
     story: 
-  - id: 43600
-    label: 'Ballista: Return Projectile Delayed'
+  - id: 43560
+    label: 'Shuriken: Spinning Fury'
     enabled: 1
-    description: TODO
+    description: Gives active skill that causes shurikens to spin around the player,
+      damaging all nearby enemies.
+    type: 9
+    predefinedId: 0
+    weightSettings:
+      alteredWeights: []
+    unlockSettings:
+      unlockedIds: []
+    prefab: {fileID: 0}
+    prefabUi: {fileID: 8309321105186295158, guid: 4ac4531f082321646ab1145c77cee530, type: 3}
+    prefabUiImage: {fileID: 0}
+    skill: {fileID: 0}
+    mutator: {fileID: 0}
+    moduleUpgradeItem: {fileID: 11400000, guid: 4b618d7dae57b8b45a29c9bcc5c5b908, type: 2}
+    playerUpgradeItem: {fileID: 0}
+    skillUpgradeItem: {fileID: 0}
+    additionalTexts: []
+    story: 
+  - id: 43600
+    label: 'Ballista: Delayed Rebound'
+    enabled: 1
+    description: When a projectile disappears, after short time it spawns another
+      projectile in its place which is shot towards the player.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4134,6 +4507,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 526977a9fa1dad44496958cffa518d68, type: 2}
@@ -4142,9 +4516,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43605
-    label: 'Ballista: Return Projectile'
+    label: 'Ballista: Immediate Rebound'
     enabled: 1
-    description: TODO
+    description: When a projectile disappears, it immediately spawns another projectile
+      in its place which is shot towards the player.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4153,6 +4528,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 7137765b08b499147875476447cade50, type: 2}
@@ -4161,9 +4537,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43610
-    label: 'Ballista: Shoot Also Backwards'
+    label: 'Ballista: Backfire'
     enabled: 1
-    description: TODO
+    description: Every 2nd shot is also fired backwards.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4172,6 +4548,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 8f1dc7aa3381c1740992358be777065e, type: 2}
@@ -4180,9 +4557,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43611
-    label: 'Ballista: Shoot Also Backwards'
+    label: 'Ballista: Backfire'
     enabled: 1
-    description: TODO
+    description: Every shot is also fired backwards.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4191,6 +4568,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: da0582d61545c4c409aea0ba2f048b81, type: 2}
@@ -4199,9 +4577,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43615
-    label: 'Ballista: Post Spreadshot'
+    label: 'Ballista: Scatter Shell'
     enabled: 1
-    description: TODO
+    description: When a projectile is to be destroyed, it releases multiple projectiles
+      in all directions.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4210,6 +4589,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 4b613db9508a623419d03c4fffaf5cf1, type: 2}
@@ -4218,9 +4598,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43616
-    label: 'Ballista: Post Spreadshot'
+    label: 'Ballista: Scatter Shell'
     enabled: 1
-    description: TODO
+    description: When a projectile is to be destroyed, it releases multiple projectiles
+      in all directions.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4229,6 +4610,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: fb69db399c68e7348bbdb7d5e18080f2, type: 2}
@@ -4237,9 +4619,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43620
-    label: 'Ballista: Auto Pierce Low HP'
+    label: 'Ballista: Finisher Pierce'
     enabled: 1
-    description: TODO
+    description: Enemies with low HP are automatically pierced and do not count towards
+      the pierce limit.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4248,6 +4631,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 11b38b78d0191ba44b3b800903f431fc, type: 2}
@@ -4256,9 +4640,10 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43621
-    label: 'Ballista: Auto Pierce Low HP'
+    label: 'Ballista: Finisher Pierce'
     enabled: 1
-    description: TODO
+    description: Enemies with low HP are automatically pierced and do not count towards
+      the pierce limit.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4267,6 +4652,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: e0c0a33cb844dff4e8d15f0206897c77, type: 2}
@@ -4275,9 +4661,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43625
-    label: 'Ballista: Improved Penetration'
+    label: 'Ballista: Pierce Enhancer'
     enabled: 1
-    description: TODO
+    description: Increases base penetrated enemies.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4286,6 +4672,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: e5bd4fc79240bca45b1f1c048c26995a, type: 2}
@@ -4294,9 +4681,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43630
-    label: 'Ballista: Gold Recharges'
+    label: 'Ballista: Golden Quiver'
     enabled: 1
-    description: TODO
+    description: Picking up gold speeds up the reload.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4305,6 +4692,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 8e07a5ece6b1bc840a8bb6fa90984b0b, type: 2}
@@ -4313,9 +4701,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43635
-    label: 'Ballista: Range and Speed Upgrade'
+    label: 'Ballista: Rapid Range'
     enabled: 1
-    description: TODO
+    description: Increases range and projectile speed.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4324,6 +4712,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 501d74708be42b24284c431493e94cb9, type: 2}
@@ -4332,9 +4721,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43640
-    label: 'Ballista: Additional Random Shot'
+    label: 'Ballista: Random Rain'
     enabled: 1
-    description: TODO
+    description: When you shoot, it also fires random projectiles around the player.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4343,6 +4732,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 401163db3c3962a4f830aa1855a1dadc, type: 2}
@@ -4351,9 +4741,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43645
-    label: 'Ballista: Extra Damage To Distant Foes'
+    label: 'Ballista: Distant Destruction'
     enabled: 1
-    description: TODO
+    description: Distant enemies receive more damage.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4362,6 +4752,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 04119f0c935d33347a872623da6e2235, type: 2}
@@ -4370,9 +4761,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43646
-    label: 'Ballista: Extra Damage To Distant Foes'
+    label: 'Ballista: Distant Destruction'
     enabled: 1
-    description: TODO
+    description: Distant enemies receive more damage.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4381,6 +4772,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 1a7fbf0aeafdf374cba5a8aad100e76d, type: 2}
@@ -4391,7 +4783,7 @@ MonoBehaviour:
   - id: 43650
     label: 'Ballista: Armor Piercing'
     enabled: 1
-    description: TODO
+    description: Gives projectiles an armor-piercing effect.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4400,6 +4792,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: 2b90fb6b2fbeb774ca8d2457a35db649, type: 2}
@@ -4408,9 +4801,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 43655
-    label: 'Ballista: Charged Shot'
+    label: 'Ballista: Quickfire Reserves'
     enabled: 1
-    description: TODO
+    description: 'Gives active skill '
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4419,6 +4812,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: aaf35da149ce8424f9773342ea61bd49, type: 3}
+    prefabUiImage: {fileID: 0}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 11400000, guid: fa904dcf771b97440bef625a5afc83e9, type: 2}
@@ -4438,6 +4832,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 3ac27e8742211cd4bb437a6f416bffc3, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4457,6 +4852,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 3ac27e8742211cd4bb437a6f416bffc3, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4476,6 +4872,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 3ac27e8742211cd4bb437a6f416bffc3, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4495,6 +4892,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 59d45f61e4c125d4e9964e02b357c725, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4514,6 +4912,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 59d45f61e4c125d4e9964e02b357c725, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4533,6 +4932,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 59d45f61e4c125d4e9964e02b357c725, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4552,6 +4952,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 9cb4257c5ba7fd44cb49b53491e96d24, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4571,6 +4972,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 9cb4257c5ba7fd44cb49b53491e96d24, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4590,6 +4992,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 9cb4257c5ba7fd44cb49b53491e96d24, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4609,6 +5012,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: d1f014e4d312f4e449731950f865f202, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4628,6 +5032,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: d1f014e4d312f4e449731950f865f202, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4647,6 +5052,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: d1f014e4d312f4e449731950f865f202, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4666,6 +5072,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 606f9613ac069eb4588df53bc81bc1c3, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4685,6 +5092,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 606f9613ac069eb4588df53bc81bc1c3, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4704,6 +5112,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 606f9613ac069eb4588df53bc81bc1c3, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4723,6 +5132,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 15b359708edc6574bbe5a68eeaa5e1e8, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4742,6 +5152,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 15b359708edc6574bbe5a68eeaa5e1e8, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4761,6 +5172,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 15b359708edc6574bbe5a68eeaa5e1e8, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4780,6 +5192,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 2f5190bd041deb24d8de2d4c221551a9, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4799,6 +5212,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 2f5190bd041deb24d8de2d4c221551a9, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4818,6 +5232,7 @@ MonoBehaviour:
       unlockedIds: []
     prefab: {fileID: 0}
     prefabUi: {fileID: 8309321105186295158, guid: f22fe56056dc016409738f638bd3ec73, type: 3}
+    prefabUiImage: {fileID: 21300000, guid: 2f5190bd041deb24d8de2d4c221551a9, type: 3}
     skill: {fileID: 0}
     mutator: {fileID: 0}
     moduleUpgradeItem: {fileID: 0}
@@ -4879,7 +5294,7 @@ MonoBehaviour:
     note: 
     minCountShownItems: 1
     prefabs:
-    - name: Shield Module
+    - name: Shield Upgrade
       prefabId: 2600
       weight: 1
       isInGroup: 0
@@ -4889,7 +5304,7 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0.75
       lockId: 
       mustBeUnlocked: 0
-    - name: Speed Module
+    - name: Speed Upgrade
       prefabId: 2602
       weight: 1
       isInGroup: 0
@@ -4922,6 +5337,11 @@ MonoBehaviour:
     - shop_chaos_upgrades_crossbow
     - shop_chaos_upgrades_cannon
     - shop_chaos_upgrades_gun
+    - shop_chaos_upgrades_ballista
+    - shop_chaos_upgrades_shotgun
+    - shop_chaos_upgrades_slingshot
+    - shop_chaos_upgrades_shuriken
+    - shop_chaos_upgrades_machinegun
     priceMultiplierPerCountOwned: []
     lockId: 
   - name: shop_chaos_upgrades_crossbow
@@ -5513,6 +5933,1031 @@ MonoBehaviour:
     - 1.15
     - 1.3
     lockId: 
+  - name: shop_chaos_upgrades_shuriken
+    note: 
+    minCountShownItems: 1
+    prefabs:
+    - name: 'Common Shuriken: Pierce Upgrade'
+      prefabId: 43500
+      weight: 8
+      isInGroup: 1
+      group: 43500
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shuriken: Pierce Upgrade'
+      prefabId: 43501
+      weight: 3
+      isInGroup: 1
+      group: 43500
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Epic Shuriken: Pierce Upgrade'
+      prefabId: 43502
+      weight: 1
+      isInGroup: 1
+      group: 43500
+      levelInGroup: 3
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Shuriken: Poisoned Projectiles'
+      prefabId: 43505
+      weight: 8
+      isInGroup: 1
+      group: 43505
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shuriken: Poisoned Projectiles'
+      prefabId: 43506
+      weight: 3
+      isInGroup: 1
+      group: 43505
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Shuriken: Backfire '
+      prefabId: 43510
+      weight: 8
+      isInGroup: 1
+      group: 43510
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shuriken: Backfire '
+      prefabId: 43511
+      weight: 8
+      isInGroup: 1
+      group: 43510
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Shuriken: Rapid Reach'
+      prefabId: 43515
+      weight: 8
+      isInGroup: 0
+      group: 43120
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shuriken: Ceaseless Cuts'
+      prefabId: 43520
+      weight: 3
+      isInGroup: 0
+      group: 43121
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Shuriken: Motion Missiles'
+      prefabId: 43525
+      weight: 8
+      isInGroup: 1
+      group: 43525
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shuriken: Motion Missiles'
+      prefabId: 43526
+      weight: 3
+      isInGroup: 1
+      group: 43525
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Shuriken: Skillstorm Shurikens'
+      prefabId: 43530
+      weight: 8
+      isInGroup: 1
+      group: 43530
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shuriken: Skillstorm Shurikens'
+      prefabId: 43531
+      weight: 3
+      isInGroup: 1
+      group: 43530
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shuriken: Critical Strike'
+      prefabId: 43535
+      weight: 3
+      isInGroup: 0
+      group: 43140
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Shuriken: Armor Piercing'
+      prefabId: 43540
+      weight: 8
+      isInGroup: 0
+      group: 43140
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Shuriken: Surrounding Storm'
+      prefabId: 43545
+      weight: 8
+      isInGroup: 1
+      group: 43545
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shuriken: Surrounding Storm'
+      prefabId: 43546
+      weight: 3
+      isInGroup: 1
+      group: 43545
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Epic Shuriken: Surrounding Storm'
+      prefabId: 43547
+      weight: 1
+      isInGroup: 1
+      group: 43545
+      levelInGroup: 3
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Shuriken: Guided Gust'
+      prefabId: 43550
+      weight: 8
+      isInGroup: 0
+      group: 43155
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shuriken: Boomerang Blades'
+      prefabId: 43555
+      weight: 3
+      isInGroup: 0
+      group: 43160
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shuriken: Spinning Fury'
+      prefabId: 43560
+      weight: 3
+      isInGroup: 0
+      group: 43165
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    closeOnFirstPurchase: 0
+    nestedRewardSets: []
+    priceMultiplierPerCountOwned:
+    - 0.8
+    - 0.9
+    - 1
+    - 1.15
+    - 1.3
+    lockId: 
+  - name: shop_chaos_upgrades_slingshot
+    note: 
+    minCountShownItems: 1
+    prefabs:
+    - name: 'Common Slingshot: Stun Upgrade'
+      prefabId: 43400
+      weight: 8
+      isInGroup: 1
+      group: 43400
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Slingshot: Stun Upgrade'
+      prefabId: 43401
+      weight: 3
+      isInGroup: 1
+      group: 43400
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Epic Slingshot: Stun Upgrade'
+      prefabId: 43402
+      weight: 1
+      isInGroup: 1
+      group: 43400
+      levelInGroup: 3
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Slingshot: Armor Sundering'
+      prefabId: 43405
+      weight: 3
+      isInGroup: 0
+      group: 43105
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Slingshot: Treasure Trigger'
+      prefabId: 43410
+      weight: 3
+      isInGroup: 0
+      group: 43105
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Slingshot: Gale Force'
+      prefabId: 43415
+      weight: 8
+      isInGroup: 1
+      group: 43415
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Slingshot: Gale Force'
+      prefabId: 43416
+      weight: 8
+      isInGroup: 1
+      group: 43415
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Slingshot: Acid Coating'
+      prefabId: 43420
+      weight: 3
+      isInGroup: 1
+      group: 43420
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Epic Slingshot: Acid Coating'
+      prefabId: 43421
+      weight: 1
+      isInGroup: 1
+      group: 43420
+      levelInGroup: 3
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Slingshot: Selective Impact'
+      prefabId: 43425
+      weight: 8
+      isInGroup: 0
+      group: 43125
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Slingshot: Stride & Strike'
+      prefabId: 43430
+      weight: 3
+      isInGroup: 0
+      group: 43130
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Slingshot: Stand & Deliver'
+      prefabId: 43431
+      weight: 3
+      isInGroup: 0
+      group: 43130
+      levelInGroup: 3
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Slingshot: Dual Delivery'
+      prefabId: 43435
+      weight: 3
+      isInGroup: 1
+      group: 43435
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Epic Slingshot: Dual Delivery'
+      prefabId: 43436
+      weight: 1
+      isInGroup: 1
+      group: 43435
+      levelInGroup: 3
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Slingshot: Double Shot'
+      prefabId: 43440
+      weight: 8
+      isInGroup: 1
+      group: 43440
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Slingshot: Triple Shot'
+      prefabId: 43441
+      weight: 3
+      isInGroup: 1
+      group: 43440
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Slingshot: Acidic Splatter'
+      prefabId: 43445
+      weight: 3
+      isInGroup: 1
+      group: 43445
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Epic Slingshot: Acidic Splatter'
+      prefabId: 43446
+      weight: 1
+      isInGroup: 1
+      group: 43445
+      levelInGroup: 3
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Slingshot: Wide Wave'
+      prefabId: 43450
+      weight: 8
+      isInGroup: 0
+      group: 43155
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Slingshot: Corrosive Pool'
+      prefabId: 43455
+      weight: 3
+      isInGroup: 0
+      group: 43160
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    closeOnFirstPurchase: 0
+    nestedRewardSets: []
+    priceMultiplierPerCountOwned:
+    - 0.8
+    - 0.9
+    - 1
+    - 1.15
+    - 1.3
+    lockId: 
+  - name: shop_chaos_upgrades_ballista
+    note: 
+    minCountShownItems: 1
+    prefabs:
+    - name: 'Common Ballista: Delayed Rebound'
+      prefabId: 43600
+      weight: 8
+      isInGroup: 0
+      group: 43100
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Ballista: Immediate Rebound'
+      prefabId: 43605
+      weight: 8
+      isInGroup: 0
+      group: 43100
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Ballista: Backfire'
+      prefabId: 43610
+      weight: 8
+      isInGroup: 1
+      group: 43610
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Ballista: Backfire'
+      prefabId: 43611
+      weight: 3
+      isInGroup: 1
+      group: 43610
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Ballista: Scatter Shell'
+      prefabId: 43615
+      weight: 3
+      isInGroup: 1
+      group: 43615
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Epic Ballista: Scatter Shell'
+      prefabId: 43616
+      weight: 1
+      isInGroup: 1
+      group: 43615
+      levelInGroup: 3
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Ballista: Finisher Pierce'
+      prefabId: 43620
+      weight: 3
+      isInGroup: 1
+      group: 43620
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Epic Ballista: Finisher Pierce'
+      prefabId: 43621
+      weight: 1
+      isInGroup: 1
+      group: 43620
+      levelInGroup: 3
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Ballista: Pierce Enhancer'
+      prefabId: 43625
+      weight: 8
+      isInGroup: 0
+      group: 43121
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Ballista: Golden Quiver'
+      prefabId: 43630
+      weight: 3
+      isInGroup: 0
+      group: 43125
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Ballista: Rapid Range'
+      prefabId: 43635
+      weight: 8
+      isInGroup: 0
+      group: 43130
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Epic Ballista: Random Rain'
+      prefabId: 43640
+      weight: 1
+      isInGroup: 0
+      group: 43130
+      levelInGroup: 3
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Ballista: Distant Destruction'
+      prefabId: 43645
+      weight: 8
+      isInGroup: 1
+      group: 43645
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Ballista: Distant Destruction'
+      prefabId: 43646
+      weight: 3
+      isInGroup: 1
+      group: 43645
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Ballista: Armor Piercing'
+      prefabId: 43650
+      weight: 8
+      isInGroup: 0
+      group: 43140
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Ballista: Quickfire Reserves'
+      prefabId: 43655
+      weight: 3
+      isInGroup: 0
+      group: 43145
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    closeOnFirstPurchase: 0
+    nestedRewardSets: []
+    priceMultiplierPerCountOwned:
+    - 0.8
+    - 0.9
+    - 1
+    - 1.15
+    - 1.3
+    lockId: 
+  - name: shop_chaos_upgrades_machinegun
+    note: 
+    minCountShownItems: 1
+    prefabs:
+    - name: 'Common Machinegun: Magazine Upgrade'
+      prefabId: 43300
+      weight: 8
+      isInGroup: 1
+      group: 43300
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Machinegun: Magazine Upgrade'
+      prefabId: 43301
+      weight: 3
+      isInGroup: 1
+      group: 43300
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Epic Machinegun: Magazine Upgrade'
+      prefabId: 43302
+      weight: 1
+      isInGroup: 1
+      group: 43300
+      levelInGroup: 3
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Machinegun: Stand Your Ground'
+      prefabId: 43310
+      weight: 8
+      isInGroup: 1
+      group: 43310
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Machinegun: Stand Your Ground'
+      prefabId: 43311
+      weight: 3
+      isInGroup: 1
+      group: 43310
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Epic Machinegun: Stand Your Ground'
+      prefabId: 43312
+      weight: 1
+      isInGroup: 1
+      group: 43310
+      levelInGroup: 3
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Machinegun: Twin Drums'
+      prefabId: 43315
+      weight: 3
+      isInGroup: 0
+      group: 43115
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Machinegun: Precision Grip'
+      prefabId: 43320
+      weight: 8
+      isInGroup: 0
+      group: 43120
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Machinegun: Critical Strike'
+      prefabId: 43325
+      weight: 3
+      isInGroup: 1
+      group: 43325
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Epic Machinegun: Critical Strike'
+      prefabId: 43326
+      weight: 1
+      isInGroup: 1
+      group: 43325
+      levelInGroup: 3
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Machinegun: Gold Reload'
+      prefabId: 43330
+      weight: 3
+      isInGroup: 0
+      group: 43130
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Machinegun: Cadence Boost'
+      prefabId: 43335
+      weight: 8
+      isInGroup: 0
+      group: 43130
+      levelInGroup: 3
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Machinegun: Incendiary Rounds'
+      prefabId: 43340
+      weight: 8
+      isInGroup: 1
+      group: 43340
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Machinegun: Incendiary Rounds'
+      prefabId: 43341
+      weight: 3
+      isInGroup: 1
+      group: 43340
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Machinegun: Suppressive Fire'
+      prefabId: 43345
+      weight: 8
+      isInGroup: 1
+      group: 43345
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Machinegun: Suppressive Fire'
+      prefabId: 43346
+      weight: 3
+      isInGroup: 1
+      group: 43345
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Machinegun: Bullet Barrage'
+      prefabId: 43350
+      weight: 8
+      isInGroup: 1
+      group: 43350
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Machinegun: Bullet Barrage'
+      prefabId: 43351
+      weight: 3
+      isInGroup: 1
+      group: 43350
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Machinegun: Bullet Tornado'
+      prefabId: 43355
+      weight: 3
+      isInGroup: 0
+      group: 43150
+      levelInGroup: 3
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    closeOnFirstPurchase: 0
+    nestedRewardSets: []
+    priceMultiplierPerCountOwned:
+    - 0.8
+    - 0.9
+    - 1
+    - 1.15
+    - 1.3
+    lockId: 
+  - name: shop_chaos_upgrades_shotgun
+    note: 
+    minCountShownItems: 1
+    prefabs:
+    - name: 'Common Shotgun: Magazine Upgrade'
+      prefabId: 43200
+      weight: 8
+      isInGroup: 1
+      group: 43200
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shotgun: Magazine Upgrade'
+      prefabId: 43201
+      weight: 3
+      isInGroup: 1
+      group: 43200
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Epic Shotgun: Magazine Upgrade'
+      prefabId: 43202
+      weight: 1
+      isInGroup: 1
+      group: 43200
+      levelInGroup: 3
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shotgun: Compact Cartridge'
+      prefabId: 43205
+      weight: 3
+      isInGroup: 0
+      group: 43105
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Shotgun: Ability Ammo Refill'
+      prefabId: 43210
+      weight: 8
+      isInGroup: 0
+      group: 43105
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shotgun: Armor Sundering'
+      prefabId: 43215
+      weight: 3
+      isInGroup: 0
+      group: 43110
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Shotgun: Add Stun'
+      prefabId: 43220
+      weight: 8
+      isInGroup: 1
+      group: 43220
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shotgun: Add Stun'
+      prefabId: 43221
+      weight: 3
+      isInGroup: 1
+      group: 43220
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Shotgun: Forceful Ejection'
+      prefabId: 43225
+      weight: 8
+      isInGroup: 0
+      group: 43121
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Shotgun: Materialize Mass'
+      prefabId: 43230
+      weight: 8
+      isInGroup: 1
+      group: 43230
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shotgun: Materialize Mass'
+      prefabId: 43231
+      weight: 3
+      isInGroup: 1
+      group: 43230
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shotgun: Ghostly Passage'
+      prefabId: 43235
+      weight: 3
+      isInGroup: 1
+      group: 43235
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Epic Shotgun: Ghostly Passage'
+      prefabId: 43236
+      weight: 1
+      isInGroup: 1
+      group: 43235
+      levelInGroup: 3
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Epic Shotgun: Shattering Rounds'
+      prefabId: 43240
+      weight: 1
+      isInGroup: 0
+      group: 43140
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shotgun: Backblast'
+      prefabId: 43245
+      weight: 3
+      isInGroup: 0
+      group: 43140
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Shotgun: Fragmentation Blast'
+      prefabId: 43250
+      weight: 8
+      isInGroup: 1
+      group: 43250
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shotgun: Fragmentation Blast'
+      prefabId: 43251
+      weight: 3
+      isInGroup: 1
+      group: 43250
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Common Shotgun: Serrated Shells'
+      prefabId: 43255
+      weight: 8
+      isInGroup: 1
+      group: 43255
+      levelInGroup: 1
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shotgun: Serrated Shells'
+      prefabId: 43256
+      weight: 3
+      isInGroup: 1
+      group: 43255
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: 'Rare Shotgun: Guarding Scatter'
+      prefabId: 43260
+      weight: 3
+      isInGroup: 0
+      group: 43160
+      levelInGroup: 2
+      price: 2.5
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    closeOnFirstPurchase: 0
+    nestedRewardSets: []
+    priceMultiplierPerCountOwned:
+    - 0.8
+    - 0.9
+    - 1
+    - 1.15
+    - 1.3
+    lockId: 
   - name: free_start_weapon
     note: 
     minCountShownItems: 100
@@ -5579,6 +7024,16 @@ MonoBehaviour:
       mustBeUnlocked: 0
     - name: Machinegun
       prefabId: 2009
+      weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      price: 0
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Ballista
+      prefabId: 2003
       weight: 1
       isInGroup: 0
       group: 
@@ -5739,6 +7194,66 @@ MonoBehaviour:
       mustBeUnlocked: 0
     - name: Cannon Module
       prefabId: 2007
+      weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      price: 1
+      priceMultiplyForEveryOwned: 0.2
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Gun
+      prefabId: 2002
+      weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      price: 1
+      priceMultiplyForEveryOwned: 0.2
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Slingshot
+      prefabId: 2004
+      weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      price: 1
+      priceMultiplyForEveryOwned: 0.2
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Shuriken
+      prefabId: 2005
+      weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      price: 1
+      priceMultiplyForEveryOwned: 0.2
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Shotgun
+      prefabId: 2006
+      weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      price: 1
+      priceMultiplyForEveryOwned: 0.2
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Machinegun
+      prefabId: 2009
+      weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      price: 1
+      priceMultiplyForEveryOwned: 0.2
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Ballista
+      prefabId: 2003
       weight: 1
       isInGroup: 0
       group: 
@@ -5953,9 +7468,19 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
+    - name: Epic Skill Reuse Delay Upgrade
+      prefabId: 90052
+      weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      price: 0.75
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
     - name: Common Damage Upgrade
       prefabId: 90060
-      weight: 1
+      weight: 9
       isInGroup: 0
       group: 
       levelInGroup: 0
@@ -5965,7 +7490,7 @@ MonoBehaviour:
       mustBeUnlocked: 0
     - name: Rare Damage Upgrade
       prefabId: 90061
-      weight: 90000
+      weight: 3
       isInGroup: 0
       group: 
       levelInGroup: 0
@@ -5975,17 +7500,7 @@ MonoBehaviour:
       mustBeUnlocked: 0
     - name: Epic Damage Upgrade
       prefabId: 90062
-      weight: 30000
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
-      price: 0.75
-      priceMultiplyForEveryOwned: 0
-      lockId: 
-      mustBeUnlocked: 0
-    - name: Epic Skill Reuse Delay Upgrade
-      prefabId: 90052
-      weight: 10000
+      weight: 1
       isInGroup: 0
       group: 
       levelInGroup: 0

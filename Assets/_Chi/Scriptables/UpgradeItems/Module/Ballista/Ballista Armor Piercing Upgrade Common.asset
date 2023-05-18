@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: TODO
-  uiDescription: 
+  uiName: Armor Piercing
+  uiDescription: Gives projectiles an armor-piercing effect.
   effects: []
   addSkills: []
   rarity: 0

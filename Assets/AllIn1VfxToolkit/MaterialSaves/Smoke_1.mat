@@ -55,7 +55,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 8a672e5c95af6a34c8fc019d35b38a70, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9b405331d6267df4496f50bcb867ce87, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -247,5 +247,5 @@ Material:
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _Shape2Color: {r: 1, g: 1, b: 1, a: 1}
     - _Shape3Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ShapeColor: {r: 0.4245283, g: 0.37297323, b: 0.33001068, a: 1}
+    - _ShapeColor: {r: 0.31132078, g: 0.29127583, b: 0.27431473, a: 1}
   m_BuildTextureStacks: []

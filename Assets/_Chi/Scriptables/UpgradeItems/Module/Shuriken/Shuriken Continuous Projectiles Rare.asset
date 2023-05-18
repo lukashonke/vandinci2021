@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Momentum Maelstrom
-  uiDescription: 
+  uiName: Motion Missiles
+  uiDescription: When moving, shurikens are continuously shot out. The faster you
+    move, the faster they shoot.
   effects: []
   addSkills: []
   rarity: 1

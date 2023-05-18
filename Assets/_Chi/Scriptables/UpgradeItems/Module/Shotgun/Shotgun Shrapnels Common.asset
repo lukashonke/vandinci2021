@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Shrapnels
-  uiDescription: 
+  uiName: Fragmentation Blast
+  uiDescription: Enemies killed by the shotgun explode into damaging shrapnel.
   effects: []
   addSkills: []
   rarity: 0

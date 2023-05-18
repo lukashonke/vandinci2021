@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Magazine Upgrade
-  uiDescription: 
+  uiName: Compact Cartridge
+  uiDescription: Decreases magazine size by half, but increases reload speed.
   effects: []
   addSkills: []
   rarity: 1

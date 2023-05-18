@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Acid Projectiles
-  uiDescription: TODO
+  uiName: Acid Coating
+  uiDescription: Projectiles gain an Acid effect, dealing strong damage over a short
+    time.
   effects: []
   addSkills: []
   rarity: 2

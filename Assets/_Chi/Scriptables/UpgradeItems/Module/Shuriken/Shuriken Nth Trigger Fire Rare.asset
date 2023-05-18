@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Nth Fire Trigger
-  uiDescription: 
+  uiName: Surrounding Storm
+  uiDescription: Every 2nd shot releases multiple shurikens around the player.
   effects: []
   addSkills: []
   rarity: 1

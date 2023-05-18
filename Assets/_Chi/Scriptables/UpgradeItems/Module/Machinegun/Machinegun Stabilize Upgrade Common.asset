@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Stabilize
-  uiDescription: 
+  uiName: Precision Grip
+  uiDescription: Significantly reduces weapon spread, increasing overall accuracy.
   effects: []
   addSkills: []
   rarity: 0

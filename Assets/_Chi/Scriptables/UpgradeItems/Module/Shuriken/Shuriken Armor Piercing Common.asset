@@ -22,7 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Armor Piercing
-  uiDescription: 
+  uiDescription: Gives shurikens an armor-piercing effect.
   effects: []
   addSkills: []
   rarity: 0

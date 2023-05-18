@@ -21,7 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Reload on Skill
+  uiName: Tactical Reload
   uiDescription: Using a skill instantly reloads the weapon and boosts your fire
     rate for 1 second.
   effects: []

@@ -21,9 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Reload on Skill
-  uiDescription: Using a skill instantly reloads the weapon and boosts your fire
-    rate for 1 second.
+  uiName: Ability Ammo Refill
+  uiDescription: Using your active skill automatically reloads the shotgun.
   effects: []
   addSkills: []
   rarity: 0

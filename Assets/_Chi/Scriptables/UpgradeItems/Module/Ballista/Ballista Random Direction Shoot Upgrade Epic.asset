@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Spreadshot
-  uiDescription: 
+  uiName: Random Rain
+  uiDescription: When you shoot, it also fires random projectiles around the player.
   effects: []
   addSkills: []
   rarity: 2

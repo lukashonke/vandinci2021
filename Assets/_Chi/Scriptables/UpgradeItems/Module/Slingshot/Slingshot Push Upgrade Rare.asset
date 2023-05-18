@@ -21,11 +21,11 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Push Upgrade
-  uiDescription: TODO
+  uiName: Gale Force
+  uiDescription: Projectiles push hit enemies away.
   effects: []
   addSkills: []
-  rarity: 0
+  rarity: 1
   unlocksModulePrefabIds: 
   disablesModulePrefabIds: 
   replacesModulePrefabIds: 97a90000

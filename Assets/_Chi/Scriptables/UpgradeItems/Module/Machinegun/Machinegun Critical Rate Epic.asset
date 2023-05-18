@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Critical Rate
-  uiDescription: 
+  uiName: Critical Strike
+  uiDescription: Gives the weapon base chance to hit critical strike, dealing x3
+    damage.
   effects: []
   addSkills: []
   rarity: 2

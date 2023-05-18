@@ -22,7 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Double Shot
-  uiDescription: TODO
+  uiDescription: Every shot is fired three times consecutively.
   effects: []
   addSkills: []
   rarity: 1

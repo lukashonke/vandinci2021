@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Ignore Stunned
-  uiDescription: TODO
+  uiName: Selective Impact
+  uiDescription: Projectiles ignore stunned enemies, allowing you to stun more enemies.
   effects: []
   addSkills: []
   rarity: 0

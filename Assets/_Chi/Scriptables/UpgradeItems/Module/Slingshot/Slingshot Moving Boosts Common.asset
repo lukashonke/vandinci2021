@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Moving Boosts
-  uiDescription: TODO
+  uiName: Stride & Strike
+  uiDescription: Boosts fire rate when moving.
   effects: []
   addSkills: []
   rarity: 1

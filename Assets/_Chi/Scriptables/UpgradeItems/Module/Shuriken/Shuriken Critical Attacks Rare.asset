@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Critical Chance
-  uiDescription: 
+  uiName: Critical Strike
+  uiDescription: Adds a base critical chance dealing triple damage.
   effects: []
   addSkills: []
   rarity: 1

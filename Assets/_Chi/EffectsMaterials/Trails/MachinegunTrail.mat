@@ -52,7 +52,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: cb0bab996d0f9794192e0e7284abf982, type: 3}
+        m_Texture: {fileID: 2800000, guid: de2e3dfdb7449e048b09a5de13d31bf1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -199,14 +199,14 @@ Material:
     - _ShapeDistortYSpeed: 0.1
     - _ShapeRotationOffset: 0
     - _ShapeRotationSpeed: 0
-    - _ShapeXSpeed: -5
+    - _ShapeXSpeed: -1
     - _ShapeYSpeed: 0
     - _SoftFactor: 0.5
     - _SrcMode: 1
     - _TextureScrollXSpeed: 1
     - _TextureScrollYSpeed: 0
     - _TimingSeed: 0
-    - _TrailWidthPower: 1
+    - _TrailWidthPower: 0.68
     - _TwistUvAmount: 1
     - _TwistUvPosX: 0.5
     - _TwistUvPosY: 0.5
@@ -236,7 +236,7 @@ Material:
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _Shape2Color: {r: 1, g: 1, b: 1, a: 1}
     - _Shape3Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ShapeColor: {r: 1.4142137, g: 0.9921709, b: 0.570128, a: 1}
+    - _ShapeColor: {r: 2.1320686, g: 1.4363399, b: 0.67180264, a: 1}
   m_BuildTextureStacks: []
 --- !u!28 &28761834029838142
 Texture2D:

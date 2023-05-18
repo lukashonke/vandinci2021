@@ -46,7 +46,7 @@ namespace _Chi.Scripts.Mono.Ui
             {
                 if (prefab.skill == skill)
                 {
-                    skillIcon.sprite = prefab.prefabUi.GetComponent<Image>().sprite;
+                    skillIcon.sprite = prefab.prefabUiImage != null ? prefab.prefabUiImage : prefab.prefabUi.GetComponent<Image>().sprite;
                 }
             }
         }

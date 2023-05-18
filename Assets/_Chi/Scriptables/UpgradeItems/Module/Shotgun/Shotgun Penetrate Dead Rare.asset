@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Penetrate Dead
-  uiDescription: 
+  uiName: Ghostly Passage
+  uiDescription: 50% chance that enemies killed by this weapon will not count towards
+    the number of penetrations.
   effects: []
   addSkills: []
   rarity: 1

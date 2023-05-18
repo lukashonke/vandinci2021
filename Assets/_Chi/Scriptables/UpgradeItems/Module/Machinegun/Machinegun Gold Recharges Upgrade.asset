@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Gold Recharge Magazine
-  uiDescription: 
+  uiName: Gold Reload
+  uiDescription: Picking up gold recharges the machinegun's magazine.
   effects: []
   addSkills: []
   rarity: 1

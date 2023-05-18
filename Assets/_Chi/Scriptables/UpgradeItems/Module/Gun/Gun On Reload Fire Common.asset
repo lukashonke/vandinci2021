@@ -21,7 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Reload Barrage
+  uiName: Reload Riposte
   uiDescription: When you reload, the weapon also fires one shot backwards.
   effects: []
   addSkills: []

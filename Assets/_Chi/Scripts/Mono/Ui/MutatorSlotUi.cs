@@ -3,6 +3,7 @@ using System.Linq;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Scriptables.Dtos;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Chi.Scripts.Mono.Ui
 {
@@ -137,6 +138,11 @@ namespace _Chi.Scripts.Mono.Ui
             if (item != null)
             {
                 var newModule = Instantiate(item.prefabUi, this.transform.position, Quaternion.identity, this.transform);
+                
+                if (item.prefabUiImage != null)
+                {
+                    newModule.GetComponent<Image>().sprite = item.prefabUiImage;
+                }
                 
                 moduleGo = newModule;
                 currentMutator = item;

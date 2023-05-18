@@ -226,6 +226,7 @@ MonoBehaviour:
   isReloading: 0
   temporaryProjectilesUntilNextShot: 0
   temporaryProjectilesForNextMagazine: 0
+  fireCameraShake: {fileID: 11400000, guid: 0cacc302a8ff706488d1f75da43846d9, type: 2}
   targetType: 5
 --- !u!212 &6177911479989981830
 SpriteRenderer:

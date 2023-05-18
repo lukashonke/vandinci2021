@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Fire Rate Boost
-  uiDescription: 
+  uiName: Cadence Boost
+  uiDescription: Significantly increases the machinegun's firing rate.
   effects: []
   addSkills: []
   rarity: 0

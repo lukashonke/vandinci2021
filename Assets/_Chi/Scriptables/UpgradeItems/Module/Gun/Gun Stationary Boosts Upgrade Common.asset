@@ -21,7 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Stationary Boosts
+  uiName: Stride & Strike
   uiDescription: When not moving, increases fire rate and reload speed.
   effects: []
   addSkills: []

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
@@ -10,6 +11,7 @@ using _Chi.Scripts.Scriptables.Dtos;
 using _Chi.Scripts.Statistics;
 using DamageNumbersPro;
 using Pathfinding.RVO;
+using QFSW.QC;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -121,6 +123,19 @@ namespace _Chi.Scripts.Scriptables
         public void ApplyPrefabVariant(Npc npc, string variant)
         {
             npc.ApplyVariant(variant);
+        }
+
+        [Button]
+        public void Export(PrefabItemType type)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var prefab in prefabs.Where(t => t.type == type))
+            {
+                sb.AppendLine($"{prefab.label}; {prefab.description}");
+            }
+            
+            Debug.Log(sb.ToString());
         }
     }
 

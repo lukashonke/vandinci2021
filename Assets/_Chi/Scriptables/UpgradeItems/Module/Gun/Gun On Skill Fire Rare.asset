@@ -21,7 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Skill Barrage
+  uiName: Skillfire
   uiDescription: The weapon fires x6 projectiles in front of the player when you
     use a skill.
   effects: []

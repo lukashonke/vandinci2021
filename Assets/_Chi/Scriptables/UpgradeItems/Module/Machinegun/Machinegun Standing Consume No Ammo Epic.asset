@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Standing Consume No Ammo
-  uiDescription: 
+  uiName: Stand Your Ground
+  uiDescription: 'When firing and not moving, there''s a chance that ammo will not
+    be consumed. '
   effects: []
   addSkills: []
   rarity: 2

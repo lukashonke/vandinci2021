@@ -21,9 +21,10 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: 'Crossbow: Quatriple-Load Destruction'
+  uiName: Quatriple-Load Destruction
   uiDescription: The weapon shoots four times before having to reload.
   effects: []
+  addSkills: []
   rarity: 2
   unlocksModulePrefabIds: 
   disablesModulePrefabIds: 

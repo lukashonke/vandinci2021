@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: On Skill Fire
-  uiDescription: 
+  uiName: Skillstorm Shurikens
+  uiDescription: Releases shurikens around the player when a skill is used.
   effects: []
   addSkills: []
   rarity: 0

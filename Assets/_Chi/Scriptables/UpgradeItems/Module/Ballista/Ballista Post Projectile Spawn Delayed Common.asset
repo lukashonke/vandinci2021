@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: TODO
-  uiDescription: 
+  uiName: Delayed Rebound
+  uiDescription: When a projectile disappears, after short time it spawns another
+    projectile in its place which is shot towards the player.
   effects: []
   addSkills: []
   rarity: 0

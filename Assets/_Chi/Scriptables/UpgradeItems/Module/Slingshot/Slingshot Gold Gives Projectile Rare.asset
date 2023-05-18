@@ -21,9 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Gold Rush
-  uiDescription: Every gold you pick up will give you one more projectile for the
-    next shot.
+  uiName: Treasure Trigger
+  uiDescription: Each picked up gold counts as a projectile for the next shot.
   effects: []
   addSkills: []
   rarity: 1

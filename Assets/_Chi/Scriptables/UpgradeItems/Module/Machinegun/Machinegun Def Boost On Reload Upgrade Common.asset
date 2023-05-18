@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: On Reload Boost Defense
-  uiDescription: 
+  uiName: Armor Reload
+  uiDescription: Temporarily reduces incoming damage to the player after reloading.
   effects: []
   addSkills: []
   rarity: 0

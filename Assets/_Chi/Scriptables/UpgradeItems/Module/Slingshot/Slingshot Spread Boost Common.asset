@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Spread Boost
-  uiDescription: TODO
+  uiName: Wide Wave
+  uiDescription: Doubles projectile spread, allowing you to hit a wider angle of
+    enemies.
   effects: []
   addSkills: []
   rarity: 0

@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: 'Shuriken: Homing Upgrade'
-  uiDescription: 
+  uiName: Guided Gust
+  uiDescription: Improves homing abilities of shurikens, allowing them to hit the
+    same enemies multiple times and steer in wide angles.
   effects: []
   addSkills: []
   rarity: 0

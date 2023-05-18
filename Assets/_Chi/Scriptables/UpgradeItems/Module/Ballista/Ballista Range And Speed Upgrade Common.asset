@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: TODO
-  uiDescription: 
+  uiName: Rapid Range
+  uiDescription: Increases range and projectile speed.
   effects: []
   addSkills: []
   rarity: 0

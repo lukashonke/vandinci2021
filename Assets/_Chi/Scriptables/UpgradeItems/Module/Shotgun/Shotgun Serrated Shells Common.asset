@@ -22,7 +22,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Serrated Shells
-  uiDescription: 
+  uiDescription: Shotgun shells leave a trail of damaging particles in their wake,
+    dealing damage over time to enemies that pass through it.
   effects: []
   addSkills: []
   rarity: 0

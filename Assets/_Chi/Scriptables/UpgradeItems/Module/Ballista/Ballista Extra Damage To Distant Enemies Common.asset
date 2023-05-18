@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: TODO
-  uiDescription: 
+  uiName: Distant Destruction
+  uiDescription: Distant enemies receive more damage.
   effects: []
   addSkills: []
   rarity: 0

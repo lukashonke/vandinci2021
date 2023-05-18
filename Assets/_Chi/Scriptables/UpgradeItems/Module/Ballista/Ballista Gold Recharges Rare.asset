@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Gold Recharges
-  uiDescription: TODO
+  uiName: Golden Quiver
+  uiDescription: Picking up gold speeds up the reload.
   effects: []
   addSkills: []
   rarity: 1

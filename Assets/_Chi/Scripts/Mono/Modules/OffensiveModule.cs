@@ -7,12 +7,13 @@ using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
-using _Chi.Scripts.Utilities;
 using BulletPro;
+using Com.LuisPedroFonseca.ProCamera2D;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Utils = _Chi.Scripts.Utilities.Utils;
 
 namespace _Chi.Scripts.Mono.Modules
 {
@@ -63,6 +64,7 @@ namespace _Chi.Scripts.Mono.Modules
         public int temporaryProjectilesUntilNextShot = 0;
         [FormerlySerializedAs("temporaryProjectilesForCurrentOrNextMagazine")] public int temporaryProjectilesForNextMagazine = 0;
 
+        public ShakePreset fireCameraShake;
 
         public override void Awake()
         {
@@ -156,6 +158,11 @@ namespace _Chi.Scripts.Mono.Modules
                     
                     Gamesystem.instance.poolSystem.ReturnEffectData(data);
                 }
+            }
+            
+            if(fireCameraShake != null)
+            {
+                ProCamera2DShake.Instance.Shake(fireCameraShake);
             }
         }
 

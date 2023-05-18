@@ -40,6 +40,9 @@ namespace _Chi.Scripts.Scriptables.Dtos
         //TODO show if type == body
         [VerticalGroup("Prefab")]
         public GameObject prefabUi;
+        
+        [VerticalGroup("Prefab")]
+        public Sprite prefabUiImage;
 
         [VerticalGroup("Prefab")]
         [ShowIf("type", PrefabItemType.Skill)]

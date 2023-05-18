@@ -67,6 +67,12 @@ MonoBehaviour:
     - Name: additionalOnBulletDestroyEffects
       Entry: 6
       Data: 
+    - Name: disabledEffects
+      Entry: 6
+      Data: 
+    - Name: targetAffectConditions
+      Entry: 6
+      Data: 
     - Name: additionalShootEffectsSelf
       Entry: 6
       Data: 
@@ -126,6 +132,12 @@ MonoBehaviour:
     projectilePierceChance:
       baseValue: 0
       value: 0
+    projectilePierceCountIgnoreKilled:
+      baseValue: 0
+      value: 0
+    projectilePierceCountIgnoreIfLessThanHp:
+      baseValue: 0
+      value: 0
     projectilePierceDeadChance:
       baseValue: 0
       value: 0
@@ -174,6 +186,18 @@ MonoBehaviour:
     instantReloadChance:
       baseValue: 0
       value: 0
+    consumeNoAmmoChance:
+      baseValue: 0
+      value: 0
+    standingConsumeNoAmmoChance:
+      baseValue: 0
+      value: 0
+    movingConsumeNoAmmoChance:
+      baseValue: 0
+      value: 0
+    projectileRandomRotation:
+      baseValue: 0
+      value: 0
     hasAreaEffect: 0
     hasProjectile: 1
     areaEffectDamage: 0
@@ -191,11 +215,19 @@ MonoBehaviour:
     useTrail: 1
     material: {fileID: 2100000, guid: 2d420681a7163334e9279e5d30a74721, type: 2}
     trailLengthTime: 0.025
+  spriteEffectParameters:
+    enabled: 0
+    material: {fileID: 0}
+    sprite: {fileID: 0}
+    rotation: 0
+    scale: {x: 1, y: 1, z: 1}
+    offset: {x: 0, y: 0, z: 0}
   bulletBehavior: 0
   currentMagazine: 0
   isReloading: 0
   temporaryProjectilesUntilNextShot: 0
   temporaryProjectilesForNextMagazine: 0
+  fireCameraShake: {fileID: 11400000, guid: 0cacc302a8ff706488d1f75da43846d9, type: 2}
   targetType: 0
 --- !u!212 &6177911479989981830
 SpriteRenderer:

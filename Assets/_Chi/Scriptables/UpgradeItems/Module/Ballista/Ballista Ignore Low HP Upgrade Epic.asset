@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: TODO
-  uiDescription: 
+  uiName: Finisher Pierce
+  uiDescription: Enemies with low HP are automatically pierced and do not count towards
+    the pierce limit.
   effects: []
   addSkills: []
   rarity: 2

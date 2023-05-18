@@ -911,6 +911,9 @@ MonoBehaviour:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
         ifBoughtHideForNextShopOccurences: 0
+      - name: shop_chaos_upgrades
+        showOnlyPreviouslyLocked: 0
+        ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
         ifBoughtHideForNextShopOccurences: 0

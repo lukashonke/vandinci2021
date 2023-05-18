@@ -21,7 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Moving Boosts
+  uiName: Stand & Deliver
   uiDescription: When moving, increases fire rate and reload speed.
   effects: []
   addSkills: []
