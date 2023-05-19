@@ -75,29 +75,50 @@ MonoBehaviour:
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 19
+      Data: 20
     - Name: 
       Entry: 7
-      Data: 1|_Chi.Scripts.Mono.Mission.Events.ReceiveRewardHandler, Assembly-CSharp
+      Data: 1|_Chi.Scripts.Mono.Mission.Events.ShopRewardSetHandler, Assembly-CSharp
     - Name: eventName
       Entry: 1
-      Data: Start
+      Data: Weapon
     - Name: rewardSet
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[_Chi.Scripts.Mono.Mission.TriggeredShopSet,
+      Data: 2|_Chi.Scripts.Mono.Mission.TriggeredShop, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: closeOnFirstPurchase
+      Entry: 5
+      Data: true
+    - Name: title
+      Entry: 1
+      Data: Choose your Weapon
+    - Name: goldAcumulatedRequired
+      Entry: 3
+      Data: 0
+    - Name: expAcumulatedRequired
+      Entry: 3
+      Data: 0
+    - Name: shopSet
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[_Chi.Scripts.Mono.Mission.TriggeredShopSet,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 3|_Chi.Scripts.Mono.Mission.TriggeredShopSet, Assembly-CSharp
+      Data: 4|_Chi.Scripts.Mono.Mission.TriggeredShopSet, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: free_start_weapon
     - Name: showOnlyPreviouslyLocked
       Entry: 5
       Data: false
+    - Name: shownItemsCount
+      Entry: 3
+      Data: 0
     - Name: ifBoughtHideForNextShopOccurences
       Entry: 3
       Data: 0
@@ -110,15 +131,82 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: title
-      Entry: 1
-      Data: Choose starting items
+    - Name: priceMultiplier
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 4|_Chi.Scripts.Mono.Mission.Events.ShowMessage, Assembly-CSharp
+      Data: 5|_Chi.Scripts.Mono.Mission.Events.ShopRewardSetHandler, Assembly-CSharp
+    - Name: eventName
+      Entry: 1
+      Data: Skill
+    - Name: rewardSet
+      Entry: 7
+      Data: 6|_Chi.Scripts.Mono.Mission.TriggeredShop, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: closeOnFirstPurchase
+      Entry: 5
+      Data: true
+    - Name: title
+      Entry: 1
+      Data: Choose your Skill
+    - Name: goldAcumulatedRequired
+      Entry: 3
+      Data: 0
+    - Name: expAcumulatedRequired
+      Entry: 3
+      Data: 0
+    - Name: shopSet
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[_Chi.Scripts.Mono.Mission.TriggeredShopSet,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 8|_Chi.Scripts.Mono.Mission.TriggeredShopSet, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: free_start_skill
+    - Name: showOnlyPreviouslyLocked
+      Entry: 5
+      Data: false
+    - Name: shownItemsCount
+      Entry: 3
+      Data: 0
+    - Name: ifBoughtHideForNextShopOccurences
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: priceMultiplier
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|_Chi.Scripts.Mono.Mission.Events.ShowMessage, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 1
@@ -130,7 +218,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 5|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 10|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 6
       Data: 
@@ -154,7 +242,7 @@ MonoBehaviour:
       Data: 100
     - Name: handlers
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 11|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -176,7 +264,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 7|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 12|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 2
@@ -200,7 +288,7 @@ MonoBehaviour:
       Data: 100
     - Name: handlers
       Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 13|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -222,7 +310,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 14|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 3
@@ -246,7 +334,7 @@ MonoBehaviour:
       Data: 0
     - Name: handlers
       Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 15|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -268,7 +356,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 11|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 16|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 4
@@ -292,7 +380,7 @@ MonoBehaviour:
       Data: 75
     - Name: handlers
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 17|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -314,7 +402,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 13|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 18|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 5
@@ -338,7 +426,7 @@ MonoBehaviour:
       Data: 40
     - Name: handlers
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 19|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -360,120 +448,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 20|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 5.5
     - Name: fixedDuration
       Entry: 4
       Data: 60
-    - Name: waitTillAllSpawnedAreDead
-      Entry: 5
-      Data: false
-    - Name: waitTillAllTrackedAreDead
-      Entry: 5
-      Data: false
-    - Name: waitTillAllWawesSpawn
-      Entry: 5
-      Data: false
-    - Name: setGlobalDropChance
-      Entry: 5
-      Data: false
-    - Name: globalDropChance
-      Entry: 4
-      Data: 0
-    - Name: handlers
-      Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 10
-      Data: 5
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: endAfterFixedDuration
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 17|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
-    - Name: eventName
-      Entry: 1
-      Data: Wawe 5.9 Mini Boss
-    - Name: fixedDuration
-      Entry: 4
-      Data: 22
-    - Name: waitTillAllSpawnedAreDead
-      Entry: 5
-      Data: false
-    - Name: waitTillAllTrackedAreDead
-      Entry: 5
-      Data: false
-    - Name: waitTillAllWawesSpawn
-      Entry: 5
-      Data: false
-    - Name: setGlobalDropChance
-      Entry: 5
-      Data: false
-    - Name: globalDropChance
-      Entry: 4
-      Data: 0
-    - Name: handlers
-      Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 10
-      Data: 6
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: endAfterFixedDuration
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 19|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
-    - Name: eventName
-      Entry: 6
-      Data: 
-    - Name: waitUntilAllEnemiesDead
-      Entry: 5
-      Data: true
-    - Name: maxWaitTime
-      Entry: 4
-      Data: 100
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 20|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
-    - Name: eventName
-      Entry: 1
-      Data: Wawe 6
-    - Name: fixedDuration
-      Entry: 4
-      Data: 125
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
@@ -498,7 +479,7 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 10
-      Data: 7
+      Data: 5
     - Name: 
       Entry: 13
       Data: 
@@ -516,10 +497,10 @@ MonoBehaviour:
       Data: 22|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
-      Data: Wawe 7
+      Data: Wawe 5.9 Mini Boss
     - Name: fixedDuration
       Entry: 4
-      Data: 50
+      Data: 22
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
@@ -544,6 +525,113 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: endAfterFixedDuration
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|_Chi.Scripts.Mono.Mission.Events.EndAllMissionHandlersEvent, Assembly-CSharp
+    - Name: eventName
+      Entry: 6
+      Data: 
+    - Name: waitUntilAllEnemiesDead
+      Entry: 5
+      Data: true
+    - Name: maxWaitTime
+      Entry: 4
+      Data: 100
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 25|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: eventName
+      Entry: 1
+      Data: Wawe 6
+    - Name: fixedDuration
+      Entry: 4
+      Data: 125
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllTrackedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: false
+    - Name: setGlobalDropChance
+      Entry: 5
+      Data: false
+    - Name: globalDropChance
+      Entry: 4
+      Data: 0
+    - Name: handlers
+      Entry: 7
+      Data: 26|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: endAfterFixedDuration
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 27|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: eventName
+      Entry: 1
+      Data: Wawe 7
+    - Name: fixedDuration
+      Entry: 4
+      Data: 50
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllTrackedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: false
+    - Name: setGlobalDropChance
+      Entry: 5
+      Data: false
+    - Name: globalDropChance
+      Entry: 4
+      Data: 0
+    - Name: handlers
+      Entry: 7
+      Data: 28|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
       Data: 8
     - Name: 
       Entry: 13
@@ -559,7 +647,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 24|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 29|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 8
@@ -583,7 +671,7 @@ MonoBehaviour:
       Data: 0
     - Name: handlers
       Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 30|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -605,7 +693,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 26|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 31|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 9 (houses)
@@ -629,7 +717,7 @@ MonoBehaviour:
       Data: 0
     - Name: handlers
       Entry: 7
-      Data: 27|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 32|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -651,7 +739,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 28|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 33|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 10
@@ -675,7 +763,7 @@ MonoBehaviour:
       Data: 0
     - Name: handlers
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 34|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -697,7 +785,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 30|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 35|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 11
@@ -721,7 +809,7 @@ MonoBehaviour:
       Data: 0
     - Name: handlers
       Entry: 7
-      Data: 31|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 36|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -743,7 +831,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 32|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 37|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 12
@@ -767,7 +855,7 @@ MonoBehaviour:
       Data: 0
     - Name: handlers
       Entry: 7
-      Data: 33|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 38|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -789,7 +877,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 34|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 39|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 13
@@ -813,7 +901,7 @@ MonoBehaviour:
       Data: 0
     - Name: handlers
       Entry: 7
-      Data: 35|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 40|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -835,7 +923,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 36|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 41|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 14 Boss
@@ -859,7 +947,7 @@ MonoBehaviour:
       Data: 0
     - Name: handlers
       Entry: 7
-      Data: 37|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 42|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -894,268 +982,395 @@ MonoBehaviour:
   loopEvents: 0
   progressSettings:
     shops:
-    - goldAcumulatedRequired: 18
+    - type: 0
+      closeOnFirstPurchase: 1
+      title: Reward
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 14
       shopSet:
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
-        ifBoughtHideForNextShopOccurences: 0
-      - name: shop_player_upgrades
-        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 12
-    - goldAcumulatedRequired: 54
+    - type: 0
+      closeOnFirstPurchase: 0
+      title: Reward
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 54
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 15
-    - goldAcumulatedRequired: 116
+    - type: 0
+      closeOnFirstPurchase: 0
+      title: Reward
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 116
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 19
-    - goldAcumulatedRequired: 262
+    - type: 0
+      closeOnFirstPurchase: 0
+      title: Reward
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 262
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 38
-    - goldAcumulatedRequired: 473
+    - type: 0
+      closeOnFirstPurchase: 0
+      title: Reward
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 473
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 55
-    - goldAcumulatedRequired: 749
+    - type: 0
+      closeOnFirstPurchase: 0
+      title: Reward
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 749
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 72
-    - goldAcumulatedRequired: 1089
+    - type: 0
+      closeOnFirstPurchase: 0
+      title: Reward
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 1089
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 89
-    - goldAcumulatedRequired: 1595
+    - type: 0
+      closeOnFirstPurchase: 0
+      title: Reward
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 1595
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 145
-    - goldAcumulatedRequired: 2265
+    - type: 0
+      closeOnFirstPurchase: 0
+      title: Reward
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 2265
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 192
-    - goldAcumulatedRequired: 3500
+    - type: 0
+      closeOnFirstPurchase: 0
+      title: Reward
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 3500
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 348
-    - goldAcumulatedRequired: 4800
+    - type: 0
+      closeOnFirstPurchase: 0
+      title: Reward
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 4800
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 365
-    - goldAcumulatedRequired: 6164
+    - type: 0
+      closeOnFirstPurchase: 0
+      title: Reward
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 6164
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 382
-    - goldAcumulatedRequired: 999999
+    - type: 0
+      closeOnFirstPurchase: 0
+      title: Reward
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 999999
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 1
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_defensive_basic
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_player_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       - name: shop_skill_upgrades
         showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
         ifBoughtHideForNextShopOccurences: 0
       priceMultiplier: 999
     rerollPrices: 01000000050000000a000000140000001e00000028000000320000003c00000046000000500000005a00000064000000a0860100

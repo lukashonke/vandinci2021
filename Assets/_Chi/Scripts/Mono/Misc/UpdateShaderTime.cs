@@ -14,6 +14,8 @@ namespace _Chi.Scripts.Mono.Misc
 
         public void Start()
         {
+            image = GetComponent<Image>();
+            
             if (image != null)
             {
                 propertyId = Shader.PropertyToID(propertyName);
@@ -24,6 +26,8 @@ namespace _Chi.Scripts.Mono.Misc
             if (image != null)
             {
                 image.material.SetFloat(propertyId, Time.unscaledTime);
+                image.materialForRendering.SetFloat(propertyId, Time.unscaledTime);
+                image.defaultMaterial.SetFloat(propertyId, Time.unscaledTime);
             }    
         }
     }

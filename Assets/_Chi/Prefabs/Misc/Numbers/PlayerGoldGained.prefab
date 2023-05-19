@@ -189,16 +189,16 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     fromNumber: 10
     toNumber: 100
-  durationFadeIn: 0.2
-  enableOffsetFadeIn: 0
-  offsetFadeIn: {x: 0.5, y: 0}
+  durationFadeIn: 0.25
+  enableOffsetFadeIn: 1
+  offsetFadeIn: {x: 0, y: 0.5}
   enableScaleFadeIn: 1
-  scaleFadeIn: {x: 1, y: 2}
-  enableCrossScaleFadeIn: 0
+  scaleFadeIn: {x: 0.5, y: 2}
+  enableCrossScaleFadeIn: 1
   crossScaleFadeIn: {x: 1, y: 1.5}
   enableShakeFadeIn: 1
-  shakeOffsetFadeIn: {x: 0, y: 1.5}
-  shakeFrequencyFadeIn: 2
+  shakeOffsetFadeIn: {x: 0, y: 2.5}
+  shakeFrequencyFadeIn: 4
   durationFadeOut: 0.2
   enableOffsetFadeOut: 0
   offsetFadeOut: {x: 0.5, y: 0}
@@ -656,7 +656,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: +1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 21a5fd57c8c888d44ab11a871c740c02, type: 2}
   m_sharedMaterial: {fileID: 8623078618439313755, guid: 21a5fd57c8c888d44ab11a871c740c02, type: 2}
@@ -683,8 +683,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.4
-  m_fontSizeBase: 2.4
+  m_fontSize: 3
+  m_fontSizeBase: 3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

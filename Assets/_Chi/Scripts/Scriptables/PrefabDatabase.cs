@@ -86,6 +86,8 @@ namespace _Chi.Scripts.Scriptables
         [TabGroup("Misc")]
         [Required] public DamageNumber playerGoldReceived;
         [TabGroup("Misc")]
+        [Required] public DamageNumber playerExpReceived;
+        [TabGroup("Misc")]
         [Required] public DamageNumber selfEffect;
 
         public void Initialise()
@@ -232,6 +234,12 @@ namespace _Chi.Scripts.Scriptables
         //TODO
     }
 
+    public enum RewardSetType
+    {
+        FreeReward,
+        Shop
+    }
+
     [Serializable]
     public class RewardSet
     {
@@ -252,9 +260,6 @@ namespace _Chi.Scripts.Scriptables
         public List<RewardSetItemWithWeight> prefabs;
 
         [VerticalGroup("Items")]
-        public bool closeOnFirstPurchase;
-        
-        [VerticalGroup("Items")]
         public List<string> nestedRewardSets;
 
         [VerticalGroup("Items")] 
@@ -266,7 +271,7 @@ namespace _Chi.Scripts.Scriptables
         [VerticalGroup("Name")]
         public string lockId;
 
-        public List<(RewardSetItemWithWeight item, float priceMul)> CalculateShownItems(Player player, Dictionary<int, bool> lockedPrefabIds, bool showOnlyLocked, bool isReroll)
+        public List<(RewardSetItemWithWeight item, float priceMul)> CalculateShownItems(Player player, Dictionary<int, bool> lockedPrefabIds, bool showOnlyLocked, bool isReroll, int? shownItems)
         {
             if(dontShowTimes > 0 || (isReroll && hiddenInCurrentRoll))
             {
@@ -369,7 +374,7 @@ namespace _Chi.Scripts.Scriptables
                 }
             }
 
-            var itemsToShow = minCountShownItems;
+            var itemsToShow = shownItems ?? minCountShownItems;
             
             for (int i = 0; i < itemsToShow; i++)
             {

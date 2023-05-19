@@ -22,10 +22,18 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   order: 20
+  effect: 0
   forcedFlags: 0
+  chance: 1
   shop:
+    type: 0
+    closeOnFirstPurchase: 1
+    title: Free Weapon
     goldAcumulatedRequired: 0
+    expAcumulatedRequired: 0
     shopSet:
     - name: chest_weapons
       showOnlyPreviouslyLocked: 0
+      ifBoughtHideForNextShopOccurences: 0
     priceMultiplier: 0
+  uiTitle: Treasure Chest

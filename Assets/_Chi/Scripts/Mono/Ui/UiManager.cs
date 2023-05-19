@@ -23,7 +23,7 @@ public class UiManager : MonoBehaviour
     [Required] public GameObject overlay;
     [Required] public GameObject windows;
 
-    [Required] public ProgressBar goldProgressBar;
+    [Required] public ProgressBar rewardProgressBar;
 
     [Required] public GameObject confirmDialogPrefab;
     private GameObject confirmDialog;

@@ -359,22 +359,23 @@ namespace _Chi.Scripts.Mono.Mission.Events
             return true;
         }
     }
-
-    public class ReceiveRewardHandler : MissionEvent
+    
+    public class ShopRewardSetHandler : MissionEvent
     {
         [VerticalGroup("Settings")]
         [Required]
-        public List<TriggeredShopSet> rewardSet;
+        public TriggeredShop rewardSet;
 
-        [VerticalGroup("Settings")]
+        //TODO
+        /*[VerticalGroup("Settings")]
         [Required]
-        public string title;
+        public Sprite image;*/
         
         public override void Start(float currentTime)
         {
             //Time.timeScale = 0f;
 
-            Gamesystem.instance.uiManager.OpenRewardSetWindow(rewardSet, title, null);
+            Gamesystem.instance.uiManager.OpenRewardSetWindow(rewardSet.shopSet, rewardSet.title, rewardSet);
             
             /*Gamesystem.instance.uiManager.ShowConfirmDialog("Reward Time!", "Here is when you pick a new reward.", 
                 () => Time.timeScale = 1f, () => Time.timeScale = 1f, () => Time.timeScale = 1f);*/
@@ -394,7 +395,7 @@ namespace _Chi.Scripts.Mono.Mission.Events
         {
             yield return null;
             
-            Gamesystem.instance.uiManager.OpenRewardSetWindow(rewardSet, title, null);
+            Gamesystem.instance.uiManager.OpenRewardSetWindow(rewardSet.shopSet, rewardSet.title, rewardSet);
             
             while (Gamesystem.instance.uiManager.vehicleSettingsWindow.Opened())
             {
@@ -402,5 +403,4 @@ namespace _Chi.Scripts.Mono.Mission.Events
             }
         }
     }
-    
 }

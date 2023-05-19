@@ -26,6 +26,10 @@ namespace _Chi.Scripts.Mono.Ui
         private ModuleSelectorMode currentMode;
         private List<RewardSet> currentRewardSets;
         [NonSerialized] public Dictionary<PrefabItem, OptionData> options;
+        
+        private List<TriggeredShopSet> rewardSets;
+        private TriggeredShop triggeredShop;
+        private string title;
 
         public class OptionData
         {
@@ -56,10 +60,6 @@ namespace _Chi.Scripts.Mono.Ui
             
             UpdateRerollPrice();
         }
-
-        private List<TriggeredShopSet> rewardSets;
-        private TriggeredShop triggeredShop;
-        private string title;
 
         private void ShowItems(bool isReroll)
         {
@@ -120,7 +120,7 @@ namespace _Chi.Scripts.Mono.Ui
                     }, AbortAddingItem, 0);
                 }
             }
-            else if (currentMode == ModuleSelectorMode.ShopSet || currentMode == ModuleSelectorMode.SingleRewardSet)
+            else if (currentMode == ModuleSelectorMode.ShopSet)
             {
                 ShowRandomRewardSetItems(isReroll);
             }
@@ -154,7 +154,7 @@ namespace _Chi.Scripts.Mono.Ui
 
             currentRewardSets.Add(set);
 
-            var shownItems = set.CalculateShownItems(Gamesystem.instance.objects.currentPlayer, locks, showOnlyLocked, isReroll).ToHashSet();
+            var shownItems = set.CalculateShownItems(Gamesystem.instance.objects.currentPlayer, locks, showOnlyLocked, isReroll, rewardSet.shownItemsCount > 0 ? rewardSet.shownItemsCount : null).ToHashSet();
             
             //var shownItemsHash = shownItems.Select(s => s.item.prefabId).ToHashSet();
 
@@ -229,6 +229,7 @@ namespace _Chi.Scripts.Mono.Ui
 
         private int? GetPrice(OptionData option)
         {
+            if (triggeredShop != null && triggeredShop.type == TriggeredShopType.FreeReward) return null;
             if (option.rewardSetItemWithWeight == null) return 0;
             
             var run = Gamesystem.instance.progress.progressData.run;
@@ -288,7 +289,7 @@ namespace _Chi.Scripts.Mono.Ui
                 Gamesystem.instance.uiManager.vehicleSettingsWindow.UpdateCurrentMoney();
             }
             
-            if (currentRewardSets.Any(rs => rs.closeOnFirstPurchase))
+            if (triggeredShop != null && triggeredShop.closeOnFirstPurchase)
             {
                 Gamesystem.instance.uiManager.vehicleSettingsWindow.CloseWindow();
             }
@@ -355,6 +356,5 @@ namespace _Chi.Scripts.Mono.Ui
     {
         ShowAllItems,
         ShopSet,
-        SingleRewardSet
     }
 }

@@ -771,6 +771,18 @@ namespace _Chi.Scripts.Mono.Entities
             }
         }
         
+        public void OnPickupExp(int amount)
+        {
+            foreach (var slot in slots)
+            {
+                if(slot.currentModule != null)
+                {
+                    //TODO separate method
+                    slot.currentModule.OnPickupGold(amount);
+                }
+            }
+        }
+        
         public override void OnHitTarget(EffectSourceData data)
         {
             foreach (var slot in slots)

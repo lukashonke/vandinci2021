@@ -5286,7 +5286,6 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0.2
       lockId: 
       mustBeUnlocked: 0
-    closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned: []
     lockId: 
@@ -5324,7 +5323,6 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0.75
       lockId: 
       mustBeUnlocked: 0
-    closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned: []
     lockId: 
@@ -5332,7 +5330,6 @@ MonoBehaviour:
     note: 
     minCountShownItems: 1
     prefabs: []
-    closeOnFirstPurchase: 0
     nestedRewardSets:
     - shop_chaos_upgrades_crossbow
     - shop_chaos_upgrades_cannon
@@ -5528,7 +5525,6 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned:
     - 0.8
@@ -5691,7 +5687,6 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned:
     - 0.8
@@ -5924,7 +5919,6 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned:
     - 0.8
@@ -6147,7 +6141,6 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned:
     - 0.8
@@ -6360,7 +6353,6 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned:
     - 0.8
@@ -6533,7 +6525,6 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned:
     - 0.8
@@ -6736,7 +6727,6 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned:
     - 0.8
@@ -6949,7 +6939,6 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned:
     - 0.8
@@ -7042,6 +7031,13 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
+    nestedRewardSets: []
+    priceMultiplierPerCountOwned: []
+    lockId: 
+  - name: free_start_skill
+    note: 
+    minCountShownItems: 100
+    prefabs:
     - name: Chaotic Leap
       prefabId: 10000
       weight: 1
@@ -7052,7 +7048,6 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned: []
     lockId: 
@@ -7060,7 +7055,6 @@ MonoBehaviour:
     note: 
     minCountShownItems: 1
     prefabs: []
-    closeOnFirstPurchase: 0
     nestedRewardSets:
     - shop_skill_upgrades_jump
     priceMultiplierPerCountOwned: []
@@ -7169,7 +7163,6 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned:
     - 0.8
@@ -7262,7 +7255,6 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0.2
       lockId: 
       mustBeUnlocked: 0
-    closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned: []
     lockId: 
@@ -7290,7 +7282,6 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    closeOnFirstPurchase: 1
     nestedRewardSets: []
     priceMultiplierPerCountOwned: []
     lockId: 
@@ -7508,7 +7499,6 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    closeOnFirstPurchase: 0
     nestedRewardSets: []
     priceMultiplierPerCountOwned: []
     lockId: 
@@ -7540,7 +7530,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 0
+      - dropType: 4
         dropChance: 100
         amountMin: 1
         amountMax: 1
@@ -7599,7 +7589,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 0
+      - dropType: 4
         dropChance: 100
         amountMin: 2
         amountMax: 2
@@ -7631,7 +7621,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 0
+      - dropType: 4
         dropChance: 100
         amountMin: 2
         amountMax: 2
@@ -7663,7 +7653,7 @@ MonoBehaviour:
       rvoCollidesWith: 1073741824
     reward:
       items:
-      - dropType: 0
+      - dropType: 4
         dropChance: 100
         amountMin: 1
         amountMax: 1
@@ -7695,7 +7685,7 @@ MonoBehaviour:
       rvoCollidesWith: 1073741824
     reward:
       items:
-      - dropType: 0
+      - dropType: 4
         dropChance: 100
         amountMin: 1
         amountMax: 1
@@ -7727,7 +7717,7 @@ MonoBehaviour:
       rvoCollidesWith: 1073741824
     reward:
       items:
-      - dropType: 0
+      - dropType: 4
         dropChance: 100
         amountMin: 2
         amountMax: 2
@@ -7759,7 +7749,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 0
+      - dropType: 4
         dropChance: 100
         amountMin: 5
         amountMax: 6
@@ -7791,7 +7781,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 0
+      - dropType: 4
         dropChance: 100
         amountMin: 1
         amountMax: 1
@@ -7823,7 +7813,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 0
+      - dropType: 4
         dropChance: 100
         amountMin: 2
         amountMax: 2
@@ -7855,7 +7845,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 0
+      - dropType: 4
         dropChance: 100
         amountMin: 2
         amountMax: 2
@@ -7887,7 +7877,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 0
+      - dropType: 4
         dropChance: 100
         amountMin: 1
         amountMax: 1
@@ -7919,7 +7909,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 0
+      - dropType: 4
         dropChance: 100
         amountMin: 2
         amountMax: 2
@@ -7951,7 +7941,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 0
+      - dropType: 4
         dropChance: 100
         amountMin: 2
         amountMax: 2
@@ -7983,7 +7973,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 0
+      - dropType: 4
         dropChance: 100
         amountMin: 1
         amountMax: 1
@@ -8015,7 +8005,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 0
+      - dropType: 4
         dropChance: 100
         amountMin: 2
         amountMax: 2
@@ -8080,7 +8070,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 3
+      - dropType: 4
         dropChance: 100
         amountMin: 1
         amountMax: 1
@@ -8113,7 +8103,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 3
+      - dropType: 7
         dropChance: 100
         amountMin: 1
         amountMax: 1
@@ -8146,7 +8136,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 1
+      - dropType: 5
         dropChance: 100
         amountMin: 4
         amountMax: 4
@@ -8179,7 +8169,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 1
+      - dropType: 5
         dropChance: 100
         amountMin: 4
         amountMax: 4
@@ -8213,7 +8203,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 1
+      - dropType: 5
         dropChance: 100
         amountMin: 10
         amountMax: 10
@@ -8247,7 +8237,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 1
+      - dropType: 5
         dropChance: 100
         amountMin: 10
         amountMax: 10
@@ -8280,7 +8270,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 1
+      - dropType: 5
         dropChance: 100
         amountMin: 5
         amountMax: 5
@@ -8691,7 +8681,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 1
+      - dropType: 5
         dropChance: 100
         amountMin: 2
         amountMax: 2
@@ -8723,7 +8713,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 2
+      - dropType: 6
         dropChance: 100
         amountMin: 2
         amountMax: 2
@@ -8783,7 +8773,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 0
+      - dropType: 4
         dropChance: 100
         amountMin: 1
         amountMax: 2
@@ -8815,7 +8805,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 0
+      - dropType: 4
         dropChance: 100
         amountMin: 1
         amountMax: 1
@@ -8847,7 +8837,7 @@ MonoBehaviour:
       rvoCollidesWith: 0
     reward:
       items:
-      - dropType: 1
+      - dropType: 5
         dropChance: 100
         amountMin: 1
         amountMax: 1
@@ -8855,4 +8845,5 @@ MonoBehaviour:
   playerCriticalDealtDamage: {fileID: 4974115115264481549, guid: 0beaac1fcb69845319cc168500b1bc84, type: 3}
   playerDealtDamage: {fileID: 184639617188728617, guid: 314716765f8ab6548bd010be7ce6a255, type: 3}
   playerGoldReceived: {fileID: 184639617188728617, guid: 017fd53f536748c4db0118c707017b48, type: 3}
+  playerExpReceived: {fileID: 184639617188728617, guid: 635c7495d7cab154598f7672bdf5e7be, type: 3}
   selfEffect: {fileID: 184639617188728617, guid: 91e5f8665cf2ae449927eea4e659e238, type: 3}

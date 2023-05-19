@@ -68,6 +68,9 @@ public class Gamesystem : MonoBehaviour
 
     [FoldoutGroup("Difficulty")] 
     public float goldMul = 1f;
+    
+    [FoldoutGroup("Difficulty")] 
+    public float expMul = 1f;
 
     private void Awake()
     {

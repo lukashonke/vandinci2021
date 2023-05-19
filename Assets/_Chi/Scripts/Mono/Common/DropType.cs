@@ -6,5 +6,10 @@
         Level2Gold,
         Level3Gold,
         Level15Gold,
+        
+        Level1Exp,
+        Level2Exp,
+        Level3Exp,
+        Level15Exp,
     }
 }

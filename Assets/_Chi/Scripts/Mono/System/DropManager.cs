@@ -19,13 +19,25 @@ namespace _Chi.Scripts.Mono.System
         public int level1GoldAmount = 1;
         
         public GameObject level15GoldPrefab;
-        public int level15GoldAmount = 1;
+        public int level15GoldAmount = 5;
         
         public GameObject level2GoldPrefab;
-        public int level2GoldAmount = 1;
+        public int level2GoldAmount = 10;
         
         public GameObject level3GoldPrefab;
-        public int level3GoldAmount = 1;
+        public int level3GoldAmount = 100;
+        
+        public GameObject level1ExpPrefab;
+        public int level1ExpAmount = 1;
+        
+        public GameObject level15ExpPrefab;
+        public int level15ExpAmount = 5;
+        
+        public GameObject level2ExpPrefab;
+        public int level2ExpAmount = 10;
+        
+        public GameObject level3ExpPrefab;
+        public int level3ExpAmount = 100;
 
         public float pickupMoveSpeed = 2f;
 
@@ -236,6 +248,18 @@ namespace _Chi.Scripts.Mono.System
                 case DropType.Level3Gold:
                     prefab = level3GoldPrefab;
                     break;
+                case DropType.Level1Exp:
+                    prefab = level1ExpPrefab;
+                    break;
+                case DropType.Level2Exp:
+                    prefab = level2ExpPrefab;
+                    break;
+                case DropType.Level15Exp:
+                    prefab = level15ExpPrefab;
+                    break;
+                case DropType.Level3Exp:
+                    prefab = level3ExpPrefab;
+                    break;                    
                 default:
                     throw new ArgumentOutOfRangeException(nameof(drop), drop, null);
             }
@@ -281,13 +305,34 @@ namespace _Chi.Scripts.Mono.System
                 case DropType.Level3Gold:
                     amount = level3GoldAmount;
                     break;
+                case DropType.Level1Exp:
+                    amount = level1ExpAmount;
+                    break;
+                case DropType.Level2Exp:
+                    amount = level2ExpAmount;
+                    break;
+                case DropType.Level15Exp:
+                    amount = level15ExpAmount;
+                    break;
+                case DropType.Level3Exp:
+                    amount = level3ExpAmount;
+                    break;   
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            
-            Gamesystem.instance.progress.AddGold(amount);
-            
-            Gamesystem.instance.objects.currentPlayer.OnPickupGold(amount);
+
+            if (type == DropType.Level1Gold || type == DropType.Level15Gold || type == DropType.Level2Gold ||
+                type == DropType.Level3Gold)
+            {
+                Gamesystem.instance.progress.AddGold(amount);
+                Gamesystem.instance.objects.currentPlayer.OnPickupGold(amount);
+            }
+            else if (type == DropType.Level1Exp || type == DropType.Level15Exp || type == DropType.Level2Exp ||
+                     type == DropType.Level3Exp)
+            {
+                Gamesystem.instance.progress.AddExp(amount);
+                Gamesystem.instance.objects.currentPlayer.OnPickupExp(amount);
+            }
             
             Gamesystem.instance.poolSystem.Despawn(type, go);
         }

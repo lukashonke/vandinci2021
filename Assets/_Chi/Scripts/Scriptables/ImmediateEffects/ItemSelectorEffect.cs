@@ -11,11 +11,9 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
     {
         public TriggeredShop shop;
 
-        public string uiTitle = "Treasure Chest";
-        
         public override bool Apply(EffectSourceData data, float strength, ImmediateEffectParams parameters, ImmediateEffectFlags flags = ImmediateEffectFlags.None)
         {
-            shop.Show(uiTitle);
+            shop.Show();
             return true;
         }    
     }

@@ -43,13 +43,57 @@ namespace _Chi.Scripts.Mono.Mission
             if (progressSettings.shops.Count > 0)
             {
                 var initialShop = progressSettings.shops[0];
-            
-                Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(initialShop.GetGoldAcumulatedRequired());
-                Gamesystem.instance.uiManager.goldProgressBar.ResetValue();
+
+                if (initialShop.GetGoldAcumulatedRequired() > 0)
+                {
+                    Gamesystem.instance.uiManager.rewardProgressBar.SetMaxValue(initialShop.GetGoldAcumulatedRequired());
+                }
+                else
+                {
+                    Gamesystem.instance.uiManager.rewardProgressBar.SetMaxValue(initialShop.GetExpAcumulatedRequired());
+                }
+                
+                Gamesystem.instance.uiManager.rewardProgressBar.ResetValue();
                 progressSettings.lastGoldTriggeredShopLevelIndex = -1;
+                progressSettings.lastExpTriggeredShopLevelIndex = -1;
             }
             
             Gamesystem.instance.missionManager.currentMission = this;
+        }
+        
+        public void OnAddedExp()
+        {
+            var exp = Gamesystem.instance.progress.GetAcumulatedExp();
+
+            var shopIndex = progressSettings.lastExpTriggeredShopLevelIndex;
+                
+            if(shopIndex + 1 < progressSettings.shops.Count)
+            {
+                var nextShop = progressSettings.shops[shopIndex + 1];
+
+                if (nextShop.GetExpAcumulatedRequired() > 0 && exp >= nextShop.GetExpAcumulatedRequired())
+                {
+                    shopIndex++;
+                        
+                    Gamesystem.instance.uiManager.OpenRewardSetWindow(nextShop.shopSet, nextShop.title, nextShop);
+                        
+                    nextShop = progressSettings.shops[shopIndex + 1];
+
+                    if (shopIndex >= 0)
+                    {
+                        var prevShop = progressSettings.shops[shopIndex];
+                        Gamesystem.instance.uiManager.rewardProgressBar.SetMaxValue(nextShop.GetExpAcumulatedRequired() - prevShop.GetExpAcumulatedRequired());
+                    }
+                    else
+                    {
+                        Gamesystem.instance.uiManager.rewardProgressBar.SetMaxValue(nextShop.GetExpAcumulatedRequired());
+                    }
+                        
+                    Gamesystem.instance.uiManager.rewardProgressBar.ResetValue();
+                    
+                    progressSettings.lastExpTriggeredShopLevelIndex = shopIndex;
+                }
+            }
         }
         
         public void OnAddedGold()
@@ -62,26 +106,25 @@ namespace _Chi.Scripts.Mono.Mission
             {
                 var nextShop = progressSettings.shops[shopIndex + 1];
 
-                if (gold >= nextShop.GetGoldAcumulatedRequired())
+                if (nextShop.GetGoldAcumulatedRequired() > 0 && gold >= nextShop.GetGoldAcumulatedRequired())
                 {
                     shopIndex++;
                         
-                    //TODO trigger shop
-                    Gamesystem.instance.uiManager.OpenRewardSetWindow(nextShop.shopSet, "Shop", nextShop);
+                    Gamesystem.instance.uiManager.OpenRewardSetWindow(nextShop.shopSet, nextShop.title, nextShop);
                         
-                    nextShop = progressSettings.shops[shopIndex + 1];
+                    /*nextShop = progressSettings.shops[shopIndex + 1];
 
                     if (shopIndex >= 0)
                     {
                         var prevShop = progressSettings.shops[shopIndex];
-                        Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(nextShop.GetGoldAcumulatedRequired() - prevShop.GetGoldAcumulatedRequired());
+                        Gamesystem.instance.uiManager.rewardProgressBar.SetMaxValue(nextShop.GetGoldAcumulatedRequired() - prevShop.GetGoldAcumulatedRequired());
                     }
                     else
                     {
-                        Gamesystem.instance.uiManager.goldProgressBar.SetMaxValue(nextShop.GetGoldAcumulatedRequired());
+                        Gamesystem.instance.uiManager.rewardProgressBar.SetMaxValue(nextShop.GetGoldAcumulatedRequired());
                     }
                         
-                    Gamesystem.instance.uiManager.goldProgressBar.ResetValue();
+                    Gamesystem.instance.uiManager.rewardProgressBar.ResetValue();*/
                     
                     progressSettings.lastGoldTriggeredShopLevelIndex = shopIndex;
                 }
@@ -171,12 +214,29 @@ namespace _Chi.Scripts.Mono.Mission
         public List<int> rerollPrices;
 
         [NonSerialized] public int lastGoldTriggeredShopLevelIndex = 0;
+        
+        [NonSerialized] public int lastExpTriggeredShopLevelIndex = 0;
+    }
+
+    public enum TriggeredShopType
+    {
+        FreeReward,
+        Shop
     }
     
     [Serializable]
     public class TriggeredShop
     {
+        public TriggeredShopType type;
+
+        public bool closeOnFirstPurchase;
+
+        public string title;
+        
+        [HideInInspector] // TODO not used now
         public int goldAcumulatedRequired;
+        
+        public int expAcumulatedRequired;
         
         [HorizontalGroup("ShopSet")]
         public List<TriggeredShopSet> shopSet;
@@ -186,7 +246,7 @@ namespace _Chi.Scripts.Mono.Mission
 
         [HideInEditorMode]
         [Button]
-        public void Show(string title = "Shop")
+        public void Show()
         {
             Gamesystem.instance.uiManager.OpenRewardSetWindow(shopSet, title, this);
         }
@@ -194,6 +254,11 @@ namespace _Chi.Scripts.Mono.Mission
         public int GetGoldAcumulatedRequired()
         {
             return (int) (goldAcumulatedRequired * Gamesystem.instance.goldMul);
+        }
+        
+        public int GetExpAcumulatedRequired()
+        {
+            return (int) (expAcumulatedRequired * Gamesystem.instance.expMul);
         }
     }
     
@@ -203,6 +268,8 @@ namespace _Chi.Scripts.Mono.Mission
         public string name;
 
         public bool showOnlyPreviouslyLocked;
+
+        public int shownItemsCount;
 
         [FormerlySerializedAs("hideForNextShopOccurences")] public int ifBoughtHideForNextShopOccurences;
     }

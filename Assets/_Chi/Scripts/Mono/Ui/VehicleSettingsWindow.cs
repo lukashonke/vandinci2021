@@ -44,10 +44,6 @@ namespace _Chi.Scripts.Mono.Ui
             {
                 moduleSelector.Initialise(ModuleSelectorMode.ShopSet, true, rewardSet, title, triggeredShop);
             }
-            else
-            {
-                moduleSelector.Initialise(ModuleSelectorMode.SingleRewardSet, true, rewardSet, title, null);
-            }
 
             Initialise();
             this.gameObject.SetActive(true);

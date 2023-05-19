@@ -12,9 +12,21 @@ namespace _Chi.Scripts.Mono.System
         }
         
         [Command()]
+        public void AddExp(int amount)
+        {
+            Gamesystem.instance.progress.AddExp(amount);
+        }
+        
+        [Command()]
         public void ResetGold()
         {
             Gamesystem.instance.progress.RemoveGold(Gamesystem.instance.progress.GetGold());
+        }
+        
+        [Command()]
+        public void ResetExp()
+        {
+            Gamesystem.instance.progress.RemoveExp(Gamesystem.instance.progress.GetExp());
         }
 
         [Command()]

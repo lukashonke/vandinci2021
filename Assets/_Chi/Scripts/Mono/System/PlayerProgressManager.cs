@@ -198,6 +198,21 @@ namespace _Chi.Scripts.Mono.System
             
             this.InitializeProgressData();
         }
+        
+        public void AddExp(int exp, bool countToProgress = true)
+        {
+            this.progressData.run.exp += exp;
+            this.progressData.run.acumulatedExp += exp;
+            
+            if (countToProgress)
+            {
+                Gamesystem.instance.uiManager.rewardProgressBar.AddValue(exp);
+                
+                Gamesystem.instance.prefabDatabase.playerExpReceived.Spawn(Gamesystem.instance.objects.currentPlayer.GetPosition(), exp);
+            }
+            
+            Gamesystem.instance.missionManager.currentMission.OnAddedExp();
+        }
 
         public void AddGold(int gold, bool countToProgress = true)
         {
@@ -206,7 +221,7 @@ namespace _Chi.Scripts.Mono.System
             
             if (countToProgress)
             {
-                Gamesystem.instance.uiManager.goldProgressBar.AddValue(gold);
+                Gamesystem.instance.uiManager.rewardProgressBar.AddValue(gold);
                 
                 Gamesystem.instance.prefabDatabase.playerGoldReceived.Spawn(Gamesystem.instance.objects.currentPlayer.GetPosition(), gold);
             }
@@ -224,6 +239,16 @@ namespace _Chi.Scripts.Mono.System
             return this.progressData.run.acumulatedGold;
         }
         
+        public int GetExp()
+        {
+            return this.progressData.run.exp;
+        }
+        
+        public int GetAcumulatedExp()
+        {
+            return this.progressData.run.acumulatedExp;
+        }
+        
         public long GetChaos()
         {
             return this.progressData.run.chaos;
@@ -237,6 +262,11 @@ namespace _Chi.Scripts.Mono.System
         public void RemoveGold(int gold)
         {
             this.progressData.run.gold -= gold;
+        }
+        
+        public void RemoveExp(int exp)
+        {
+            this.progressData.run.exp -= exp;
         }
     }
 }
