@@ -201,11 +201,11 @@ namespace _Chi.Scripts.Mono.Ui
                 var run = progress.run;
 
                 var nextRerollPrice = Gamesystem.instance.missionManager.currentMission.progressSettings.rerollPrices[run.rerolls];
-                rerollPriceText.text = nextRerollPrice.ToString();
+                rerollPriceText.text = nextRerollPrice == 0 ? "Free" : nextRerollPrice.ToString();
             }
             else
             {
-                rerollPriceText.text = "0";
+                rerollPriceText.text = "Free";
             }
         }
 

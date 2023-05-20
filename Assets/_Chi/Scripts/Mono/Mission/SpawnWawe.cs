@@ -18,6 +18,28 @@ namespace _Chi.Scripts.Mono.Mission
 {
     public class SpawnWawe : SerializedMonoBehaviour, IMissionHandler
     {
+        [Button]
+        public void Convert(float waveDurationSeconds)
+        {
+            if(waveDurationSeconds == 0)
+            {
+                Debug.LogError("fixedDuration is 0");
+                return;
+            }
+            
+            foreach (var spawn in spawns)
+            {
+                // round to 2 decimals
+                spawn.spawnTimeMin = spawn.spawnTimeMin / waveDurationSeconds;
+                spawn.spawnTimeMax = spawn.spawnTimeMax / waveDurationSeconds;
+                if (spawn.repeatSpawn)
+                {
+                    spawn.repeatSpawnIntervalMin = spawn.repeatSpawnIntervalMin / waveDurationSeconds;
+                    spawn.repeatSpawnIntervalMax = spawn.repeatSpawnIntervalMax / waveDurationSeconds;
+                }
+            }
+        }
+        
         [HorizontalGroup("Main")]
         public string waveName;
         [HorizontalGroup("Main")]
@@ -27,23 +49,57 @@ namespace _Chi.Scripts.Mono.Mission
 
         [NonSerialized] private float nextCurvesUpdate = 0;
         [NonSerialized] public MissionEvent ev;
+        
+        [NonSerialized] public float fixedDuration;
+        [NonSerialized] public float startAtTime;
+        public float RelativeTime => (Time.time - startAtTime) / (fixedDuration);
 
         private bool running;
 
-        public void OnStart(MissionEvent ev)
+        public void OnStart(MissionEvent ev, float fixedDuration)
         {
+            this.fixedDuration = fixedDuration;
+            this.startAtTime = Time.time;
+            
             this.ev = ev;
             Debug.Log("start wawe");
 
             foreach (var settings in spawns)
             {
-                settings.Initialise(Time.time);
-                settings.nextSpawnTime = Time.time + Random.Range(settings.spawnTimeMin, settings.spawnTimeMax);
+                settings.Initialise();
+                settings.nextSpawnTime = Random.Range(settings.spawnTimeMin, settings.spawnTimeMax);
             }
 
             running = true;
 
             StartCoroutine(UpdateRoutine());
+        }
+        
+        private IEnumerator UpdateRoutine()
+        {
+            var waiter = new WaitForSeconds(0.2f);
+
+            while (running)
+            {
+                yield return waiter;
+
+                if (disable)
+                {
+                    continue;
+                }
+
+                var player = Gamesystem.instance.objects.currentPlayer;
+                var playerPosition = player.GetPosition();
+                var time = RelativeTime;
+
+                foreach (var settings in spawns)
+                {
+                    if (!settings.finished && settings.nextSpawnTime < time)
+                    {
+                        Spawn(settings, playerPosition, time, player, ev);
+                    }
+                }
+            }
         }
 
         public void OnStop()
@@ -56,17 +112,16 @@ namespace _Chi.Scripts.Mono.Mission
             return spawns.All(s => s.finished);
         }
 
-        public static void Spawn(SpawnWaweData settings, Vector3 playerPosition, float time, Entity relativeTo, MissionEvent ev)
+        public static void Spawn(SpawnWaweData settings, Vector3 playerPosition, float relativeTime, Entity relativeTo, MissionEvent ev)
         {
-            settings.lastSpawnTime = time;
+            settings.lastSpawnTime = relativeTime;
             settings.nextSpawnTime = 0;
 
             //SPAWN
-            var spawnCount = settings.GetCountToSpawn(time);
+            var spawnCount = settings.GetCountToSpawn(relativeTime);
 
             int squareSize = (int) Math.Ceiling(Math.Sqrt(spawnCount));
             Vector3 spawnPosition = Vector3.zero;
-            
             
             if (settings.spawnOutsideScreen)
             {
@@ -74,7 +129,7 @@ namespace _Chi.Scripts.Mono.Mission
             }
             else
             {
-                var distance = settings.GetDistanceFromPlayer(time);
+                var distance = settings.GetDistanceFromPlayer(relativeTime);
             
                 var relativePos = settings.relativePosition;
                 if (relativePos == SpawnRelativePosition.FrontOrBehindPlayer)
@@ -239,33 +294,6 @@ namespace _Chi.Scripts.Mono.Mission
 
             settings.firstSpawnDone = true;
         }
-
-        private IEnumerator UpdateRoutine()
-        {
-            var waiter = new WaitForSeconds(0.2f);
-
-            while (running)
-            {
-                yield return waiter;
-
-                if (disable)
-                {
-                    continue;
-                }
-
-                var player = Gamesystem.instance.objects.currentPlayer;
-                var playerPosition = player.GetPosition();
-                var time = Time.time;
-
-                foreach (var settings in spawns)
-                {
-                    if (!settings.finished && settings.nextSpawnTime < time)
-                    {
-                        Spawn(settings, playerPosition, time, player, ev);
-                    }
-                }
-            }
-        }
     }
 
     [Serializable]
@@ -341,7 +369,7 @@ namespace _Chi.Scripts.Mono.Mission
         [NonSerialized] public bool firstSpawnDone;
         [NonSerialized] private Dictionary<int, SpawnPrefab> prefabsByWeightValues;
 
-        public void Initialise(float time)
+        public void Initialise()
         {
             firstSpawnDone = false;
             finished = false;

@@ -7258,38 +7258,11 @@ MonoBehaviour:
     nestedRewardSets: []
     priceMultiplierPerCountOwned: []
     lockId: 
-  - name: chest_weapons
-    note: 
-    minCountShownItems: 4
-    prefabs:
-    - name: Crossbow Module
-      prefabId: 2000
-      weight: 1
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
-      price: 0
-      priceMultiplyForEveryOwned: 0
-      lockId: 
-      mustBeUnlocked: 0
-    - name: Cannon Module
-      prefabId: 2007
-      weight: 1
-      isInGroup: 0
-      group: 
-      levelInGroup: 0
-      price: 0
-      priceMultiplyForEveryOwned: 0
-      lockId: 
-      mustBeUnlocked: 0
-    nestedRewardSets: []
-    priceMultiplierPerCountOwned: []
-    lockId: 
   - name: shop_player_upgrades
     note: 
     minCountShownItems: 1
     prefabs:
-    - name: Max HP Upgrade
+    - name: Common Max HP Upgrade
       prefabId: 90000
       weight: 9
       isInGroup: 1
@@ -7299,7 +7272,7 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    - name: Max HP Upgrade
+    - name: Rare Max HP Upgrade
       prefabId: 90001
       weight: 3
       isInGroup: 1
@@ -7309,7 +7282,7 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    - name: Max HP Upgrade
+    - name: Epic Max HP Upgrade
       prefabId: 90002
       weight: 1
       isInGroup: 1
@@ -7319,7 +7292,7 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    - name: Defence Upgrade
+    - name: Common Defence Upgrade
       prefabId: 90010
       weight: 9
       isInGroup: 1
@@ -7329,7 +7302,7 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    - name: Defence Upgrade
+    - name: Rare Defence Upgrade
       prefabId: 90011
       weight: 3
       isInGroup: 1
@@ -7339,7 +7312,7 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    - name: Defence Upgrade
+    - name: Epic Defence Upgrade
       prefabId: 90012
       weight: 1
       isInGroup: 1
@@ -7349,7 +7322,7 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    - name: Move Speed Upgrade
+    - name: Common Move Speed Upgrade
       prefabId: 90020
       weight: 9
       isInGroup: 1
@@ -7359,7 +7332,7 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    - name: Move Speed Upgrade
+    - name: Rare Move Speed Upgrade
       prefabId: 90021
       weight: 3
       isInGroup: 1
@@ -7369,7 +7342,7 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    - name: Move Speed Upgrade
+    - name: Epic Move Speed Upgrade
       prefabId: 90022
       weight: 1
       isInGroup: 1
@@ -7379,7 +7352,7 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    - name: HP Regeneration Upgrade
+    - name: Common HP Regeneration Upgrade
       prefabId: 90030
       weight: 9
       isInGroup: 1
@@ -7389,7 +7362,7 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    - name: HP Regeneration Upgrade
+    - name: Rare HP Regeneration Upgrade
       prefabId: 90031
       weight: 3
       isInGroup: 1
@@ -7399,7 +7372,7 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    - name: HP Regeneration Upgrade
+    - name: Epic HP Regeneration Upgrade
       prefabId: 90032
       weight: 1
       isInGroup: 1
@@ -7409,7 +7382,7 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    - name: Pickup Range Upgrade
+    - name: Common Pickup Range Upgrade
       prefabId: 90040
       weight: 9
       isInGroup: 1
@@ -7753,6 +7726,11 @@ MonoBehaviour:
         dropChance: 100
         amountMin: 5
         amountMax: 6
+        bypassGlobalDropChance: 1
+      - dropType: 0
+        dropChance: 100
+        amountMin: 1
+        amountMax: 1
         bypassGlobalDropChance: 1
   - variant: ZombieElite
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}

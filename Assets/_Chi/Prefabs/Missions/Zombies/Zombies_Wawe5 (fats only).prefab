@@ -135,17 +135,17 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 180
-        inSlope: 0.2
-        outSlope: 0.2
+        inSlope: 20
+        outSlope: 20
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 100
+        time: 1
         value: 200
-        inSlope: 0.2
-        outSlope: 0.2
+        inSlope: 20
+        outSlope: 20
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -262,7 +262,6 @@ MonoBehaviour:
     despawnAfter: 0
     trackEntityForMission: 0
     nextSpawnTime: 0
-    startAtTime: 0
     lastSpawnTime: 0
 --- !u!114 &-3837949277647058563
 MonoBehaviour:
@@ -318,11 +317,11 @@ MonoBehaviour:
     roamRandomRadius: 0
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 6
-    spawnTimeMax: 6
+    spawnTimeMin: 0.06
+    spawnTimeMax: 0.06
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 6
-    repeatSpawnIntervalMax: 6
+    repeatSpawnIntervalMin: 0.06
+    repeatSpawnIntervalMax: 0.06
     repeatCount: 100
     spawnCountMin: 3
     spawnCountMax: 4
@@ -379,11 +378,11 @@ MonoBehaviour:
     roamRandomRadius: 3
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 15
-    spawnTimeMax: 20
+    spawnTimeMin: 0.15
+    spawnTimeMax: 0.2
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 15
-    repeatSpawnIntervalMax: 20
+    repeatSpawnIntervalMin: 0.15
+    repeatSpawnIntervalMax: 0.2
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
@@ -447,11 +446,11 @@ MonoBehaviour:
     roamRandomRadius: 3
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 5
-    spawnTimeMax: 10
+    spawnTimeMin: 0.05
+    spawnTimeMax: 0.1
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 10
-    repeatSpawnIntervalMax: 10
+    repeatSpawnIntervalMin: 0.1
+    repeatSpawnIntervalMax: 0.1
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
@@ -508,11 +507,11 @@ MonoBehaviour:
     roamRandomRadius: 3
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 5
-    spawnTimeMax: 10
+    spawnTimeMin: 0.05
+    spawnTimeMax: 0.1
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 30
-    repeatSpawnIntervalMax: 35
+    repeatSpawnIntervalMin: 0.3
+    repeatSpawnIntervalMax: 0.35
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
@@ -569,8 +568,8 @@ MonoBehaviour:
     roamRandomRadius: 3
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 1
-    spawnTimeMax: 30
+    spawnTimeMin: 0.01
+    spawnTimeMax: 0.3
     repeatSpawn: 0
     repeatSpawnIntervalMin: 30
     repeatSpawnIntervalMax: 30

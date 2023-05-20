@@ -18,11 +18,11 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
         {
             if (!initialised)
             {
-                spawnData.Initialise(Time.time);
+                spawnData.Initialise();
                 initialised = true;
             }
             
-            SpawnWawe.Spawn(spawnData, data.target.GetPosition(), Time.time, data.target, null);
+            SpawnWawe.Spawn(spawnData, data.target.GetPosition(), 0, data.target, null);
             return true;
         }    
     }

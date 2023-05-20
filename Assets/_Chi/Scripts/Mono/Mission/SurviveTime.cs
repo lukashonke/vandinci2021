@@ -7,7 +7,7 @@ using NotImplementedException = System.NotImplementedException;
 
 namespace _Chi.Scripts.Mono.Mission
 {
-    public class SurviveTime : SerializedMonoBehaviour, IMissionHandler
+    /*public class SurviveTime : SerializedMonoBehaviour, IMissionHandler
     {
         public int secondsToSurvive = 60;
 
@@ -15,7 +15,7 @@ namespace _Chi.Scripts.Mono.Mission
         
         private bool stopped;
         
-        public void OnStart(MissionEvent ev)
+        public void OnStart(MissionEvent ev, float fixedDuration)
         {
             remainingTime = secondsToSurvive;
             StartCoroutine(UpdateLoop());
@@ -45,5 +45,5 @@ namespace _Chi.Scripts.Mono.Mission
         {
             return true;
         }
-    }
+    }*/
 }

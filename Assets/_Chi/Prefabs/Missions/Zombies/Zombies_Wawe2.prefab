@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: -4000076046673859097}
   - component: {fileID: 6469568978721038765}
   - component: {fileID: 1003558589449172849}
+  - component: {fileID: -1896726802635071138}
   m_Layer: 0
   m_Name: Zombies_Wawe2
   m_TagString: Untagged
@@ -138,6 +139,7 @@ Transform:
   - {fileID: 4883164893612876581}
   - {fileID: 3699230580347241388}
   - {fileID: 1601385335291480909}
+  - {fileID: 6052045837847294580}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -193,17 +195,17 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 30
-        inSlope: 0.5
-        outSlope: 0.5
+        inSlope: 30
+        outSlope: 30
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 60
+        time: 1
         value: 60
-        inSlope: 0.5
-        outSlope: 0.5
+        inSlope: 30
+        outSlope: 30
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -338,7 +340,6 @@ MonoBehaviour:
     despawnAfter: 0
     trackEntityForMission: 0
     nextSpawnTime: 0
-    startAtTime: 0
     lastSpawnTime: 0
 --- !u!114 &-3837949277647058563
 MonoBehaviour:
@@ -394,11 +395,11 @@ MonoBehaviour:
     roamRandomRadius: 0
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 10
-    spawnTimeMax: 12
+    spawnTimeMin: 0.16
+    spawnTimeMax: 0.2
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 12
-    repeatSpawnIntervalMax: 12
+    repeatSpawnIntervalMin: 0.2
+    repeatSpawnIntervalMax: 0.2
     repeatCount: 100
     spawnCountMin: 2
     spawnCountMax: 3
@@ -455,11 +456,11 @@ MonoBehaviour:
     roamRandomRadius: 3
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 15
-    spawnTimeMax: 20
+    spawnTimeMin: 0.25
+    spawnTimeMax: 0.3
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 15
-    repeatSpawnIntervalMax: 20
+    repeatSpawnIntervalMin: 0.25
+    repeatSpawnIntervalMax: 0.3
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
@@ -516,11 +517,11 @@ MonoBehaviour:
     roamRandomRadius: 3
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 6
-    spawnTimeMax: 10
+    spawnTimeMin: 0.1
+    spawnTimeMax: 0.16
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 6
-    repeatSpawnIntervalMax: 10
+    repeatSpawnIntervalMin: 0.1
+    repeatSpawnIntervalMax: 0.16
     repeatCount: 100
     spawnCountMin: 2
     spawnCountMax: 6
@@ -577,11 +578,11 @@ MonoBehaviour:
     roamRandomRadius: 3
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 10
-    spawnTimeMax: 12
+    spawnTimeMin: 0.16
+    spawnTimeMax: 0.2
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 20
-    repeatSpawnIntervalMax: 24
+    repeatSpawnIntervalMin: 0.33333334
+    repeatSpawnIntervalMax: 0.4
     repeatCount: 100
     spawnCountMin: 4
     spawnCountMax: 8
@@ -638,11 +639,11 @@ MonoBehaviour:
     roamRandomRadius: 0
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 20
-    spawnTimeMax: 25
+    spawnTimeMin: 0.33333334
+    spawnTimeMax: 0.41666666
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 20
-    repeatSpawnIntervalMax: 25
+    repeatSpawnIntervalMin: 0.33333334
+    repeatSpawnIntervalMax: 0.41666666
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
@@ -706,11 +707,11 @@ MonoBehaviour:
     roamRandomRadius: 3
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 5
-    spawnTimeMax: 10
+    spawnTimeMin: 0.083333336
+    spawnTimeMax: 0.16666667
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 10
-    repeatSpawnIntervalMax: 10
+    repeatSpawnIntervalMin: 0.16666667
+    repeatSpawnIntervalMax: 0.16666667
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
@@ -767,8 +768,8 @@ MonoBehaviour:
     roamRandomRadius: 3
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 1
-    spawnTimeMax: 30
+    spawnTimeMin: 0.016666668
+    spawnTimeMax: 0.5
     repeatSpawn: 0
     repeatSpawnIntervalMin: 1
     repeatSpawnIntervalMax: 1
@@ -783,6 +784,67 @@ MonoBehaviour:
     spawnOutsideScreen: 0
     despawnWhenOutsideScreen: 0
     relativePosition: 0
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerWidth: 1.5
+    distanceFromPlayerToDespawn: 1000
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 1
+--- !u!114 &-1896726802635071138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091413172466918211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  waveName: Treasure Chest
+  disable: 0
+  spawns:
+  - possiblePrefabs:
+    - type: 3
+      prefab: {fileID: 2016706442665377444, guid: eb0717de991adb043a37ce68f457803d, type: 3}
+      prefabNpc: {fileID: 6549855113248904363, guid: 95485f9b1a9973140bc1febcd04fe496, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 0
+      noRotation: 1
+      prefabVariant: '-'
+    formation: 7
+    formationLookAhead: 1
+    formationRadius: 1
+    behavior: 3
+    roamDistance: 100
+    roamRandomRadius: 3
+    dieWhenReachFixedMoveTarget: 0
+    stopWhenReachFixedMoveTarget: 0
+    spawnTimeMin: 0
+    spawnTimeMax: 0
+    repeatSpawn: 0
+    repeatSpawnIntervalMin: 30
+    repeatSpawnIntervalMax: 30
+    repeatCount: 1
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayerMin: 5
+    distanceFromPlayerMax: 12
+    despawnAfter: 300
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    spawnOutsideScreen: 0
+    despawnWhenOutsideScreen: 0
+    relativePosition: 4
     despawnWhenOutsideScreenDist2: 2
     spawnBoxAroundPlayerWidth: 1.5
     distanceFromPlayerToDespawn: 1000
@@ -882,6 +944,53 @@ MonoBehaviour:
   nameOverride: Exploding Decoys
   tooltipOverride: 
   target: {fileID: -50647473022081503}
+--- !u!1 &4471149533654357717
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6052045837847294580}
+  - component: {fileID: 154702785806305906}
+  m_Layer: 0
+  m_Name: NameContainer(EditorOnly)
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6052045837847294580
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4471149533654357717}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2091413172466918208}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &154702785806305906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4471149533654357717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOverride: Treasure Chest
+  tooltipOverride: 
+  target: {fileID: -1896726802635071138}
 --- !u!1 &6394772597837521872
 GameObject:
   m_ObjectHideFlags: 1

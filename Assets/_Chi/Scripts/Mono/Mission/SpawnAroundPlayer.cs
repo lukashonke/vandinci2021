@@ -26,21 +26,35 @@ namespace _Chi.Scripts.Mono.Mission
         
         [NonSerialized] private float nextCurvesUpdate = 0;
         [NonSerialized] public MissionEvent ev;
+        
+        [NonSerialized] public float fixedDuration;
+        [NonSerialized] public float startAtTime;
+        public float RelativeTime => (Time.time - startAtTime) / (fixedDuration);
 
-        public void OnStart(MissionEvent ev)
+        public void OnStart(MissionEvent ev, float fixedDuration)
         {
+            this.fixedDuration = fixedDuration;
+            this.startAtTime = Time.time;
             this.ev = ev;
+            
             Debug.Log("start");
             
             foreach (var settings in spawns)
             {
                 settings.Initialise();
                 
-                settings.startAtTime = Time.time;
-                
                 if (settings.baseCountPerMinute > 0)
                 {
-                    settings.nextSpawnTime = Time.time + (60 / settings.baseCountPerMinute);
+                    // fixed duration = 120
+                    // 60 / 120 = 0.5
+
+                    // fixed duration = 60
+                    // 60 / 60 = 1
+                    
+                    // fixed duration = 30
+                    // 60 / 30 = 2
+
+                    settings.nextSpawnTime = (60 / fixedDuration / settings.baseCountPerMinute);
                 }
                 else
                 {
@@ -48,6 +62,7 @@ namespace _Chi.Scripts.Mono.Mission
                 }
             }
         }
+        
 
         public void OnStop()
         {
@@ -68,7 +83,7 @@ namespace _Chi.Scripts.Mono.Mission
             
             var player = Gamesystem.instance.objects.currentPlayer;
             var playerPosition = player.GetPosition();
-            var time = Time.time;
+            var relativeTime = RelativeTime;
             
             bool updateCurves = false;
             if (Time.time > nextCurvesUpdate)
@@ -81,14 +96,15 @@ namespace _Chi.Scripts.Mono.Mission
             {
                 if (updateCurves)
                 {
-                    settings.baseCountPerMinute = settings.countPerMinuteCurve.Evaluate(time-settings.startAtTime);
-                    settings.Recalculate(Time.time - settings.startAtTime);
+                    settings.baseCountPerMinute = settings.countPerMinuteCurve.Evaluate(relativeTime);
+
+                    settings.nextSpawnTime = settings.lastSpawnTime + (60 / fixedDuration / settings.GetCountPerMinute(relativeTime));
                 }
                 
-                if (settings.nextSpawnTime > 0 && settings.nextSpawnTime < Time.time)
+                if (settings.nextSpawnTime > 0 && settings.nextSpawnTime < relativeTime)
                 {
-                    settings.lastSpawnTime = Time.time;
-                    settings.nextSpawnTime = settings.lastSpawnTime + (60 / settings.GetCountPerMinute(time-settings.startAtTime));
+                    settings.lastSpawnTime = relativeTime;
+                    settings.nextSpawnTime = settings.lastSpawnTime + (60 / settings.GetCountPerMinute(relativeTime));
 
                     Vector3 spawnPosition = Vector3.zero;
                     if (settings.spawnOutsideScreen)
@@ -97,7 +113,7 @@ namespace _Chi.Scripts.Mono.Mission
                     }
                     else
                     {
-                        var distance = settings.GetDistanceFromPlayer(time);
+                        var distance = settings.GetDistanceFromPlayer(relativeTime);
                     
                         var relativePos = settings.relativePosition;
                         if (relativePos == SpawnRelativePosition.FrontOrBehindPlayer)
@@ -126,7 +142,7 @@ namespace _Chi.Scripts.Mono.Mission
                         }
                     }
 
-                    var spawnCount = settings.GetCountToSpawn(time);
+                    var spawnCount = settings.GetCountToSpawn(relativeTime);
 
                     if (spawnCount <= 2)
                     {
@@ -242,7 +258,6 @@ namespace _Chi.Scripts.Mono.Mission
         
         // runtime
         [ReadOnly] public float nextSpawnTime;
-        [ReadOnly] public float startAtTime = 0;
         [ReadOnly] public float lastSpawnTime = 0;
         [NonSerialized] private Dictionary<int, SpawnPrefab> prefabsByWeightValues;
 

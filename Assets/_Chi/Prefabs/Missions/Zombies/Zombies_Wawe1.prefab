@@ -185,17 +185,17 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 25
-        inSlope: 0.125
-        outSlope: 0.125
+        inSlope: 5
+        outSlope: 5
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 40
+        time: 1
         value: 30
-        inSlope: 0.125
-        outSlope: 0.125
+        inSlope: 5
+        outSlope: 5
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -330,7 +330,6 @@ MonoBehaviour:
     despawnAfter: 0
     trackEntityForMission: 0
     nextSpawnTime: 0
-    startAtTime: 0
     lastSpawnTime: 0
 --- !u!114 &-3837949277647058563
 MonoBehaviour:
@@ -386,11 +385,11 @@ MonoBehaviour:
     roamRandomRadius: 0
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 8
-    spawnTimeMax: 10
+    spawnTimeMin: 0.25
+    spawnTimeMax: 0.25
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 12
-    repeatSpawnIntervalMax: 12
+    repeatSpawnIntervalMin: 0.3
+    repeatSpawnIntervalMax: 0.3
     repeatCount: 100
     spawnCountMin: 2
     spawnCountMax: 3
@@ -403,7 +402,7 @@ MonoBehaviour:
     despawnWhenOutsideScreen: 0
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
-    spawnBoxAroundPlayerThickness: 0
+    spawnBoxAroundPlayerWidth: 1.5
     distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -447,11 +446,11 @@ MonoBehaviour:
     roamRandomRadius: 3
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 15
-    spawnTimeMax: 20
+    spawnTimeMin: 0.45
+    spawnTimeMax: 0.5
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 15
-    repeatSpawnIntervalMax: 20
+    repeatSpawnIntervalMin: 0.45
+    repeatSpawnIntervalMax: 0.5
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
@@ -464,7 +463,7 @@ MonoBehaviour:
     despawnWhenOutsideScreen: 0
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
-    spawnBoxAroundPlayerThickness: 0
+    spawnBoxAroundPlayerWidth: 1.5
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
@@ -508,11 +507,11 @@ MonoBehaviour:
     roamRandomRadius: 3
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 6
-    spawnTimeMax: 10
+    spawnTimeMin: 0.15
+    spawnTimeMax: 0.25
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 6
-    repeatSpawnIntervalMax: 10
+    repeatSpawnIntervalMin: 0.15
+    repeatSpawnIntervalMax: 0.25
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 3
@@ -525,7 +524,7 @@ MonoBehaviour:
     despawnWhenOutsideScreen: 1
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
-    spawnBoxAroundPlayerThickness: 0
+    spawnBoxAroundPlayerWidth: 1.5
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0

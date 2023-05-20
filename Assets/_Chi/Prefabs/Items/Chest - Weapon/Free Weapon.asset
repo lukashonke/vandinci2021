@@ -28,12 +28,12 @@ MonoBehaviour:
   shop:
     type: 0
     closeOnFirstPurchase: 1
-    title: Free Weapon
+    title: Choose Weapon
     goldAcumulatedRequired: 0
     expAcumulatedRequired: 0
     shopSet:
-    - name: chest_weapons
+    - name: shop_weapons
       showOnlyPreviouslyLocked: 0
+      shownItemsCount: 4
       ifBoughtHideForNextShopOccurences: 0
     priceMultiplier: 0
-  uiTitle: Treasure Chest

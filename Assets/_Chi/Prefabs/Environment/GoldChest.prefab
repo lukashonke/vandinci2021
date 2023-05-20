@@ -131,7 +131,9 @@ MonoBehaviour:
     maxHpMul: 1
     hp: 100
   team: 2
+  isBoss: 0
   healthbarOffset: {x: 0, y: 0, z: 0}
+  fearEscapeAngle: 0
   seeker: {fileID: 0}
   rvoController: {fileID: 0}
   stats:
@@ -139,6 +141,7 @@ MonoBehaviour:
     rotationSpeed: 500
     contactDamage: 0
     contactDamageInterval: 1
+    armor: 0
   currentVariant: 
   size: 1
   goDirectlyToPlayer: 0
@@ -146,6 +149,8 @@ MonoBehaviour:
   dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
   poolId: 39094
+  addTargetToUi: 0
+  addTargetToUiType: 0
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
   emitter: {fileID: 0}
@@ -161,8 +166,8 @@ MonoBehaviour:
   projectileShootInterval: 0
   distanceToPlayerToShoot: 0
   drops:
-  - dropCountMin: 10
-    dropCountMax: 20
+  - dropCountMin: 3
+    dropCountMax: 5
     dropType: 0
     chance: 100
 --- !u!114 &5570863261562565206

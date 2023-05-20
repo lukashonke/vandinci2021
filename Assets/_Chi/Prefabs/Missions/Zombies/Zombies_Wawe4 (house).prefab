@@ -191,11 +191,11 @@ MonoBehaviour:
     roamRandomRadius: 0
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 2
-    spawnTimeMax: 5
+    spawnTimeMin: 0.026666667
+    spawnTimeMax: 0.06666667
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 10
-    repeatSpawnIntervalMax: 15
+    repeatSpawnIntervalMin: 0.13333334
+    repeatSpawnIntervalMax: 0.2
     repeatCount: 100
     spawnCountMin: 5
     spawnCountMax: 15
@@ -400,7 +400,6 @@ MonoBehaviour:
     despawnAfter: 0
     trackEntityForMission: 0
     nextSpawnTime: 0
-    startAtTime: 0
     lastSpawnTime: 0
 --- !u!114 &-7275269253206702177
 MonoBehaviour:
@@ -449,11 +448,11 @@ MonoBehaviour:
     roamRandomRadius: 3
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 2
-    spawnTimeMax: 5
+    spawnTimeMin: 0.026666667
+    spawnTimeMax: 0.06666667
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 4
-    repeatSpawnIntervalMax: 8
+    repeatSpawnIntervalMin: 0.053333335
+    repeatSpawnIntervalMax: 0.10666667
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
@@ -510,8 +509,8 @@ MonoBehaviour:
     roamRandomRadius: 3
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 1
-    spawnTimeMax: 30
+    spawnTimeMin: 0.013333334
+    spawnTimeMax: 0.4
     repeatSpawn: 0
     repeatSpawnIntervalMin: 30
     repeatSpawnIntervalMax: 30
@@ -557,7 +556,7 @@ MonoBehaviour:
   spawns:
   - possiblePrefabs:
     - type: 3
-      prefab: {fileID: 2016706442665377444, guid: d021c38515289304a9b1ddd57c0eaaab, type: 3}
+      prefab: {fileID: 2016706442665377444, guid: eb0717de991adb043a37ce68f457803d, type: 3}
       prefabNpc: {fileID: 6549855113248904363, guid: 95485f9b1a9973140bc1febcd04fe496, type: 3}
       weight: 1
       rotateTowardsPlayer: 0
@@ -571,8 +570,8 @@ MonoBehaviour:
     roamRandomRadius: 3
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 1
-    spawnTimeMax: 1
+    spawnTimeMin: 0.013333334
+    spawnTimeMax: 0.013333334
     repeatSpawn: 0
     repeatSpawnIntervalMin: 30
     repeatSpawnIntervalMax: 30

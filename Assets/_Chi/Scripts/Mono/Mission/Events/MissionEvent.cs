@@ -201,7 +201,7 @@ namespace _Chi.Scripts.Mono.Mission.Events
 
                 foreach (var handler in go.GetComponents<IMissionHandler>())
                 {
-                    handler.OnStart(this);
+                    handler.OnStart(this, fixedDuration);
                     handlerInstances.Add(handler);
                 }
                 

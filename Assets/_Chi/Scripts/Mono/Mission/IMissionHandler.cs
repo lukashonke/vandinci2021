@@ -4,7 +4,7 @@ namespace _Chi.Scripts.Mono.Mission
 {
     public interface IMissionHandler
     {
-        void OnStart(MissionEvent ev);
+        void OnStart(MissionEvent ev, float fixedDuration);
 
         void OnStop();
 

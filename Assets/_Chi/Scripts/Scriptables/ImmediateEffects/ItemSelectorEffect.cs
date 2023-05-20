@@ -1,7 +1,5 @@
 ﻿using _Chi.Scripts.Mono.Common;
-using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Mission;
-using _Chi.Scripts.Mono.Modules;
 using UnityEngine;
 
 namespace _Chi.Scripts.Scriptables.ImmediateEffects
