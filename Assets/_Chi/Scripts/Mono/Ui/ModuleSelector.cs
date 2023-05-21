@@ -39,6 +39,7 @@ namespace _Chi.Scripts.Mono.Ui
             public TriggeredShop triggeredShop;
             public float priceMul;
             public Action onBuy;
+            public TriggeredShopSet rewardSet;
         }
 
         public void Start()
@@ -171,6 +172,7 @@ namespace _Chi.Scripts.Mono.Ui
                     rewardSetItemWithWeight = rewardSetItemWithWeight.item,
                     priceMul = rewardSetItemWithWeight.priceMul,
                     triggeredShop = triggeredShop,
+                    rewardSet = rewardSet,
                     onBuy = () =>
                     {
                         if (rewardSet.ifBoughtHideForNextShopOccurences > 0)
@@ -236,12 +238,17 @@ namespace _Chi.Scripts.Mono.Ui
 
             var count = run.GetCountOfPrefabs(option.prefabItem.id);
                         
-            int? price = (int?) (option.rewardSetItemWithWeight.price * (option.triggeredShop?.priceMultiplier ?? 1));
-            int? priceToAdd = (int?) (price * (count * option.rewardSetItemWithWeight.priceMultiplyForEveryOwned));
-                        
-            price += priceToAdd;
-
-            return (int?) (price * option.priceMul * Gamesystem.instance.goldMul);
+            if (option.rewardSet.forcePriceForAllItems)
+            {
+                return (int?) (option.rewardSet.priceForAllItems);
+            }
+            else
+            {
+                var price = (int?) (option.rewardSetItemWithWeight.price * (option.triggeredShop?.priceMultiplier ?? 1));
+                int? priceToAdd = (int?) (price * (count * option.rewardSetItemWithWeight.priceMultiplyForEveryOwned));
+                price += priceToAdd;
+                return (int?) (price * option.priceMul * Gamesystem.instance.goldMul);
+            }
         }
 
         public void StartAddingItem(OptionData option)

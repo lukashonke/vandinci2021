@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1232174764404154631}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.9655329, y: -0.7786689, z: 0.09276754}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6255390720938775490}
@@ -51,32 +51,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
+    SerializedFormat: 0
+    SerializedBytes: 2d010b000000760069007300750061006c004900740065006d0073002d01110000006100640064006900740069006f006e0061006c0045006600660065006300740073002d01200000006100640064006900740069006f006e0061006c004f006e00420075006c006c0065007400440065007300740072006f00790045006600660065006300740073002d010f000000640069007300610062006c006500640045006600660065006300740073002d011600000074006100720067006500740041006600660065006300740043006f006e0064006900740069006f006e0073002d011a0000006100640064006900740069006f006e0061006c00530068006f006f0074004500660066006500630074007300530065006c006600
     ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: visualItems
-      Entry: 6
-      Data: 
-    - Name: additionalEffects
-      Entry: 6
-      Data: 
-    - Name: additionalOnBulletDestroyEffects
-      Entry: 6
-      Data: 
-    - Name: disabledEffects
-      Entry: 6
-      Data: 
-    - Name: targetAffectConditions
-      Entry: 6
-      Data: 
-    - Name: additionalShootEffectsSelf
-      Entry: 6
-      Data: 
+    SerializationNodes: []
   parent: {fileID: 0}
   slot: {fileID: 0}
   statusbar: {fileID: 0}
@@ -86,6 +68,7 @@ MonoBehaviour:
   instantRotation: 1
   maxLevel: 5
   maxUpgrades: 5
+  onFireReadyActivateGo: {fileID: 0}
   reloadProgress: 0
   muzzles: []
   stats:
@@ -115,7 +98,7 @@ MonoBehaviour:
       value: 0
     projectileDamage:
       baseValue: 7.5
-      value: 6
+      value: 7.5
     targetRange:
       baseValue: 6
       value: 0

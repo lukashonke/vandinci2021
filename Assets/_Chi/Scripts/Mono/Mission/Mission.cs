@@ -271,6 +271,11 @@ namespace _Chi.Scripts.Mono.Mission
 
         public int shownItemsCount;
 
+        public bool forcePriceForAllItems;
+        
+        [ShowIf("forcePriceForAllItems")]
+        public float priceForAllItems;
+
         [FormerlySerializedAs("hideForNextShopOccurences")] public int ifBoughtHideForNextShopOccurences;
     }
 }

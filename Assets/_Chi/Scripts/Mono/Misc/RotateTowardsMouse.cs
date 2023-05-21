@@ -56,9 +56,13 @@ namespace _Chi.Scripts.Mono.Misc
 
             Vector3 mousePosition = Utils.GetMousePosition();
             Vector2 direction = mousePosition - basePosition;
-            var rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f);
-            transform.rotation = rotation;
-            transform.position = follow.transform.position + (Vector3)(direction.normalized * delta);
+            
+            if (Utils.Dist2(basePosition, Utils.GetMousePosition()) > 0.1f)
+            {
+                var rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f);
+                transform.rotation = rotation;
+                transform.position = follow.transform.position + (Vector3)(direction.normalized * delta);
+            }
         }
     }
 }

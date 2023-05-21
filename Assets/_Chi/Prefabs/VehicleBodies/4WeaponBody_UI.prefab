@@ -316,8 +316,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 372.1, y: -59.2}
-  m_SizeDelta: {x: 486.8066, y: 26}
+  m_AnchoredPosition: {x: 170.31876, y: -59.199997}
+  m_SizeDelta: {x: 83.2442, y: 26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7837144170482267666
 CanvasRenderer:
@@ -945,11 +945,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1436047165158899976, guid: 6233df9c582d0da49814bb094aa72c2c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6297480507088187349, guid: 6233df9c582d0da49814bb094aa72c2c, type: 3}
       propertyPath: m_Name
       value: PassiveModuleSlot (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1436047165158899976, guid: 6233df9c582d0da49814bb094aa72c2c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6233df9c582d0da49814bb094aa72c2c, type: 3}
 --- !u!224 &1281633255300016326 stripped
 RectTransform:

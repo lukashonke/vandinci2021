@@ -18,6 +18,7 @@ namespace _Chi.Scripts.Mono.Ui
         public TextMeshProUGUI subTitle;
         public TextMeshProUGUI description;
         public TextMeshProUGUI price;
+        public Image priceIcon;
         public Image icon;
 
         public Button lockButton;
@@ -156,12 +157,14 @@ namespace _Chi.Scripts.Mono.Ui
             
             if (price.HasValue)
             {
-                this.price.gameObject.transform.parent.gameObject.SetActive(true);
+                this.price.gameObject.SetActive(true);
+                this.priceIcon.gameObject.SetActive(true);
                 this.price.text = price.Value.ToString();
             }
             else
             {
-                this.price.gameObject.transform.parent.gameObject.SetActive(false);
+                this.price.gameObject.SetActive(false);
+                this.priceIcon.gameObject.SetActive(false);
             }
         }
 
@@ -258,7 +261,10 @@ namespace _Chi.Scripts.Mono.Ui
 
         public void SetLocked(bool b)
         {
-            lockButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = b ? "Unlock" : "Lock";
+            if (lockButton != null)
+            {
+                lockButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = b ? "Unlock" : "Lock";
+            }
         }
 
         public void OnExpandItem()

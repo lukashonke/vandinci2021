@@ -407,8 +407,8 @@ MonoBehaviour:
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
-    distanceFromPlayerMin: 2
-    distanceFromPlayerMax: 4
+    distanceFromPlayerMin: 3
+    distanceFromPlayerMax: 7
     despawnAfter: 15
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
@@ -524,9 +524,9 @@ MonoBehaviour:
     spawnTimeMin: 0.045454547
     spawnTimeMax: 0.045454547
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 0.45454547
-    repeatSpawnIntervalMax: 0.45454547
-    repeatCount: 2
+    repeatSpawnIntervalMin: 0.3
+    repeatSpawnIntervalMax: 0.3
+    repeatCount: 3
     spawnCountMin: 30
     spawnCountMax: 30
     distanceFromPlayerMin: 0
@@ -585,8 +585,8 @@ MonoBehaviour:
     spawnTimeMin: 0.045454547
     spawnTimeMax: 0.045454547
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 0.45454547
-    repeatSpawnIntervalMax: 0.45454547
+    repeatSpawnIntervalMin: 0.31
+    repeatSpawnIntervalMax: 0.31
     repeatCount: 3
     spawnCountMin: 25
     spawnCountMax: 25

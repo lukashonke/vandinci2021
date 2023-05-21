@@ -158,7 +158,9 @@ MonoBehaviour:
     maxHpMul: 1
     hp: 300
   team: 2
+  isBoss: 0
   healthbarOffset: {x: 0, y: 0, z: 0}
+  fearEscapeAngle: 0
   seeker: {fileID: 0}
   rvoController: {fileID: 0}
   stats:
@@ -166,6 +168,7 @@ MonoBehaviour:
     rotationSpeed: 500
     contactDamage: 0
     contactDamageInterval: 1
+    armor: 0
   currentVariant: EyeSmall
   size: 1
   goDirectlyToPlayer: 0
@@ -173,6 +176,8 @@ MonoBehaviour:
   dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
   poolId: 62354
+  addTargetToUi: 0
+  addTargetToUiType: 0
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
   emitter: {fileID: 8233977395235515062}

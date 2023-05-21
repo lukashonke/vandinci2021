@@ -927,16 +927,16 @@ MonoBehaviour:
     roamRandomRadius: 3
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 0.071428575
-    spawnTimeMax: 0.14285715
+    spawnTimeMin: 0.05
+    spawnTimeMax: 0.15
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 0.42857143
-    repeatSpawnIntervalMax: 0.5
+    repeatSpawnIntervalMin: 0.5
+    repeatSpawnIntervalMax: 0.6
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
-    distanceFromPlayerMin: 2
-    distanceFromPlayerMax: 4
+    distanceFromPlayerMin: 3
+    distanceFromPlayerMax: 7
     despawnAfter: 15
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
@@ -1035,7 +1035,7 @@ MonoBehaviour:
   spawns:
   - possiblePrefabs:
     - type: 3
-      prefab: {fileID: 2016706442665377444, guid: d021c38515289304a9b1ddd57c0eaaab, type: 3}
+      prefab: {fileID: 2016706442665377444, guid: eb0717de991adb043a37ce68f457803d, type: 3}
       prefabNpc: {fileID: 6549855113248904363, guid: 95485f9b1a9973140bc1febcd04fe496, type: 3}
       weight: 1
       rotateTowardsPlayer: 0

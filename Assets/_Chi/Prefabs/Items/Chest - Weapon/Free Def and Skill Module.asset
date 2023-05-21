@@ -35,9 +35,13 @@ MonoBehaviour:
     - name: shop_defensive_basic
       showOnlyPreviouslyLocked: 0
       shownItemsCount: 2
+      forcePriceForAllItems: 0
+      priceForAllItems: 0
       ifBoughtHideForNextShopOccurences: 0
     - name: shop_skill_upgrades
       showOnlyPreviouslyLocked: 0
-      shownItemsCount: 2
+      shownItemsCount: 1
+      forcePriceForAllItems: 0
+      priceForAllItems: 0
       ifBoughtHideForNextShopOccurences: 0
     priceMultiplier: 0

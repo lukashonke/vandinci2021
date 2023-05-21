@@ -18,9 +18,15 @@ namespace _Chi.Scripts.Mono.Misc
 
         public bool goForward;
 
+        public float chanceToStayIdle;
+
         public void Start()
         {
-            if (chooseOneDirection)
+            if (chooseOneDirection && Random.value < chanceToStayIdle)
+            {
+                direction = Vector3.zero;
+            }
+            else
             {
                 if (goForward)
                 {

@@ -114,12 +114,12 @@ MonoBehaviour:
       value: 0
     projectileDamage:
       baseValue: 5
-      value: 500
+      value: 5
     targetRange:
-      baseValue: 2
+      baseValue: 2.75
       value: 0
     projectileRange:
-      baseValue: 3
+      baseValue: 3.5
       value: 0
     projectileLifetime:
       baseValue: 0

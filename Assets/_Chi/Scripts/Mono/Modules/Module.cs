@@ -53,6 +53,8 @@ namespace _Chi.Scripts.Mono.Modules
         
         [NonSerialized] public List<(object, ImmediateEffect)> additionalOnSkillUseEffects;
         
+        public GameObject onFireReadyActivateGo;
+        
         //[NonSerialized] public bool destroyed;
 
         public virtual void Awake()
@@ -286,7 +288,7 @@ namespace _Chi.Scripts.Mono.Modules
                 }
             }*/
         }
-
+        
         public virtual void OnMagazineReload()
         {
             if (additionalOnMagazineReloadEffects != null)
@@ -319,6 +321,19 @@ namespace _Chi.Scripts.Mono.Modules
                         subEmitter.OnMagazineReload(this);
                     }
                 }
+            }
+
+            if (onFireReadyActivateGo != null)
+            {
+                onFireReadyActivateGo.SetActive(true);
+            }
+        }
+
+        public virtual void OnModuleFire()
+        {
+            if (onFireReadyActivateGo != null)
+            {
+                onFireReadyActivateGo.SetActive(false);
             }
         }
 

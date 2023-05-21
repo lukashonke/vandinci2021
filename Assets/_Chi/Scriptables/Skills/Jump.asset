@@ -24,6 +24,7 @@ MonoBehaviour:
   reuseDelay: 10
   vfx: {fileID: 0}
   vfxDespawnAfter: 0
+  rechargeSingleCharges: 1
   jumpForce: 12
   jumpLength: 0.25
   shockwaveEffect: {fileID: 11400000, guid: dd98134581b959f4f9298606dd1479b7, type: 2}

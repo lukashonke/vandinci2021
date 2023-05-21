@@ -12,6 +12,7 @@ using BulletPro;
 using Com.LuisPedroFonseca.ProCamera2D;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Utils = _Chi.Scripts.Utilities.Utils;
 
 namespace _Chi.Scripts.Mono.Entities
 {
@@ -265,7 +266,11 @@ namespace _Chi.Scripts.Mono.Entities
             
             if (CanMove() && rotationTarget.HasValue)
             {
-                SetRotation(EntityExtensions.RotateTowards(GetPosition(), rotationTarget.Value, rb.transform.rotation, stats.rotationSpeed.GetValue()));
+                if(Utils.Dist2(rotationTarget.Value, GetPosition()) > 0.1f)
+                {
+                    SetRotation(EntityExtensions.RotateTowards(GetPosition(), rotationTarget.Value, rb.transform.rotation, stats.rotationSpeed.GetValue()));
+                    rotationTarget = null;
+                }
             }
             
             velocity = (position - previousPosition).magnitude / Time.deltaTime;

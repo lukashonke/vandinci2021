@@ -176,6 +176,8 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
                             emitter.ApplyParams(stats, parent, this);
                         };
                         emitter.Play();
+                        
+                        OnModuleFire();
 
                         bool consumeNoAmmo = false;
                         

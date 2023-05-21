@@ -7508,6 +7508,11 @@ MonoBehaviour:
         amountMin: 1
         amountMax: 1
         bypassGlobalDropChance: 0
+      - dropType: 0
+        dropChance: 4
+        amountMin: 1
+        amountMax: 1
+        bypassGlobalDropChance: 1
   - variant: ZombieNoReward
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -7567,6 +7572,11 @@ MonoBehaviour:
         amountMin: 2
         amountMax: 2
         bypassGlobalDropChance: 0
+      - dropType: 0
+        dropChance: 4
+        amountMin: 1
+        amountMax: 1
+        bypassGlobalDropChance: 1
   - variant: ZombieFat
     sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -7599,6 +7609,11 @@ MonoBehaviour:
         amountMin: 2
         amountMax: 2
         bypassGlobalDropChance: 0
+      - dropType: 0
+        dropChance: 4
+        amountMin: 1
+        amountMax: 1
+        bypassGlobalDropChance: 1
   - variant: ZombieIdleRunner
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 3dd12299c05371f44abf211a2d5a3e59, type: 2}
@@ -7631,6 +7646,11 @@ MonoBehaviour:
         amountMin: 1
         amountMax: 1
         bypassGlobalDropChance: 0
+      - dropType: 0
+        dropChance: 4
+        amountMin: 1
+        amountMax: 1
+        bypassGlobalDropChance: 1
   - variant: ZombieIdleWalker
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 3dd12299c05371f44abf211a2d5a3e59, type: 2}
@@ -7663,6 +7683,11 @@ MonoBehaviour:
         amountMin: 1
         amountMax: 1
         bypassGlobalDropChance: 0
+      - dropType: 0
+        dropChance: 4
+        amountMin: 1
+        amountMax: 1
+        bypassGlobalDropChance: 1
   - variant: ZombieIdleFatWalker
     sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 3dd12299c05371f44abf211a2d5a3e59, type: 2}
@@ -7695,6 +7720,11 @@ MonoBehaviour:
         amountMin: 2
         amountMax: 2
         bypassGlobalDropChance: 0
+      - dropType: 0
+        dropChance: 4
+        amountMin: 1
+        amountMax: 1
+        bypassGlobalDropChance: 1
   - variant: ZombieSneaky
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 8bf4bdf6f6e10984fb430e8d4362c064, type: 2}
@@ -7728,7 +7758,7 @@ MonoBehaviour:
         amountMax: 6
         bypassGlobalDropChance: 1
       - dropType: 0
-        dropChance: 100
+        dropChance: 20
         amountMin: 1
         amountMax: 1
         bypassGlobalDropChance: 1
@@ -8157,12 +8187,12 @@ MonoBehaviour:
     spriteMaterial: {fileID: 2100000, guid: ee3e4ece0fd6dd64caa864088dd87de9, type: 2}
     animatorController: {fileID: 0}
     entityStats:
-      maxHp: 3000
+      maxHp: 2000
       maxHpAdd: 0
       maxHpMul: 1
-      hp: 3000
+      hp: 2000
     npcStats:
-      speed: 1.1
+      speed: 1.2
       rotationSpeed: 10
       contactDamage: 20
       contactDamageInterval: 3

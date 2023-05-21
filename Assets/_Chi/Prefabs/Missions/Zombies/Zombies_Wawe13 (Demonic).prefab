@@ -529,8 +529,8 @@ MonoBehaviour:
     repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
-    distanceFromPlayerMin: 2
-    distanceFromPlayerMax: 4
+    distanceFromPlayerMin: 3
+    distanceFromPlayerMax: 7
     despawnAfter: 15
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Continuous Bullets
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 2756245
+  uniqueIndex: 5076308
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children: []
@@ -24805,7 +24805,7 @@ MonoBehaviour:
   foldoutExport: 0
   foldoutEmptyBin: 0
   foldoutCompactMode: 0
-  currentParamsSelected: {fileID: 114027673760526898}
+  currentParamsSelected: {fileID: 114201774248674550}
   numberOfSubAssets: 6
 --- !u!114 &114027673760526898
 MonoBehaviour:
@@ -24820,7 +24820,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 5413982
+  uniqueIndex: 10225663
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children: []
@@ -32556,7 +32556,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 16002877
+  uniqueIndex: 9063104
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -37410,7 +37410,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 3207344
+  uniqueIndex: 14707228
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -49150,7 +49150,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 10113139
+  uniqueIndex: 15659124
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:
@@ -58931,7 +58931,7 @@ MonoBehaviour:
   m_Name: Rotate
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 8376811
+  uniqueIndex: 1132249
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children: []

@@ -135,7 +135,7 @@ namespace _Chi.Scripts.Mono.System
 
             if (Input.GetMouseButton(1))
             {
-                Drop(DropType.Level1Gold, Utils.GetMousePosition(), true);
+                Drop(DropType.Level1Exp, Utils.GetMousePosition(), true);
             }
         }
         
@@ -267,6 +267,8 @@ namespace _Chi.Scripts.Mono.System
             go = Gamesystem.instance.poolSystem.Spawn(drop, prefab, 1000);
             
             go.transform.position = position;
+            
+            go.transform.rotation = Quaternion.Euler(0, 0, UnityEngine.Random.Range(0, 360)); 
             
             go.name = drop.ToString();
 

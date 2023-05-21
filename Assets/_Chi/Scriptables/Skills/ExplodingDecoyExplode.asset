@@ -24,7 +24,8 @@ MonoBehaviour:
   reuseDelay: 1
   vfx: {fileID: 0}
   vfxDespawnAfter: 0
+  rechargeSingleCharges: 0
   effects:
   - {fileID: 11400000, guid: a1b8ebb64645f62479d35ecd366c6a1b, type: 2}
   - {fileID: 11400000, guid: 44e78589b7fd8b04ea2901c87a605e86, type: 2}
-  effectStrength: 40
+  effectStrength: 50
