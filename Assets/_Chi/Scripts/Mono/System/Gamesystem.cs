@@ -14,6 +14,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
+using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 public class Gamesystem : MonoBehaviour
@@ -194,15 +195,22 @@ public class Gamesystem : MonoBehaviour
                     if (doDrop)
                     {
                         var player = Gamesystem.instance.objects.currentPlayer;
-                        var drops = Random.Range(item.amountMin, item.amountMax) * Math.Max(1, player.stats.playerGoldDropped.GetValueInt());
 
+                        var drops = Random.Range(item.amountMin, item.amountMax) * Math.Max(1, player.stats.playerGoldDropped.GetValueInt());
                         for (int i = 0; i < drops; i++)
                         {
                             Vector3 position;
                             const float spread = 0.4f;
                             position = npc.GetPosition() + new Vector3(UnityEngine.Random.Range(-spread, spread), UnityEngine.Random.Range(-spread, spread));
-                        
-                            dropManager.Drop(item.dropType, position, item.bypassGlobalDropChance);
+                            if (item.dropType == DropType.SpawnObject)
+                            {
+                                var go2 = Object.Instantiate(item.spawnedObject);
+                                go2.transform.position = position;
+                            }
+                            else
+                            {
+                                dropManager.Drop(item.dropType, position, item.bypassGlobalDropChance);
+                            }
                         }
                     }
                 }

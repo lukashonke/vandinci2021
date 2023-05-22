@@ -982,7 +982,7 @@ MonoBehaviour:
       weight: 1
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: ZombieBloater_MiniBoss
+      prefabVariant: ZombieBloater_Champion
     formation: 0
     formationLookAhead: 2
     formationRadius: 5
@@ -1338,7 +1338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOverride: Spawn Mini Boss
+  nameOverride: Champion
   tooltipOverride: 
   target: {fileID: -8490184538130329446}
 --- !u!1 &8916042786223728663

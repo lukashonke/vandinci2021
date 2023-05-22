@@ -11,5 +11,7 @@
         Level2Exp,
         Level3Exp,
         Level15Exp,
+        
+        SpawnObject
     }
 }

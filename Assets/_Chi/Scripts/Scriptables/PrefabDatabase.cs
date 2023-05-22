@@ -196,6 +196,10 @@ namespace _Chi.Scripts.Scriptables
     public class RewardItem
     {
         public DropType dropType;
+
+        [ShowIf("dropType", DropType.SpawnObject)]
+        public GameObject spawnedObject;
+        
         public float dropChance = 100;
 
         public int amountMin = 1;
@@ -218,6 +222,8 @@ namespace _Chi.Scripts.Scriptables
         public RVOLayer rvoLayer;
         [ShowIf("setRvoLayers")]
         public RVOLayer rvoCollidesWith;
+
+        public GameObject addChildren;
     }
 
     [Serializable]

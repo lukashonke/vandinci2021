@@ -63,6 +63,7 @@ GameObject:
   - component: {fileID: -3204359601985624663}
   - component: {fileID: 9000068432140191412}
   - component: {fileID: -4834552990613763330}
+  - component: {fileID: 7667481681467860890}
   m_Layer: 0
   m_Name: Zombies_Wawe5 (fats only)
   m_TagString: Untagged
@@ -89,6 +90,7 @@ Transform:
   - {fileID: 3750697999516981359}
   - {fileID: 3781662074522254375}
   - {fileID: 4954281466257687362}
+  - {fileID: 4194396515956681887}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -652,6 +654,67 @@ MonoBehaviour:
     distanceFromPlayerToDespawn: 1000
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 1
+--- !u!114 &7667481681467860890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091413172466918211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  waveName: Spawners
+  disable: 0
+  spawns:
+  - possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieFat_Champion
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
+    behavior: 0
+    roamDistance: 0
+    roamRandomRadius: 0
+    dieWhenReachFixedMoveTarget: 0
+    stopWhenReachFixedMoveTarget: 0
+    spawnTimeMin: 0.3
+    spawnTimeMax: 0.3
+    repeatSpawn: 0
+    repeatSpawnIntervalMin: 0.2857143
+    repeatSpawnIntervalMax: 0.35714287
+    repeatCount: 100
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayerMin: 7
+    distanceFromPlayerMax: 9
+    despawnAfter: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    spawnOutsideScreen: 1
+    despawnWhenOutsideScreen: 0
+    relativePosition: 3
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerWidth: 1.5
+    distanceFromPlayerToDespawn: 9999
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
 --- !u!1 &3022428695798256735
 GameObject:
   m_ObjectHideFlags: 1
@@ -746,6 +809,53 @@ MonoBehaviour:
   nameOverride: Exploding Decoys
   tooltipOverride: 
   target: {fileID: -50647473022081503}
+--- !u!1 &6598911581040804016
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4194396515956681887}
+  - component: {fileID: 8614483308980168492}
+  m_Layer: 0
+  m_Name: NameContainer(EditorOnly)
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4194396515956681887
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6598911581040804016}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2091413172466918208}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8614483308980168492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6598911581040804016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOverride: Champion
+  tooltipOverride: 
+  target: {fileID: 7667481681467860890}
 --- !u!1 &6741572360861018279
 GameObject:
   m_ObjectHideFlags: 1
@@ -931,6 +1041,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOverride: Treasure Chest
+  nameOverride: Treasure Chest - Weapon
   tooltipOverride: 
   target: {fileID: -4834552990613763330}

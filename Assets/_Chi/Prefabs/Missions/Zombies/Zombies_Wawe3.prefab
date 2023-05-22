@@ -1,52 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &77956531625375255
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3955657421213060727}
-  - component: {fileID: 5913474210346378797}
-  m_Layer: 0
-  m_Name: NameContainer(EditorOnly)
-  m_TagString: EditorOnly
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3955657421213060727
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77956531625375255}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2091413172466918208}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5913474210346378797
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77956531625375255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameOverride: Treasure Chest
-  tooltipOverride: 
-  target: {fileID: 1249034377217770707}
 --- !u!1 &605070906527956956
 GameObject:
   m_ObjectHideFlags: 1
@@ -207,7 +160,7 @@ GameObject:
   - component: {fileID: 6469568978721038765}
   - component: {fileID: -3204359601985624663}
   - component: {fileID: -2901633956280846353}
-  - component: {fileID: 1249034377217770707}
+  - component: {fileID: -3175481360635484326}
   m_Layer: 0
   m_Name: Zombies_Wawe3
   m_TagString: Untagged
@@ -237,7 +190,7 @@ Transform:
   - {fileID: 3750697999516981359}
   - {fileID: 5885289525060756674}
   - {fileID: 1260566902317913027}
-  - {fileID: 3955657421213060727}
+  - {fileID: 6982865534750665644}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1009,7 +962,7 @@ MonoBehaviour:
     distanceFromPlayerToDespawn: 1000
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 1
---- !u!114 &1249034377217770707
+--- !u!114 &-3175481360635484326
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1030,46 +983,46 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  waveName: Treasure Chest
+  waveName: Spawners
   disable: 0
   spawns:
   - possiblePrefabs:
-    - type: 3
-      prefab: {fileID: 2016706442665377444, guid: eb0717de991adb043a37ce68f457803d, type: 3}
-      prefabNpc: {fileID: 6549855113248904363, guid: 95485f9b1a9973140bc1febcd04fe496, type: 3}
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
       weight: 1
-      rotateTowardsPlayer: 0
-      noRotation: 1
-      prefabVariant: '-'
-    formation: 7
-    formationLookAhead: 1
-    formationRadius: 1
-    behavior: 3
-    roamDistance: 100
-    roamRandomRadius: 3
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: Zombie_Champion
+    formation: 0
+    formationLookAhead: 2
+    formationRadius: 5
+    behavior: 0
+    roamDistance: 0
+    roamRandomRadius: 0
     dieWhenReachFixedMoveTarget: 0
     stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 0
-    spawnTimeMax: 0
+    spawnTimeMin: 0.3
+    spawnTimeMax: 0.3
     repeatSpawn: 0
-    repeatSpawnIntervalMin: 30
-    repeatSpawnIntervalMax: 30
-    repeatCount: 1
+    repeatSpawnIntervalMin: 0.2857143
+    repeatSpawnIntervalMax: 0.35714287
+    repeatCount: 100
     spawnCountMin: 1
     spawnCountMax: 1
-    distanceFromPlayerMin: 5
-    distanceFromPlayerMax: 12
-    despawnAfter: 300
+    distanceFromPlayerMin: 7
+    distanceFromPlayerMax: 9
+    despawnAfter: 0
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
-    spawnOutsideScreen: 0
+    spawnOutsideScreen: 1
     despawnWhenOutsideScreen: 0
-    relativePosition: 4
+    relativePosition: 3
     despawnWhenOutsideScreenDist2: 2
     spawnBoxAroundPlayerWidth: 1.5
-    distanceFromPlayerToDespawn: 1000
+    distanceFromPlayerToDespawn: 9999
     trackEntityForMission: 0
-    onlyOnPlayerAccessibleArea: 1
+    onlyOnPlayerAccessibleArea: 0
 --- !u!1 &3022428695798256735
 GameObject:
   m_ObjectHideFlags: 1
@@ -1164,6 +1117,53 @@ MonoBehaviour:
   nameOverride: Exploding Decoys
   tooltipOverride: 
   target: {fileID: -50647473022081503}
+--- !u!1 &5798772346027077282
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6982865534750665644}
+  - component: {fileID: 1929369786742942237}
+  m_Layer: 0
+  m_Name: NameContainer(EditorOnly)
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6982865534750665644
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5798772346027077282}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2091413172466918208}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1929369786742942237
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5798772346027077282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOverride: Champion
+  tooltipOverride: 
+  target: {fileID: -3175481360635484326}
 --- !u!1 &6394772597837521872
 GameObject:
   m_ObjectHideFlags: 1

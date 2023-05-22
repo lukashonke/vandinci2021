@@ -112,7 +112,6 @@ GameObject:
   - component: {fileID: 9000068432140191412}
   - component: {fileID: -224760840263901782}
   - component: {fileID: 57001910074915540}
-  - component: {fileID: -2514981270624377744}
   m_Layer: 0
   m_Name: Zombies_Wawe5.5 (runners) 1
   m_TagString: Untagged
@@ -141,7 +140,6 @@ Transform:
   - {fileID: 3781662074522254375}
   - {fileID: 7242829842975457861}
   - {fileID: 7922885059366771342}
-  - {fileID: 2190635919104652198}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -811,67 +809,6 @@ MonoBehaviour:
     distanceFromPlayerToDespawn: 15
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
---- !u!114 &-2514981270624377744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091413172466918211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  waveName: Treasure Chest
-  disable: 0
-  spawns:
-  - possiblePrefabs:
-    - type: 3
-      prefab: {fileID: 2016706442665377444, guid: eb0717de991adb043a37ce68f457803d, type: 3}
-      prefabNpc: {fileID: 6549855113248904363, guid: 95485f9b1a9973140bc1febcd04fe496, type: 3}
-      weight: 1
-      rotateTowardsPlayer: 0
-      noRotation: 1
-      prefabVariant: '-'
-    formation: 7
-    formationLookAhead: 1
-    formationRadius: 1
-    behavior: 3
-    roamDistance: 100
-    roamRandomRadius: 3
-    dieWhenReachFixedMoveTarget: 0
-    stopWhenReachFixedMoveTarget: 0
-    spawnTimeMin: 0.013333334
-    spawnTimeMax: 0.013333334
-    repeatSpawn: 0
-    repeatSpawnIntervalMin: 30
-    repeatSpawnIntervalMax: 30
-    repeatCount: 1
-    spawnCountMin: 1
-    spawnCountMax: 1
-    distanceFromPlayerMin: 5
-    distanceFromPlayerMax: 12
-    despawnAfter: 300
-    spawnGroupSpreadMin: 1
-    spawnGroupSpreadMax: 1
-    spawnOutsideScreen: 0
-    despawnWhenOutsideScreen: 0
-    relativePosition: 0
-    despawnWhenOutsideScreenDist2: 2
-    spawnBoxAroundPlayerWidth: 1.5
-    distanceFromPlayerToDespawn: 1000
-    trackEntityForMission: 0
-    onlyOnPlayerAccessibleArea: 1
 --- !u!1 &3022428695798256735
 GameObject:
   m_ObjectHideFlags: 1
@@ -1201,50 +1138,3 @@ MonoBehaviour:
   nameOverride: Runners Towards Player
   tooltipOverride: 
   target: {fileID: 8998190245610271498}
---- !u!1 &9134629253949222235
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2190635919104652198}
-  - component: {fileID: 6172545544816198819}
-  m_Layer: 0
-  m_Name: NameContainer(EditorOnly)
-  m_TagString: EditorOnly
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2190635919104652198
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9134629253949222235}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2091413172466918208}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6172545544816198819
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9134629253949222235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameOverride: Treasure Chest
-  tooltipOverride: 
-  target: {fileID: -2514981270624377744}

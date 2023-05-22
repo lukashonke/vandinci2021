@@ -5256,7 +5256,7 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0.2
       lockId: 
       mustBeUnlocked: 0
-    - name: Increase Damage
+    - name: Damage Upgrade
       prefabId: 2503
       weight: 10
       isInGroup: 0
@@ -5266,7 +5266,7 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0.2
       lockId: 
       mustBeUnlocked: 0
-    - name: Fire Rate Module
+    - name: Reload Speed Upgrade
       prefabId: 2506
       weight: 10
       isInGroup: 0
@@ -5276,7 +5276,7 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0.2
       lockId: 
       mustBeUnlocked: 0
-    - name: Increase Projectile Area
+    - name: Projectile Area Upgrade
       prefabId: 2505
       weight: 10
       isInGroup: 0
@@ -7501,15 +7501,18 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 4
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 1
         amountMax: 1
         bypassGlobalDropChance: 0
       - dropType: 0
-        dropChance: 4
+        spawnedObject: {fileID: 0}
+        dropChance: 8
         amountMin: 1
         amountMax: 1
         bypassGlobalDropChance: 1
@@ -7538,6 +7541,7 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items: []
   - variant: ZombieFast
@@ -7565,15 +7569,64 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 4
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 2
         amountMax: 2
         bypassGlobalDropChance: 0
       - dropType: 0
-        dropChance: 4
+        spawnedObject: {fileID: 0}
+        dropChance: 8
+        amountMin: 1
+        amountMax: 1
+        bypassGlobalDropChance: 1
+  - variant: ZombieFast_Champion
+    sprite: {fileID: 21300000, guid: ada51a819fa2e4745b6756e5c835e252, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: ef229796d9a099b4f83b0144e2f32369, type: 2}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 300
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 300
+    npcStats:
+      speed: 2
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+      armor: 0
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+      addChildren: {fileID: 3718960863000632175, guid: d3cd6ef57176b5e4aa474aa637d71951, type: 3}
+    reward:
+      items:
+      - dropType: 4
+        spawnedObject: {fileID: 0}
+        dropChance: 100
+        amountMin: 2
+        amountMax: 2
+        bypassGlobalDropChance: 0
+      - dropType: 0
+        spawnedObject: {fileID: 0}
+        dropChance: 8
+        amountMin: 1
+        amountMax: 1
+        bypassGlobalDropChance: 1
+      - dropType: 8
+        spawnedObject: {fileID: 2016706442665377444, guid: eb0717de991adb043a37ce68f457803d, type: 3}
+        dropChance: 100
         amountMin: 1
         amountMax: 1
         bypassGlobalDropChance: 1
@@ -7602,15 +7655,110 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 4
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 2
         amountMax: 2
         bypassGlobalDropChance: 0
       - dropType: 0
-        dropChance: 4
+        spawnedObject: {fileID: 0}
+        dropChance: 8
+        amountMin: 1
+        amountMax: 1
+        bypassGlobalDropChance: 1
+  - variant: ZombieFat_Champion
+    sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: ef229796d9a099b4f83b0144e2f32369, type: 2}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 600
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 600
+    npcStats:
+      speed: 0.85
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+      armor: 0
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+      addChildren: {fileID: 3718960863000632175, guid: d3cd6ef57176b5e4aa474aa637d71951, type: 3}
+    reward:
+      items:
+      - dropType: 4
+        spawnedObject: {fileID: 0}
+        dropChance: 100
+        amountMin: 2
+        amountMax: 2
+        bypassGlobalDropChance: 0
+      - dropType: 0
+        spawnedObject: {fileID: 0}
+        dropChance: 8
+        amountMin: 1
+        amountMax: 1
+        bypassGlobalDropChance: 1
+      - dropType: 8
+        spawnedObject: {fileID: 2016706442665377444, guid: eb0717de991adb043a37ce68f457803d, type: 3}
+        dropChance: 100
+        amountMin: 1
+        amountMax: 1
+        bypassGlobalDropChance: 1
+  - variant: Zombie_Champion
+    sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: ef229796d9a099b4f83b0144e2f32369, type: 2}
+    animatorController: {fileID: 9100000, guid: f54b0e0d088b20346a942a6b13ad2b87, type: 2}
+    entityStats:
+      maxHp: 500
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 500
+    npcStats:
+      speed: 1.1
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+      armor: 0
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+      addChildren: {fileID: 3718960863000632175, guid: d3cd6ef57176b5e4aa474aa637d71951, type: 3}
+    reward:
+      items:
+      - dropType: 4
+        spawnedObject: {fileID: 0}
+        dropChance: 100
+        amountMin: 1
+        amountMax: 1
+        bypassGlobalDropChance: 0
+      - dropType: 0
+        spawnedObject: {fileID: 0}
+        dropChance: 8
+        amountMin: 1
+        amountMax: 1
+        bypassGlobalDropChance: 1
+      - dropType: 8
+        spawnedObject: {fileID: 2016706442665377444, guid: eb0717de991adb043a37ce68f457803d, type: 3}
+        dropChance: 100
         amountMin: 1
         amountMax: 1
         bypassGlobalDropChance: 1
@@ -7639,15 +7787,18 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 1
       rvoCollidesWith: 1073741824
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 4
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 1
         amountMax: 1
         bypassGlobalDropChance: 0
       - dropType: 0
-        dropChance: 4
+        spawnedObject: {fileID: 0}
+        dropChance: 8
         amountMin: 1
         amountMax: 1
         bypassGlobalDropChance: 1
@@ -7676,15 +7827,18 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 1
       rvoCollidesWith: 1073741824
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 4
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 1
         amountMax: 1
         bypassGlobalDropChance: 0
       - dropType: 0
-        dropChance: 4
+        spawnedObject: {fileID: 0}
+        dropChance: 8
         amountMin: 1
         amountMax: 1
         bypassGlobalDropChance: 1
@@ -7713,15 +7867,18 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 1
       rvoCollidesWith: 1073741824
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 4
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 2
         amountMax: 2
         bypassGlobalDropChance: 0
       - dropType: 0
-        dropChance: 4
+        spawnedObject: {fileID: 0}
+        dropChance: 8
         amountMin: 1
         amountMax: 1
         bypassGlobalDropChance: 1
@@ -7750,15 +7907,18 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 4
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 5
         amountMax: 6
         bypassGlobalDropChance: 1
       - dropType: 0
-        dropChance: 20
+        spawnedObject: {fileID: 0}
+        dropChance: 40
         amountMin: 1
         amountMax: 1
         bypassGlobalDropChance: 1
@@ -7787,13 +7947,55 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 4
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 1
         amountMax: 1
         bypassGlobalDropChance: 0
+  - variant: ZombieElite_Champion
+    sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
+    animatorController: {fileID: 9100000, guid: f54b0e0d088b20346a942a6b13ad2b87, type: 2}
+    entityStats:
+      maxHp: 1200
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 1200
+    npcStats:
+      speed: 1.1
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+      armor: 0
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+      addChildren: {fileID: 3718960863000632175, guid: d3cd6ef57176b5e4aa474aa637d71951, type: 3}
+    reward:
+      items:
+      - dropType: 4
+        spawnedObject: {fileID: 0}
+        dropChance: 100
+        amountMin: 1
+        amountMax: 1
+        bypassGlobalDropChance: 0
+      - dropType: 8
+        spawnedObject: {fileID: 2016706442665377444, guid: eb0717de991adb043a37ce68f457803d, type: 3}
+        dropChance: 100
+        amountMin: 1
+        amountMax: 1
+        bypassGlobalDropChance: 1
   - variant: ZombieEliteFast
     sprite: {fileID: 21300000, guid: ada51a819fa2e4745b6756e5c835e252, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
@@ -7819,13 +8021,55 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 4
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 2
         amountMax: 2
         bypassGlobalDropChance: 0
+  - variant: ZombieEliteFast_Champion
+    sprite: {fileID: 21300000, guid: ada51a819fa2e4745b6756e5c835e252, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 900
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 900
+    npcStats:
+      speed: 2
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+      armor: 0
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+      addChildren: {fileID: 3718960863000632175, guid: d3cd6ef57176b5e4aa474aa637d71951, type: 3}
+    reward:
+      items:
+      - dropType: 4
+        spawnedObject: {fileID: 0}
+        dropChance: 100
+        amountMin: 2
+        amountMax: 2
+        bypassGlobalDropChance: 0
+      - dropType: 8
+        spawnedObject: {fileID: 2016706442665377444, guid: eb0717de991adb043a37ce68f457803d, type: 3}
+        dropChance: 100
+        amountMin: 1
+        amountMax: 1
+        bypassGlobalDropChance: 1
   - variant: ZombieEliteFat
     sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
     spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
@@ -7851,12 +8095,54 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 4
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 2
         amountMax: 2
+        bypassGlobalDropChance: 0
+  - variant: ZombieEliteFat_Champion
+    sprite: {fileID: 21300000, guid: 840ebf84cb6f2274e9a84b3851bc9a05, type: 3}
+    spriteMaterial: {fileID: 2100000, guid: 7f02706a897fe554f9fcb58f84abd2ab, type: 2}
+    animatorController: {fileID: 0}
+    entityStats:
+      maxHp: 1800
+      maxHpAdd: 0
+      maxHpMul: 1
+      hp: 1800
+    npcStats:
+      speed: 0.85
+      rotationSpeed: 10
+      contactDamage: 20
+      contactDamageInterval: 0.5
+      armor: 0
+    skills: []
+    skillsOnDie: []
+    effectsOnDie: []
+    parameters:
+      spawnAroundEntityGroupName: 
+      rvoPriority: 0.5
+      disableRvoCollision: 0
+      setRvoLayers: 0
+      rvoLayer: 0
+      rvoCollidesWith: 0
+      addChildren: {fileID: 3718960863000632175, guid: d3cd6ef57176b5e4aa474aa637d71951, type: 3}
+    reward:
+      items:
+      - dropType: 4
+        spawnedObject: {fileID: 0}
+        dropChance: 100
+        amountMin: 2
+        amountMax: 2
+        bypassGlobalDropChance: 0
+      - dropType: 8
+        spawnedObject: {fileID: 2016706442665377444, guid: eb0717de991adb043a37ce68f457803d, type: 3}
+        dropChance: 100
+        amountMin: 1
+        amountMax: 1
         bypassGlobalDropChance: 0
   - variant: ZombieBloody
     sprite: {fileID: 21300000, guid: bfa4603a2fa9d8e49b8fac7714137222, type: 3}
@@ -7883,9 +8169,11 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 4
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 1
         amountMax: 1
@@ -7915,9 +8203,11 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 4
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 2
         amountMax: 2
@@ -7947,9 +8237,11 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 4
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 2
         amountMax: 2
@@ -7979,9 +8271,11 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 4
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 1
         amountMax: 1
@@ -8011,9 +8305,11 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 4
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 2
         amountMax: 2
@@ -8043,9 +8339,11 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 0
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 2
         amountMax: 2
@@ -8076,10 +8374,18 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 4
+        spawnedObject: {fileID: 0}
         dropChance: 100
+        amountMin: 1
+        amountMax: 1
+        bypassGlobalDropChance: 1
+      - dropType: 0
+        spawnedObject: {fileID: 0}
+        dropChance: 20
         amountMin: 1
         amountMax: 1
         bypassGlobalDropChance: 1
@@ -8109,9 +8415,11 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 7
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 1
         amountMax: 1
@@ -8142,9 +8450,11 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 5
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 4
         amountMax: 4
@@ -8175,9 +8485,11 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 5
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 4
         amountMax: 4
@@ -8209,9 +8521,11 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 5
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 10
         amountMax: 10
@@ -8243,16 +8557,18 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 5
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 10
         amountMax: 10
         bypassGlobalDropChance: 1
-  - variant: ZombieBloater_MiniBoss
+  - variant: ZombieBloater_Champion
     sprite: {fileID: 21300000, guid: 144004a65e0149f4eb3d3d5fc1b2dbe7, type: 3}
-    spriteMaterial: {fileID: 2100000, guid: 2f3fc085afccd9142b6e0e263bd5ba55, type: 2}
+    spriteMaterial: {fileID: 2100000, guid: ef229796d9a099b4f83b0144e2f32369, type: 2}
     animatorController: {fileID: 0}
     entityStats:
       maxHp: 2000
@@ -8276,12 +8592,20 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 3718960863000632175, guid: d3cd6ef57176b5e4aa474aa637d71951, type: 3}
     reward:
       items:
       - dropType: 5
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 5
         amountMax: 5
+        bypassGlobalDropChance: 1
+      - dropType: 8
+        spawnedObject: {fileID: 2016706442665377444, guid: eb0717de991adb043a37ce68f457803d, type: 3}
+        dropChance: 100
+        amountMin: 1
+        amountMax: 1
         bypassGlobalDropChance: 1
   - variant: ZombieBloater_BossSpawn
     sprite: {fileID: 21300000, guid: ada51a819fa2e4745b6756e5c835e252, type: 3}
@@ -8308,6 +8632,7 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items: []
   - variant: ZombieBloater_DemonicBossSpawn
@@ -8335,6 +8660,7 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items: []
   - variant: ZombieBloater
@@ -8363,6 +8689,7 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items: []
   - variant: ShootingTarget
@@ -8390,6 +8717,7 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items: []
   - variant: Knight
@@ -8417,6 +8745,7 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items: []
   - variant: Soldier
@@ -8444,6 +8773,7 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items: []
   - variant: Worker
@@ -8471,6 +8801,7 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items: []
   - variant: ZombieSpawner_ZombieSneaky
@@ -8498,6 +8829,7 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items: []
   - variant: ZombieSpawner_ZombieGroup
@@ -8525,6 +8857,7 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items: []
   - variant: ZombieSpawner_Zombie
@@ -8552,6 +8885,7 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items: []
   - variant: ZombieSpawner_ZombieElite
@@ -8579,6 +8913,7 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items: []
   - variant: ZombieSpawner_ZombieBloody
@@ -8606,6 +8941,7 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items: []
   - variant: ZombieSpawner_ZombieDemonic
@@ -8633,6 +8969,7 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items: []
   - variant: GoldChestSmall
@@ -8660,6 +8997,7 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items: []
   - variant: MonsterHouseSmall
@@ -8687,9 +9025,11 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 5
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 2
         amountMax: 2
@@ -8719,9 +9059,11 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 6
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 2
         amountMax: 2
@@ -8751,6 +9093,7 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items: []
   - variant: ExplodingDecoy
@@ -8779,9 +9122,11 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 4
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 1
         amountMax: 2
@@ -8811,9 +9156,11 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 4
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 1
         amountMax: 1
@@ -8843,9 +9190,11 @@ MonoBehaviour:
       setRvoLayers: 0
       rvoLayer: 0
       rvoCollidesWith: 0
+      addChildren: {fileID: 0}
     reward:
       items:
       - dropType: 5
+        spawnedObject: {fileID: 0}
         dropChance: 100
         amountMin: 1
         amountMax: 1

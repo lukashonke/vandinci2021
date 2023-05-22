@@ -84,6 +84,8 @@ namespace _Chi.Scripts.Mono.Entities
         private float originalSpeed;
 
         private bool isRegisteredWithSkills;
+        
+        private GameObject prefabVariantChild;
 
         #endregion
         
@@ -204,6 +206,11 @@ namespace _Chi.Scripts.Mono.Entities
         public virtual void Cleanup()
         {
             Unregister();
+
+            if (prefabVariantChild != null)
+            {
+                Destroy(prefabVariantChild);
+            }
             
             entityStats.maxHpAdd = 0;
             entityStats.maxHpMul = 1;
@@ -283,6 +290,12 @@ namespace _Chi.Scripts.Mono.Entities
                 Debug.LogError($"Variant {variant} is not defined.");
                 return;
             }
+            
+            if (prefabVariantChild != null)
+            {
+                Destroy(prefabVariantChild);
+                prefabVariantChild = null;
+            }
 
             currentVariant = variant;
             currentVariantInstance = variantInstance;
@@ -311,19 +324,28 @@ namespace _Chi.Scripts.Mono.Entities
                 }
             }
 
-            if (hasRvoController && variantInstance.parameters != null)
+            if (variantInstance.parameters != null)
             {
-                rvoController.priority = variantInstance.parameters.rvoPriority;
-                if (variantInstance.parameters.setRvoLayers)
+                if (hasRvoController)
                 {
-                    rvoController.layer = variantInstance.parameters.rvoLayer;
-                    rvoController.collidesWith = variantInstance.parameters.rvoCollidesWith;
-                }
+                    rvoController.priority = variantInstance.parameters.rvoPriority;
+                    if (variantInstance.parameters.setRvoLayers)
+                    {
+                        rvoController.layer = variantInstance.parameters.rvoLayer;
+                        rvoController.collidesWith = variantInstance.parameters.rvoCollidesWith;
+                    }
 
-                if (variantInstance.parameters.disableRvoCollision)
-                {
-                    rvoController.layer = RVOLayer.Layer30;
-                    rvoController.collidesWith = (RVOLayer) (0);
+                    if (variantInstance.parameters.disableRvoCollision)
+                    {
+                        rvoController.layer = RVOLayer.Layer30;
+                        rvoController.collidesWith = (RVOLayer) (0);
+                    }
+                    
+                    if (variantInstance.parameters.addChildren)
+                    {
+                        var transform1 = transform;
+                        prefabVariantChild = Instantiate(variantInstance.parameters.addChildren, transform1.position, Quaternion.identity, transform1);
+                    }
                 }
             }
 
