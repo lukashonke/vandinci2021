@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0528e443d0d642d5bab417e64a91ca08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileMul: 1
+  projectileMul: 0.0001
   whiteListEmitters:
   - {fileID: 11400000, guid: 46e29ba8216df7f47a848be8a37b7540, type: 2}
   - {fileID: 11400000, guid: e6d39f84fd7505645a533774ffca29fc, type: 2}

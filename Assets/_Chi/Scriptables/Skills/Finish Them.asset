@@ -21,6 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  reuseDelay: 3
+  reuseDelay: 12
   vfx: {fileID: 0}
   vfxDespawnAfter: 0
+  rechargeSingleCharges: 0

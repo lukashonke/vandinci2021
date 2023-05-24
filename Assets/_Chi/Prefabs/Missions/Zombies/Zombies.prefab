@@ -63,6 +63,7 @@ MonoBehaviour:
     - {fileID: 2091413172466918211, guid: 024036d8d9d01904da838b111c01fe9d, type: 3}
     - {fileID: 2091413172466918211, guid: 9d658c3e590d31e41b1e5bdd95d705c7, type: 3}
     - {fileID: 2091413172466918211, guid: 292773acb84f9b3429737f93189f3ac0, type: 3}
+    - {fileID: 2091413172466918211, guid: aabe03b11567f4846a47ed0e9bdaa5be, type: 3}
     - {fileID: 2091413172466918211, guid: 15e1d84e9c9f5dd4f94f49d915824668, type: 3}
     - {fileID: 2091413172466918211, guid: 6e278c4a43ebadd41b5d2315bad52cef, type: 3}
     - {fileID: 2091413172466918211, guid: 8d2c4b231e5b0cd4ba641b1b68ed530d, type: 3}
@@ -78,7 +79,7 @@ MonoBehaviour:
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 27
+      Data: 28
     - Name: 
       Entry: 7
       Data: 1|_Chi.Scripts.Mono.Mission.Events.ShopRewardSetHandler, Assembly-CSharp
@@ -94,6 +95,9 @@ MonoBehaviour:
     - Name: closeOnFirstPurchase
       Entry: 5
       Data: true
+    - Name: index
+      Entry: 3
+      Data: 0
     - Name: title
       Entry: 1
       Data: Choose your Weapon
@@ -102,6 +106,15 @@ MonoBehaviour:
       Data: 0
     - Name: expAcumulatedRequired
       Entry: 3
+      Data: 0
+    - Name: simulated
+      Entry: 5
+      Data: false
+    - Name: addGold
+      Entry: 3
+      Data: 0
+    - Name: priceMultiplier
+      Entry: 4
       Data: 0
     - Name: shopSet
       Entry: 7
@@ -140,9 +153,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: priceMultiplier
-      Entry: 4
-      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -164,6 +174,9 @@ MonoBehaviour:
     - Name: closeOnFirstPurchase
       Entry: 5
       Data: true
+    - Name: index
+      Entry: 3
+      Data: 0
     - Name: title
       Entry: 1
       Data: Choose your Skill
@@ -172,6 +185,15 @@ MonoBehaviour:
       Data: 0
     - Name: expAcumulatedRequired
       Entry: 3
+      Data: 0
+    - Name: simulated
+      Entry: 5
+      Data: false
+    - Name: addGold
+      Entry: 3
+      Data: 0
+    - Name: priceMultiplier
+      Entry: 4
       Data: 0
     - Name: shopSet
       Entry: 7
@@ -210,9 +232,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: priceMultiplier
-      Entry: 4
-      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -476,6 +495,9 @@ MonoBehaviour:
     - Name: closeOnFirstPurchase
       Entry: 5
       Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
     - Name: title
       Entry: 1
       Data: Shop
@@ -485,6 +507,15 @@ MonoBehaviour:
     - Name: expAcumulatedRequired
       Entry: 3
       Data: 0
+    - Name: simulated
+      Entry: 5
+      Data: false
+    - Name: addGold
+      Entry: 3
+      Data: 0
+    - Name: priceMultiplier
+      Entry: 4
+      Data: 10
     - Name: shopSet
       Entry: 7
       Data: 22|System.Collections.Generic.List`1[[_Chi.Scripts.Mono.Mission.TriggeredShopSet,
@@ -570,9 +601,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: priceMultiplier
-      Entry: 4
-      Data: 10
     - Name: 
       Entry: 8
       Data: 
@@ -839,6 +867,9 @@ MonoBehaviour:
     - Name: closeOnFirstPurchase
       Entry: 5
       Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
     - Name: title
       Entry: 1
       Data: Shop
@@ -848,6 +879,15 @@ MonoBehaviour:
     - Name: expAcumulatedRequired
       Entry: 3
       Data: 0
+    - Name: simulated
+      Entry: 5
+      Data: false
+    - Name: addGold
+      Entry: 3
+      Data: 0
+    - Name: priceMultiplier
+      Entry: 4
+      Data: 10
     - Name: shopSet
       Entry: 7
       Data: 39|System.Collections.Generic.List`1[[_Chi.Scripts.Mono.Mission.TriggeredShopSet,
@@ -872,7 +912,7 @@ MonoBehaviour:
       Data: true
     - Name: priceForAllItems
       Entry: 4
-      Data: 40
+      Data: 50
     - Name: ifBoughtHideForNextShopOccurences
       Entry: 3
       Data: 0
@@ -896,7 +936,7 @@ MonoBehaviour:
       Data: true
     - Name: priceForAllItems
       Entry: 4
-      Data: 40
+      Data: 50
     - Name: ifBoughtHideForNextShopOccurences
       Entry: 3
       Data: 0
@@ -920,7 +960,7 @@ MonoBehaviour:
       Data: true
     - Name: priceForAllItems
       Entry: 4
-      Data: 20
+      Data: 25
     - Name: ifBoughtHideForNextShopOccurences
       Entry: 3
       Data: 0
@@ -933,9 +973,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: priceMultiplier
-      Entry: 4
-      Data: 10
     - Name: 
       Entry: 8
       Data: 
@@ -1141,6 +1178,9 @@ MonoBehaviour:
     - Name: closeOnFirstPurchase
       Entry: 5
       Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
     - Name: title
       Entry: 1
       Data: Shop
@@ -1150,6 +1190,15 @@ MonoBehaviour:
     - Name: expAcumulatedRequired
       Entry: 3
       Data: 0
+    - Name: simulated
+      Entry: 5
+      Data: false
+    - Name: addGold
+      Entry: 3
+      Data: 0
+    - Name: priceMultiplier
+      Entry: 4
+      Data: 10
     - Name: shopSet
       Entry: 7
       Data: 53|System.Collections.Generic.List`1[[_Chi.Scripts.Mono.Mission.TriggeredShopSet,
@@ -1235,9 +1284,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: priceMultiplier
-      Entry: 4
-      Data: 10
     - Name: 
       Entry: 8
       Data: 
@@ -1252,7 +1298,7 @@ MonoBehaviour:
       Data: Wawe 10
     - Name: fixedDuration
       Entry: 4
-      Data: 100
+      Data: 60
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
@@ -1295,10 +1341,10 @@ MonoBehaviour:
       Data: 59|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
-      Data: Wawe 11
+      Data: Wawe 10.5
     - Name: fixedDuration
       Entry: 4
-      Data: 100
+      Data: 60
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
@@ -1341,7 +1387,7 @@ MonoBehaviour:
       Data: 61|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
-      Data: Wawe 12
+      Data: Wawe 11
     - Name: fixedDuration
       Entry: 4
       Data: 100
@@ -1384,19 +1430,68 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 63|_Chi.Scripts.Mono.Mission.Events.ShopRewardSetHandler, Assembly-CSharp
+      Data: 63|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+    - Name: eventName
+      Entry: 1
+      Data: Wawe 12
+    - Name: fixedDuration
+      Entry: 4
+      Data: 100
+    - Name: waitTillAllSpawnedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllTrackedAreDead
+      Entry: 5
+      Data: false
+    - Name: waitTillAllWawesSpawn
+      Entry: 5
+      Data: false
+    - Name: setGlobalDropChance
+      Entry: 5
+      Data: false
+    - Name: globalDropChance
+      Entry: 4
+      Data: 0
+    - Name: handlers
+      Entry: 7
+      Data: 64|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 17
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: endAfterFixedDuration
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 65|_Chi.Scripts.Mono.Mission.Events.ShopRewardSetHandler, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Shop
     - Name: rewardSet
       Entry: 7
-      Data: 64|_Chi.Scripts.Mono.Mission.TriggeredShop, Assembly-CSharp
+      Data: 66|_Chi.Scripts.Mono.Mission.TriggeredShop, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
     - Name: closeOnFirstPurchase
       Entry: 5
       Data: false
+    - Name: index
+      Entry: 3
+      Data: 0
     - Name: title
       Entry: 1
       Data: Shop
@@ -1406,16 +1501,25 @@ MonoBehaviour:
     - Name: expAcumulatedRequired
       Entry: 3
       Data: 0
+    - Name: simulated
+      Entry: 5
+      Data: false
+    - Name: addGold
+      Entry: 3
+      Data: 0
+    - Name: priceMultiplier
+      Entry: 4
+      Data: 10
     - Name: shopSet
       Entry: 7
-      Data: 65|System.Collections.Generic.List`1[[_Chi.Scripts.Mono.Mission.TriggeredShopSet,
+      Data: 67|System.Collections.Generic.List`1[[_Chi.Scripts.Mono.Mission.TriggeredShopSet,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 66|_Chi.Scripts.Mono.Mission.TriggeredShopSet, Assembly-CSharp
+      Data: 68|_Chi.Scripts.Mono.Mission.TriggeredShopSet, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: shop_passives_basic
@@ -1439,7 +1543,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 67|_Chi.Scripts.Mono.Mission.TriggeredShopSet, Assembly-CSharp
+      Data: 69|_Chi.Scripts.Mono.Mission.TriggeredShopSet, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: shop_player_upgrades
@@ -1467,9 +1571,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: priceMultiplier
-      Entry: 4
-      Data: 10
     - Name: 
       Entry: 8
       Data: 
@@ -1478,7 +1579,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 68|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 70|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 13
@@ -1502,14 +1603,14 @@ MonoBehaviour:
       Data: 0
     - Name: handlers
       Entry: 7
-      Data: 69|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 71|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 10
-      Data: 17
+      Data: 18
     - Name: 
       Entry: 13
       Data: 
@@ -1524,7 +1625,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 70|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
+      Data: 72|_Chi.Scripts.Mono.Mission.Events.StartMissionHandlerEvent, Assembly-CSharp
     - Name: eventName
       Entry: 1
       Data: Wawe 14 Boss
@@ -1548,14 +1649,14 @@ MonoBehaviour:
       Data: 0
     - Name: handlers
       Entry: 7
-      Data: 71|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+      Data: 73|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 10
-      Data: 18
+      Data: 19
     - Name: 
       Entry: 13
       Data: 
@@ -1585,9 +1686,13 @@ MonoBehaviour:
     shops:
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 1
+      title: Choose Reward (1)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 12
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 12
       shopSet:
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
@@ -1601,12 +1706,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 1
-      priceMultiplier: 12
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 2
+      title: Choose Reward (1)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 30
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 12
       shopSet:
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
@@ -1620,12 +1728,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 0
-      priceMultiplier: 12
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 2
+      title: Choose Reward (2)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 54
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 15
       shopSet:
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
@@ -1639,12 +1750,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 0
-      priceMultiplier: 15
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 3
+      title: Choose Reward (3)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 116
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 19
       shopSet:
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
@@ -1652,12 +1766,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 1
-      priceMultiplier: 19
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 4
+      title: Choose Reward (4)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 189
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 19
       shopSet:
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
@@ -1671,12 +1788,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 0
-      priceMultiplier: 19
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 4
+      title: Choose Reward (4)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 262
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 38
       shopSet:
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
@@ -1684,12 +1804,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 1
-      priceMultiplier: 38
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 5
+      title: Choose Reward (5)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 367
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 38
       shopSet:
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
@@ -1703,12 +1826,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 0
-      priceMultiplier: 38
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 5
+      title: Choose Reward (5)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 473
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 55
       shopSet:
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
@@ -1716,12 +1842,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 1
-      priceMultiplier: 55
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 5
+      title: Choose Reward (5)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 611
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 72
       shopSet:
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
@@ -1735,12 +1864,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 0
-      priceMultiplier: 72
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 5
+      title: Choose Reward (5)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 749
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 72
       shopSet:
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
@@ -1748,12 +1880,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 1
-      priceMultiplier: 72
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 6
+      title: Choose Reward (6)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 919
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 89
       shopSet:
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
@@ -1773,12 +1908,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 0
-      priceMultiplier: 89
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 6
+      title: Choose Reward (6)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 1089
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 89
       shopSet:
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
@@ -1786,12 +1924,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 1
-      priceMultiplier: 89
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 6
+      title: Choose Reward (6)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 1342
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 145
       shopSet:
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
@@ -1811,12 +1952,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 0
-      priceMultiplier: 145
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 6
+      title: Choose Reward (6)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 1595
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 145
       shopSet:
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
@@ -1824,12 +1968,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 1
-      priceMultiplier: 145
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 8
+      title: Choose Reward (8)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 1930
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 145
       shopSet:
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
@@ -1849,12 +1996,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 0
-      priceMultiplier: 145
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 8
+      title: Choose Reward (8)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 2265
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 192
       shopSet:
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
@@ -1862,12 +2012,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 1
-      priceMultiplier: 192
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 9
+      title: Choose Reward (9)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 3032
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 348
       shopSet:
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
@@ -1887,12 +2040,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 0
-      priceMultiplier: 348
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 9
+      title: Choose Reward (9)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 3500
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 348
       shopSet:
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
@@ -1900,12 +2056,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 1
-      priceMultiplier: 348
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 9
+      title: Choose Reward (9.5)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 4150
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 365
       shopSet:
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
@@ -1925,12 +2084,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 0
-      priceMultiplier: 365
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 10
+      title: Choose Reward (10)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 4800
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 365
       shopSet:
       - name: shop_chaos_upgrades
         showOnlyPreviouslyLocked: 0
@@ -1938,12 +2100,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 1
-      priceMultiplier: 365
     - type: 0
       closeOnFirstPurchase: 1
-      title: Choose Reward
+      index: 11
+      title: Choose Reward (11)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 6100
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 365
       shopSet:
       - name: shop_passives_basic
         showOnlyPreviouslyLocked: 0
@@ -1963,12 +2128,15 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 0
-      priceMultiplier: 365
     - type: 0
       closeOnFirstPurchase: 0
-      title: Choose Reward
+      index: 20
+      title: Choose Reward (final)
       goldAcumulatedRequired: 0
       expAcumulatedRequired: 999999
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 999
       shopSet:
       - name: shop_weapons
         showOnlyPreviouslyLocked: 0
@@ -2006,5 +2174,387 @@ MonoBehaviour:
         forcePriceForAllItems: 0
         priceForAllItems: 0
         ifBoughtHideForNextShopOccurences: 0
-      priceMultiplier: 999
+    simulatedRewards:
+    - type: 0
+      closeOnFirstPurchase: 1
+      index: 0
+      title: Choose your Weapon
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 0
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 0
+      shopSet:
+      - name: free_start_weapon
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+    - type: 0
+      closeOnFirstPurchase: 1
+      index: 0
+      title: Choose your Skill
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 0
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 0
+      shopSet:
+      - name: free_start_skill
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 0
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+    - type: 0
+      closeOnFirstPurchase: 1
+      index: 3
+      title: CHEST WAWE 3 CHAMPION
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 0
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 0
+      shopSet:
+      - name: shop_defensive_basic
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_player_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_skill_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 1
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+    - type: 0
+      closeOnFirstPurchase: 1
+      index: 5
+      title: CHEST WAWE 5 CHAMPION
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 0
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 0
+      shopSet:
+      - name: shop_defensive_basic
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_player_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_skill_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 1
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+    - type: 0
+      closeOnFirstPurchase: 1
+      index: 5
+      title: CHEST WAWE 5 WEAPON
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 0
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 0
+      shopSet:
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 4
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+    - type: 1
+      closeOnFirstPurchase: 0
+      index: 5
+      title: WAVE 5 SHOP
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 0
+      simulated: 1
+      addGold: 35
+      priceMultiplier: 10
+      shopSet:
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 1
+        forcePriceForAllItems: 1
+        priceForAllItems: 10
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_passives_basic
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 4
+        forcePriceForAllItems: 1
+        priceForAllItems: 10
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_player_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 1
+        priceForAllItems: 5
+        ifBoughtHideForNextShopOccurences: 0
+    - type: 0
+      closeOnFirstPurchase: 1
+      index: 6
+      title: CHEST WAWE 5.99 CHAOS
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 0
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 0
+      shopSet:
+      - name: shop_chaos_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 1
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+    - type: 0
+      closeOnFirstPurchase: 1
+      index: 6
+      title: CHEST WAWE 5.99 PASSIVE
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 0
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 0
+      shopSet:
+      - name: shop_passives_basic
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+    - type: 0
+      closeOnFirstPurchase: 1
+      index: 6
+      title: CHEST WAWE 6 CHAMPION
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 0
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 0
+      shopSet:
+      - name: shop_defensive_basic
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_player_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_skill_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 1
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+    - type: 0
+      closeOnFirstPurchase: 1
+      index: 7
+      title: CHEST WAWE 7 CHAMPION
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 0
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 0
+      shopSet:
+      - name: shop_defensive_basic
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_player_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_skill_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 1
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+    - type: 0
+      closeOnFirstPurchase: 1
+      index: 8
+      title: CHEST WAWE 8 CHAMPION
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 0
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 0
+      shopSet:
+      - name: shop_defensive_basic
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_player_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_skill_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 1
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+    - type: 1
+      closeOnFirstPurchase: 0
+      index: 8
+      title: WAVE 8 SHOP
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 0
+      simulated: 1
+      addGold: 125
+      priceMultiplier: 10
+      shopSet:
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 1
+        forcePriceForAllItems: 1
+        priceForAllItems: 50
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_passives_basic
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 4
+        forcePriceForAllItems: 1
+        priceForAllItems: 50
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_player_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 1
+        priceForAllItems: 25
+        ifBoughtHideForNextShopOccurences: 0
+    - type: 0
+      closeOnFirstPurchase: 1
+      index: 10
+      title: CHEST WAWE 10 CHAMPION 1
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 0
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 0
+      shopSet:
+      - name: shop_defensive_basic
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_player_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_skill_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 1
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+    - type: 0
+      closeOnFirstPurchase: 1
+      index: 10
+      title: CHEST WAWE 10 CHAMPION 2
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 0
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 0
+      shopSet:
+      - name: shop_defensive_basic
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_player_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_skill_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 1
+        forcePriceForAllItems: 0
+        priceForAllItems: 0
+        ifBoughtHideForNextShopOccurences: 0
+    - type: 1
+      closeOnFirstPurchase: 0
+      index: 10
+      title: WAVE 10 SHOP
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 0
+      simulated: 1
+      addGold: 250
+      priceMultiplier: 10
+      shopSet:
+      - name: shop_weapons
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 1
+        forcePriceForAllItems: 1
+        priceForAllItems: 100
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_passives_basic
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 4
+        forcePriceForAllItems: 1
+        priceForAllItems: 100
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_player_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 1
+        priceForAllItems: 50
+        ifBoughtHideForNextShopOccurences: 0
+    - type: 1
+      closeOnFirstPurchase: 0
+      index: 12
+      title: WAVE 12 SHOP
+      goldAcumulatedRequired: 0
+      expAcumulatedRequired: 0
+      simulated: 0
+      addGold: 0
+      priceMultiplier: 10
+      shopSet:
+      - name: shop_passives_basic
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 4
+        forcePriceForAllItems: 1
+        priceForAllItems: 300
+        ifBoughtHideForNextShopOccurences: 0
+      - name: shop_player_upgrades
+        showOnlyPreviouslyLocked: 0
+        shownItemsCount: 2
+        forcePriceForAllItems: 1
+        priceForAllItems: 150
+        ifBoughtHideForNextShopOccurences: 0
     rerollPrices: 0000000001000000050000000a000000190000003200000064000000f40100009f860100

@@ -21,6 +21,8 @@ namespace _Chi.Scripts.Scriptables.Skills
             
             if (!force && !CanTrigger(entity, out usedExtraCharge)) return false;
             
+            entity.OnSkillUse(this);
+            
             foreach (var effect in effects)
             {
                 var effectData = Gamesystem.instance.poolSystem.GetEffectData();
@@ -45,6 +47,8 @@ namespace _Chi.Scripts.Scriptables.Skills
                 }
                 return true;
             }
+            
+            entity.OnAfterSkillUse(this);
 
             return false;
         }

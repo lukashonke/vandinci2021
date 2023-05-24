@@ -22,7 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Gale Force
-  uiDescription: TODO
+  uiDescription: Projectiles push hit enemies away.
   effects: []
   addSkills: []
   rarity: 0

@@ -40,6 +40,8 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
         [ShowIf("targetCountType", AffectCountType.Fixed)]
         public int hitTargets = 1;
 
+        public float hitTargetsMul = 1f;
+
         public ImmediateEffectFlags effectFlags;
         
         //TODO hp condition
@@ -121,6 +123,8 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
+
+                count = (int) Math.Ceiling(count * hitTargetsMul);
                 
                 List<Entity> hits = ListPool<Entity>.Get();
                 

@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec5f28216784a6183b983f18af89569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileMul: 10
+  projectileMul: 12
   fireBeforeSkill: 1
   fireAfterSkill: 0
   skillToUse: {fileID: 11400000, guid: 19efa62420a1aa04882ce7fb0b4f4a5e, type: 2}

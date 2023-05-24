@@ -23,7 +23,7 @@ MonoBehaviour:
     SerializationNodes: []
   order: 20
   effect: 5
-  forcedFlags: 0
+  forcedFlags: 1
   chance: 1
   basePush: 50
   pushDuration: 0.5

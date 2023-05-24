@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rotate
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 270486
+  uniqueIndex: 8199394
   profile: {fileID: 11400000}
   parent: {fileID: 114027673760526898}
   children: []
@@ -5674,7 +5674,7 @@ MonoBehaviour:
             parameterName: 
           defaultValue: 0
         - settings:
-            valueType: 1
+            valueType: 0
             interpolationValue:
               interpolationFactor: 0
               repartitionCurve:
@@ -5735,7 +5735,7 @@ MonoBehaviour:
             parameterType: 0
             relativeTo: 0
             parameterName: 
-          defaultValue: 20
+          defaultValue: 30
         - settings:
             valueType: 0
             interpolationValue:
@@ -5798,7 +5798,7 @@ MonoBehaviour:
             parameterType: 0
             relativeTo: 0
             parameterName: 
-          defaultValue: 20
+          defaultValue: 25
         - settings:
             valueType: 0
             interpolationValue:
@@ -5861,7 +5861,7 @@ MonoBehaviour:
             parameterType: 0
             relativeTo: 0
             parameterName: 
-          defaultValue: 20
+          defaultValue: 25
         useSlider: 0
         sliderMin: 0
         sliderMax: 0
@@ -19973,7 +19973,7 @@ MonoBehaviour:
   advancedFoldout: 0
   hasBeenSerializedOnce: 1
   focusedInstruction: 1
-  safetyForPlaymode: 84
+  safetyForPlaymode: 95
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20004,7 +20004,7 @@ MonoBehaviour:
   foldoutExport: 0
   foldoutEmptyBin: 0
   foldoutCompactMode: 0
-  currentParamsSelected: {fileID: 114027673760526898}
+  currentParamsSelected: {fileID: -4477140202204669359}
   numberOfSubAssets: 4
 --- !u!114 &114027673760526898
 MonoBehaviour:
@@ -20019,7 +20019,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 13690628
+  uniqueIndex: 718630
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children:
@@ -22339,7 +22339,7 @@ MonoBehaviour:
   foldoutVFX: 1
   hideSpriteList: 0
   vfxOpened: 0
-  currentlyDisplayedModule: 2
+  currentlyDisplayedModule: 5
   canMove: 1
   canCollide: 1
   isVisible: 1
@@ -27856,7 +27856,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 4685538
+  uniqueIndex: 14729263
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -30524,7 +30524,7 @@ MonoBehaviour:
           parameterType: 0
           relativeTo: 0
           parameterName: 
-        defaultValue: {x: 0, y: 1.5}
+        defaultValue: {x: 0, y: 1.3}
       - settings:
           valueType: 0
           interpolationValue:
@@ -30587,7 +30587,7 @@ MonoBehaviour:
           parameterType: 0
           relativeTo: 0
           parameterName: 
-        defaultValue: {x: 0, y: 2}
+        defaultValue: {x: 0, y: 1.3}
     localMovement:
       valueTree:
       - settings:
@@ -32729,15 +32729,15 @@ MonoBehaviour:
     selectionRectsVisible: 1
     postEffectBulletSpawns:
     - index: 0
-      bulletOrigin: {x: 0, y: 1.75, z: 90}
+      bulletOrigin: {x: 0, y: 1.3, z: 90}
       useDifferentBullet: 0
       bulletParams: {fileID: 0}
     enabled: 1
   bulletParamsRandom: 0
   listOfPossibleBulletParams: []
   possibleBulletParams: 0
-  highestValues: {x: 0, y: 1.75, z: 90}
-  lowestValues: {x: 0, y: 1.75, z: 90}
+  highestValues: {x: 0, y: 1.3, z: 90}
+  lowestValues: {x: 0, y: 1.3, z: 90}
   hasBeenSerializedOnce: 1
   fakeBulletAmount: 1
   foldout0: 0
@@ -32782,7 +32782,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 9406721
+  uniqueIndex: 14445638
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -45706,7 +45706,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 4804533
+  uniqueIndex: 6213204
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:

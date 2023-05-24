@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using BulletPro;
@@ -10,7 +11,7 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
     {
         private Vector3 lastPos;
 
-        public int projectileMul = 1;
+        public float projectileMul = 1;
 
         public EmitOnTargetType type;
         
@@ -62,7 +63,9 @@ namespace _Chi.Scripts.Mono.Modules.Offensive.Subs
             
                 if (emitter.rootBullet != null && parentModule is OffensiveModule offensiveModule)
                 {
-                    emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileCount, projectileMul * offensiveModule.stats.projectileCount.GetValueInt() * offensiveModule.stats.projectileMultiplier.GetValueInt());
+                    int projectileCount = (int) Math.Ceiling(projectileMul * offensiveModule.stats.projectileCount.GetValueInt() * offensiveModule.stats.projectileMultiplier.GetValueInt());
+                    
+                    emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileCount, projectileCount);
                     
                     emitter.rootBullet.moduleParameters.SetObjectReference(BulletVariables.IgnoreTarget1, target);
                 }

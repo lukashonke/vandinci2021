@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 4939348
+  uniqueIndex: 14100142
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children: []
@@ -7771,7 +7771,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 2369031
+  uniqueIndex: 6474243
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -12445,7 +12445,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 13204047
+  uniqueIndex: 14639587
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -25369,7 +25369,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 12600080
+  uniqueIndex: 7861403
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:
@@ -39951,7 +39951,7 @@ MonoBehaviour:
         m_Center: {x: 0, y: 0, z: 0}
         m_Extent: {x: 0, y: 0, z: 0}
       displayName: Play Audio
-    - enabled: 1
+    - enabled: 0
       instructionType: 0
       waitTime:
         valueTree:
@@ -49590,4 +49590,4 @@ MonoBehaviour:
   advancedFoldout: 0
   hasBeenSerializedOnce: 1
   focusedInstruction: -1
-  safetyForPlaymode: 57
+  safetyForPlaymode: 61

@@ -71,9 +71,10 @@ MonoBehaviour:
   dropProjectileRadius: 0.1
   triggerType: 1
   targetType: 1
-  targetCountType: 1
+  targetCountType: 0
   maxDistance2ToTarget: 100
   triggerChance: 1
   trigeringSkill: {fileID: 11400000, guid: 6ef8088a4fd79dd4eaf03eebf2b50410, type: 2}
   hitTargets: 50
+  hitTargetsMul: 5
   effectFlags: 4

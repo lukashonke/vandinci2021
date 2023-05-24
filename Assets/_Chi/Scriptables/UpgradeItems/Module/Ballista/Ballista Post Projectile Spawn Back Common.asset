@@ -26,7 +26,7 @@ MonoBehaviour:
     in its place which is shot towards the player.
   effects: []
   addSkills: []
-  rarity: 0
+  rarity: 1
   unlocksModulePrefabIds: 
   disablesModulePrefabIds: 
   replacesModulePrefabIds: 

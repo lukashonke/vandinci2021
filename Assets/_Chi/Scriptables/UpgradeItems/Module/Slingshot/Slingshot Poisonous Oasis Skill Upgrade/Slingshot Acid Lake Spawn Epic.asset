@@ -22,8 +22,9 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   order: 20
+  effect: 0
   forcedFlags: 0
   chance: 1
   prefab: {fileID: 8889423923064880148, guid: 6d7d779320b1b81469dd42c3f7083f09, type: 3}
-  despawnAfter: 4
+  despawnAfter: 30
   spawnChance: 0.2

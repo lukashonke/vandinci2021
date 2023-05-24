@@ -67,4 +67,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileMul: 1
-  everyNth: 1
+  everyNth: 2

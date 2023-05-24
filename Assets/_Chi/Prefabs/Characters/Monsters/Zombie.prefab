@@ -109,7 +109,9 @@ MonoBehaviour:
     maxHpMul: 1
     hp: 20
   team: 2
+  isBoss: 0
   healthbarOffset: {x: 0, y: 0, z: 0}
+  fearEscapeAngle: 0
   seeker: {fileID: 0}
   rvoController: {fileID: 0}
   stats:
@@ -117,6 +119,7 @@ MonoBehaviour:
     rotationSpeed: 10
     contactDamage: 10
     contactDamageInterval: 1
+    armor: 0
   currentVariant: Zombie
   size: 1
   goDirectlyToPlayer: 1
@@ -124,6 +127,8 @@ MonoBehaviour:
   dieWhenReachFixedMoveTarget: 0
   dissolveSpeed: 2
   poolId: 35666
+  addTargetToUi: 0
+  addTargetToUiType: 0
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 7629372734104407246}
 --- !u!114 &5954188515519120313
@@ -139,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
-  radiusBackingField: 0.37
+  radiusBackingField: 0.4
   heightBackingField: 2
   centerBackingField: 1
   locked: 0

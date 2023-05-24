@@ -22,7 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Golden Quiver
-  uiDescription: Picking up gold speeds up the reload.
+  uiDescription: Picking up XP or Gold speeds up the reload.
   effects: []
   addSkills: []
   rarity: 1

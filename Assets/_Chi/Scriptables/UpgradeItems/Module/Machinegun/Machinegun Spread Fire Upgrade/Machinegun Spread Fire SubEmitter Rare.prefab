@@ -66,5 +66,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5be43f74b35409ba66028b9418a017f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileMul: 2
-  everyNth: 2
+  projectileMul: 1
+  everyNth: 1

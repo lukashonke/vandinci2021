@@ -21,7 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  uiName: Arrow Barrage
+  uiName: Arrowstorm Invocation
   uiDescription: Gives you a skill which can be activated to rain down arrows on
     enemies from behind you into your direction of aiming.
   effects: []

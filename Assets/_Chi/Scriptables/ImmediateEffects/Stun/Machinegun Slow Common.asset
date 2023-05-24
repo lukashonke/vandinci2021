@@ -24,8 +24,8 @@ MonoBehaviour:
   order: 20
   effect: 6
   forcedFlags: 0
-  chance: 0.5
-  duration: 1.5
+  chance: 1
+  duration: 2
   ignoreDuplicateEffects: 1
   stackDuration: 0
   setStunned: 0

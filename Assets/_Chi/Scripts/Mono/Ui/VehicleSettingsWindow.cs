@@ -257,5 +257,13 @@ namespace _Chi.Scripts.Mono.Ui
 
             return true;
         }
+
+        public void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                DoClose();
+            }
+        }
     }
 }

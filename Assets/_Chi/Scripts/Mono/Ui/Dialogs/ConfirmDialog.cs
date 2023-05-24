@@ -53,6 +53,13 @@ namespace _Chi.Scripts.Mono.Ui.Dialogs
                 });
             }
         }
-        
+
+        public void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                confirmButton.onClick.Invoke();
+            }
+        }
     }
 }

@@ -48,7 +48,7 @@ namespace _Chi.Scripts.Mono.Mission.Events
             
         }
         
-        [VerticalGroup("Settings")]
+        /*[VerticalGroup("Settings")]
         [HideInEditorMode]
         [Button]
         public void SimulateThisOne()
@@ -62,7 +62,7 @@ namespace _Chi.Scripts.Mono.Mission.Events
         public void SimulateUpToThisOne()
         {
             currentMission.SimulateUpToEvent(this);
-        }
+        }*/
 
         public virtual IEnumerator Simulate()
         {

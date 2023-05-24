@@ -25,5 +25,5 @@ MonoBehaviour:
   order: 10
   hasLevelScaledValue: 0
   levelScaledValue: []
-  value: 50
-  effectType: 31
+  value: 1
+  effectType: 30

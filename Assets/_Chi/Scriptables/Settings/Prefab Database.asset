@@ -1962,8 +1962,8 @@ MonoBehaviour:
   - id: 42070
     label: 'Crossbow: Gold Rush'
     enabled: 1
-    description: Every gold you pick up will give you one more projectile for the
-      next shot.
+    description: Every gold or XP you pick up will give you one more projectile for
+      the next shot.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2314,8 +2314,8 @@ MonoBehaviour:
   - id: 43090
     label: 'Cannon: Gold Satisfaction'
     enabled: 1
-    description: Every gold you pick up will add progress towards recharging your
-      weapon to fire again.
+    description: Every gold or XP you pick up will add progress towards recharging
+      your weapon to fire again.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -2496,8 +2496,8 @@ MonoBehaviour:
   - id: 43115
     label: 'Gun: Treasure Trigger'
     enabled: 1
-    description: Every picked up gold adds one bullet to the current magazine and
-      increases fire rate by 50% for 1 second. Effect does not stack.
+    description: Every picked up gold or XP adds one bullet to the current magazine
+      and increases fire rate by 50% for 1 second. Effect does not stack.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3399,7 +3399,8 @@ MonoBehaviour:
   - id: 43320
     label: 'Machinegun: Precision Grip'
     enabled: 1
-    description: Significantly reduces weapon spread, increasing overall accuracy.
+    description: Significantly reduces weapon spread, increases damage and projectile
+      speed.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3461,7 +3462,7 @@ MonoBehaviour:
   - id: 43330
     label: 'Machinegun: Gold Reload'
     enabled: 1
-    description: Picking up gold recharges the machinegun's magazine.
+    description: Picking up gold or XP recharges the machinegun's magazine.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -3725,7 +3726,7 @@ MonoBehaviour:
   - id: 43410
     label: 'Slingshot: Treasure Trigger'
     enabled: 1
-    description: Each picked up gold counts as a projectile for the next shot.
+    description: Each picked up gold or XP counts as a projectile for the next shot.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4434,8 +4435,8 @@ MonoBehaviour:
   - id: 43550
     label: 'Shuriken: Guided Gust'
     enabled: 1
-    description: ' Improves homing abilities of shurikens, allowing them to hit the
-      same enemies multiple times and steer in wide angles.'
+    description: Improves homing abilities of shurikens, allowing them to hit the
+      same enemies multiple times and steer in wide angles.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4579,8 +4580,9 @@ MonoBehaviour:
   - id: 43615
     label: 'Ballista: Scatter Shell'
     enabled: 1
-    description: When a projectile is to be destroyed, it releases multiple projectiles
-      in all directions.
+    description: 'When a projectile is to be destroyed, it will copy itself and release
+      into random direction. Those projectiles cannot bounce or spawn more projectiles
+      anymore. '
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4600,8 +4602,8 @@ MonoBehaviour:
   - id: 43616
     label: 'Ballista: Scatter Shell'
     enabled: 1
-    description: When a projectile is to be destroyed, it releases multiple projectiles
-      in all directions.
+    description: 'When a projectile is to be destroyed, it will copy itself and release
+      into random direction. '
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4621,8 +4623,8 @@ MonoBehaviour:
   - id: 43620
     label: 'Ballista: Finisher Pierce'
     enabled: 1
-    description: Enemies with low HP are automatically pierced and do not count towards
-      the pierce limit.
+    description: Enemies with Max HP less than weapon projectile damage are automatically
+      pierced and do not count towards the pierce limit.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4642,7 +4644,7 @@ MonoBehaviour:
   - id: 43621
     label: 'Ballista: Finisher Pierce'
     enabled: 1
-    description: Enemies with low HP are automatically pierced and do not count towards
+    description: Enemies killed by projectiles of this weapon do not count towards
       the pierce limit.
     type: 9
     predefinedId: 0
@@ -4683,7 +4685,7 @@ MonoBehaviour:
   - id: 43630
     label: 'Ballista: Golden Quiver'
     enabled: 1
-    description: Picking up gold speeds up the reload.
+    description: Picking up XP or Gold speeds up the reload.
     type: 9
     predefinedId: 0
     weightSettings:
@@ -4723,7 +4725,8 @@ MonoBehaviour:
   - id: 43640
     label: 'Ballista: Random Rain'
     enabled: 1
-    description: When you shoot, it also fires random projectiles around the player.
+    description: 'When you shoot, it also fires random projectiles around the player.
+      Those projectiles cannot bounce or spawn more projectiles anymore. '
     type: 9
     predefinedId: 0
     weightSettings:
@@ -6375,9 +6378,9 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    - name: 'Common Ballista: Immediate Rebound'
+    - name: 'Rare Ballista: Immediate Rebound'
       prefabId: 43605
-      weight: 8
+      weight: 3
       isInGroup: 0
       group: 43100
       levelInGroup: 2

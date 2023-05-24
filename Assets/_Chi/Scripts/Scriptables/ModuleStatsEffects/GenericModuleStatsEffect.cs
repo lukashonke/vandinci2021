@@ -108,6 +108,9 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                     case ModuleStatsEffectType.ProjectileKilledDoNotCountIfLessThanHp:
                         offensiveModule.stats.projectilePierceCountIgnoreIfLessThanHp.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
                         break;
+                    case ModuleStatsEffectType.ProjectileKilledDoNotCountIfLessThanProjectileDamagePortion:
+                        offensiveModule.stats.projectilePierceCountIgnoreIfLessThanProjectileDamagePortion.AddModifier(new StatModifier(source, AddLevelValue(value, level), modifier, (short) order));
+                        break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
@@ -215,6 +218,9 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                     case ModuleStatsEffectType.ProjectileKilledDoNotCountIfLessThanHp:
                         offensiveModule.stats.projectilePierceCountIgnoreIfLessThanHp.RemoveModifiersBySource(source);
                         break;
+                    case ModuleStatsEffectType.ProjectileKilledDoNotCountIfLessThanProjectileDamagePortion:
+                        offensiveModule.stats.projectilePierceCountIgnoreIfLessThanProjectileDamagePortion.RemoveModifiersBySource(source);
+                        break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
@@ -321,6 +327,9 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
                 case ModuleStatsEffectType.ProjectileKilledDoNotCountIfLessThanHp:
                     tuple = ("Ignore Low HP", $"{AddLevelValueUI(value, level)}");
                     break;
+                case ModuleStatsEffectType.ProjectileKilledDoNotCountIfLessThanProjectileDamagePortion:
+                    tuple = ("Ignore Low HP", $"{AddLevelValueUI(value, level)}");
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -366,5 +375,6 @@ namespace _Chi.Scripts.Scriptables.ModuleStatsEffects
         ProjectileSpeed,
         ProjectileKilledDoNotCountPierced,
         ProjectileKilledDoNotCountIfLessThanHp,
+        ProjectileKilledDoNotCountIfLessThanProjectileDamagePortion
     }
 }

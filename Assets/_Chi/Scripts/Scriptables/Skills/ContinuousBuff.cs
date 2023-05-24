@@ -46,6 +46,7 @@ namespace _Chi.Scripts.Scriptables.Skills
             Debug.Log("start");
             
             SetActivated(player, true);
+            player.OnSkillUse(this);
             
             var vfxInstance = SpawnPrefabVfx(player.GetPosition(), player.transform.rotation, null);
             vfxInstance.transform.SetParent(player.transform);
@@ -89,6 +90,7 @@ namespace _Chi.Scripts.Scriptables.Skills
                 Gamesystem.instance.poolSystem.DespawnGo(vfx, vfxInstance);
             }
             
+            player.OnAfterSkillUse(this);
             SetActivated(player, false);
             
             Debug.Log("end");

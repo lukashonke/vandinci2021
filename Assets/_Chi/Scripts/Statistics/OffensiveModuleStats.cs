@@ -42,6 +42,8 @@ namespace _Chi.Scripts.Statistics
         public Stat projectilePierceCountIgnoreKilled = new Stat();
         
         public Stat projectilePierceCountIgnoreIfLessThanHp = new Stat();
+        
+        public Stat projectilePierceCountIgnoreIfLessThanProjectileDamagePortion = new Stat();
 
         public Stat projectilePierceDeadChance = new Stat();
         

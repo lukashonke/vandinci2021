@@ -219,9 +219,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chooseOneDirection: 1
   chanceToGoAgainstPlayer: 100
-  speedMin: 1.5
-  speedMax: 1.5
+  speedMin: 2
+  speedMax: 3
   goForward: 1
+  chanceToStayIdle: 0
 --- !u!114 &6058682813130614867
 MonoBehaviour:
   m_ObjectHideFlags: 0

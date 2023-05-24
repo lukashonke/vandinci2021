@@ -184,7 +184,7 @@ namespace _Chi.Scripts.Mono.Mission
             }
         }
 
-        public void SimulateUpToEvent(MissionEvent currentEvent)
+        /*public void SimulateUpToEvent(MissionEvent currentEvent)
         {
             StartCoroutine(SimulateUpToEventCoroutine(currentEvent));
         }
@@ -198,7 +198,7 @@ namespace _Chi.Scripts.Mono.Mission
                 var ev  = events[i];
                 yield return ev.Simulate();
             }
-        }
+        }*/
         
         private void OnDestroy()
         {
@@ -210,6 +210,8 @@ namespace _Chi.Scripts.Mono.Mission
     public class MissionProgressSettings
     {
         public List<TriggeredShop> shops;
+        
+        public List<TriggeredShop> simulatedRewards;
 
         public List<int> rerollPrices;
 
@@ -231,23 +233,37 @@ namespace _Chi.Scripts.Mono.Mission
 
         public bool closeOnFirstPurchase;
 
+        public int index;
         public string title;
         
         [HideInInspector] // TODO not used now
         public int goldAcumulatedRequired;
         
         public int expAcumulatedRequired;
-        
-        [HorizontalGroup("ShopSet")]
-        public List<TriggeredShopSet> shopSet;
 
-        [HorizontalGroup("ShopSet")]
+        /// <summary>
+        /// means this shop wont trigger, but its a placeholdere for admin for quick equipment check
+        /// </summary>
+        public bool simulated;
+
+        [ShowIf("simulated")]
+        public int addGold;
+        
+        [VerticalGroup("ShopSet")]
         public float priceMultiplier;
+        
+        [VerticalGroup("ShopSet")]
+        public List<TriggeredShopSet> shopSet;
 
         [HideInEditorMode]
         [Button]
         public void Show()
         {
+            if (simulated && addGold > 0)
+            {
+                Gamesystem.instance.progress.AddGold(addGold);
+            }
+            
             Gamesystem.instance.uiManager.OpenRewardSetWindow(shopSet, title, this);
         }
         

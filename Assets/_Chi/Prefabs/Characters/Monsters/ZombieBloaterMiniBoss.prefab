@@ -119,6 +119,7 @@ MonoBehaviour:
     rotationSpeed: 10
     contactDamage: 10
     contactDamageInterval: 1
+    armor: 0
   currentVariant: ZombieBloater_MiniBoss
   size: 1
   goDirectlyToPlayer: 1
@@ -143,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
-  radiusBackingField: 0.37
+  radiusBackingField: 0.4
   heightBackingField: 2
   centerBackingField: 1
   locked: 0
@@ -313,7 +314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8157438153637878850, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
       propertyPath: m_SortingLayer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}

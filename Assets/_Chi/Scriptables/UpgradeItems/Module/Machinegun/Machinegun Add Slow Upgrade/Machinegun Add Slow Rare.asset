@@ -25,7 +25,8 @@ MonoBehaviour:
   order: 10
   hasLevelScaledValue: 0
   levelScaledValue: []
-  value: 3
+  value: 0
   effectsToAdd:
   - {fileID: 11400000, guid: d9f20c06cc94c6242aa9f76138e6016f, type: 2}
+  effectsToRemove: []
   effectType: 0

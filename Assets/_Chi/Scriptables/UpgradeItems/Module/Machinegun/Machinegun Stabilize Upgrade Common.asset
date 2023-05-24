@@ -22,7 +22,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   uiName: Precision Grip
-  uiDescription: Significantly reduces weapon spread, increasing overall accuracy.
+  uiDescription: Significantly reduces weapon spread, increases damage and projectile
+    speed.
   effects: []
   addSkills: []
   rarity: 0
@@ -32,5 +33,7 @@ MonoBehaviour:
   modulePrefabId: 2009
   moduleEffects:
   - {fileID: 11400000, guid: 5206b42d4611b2b409bbe0597c0e571e, type: 2}
+  - {fileID: 11400000, guid: 338f17ba1cec5fd4b81b42262e9067fc, type: 2}
+  - {fileID: 11400000, guid: 8910a06b669a7f949a33b4b4963e42be, type: 2}
   addSubEmitters: []
   effectsLevel: 1

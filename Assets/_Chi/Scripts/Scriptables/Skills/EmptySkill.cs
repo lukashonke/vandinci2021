@@ -29,6 +29,7 @@ namespace _Chi.Scripts.Scriptables.Skills
                 }
                 
                 player.OnSkillUse(this);
+                player.OnAfterSkillUse(this);
                 return true;
             }
 

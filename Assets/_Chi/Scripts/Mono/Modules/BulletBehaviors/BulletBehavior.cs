@@ -321,6 +321,7 @@ public class BulletBehavior : BaseBulletBehaviour
 				}
 
 				var entityHp = entity.entityStats.hp;
+				var entityMaxHp = entity.entityStats.maxHp;
 
 				var effects = offensiveModule.effects;
 				
@@ -413,7 +414,12 @@ public class BulletBehavior : BaseBulletBehaviour
 					increasePiercedCount = entity.isAlive;
 				}
 
-				if (offensiveModule.stats.projectilePierceCountIgnoreIfLessThanHp.GetValue() > entityHp)
+				if (offensiveModule.stats.projectilePierceCountIgnoreIfLessThanHp.GetValue() >= entityHp)
+				{
+					increasePiercedCount = false;
+				}
+
+				if (offensiveModule.stats.projectileDamage.GetValue() * offensiveModule.stats.projectilePierceCountIgnoreIfLessThanProjectileDamagePortion.GetValue() >= entityMaxHp)
 				{
 					increasePiercedCount = false;
 				}
