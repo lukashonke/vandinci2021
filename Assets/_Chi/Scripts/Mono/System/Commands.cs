@@ -56,6 +56,18 @@ namespace _Chi.Scripts.Mono.System
             StartCoroutine(RewardCoroutine(index, true));
         }
 
+        [Command()]
+        public void DisableReward()
+        {
+            Gamesystem.instance.progress.disabledRewards = true;
+        }
+
+        [Command()]
+        public void EnableRewards()
+        {
+            Gamesystem.instance.progress.disabledRewards = false;
+        }
+
         private IEnumerator RewardCoroutine(int index, bool equal)
         {
             if (Gamesystem.instance.missionManager.currentMission == null) yield break;

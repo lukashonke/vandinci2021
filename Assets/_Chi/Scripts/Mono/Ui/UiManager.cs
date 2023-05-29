@@ -219,6 +219,11 @@ public class UiManager : MonoBehaviour
 
     public void OpenRewardSetWindow(List<TriggeredShopSet> rewardSet, string title, TriggeredShop triggeredShop)
     {
+        if (Gamesystem.instance.progress.disabledRewards)
+        {
+            return;
+        }
+        
         vehicleSettingsWindow.OpenWindow(rewardSet, title, triggeredShop);
     }
 

@@ -74,7 +74,7 @@ namespace _Chi.Scripts.Mono.Mission
                 if (nextShop.GetExpAcumulatedRequired() > 0 && exp >= nextShop.GetExpAcumulatedRequired())
                 {
                     shopIndex++;
-                        
+                    
                     Gamesystem.instance.uiManager.OpenRewardSetWindow(nextShop.shopSet, nextShop.title, nextShop);
                         
                     nextShop = progressSettings.shops[shopIndex + 1];
