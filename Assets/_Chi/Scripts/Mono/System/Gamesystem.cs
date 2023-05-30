@@ -45,6 +45,7 @@ public class Gamesystem : MonoBehaviour
     [Required] public DropManager dropManager;
     [Required] public TextDatabase textDatabase;
     [Required] public LocationManager locationManager;
+    [Required] public PositionManager positionManager;
     
     [Required]
     public SpawnAroundSettings spawnAroundSettings;
@@ -73,9 +74,13 @@ public class Gamesystem : MonoBehaviour
     [FoldoutGroup("Difficulty")] 
     public float expMul = 1f;
 
+    [NonSerialized] public int upgradeOneAfterAnotherOrder; 
+
     private void Awake()
     {
         instance = this;
+
+        upgradeOneAfterAnotherOrder = 0;
         
         prefabDatabase.Initialise();
         spawnAroundSettings.Initialise();

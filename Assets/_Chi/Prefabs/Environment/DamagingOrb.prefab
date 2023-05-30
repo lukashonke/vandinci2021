@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 3300286650203900647}
   - component: {fileID: 1499030055039769264}
   - component: {fileID: -1039690135397503047}
+  - component: {fileID: 2679078112961142916}
   m_Layer: 14
   m_Name: DamagingOrb
   m_TagString: Untagged
@@ -204,6 +205,8 @@ MonoBehaviour:
   chanceToGoAgainstPlayer: 100
   speedMin: 0.2
   speedMax: 1.2
+  goForward: 0
+  chanceToStayIdle: 0
 --- !u!114 &3300286650203900647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +228,7 @@ MonoBehaviour:
   effectStrength: 20
   loseInterestAfterDist2: 16
   despawnDelay: 10
+  firstEffectAfterSpawnDelay: 0
 --- !u!114 &1499030055039769264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,3 +263,64 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2679078112961142916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5543541136632558941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a34663ca705a54eac3205e225a6d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightType: 0
+  lightPresetId: 0
+  eventPresetId: 0
+  lightLayer: 0
+  occlusionLayer: 0
+  translucentLayer: 0
+  translucentPresetId: 0
+  color: {r: 0.5, g: 0.1433962, b: 0.38867933, a: 1}
+  size: 3.7
+  spotAngleInner: 360
+  spotAngleOuter: 360
+  coreSize: 0.5
+  falloff: 0
+  lightStrength: 1
+  outerAngle: 15
+  lightRadius: 1
+  shadowDistanceClose: 0
+  shadowDistanceFar: 5
+  maskTranslucencyQuality: 1
+  maskTranslucencyStrength: 0.5
+  applyRotation: 0
+  textureSize: 1
+  meshMode:
+    enable: 0
+    alpha: 0.5
+    shader: 0
+    materials:
+    - {fileID: 0}
+    sortingLayer:
+      name: Default
+      Order: 0
+  bumpMap:
+    intensity: 1
+    depth: 1
+  whenInsideCollider: 0
+  lightSprite: 0
+  sprite: {fileID: 21300000, guid: 6592d6be03fd808449716a11558d506f, type: 3}
+  spriteFlipX: 0
+  spriteFlipY: 0
+  freeFormFalloff: 1
+  freeFormPoint: 1
+  freeFormFalloffStrength: 1
+  freeFormPoints:
+    points:
+    - {x: 1, y: 0}
+    - {x: -0.50000006, y: 0.8660254}
+    - {x: -0.4999999, y: -0.86602545}
+  drawingEnabled: 1
+  drawingTranslucencyEnabled: 0

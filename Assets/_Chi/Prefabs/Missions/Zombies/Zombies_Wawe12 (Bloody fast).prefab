@@ -118,14 +118,14 @@ MonoBehaviour:
     - type: 0
       prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 3
+      weight: 6
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: ZombieBloody
     - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 3
+      weight: 2
       rotateTowardsPlayer: 1
       noRotation: 0
       prefabVariant: ZombieBloodyFast
@@ -135,7 +135,7 @@ MonoBehaviour:
       weight: 1
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: ZombieBloodyFat
+      prefabVariant: ZombieBloodyBloaterExploding
     countPerMinuteCurve:
       serializedVersion: 2
       m_Curve:

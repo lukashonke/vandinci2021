@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace _Chi.Scripts.Utilities
 {
@@ -108,6 +109,20 @@ namespace _Chi.Scripts.Utilities
                 y *= -1;
 
             return new Vector2(center.x + x, center.y + y);
+        }
+        
+        public static void Shuffle<T>(this List<T> list) 
+        {
+            var rnd = new System.Random();
+            for (var i = 0; i < list.Count; i++)
+                list.Swap(i, rnd.Next(i, list.Count));
+        }
+ 
+        public static void Swap<T>(this List<T> list, int i, int j) 
+        {
+            var temp = list[i];
+            list[i] = list[j];
+            list[j] = temp;
         }
     }
 }

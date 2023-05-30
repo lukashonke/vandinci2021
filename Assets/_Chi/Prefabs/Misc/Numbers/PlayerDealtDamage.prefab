@@ -156,11 +156,11 @@ MonoBehaviour:
     vertical: 0
     characterSpacing: 0
     size: 0
-  enableColorByNumber: 0
+  enableColorByNumber: 1
   colorByNumberSettings:
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.8, b: 0.5, a: 1}
+      key0: {r: 0.79215693, g: 0.53333336, b: 0.58431375, a: 0.8627451}
       key1: {r: 1, g: 0, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -187,8 +187,8 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    fromNumber: 10
-    toNumber: 100
+    fromNumber: 1
+    toNumber: 500
   durationFadeIn: 0.2
   enableOffsetFadeIn: 0
   offsetFadeIn: {x: 0.5, y: 0}
@@ -459,7 +459,7 @@ MonoBehaviour:
     radius: 3
     pushOffset: 1
   updateDelay: 0.03333
-  enablePooling: 1
+  enablePooling: 0
   poolSize: 500
   position: {x: 0, y: 0, z: 0}
 --- !u!210 &6502758380141417012
@@ -471,7 +471,7 @@ SortingGroup:
   m_GameObject: {fileID: 1413752847744195780}
   m_Enabled: 1
   m_SortingLayerID: 700887041
-  m_SortingLayer: 9
+  m_SortingLayer: 10
   m_SortingOrder: 1000
 --- !u!1 &1901668114934460396
 GameObject:
@@ -666,7 +666,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0.7924528, g: 0.53453183, b: 0.59440625, a: 0.9019608}
+  m_fontColor: {r: 0.7921569, g: 0.53333336, b: 0.5837919, a: 0.9019608}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -683,8 +683,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.4
-  m_fontSizeBase: 2.4
+  m_fontSize: 2.85
+  m_fontSizeBase: 2.85
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

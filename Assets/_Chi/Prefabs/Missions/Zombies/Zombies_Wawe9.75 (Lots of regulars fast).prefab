@@ -127,18 +127,18 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 350
-        inSlope: 0
-        outSlope: 0
+        value: 400
+        inSlope: 100
+        outSlope: 100
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 350
-        inSlope: 0
-        outSlope: 0
+        value: 500
+        inSlope: 100
+        outSlope: 100
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -230,10 +230,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     spawnOutsideScreen: 1
+    spawnOutsideScreenType: 0
     despawnWhenOutsideScreen: 1
     despawnWhenOutsideScreenDist2: 2
     relativePosition: 0
-    spawnBoxAroundPlayerWidth: 1.5
+    spawnBoxAroundPlayerWidth: 2
     distanceFromPlayerToDespawn: 40
     distanceFromPlayerCurve:
       serializedVersion: 2
@@ -324,6 +325,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 3
     spawnGroupSpreadMax: 4
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 0
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
@@ -385,6 +389,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 0
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
@@ -453,6 +460,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 1
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
@@ -514,6 +524,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 1
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
@@ -575,6 +588,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 0
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2

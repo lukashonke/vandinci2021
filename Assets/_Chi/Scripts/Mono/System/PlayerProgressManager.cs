@@ -18,7 +18,7 @@ namespace _Chi.Scripts.Mono.System
         public bool applyRunOnStart = false;
         public bool resetStatsOnStart = false;
 
-        [NonSerialized] public bool disabledRewards = false;
+        public bool disabledRewards = false;
         
         public void Awake()
         {

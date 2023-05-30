@@ -291,8 +291,8 @@ Material:
     - _PixelateFade: 1
     - _PixelatePixelDensity: 16
     - _PixelsPerUnit: 100
-    - _PoisonDensity: 3
-    - _PoisonFade: 1
+    - _PoisonDensity: 1
+    - _PoisonFade: 0.62
     - _PoisonNoiseBrightness: 1
     - _PoisonRecolorFactor: 0.5
     - _PoisonShiftSpeed: 0.2
@@ -311,13 +311,13 @@ Material:
     - _ShaderSpace: 0
     - _ShiftHueFade: 0.093
     - _ShiftHueSpeed: 0.5
-    - _ShineContrast: 2
+    - _ShineContrast: 1
     - _ShineFade: 1
     - _ShineRotation: 0
     - _ShineSaturation: 0.5
     - _ShineScale: 0.05
-    - _ShineSmoothness: 2
-    - _ShineSpeed: 0.1
+    - _ShineSmoothness: 1
+    - _ShineSpeed: 0.5
     - _ShineWidth: 0.1
     - _SineGlowContrast: 1
     - _SineGlowFade: 1
@@ -383,7 +383,7 @@ Material:
     - _WindXPosition: 0
     - _ZWrite: 1
     m_Colors:
-    - _AddColorColor: {r: 1.5617898, g: 0.18806891, b: 0, a: 0}
+    - _AddColorColor: {r: 0.70815116, g: 0.43445125, b: 0.16968901, a: 0}
     - _AlphaTintColor: {r: 23.96863, g: 1.254902, b: 23.96863, a: 0}
     - _BlackTintColor: {r: 1, g: 0, b: 0, a: 0}
     - _BurnEdgeColor: {r: 11.98431, g: 1.129412, b: 0.1254902, a: 0}
@@ -455,7 +455,7 @@ Material:
     - _OuterOutlineDistortionIntensity: {r: 0.01, g: 0.01, b: 0, a: 0}
     - _OuterOutlineNoiseScale: {r: 4, g: 4, b: 0, a: 0}
     - _OuterOutlineNoiseSpeed: {r: 0, g: 0.1, b: 0, a: 0}
-    - _PoisonColor: {r: 0.3137255, g: 2.996078, b: 0.3137255, a: 0}
+    - _PoisonColor: {r: 1.4905659, g: 1.0040888, b: 0.5399785, a: 0}
     - _PoisonNoiseScale: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _PoisonNoiseSpeed: {r: 0, g: -0.2, b: 0, a: 0}
     - _RainbowCenter: {r: 0, g: 0, b: 0, a: 0}
@@ -466,7 +466,7 @@ Material:
     - _RecolorPurpleTint: {r: 1, g: 1, b: 1, a: 0.5019608}
     - _RecolorRedTint: {r: 0.8727521, g: 1, b: 0, a: 0.5019608}
     - _RecolorYellowTint: {r: 1, g: 1, b: 1, a: 0.5019608}
-    - _ShineColor: {r: 11.98431, g: 11.98431, b: 11.98431, a: 0}
+    - _ShineColor: {r: 3.6226406, g: 3.1295063, b: 1.0811021, a: 0}
     - _SineGlowColor: {r: 1.319508, g: 0.47088325, b: 0, a: 0}
     - _SineMoveFrequency: {r: 1, g: 1, b: 0, a: 0}
     - _SineMoveOffset: {r: 0, g: 0.5, b: 0, a: 0}

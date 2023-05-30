@@ -120,10 +120,15 @@ namespace _Chi.Scripts.Mono.Mission
             //SPAWN
             var spawnCount = settings.GetCountToSpawn(relativeTime);
 
-            int squareSize = (int) Math.Ceiling(Math.Sqrt(spawnCount));
+            //int squareSize = (int) Math.Ceiling(Math.Sqrt(spawnCount));
             Vector3 spawnPosition = Vector3.zero;
-            
-            if (settings.spawnOutsideScreen)
+
+            if (settings.spawnAtFixedPositions)
+            {
+                // set up later
+                spawnPosition = Vector3.zero;
+            }
+            else if (settings.spawnOutsideScreen)
             {
                 spawnPosition = settings.GetSpawnPosition();
             }
@@ -196,6 +201,13 @@ namespace _Chi.Scripts.Mono.Mission
             }
 
             int attempts;
+
+            List<Vector3> fixedRandomPositionsCopy = null;
+            if (settings.spawnAtFixedPositions)
+            {
+                fixedRandomPositionsCopy = settings.fixedSpawnPositions.positions.ToList();
+                fixedRandomPositionsCopy.Shuffle();
+            }
             
             for (int i = 0; i < spawnCount; i++)
             {
@@ -251,6 +263,11 @@ namespace _Chi.Scripts.Mono.Mission
                 
                 var dist = settings.despawnWhenOutsideScreen ? settings.despawnWhenOutsideScreenDist2 : settings.distanceFromPlayerToDespawn;
                 var condition = settings.despawnWhenOutsideScreen ? DespawnCondition.DistanceFromScreenBorder : DespawnCondition.DistanceFromPlayer;
+
+                if (settings.spawnAtFixedPositions)
+                {
+                    targetPosition = fixedRandomPositionsCopy[i % fixedRandomPositionsCopy.Count];
+                }
 
                 var spawned = spawnPrefab.SpawnOnPosition(targetPosition, playerPosition, dist, settings.despawnAfter, condition);
                 if (spawned != null)
@@ -343,6 +360,11 @@ namespace _Chi.Scripts.Mono.Mission
         public float spawnGroupSpreadMax = 1;
         
         public bool spawnOutsideScreen = false;
+        public bool spawnAtFixedPositions = false;
+        
+        [FormerlySerializedAs("spawnPositions")] [ShowIf("spawnAtFixedPositions")]
+        public SpawnPositions fixedSpawnPositions;
+        
         public bool despawnWhenOutsideScreen = true;
         
         [HideIf("spawnOutsideScreen")]

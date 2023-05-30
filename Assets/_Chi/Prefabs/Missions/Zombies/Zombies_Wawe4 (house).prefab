@@ -142,6 +142,39 @@ MonoBehaviour:
     spawnGroupSpreadMin: 0.5
     spawnGroupSpreadMax: 0.5
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 1
+    fixedSpawnPositions:
+      positions:
+      - {x: -19, y: -4, z: 0}
+      - {x: -14, y: -10, z: 0}
+      - {x: -3.3, y: -13.5, z: 0}
+      - {x: 3.5, y: -14, z: 0}
+      - {x: 13, y: -1, z: 0}
+      - {x: 10, y: 6.3, z: 0}
+      - {x: 4.5, y: 9.8, z: 0}
+      - {x: -2, y: 11.27, z: 0}
+      - {x: -8.6, y: 10, z: 0}
+      - {x: -15.1, y: 12, z: 0}
+      - {x: -6.5, y: 15.5, z: 0}
+      - {x: 3, y: 15, z: 0}
+      - {x: -22.6, y: 0.7, z: 0}
+      - {x: -24.16, y: 7.5, z: 0}
+      - {x: -21.92, y: 13.6, z: 0}
+      - {x: -20.64, y: -10, z: 0}
+      - {x: -7.05, y: -19, z: 0}
+      - {x: 4, y: -19.44, z: 0}
+      - {x: 13.81, y: -16.6, z: 0}
+      - {x: 13.08, y: -10.4, z: 0}
+      - {x: 19.69, y: -7.6, z: 0}
+      - {x: 19.95, y: -2, z: 0}
+      - {x: 27.88, y: -7.24, z: 0}
+      - {x: 24.46, y: -16.24, z: 0}
+      - {x: -5.32, y: -6, z: 0}
+      - {x: -11.21, y: -2, z: 0}
+      - {x: -8.32, y: 3.2, z: 0}
+      - {x: -1.3, y: 5.7, z: 0}
+      - {x: 3.84, y: 1.75, z: 0}
+      - {x: -0.36, y: -1.6, z: 0}
     despawnWhenOutsideScreen: 0
     relativePosition: 4
     despawnWhenOutsideScreenDist2: 2
@@ -203,6 +236,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 2
     spawnGroupSpreadMax: 3
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 1
     relativePosition: 3
     despawnWhenOutsideScreenDist2: 2
@@ -460,6 +496,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 1
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
@@ -521,6 +560,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 0
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2

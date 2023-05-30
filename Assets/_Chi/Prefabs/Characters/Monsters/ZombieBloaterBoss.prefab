@@ -132,6 +132,7 @@ MonoBehaviour:
   addTargetToUiType: 0
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
+  takesUpPositionInPositionManager: 1
 --- !u!114 &5954188515519120313
 MonoBehaviour:
   m_ObjectHideFlags: 0

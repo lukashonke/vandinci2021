@@ -11,8 +11,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 0803c241834332942abfcbd27c498b46, type: 3}
   m_ValidKeywords:
   - ETC1_EXTERNAL_ALPHA
-  - _ENABLECONTRAST_ON
-  - _ENABLESATURATION_ON
+  - _ENABLESHINE_ON
   - _ENABLEUVROTATE_ON
   - _SHADERSPACE_UV
   - _TIMESETTINGS_LINEAR_DEFAULT
@@ -191,7 +190,7 @@ Material:
     - _EnableCamouflage: 0
     - _EnableCheckerboard: 0
     - _EnableColorReplace: 0
-    - _EnableContrast: 1
+    - _EnableContrast: 0
     - _EnableCustomFade: 0
     - _EnableDirectionalAlphaFade: 0
     - _EnableDirectionalDistortion: 0
@@ -214,9 +213,9 @@ Material:
     - _EnablePoison: 0
     - _EnableRainbow: 0
     - _EnableRecolor: 0
-    - _EnableSaturation: 1
+    - _EnableSaturation: 0
     - _EnableShiftHue: 0
-    - _EnableShine: 0
+    - _EnableShine: 1
     - _EnableSineGlow: 0
     - _EnableSineMove: 0
     - _EnableSineRotate: 0
@@ -317,10 +316,10 @@ Material:
     - _ShineContrast: 2
     - _ShineFade: 1
     - _ShineRotation: 0
-    - _ShineSaturation: 0.5
+    - _ShineSaturation: 0.209
     - _ShineScale: 0.05
     - _ShineSmoothness: 2
-    - _ShineSpeed: 0.1
+    - _ShineSpeed: 1
     - _ShineWidth: 0.1
     - _SineGlowContrast: 1
     - _SineGlowFade: 0.804
@@ -448,8 +447,8 @@ Material:
     - _InnerOutlineDistortionIntensity: {r: 0.01, g: 0.01, b: 0, a: 0}
     - _InnerOutlineNoiseScale: {r: 4, g: 4, b: 0, a: 0}
     - _InnerOutlineNoiseSpeed: {r: 0, g: 0.1, b: 0, a: 0}
-    - _MetalColor: {r: 5.992157, g: 3.639216, b: 0.3137255, a: 1}
-    - _MetalHighlightColor: {r: 5.992157, g: 3.796078, b: 0.6588235, a: 1}
+    - _MetalColor: {r: 3.6083717, g: 3.6083717, b: 3.6083717, a: 1}
+    - _MetalHighlightColor: {r: 4.418259, g: 3.073159, b: 2.517574, a: 1}
     - _MetalNoiseDistortion: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _MetalNoiseDistortionScale: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _MetalNoiseDistortionSpeed: {r: -0.05, g: -0.05, b: 0, a: 0}
@@ -484,12 +483,12 @@ Material:
     - _SplitToningHighlightsColor: {r: 1, g: 0.1, b: 0.1, a: 0}
     - _SplitToningShadowsColor: {r: 0.1, g: 0.4000002, b: 1, a: 0}
     - _SqueezeCenter: {r: 0.5, g: 0.5, b: 0, a: 0}
-    - _SqueezeScale: {r: -1.22, g: 5.36, b: 0, a: 0}
+    - _SqueezeScale: {r: 0, g: 0.72, b: 0, a: 0}
     - _StrongTintTint: {r: 1, g: 1, b: 1, a: 1}
-    - _UVDistortFrom: {r: 2.34, g: 1.18, b: 0, a: 0}
-    - _UVDistortNoiseScale: {r: 0.1, g: 0.1, b: 0, a: 0}
+    - _UVDistortFrom: {r: -0.05, g: -0.05, b: 0, a: 0}
+    - _UVDistortNoiseScale: {r: 0.37, g: 0.1, b: 0, a: 0}
     - _UVDistortSpeed: {r: 2, g: 2, b: 0, a: 0}
-    - _UVDistortTo: {r: 0.02, g: 0.02, b: 0, a: 0}
+    - _UVDistortTo: {r: 0.05, g: 0.05, b: 0, a: 0}
     - _UVRotatePivot: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _UVScalePivot: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _UVScaleScale: {r: 1, g: 1, b: 0, a: 0}

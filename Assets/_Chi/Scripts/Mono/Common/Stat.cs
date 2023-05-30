@@ -100,6 +100,11 @@ namespace _Chi.Scripts.Mono.Common
 
         public void AddModifier(StatModifier modifier)
         {
+            if (Gamesystem.instance.miscSettings.upgradesApplyOneAfterAnother)
+            {
+                modifier.order = Gamesystem.instance.upgradeOneAfterAnotherOrder++;
+            }
+            
             if (modifiers == null) modifiers = new();
             modifiers.Add(modifier);
             //modifier.orderIndex = modifiers.IndexOf(modifier);
@@ -144,9 +149,7 @@ namespace _Chi.Scripts.Mono.Common
 
     public class StatModifier
     {
-        public short order; // defined order to apply this modifier
-
-        public int orderIndex; // order in which module was added
+        public int order; // defined order to apply this modifier
 
         public float value;
 

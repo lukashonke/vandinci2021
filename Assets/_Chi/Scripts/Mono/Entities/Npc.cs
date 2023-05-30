@@ -70,6 +70,8 @@ namespace _Chi.Scripts.Mono.Entities
 
         [NonSerialized] public bool despawned;
 
+        public bool takesUpPositionInPositionManager = false;
+
         #endregion
         #region privates
 
@@ -206,6 +208,8 @@ namespace _Chi.Scripts.Mono.Entities
         public virtual void Cleanup()
         {
             Unregister();
+            
+            Gamesystem.instance.positionManager.RemovePosition(this);
 
             if (prefabVariantChild != null)
             {

@@ -9076,10 +9076,10 @@ MonoBehaviour:
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     animatorController: {fileID: 0}
     entityStats:
-      maxHp: 400
+      maxHp: 20000
       maxHpAdd: 0
       maxHpMul: 1
-      hp: 400
+      hp: 20000
     npcStats:
       speed: 0
       rotationSpeed: 10
@@ -9098,7 +9098,19 @@ MonoBehaviour:
       rvoCollidesWith: 0
       addChildren: {fileID: 0}
     reward:
-      items: []
+      items:
+      - dropType: 6
+        spawnedObject: {fileID: 0}
+        dropChance: 100
+        amountMin: 9
+        amountMax: 11
+        bypassGlobalDropChance: 1
+      - dropType: 8
+        spawnedObject: {fileID: 2016706442665377444, guid: d8593450be06f624ca04ce963a07603b, type: 3}
+        dropChance: 100
+        amountMin: 1
+        amountMax: 1
+        bypassGlobalDropChance: 1
   - variant: ExplodingDecoy
     sprite: {fileID: 21300000, guid: 8780cd2edf891e047b180ebab1c1daf4, type: 3}
     spriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}

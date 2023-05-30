@@ -174,6 +174,7 @@ MonoBehaviour:
     maxHpMul: 1
     hp: 5000
   team: 2
+  isBoss: 0
   healthbarOffset: {x: -0.54, y: 2.51, z: 0}
   fearEscapeAngle: 0
   seeker: {fileID: 0}
@@ -183,6 +184,7 @@ MonoBehaviour:
     rotationSpeed: 500
     contactDamage: 0
     contactDamageInterval: 1
+    armor: 0
   currentVariant: MonsterHouseLarge
   size: 1
   goDirectlyToPlayer: 0
@@ -213,28 +215,50 @@ MonoBehaviour:
     weight: 1
     rotateTowardsPlayer: 1
     noRotation: 0
-    prefabVariant: Zombie
-  continuousSpawnIntervalMin: 0.5
-  continuousSpawnIntervalMax: 1.5
+    prefabVariant: ZombieBloodyFast
+  continuousSpawnIntervalMin: 0.3
+  continuousSpawnIntervalMax: 0.6
   continuousSpawnWhenPlayerNearbyDist2: 81
   continuousSpawnAtOnceCount: 1
-  continuousSpawnSpread: 1.5
+  continuousSpawnSpread: 2
   distanceBeforeDespawn: 100
+  despawnWhenOutsideScreen: 1
   despawnAfterTime: 0
   damageBasedSpawns:
   - spawnAtHpPercentIsRepeated: 1
-    spawnAtHpPercent: 0.2
+    spawnAtHpPercent: 0.01
     prefabsToSpawn:
     - type: 0
       prefab: {fileID: 0}
       prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
-      weight: 5
+      weight: 6
       rotateTowardsPlayer: 1
       noRotation: 0
-      prefabVariant: Zombie
-    spawnCountMin: 15
+      prefabVariant: ZombieBloody
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 2
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieBloodyFast
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 2
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieBloodyFat
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieBloodyBloaterExploding
+    spawnCountMin: 18
     spawnCountMax: 20
-    spawnSpread: 1.5
+    spawnSpread: 2.5
 --- !u!1001 &1291126825702401060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -244,7 +268,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1101485356869148441, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
       propertyPath: scalePer1Hp
-      value: 0.00015
+      value: 0.00003
       objectReference: {fileID: 0}
     - target: {fileID: 3642221415905698066, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
       propertyPath: m_RootOrder
@@ -280,7 +304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8157438153637878850, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
       propertyPath: m_SortingLayer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}

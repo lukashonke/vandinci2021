@@ -5,6 +5,7 @@ using _Chi.Scripts.Mono.Common;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Mission.Events;
+using _Chi.Scripts.Mono.System;
 using _Chi.Scripts.Scriptables;
 using Sirenix.OdinInspector;
 using Unity.VisualScripting;
@@ -88,7 +89,7 @@ namespace _Chi.Scripts.Mono.Mission
             bool updateCurves = false;
             if (Time.time > nextCurvesUpdate)
             {
-                nextCurvesUpdate = Time.time + .25f;
+                nextCurvesUpdate = Time.time;
                 updateCurves = true;
             }
 
@@ -229,8 +230,11 @@ namespace _Chi.Scripts.Mono.Mission
         public AnimationCurve minSpawnCount = AnimationCurve.Constant(0, 1, 1);
         public AnimationCurve maxSpawnCount = AnimationCurve.Constant(0, 1, 1);
 
-
         public bool spawnOutsideScreen = true;
+
+        [ShowIf("spawnOutsideScreen")]
+        public SpawnOutsideScreenType spawnOutsideScreenType;
+        
         public bool despawnWhenOutsideScreen = true;
         
         [ShowIf("despawnWhenOutsideScreen")]
@@ -300,56 +304,70 @@ namespace _Chi.Scripts.Mono.Mission
             if (spawnOutsideScreen)
             {
                 var position = new Vector3();
-
-                var playerMoveDirection = Gamesystem.instance.GetPlayerMoveDirection();
-
-                const float boost = 0.3f;
-                const float baseChance = 0.5f;
-                float selectHorizontalChance = baseChance;
                 
-                if (playerMoveDirection.HasFlag(Gamesystem.PlayerMoveDirection.Up) || playerMoveDirection.HasFlag(Gamesystem.PlayerMoveDirection.Down))
+                if (spawnOutsideScreenType == SpawnOutsideScreenType.PlayerMovement)
                 {
-                    selectHorizontalChance -= boost;
+                    var playerMoveDirection = Gamesystem.instance.GetPlayerMoveDirection();
+
+                    const float boost = 0.3f;
+                    const float baseChance = 0.5f;
+                    float selectHorizontalChance = baseChance;
+                    
+                    if (playerMoveDirection.HasFlag(Gamesystem.PlayerMoveDirection.Up) || playerMoveDirection.HasFlag(Gamesystem.PlayerMoveDirection.Down))
+                    {
+                        selectHorizontalChance -= boost;
+                    }
+                    if (playerMoveDirection.HasFlag(Gamesystem.PlayerMoveDirection.Left) || playerMoveDirection.HasFlag(Gamesystem.PlayerMoveDirection.Right))
+                    {
+                        selectHorizontalChance += boost;
+                    }
+                    
+                    if (selectHorizontalChance > Random.value) // spawn on the left or right side
+                    {
+                        float spawnRightChance = baseChance;
+                        
+                        if (playerMoveDirection.HasFlag(Gamesystem.PlayerMoveDirection.Right))
+                        {
+                            spawnRightChance += boost;
+                        }
+                        if (playerMoveDirection.HasFlag(Gamesystem.PlayerMoveDirection.Left))
+                        {
+                            spawnRightChance -= boost;
+                        }
+                        
+                        float f = spawnRightChance > Random.value ? 1 : -1;
+                        
+                        position.x = f * Random.Range(Gamesystem.instance.HorizontalToBorderDistance, Gamesystem.instance.HorizontalToBorderDistance + spawnBoxAroundPlayerWidth);
+                        position.y = Random.Range(-Gamesystem.instance.VerticalToBorderDistance, Gamesystem.instance.VerticalToBorderDistance);
+                    }
+                    else // spawn on the top or bottom side
+                    {
+                        float spawnUpChance = baseChance;
+                        
+                        if (playerMoveDirection.HasFlag(Gamesystem.PlayerMoveDirection.Up))
+                        {
+                            spawnUpChance += boost;
+                        }
+                        if (playerMoveDirection.HasFlag(Gamesystem.PlayerMoveDirection.Down))
+                        {
+                            spawnUpChance -= boost;
+                        }
+                        
+                        float f = spawnUpChance > Random.value ? 1 : -1;
+                        position.y = f * Random.Range(Gamesystem.instance.VerticalToBorderDistance, Gamesystem.instance.VerticalToBorderDistance + spawnBoxAroundPlayerWidth);
+                        position.x = Random.Range(-Gamesystem.instance.HorizontalToBorderDistance, Gamesystem.instance.HorizontalToBorderDistance);
+                    }
                 }
-                if (playerMoveDirection.HasFlag(Gamesystem.PlayerMoveDirection.Left) || playerMoveDirection.HasFlag(Gamesystem.PlayerMoveDirection.Right))
+                else if(spawnOutsideScreenType == SpawnOutsideScreenType.LeastOccupiedRectangle)
                 {
-                    selectHorizontalChance += boost;
-                }
-                
-                if (selectHorizontalChance > Random.value) // spawn on the left or right side
-                {
-                    float spawnRightChance = baseChance;
+                    var rect = Gamesystem.instance.positionManager.GetLeastOccupiedRect(Gamesystem.instance.GetPlayerMoveDirection());
                     
-                    if (playerMoveDirection.HasFlag(Gamesystem.PlayerMoveDirection.Right))
-                    {
-                        spawnRightChance += boost;
-                    }
-                    if (playerMoveDirection.HasFlag(Gamesystem.PlayerMoveDirection.Left))
-                    {
-                        spawnRightChance -= boost;
-                    }
-                    
-                    float f = spawnRightChance > Random.value ? 1 : -1;
-                    
-                    position.x = f * Random.Range(Gamesystem.instance.HorizontalToBorderDistance, Gamesystem.instance.HorizontalToBorderDistance + spawnBoxAroundPlayerWidth);
-                    position.y = Random.Range(-Gamesystem.instance.VerticalToBorderDistance, Gamesystem.instance.VerticalToBorderDistance);
-                }
-                else // spawn on the top or bottom side
-                {
-                    float spawnUpChance = baseChance;
-                    
-                    if (playerMoveDirection.HasFlag(Gamesystem.PlayerMoveDirection.Up))
-                    {
-                        spawnUpChance += boost;
-                    }
-                    if (playerMoveDirection.HasFlag(Gamesystem.PlayerMoveDirection.Down))
-                    {
-                        spawnUpChance -= boost;
-                    }
-                    
-                    float f = spawnUpChance > Random.value ? 1 : -1;
-                    position.y = f * Random.Range(Gamesystem.instance.VerticalToBorderDistance, Gamesystem.instance.VerticalToBorderDistance + spawnBoxAroundPlayerWidth);
-                    position.x = Random.Range(-Gamesystem.instance.HorizontalToBorderDistance, Gamesystem.instance.HorizontalToBorderDistance);
+                    Rect screenBorder = new Rect(new Vector2(-Gamesystem.instance.HorizontalToBorderDistance, -Gamesystem.instance.VerticalToBorderDistance), new Vector2(Gamesystem.instance.HorizontalToBorderDistance * 2, Gamesystem.instance.VerticalToBorderDistance * 2));
+
+                    //var playerPos = Gamesystem.instance.objects.currentPlayer.GetPosition();
+                    //Debug.DrawLine(playerPos, new Vector3(playerPos.x + rect.posX, playerPos.y + rect.posY), Color.yellow, 1f);
+
+                    position = Gamesystem.instance.positionManager.GetRandomPositionInRect(rect, screenBorder, 1f);
                 }
 
                 position += Gamesystem.instance.objects.currentPlayer.GetPosition();
@@ -428,5 +446,11 @@ namespace _Chi.Scripts.Mono.Mission
         RoamRandomly,
         RoamTowardsPlayer,
         StandIdle,
+    }
+
+    public enum SpawnOutsideScreenType
+    {
+        LeastOccupiedRectangle,
+        PlayerMovement,
     }
 }

@@ -10,5 +10,7 @@ namespace _Chi.Scripts.Scriptables
         public float maxSeekPathPeriod = 1.5f;
 
         public float maxStunnedSpeed = 0.1f;
+
+        public bool upgradesApplyOneAfterAnother = false;
     }
 }

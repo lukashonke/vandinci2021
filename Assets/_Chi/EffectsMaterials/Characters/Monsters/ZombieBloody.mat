@@ -11,6 +11,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 0803c241834332942abfcbd27c498b46, type: 3}
   m_ValidKeywords:
   - _ENABLEHUE_ON
+  - _ENABLEPOISON_ON
   - _ENABLESATURATION_ON
   - _SHADERSPACE_UV
   - _TIMESETTINGS_LINEAR_DEFAULT
@@ -207,7 +208,7 @@ Material:
     - _EnableMetal: 0
     - _EnableOuterOutline: 0
     - _EnablePixelate: 0
-    - _EnablePoison: 0
+    - _EnablePoison: 1
     - _EnableRainbow: 0
     - _EnableRecolor: 0
     - _EnableSaturation: 1
@@ -290,11 +291,11 @@ Material:
     - _PixelateFade: 1
     - _PixelatePixelDensity: 16
     - _PixelsPerUnit: 100
-    - _PoisonDensity: 3
-    - _PoisonFade: 1
+    - _PoisonDensity: 1
+    - _PoisonFade: 0.5
     - _PoisonNoiseBrightness: 1
     - _PoisonRecolorFactor: 0.5
-    - _PoisonShiftSpeed: 0.2
+    - _PoisonShiftSpeed: 0.4
     - _RainbowBrightness: 2
     - _RainbowContrast: 1
     - _RainbowDensity: 0.5
@@ -454,7 +455,7 @@ Material:
     - _OuterOutlineDistortionIntensity: {r: 0.01, g: 0.01, b: 0, a: 0}
     - _OuterOutlineNoiseScale: {r: 4, g: 4, b: 0, a: 0}
     - _OuterOutlineNoiseSpeed: {r: 0, g: 0.1, b: 0, a: 0}
-    - _PoisonColor: {r: 0.3137255, g: 2.996078, b: 0.3137255, a: 0}
+    - _PoisonColor: {r: 1.018868, g: 0.003844709, b: 0.003844709, a: 0}
     - _PoisonNoiseScale: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _PoisonNoiseSpeed: {r: 0, g: -0.2, b: 0, a: 0}
     - _RainbowCenter: {r: 0, g: 0, b: 0, a: 0}

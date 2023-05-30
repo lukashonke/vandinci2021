@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 6469568978721038765}
   - component: {fileID: -3204359601985624663}
   - component: {fileID: 9000068432140191412}
+  - component: {fileID: -5938318690158045106}
   m_Layer: 0
   m_Name: Zombies_Wawe9.5 (Lots of regulars)
   m_TagString: Untagged
@@ -135,17 +136,17 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 300
-        inSlope: 50
-        outSlope: 50
+        inSlope: 100
+        outSlope: 100
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 350
-        inSlope: 50
-        outSlope: 50
+        value: 400
+        inSlope: 100
+        outSlope: 100
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -237,6 +238,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     spawnOutsideScreen: 1
+    spawnOutsideScreenType: 0
     despawnWhenOutsideScreen: 1
     despawnWhenOutsideScreenDist2: 2
     relativePosition: 0
@@ -331,6 +333,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 3
     spawnGroupSpreadMax: 4
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 0
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
@@ -392,6 +397,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 0
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
@@ -460,6 +468,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 1
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
@@ -521,6 +532,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 1
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
@@ -582,6 +596,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 0
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
@@ -589,6 +606,164 @@ MonoBehaviour:
     distanceFromPlayerToDespawn: 1000
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 1
+--- !u!114 &-5938318690158045106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091413172466918211}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d083f0e3f19a4ffd8d592dedd37a0d43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  attacksName: 
+  disable: 0
+  spawns:
+  - possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 5954188515519120314, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 6
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ShootingTarget
+    countPerMinuteCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 3000
+        inSlope: 100
+        outSlope: 100
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    baseCountPerMinute: 0
+    countPerMinuteRandomAddFrom: 0
+    countPerMinuteRandomAddTo: 0
+    countPerMinuteRandomMulFrom: 1
+    countPerMinuteRandomMulTo: 1
+    countPerMinuteRandomAddCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    countPerMinuteRandomMulCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    minSpawnCount:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    maxSpawnCount:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    spawnOutsideScreen: 1
+    spawnOutsideScreenType: 0
+    despawnWhenOutsideScreen: 1
+    despawnWhenOutsideScreenDist2: 2
+    relativePosition: 0
+    spawnBoxAroundPlayerWidth: 1.5
+    distanceFromPlayerToDespawn: 40
+    distanceFromPlayerCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 8
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 2
+    despawnAfter: 0
+    trackEntityForMission: 0
+    nextSpawnTime: 0
+    lastSpawnTime: 0
 --- !u!1 &3022428695798256735
 GameObject:
   m_ObjectHideFlags: 1

@@ -471,7 +471,7 @@ SortingGroup:
   m_GameObject: {fileID: 1413752847744195780}
   m_Enabled: 1
   m_SortingLayerID: 700887041
-  m_SortingLayer: 9
+  m_SortingLayer: 10
   m_SortingOrder: 1000
 --- !u!1 &1901668114934460396
 GameObject:
@@ -683,8 +683,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.4
-  m_fontSizeBase: 2.4
+  m_fontSize: 2.85
+  m_fontSizeBase: 2.85
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
