@@ -20,6 +20,16 @@ namespace _Chi.Scripts.Mono.Extensions
             return dmg;
         }
 
+        public static Vector3 CalculatePushForce(this Entity entity, Vector3 baseForce)
+        {
+            if (entity is Npc npc)
+            {
+                return baseForce * npc.stats.pushForceMultiplier;
+            }
+
+            return baseForce;
+        }
+
         // used for pre-calculations and checks, not actual damage computation
         public static float CalculatePotentialModuleDamage(Module module, Player player, bool isModuleCritical, bool isPlayerCritical)
         {

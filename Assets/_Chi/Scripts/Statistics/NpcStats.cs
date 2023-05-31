@@ -16,6 +16,8 @@ namespace _Chi.Scripts.Statistics
         public float contactDamage;
         public float contactDamageInterval = 1f;
 
+        public float pushForceMultiplier = 1f;
+
         public float armor = 0;
         
         public void CopyFrom(NpcStats prefab)
@@ -25,6 +27,7 @@ namespace _Chi.Scripts.Statistics
             this.contactDamage = prefab.contactDamage;
             this.contactDamageInterval = prefab.contactDamageInterval;
             this.armor = prefab.armor;
+            this.pushForceMultiplier = prefab.pushForceMultiplier;
         }
     }
 }

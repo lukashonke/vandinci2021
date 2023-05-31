@@ -10,7 +10,7 @@ Material:
   m_Name: Tree
   m_Shader: {fileID: 4800000, guid: 0803c241834332942abfcbd27c498b46, type: 3}
   m_ValidKeywords:
-  - _ENABLEUVDISTORT_ON
+  - _ENABLEWIND_ON
   - _SHADERSPACE_UV
   - _TIMESETTINGS_LINEAR_DEFAULT
   - _UBERFADING_NONE
@@ -222,12 +222,12 @@ Material:
     - _EnableSqueeze: 0
     - _EnableSquish2: 0
     - _EnableStrongTint: 0
-    - _EnableUVDistort: 1
+    - _EnableUVDistort: 0
     - _EnableUVRotate: 0
     - _EnableUVScale: 0
     - _EnableUVScroll: 0
     - _EnableVibrate: 0
-    - _EnableWind: 0
+    - _EnableWind: 1
     - _FlameBrightness: 10
     - _FlameNoiseFactor: 2.5
     - _FlameNoiseHeightFactor: 1.5
@@ -480,8 +480,8 @@ Material:
     - _SqueezeScale: {r: 2, g: 0, b: 0, a: 0}
     - _StrongTintTint: {r: 1, g: 1, b: 1, a: 1}
     - _UVDistortFrom: {r: -0.02, g: -0.02, b: 0, a: 0}
-    - _UVDistortNoiseScale: {r: 0.1, g: 0.1, b: 0, a: 0}
-    - _UVDistortSpeed: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _UVDistortNoiseScale: {r: 0.1, g: 0, b: 0, a: 0}
+    - _UVDistortSpeed: {r: 0.3, g: 0, b: 0, a: 0}
     - _UVDistortTo: {r: 0.05, g: 0.05, b: 0, a: 0}
     - _UVRotatePivot: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _UVScalePivot: {r: 0.5, g: 0.5, b: 0, a: 0}

@@ -119,6 +119,7 @@ MonoBehaviour:
     rotationSpeed: 10
     contactDamage: 10
     contactDamageInterval: 1
+    pushForceMultiplier: 1
     armor: 0
   currentVariant: Zombie
   size: 1
@@ -145,13 +146,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
-  radiusBackingField: 0.4
+  radiusBackingField: 0.3
   heightBackingField: 2
   centerBackingField: 1
   locked: 0
   lockWhenNotMoving: 0
-  agentTimeHorizon: 0
-  obstacleTimeHorizon: 0
+  agentTimeHorizon: 2
+  obstacleTimeHorizon: 2
   maxNeighbours: 10
   layer: 1
   collidesWith: 1

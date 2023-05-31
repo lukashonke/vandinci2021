@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using _Chi.Scripts.Mono.Entities;
 using _Chi.Scripts.Utilities;
+using FunkyCode;
+using FunkyCode.LightingSettings;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -302,6 +304,24 @@ namespace _Chi.Scripts.Mono.Mission.Events
         public override bool CanStart(float currentTime) => true;
 
         public override bool CanEnd(float currentTime) => true;
+    }
+    
+    public class SetLightingProfile : MissionEvent
+    {
+        [VerticalGroup("Settings")]
+        public Profile lightProfile;
+        
+        public override void Start(float currentTime)
+        {
+            Gamesystem.instance.lightingManager.setProfile = lightProfile;
+        }
+
+        public override bool CanStart(float currentTime) => true;
+
+        public override bool CanEnd(float currentTime)
+        {
+            return true;
+        }
     }
 
     public class Delay : MissionEvent

@@ -9,6 +9,7 @@ using _Chi.Scripts.Mono.Ui;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Scriptables.Dtos;
 using _Chi.Scripts.Utilities;
+using FunkyCode;
 using Pathfinding;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -46,6 +47,7 @@ public class Gamesystem : MonoBehaviour
     [Required] public TextDatabase textDatabase;
     [Required] public LocationManager locationManager;
     [Required] public PositionManager positionManager;
+    [Required] public LightingManager2D lightingManager;
     
     [Required]
     public SpawnAroundSettings spawnAroundSettings;

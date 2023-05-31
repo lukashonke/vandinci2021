@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using _Chi.Scripts.Mono.Common;
+using _Chi.Scripts.Mono.Extensions;
 using _Chi.Scripts.Mono.Modules;
 using _Chi.Scripts.Scriptables;
 using _Chi.Scripts.Statistics;
@@ -272,6 +273,8 @@ namespace _Chi.Scripts.Mono.Entities
         {
             if (hasRb && CanBePushed())
             {
+                force = this.CalculatePushForce(force);
+                
                 rb.AddForce(force);
                 SetImmobilizedUntil(Time.time + pushDuration);
             }

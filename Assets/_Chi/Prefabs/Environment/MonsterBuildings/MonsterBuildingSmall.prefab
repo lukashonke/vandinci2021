@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 471434138012855446}
   - component: {fileID: 6514668266673016213}
   - component: {fileID: 4644276642516627949}
+  - component: {fileID: 5780510265626702253}
   m_Layer: 14
   m_Name: MonsterBuildingSmall
   m_TagString: Untagged
@@ -112,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9598393, y: 2.82}
+  m_Size: {x: 2.45, y: 2.52}
   m_EdgeRadius: 0
 --- !u!114 &6514668266673016213
 MonoBehaviour:
@@ -184,6 +185,8 @@ MonoBehaviour:
     rotationSpeed: 500
     contactDamage: 0
     contactDamageInterval: 1
+    pushForceMultiplier: 1
+    armor: 0
   currentVariant: MonsterHouseSmall
   size: 1
   goDirectlyToPlayer: 0
@@ -195,6 +198,7 @@ MonoBehaviour:
   addTargetToUiType: 1
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
+  takesUpPositionInPositionManager: 0
   emitter: {fileID: 0}
   canShoot: 0
   prefabProjectile: {fileID: 0}
@@ -251,6 +255,43 @@ MonoBehaviour:
     spawnCountMin: 10
     spawnCountMax: 15
     spawnSpread: 1.5
+--- !u!114 &5780510265626702253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183058340125116620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5783dbbad6a59184fa58aa75d79bcc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shadowType: 3
+  shadowLayer: 0
+  shadowDistance: 0
+  shadowDistanceMin: 0.5
+  shadowDistanceMax: 1
+  shadowTranslucency: 0.5
+  maskType: 1
+  maskLit: 0
+  maskPivot: 0
+  maskLayer: 0
+  maskLitCustom: 1
+  bumpMapMode:
+    type: 0
+    textureType: 0
+    texture: {fileID: 0}
+    sprite: {fileID: 0}
+    invertX: 0
+    invertY: 0
+    depth: 1
+    spriteRenderer: {fileID: 0}
+  mainShape:
+    shadowType: 3
+    maskType: 1
+    maskPivot: 0
+    transform: {fileID: 0}
 --- !u!1001 &626124633951974722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -296,7 +337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8157438153637878850, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}
       propertyPath: m_SortingLayer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ceacb761a8426d409d7a2b8ff7f7b43, type: 3}

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1538222381371449363}
   - component: {fileID: 4607921551200526849}
   - component: {fileID: 8893669948804822593}
+  - component: {fileID: 3130743220140381836}
   m_Layer: 14
   m_Name: MonsterBuildingLarge
   m_TagString: Untagged
@@ -101,7 +102,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.18}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -112,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.5, y: 3.53}
+  m_Size: {x: 5.5, y: 3.34}
   m_EdgeRadius: 0
 --- !u!114 &4607921551200526849
 MonoBehaviour:
@@ -184,6 +185,7 @@ MonoBehaviour:
     rotationSpeed: 500
     contactDamage: 0
     contactDamageInterval: 1
+    pushForceMultiplier: 1
     armor: 0
   currentVariant: MonsterHouseLarge
   size: 1
@@ -196,6 +198,7 @@ MonoBehaviour:
   addTargetToUiType: 1
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
+  takesUpPositionInPositionManager: 0
   emitter: {fileID: 0}
   canShoot: 0
   prefabProjectile: {fileID: 0}
@@ -259,6 +262,43 @@ MonoBehaviour:
     spawnCountMin: 18
     spawnCountMax: 20
     spawnSpread: 2.5
+--- !u!114 &3130743220140381836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2377969389261540861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5783dbbad6a59184fa58aa75d79bcc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shadowType: 3
+  shadowLayer: 0
+  shadowDistance: 0
+  shadowDistanceMin: 0.5
+  shadowDistanceMax: 1
+  shadowTranslucency: 0.5
+  maskType: 1
+  maskLit: 0
+  maskPivot: 0
+  maskLayer: 0
+  maskLitCustom: 1
+  bumpMapMode:
+    type: 0
+    textureType: 0
+    texture: {fileID: 0}
+    sprite: {fileID: 0}
+    invertX: 0
+    invertY: 0
+    depth: 1
+    spriteRenderer: {fileID: 0}
+  mainShape:
+    shadowType: 3
+    maskType: 1
+    maskPivot: 0
+    transform: {fileID: 0}
 --- !u!1001 &1291126825702401060
 PrefabInstance:
   m_ObjectHideFlags: 0
