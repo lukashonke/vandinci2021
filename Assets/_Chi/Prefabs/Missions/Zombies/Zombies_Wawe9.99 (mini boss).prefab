@@ -47,6 +47,53 @@ MonoBehaviour:
   nameOverride: Damaging Lake
   tooltipOverride: 
   target: {fileID: -3837949277647058563}
+--- !u!1 &1094955391800955196
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8644566442708438837}
+  - component: {fileID: 7623101965468776173}
+  m_Layer: 0
+  m_Name: NameContainer(EditorOnly)
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8644566442708438837
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094955391800955196}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2091413172466918208}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7623101965468776173
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094955391800955196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOverride: Spawn Groups Eyes
+  tooltipOverride: 
+  target: {fileID: 3410108668797515051}
 --- !u!1 &2091413172466918211
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,6 +111,9 @@ GameObject:
   - component: {fileID: 9000068432140191412}
   - component: {fileID: -2406718943007228877}
   - component: {fileID: 1512423533835912939}
+  - component: {fileID: -817189063114285408}
+  - component: {fileID: 2954872907512092201}
+  - component: {fileID: 3410108668797515051}
   m_Layer: 0
   m_Name: Zombies_Wawe9.99 (mini boss)
   m_TagString: Untagged
@@ -91,6 +141,9 @@ Transform:
   - {fileID: 4353208983916129106}
   - {fileID: 1087499304441605504}
   - {fileID: 697101809687301334}
+  - {fileID: 2169398782546972516}
+  - {fileID: 742406365491968866}
+  - {fileID: 8644566442708438837}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -125,7 +178,7 @@ MonoBehaviour:
       weight: 1
       rotateTowardsPlayer: 0
       noRotation: 1
-      prefabVariant: ZombieBloater_Boss
+      prefabVariant: Zombie_Boss_Wawe9
     formation: 0
     formationLookAhead: 2
     formationRadius: 5
@@ -148,6 +201,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 0.5
     spawnGroupSpreadMax: 0.5
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 0
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
@@ -223,6 +279,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 3
     spawnGroupSpreadMax: 4
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 0
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
@@ -284,6 +343,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 0
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
@@ -352,6 +414,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 1
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
@@ -413,6 +478,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 1
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
@@ -474,6 +542,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 1
     spawnGroupSpreadMax: 1
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 0
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
@@ -524,9 +595,9 @@ MonoBehaviour:
     spawnTimeMin: 0.045454547
     spawnTimeMax: 0.045454547
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 0.3
-    repeatSpawnIntervalMax: 0.3
-    repeatCount: 3
+    repeatSpawnIntervalMin: 0.15
+    repeatSpawnIntervalMax: 0.2
+    repeatCount: 10
     spawnCountMin: 30
     spawnCountMax: 30
     distanceFromPlayerMin: 0
@@ -535,6 +606,9 @@ MonoBehaviour:
     spawnGroupSpreadMin: 10
     spawnGroupSpreadMax: 10
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 1
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
@@ -585,9 +659,9 @@ MonoBehaviour:
     spawnTimeMin: 0.045454547
     spawnTimeMax: 0.045454547
     repeatSpawn: 1
-    repeatSpawnIntervalMin: 0.31
-    repeatSpawnIntervalMax: 0.31
-    repeatCount: 3
+    repeatSpawnIntervalMin: 0.15
+    repeatSpawnIntervalMax: 0.2
+    repeatCount: 10
     spawnCountMin: 25
     spawnCountMax: 25
     distanceFromPlayerMin: 0
@@ -596,11 +670,213 @@ MonoBehaviour:
     spawnGroupSpreadMin: 11
     spawnGroupSpreadMax: 11
     spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
     despawnWhenOutsideScreen: 1
     relativePosition: 0
     despawnWhenOutsideScreenDist2: 2
     spawnBoxAroundPlayerWidth: 1.5
     distanceFromPlayerToDespawn: 15
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
+--- !u!114 &-817189063114285408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091413172466918211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  waveName: Spawners Group
+  disable: 1
+  spawns:
+  - possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 8399383809299790540, guid: 79f3b2b44854d1645804e36864c7bea1, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieSpawner_ZombieEliteBloater
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 8399383809299790540, guid: 79f3b2b44854d1645804e36864c7bea1, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieSpawner_ZombieBloody
+    formation: 4
+    formationLookAhead: 2
+    formationRadius: 5
+    behavior: 0
+    roamDistance: 0
+    roamRandomRadius: 0
+    dieWhenReachFixedMoveTarget: 0
+    stopWhenReachFixedMoveTarget: 0
+    spawnTimeMin: 0
+    spawnTimeMax: 0
+    repeatSpawn: 1
+    repeatSpawnIntervalMin: 0.2
+    repeatSpawnIntervalMax: 0.2
+    repeatCount: 100
+    spawnCountMin: 12
+    spawnCountMax: 18
+    distanceFromPlayerMin: 0
+    distanceFromPlayerMax: 1
+    despawnAfter: 0
+    spawnGroupSpreadMin: 2
+    spawnGroupSpreadMax: 3
+    spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
+    despawnWhenOutsideScreen: 1
+    relativePosition: 3
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerWidth: 1.5
+    distanceFromPlayerToDespawn: 100
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
+--- !u!114 &2954872907512092201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091413172466918211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  waveName: Spawners Group
+  disable: 0
+  spawns:
+  - possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 8399383809299790540, guid: 79f3b2b44854d1645804e36864c7bea1, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieSpawner_ZombieBloater
+    formation: 5
+    formationLookAhead: 2
+    formationRadius: 5
+    behavior: 0
+    roamDistance: 0
+    roamRandomRadius: 0
+    dieWhenReachFixedMoveTarget: 0
+    stopWhenReachFixedMoveTarget: 0
+    spawnTimeMin: 0.05
+    spawnTimeMax: 0.05
+    repeatSpawn: 1
+    repeatSpawnIntervalMin: 0.1
+    repeatSpawnIntervalMax: 0.1
+    repeatCount: 100
+    spawnCountMin: 12
+    spawnCountMax: 18
+    distanceFromPlayerMin: 0
+    distanceFromPlayerMax: 1
+    despawnAfter: 0
+    spawnGroupSpreadMin: 2
+    spawnGroupSpreadMax: 3
+    spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
+    despawnWhenOutsideScreen: 1
+    relativePosition: 3
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerWidth: 1.5
+    distanceFromPlayerToDespawn: 100
+    trackEntityForMission: 0
+    onlyOnPlayerAccessibleArea: 0
+--- !u!114 &3410108668797515051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091413172466918211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9ef84805c74f4aa426ccd2b29839f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  waveName: Spawners Group
+  disable: 0
+  spawns:
+  - possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 8399383809299790540, guid: 79f3b2b44854d1645804e36864c7bea1, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieSpawner_EyeLarge
+    formation: 5
+    formationLookAhead: 2
+    formationRadius: 5
+    behavior: 0
+    roamDistance: 0
+    roamRandomRadius: 0
+    dieWhenReachFixedMoveTarget: 0
+    stopWhenReachFixedMoveTarget: 0
+    spawnTimeMin: 0.025
+    spawnTimeMax: 0.025
+    repeatSpawn: 1
+    repeatSpawnIntervalMin: 0.05
+    repeatSpawnIntervalMax: 0.05
+    repeatCount: 100
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayerMin: 0
+    distanceFromPlayerMax: 1
+    despawnAfter: 0
+    spawnGroupSpreadMin: 2
+    spawnGroupSpreadMax: 3
+    spawnOutsideScreen: 0
+    spawnAtFixedPositions: 0
+    fixedSpawnPositions:
+      positions: []
+    despawnWhenOutsideScreen: 1
+    relativePosition: 3
+    despawnWhenOutsideScreenDist2: 2
+    spawnBoxAroundPlayerWidth: 1.5
+    distanceFromPlayerToDespawn: 100
     trackEntityForMission: 0
     onlyOnPlayerAccessibleArea: 0
 --- !u!1 &3235876845365673950
@@ -744,6 +1020,53 @@ MonoBehaviour:
   nameOverride: Exploding Decoys
   tooltipOverride: 
   target: {fileID: -50647473022081503}
+--- !u!1 &4335650105354909425
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 742406365491968866}
+  - component: {fileID: 646452745094357320}
+  m_Layer: 0
+  m_Name: NameContainer(EditorOnly)
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &742406365491968866
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4335650105354909425}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2091413172466918208}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &646452745094357320
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4335650105354909425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOverride: Spawn Groups Bloater
+  tooltipOverride: 
+  target: {fileID: 2954872907512092201}
 --- !u!1 &6741572360861018279
 GameObject:
   m_ObjectHideFlags: 1
@@ -932,3 +1255,50 @@ MonoBehaviour:
   nameOverride: Fire Rate Buff Zone
   tooltipOverride: 
   target: {fileID: -3204359601985624663}
+--- !u!1 &7566272085837962313
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2169398782546972516}
+  - component: {fileID: 1039703913345343907}
+  m_Layer: 0
+  m_Name: NameContainer(EditorOnly)
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2169398782546972516
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566272085837962313}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2091413172466918208}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1039703913345343907
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566272085837962313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190d9e9918d0aaf48a103a2bb6995059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOverride: Spawn Groups Bloody or Elite
+  tooltipOverride: 
+  target: {fileID: -817189063114285408}

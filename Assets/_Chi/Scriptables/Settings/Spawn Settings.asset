@@ -39,6 +39,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 2.5
     despawnWhenOutsideScreen: 1
+    trackAliveEntities: 0
   - name: Zombie_Group
     possiblePrefabs:
     - type: 0
@@ -63,6 +64,7 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 2.5
     despawnWhenOutsideScreen: 1
+    trackAliveEntities: 0
   - name: Zombie
     possiblePrefabs:
     - type: 0
@@ -94,6 +96,25 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 2.5
     despawnWhenOutsideScreen: 1
+    trackAliveEntities: 0
+  - name: ZombieBloater
+    possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieBloaterExploding
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayerMin: 0
+    distanceFromPlayerMax: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 2.5
+    despawnWhenOutsideScreen: 1
+    trackAliveEntities: 0
   - name: ZombieElite
     possiblePrefabs:
     - type: 0
@@ -125,6 +146,25 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 2.5
     despawnWhenOutsideScreen: 1
+    trackAliveEntities: 0
+  - name: ZombieEliteBloater
+    possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieEliteBloaterExploding
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayerMin: 0
+    distanceFromPlayerMax: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 2.5
+    despawnWhenOutsideScreen: 1
+    trackAliveEntities: 0
   - name: ZombieBloody
     possiblePrefabs:
     - type: 0
@@ -156,6 +196,25 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 2.5
     despawnWhenOutsideScreen: 1
+    trackAliveEntities: 0
+  - name: ZombieBloodyBloater
+    possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieBloodyBloaterExploding
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayerMin: 0
+    distanceFromPlayerMax: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 2.5
+    despawnWhenOutsideScreen: 1
+    trackAliveEntities: 0
   - name: ZombieDemonic
     possiblePrefabs:
     - type: 0
@@ -187,3 +246,58 @@ MonoBehaviour:
     spawnGroupSpreadMax: 1
     distanceFromPlayerToDespawn: 2.5
     despawnWhenOutsideScreen: 1
+    trackAliveEntities: 0
+  - name: ZombieDemonicBloater
+    possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 5954188515519120312, guid: 4d98187eab1b1734e856e96b4fc89a71, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: ZombieDemonicBloaterExploding
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayerMin: 0
+    distanceFromPlayerMax: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 2.5
+    despawnWhenOutsideScreen: 1
+    trackAliveEntities: 0
+  - name: EyeSmall
+    possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 2547656127239185665, guid: dd4526bc18c4053438ca372ca826e620, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: EyeSmall
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayerMin: 0
+    distanceFromPlayerMax: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 2.5
+    despawnWhenOutsideScreen: 1
+    trackAliveEntities: 0
+  - name: EyeLarge
+    possiblePrefabs:
+    - type: 0
+      prefab: {fileID: 0}
+      prefabNpc: {fileID: 4615498626008005052, guid: f5d37b60aa18ebf4596d6bfdcfd28d97, type: 3}
+      weight: 1
+      rotateTowardsPlayer: 1
+      noRotation: 0
+      prefabVariant: EyeLarge
+    spawnCountMin: 1
+    spawnCountMax: 1
+    distanceFromPlayerMin: 0
+    distanceFromPlayerMax: 0
+    spawnGroupSpreadMin: 1
+    spawnGroupSpreadMax: 1
+    distanceFromPlayerToDespawn: 2.5
+    despawnWhenOutsideScreen: 1
+    trackAliveEntities: 0

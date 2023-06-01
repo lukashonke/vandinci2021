@@ -142,6 +142,7 @@ MonoBehaviour:
     rotationSpeed: 500
     contactDamage: 0
     contactDamageInterval: 1
+    pushForceMultiplier: 1
     armor: 0
   currentVariant: 
   size: 1
@@ -168,8 +169,8 @@ MonoBehaviour:
   projectileShootInterval: 0
   distanceToPlayerToShoot: 0
   drops:
-  - dropCountMin: 3
-    dropCountMax: 5
+  - dropCountMin: 5
+    dropCountMax: 10
     dropType: 0
     chance: 100
 --- !u!114 &5570863261562565206

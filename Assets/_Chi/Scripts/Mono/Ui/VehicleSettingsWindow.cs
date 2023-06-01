@@ -34,6 +34,11 @@ namespace _Chi.Scripts.Mono.Ui
 
         public void OpenWindow(List<TriggeredShopSet> rewardSet, string title, TriggeredShop triggeredShop)
         {
+            if (Gamesystem.instance.uiManager.statWindow.Opened())
+            {
+                return;
+            }
+            
             UpdateCurrentMoney();
                 
             if (rewardSet == null && triggeredShop == null)
@@ -263,6 +268,7 @@ namespace _Chi.Scripts.Mono.Ui
             if(Input.GetKeyDown(KeyCode.Escape))
             {
                 DoClose();
+                Gamesystem.instance.uiManager.HideTooltip();
             }
         }
     }

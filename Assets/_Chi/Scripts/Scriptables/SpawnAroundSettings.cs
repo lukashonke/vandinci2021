@@ -55,7 +55,7 @@ namespace _Chi.Scripts.Scriptables
                     var despawnType = settings.despawnWhenOutsideScreen ? DespawnCondition.DistanceFromScreenBorder : DespawnCondition.DistanceFromPlayer;
                     var spawned = spawnPrefab.SpawnOnPosition(targetPosition, position, settings.distanceFromPlayerToDespawn, 0f, despawnType);
             
-                    if (spawned != null)
+                    if (spawned != null && settings.trackAliveEntities)
                     {
                         Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
                     }
@@ -76,8 +76,11 @@ namespace _Chi.Scripts.Scriptables
                         var spawnPrefab = settings.GetRandomPrefab();
                         var despawnType = settings.despawnWhenOutsideScreen ? DespawnCondition.DistanceFromScreenBorder : DespawnCondition.DistanceFromPlayer;
                         var spawned = spawnPrefab.SpawnOnPosition(targetPosition, position, settings.distanceFromPlayerToDespawn, 0f, despawnType);
-                        
-                        Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
+
+                        if (settings.trackAliveEntities)
+                        {
+                            Gamesystem.instance.missionManager.TrackAliveEntity(spawned);
+                        }
 
                         spawnCount--;
                     }
@@ -107,6 +110,8 @@ namespace _Chi.Scripts.Scriptables
         public float distanceFromPlayerToDespawn = 100;
         
         public bool despawnWhenOutsideScreen = true;
+        
+        public bool trackAliveEntities = true;
         
         // runtime
         [NonSerialized] private Dictionary<int, SpawnPrefab> prefabsByWeightValues;

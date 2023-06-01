@@ -11,11 +11,11 @@ namespace _Chi.Scripts.Scriptables.EntityStatsEffects
     {
         public override bool Apply(Entity target, object source, int level)
         {
-            if (modifier == StatModifierType.Add)
+            if (modifier == StatModifierType.Add || modifier == StatModifierType.BaseAdd)
             {
                 target.entityStats.maxHpAdd += AddLevelValue(value, level);
             }
-            else if (modifier == StatModifierType.Mul)
+            else if (modifier == StatModifierType.Mul || modifier == StatModifierType.BaseMul || modifier == StatModifierType.OverallMul)
             {
                 target.entityStats.maxHpMul += value;
             }
@@ -32,11 +32,11 @@ namespace _Chi.Scripts.Scriptables.EntityStatsEffects
 
         public override bool Remove(Entity target, object source)
         {
-            if (modifier == StatModifierType.Add)
+            if (modifier == StatModifierType.Add || modifier == StatModifierType.BaseAdd)
             {
                 target.entityStats.maxHpAdd -= value;
             }
-            else if (modifier == StatModifierType.Mul)
+            else if (modifier == StatModifierType.Mul || modifier == StatModifierType.BaseMul || modifier == StatModifierType.OverallMul)
             {
                 target.entityStats.maxHpMul -= value;
             }

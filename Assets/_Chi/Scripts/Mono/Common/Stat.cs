@@ -49,47 +49,85 @@ namespace _Chi.Scripts.Mono.Common
         private void Recalculate()
         {
             value = baseValue;
-            
+
             if (modifiers != null)
             {
-                foreach (var groupModifiers in modifiers.GroupBy(m => m.order).OrderBy(m => m.Key))
+                if (Gamesystem.instance.miscSettings.upgradesApplyOneAfterAnother)
                 {
-                    float addValue = 0f;
-                    
-                    foreach (var statModifier in groupModifiers)
+                    foreach (var stat in modifiers.Where(m => m.type == StatModifierType.BaseMul))
                     {
-                        switch (statModifier.type)
-                        {
-                            case StatModifierType.Add:
-                                addValue += statModifier.value;
-                                break;
-                        }
+                        value *= (1 + stat.value);
                     }
-
-                    float mulValue = 1f;
                     
-                    foreach (var statModifier in groupModifiers)
+                    foreach (var stat in modifiers.Where(m => m.type == StatModifierType.BaseAdd))
                     {
-                        switch (statModifier.type)
-                        {
-                            case StatModifierType.Mul:
-                                mulValue += statModifier.value;
-                                break;
-                        }
+                        value += stat.value;
                     }
-
-                    mulValue = Mathf.Max(mulValue, 0f);
                     
-                    value += addValue;
-                    value *= mulValue;
-
-                    foreach (var statModifier in groupModifiers)
+                    foreach (var stat in modifiers.Where(m => m.type == StatModifierType.Mul))
                     {
-                        switch (statModifier.type)
+                        value *= (1 + stat.value);
+                    }
+                    
+                    foreach (var stat in modifiers.Where(m => m.type == StatModifierType.Add))
+                    {
+                        value += stat.value;
+                    }
+                    
+                    foreach (var stat in modifiers.Where(m => m.type == StatModifierType.OverallMul))
+                    {
+                        value *= (1 + stat.value);
+                    }
+                    
+                    foreach (var stat in modifiers.Where(m => m.type == StatModifierType.Set))
+                    {
+                        value = stat.value;
+                    }
+                }
+                else
+                {
+                    foreach (var groupModifiers in modifiers.GroupBy(m => m.order).OrderBy(m => m.Key))
+                    {
+                        float addValue = 0f;
+                    
+                        foreach (var statModifier in groupModifiers)
                         {
-                            case StatModifierType.Set:
-                                value = statModifier.value;
-                                break;
+                            switch (statModifier.type)
+                            {
+                                case StatModifierType.Add:
+                                case StatModifierType.BaseAdd:
+                                    addValue += statModifier.value;
+                                    break;
+                            }
+                        }
+
+                        float mulValue = 1f;
+                    
+                        foreach (var statModifier in groupModifiers)
+                        {
+                            switch (statModifier.type)
+                            {
+                                case StatModifierType.Mul:
+                                case StatModifierType.OverallMul:
+                                case StatModifierType.BaseMul:
+                                    mulValue += statModifier.value;
+                                    break;
+                            }
+                        }
+
+                        mulValue = Mathf.Max(mulValue, 0f);
+                    
+                        value += addValue;
+                        value *= mulValue;
+
+                        foreach (var statModifier in groupModifiers)
+                        {
+                            switch (statModifier.type)
+                            {
+                                case StatModifierType.Set:
+                                    value = statModifier.value;
+                                    break;
+                            }
                         }
                     }
                 }
@@ -100,11 +138,6 @@ namespace _Chi.Scripts.Mono.Common
 
         public void AddModifier(StatModifier modifier)
         {
-            if (Gamesystem.instance.miscSettings.upgradesApplyOneAfterAnother)
-            {
-                modifier.order = Gamesystem.instance.upgradeOneAfterAnotherOrder++;
-            }
-            
             if (modifiers == null) modifiers = new();
             modifiers.Add(modifier);
             //modifier.orderIndex = modifiers.IndexOf(modifier);
@@ -170,7 +203,10 @@ namespace _Chi.Scripts.Mono.Common
     {
         Set,
         Add,
-        Mul
+        Mul,
+        BaseAdd,
+        BaseMul,
+        OverallMul
     }
 
     public enum StatOrders

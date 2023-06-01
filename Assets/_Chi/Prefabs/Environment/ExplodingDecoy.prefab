@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7315142422562026647}
   - component: {fileID: 6549855113248904363}
   - component: {fileID: 5570863261562565206}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ExplodingDecoy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,6 +141,7 @@ MonoBehaviour:
     rotationSpeed: 500
     contactDamage: 0
     contactDamageInterval: 1
+    pushForceMultiplier: 1
     armor: 0
   currentVariant: ExplodingDecoy
   size: 1
@@ -153,6 +154,7 @@ MonoBehaviour:
   addTargetToUiType: 0
   activateWhenCloseToPlayerDist2: 0
   spawnEffect: {fileID: 0}
+  takesUpPositionInPositionManager: 0
   emitter: {fileID: 0}
   canShoot: 0
   prefabProjectile: {fileID: 0}

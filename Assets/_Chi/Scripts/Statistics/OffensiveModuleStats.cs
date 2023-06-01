@@ -9,6 +9,8 @@ namespace _Chi.Scripts.Statistics
     {
         public Stat projectileCount = new Stat();
         
+        public Stat maxProjectileCount = new Stat();
+        
         public Stat projectileMultiplier = new Stat();
         
         public Stat projectileSpreadAngle = new Stat();

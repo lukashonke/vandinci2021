@@ -76,14 +76,10 @@ public class Gamesystem : MonoBehaviour
     [FoldoutGroup("Difficulty")] 
     public float expMul = 1f;
 
-    [NonSerialized] public int upgradeOneAfterAnotherOrder; 
-
     private void Awake()
     {
         instance = this;
 
-        upgradeOneAfterAnotherOrder = 0;
-        
         prefabDatabase.Initialise();
         spawnAroundSettings.Initialise();
         
@@ -160,25 +156,35 @@ public class Gamesystem : MonoBehaviour
         });
     }
 
+    [NonSerialized] private bool isPaused;
+
     public void Pause()
     {
-        Time.timeScale = 0;
+        if (!isPaused)
+        {
+            isPaused = true;
+            Time.timeScale = 0;
+        }
     }
 
     public void Unpause()
     {
-        Time.timeScale = 1;
+        if (isPaused)
+        {
+            isPaused = false;
+            Time.timeScale = 1;
+        }
     }
 
     public void TogglePause()
     {
-        if (Time.timeScale > 0)
+        if (isPaused)
         {
-            Time.timeScale = 0;
+            Unpause();
         }
         else
         {
-            Time.timeScale = 1;
+            Pause();
         }
     }
 

@@ -228,6 +228,9 @@ MonoBehaviour:
     projectileCount:
       baseValue: 1
       value: 1
+    maxProjectileCount:
+      baseValue: 50
+      value: 0
     projectileMultiplier:
       baseValue: 1
       value: 0

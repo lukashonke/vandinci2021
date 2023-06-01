@@ -224,6 +224,8 @@ namespace _Chi.Scripts.Scriptables
         public RVOLayer rvoCollidesWith;
 
         public GameObject addChildren;
+
+        //public string prefabGroup;
     }
 
     [Serializable]

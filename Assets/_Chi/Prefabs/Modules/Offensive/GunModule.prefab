@@ -87,6 +87,7 @@ MonoBehaviour:
   instantRotation: 1
   maxLevel: 5
   maxUpgrades: 5
+  onFireReadyActivateGo: {fileID: 0}
   reloadProgress: 0
   muzzles:
   - {fileID: 1780069285429707366}
@@ -95,6 +96,9 @@ MonoBehaviour:
     projectileCount:
       baseValue: 1
       value: 1
+    maxProjectileCount:
+      baseValue: 50
+      value: 0
     projectileMultiplier:
       baseValue: 1
       value: 0
@@ -140,6 +144,9 @@ MonoBehaviour:
       baseValue: 0
       value: 0
     projectilePierceCountIgnoreIfLessThanHp:
+      baseValue: 0
+      value: 0
+    projectilePierceCountIgnoreIfLessThanProjectileDamagePortion:
       baseValue: 0
       value: 0
     projectilePierceDeadChance:
@@ -281,6 +288,7 @@ MonoBehaviour:
   instantRotation: 1
   maxLevel: 5
   maxUpgrades: 5
+  onFireReadyActivateGo: {fileID: 0}
   reloadProgress: 0
   muzzles:
   - {fileID: 1780069285429707366}
@@ -289,6 +297,9 @@ MonoBehaviour:
     projectileCount:
       baseValue: 1
       value: 1
+    maxProjectileCount:
+      baseValue: 0
+      value: 0
     projectileMultiplier:
       baseValue: 1
       value: 0
@@ -334,6 +345,9 @@ MonoBehaviour:
       baseValue: 0
       value: 0
     projectilePierceCountIgnoreIfLessThanHp:
+      baseValue: 0
+      value: 0
+    projectilePierceCountIgnoreIfLessThanProjectileDamagePortion:
       baseValue: 0
       value: 0
     projectilePierceDeadChance:

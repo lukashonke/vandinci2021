@@ -44,17 +44,19 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
 
         private IEnumerator Explode(EffectSourceData data, float strength)
         {
+            var layerMask = data.sourceEntity.GetLayerMask(targetType);
+            var position = data.sourceEntity.GetPosition();
+            var rotation = data.sourceEntity.GetRotation();
+            
             if (applyDelay > 0)
             {
                 yield return new WaitForSeconds(applyDelay);
             }
 
-            if (data.sourceEntity == null) yield break;
+            //if (data.sourceEntity == null) yield break;
             
-            var targets = Utils.GetObjectsAtPosition(data.targetPosition, buffer, radius, data.sourceEntity.GetLayerMask(targetType));
+            var targets = Utils.GetObjectsAtPosition(data.targetPosition, buffer, radius, layerMask);
             
-            var sourcePosition = data.sourceEntity.GetPosition();
-
             for (int i = 0; i < targets; i++)
             {
                 var coll = buffer[i];
@@ -69,7 +71,7 @@ namespace _Chi.Scripts.Scriptables.ImmediateEffects
                             allow = true;
                             break;
                         case AreaType.Cone:
-                            var a = Math.Abs(Utils.AngleToTarget(data.sourceEntity.GetRotation(), sourcePosition, entity.GetPosition()));
+                            var a = Math.Abs(Utils.AngleToTarget(rotation, position, entity.GetPosition()));
                             allow = a <= angle;
                             break;
                         default:

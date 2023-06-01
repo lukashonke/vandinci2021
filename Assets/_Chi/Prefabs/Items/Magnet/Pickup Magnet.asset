@@ -22,5 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   order: 20
+  effect: 0
   forcedFlags: 0
-  range: 50
+  chance: 1
+  range: 500

@@ -77,6 +77,9 @@ namespace _Chi.Scripts.Mono.Mission.Events
         [FoldoutGroup("Additional")]
         public bool waitUntilAllEnemiesDead;
 
+        //[FoldoutGroup("Additional")]
+        //public List<string> prefabGroupsToWaitTillDead;
+
         [ShowIf("waitUntilAllEnemiesDead")]
         [FoldoutGroup("Additional")]
         public float maxWaitTime;

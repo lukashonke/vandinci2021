@@ -35,12 +35,15 @@ namespace _Chi.Scripts.Scriptables
                     }
                     return value;
                 case StatModifierType.Add:
+                case StatModifierType.BaseAdd:
                     if (hasLevelScaledValue)
                     {
                         return GetLevelScaledValue(level);
                     }
                     return value * level;
                 case StatModifierType.Mul:
+                case StatModifierType.BaseMul:
+                case StatModifierType.OverallMul:
                     if (hasLevelScaledValue)
                     {
                         return GetLevelScaledValue(level);
@@ -62,23 +65,26 @@ namespace _Chi.Scripts.Scriptables
                     }
                     return "set to " + value;
                 case StatModifierType.Add:
+                case StatModifierType.BaseAdd: // TODO zohlednit Base v popisku
                     if (hasLevelScaledValue)
                     {
                         var val = GetLevelScaledValue(level);
-                        return (val > 0 ? "+" : "") + val;
+                        return (modifier == StatModifierType.BaseAdd ? "base " : "") + (val > 0 ? "+" : "") + val;
                     }
                     
                     var val3 = value * level;
-                    return (val3 > 0 ? "+" : "") + (value * level);
+                    return (modifier == StatModifierType.BaseAdd ? "base " : "") + (val3 > 0 ? "+" : "") + (value * level);
                 case StatModifierType.Mul:
+                case StatModifierType.OverallMul:
+                case StatModifierType.BaseMul:
                     if (hasLevelScaledValue)
                     {
                         var val = (GetLevelScaledValue(level) * 100);
-                        return (val > 0 ? "+" : "") + (val) + "%";
+                        return (modifier == StatModifierType.BaseMul ? "base " : "") + (val > 0 ? "+" : "") + (val) + "%";
                     }
 
                     var val2 = value * level * 100;
-                    return (val2 > 0 ? "+" : "") + (val2) + "%";
+                    return (modifier == StatModifierType.BaseMul ? "base " : "") + (val2 > 0 ? "+" : "") + (val2) + "%";
                 default:
                     throw new ArgumentOutOfRangeException();
             }

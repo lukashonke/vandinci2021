@@ -70,9 +70,18 @@ namespace _Chi.Scripts.Mono.Extensions
         {
             if (emitter.rootBullet != null)
             {
-                int projectiles = stats.projectileCount.GetValueInt() * stats.projectileMultiplier.GetValueInt() + module.temporaryProjectilesUntilNextShot;
-                
-                module.temporaryProjectilesUntilNextShot = 0;
+                int projectiles = stats.projectileCount.GetValueInt() * stats.projectileMultiplier.GetValueInt() +
+                                  module.temporaryProjectilesUntilNextShot;
+
+                if (stats.maxProjectileCount.GetValueInt() < projectiles)
+                {
+                    module.temporaryProjectilesUntilNextShot = projectiles - stats.maxProjectileCount.GetValueInt();
+                    projectiles = stats.maxProjectileCount.GetValueInt();
+                }
+                else
+                {
+                    module.temporaryProjectilesUntilNextShot = 0;
+                }
                 
                 emitter.rootBullet.moduleParameters.SetInt(BulletVariables.ProjectileCount, projectiles);
                 emitter.rootBullet.moduleParameters.SetFloat(BulletVariables.ProjectileSpeed, stats.projectileSpeed.GetValue());

@@ -1097,7 +1097,7 @@ MonoBehaviour:
       Data: true
     - Name: globalDropChance
       Entry: 4
-      Data: 20
+      Data: 15
     - Name: handlers
       Entry: 7
       Data: 48|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
@@ -1301,7 +1301,7 @@ MonoBehaviour:
       Data: Wawe 9.99 Mini Boss
     - Name: fixedDuration
       Entry: 4
-      Data: 30
+      Data: 60
     - Name: waitTillAllSpawnedAreDead
       Entry: 5
       Data: false
@@ -1420,10 +1420,10 @@ MonoBehaviour:
       Data: false
     - Name: setGlobalDropChance
       Entry: 5
-      Data: false
+      Data: true
     - Name: globalDropChance
       Entry: 4
-      Data: 0
+      Data: 10
     - Name: handlers
       Entry: 7
       Data: 63|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
@@ -1469,7 +1469,7 @@ MonoBehaviour:
       Data: false
     - Name: globalDropChance
       Entry: 4
-      Data: 0
+      Data: 10
     - Name: handlers
       Entry: 7
       Data: 65|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],

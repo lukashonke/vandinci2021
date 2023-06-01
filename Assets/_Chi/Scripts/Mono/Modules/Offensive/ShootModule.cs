@@ -263,9 +263,9 @@ namespace _Chi.Scripts.Mono.Modules.Offensive
         {
             return new List<(string title, string value)>()
             {
-                ("Damage", $"{stats.projectileDamage.GetValue()}"),
-                ("Shoot Interval", $"{stats.reloadDuration.GetValue()}"),
-                ("Projectiles", $"{stats.projectileCount.GetValue()}"),
+                ("Base Damage", $"{stats.projectileDamage.GetValue()}"),
+                ("Base Reload Interval", $"{stats.reloadDuration.GetValue()}"),
+                ("Base Projectiles", $"{stats.projectileCount.GetValue()}"),
             };
         }
     }

@@ -23,6 +23,8 @@ public class UiManager : MonoBehaviour
     [Required] public GameObject overlay;
     [Required] public GameObject windows;
 
+    [Required] public StatWindow statWindow;
+
     [Required] public ProgressBar rewardProgressBar;
 
     [Required] public GameObject confirmDialogPrefab;
@@ -55,6 +57,8 @@ public class UiManager : MonoBehaviour
     void Awake()
     {
         Gamesystem.instance.uiManager = this;
+        
+        statWindow.SetOpened(false);
 
         skillIndicators = GetComponentsInChildren<SkillIndicatorUi>();
         
@@ -373,6 +377,21 @@ public class UiManager : MonoBehaviour
         {
             Destroy(currentTooltip);
         }
+    }
+
+    public void OpenStatsWindow()
+    {
+        statWindow.SetOpened(true);
+    }
+
+    public void ToggleStatsWindow()
+    {
+        statWindow.Toggle();
+    }
+
+    public void CloseStatsWindow()
+    {
+        statWindow.SetOpened(false);
     }
 
     public void ShowItemTooltip(RectTransform targetTransform, PrefabItem prefab, int level, TooltipAlign align = TooltipAlign.TopRight, TooltipType type = TooltipType.Default, List<UpgradeItem> upgrades = null, int? maxLevel = null)
