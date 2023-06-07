@@ -17,9 +17,9 @@ namespace _Chi.Scripts.Scriptables
 
     public enum MutatorCategory
     {
-        A,
-        B,
-        C,
+        Body,
+        Weapons,
+        Chaos,
         D,
         E
     }

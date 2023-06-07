@@ -1277,8 +1277,8 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 11002
-    label: Heavier Vehicle
-    enabled: 0
+    label: Great Shield
+    enabled: 1
     description: Vehicle has more HP, but is slower.
     type: 5
     predefinedId: 0
@@ -1297,8 +1297,8 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 11003
-    label: Lighter Vehicle
-    enabled: 0
+    label: Hasty Boots
+    enabled: 1
     description: 'Vehicle is faster, but has less HP. '
     type: 5
     predefinedId: 0
@@ -1317,9 +1317,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 11004
-    label: Reinforced Materials
-    enabled: 0
-    description: Vehicle has slightly increased HP.
+    label: Healthy Diet
+    enabled: 1
+    description: You have more HP.
     type: 5
     predefinedId: 0
     weightSettings:
@@ -1357,10 +1357,9 @@ MonoBehaviour:
     additionalTexts: []
     story: 
   - id: 11006
-    label: Superlight Vehicle
-    enabled: 0
-    description: 'Greatly decreases vehicle HP, but also gives base critical rate
-      to all weapons. '
+    label: Superlight
+    enabled: 1
+    description: Low HP, High Speed.
     type: 5
     predefinedId: 0
     weightSettings:
@@ -6950,11 +6949,58 @@ MonoBehaviour:
     - 1.15
     - 1.3
     lockId: 
+  - name: free_start_mutator_body
+    note: 
+    minCountShownItems: 100
+    prefabs:
+    - name: Great Shield
+      prefabId: 11002
+      weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      price: 0
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Hasty Boots
+      prefabId: 11003
+      weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      price: 0
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Healthy Diet
+      prefabId: 11004
+      weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      price: 0
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    - name: Superlight
+      prefabId: 11006
+      weight: 1
+      isInGroup: 0
+      group: 
+      levelInGroup: 0
+      price: 0
+      priceMultiplyForEveryOwned: 0
+      lockId: 
+      mustBeUnlocked: 0
+    nestedRewardSets: []
+    priceMultiplierPerCountOwned: []
+    lockId: 
   - name: free_start_weapon
     note: 
     minCountShownItems: 100
     prefabs:
-    - name: Crossbow Module
+    - name: Crossbow
       prefabId: 2000
       weight: 1
       isInGroup: 0
@@ -6964,7 +7010,7 @@ MonoBehaviour:
       priceMultiplyForEveryOwned: 0
       lockId: 
       mustBeUnlocked: 0
-    - name: Cannon Module
+    - name: Cannon
       prefabId: 2007
       weight: 1
       isInGroup: 0

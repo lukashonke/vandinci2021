@@ -21,6 +21,6 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  category: 1
+  category: 0
   effects:
   - {fileID: 11400000, guid: 9226431b0e6ca427f9ba83e77f5a98d2, type: 2}
